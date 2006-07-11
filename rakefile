@@ -21,7 +21,7 @@ spec = Gem::Specification.new do |s|
 end
 
 Rake::RDocTask.new do |rd|
-  rd.rdoc_files.include "lib/flickraw.rb"
+  rd.rdoc_files.include "README", "lib/flickraw.rb", "TODO"
   rd.options << "--inline-source"
 end
 

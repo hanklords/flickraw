@@ -1,0 +1,32 @@
+= Flickraw
+
+Flickraw is a library to access flickr[http://flickr.com] api in a simple way.
+It maps exactly the methods described in {the official api documentation}[http://www.flickr.com/services/api].
+It also try to present the data returned in a simple intuitive way.
+
+You can read the class documentation here : FlickRaw.
+
+The rubyforge project : http://rubyforge.org/projects/flickraw
+
+= Installation
+Type this in a console (you might need to be superuser)
+ gem install flickraw
+
+= Usage
+
+ require 'flickraw'
+
+ list   = flickr.photos.getRecent
+
+ id     = list[0].id
+ secret = list[0].secret
+ info = flickr.photos.getInfo :photo_id => id, :secret => secret
+
+ info.title           # => "PICT986"
+ info.dates.taken     # => "2006-07-06 15:16:18"
+
+
+ sizes = flickr.photos.getSizes :photo_id => id
+
+ original = sizes.find {|s| s.label == 'Original' }
+ original.width       # => "800"

@@ -223,5 +223,3 @@ class Object
     @flickr ||= FlickRaw::Flickr.new
   end
 end
-
-FlickRaw.shared_secret = '9c298785e81bc868'
