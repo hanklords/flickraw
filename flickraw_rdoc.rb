@@ -95,13 +95,13 @@ END
       if info.respond_to? :errors
         errors = "<b>Error codes</b>\n"
         info.errors.each {|e|
-          errors << "* #{e.code}: <em>(#{e.message})</em>\n\n"
+          errors << "* #{e.code}: <em>#{e.message}</em>\n\n"
           errors << "  #{e.to_s}\n"
         }
       end
 
       if info.method.respond_to? :response
-        response = "<b>Output</b>\n"
+        response = "<b>Returns</b>\n"
         raw = CGI.unescapeHTML(info.method.response.to_s)
         response << raw.collect { |line| line.insert(0, ' ') }.join
       else

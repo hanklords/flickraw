@@ -3,5 +3,4 @@
 
 == Documentation
 * Document the object returned by the flickr method calls ( FlickRaw::Xml )
-* Document the authentication procedure.
 * Add more examples.
