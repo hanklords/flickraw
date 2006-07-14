@@ -25,7 +25,7 @@ require 'open-uri'
 require 'md5'
 
 module FlickRaw
-  VERSION='0.1'
+  VERSION='0.2'
 
   # URL of the flickr REST api
   REST_URL='http://www.flickr.com/services/rest/?'.freeze
