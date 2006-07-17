@@ -2,7 +2,7 @@
 
 Flickraw is a library to access flickr[http://flickr.com] api in a simple way.
 It maps exactly the methods described in {the official api documentation}[http://www.flickr.com/services/api].
-It also try to present the data returned in a simple intuitive way.
+It also try to present the data returned in a simple and intuitive way.
 
 You can read the class documentation here : FlickRaw.
 
