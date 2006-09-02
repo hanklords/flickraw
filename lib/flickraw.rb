@@ -29,12 +29,13 @@ module FlickRaw
 
   FLICKR_HOST='api.flickr.com'.freeze
 
-  # Path of the flickr REST api
+  # Path of flickr REST API
   REST_PATH='/services/rest/?'.freeze
 
-  # Path of the flickr auth page
+  # Path of flickr auth page
   AUTH_PATH='/services/auth/?'.freeze
 
+  # Path of flickr upload
   UPLOAD_PATH='/services/upload/'.freeze
 
   @api_key = '7b124df89b638e545e3165293883ef62'
