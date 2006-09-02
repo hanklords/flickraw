@@ -25,7 +25,7 @@ require 'open-uri'
 require 'md5'
 
 module FlickRaw
-  VERSION='0.2'
+  VERSION='0.3'
 
   FLICKR_HOST='api.flickr.com'.freeze
 
