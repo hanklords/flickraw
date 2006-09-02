@@ -27,16 +27,20 @@ require 'md5'
 module FlickRaw
   VERSION='0.2'
 
-  # URL of the flickr REST api
-  REST_URL='http://www.flickr.com/services/rest/?'.freeze
+  FLICKR_HOST='api.flickr.com'.freeze
 
-  # URL of the flickr auth page
-  AUTH_URL='http://flickr.com/services/auth/?'
+  # Path of the flickr REST api
+  REST_PATH='/services/rest/?'.freeze
+
+  # Path of the flickr auth page
+  AUTH_PATH='/services/auth/?'.freeze
+
+  UPLOAD_PATH='/services/upload/'.freeze
 
   @api_key = '7b124df89b638e545e3165293883ef62'
 
   # This is a wrapper around the xml response which provides an easy interface.
-  class Xml 
+  class Xml
     # Returns the text content of the response
     attr_reader :to_s
 
@@ -163,21 +167,53 @@ module FlickRaw
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={})
-      url = build_call_url(req, args)
+      url = 'http://' + FLICKR_HOST + REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{v}" }.join('&')
+
       res = Response.new open(url, 'User-Agent' => "Flickraw/#{VERSION}")
       raise FailedResponse.new( res.msg, res.code) if res.stat == 'fail'
-      lookup_token( req, res)
+      lookup_token(req, res)
+      res
+    end
+
+    # Use this to upload the photo in _file_.
+    #
+    #  flickr.upload_photo '/path/to/the/photo', :title => 'Title', :description => 'This is the description'
+    #
+    # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
+    def upload_photo(file, args={})
+      photo = File.read file
+      boundary = MD5.md5(photo).to_s
+
+      header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}
+      query = build_args(args).collect { |a, v|
+        "--#{boundary}\r\n" <<
+        "Content-Disposition: form-data; name=\"#{a}\"\r\n\r\n" <<
+        "#{v}\r\n"
+      }.join('')
+      query << "--#{boundary}\r\n" <<
+               "Content-Disposition: form-data; name=\"photo\"; filename=\"#{file}\"\r\n" <<
+               "Content-Transfer-Encoding: binary\r\n" <<
+               "Content-Type: image/jpeg\r\n\r\n" <<
+               photo <<
+               "\r\n" <<
+               "--#{boundary}--"
+
+      http_response = Net::HTTP.start(FLICKR_HOST) { |http|
+        http.post(UPLOAD_PATH, query, header)
+      }
+      res = Response.new http_response.body
+      raise FailedResponse.new(res.msg, res.code) if res.stat == 'fail'
       res
     end
 
     private
-    def build_call_url(req, args={})
-      full_args = {:api_key => FlickRaw.api_key, :method => req}
+    def build_args(args={}, req = nil)
+      full_args = {:api_key => FlickRaw.api_key}
+      full_args[:method] = req if req
       full_args[:auth_token] = @token if @token
       args.each {|k, v| full_args[k.to_sym] = v }
-      full_args[:api_sig] = FlickRaw.api_sig(full_args)  if FlickRaw.shared_secret
-
-      url = REST_URL + full_args.collect { |a, v| "#{a}=#{v}" }.join('&')
+      full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
+      full_args
     end
 
     def lookup_token(req, res)
@@ -200,7 +236,7 @@ module FlickRaw
 
       full_args[:api_sig] = api_sig(full_args) if FlickRaw.shared_secret
 
-      url = AUTH_URL + full_args.collect { |a, v| "#{a}=#{v}" }.join('&')
+      'http://' + FLICKR_HOST + AUTH_PATH + full_args.collect { |a, v| "#{a}=#{v}" }.join('&')
     end
 
     # Returns the signature of hsh. This is meant to be passed in the _api_sig_ parameter.
