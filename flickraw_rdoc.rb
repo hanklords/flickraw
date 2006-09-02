@@ -1,6 +1,5 @@
 require "rdoc/parsers/parserfactory"
 require "rdoc/parsers/parse_rb"
-require "cgi"
 
 FLICKR_API_URL='http://www.flickr.com/services/api'
 
@@ -71,7 +70,7 @@ END
     end
 
     def flickr_method_comment(info)
-      description = CGI.unescapeHTML(info.method.description.to_s)
+      description = unescapeHTML(info.method.description.to_s)
 #       description.gsub!( /<\/?(\w+)>/ ) {|b|
 #         return b if ['em', 'b', 'tt'].include? $1
 #         return ''
@@ -130,6 +129,19 @@ END
         end
       end
       str
+    end
+
+    def unescapeHTML(string)
+      string.gsub(/&(.*?);/n) do
+        match = $1.dup
+        case match
+        when /\Aamp\z/ni           then '&'
+        when /\Aquot\z/ni          then '"'
+        when /\Agt\z/ni            then '>'
+        when /\Alt\z/ni            then '<'
+        else                            "&#{match};"
+        end
+      end
     end
   end
 end
