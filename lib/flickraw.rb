@@ -21,7 +21,7 @@
 
 
 require 'rexml/document'
-require 'open-uri'
+require 'net/http'
 require 'md5'
 
 module FlickRaw
@@ -168,10 +168,13 @@ module FlickRaw
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={})
-      url = 'http://' + FLICKR_HOST + REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{v}" }.join('&')
+      path = REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{v}" }.join('&')
 
-      res = Response.new open(url, 'User-Agent' => "Flickraw/#{VERSION}")
-      raise FailedResponse.new( res.msg, res.code) if res.stat == 'fail'
+      http_response = Net::HTTP.start(FLICKR_HOST) { |http|
+        http.get(path, 'User-Agent' => "Flickraw/#{VERSION}")
+      }
+      res = Response.new http_response.body
+      raise FailedResponse.new(res.msg, res.code) if res.stat == 'fail'
       lookup_token(req, res)
       res
     end
