@@ -5,7 +5,7 @@ require 'rake/gempackagetask'
 require 'lib/flickraw'
 require 'flickraw_rdoc'
 
-PKG_FILES = FileList["lib/flickraw.rb", "flickraw_rdoc.rb", "rakefile", "examples/*.rb"].to_a
+PKG_FILES = FileList["lib/flickraw.rb", "flickraw_rdoc.rb", "copying.txt", "README", "TODO", "rakefile", "examples/*.rb"].to_a
 
 spec = Gem::Specification.new do |s|
   s.summary = "Flickr library with a syntax close to the syntax described on http://www.flickr.com/services/api"
@@ -28,3 +28,4 @@ end
 Rake::GemPackageTask.new spec do |p|
   p.need_tar_gz = true
 end
+

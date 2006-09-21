@@ -25,7 +25,7 @@ require 'net/http'
 require 'md5'
 
 module FlickRaw
-  VERSION='0.3.1'
+  VERSION='0.3.2'
 
   FLICKR_HOST='api.flickr.com'.freeze
 
