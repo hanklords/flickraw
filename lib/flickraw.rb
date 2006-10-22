@@ -25,7 +25,7 @@ require 'net/http'
 require 'md5'
 
 module FlickRaw
-  VERSION='0.3.2'
+  VERSION='0.3.2beta'
 
   FLICKR_HOST='api.flickr.com'.freeze
 
@@ -42,6 +42,7 @@ module FlickRaw
 
   # This is a wrapper around the xml response which provides an easy interface.
   class Xml
+    include Enumerable
     # Returns the text content of the response
     attr_reader :to_s
 
@@ -51,33 +52,32 @@ module FlickRaw
     def initialize(xml) # :nodoc:
       @to_s   = xml.texts.join(' ')
       @to_xml = xml.to_s
-      @list = nil
 
       xml.attributes.each {|a, v| attribute a, v }
 
       if xml.name =~ /s\z/
         elements = REXML::XPath.match( xml, xml.name.sub(/s\z/, ''))
-        unless elements.empty?
-          @list = elements.collect { |e| Xml.new e }
-        end
+        @list = elements.collect { |e| Xml.new e }
       else
-        xml.elements.each {|e| attribute e.name, Xml.new(e) }
+        @list = [self]
+        xml.elements.each {|e|
+          if respond_to? e.name
+            send(e.name) << Xml.new(e)
+          else
+            attribute e.name, Xml.new(e)
+          end
+        }
       end
     end
 
-    def respond_to?(m) # :nodoc:
-      super || @list.respond_to?(m)
-    end
+    def [](index); @list[index]; end
+    def each; @list.each { |el| yield el }; end
+    def length; @list.length; end
+
+    protected
+    def << el; @list << el; end
 
     private
-    def method_missing(sym, *args, &block)
-      if @list.respond_to?( sym)
-        @list.send sym, *args, &block
-      else
-        super
-      end
-    end
-
     def attribute(sym, value)
       meta = class << self; self; end
       meta.class_eval { define_method(sym) { value } }
@@ -126,7 +126,7 @@ module FlickRaw
           klass = Class.new Request
           const_set(class_name, klass)
           attr_reader name
-	  flickr_objects << name
+          flickr_objects << name
         end
 
         klass.build_request method_nesting.join('.')
