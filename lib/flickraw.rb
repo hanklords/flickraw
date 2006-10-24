@@ -25,7 +25,7 @@ require 'net/http'
 require 'md5'
 
 module FlickRaw
-  VERSION='0.3.2beta'
+  VERSION='0.3.2'
 
   FLICKR_HOST='api.flickr.com'.freeze
 
@@ -61,7 +61,7 @@ module FlickRaw
       else
         @list = [self]
         xml.elements.each {|e|
-          if respond_to? e.name
+          if instance_variable_get "@#{e.name}"
             send(e.name) << Xml.new(e)
           else
             attribute e.name, Xml.new(e)
@@ -79,8 +79,9 @@ module FlickRaw
 
     private
     def attribute(sym, value)
+      instance_variable_set "@#{sym}", value
       meta = class << self; self; end
-      meta.class_eval { define_method(sym) { value } }
+      meta.class_eval { attr_reader sym.to_s }
     end
   end
 

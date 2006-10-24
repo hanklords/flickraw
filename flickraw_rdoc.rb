@@ -1,5 +1,6 @@
 require "rdoc/parsers/parserfactory"
 require "rdoc/parsers/parse_rb"
+require "cgi"
 
 FLICKR_API_URL='http://www.flickr.com/services/api'
 
