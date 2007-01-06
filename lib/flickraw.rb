@@ -20,12 +20,12 @@
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-require 'rexml/document'
 require 'net/http'
 require 'md5'
+require 'yaml'
 
 module FlickRaw
-  VERSION='0.3.2'
+  VERSION='0.4'
 
   FLICKR_HOST='api.flickr.com'.freeze
 
@@ -40,67 +40,45 @@ module FlickRaw
 
   @api_key = '7b124df89b638e545e3165293883ef62'
 
-  # This is a wrapper around the xml response which provides an easy interface.
-  class Xml
-    include Enumerable
-    # Returns the text content of the response
-    attr_reader :to_s
-
-    # Returns the raw xml of the response
-    attr_reader :to_xml
-
-    def initialize(xml) # :nodoc:
-      @to_s   = xml.texts.join(' ')
-      @to_xml = xml.to_s
-
-      xml.attributes.each {|a, v| attribute a, v }
-
-      if xml.name =~ /s\z/
-        elements = REXML::XPath.match( xml, xml.name.sub(/s\z/, ''))
-        @list = elements.collect { |e| Xml.new e }
-      else
-        @list = [self]
-        xml.elements.each {|e|
-          if instance_variable_get "@#{e.name}"
-            send(e.name) << Xml.new(e)
-          else
-            attribute e.name, Xml.new(e)
-          end
-        }
-      end
-    end
-
-    def [](index); @list[index]; end
-    def each; @list.each { |el| yield el }; end
-    def length; @list.length; end
-
-    protected
-    def << el; @list << el; end
-
-    private
-    def attribute(sym, value)
-      instance_variable_set "@#{sym}", value
+  module SimpleOStruct # :nodoc:
+    def __attr_define(k,v)
+      instance_variable_set "@#{k}", v
       meta = class << self; self; end
-      meta.class_eval { attr_reader sym.to_s }
+      meta.class_eval { attr_reader k.to_s }
     end
   end
 
-  # This is what you get in response to an API call.
-  class Response < Xml
-    # This is called internally. It builds the response object according to xml response from the server.
-    def initialize(raw_xml)
-      doc = REXML::Document.new raw_xml
-      super doc.root
-      super doc.root.elements[1] if doc.root.elements.size == 1
+  class Response # :nodoc:
+    include SimpleOStruct
+    def initialize(h); h.each {|k, v| __attr_define k, Response.structify(v, k) } end
+    def self.structify(obj, name = '')
+      if obj.is_a? Hash
+        if name =~ /s$/ and obj[$`].is_a? Array
+          list = structify obj[$`]
+          list.extend SimpleOStruct
+          list.instance_eval { obj.each {|kv, vv| __attr_define kv, vv } }
+          list
+        elsif content = obj['_content']
+          content.extend SimpleOStruct
+          content.instance_eval { obj.each {|kv, vv| __attr_define kv, vv } }
+          content
+        else
+          blank = Response.new(obj)
+        end
+      elsif obj.is_a? Array
+        obj.collect {|e| structify e}
+      else
+        obj
+      end
     end
   end
 
   class FailedResponse < StandardError
     attr_reader :code
     alias :msg :message
-    def initialize(msg, code)
+    def initialize(msg, code, req)
       @code = code
-      super( msg)
+      super("'#{req}' - #{msg}")
     end
   end
 
@@ -142,20 +120,13 @@ module FlickRaw
     end
 
     # List of the flickr subobjects of this object
-    def self.flickr_objects
-      @flickr_objects ||= []
-    end
+    def self.flickr_objects; @flickr_objects ||= [] end
 
     # List of the flickr methods of this object
-    def self.flickr_methods
-      @flickr_methods ||= []
-    end
+    def self.flickr_methods; @flickr_methods ||= [] end
 
     # Returns the prefix of the request corresponding to this class.
-    def self.request_name
-      class_req = name.downcase.gsub( /::/, '.')
-      class_req.sub( /[^\.]+\./, '')              # Removes RawFlickr at the beginning
-    end
+    def self.request_name; name.downcase.gsub(/::/, '.').sub(/[^\.]+\./, '') end
   end
 
   # Root class of the flickr api hierarchy.
@@ -170,14 +141,8 @@ module FlickRaw
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={})
       path = REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{v}" }.join('&')
-
-      http_response = Net::HTTP.start(FLICKR_HOST) { |http|
-        http.get(path, 'User-Agent' => "Flickraw/#{VERSION}")
-      }
-      res = Response.new http_response.body
-      raise FailedResponse.new(res.msg, res.code) if res.stat == 'fail'
-      lookup_token(req, res)
-      res
+      http_response = Net::HTTP.start(FLICKR_HOST) { |http| http.get(path, 'User-Agent' => "Flickraw/#{VERSION}") }
+      parse_response(http_response, req)
     end
 
     # Use this to upload the photo in _file_.
@@ -190,31 +155,44 @@ module FlickRaw
       boundary = MD5.md5(photo).to_s
 
       header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}
-      query = build_args(args).collect { |a, v|
-        "--#{boundary}\r\n" <<
-        "Content-Disposition: form-data; name=\"#{a}\"\r\n\r\n" <<
-        "#{v}\r\n"
-      }.join('')
-      query << "--#{boundary}\r\n" <<
-               "Content-Disposition: form-data; name=\"photo\"; filename=\"#{file}\"\r\n" <<
-               "Content-Transfer-Encoding: binary\r\n" <<
-               "Content-Type: image/jpeg\r\n\r\n" <<
-               photo <<
-               "\r\n" <<
-               "--#{boundary}--"
-
-      http_response = Net::HTTP.start(FLICKR_HOST) { |http|
-        http.post(UPLOAD_PATH, query, header)
+      query = ''
+      build_args(args).each { |a, v|
+        query <<
+          "--#{boundary}\r\n" <<
+          "Content-Disposition: form-data; name=\"#{a}\"\r\n\r\n" <<
+          "#{v}\r\n"
       }
-      res = Response.new http_response.body
-      raise FailedResponse.new(res.msg, res.code) if res.stat == 'fail'
-      res
+      query <<
+        "--#{boundary}\r\n" <<
+        "Content-Disposition: form-data; name=\"photo\"; filename=\"#{file}\"\r\n" <<
+        "Content-Transfer-Encoding: binary\r\n" <<
+        "Content-Type: image/jpeg\r\n\r\n" <<
+        photo <<
+        "\r\n" <<
+        "--#{boundary}--"
+
+      http_response = Net::HTTP.start(FLICKR_HOST) { |http| http.post(UPLOAD_PATH, query, header) }
+      parse_response(http_response)
     end
 
     private
+    def parse_response(response, req = nil)
+      yaml = YAML.load(response.body.gsub(/:([^\s])/, ': \1'))
+      raise FailedResponse.new(yaml['message'], yaml['code'], req) if yaml.delete('stat') == 'fail'
+      name, yaml = yaml.to_a.first if yaml.size == 1
+
+      res = Response.structify yaml, name
+      lookup_token(req, res)
+      res
+    end
+
     def build_args(args={}, req = nil)
       full_args = {:api_key => FlickRaw.api_key}
-      full_args[:method] = req if req
+      if req
+        full_args[:method] = req
+        full_args[:format] = 'json'
+        full_args[:nojsoncallback] = 1
+      end
       full_args[:auth_token] = @token if @token
       args.each {|k, v| full_args[k.to_sym] = v }
       full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
@@ -223,7 +201,7 @@ module FlickRaw
 
     def lookup_token(req, res)
       token_reqs = ['flickr.auth.getToken', 'flickr.auth.getFullToken', 'flickr.auth.checkToken']
-      @token = res.token if token_reqs.include?(req) and res.respond_to?( :token)
+      @token = res.token if token_reqs.include?(req) and res.respond_to?(:token)
     end
   end
 
@@ -238,7 +216,6 @@ module FlickRaw
     def auth_url(args={})
       full_args = {:api_key => FlickRaw.api_key, :perms => 'read'}
       args.each {|k, v| full_args[k.to_sym] = v }
-
       full_args[:api_sig] = api_sig(full_args) if FlickRaw.shared_secret
 
       'http://' + FLICKR_HOST + AUTH_PATH + full_args.collect { |a, v| "#{a}=#{v}" }.join('&')
@@ -251,7 +228,7 @@ module FlickRaw
   end
 
   methods = Flickr.new.call 'flickr.reflection.getMethods'
-  methods.each { |method| Flickr.build_request method.to_s }
+  methods.each { |method| Flickr.build_request method }
 end
 
 class Object
@@ -260,7 +237,5 @@ class Object
   #
   #  recent_photos = flickr.photos.getRecent
   #  puts recent_photos[0].title
-  def flickr
-    @flickr ||= FlickRaw::Flickr.new
-  end
+  def flickr; @flickr ||= FlickRaw::Flickr.new end
 end

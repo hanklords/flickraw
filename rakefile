@@ -1,6 +1,7 @@
 require 'rake/rdoctask'
 require 'rake/packagetask'
 require 'rake/gempackagetask'
+require 'rake/testtask'
 
 require 'lib/flickraw'
 require 'flickraw_rdoc'
@@ -29,3 +30,4 @@ Rake::GemPackageTask.new spec do |p|
   p.need_tar_gz = true
 end
 
+Rake::TestTask.new

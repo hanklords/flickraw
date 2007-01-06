@@ -1,6 +1,5 @@
 require "rdoc/parsers/parserfactory"
 require "rdoc/parsers/parse_rb"
-require "cgi"
 
 FLICKR_API_URL='http://www.flickr.com/services/api'
 
@@ -56,14 +55,12 @@ module RDoc
         m.singleton = false
 
         m.start_collecting_tokens
-        m.add_token FakedToken.new( <<END
-# Generated automatically from the flickr api
+        m.add_token FakedToken.new( %{
+# Generated automatically from flickr api
   def #{name}(*args)
-    Request.call '#{flickr_method}', *args
+    @flickr.call '#{flickr_method}', *args
   end
-END
-)
-
+} )
         doc.add_method m
         progress(".")
         @stats.num_methods += 1
@@ -86,7 +83,7 @@ END
             arguments << "[#{arg.name} "
             arguments << "<em>(required)</em> " if arg.optional == '0'
             arguments << "] "
-            arguments << "#{CGI.unescapeHTML(arg.to_s)}\n"
+            arguments << "#{unescapeHTML(arg.to_s)}\n"
           }
         end
       end
@@ -95,13 +92,13 @@ END
         errors = "<b>Error codes</b>\n"
         info.errors.each {|e|
           errors << "* #{e.code}: <em>#{e.message}</em>\n\n"
-          errors << "  #{e.to_s}\n"
+          errors << "  #{unescapeHTML e.to_s}\n"
         }
       end
 
       if info.method.respond_to? :response
         response = "<b>Returns</b>\n"
-        raw = CGI.unescapeHTML(info.method.response.to_s)
+        raw = unescapeHTML(info.method.response.to_s)
         response << raw.collect { |line| line.insert(0, ' ') }.join
       else
         response = ''
@@ -133,14 +130,16 @@ END
     end
 
     def unescapeHTML(string)
+      string.gsub!('\/', '/')
       string.gsub(/&(.*?);/n) do
         match = $1.dup
         case match
-        when /\Aamp\z/ni           then '&'
-        when /\Aquot\z/ni          then '"'
-        when /\Agt\z/ni            then '>'
-        when /\Alt\z/ni            then '<'
-        else                            "&#{match};"
+        when /\Aamp\z/ni   then '&'
+        when /\Aquot\z/ni  then '"'
+        when /\Agt\z/ni    then '>'
+        when /\Alt\z/ni    then '<'
+        when /\Anbsp\z/ni  then ' '
+        else                    "&#{match};"
         end
       end
     end
