@@ -172,7 +172,13 @@ module FlickRaw
         "--#{boundary}--"
 
       http_response = Net::HTTP.start(FLICKR_HOST) { |http| http.post(UPLOAD_PATH, query, header) }
-      parse_response(http_response)
+      xml = http_response.body
+      if xml[/stat="(\w+)"/, 1] == 'fail'
+        msg = xml[/msg="([^"]+)"/, 1]
+        code = xml[/code="([^"]+)"/, 1]
+        raise FailedResponse.new(msg, code, 'flickr.upload')
+      end
+      Response.structify( {:stat => 'ok', :photoid => xml[/<photoid>(\w+)<\/photoid>/, 1], :ticketid => xml[/<ticketid>(\w+)<\/ticketid>/, 1]})
     end
 
     private
@@ -187,12 +193,8 @@ module FlickRaw
     end
 
     def build_args(args={}, req = nil)
-      full_args = {:api_key => FlickRaw.api_key}
-      if req
-        full_args[:method] = req
-        full_args[:format] = 'json'
-        full_args[:nojsoncallback] = 1
-      end
+      full_args = {:api_key => FlickRaw.api_key, :format => 'json', :nojsoncallback => 1}
+      full_args[:method] = req if req
       full_args[:auth_token] = @token if @token
       args.each {|k, v| full_args[k.to_sym] = v }
       full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
