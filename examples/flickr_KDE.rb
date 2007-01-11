@@ -8,8 +8,8 @@ require 'open-uri'
 DESKTOP=1
 
 list = flickr.interestingness.getList
-photo = list[rand( 100)]
-sizes = flickr.photos.getSizes( :photo_id => photo.id)
+photo = list[rand(100)]
+sizes = flickr.photos.getSizes(:photo_id => photo.id)
 original = sizes.find {|s| s.label == 'Original' }
 
 url = original.source
