@@ -233,11 +233,9 @@ module FlickRaw
   methods.each { |method| Flickr.build_request method }
 end
 
-class Object
-  # Use this to access the flickr API easily. You can type directly the flickr requests as they are described on the flickr website.
-  #  require 'flickraw'
-  #
-  #  recent_photos = flickr.photos.getRecent
-  #  puts recent_photos[0].title
-  def flickr; @flickr ||= FlickRaw::Flickr.new end
-end
+# Use this to access the flickr API easily. You can type directly the flickr requests as they are described on the flickr website.
+#  require 'flickraw'
+#
+#  recent_photos = flickr.photos.getRecent
+#  puts recent_photos[0].title
+def flickr; @flickr ||= FlickRaw::Flickr.new end
