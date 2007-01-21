@@ -25,7 +25,7 @@ require 'md5'
 require 'yaml'
 
 module FlickRaw
-  VERSION='0.4'
+  VERSION='0.4.1'
 
   FLICKR_HOST='api.flickr.com'.freeze
 
@@ -63,7 +63,7 @@ module FlickRaw
           content.instance_eval { obj.each {|kv, vv| __attr_define kv, vv } }
           content
         else
-          blank = Response.new(obj)
+          Response.new obj
         end
       elsif obj.is_a? Array
         obj.collect {|e| structify e}
@@ -151,7 +151,7 @@ module FlickRaw
     #
     # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
     def upload_photo(file, args={})
-      photo = File.read file
+      photo = File.open(file,'rb') { |f| f.read }
       boundary = MD5.md5(photo).to_s
 
       header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}

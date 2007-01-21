@@ -14,11 +14,8 @@ spec = Gem::Specification.new do |s|
   s.author = "Hank Lords"
   s.email =  "hanklords@gmail.com"
   s.version = FlickRaw::VERSION
-  s.has_rdoc = true
-  s.require_path = 'lib'
-  s.autorequire = 'rake'
   s.files = PKG_FILES
-  s.description = "Flickr library with a syntax close to the syntax described on http://www.flickr.com/services/api"
+  s.test_files = FileList["test/*.rb"].to_a
 end
 
 Rake::RDocTask.new do |rd|
