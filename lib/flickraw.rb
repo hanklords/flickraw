@@ -50,7 +50,10 @@ module FlickRaw
 
   class Response # :nodoc:
     include SimpleOStruct
-    def initialize(h); h.each {|k, v| __attr_define k, Response.structify(v, k) } end
+    def initialize(h)
+      h.each {|k, v| __attr_define k, Response.structify(v, k) }
+    end
+
     def self.structify(obj, name = '')
       if obj.is_a? Hash
         if name =~ /s$/ and obj[$`].is_a? Array
@@ -151,7 +154,7 @@ module FlickRaw
     #
     # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
     def upload_photo(file, args={})
-      photo = File.open(file,'rb') { |f| f.read }
+      photo = File.open(file, 'rb') { |f| f.read }
       boundary = MD5.md5(photo).to_s
 
       header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}
