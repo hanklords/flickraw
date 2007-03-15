@@ -23,9 +23,10 @@
 require 'net/http'
 require 'md5'
 require 'yaml'
+require 'cgi'
 
 module FlickRaw
-  VERSION='0.4.1'
+  VERSION='0.4.2'
 
   FLICKR_HOST='api.flickr.com'.freeze
 
@@ -143,7 +144,7 @@ module FlickRaw
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={})
-      path = REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{v}" }.join('&')
+      path = REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{CGI.escape(v.to_s)}" }.join('&')
       http_response = Net::HTTP.start(FLICKR_HOST) { |http| http.get(path, 'User-Agent' => "Flickraw/#{VERSION}") }
       parse_response(http_response, req)
     end
