@@ -144,7 +144,7 @@ module FlickRaw
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={})
-      path = REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{CGI.escape(v.to_s)}" }.join('&')
+      path = REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{v}" }.join('&')
       http_response = Net::HTTP.start(FLICKR_HOST) { |http| http.get(path, 'User-Agent' => "Flickraw/#{VERSION}") }
       parse_response(http_response, req)
     end
@@ -200,7 +200,7 @@ module FlickRaw
       full_args = {:api_key => FlickRaw.api_key, :format => 'json', :nojsoncallback => 1}
       full_args[:method] = req if req
       full_args[:auth_token] = @token if @token
-      args.each {|k, v| full_args[k.to_sym] = v }
+      args.each {|k, v| full_args[k.to_sym] = CGI.escape(v.to_s) }
       full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
       full_args
     end
