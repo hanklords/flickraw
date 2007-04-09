@@ -43,4 +43,12 @@ class Basic < Test::Unit::TestCase
     assert_respond_to info, :comments
     assert_respond_to info, :tags
   end
+
+  def test_url_escape
+    result_set = nil
+    assert_nothing_raised {
+      result_set = flickr.photos.search :text => "family vacation"
+    }
+    assert_operator result_set.total.to_i, :>=, 0
+  end
 end
