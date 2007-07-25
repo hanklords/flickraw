@@ -62,7 +62,8 @@ module FlickRaw
           list.extend SimpleOStruct
           list.instance_eval { obj.each {|kv, vv| __attr_define kv, vv } }
           list
-        elsif content = obj['_content']
+        elsif obj['_content']
+          content = obj['_content'].to_s
           content.extend SimpleOStruct
           content.instance_eval { obj.each {|kv, vv| __attr_define kv, vv } }
           content
