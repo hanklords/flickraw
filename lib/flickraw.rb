@@ -201,8 +201,9 @@ module FlickRaw
       full_args = {:api_key => FlickRaw.api_key, :format => 'json', :nojsoncallback => 1}
       full_args[:method] = req if req
       full_args[:auth_token] = @token if @token
-      args.each {|k, v| full_args[k.to_sym] = CGI.escape(v.to_s) }
+      args.each {|k, v| full_args[k.to_sym] = v.to_s }
       full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
+      args.each {|k, v| full_args[k.to_sym] = CGI.escape(v.to_s) }
       full_args
     end
 
