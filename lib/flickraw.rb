@@ -26,7 +26,7 @@ require 'yaml'
 require 'cgi'
 
 module FlickRaw
-  VERSION='0.4.3'
+  VERSION='0.4.4'
 
   FLICKR_HOST='api.flickr.com'.freeze
 
