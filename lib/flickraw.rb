@@ -203,7 +203,7 @@ module FlickRaw
       full_args[:auth_token] = @token if @token
       args.each {|k, v| full_args[k.to_sym] = v.to_s }
       full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
-      args.each {|k, v| full_args[k.to_sym] = CGI.escape(v.to_s) }
+      args.each {|k, v| full_args[k.to_sym] = CGI.escape(v.to_s) } if req
       full_args
     end
 
