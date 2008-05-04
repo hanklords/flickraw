@@ -62,11 +62,8 @@ module FlickRaw
           list.extend SimpleOStruct
           list.instance_eval { obj.each {|kv, vv| __attr_define kv, vv } }
           list
-        elsif obj['_content']
-          content = obj['_content'].to_s
-          content.extend SimpleOStruct
-          content.instance_eval { obj.each {|kv, vv| __attr_define kv, vv } }
-          content
+        elsif obj.keys == ['_content']
+          obj['_content'].to_s
         else
           Response.new obj
         end
@@ -76,6 +73,8 @@ module FlickRaw
         obj
       end
     end
+
+    def to_s; @_content || super end
   end
 
   class FailedResponse < StandardError
