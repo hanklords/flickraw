@@ -58,7 +58,7 @@ module FlickRaw
     def self.structify(obj, name = '')
       if obj.is_a? Hash
         if name =~ /s$/ and obj[$`].is_a? Array
-          list = structify obj[$`]
+          list = structify obj.delete($`)
           list.extend SimpleOStruct
           list.instance_eval { obj.each {|kv, vv| __attr_define kv, vv } }
           list
