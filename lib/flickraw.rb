@@ -22,7 +22,7 @@
 
 require 'net/http'
 require 'md5'
-require 'yaml'
+require 'json'
 require 'cgi'
 
 module FlickRaw
@@ -187,11 +187,11 @@ module FlickRaw
 
     private
     def parse_response(response, req = nil)
-      yaml = YAML.load(response.body.gsub(/:([^\s])/, ': \1'))
-      raise FailedResponse.new(yaml['message'], yaml['code'], req) if yaml.delete('stat') == 'fail'
-      name, yaml = yaml.to_a.first if yaml.size == 1
+      json = JSON.load(response.body.gsub(/:([^\s])/, ': \1'))
+      raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
+      name, json = json.to_a.first if json.size == 1
 
-      res = Response.structify yaml, name
+      res = Response.structify json, name
       lookup_token(req, res)
       res
     end
