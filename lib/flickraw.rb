@@ -187,7 +187,7 @@ module FlickRaw
 
     private
     def parse_response(response, req = nil)
-      json = JSON.load(response.body.gsub(/:([^\s])/, ': \1'))
+      json = JSON.load(response.body)
       raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
       name, json = json.to_a.first if json.size == 1
 
