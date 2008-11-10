@@ -182,7 +182,7 @@ module FlickRaw
         code = xml[/code="([^"]+)"/, 1]
         raise FailedResponse.new(msg, code, 'flickr.upload')
       end
-      Response.structify( {:stat => 'ok', :photoid => xml[/<photoid>(\w+)<\/photoid>/, 1], :ticketid => xml[/<ticketid>(\w+)<\/ticketid>/, 1]})
+      Response.structify( {:stat => 'ok', :photoid => xml[/<photoid>(\w+)<\/photoid>/, 1], :ticketid => xml[/<ticketid>([^<]+)<\/ticketid>/, 1]})
     end
 
     private
