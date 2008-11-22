@@ -1,6 +1,0 @@
-== General
-* Add helper classes for URL support
-
-== Documentation
-* Document the object returned by the flickr method calls ( FlickRaw::Xml )
-* Add more examples.
