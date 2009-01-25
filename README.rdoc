@@ -5,9 +5,9 @@ It maps exactly the methods described in {the official api documentation}[http:/
 It also tries to present the data returned in a simple and intuitive way.
 The methods are fetched from flickr when loading the library by using introspection capabilities. So it is always up-to-date with regards to new methods added by flickr.
 
-You can read the class documentation here : FlickRaw.
-
 The rubyforge project : http://rubyforge.org/projects/flickraw
+
+The github repository: http://github.com/hanklords/flickraw/tree/master
 
 = Installation
 Type this in a console (you might need to be superuser)
