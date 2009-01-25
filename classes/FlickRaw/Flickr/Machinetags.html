@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: FlickRaw::Flickr::Machinetags</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">FlickRaw::Flickr::Machinetags</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/flickraw_rb.html">
+                lib/flickraw.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="../Request.html">
+                FlickRaw::Request
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000023">getNamespaces</a>&nbsp;&nbsp;
+      <a href="#M000024">getPairs</a>&nbsp;&nbsp;
+      <a href="#M000025">getPredicates</a>&nbsp;&nbsp;
+      <a href="#M000026">getValues</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+          <a href="#M000023" class="method-signature">
+          <span class="method-name">getNamespaces</span><span class="method-args">(:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.machinetags.getNamespaces.html">flickr.machinetags.getNamespaces</a>
+request.
+</p>
+<p>
+Return a list of unique namespaces, optionally limited by a given
+predicate, in alphabetical order.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>predicate </dt><dd>Limit the list of namespaces returned to those that have the following
+predicate.
+
+</dd>
+<dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+
+</dd>
+<dt>page </dt><dd>The page of results to return. If this argument is omitted, it defaults to
+1.
+
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>1: <em>Not a valid predicate.</em>
+
+<p>
+Missing or invalid predicate argument.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &quot;xxx&quot; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &quot;xxx&quot; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;namespaces page=&quot;1&quot; total=&quot;5&quot; perpage=&quot;500&quot; pages=&quot;1&quot;&gt;
+   &lt;namespace usage=&quot;6538&quot; predicates=&quot;13&quot;&gt;aero&lt;/namespace&gt;
+   &lt;namespace usage=&quot;9072&quot; predicates=&quot;24&quot;&gt;flickr&lt;/namespace&gt;
+   &lt;namespace usage=&quot;670270&quot; predicates=&quot;35&quot;&gt;geo&lt;/namespace&gt;
+   &lt;namespace usage=&quot;23903&quot; predicates=&quot;36&quot;&gt;taxonomy&lt;/namespace&gt;
+   &lt;namespace usage=&quot;50449&quot; predicates=&quot;4&quot;&gt;upcoming&lt;/namespace&gt;
+ &lt;/namespace&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000023-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getNamespaces(*args)
+    @flickr.call 'flickr.machinetags.getNamespaces', *args
+  end
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
+
+        <div class="method-heading">
+          <a href="#M000024" class="method-signature">
+          <span class="method-name">getPairs</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.machinetags.getPairs.html">flickr.machinetags.getPairs</a>
+request.
+</p>
+<p>
+Return a list of unique namespace and predicate pairs, optionally limited
+by predicate or namespace, in alphabetical order.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>namespace </dt><dd>Limit the list of pairs returned to those that have the following
+namespace.
+
+</dd>
+<dt>predicate </dt><dd>Limit the list of pairs returned to those that have the following
+predicate.
+
+</dd>
+<dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+
+</dd>
+<dt>page </dt><dd>The page of results to return. If this argument is omitted, it defaults to
+1.
+
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>1: <em>Not a valid namespace</em>
+
+<p>
+Missing or invalid namespace argument.
+</p>
+</li>
+<li>2: <em>Not a valid predicate</em>
+
+<p>
+Missing or invalid predicate argument.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &quot;xxx&quot; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &quot;xxx&quot; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;pairs page=&quot;1&quot; total=&quot;1228&quot; perpage=&quot;500&quot; pages=&quot;3&quot;&gt;
+    &lt;pair namespace=&quot;aero&quot; predicate=&quot;airline&quot; usage=&quot;1093&quot;&gt;aero:airline&lt;/pairs&gt;
+    &lt;pair namespace=&quot;aero&quot; predicate=&quot;icao&quot; usage=&quot;4&quot;&gt;aero:icao&lt;/pair&gt;
+    &lt;pair namespace=&quot;aero&quot; predicate=&quot;model&quot; usage=&quot;1026&quot;&gt;aero:model&lt;/pair&gt;
+    &lt;pair namespace=&quot;aero&quot; predicate=&quot;tail&quot; usage=&quot;1048&quot;&gt;aero:tail&lt;/pair&gt;
+ &lt;/pairs&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000024-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getPairs(*args)
+    @flickr.call 'flickr.machinetags.getPairs', *args
+  end
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
+
+        <div class="method-heading">
+          <a href="#M000025" class="method-signature">
+          <span class="method-name">getPredicates</span><span class="method-args">(:namespace =&gt; 'namespace',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.machinetags.getPredicates.html">flickr.machinetags.getPredicates</a>
+request.
+</p>
+<p>
+Return a list of unique predicates, optionally limited by a given
+namespace.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>namespace </dt><dd>Limit the list of predicates returned to those that have the following
+namespace.
+
+</dd>
+<dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+
+</dd>
+<dt>page </dt><dd>The page of results to return. If this argument is omitted, it defaults to
+1.
+
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>1: <em>Not a valid namespace</em>
+
+<p>
+Missing or invalid namespace argument.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &quot;xxx&quot; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &quot;xxx&quot; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;predicates page=&quot;1&quot; pages=&quot;1&quot; total=&quot;3&quot; perpage=&quot;500&quot;&gt;
+     &lt;predicate usage=&quot;20&quot; namespaces=&quot;1&quot;&gt;elbow&lt;/predicate&gt;
+     &lt;predicate usage=&quot;52&quot; namespaces=&quot;2&quot;&gt;face&lt;/predicate&gt;
+     &lt;predicate usage=&quot;10&quot; namespaces=&quot;1&quot;&gt;hand&lt;/predicate&gt;
+ &lt;/predicates&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000025-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getPredicates(*args)
+    @flickr.call 'flickr.machinetags.getPredicates', *args
+  end
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+          <a href="#M000026" class="method-signature">
+          <span class="method-name">getValues</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.machinetags.getValues.html">flickr.machinetags.getValues</a>
+request.
+</p>
+<p>
+Return a list of unique values for a namespace and predicate.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>namespace <em>(required)</em> </dt><dd>The namespace that all values should be restricted to.
+
+</dd>
+<dt>predicate <em>(required)</em> </dt><dd>The predicate that all values should be restricted to.
+
+</dd>
+<dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+
+</dd>
+<dt>page </dt><dd>The page of results to return. If this argument is omitted, it defaults to
+1.
+
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>1: <em>Not a valid namespace</em>
+
+<p>
+Missing or invalid namespace argument.
+</p>
+</li>
+<li>2: <em>Not a valid predicate</em>
+
+<p>
+Missing or invalid predicate argument.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &quot;xxx&quot; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &quot;xxx&quot; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;values namespace=&quot;upcoming&quot; predicate=&quot;event&quot; page=&quot;1&quot; pages=&quot;1&quot; total=&quot;3&quot; perpage=&quot;500&quot;&gt;
+     &lt;value usage=&quot;3&quot;&gt;123&lt;/value&gt;
+     &lt;value usage=&quot;1&quot;&gt;456&lt;/value&gt;
+     &lt;value usage=&quot;147&quot;&gt;789&lt;/value&gt;
+ &lt;/values&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getValues(*args)
+    @flickr.call 'flickr.machinetags.getValues', *args
+  end
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

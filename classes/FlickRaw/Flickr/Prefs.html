@@ -1,0 +1,712 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: FlickRaw::Flickr::Prefs</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">FlickRaw::Flickr::Prefs</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/flickraw_rb.html">
+                lib/flickraw.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="../Request.html">
+                FlickRaw::Request
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000138">getContentType</a>&nbsp;&nbsp;
+      <a href="#M000139">getGeoPerms</a>&nbsp;&nbsp;
+      <a href="#M000140">getHidden</a>&nbsp;&nbsp;
+      <a href="#M000141">getPrivacy</a>&nbsp;&nbsp;
+      <a href="#M000142">getSafetyLevel</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000138" class="method-detail">
+        <a name="M000138"></a>
+
+        <div class="method-heading">
+          <a href="#M000138" class="method-signature">
+          <span class="method-name">getContentType</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.prefs.getContentType.html">flickr.prefs.getContentType</a>
+request.
+</p>
+<p>
+Returns the default content type preference for the user.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>96: <em>Invalid signature</em>
+
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li>97: <em>Missing signature</em>
+
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li>98: <em>Login failed / Invalid auth token</em>
+
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li>99: <em>User not logged in / Insufficient permissions</em>
+
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &quot;xxx&quot; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &quot;xxx&quot; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;rsp stat=&quot;ok&quot;&gt;
+ &lt;person nsid=&quot;12037949754@N01&quot; content_type=&quot;1&quot; /&gt;
+ &lt;/rsp&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000138-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000138-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getContentType(*args)
+    @flickr.call 'flickr.prefs.getContentType', *args
+  end
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000139" class="method-detail">
+        <a name="M000139"></a>
+
+        <div class="method-heading">
+          <a href="#M000139" class="method-signature">
+          <span class="method-name">getGeoPerms</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.prefs.getGeoPerms.html">flickr.prefs.getGeoPerms</a>
+request.
+</p>
+<p>
+Returns the default privacy level for geographic information attached to
+the user&#8216;s photos and whether or not the user has chosen to use
+geo-related EXIF information to automatically geotag their photos.
+</p>
+<p>
+Possible values, for viewing geotagged photos, are:
+</p>
+<p>
+&lt;ul&gt; &lt;li&gt;0 : <em>No default set</em>&lt;/li&gt; &lt;li&gt;1 :
+Public&lt;/li&gt; &lt;li&gt;2 : <a href="Contacts.html">Contacts</a>
+only&lt;/li&gt; &lt;li&gt;3 : Friends and Family only&lt;/li&gt;
+&lt;li&gt;4 : Friends only&lt;/li&gt; &lt;li&gt;5 : Family only&lt;/li&gt;
+&lt;li&gt;6 : Private&lt;/li&gt; &lt;/ul&gt;
+</p>
+<p>
+Users can edit this preference at &lt;a href=&quot;<a
+href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>&gt;.
+&lt;br /&gt;&lt;br /&gt; Possible values for whether or not geo-related
+EXIF information will be used to geotag a photo are:
+</p>
+<p>
+&lt;ul&gt; &lt;li&gt;0: Geo-related EXIF information will be
+ignored&lt;/li&gt; &lt;li&gt;1: Geo-related EXIF information will be used
+to try and geotag photos on upload&lt;/li&gt; &lt;/ul&gt;
+</p>
+<p>
+Users can edit this preference at &lt;a href=&quot;<a
+href="http://www.flickr.com/account/geo/exif/?from=privacy">http://www.flickr.com/account/geo/exif/?from=privacy</a">www.flickr.com/account/geo/exif/?from=privacy">http://www.flickr.com/account/geo/exif/?from=privacy</a</a>&gt;
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>96: <em>Invalid signature</em>
+
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li>97: <em>Missing signature</em>
+
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li>98: <em>Login failed / Invalid auth token</em>
+
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li>99: <em>User not logged in / Insufficient permissions</em>
+
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &quot;xxx&quot; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &quot;xxx&quot; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;rsp stat=&quot;ok&quot;&gt;
+ &lt;person nsid=&quot;12037949754@N01&quot; geoperms=&quot;1&quot; importgeoexif=&quot;0&quot; /&gt;
+ &lt;/rsp&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000139-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000139-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getGeoPerms(*args)
+    @flickr.call 'flickr.prefs.getGeoPerms', *args
+  end
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000140" class="method-detail">
+        <a name="M000140"></a>
+
+        <div class="method-heading">
+          <a href="#M000140" class="method-signature">
+          <span class="method-name">getHidden</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.prefs.getHidden.html">flickr.prefs.getHidden</a>
+request.
+</p>
+<p>
+Returns the default hidden preference for the user.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>96: <em>Invalid signature</em>
+
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li>97: <em>Missing signature</em>
+
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li>98: <em>Login failed / Invalid auth token</em>
+
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li>99: <em>User not logged in / Insufficient permissions</em>
+
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &quot;xxx&quot; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &quot;xxx&quot; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;rsp stat=&quot;ok&quot;&gt;
+ &lt;person nsid=&quot;12037949754@N01&quot; hidden=&quot;1&quot; /&gt;
+ &lt;/rsp&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000140-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000140-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getHidden(*args)
+    @flickr.call 'flickr.prefs.getHidden', *args
+  end
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000141" class="method-detail">
+        <a name="M000141"></a>
+
+        <div class="method-heading">
+          <a href="#M000141" class="method-signature">
+          <span class="method-name">getPrivacy</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.prefs.getPrivacy.html">flickr.prefs.getPrivacy</a>
+request.
+</p>
+<p>
+Returns the default privacy level preference for the user.
+</p>
+<p>
+Possible values are: &lt;ul&gt; &lt;li&gt;1 : Public&lt;/li&gt; &lt;li&gt;2
+: Friends only&lt;/li&gt; &lt;li&gt;3 : Family only&lt;/li&gt; &lt;li&gt;4
+: Friends and Family&lt;/li&gt; &lt;li&gt;5 : Private&lt;/li&gt;
+&lt;/ul&gt;
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>96: <em>Invalid signature</em>
+
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li>97: <em>Missing signature</em>
+
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li>98: <em>Login failed / Invalid auth token</em>
+
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li>99: <em>User not logged in / Insufficient permissions</em>
+
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &quot;xxx&quot; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &quot;xxx&quot; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;rsp stat=&quot;ok&quot;&gt;
+ &lt;person nsid=&quot;12037949754@N01&quot; privacy=&quot;1&quot; /&gt;
+ &lt;/rsp&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000141-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000141-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getPrivacy(*args)
+    @flickr.call 'flickr.prefs.getPrivacy', *args
+  end
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000142" class="method-detail">
+        <a name="M000142"></a>
+
+        <div class="method-heading">
+          <a href="#M000142" class="method-signature">
+          <span class="method-name">getSafetyLevel</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.prefs.getSafetyLevel.html">flickr.prefs.getSafetyLevel</a>
+request.
+</p>
+<p>
+Returns the default safety level preference for the user.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>96: <em>Invalid signature</em>
+
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li>97: <em>Missing signature</em>
+
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li>98: <em>Login failed / Invalid auth token</em>
+
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li>99: <em>User not logged in / Insufficient permissions</em>
+
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &quot;xxx&quot; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &quot;xxx&quot; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;rsp stat=&quot;ok&quot;&gt;
+ &lt;person nsid=&quot;12037949754@N01&quot; safety_level=&quot;1&quot; /&gt;
+ &lt;/rsp&gt;
+</pre>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000142-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000142-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getSafetyLevel(*args)
+    @flickr.call 'flickr.prefs.getSafetyLevel', *args
+  end
+
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
