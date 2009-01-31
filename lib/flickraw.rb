@@ -21,7 +21,7 @@
 
 
 require 'net/http'
-require 'md5'
+require 'digest/md5'
 require 'json'
 require 'cgi'
 
@@ -103,8 +103,8 @@ module FlickRaw
       if method_nesting.size > 1
         name = method_nesting.first
         class_name = name.capitalize
-        if const_defined? class_name
-          klass = const_get( class_name)
+        if const_defined?(class_name, false)
+          klass = const_get(class_name)
         else
           klass = Class.new Request
           const_set(class_name, klass)
