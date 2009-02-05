@@ -31,3 +31,9 @@ Rake::GemPackageTask.new spec do |p|
 end
 
 Rake::TestTask.new
+
+task :spec do
+  spec_clone = spec.clone
+  spec_clone.test_files = nil
+  open("flickraw.gemspec", "w") {|g| g.puts spec_clone.to_ruby }
+end
