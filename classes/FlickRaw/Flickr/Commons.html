@@ -5,10 +5,10 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Photos::Transform</title>
+  <title>Class: FlickRaw::Flickr::Commons</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
-  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
   // <![CDATA[
 
@@ -50,12 +50,12 @@
         <table class="header-table">
         <tr class="top-aligned-row">
           <td><strong>Class</strong></td>
-          <td class="class-name-in-header">FlickRaw::Flickr::Photos::Transform</td>
+          <td class="class-name-in-header">FlickRaw::Flickr::Commons</td>
         </tr>
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
-                <a href="../../../../files/lib/flickraw_rb.html">
+                <a href="../../../files/lib/flickraw_rb.html">
                 lib/flickraw.rb
                 </a>
         <br />
@@ -65,7 +65,7 @@
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
-                <a href="../../Request.html">
+                <a href="../Request.html">
                 FlickRaw::Request
                </a>
             </td>
@@ -88,7 +88,7 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000125">rotate</a>&nbsp;&nbsp;
+      <a href="#M000161">getInstitutions</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -110,91 +110,32 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000125" class="method-detail">
-        <a name="M000125"></a>
+      <div id="method-M000161" class="method-detail">
+        <a name="M000161"></a>
 
         <div class="method-heading">
-          <a href="#M000125" class="method-signature">
-          <span class="method-name">rotate</span><span class="method-args">(:photo_id =&gt; 'photo_id',:degrees =&gt; 'degrees')</span>
+          <a href="#M000161" class="method-signature">
+          <span class="method-name">getInstitutions</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.photos.transform.rotate.html">flickr.photos.transform.rotate</a>
+href="http://www.flickr.com/services/api/flickr.commons.getInstitutions.html">flickr.commons.getInstitutions</a>
 request.
 </p>
 <p>
-Rotate a photo.
+Retrieves a list of the current <a href="Commons.html">Commons</a>
+institutions.
 </p>
 <p>
 <b>Arguments</b>
 </p>
-<dl>
-<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to <a href="Transform.html#M000125">rotate</a>.
-
-</dd>
-<dt>degrees <em>(required)</em> </dt><dd>The amount of degrees by which to <a
-href="Transform.html#M000125">rotate</a> the photo (clockwise) from
-it&#8216;s current orientation. Valid values are 90, 180 and 270.
-
-</dd>
-</dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
-
-<p>
-The photo id was invalid or did not belong to the calling user.
-</p>
-</li>
-<li>2: <em>Invalid rotation</em>
-
-<p>
-The rotation degrees were an invalid value.
-</p>
-</li>
-<li>3: <em>Temporary failure</em>
-
-<p>
-There was a problem either rotating the image or storing the rotated
-versions.
-</p>
-</li>
-<li>4: <em>Rotation disabled</em>
-
-<p>
-The rotation service is currently disabled.
-</p>
-</li>
-<li>96: <em>Invalid signature</em>
-
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li>97: <em>Missing signature</em>
-
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li>98: <em>Login failed / Invalid auth token</em>
-
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li>99: <em>User not logged in / Insufficient permissions</em>
-
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
 <li>100: <em>Invalid API Key</em>
 
 <p>
@@ -236,16 +177,27 @@ The XML-RPC request document could not be parsed.
 <b>Returns</b>
 </p>
 <pre>
- &lt;photoid secret=&quot;abcdef&quot; originalsecret=&quot;abcdef&quot;&gt;1234&lt;/photoid&gt;
+ &lt;rsp stat=&quot;ok&quot;&gt;
+  &lt;institutions&gt;
+   &lt;institution nsid=&quot;123456@N01&quot; date_launch=&quot;1232000000&quot;&gt;
+    &lt;name&gt;Institution&lt;/name&gt;
+     &lt;urls&gt;
+      &lt;url type=&quot;site&quot;&gt;http://example.com/&lt;/url&gt;
+      &lt;url type=&quot;license&quot;&gt;http://example.com/commons/license&lt;/url&gt;
+      &lt;url type=&quot;flickr&quot;&gt;http://flickr.com/photos/institution&lt;/url&gt;
+     &lt;/urls&gt;
+    &lt;/institution&gt;
+   &lt;/institutions&gt;
+ &lt;/rsp&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000125-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000125-source">
+            onclick="toggleCode('M000161-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000161-source">
 <pre>
 
 # Generated automatically from flickr api
-  def rotate(*args)
-    @flickr.call 'flickr.photos.transform.rotate', *args
+  def getInstitutions(*args)
+    @flickr.call 'flickr.commons.getInstitutions', *args
   end
 
 </pre>
