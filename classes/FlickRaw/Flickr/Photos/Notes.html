@@ -88,9 +88,9 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000122">add</a>&nbsp;&nbsp;
-      <a href="#M000123">delete</a>&nbsp;&nbsp;
-      <a href="#M000124">edit</a>&nbsp;&nbsp;
+      <a href="#M000130">add</a>&nbsp;&nbsp;
+      <a href="#M000131">delete</a>&nbsp;&nbsp;
+      <a href="#M000132">edit</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -112,11 +112,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000122" class="method-detail">
-        <a name="M000122"></a>
+      <div id="method-M000130" class="method-detail">
+        <a name="M000130"></a>
 
         <div class="method-heading">
-          <a href="#M000122" class="method-signature">
+          <a href="#M000130" class="method-signature">
           <span class="method-name">add</span><span class="method-args">(:photo_id =&gt; 'photo_id',:note_x =&gt; 'note_x',:note_y =&gt; 'note_y',:note_w =&gt; 'note_w',:note_h =&gt; 'note_h',:note_text =&gt; 'note_text')</span>
           </a>
         </div>
@@ -135,7 +135,7 @@ Add a note to a photo. Coordinates and sizes are in pixels, based on the
 <b>Arguments</b>
 </p>
 <dl>
-<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to <a href="Notes.html#M000122">add</a> a note to
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to <a href="Notes.html#M000130">add</a> a note to
 
 </dd>
 <dt>note_x <em>(required)</em> </dt><dd>The left coordinate of the note
@@ -164,11 +164,11 @@ Add a note to a photo. Coordinates and sizes are in pixels, based on the
 The photo id passed was not a valid photo id
 </p>
 </li>
-<li>2: <em>User cannot <a href="Notes.html#M000122">add</a> notes</em>
+<li>2: <em>User cannot <a href="Notes.html#M000130">add</a> notes</em>
 
 <p>
 The calling user does not have permission to <a
-href="Notes.html#M000122">add</a> a note to this photo
+href="Notes.html#M000130">add</a> a note to this photo
 </p>
 </li>
 <li>3: <em>Missing required arguments</em>
@@ -246,8 +246,8 @@ The XML-RPC request document could not be parsed.
  &lt;note id=&quot;1234&quot; /&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000122-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000122-source">
+            onclick="toggleCode('M000130-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000130-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -260,11 +260,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000123" class="method-detail">
-        <a name="M000123"></a>
+      <div id="method-M000131" class="method-detail">
+        <a name="M000131"></a>
 
         <div class="method-heading">
-          <a href="#M000123" class="method-signature">
+          <a href="#M000131" class="method-signature">
           <span class="method-name">delete</span><span class="method-args">(:note_id =&gt; 'note_id')</span>
           </a>
         </div>
@@ -282,7 +282,7 @@ Delete a note from a photo.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>note_id <em>(required)</em> </dt><dd>The id of the note to <a href="Notes.html#M000123">delete</a>
+<dt>note_id <em>(required)</em> </dt><dd>The id of the note to <a href="Notes.html#M000131">delete</a>
 
 </dd>
 </dl>
@@ -296,11 +296,11 @@ Delete a note from a photo.
 The note id passed was not a valid note id
 </p>
 </li>
-<li>2: <em>User cannot <a href="Notes.html#M000123">delete</a> note</em>
+<li>2: <em>User cannot <a href="Notes.html#M000131">delete</a> note</em>
 
 <p>
 The calling user does not have permission to <a
-href="Notes.html#M000123">delete</a> the specified note
+href="Notes.html#M000131">delete</a> the specified note
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -366,8 +366,8 @@ The XML-RPC request document could not be parsed.
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000123-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000123-source">
+            onclick="toggleCode('M000131-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000131-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -380,11 +380,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000124" class="method-detail">
-        <a name="M000124"></a>
+      <div id="method-M000132" class="method-detail">
+        <a name="M000132"></a>
 
         <div class="method-heading">
-          <a href="#M000124" class="method-signature">
+          <a href="#M000132" class="method-signature">
           <span class="method-name">edit</span><span class="method-args">(:note_id =&gt; 'note_id',:note_x =&gt; 'note_x',:note_y =&gt; 'note_y',:note_w =&gt; 'note_w',:note_h =&gt; 'note_h',:note_text =&gt; 'note_text')</span>
           </a>
         </div>
@@ -403,7 +403,7 @@ Edit a note on a photo. Coordinates and sizes are in pixels, based on the
 <b>Arguments</b>
 </p>
 <dl>
-<dt>note_id <em>(required)</em> </dt><dd>The id of the note to <a href="Notes.html#M000124">edit</a>
+<dt>note_id <em>(required)</em> </dt><dd>The id of the note to <a href="Notes.html#M000132">edit</a>
 
 </dd>
 <dt>note_x <em>(required)</em> </dt><dd>The left coordinate of the note
@@ -432,11 +432,11 @@ Edit a note on a photo. Coordinates and sizes are in pixels, based on the
 The note id passed was not a valid note id
 </p>
 </li>
-<li>2: <em>User cannot <a href="Notes.html#M000124">edit</a> note</em>
+<li>2: <em>User cannot <a href="Notes.html#M000132">edit</a> note</em>
 
 <p>
 The calling user does not have permission to <a
-href="Notes.html#M000124">edit</a> the specified note
+href="Notes.html#M000132">edit</a> the specified note
 </p>
 </li>
 <li>3: <em>Missing required arguments</em>
@@ -508,8 +508,8 @@ The XML-RPC request document could not be parsed.
 </li>
 </ul>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000124-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000124-source">
+            onclick="toggleCode('M000132-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000132-source">
 <pre>
 
 # Generated automatically from flickr api

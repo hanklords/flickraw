@@ -88,10 +88,11 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000031">browse</a>&nbsp;&nbsp;
-      <a href="#M000032">getInfo</a>&nbsp;&nbsp;
-      <a href="#M000030">pools</a>&nbsp;&nbsp;
-      <a href="#M000033">search</a>&nbsp;&nbsp;
+      <a href="#M000027">browse</a>&nbsp;&nbsp;
+      <a href="#M000028">getInfo</a>&nbsp;&nbsp;
+      <a href="#M000025">members</a>&nbsp;&nbsp;
+      <a href="#M000026">pools</a>&nbsp;&nbsp;
+      <a href="#M000029">search</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -105,7 +106,8 @@
     <div id="class-list">
       <h3 class="section-bar">Classes and Modules</h3>
 
-      Class <a href="Groups/Pools.html" class="link">FlickRaw::Flickr::Groups::Pools</a><br />
+      Class <a href="Groups/Members.html" class="link">FlickRaw::Flickr::Groups::Members</a><br />
+Class <a href="Groups/Pools.html" class="link">FlickRaw::Flickr::Groups::Pools</a><br />
 
     </div>
 
@@ -119,11 +121,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000031" class="method-detail">
-        <a name="M000031"></a>
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
 
         <div class="method-heading">
-          <a href="#M000031" class="method-signature">
+          <a href="#M000027" class="method-signature">
           <span class="method-name">browse</span><span class="method-args">(:cat_id =&gt; 'cat_id')</span>
           </a>
         </div>
@@ -232,8 +234,8 @@ The XML-RPC request document could not be parsed.
  &lt;/category&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000031-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000031-source">
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -246,11 +248,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000032" class="method-detail">
-        <a name="M000032"></a>
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
 
         <div class="method-heading">
-          <a href="#M000032" class="method-signature">
+          <a href="#M000028" class="method-signature">
           <span class="method-name">getInfo</span><span class="method-args">(:group_id =&gt; 'group_id',:lang =&gt; 'lang')</span>
           </a>
         </div>
@@ -342,8 +344,8 @@ The XML-RPC request document could not be parsed.
  &lt;/group&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000032-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000032-source">
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -356,8 +358,22 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000030" class="method-detail">
-        <a name="M000030"></a>
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
+
+        <div class="method-heading">
+          <span class="method-name">members</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a <a href="Groups/Members.html">Members</a> object.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
 
         <div class="method-heading">
           <span class="method-name">pools</span><span class="method-args">()</span>
@@ -370,11 +386,11 @@ Returns a <a href="Groups/Pools.html">Pools</a> object.
         </div>
       </div>
 
-      <div id="method-M000033" class="method-detail">
-        <a name="M000033"></a>
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
 
         <div class="method-heading">
-          <a href="#M000033" class="method-signature">
+          <a href="#M000029" class="method-signature">
           <span class="method-name">search</span><span class="method-args">(:text =&gt; 'text',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
           </a>
         </div>
@@ -393,7 +409,7 @@ where the authenticated user is over 18.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>text <em>(required)</em> </dt><dd>The text to <a href="Groups.html#M000033">search</a> for.
+<dt>text <em>(required)</em> </dt><dd>The text to <a href="Groups.html#M000029">search</a> for.
 
 </dd>
 <dt>per_page </dt><dd>Number of groups to return per page. If this argument is ommited, it
@@ -470,8 +486,8 @@ The XML-RPC request document could not be parsed.
  &lt;/groups&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000033-source">
+            onclick="toggleCode('M000029-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000029-source">
 <pre>
 
 # Generated automatically from flickr api

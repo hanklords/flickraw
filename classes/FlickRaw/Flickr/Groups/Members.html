@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Photos::Upload</title>
+  <title>Class: FlickRaw::Flickr::Groups::Members</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
@@ -50,7 +50,7 @@
         <table class="header-table">
         <tr class="top-aligned-row">
           <td><strong>Class</strong></td>
-          <td class="class-name-in-header">FlickRaw::Flickr::Photos::Upload</td>
+          <td class="class-name-in-header">FlickRaw::Flickr::Groups::Members</td>
         </tr>
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
@@ -88,7 +88,7 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000133">checkTickets</a>&nbsp;&nbsp;
+      <a href="#M000035">getList</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -110,29 +110,53 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000133" class="method-detail">
-        <a name="M000133"></a>
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
 
         <div class="method-heading">
-          <a href="#M000133" class="method-signature">
-          <span class="method-name">checkTickets</span><span class="method-args">(:tickets =&gt; 'tickets')</span>
+          <a href="#M000035" class="method-signature">
+          <span class="method-name">getList</span><span class="method-args">(:group_id =&gt; 'group_id',:membertypes =&gt; 'membertypes',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.photos.upload.checkTickets.html">flickr.photos.upload.checkTickets</a>
+href="http://www.flickr.com/services/api/flickr.groups.members.getList.html">flickr.groups.members.getList</a>
 request.
 </p>
 <p>
-Checks the status of one or more asynchronous photo upload tickets.
+Get a list of the members of a group. The call must be signed on behalf of
+a <a href="../../Flickr.html">Flickr</a> member, and the ability to see the
+group membership will be determined by the <a
+href="../../Flickr.html">Flickr</a> member&#8216;s group privileges.
 </p>
 <p>
 <b>Arguments</b>
 </p>
 <dl>
-<dt>tickets <em>(required)</em> </dt><dd>A comma-delimited list of ticket ids
+<dt>group_id <em>(required)</em> </dt><dd>Return a list of members for this group. The group must be viewable by the
+<a href="../../Flickr.html">Flickr</a> member on whose behalf the API call
+is made.
+
+</dd>
+<dt>membertypes </dt><dd>Comma separated list of member types
+
+</dd>
+</dl>
+<p>
+&lt;ul&gt; &lt;li&gt;2: member&lt;/li&gt; &lt;li&gt;3: moderator&lt;/li&gt;
+&lt;li&gt;4: admin&lt;/li&gt; &lt;/ul&gt; By default returns all types.
+(Returning super rare member type &quot;1: narwhal&quot; isn&#8216;t
+supported by this API method)
+</p>
+<dl>
+<dt>per_page </dt><dd>Number of members to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+
+</dd>
+<dt>page </dt><dd>The page of results to return. If this argument is omitted, it defaults to
+1.
 
 </dd>
 </dl>
@@ -140,6 +164,34 @@ Checks the status of one or more asynchronous photo upload tickets.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Group not found</em>
+
+</li>
+<li>96: <em>Invalid signature</em>
+
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li>97: <em>Missing signature</em>
+
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li>98: <em>Login failed / Invalid auth token</em>
+
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li>99: <em>User not logged in / Insufficient permissions</em>
+
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
 <li>100: <em>Invalid API Key</em>
 
 <p>
@@ -181,22 +233,22 @@ The XML-RPC request document could not be parsed.
 <b>Returns</b>
 </p>
 <pre>
- &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
- &lt;uploader&gt;
-        &lt;ticket id=&quot;128&quot; complete=&quot;1&quot; photoid=&quot;2995&quot; /&gt;
-        &lt;ticket id=&quot;129&quot; complete=&quot;0&quot; /&gt;
-        &lt;ticket id=&quot;130&quot; complete=&quot;2&quot; /&gt;
-        &lt;ticket id=&quot;131&quot; invalid=&quot;1&quot; /&gt;
- &lt;/uploader&gt;
+ &lt;members page=&quot;1&quot; pages=&quot;1&quot; perpage=&quot;100&quot; total=&quot;33&quot;&gt;
+ &lt;member nsid=&quot;123456@N01&quot; username=&quot;foo&quot; iconserver=&quot;1&quot; iconfarm=&quot;1&quot; membertype=&quot;2&quot;/&gt;
+ &lt;member nsid=&quot;118210@N07&quot; username=&quot;kewlchops666&quot; iconserver=&quot;0&quot; iconfarm=&quot;0&quot; membertype=&quot;4&quot;/&gt;
+ &lt;member nsid=&quot;119377@N07&quot; username=&quot;Alpha Shanan&quot; iconserver=&quot;0&quot; iconfarm=&quot;0&quot; membertype=&quot;2&quot;/&gt;
+ &lt;member nsid=&quot;67783977@N00&quot; username=&quot;fakedunstanp1&quot; iconserver=&quot;1003&quot; iconfarm=&quot;2&quot; membertype=&quot;3&quot;/&gt;
+ ...
+ &lt;/members&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000133-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000133-source">
+            onclick="toggleCode('M000035-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000035-source">
 <pre>
 
 # Generated automatically from flickr api
-  def checkTickets(*args)
-    @flickr.call 'flickr.photos.upload.checkTickets', *args
+  def getList(*args)
+    @flickr.call 'flickr.groups.members.getList', *args
   end
 
 </pre>

@@ -86,9 +86,9 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000166">flickr_methods</a>&nbsp;&nbsp;
-      <a href="#M000165">flickr_objects</a>&nbsp;&nbsp;
-      <a href="#M000167">request_name</a>&nbsp;&nbsp;
+      <a href="#M000171">flickr_methods</a>&nbsp;&nbsp;
+      <a href="#M000170">flickr_objects</a>&nbsp;&nbsp;
+      <a href="#M000172">request_name</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -110,11 +110,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Class methods</h3>
 
-      <div id="method-M000166" class="method-detail">
-        <a name="M000166"></a>
+      <div id="method-M000171" class="method-detail">
+        <a name="M000171"></a>
 
         <div class="method-heading">
-          <a href="#M000166" class="method-signature">
+          <a href="#M000171" class="method-signature">
           <span class="method-name">flickr_methods</span><span class="method-args">()</span>
           </a>
         </div>
@@ -124,8 +124,8 @@
 List of the flickr methods of this object
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000166-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000166-source">
+            onclick="toggleCode('M000171-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000171-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/flickraw.rb, line 130</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">flickr_methods</span>; <span class="ruby-ivar">@flickr_methods</span> <span class="ruby-operator">||=</span> [] <span class="ruby-keyword kw">end</span>
@@ -134,11 +134,11 @@ List of the flickr methods of this object
         </div>
       </div>
 
-      <div id="method-M000165" class="method-detail">
-        <a name="M000165"></a>
+      <div id="method-M000170" class="method-detail">
+        <a name="M000170"></a>
 
         <div class="method-heading">
-          <a href="#M000165" class="method-signature">
+          <a href="#M000170" class="method-signature">
           <span class="method-name">flickr_objects</span><span class="method-args">()</span>
           </a>
         </div>
@@ -148,8 +148,8 @@ List of the flickr methods of this object
 List of the flickr subobjects of this object
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000165-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000165-source">
+            onclick="toggleCode('M000170-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000170-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/flickraw.rb, line 127</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">flickr_objects</span>; <span class="ruby-ivar">@flickr_objects</span> <span class="ruby-operator">||=</span> [] <span class="ruby-keyword kw">end</span>
@@ -158,11 +158,11 @@ List of the flickr subobjects of this object
         </div>
       </div>
 
-      <div id="method-M000167" class="method-detail">
-        <a name="M000167"></a>
+      <div id="method-M000172" class="method-detail">
+        <a name="M000172"></a>
 
         <div class="method-heading">
-          <a href="#M000167" class="method-signature">
+          <a href="#M000172" class="method-signature">
           <span class="method-name">request_name</span><span class="method-args">()</span>
           </a>
         </div>
@@ -172,8 +172,8 @@ List of the flickr subobjects of this object
 Returns the prefix of the request corresponding to this class.
 </p>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000167-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000167-source">
+            onclick="toggleCode('M000172-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000172-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/flickraw.rb, line 133</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request_name</span>; <span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/::/</span>, <span class="ruby-value str">'.'</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/[^\.]+\./</span>, <span class="ruby-value str">''</span>) <span class="ruby-keyword kw">end</span>

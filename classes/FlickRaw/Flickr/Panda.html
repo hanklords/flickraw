@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Reflection</title>
+  <title>Class: FlickRaw::Flickr::Panda</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
@@ -50,7 +50,7 @@
         <table class="header-table">
         <tr class="top-aligned-row">
           <td><strong>Class</strong></td>
-          <td class="class-name-in-header">FlickRaw::Flickr::Reflection</td>
+          <td class="class-name-in-header">FlickRaw::Flickr::Panda</td>
         </tr>
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
@@ -88,8 +88,8 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000040">getMethodInfo</a>&nbsp;&nbsp;
-      <a href="#M000041">getMethods</a>&nbsp;&nbsp;
+      <a href="#M000066">getList</a>&nbsp;&nbsp;
+      <a href="#M000067">getPhotos</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -111,42 +111,35 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000040" class="method-detail">
-        <a name="M000040"></a>
+      <div id="method-M000066" class="method-detail">
+        <a name="M000066"></a>
 
         <div class="method-heading">
-          <a href="#M000040" class="method-signature">
-          <span class="method-name">getMethodInfo</span><span class="method-args">(:method_name =&gt; 'method_name')</span>
+          <a href="#M000066" class="method-signature">
+          <span class="method-name">getList</span><span class="method-args">()</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.reflection.getMethodInfo.html">flickr.reflection.getMethodInfo</a>
+href="http://www.flickr.com/services/api/flickr.panda.getList.html">flickr.panda.getList</a>
 request.
 </p>
 <p>
-Returns information for a given flickr API method.
+Return a list of &lt;a href=&quot;<a
+href="http://www.flickr.com/explore/panda">Flickr">www.flickr.com/explore/panda">Flickr</a>
+pandas&lt;/a&gt;, from whom you can request photos using the &lt;a
+href=&quot;/services/api/flickr.panda.getPhotos.htm&quot;&gt;flickr.panda.<a
+href="Panda.html#M000067">getPhotos</a>&lt;/a&gt; API method.
 </p>
 <p>
 <b>Arguments</b>
 </p>
-<dl>
-<dt>method_name <em>(required)</em> </dt><dd>The name of the method to fetch information for.
-
-</dd>
-</dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Method not found</em>
-
-<p>
-The requested method was not found.
-</p>
-</li>
 <li>100: <em>Invalid API Key</em>
 
 <p>
@@ -188,32 +181,20 @@ The XML-RPC request document could not be parsed.
 <b>Returns</b>
 </p>
 <pre>
- &lt;method name=&quot;flickr.fakeMethod&quot; needslogin=&quot;1&quot;&gt;
-        &lt;description&gt;A fake method&lt;/description&gt;
-        &lt;response&gt;xml-response-example&lt;/response&gt;
-        &lt;explanation&gt;explanation of example response&lt;/explanation&gt;
-        &lt;arguments&gt;
-                &lt;argument name=&quot;api_key&quot; optional=&quot;0&quot;&gt;
-                        You API application key.&lt;/argument&gt;
-                &lt;argument name=&quot;color&quot; optional=&quot;1&quot;&gt;
-                        Your favorite color.&lt;/argument&gt;
-        &lt;/arguments&gt;
-        &lt;errors&gt;
-                &lt;error code=&quot;1&quot; message=&quot;Photo not found&quot;&gt;
-                        Full explanation...&lt;/error&gt;
-                &lt;error code=&quot;100&quot; message=&quot;Invalid API Key&quot;&gt;
-                        Full explanation...&lt;/error&gt;
-        &lt;/errors&gt;
- &lt;/method&gt;
+ &lt;pandas&gt;
+    &lt;panda&gt;ling ling&lt;/panda&gt;
+    &lt;panda&gt;hsing hsing&lt;/panda&gt;
+    &lt;panda&gt;wang wang&lt;/panda&gt;
+ &lt;/pandas&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000040-source">
+            onclick="toggleCode('M000066-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000066-source">
 <pre>
 
 # Generated automatically from flickr api
-  def getMethodInfo(*args)
-    @flickr.call 'flickr.reflection.getMethodInfo', *args
+  def getList(*args)
+    @flickr.call 'flickr.panda.getList', *args
   end
 
 </pre>
@@ -221,31 +202,67 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000041" class="method-detail">
-        <a name="M000041"></a>
+      <div id="method-M000067" class="method-detail">
+        <a name="M000067"></a>
 
         <div class="method-heading">
-          <a href="#M000041" class="method-signature">
-          <span class="method-name">getMethods</span><span class="method-args">()</span>
+          <a href="#M000067" class="method-signature">
+          <span class="method-name">getPhotos</span><span class="method-args">(:panda_name =&gt; 'panda_name')</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.reflection.getMethods.html">flickr.reflection.getMethods</a>
+href="http://www.flickr.com/services/api/flickr.panda.getPhotos.html">flickr.panda.getPhotos</a>
 request.
 </p>
 <p>
-Returns a list of available flickr API methods.
+Ask the &lt;a href=&quot;<a
+href="http://www.flickr.com/explore/panda">Flickr">www.flickr.com/explore/panda">Flickr</a>
+Pandas&lt;/a&gt; for a list of recent public (and &quot;safe&quot;) photos.
 </p>
 <p>
 <b>Arguments</b>
+</p>
+<dl>
+<dt>panda_name <em>(required)</em> </dt><dd>The name of the panda to ask for photos from. There are currently three
+pandas named:&lt;br /&gt;&lt;br /&gt;
+
+</dd>
+</dl>
+<p>
+&lt;ul&gt; &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;<a
+href="http://flickr.com/photos/ucumari/126073203/">ling">flickr.com/photos/ucumari/126073203/">ling</a>
+ling&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;&lt;a
+href=&quot;<a
+href="http://flickr.com/photos/lynnehicks/136407353">hsing">flickr.com/photos/lynnehicks/136407353">hsing</a>
+hsing&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;&lt;a
+href=&quot;<a
+href="http://flickr.com/photos/perfectpandas/1597067182/">wang">flickr.com/photos/perfectpandas/1597067182/">wang</a>
+wang&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;/ul&gt;
+</p>
+<p>
+&lt;br /&gt;You can fetch a list of all the current pandas using the &lt;a
+href=&quot;/services/api/flickr.panda.getList.html&quot;&gt;flickr.panda.<a
+href="Panda.html#M000066">getList</a>&lt;/a&gt; API method.
 </p>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Required parameter missing.</em>
+
+<p>
+One or more required parameters was not included with your request.
+</p>
+</li>
+<li>2: <em>Unknown panda</em>
+
+<p>
+You requested a panda we haven&#8216;t met yet.
+</p>
+</li>
 <li>100: <em>Invalid API Key</em>
 
 <p>
@@ -287,21 +304,22 @@ The XML-RPC request document could not be parsed.
 <b>Returns</b>
 </p>
 <pre>
- &lt;methods&gt;
-        &lt;method&gt;flickr.blogs.getList&lt;/method&gt;
-        &lt;method&gt;flickr.blogs.postPhoto&lt;/method&gt;
-        &lt;method&gt;flickr.contacts.getList&lt;/method&gt;
-        &lt;method&gt;flickr.contacts.getPublicList&lt;/method&gt;
- &lt;/methods&gt;
+ &lt;photos interval=&quot;60000&quot; lastupdate=&quot;1235765058272&quot; total=&quot;120&quot; panda=&quot;ling ling&quot;&gt;
+     &lt;photo title=&quot;Shorebirds at Pillar Point&quot; id=&quot;3313428913&quot; secret=&quot;2cd3cb44cb&quot;
+         server=&quot;3609&quot; farm=&quot;4&quot; owner=&quot;72442527@N00&quot; ownername=&quot;Pat Ulrich&quot;/&gt;
+     &lt;photo title=&quot;Battle of the sky&quot; id=&quot;3313713993&quot; secret=&quot;3f7f51500f&quot;
+         server=&quot;3382&quot; farm=&quot;4&quot; owner=&quot;10459691@N05&quot; ownername=&quot;Sven Ericsson&quot;/&gt;
+     &lt;!-- and so on --&gt;
+ &lt;/photos&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000041-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000041-source">
+            onclick="toggleCode('M000067-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000067-source">
 <pre>
 
 # Generated automatically from flickr api
-  def getMethods(*args)
-    @flickr.call 'flickr.reflection.getMethods', *args
+  def getPhotos(*args)
+    @flickr.call 'flickr.panda.getPhotos', *args
   end
 
 </pre>
