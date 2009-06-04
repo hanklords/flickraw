@@ -88,20 +88,20 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000042">find</a>&nbsp;&nbsp;
-      <a href="#M000043">findByLatLon</a>&nbsp;&nbsp;
-      <a href="#M000044">getChildrenWithPhotosPublic</a>&nbsp;&nbsp;
-      <a href="#M000045">getInfo</a>&nbsp;&nbsp;
-      <a href="#M000046">getInfoByUrl</a>&nbsp;&nbsp;
-      <a href="#M000047">getPlaceTypes</a>&nbsp;&nbsp;
-      <a href="#M000048">getShapeHistory</a>&nbsp;&nbsp;
-      <a href="#M000049">placesForBoundingBox</a>&nbsp;&nbsp;
-      <a href="#M000050">placesForContacts</a>&nbsp;&nbsp;
-      <a href="#M000051">placesForTags</a>&nbsp;&nbsp;
-      <a href="#M000052">placesForUser</a>&nbsp;&nbsp;
-      <a href="#M000053">resolvePlaceId</a>&nbsp;&nbsp;
-      <a href="#M000054">resolvePlaceURL</a>&nbsp;&nbsp;
-      <a href="#M000055">tagsForPlace</a>&nbsp;&nbsp;
+      <a href="#M000049">find</a>&nbsp;&nbsp;
+      <a href="#M000050">findByLatLon</a>&nbsp;&nbsp;
+      <a href="#M000051">getChildrenWithPhotosPublic</a>&nbsp;&nbsp;
+      <a href="#M000052">getInfo</a>&nbsp;&nbsp;
+      <a href="#M000053">getInfoByUrl</a>&nbsp;&nbsp;
+      <a href="#M000054">getPlaceTypes</a>&nbsp;&nbsp;
+      <a href="#M000055">getShapeHistory</a>&nbsp;&nbsp;
+      <a href="#M000056">placesForBoundingBox</a>&nbsp;&nbsp;
+      <a href="#M000057">placesForContacts</a>&nbsp;&nbsp;
+      <a href="#M000058">placesForTags</a>&nbsp;&nbsp;
+      <a href="#M000059">placesForUser</a>&nbsp;&nbsp;
+      <a href="#M000060">resolvePlaceId</a>&nbsp;&nbsp;
+      <a href="#M000061">resolvePlaceURL</a>&nbsp;&nbsp;
+      <a href="#M000062">tagsForPlace</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -123,11 +123,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000042" class="method-detail">
-        <a name="M000042"></a>
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
 
         <div class="method-heading">
-          <a href="#M000042" class="method-signature">
+          <a href="#M000049" class="method-signature">
           <span class="method-name">find</span><span class="method-args">(:query =&gt; 'query')</span>
           </a>
         </div>
@@ -140,7 +140,7 @@ request.
 </p>
 <p>
 Return a list of place IDs for a query string.&lt;br /&gt;&lt;br /&gt; The
-flickr.places.<a href="Places.html#M000042">find</a> method is <b>not</b> a
+flickr.places.<a href="Places.html#M000049">find</a> method is <b>not</b> a
 geocoder. It will round &lt;q&gt;up&lt;/q&gt; to the nearest place type to
 which place IDs apply. For example, if you pass it a street level address
 it will return the city that contains the address rather than the street,
@@ -221,8 +221,8 @@ The XML-RPC request document could not be parsed.
  &lt;/places&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000042-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000042-source">
+            onclick="toggleCode('M000049-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000049-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -235,11 +235,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000043" class="method-detail">
-        <a name="M000043"></a>
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
 
         <div class="method-heading">
-          <a href="#M000043" class="method-signature">
+          <a href="#M000050" class="method-signature">
           <span class="method-name">findByLatLon</span><span class="method-args">(:lat =&gt; 'lat',:lon =&gt; 'lon',:accuracy =&gt; 'accuracy')</span>
           </a>
         </div>
@@ -253,9 +253,9 @@ request.
 <p>
 Return a place ID for a latitude, longitude and accuracy triple.&lt;br
 /&gt;&lt;br /&gt; The flickr.places.<a
-href="Places.html#M000043">findByLatLon</a> method is not meant to be a
+href="Places.html#M000050">findByLatLon</a> method is not meant to be a
 (reverse) geocoder in the traditional sense. It is designed to allow users
-to <a href="Places.html#M000042">find</a> photos for &quot;places&quot; and
+to <a href="Places.html#M000049">find</a> photos for &quot;places&quot; and
 will round up to the nearest place type to which corresponding place IDs
 apply.&lt;br /&gt;&lt;br /&gt; For example, if you pass it a street level
 coordinate it will return the city that contains the point rather than the
@@ -349,16 +349,18 @@ The XML-RPC request document could not be parsed.
 <b>Returns</b>
 </p>
 <pre>
- &lt;places latitude=&quot;37.765168&quot; longitude=&quot;-122.419936&quot; accuracy=&quot;11&quot; total=&quot;1&quot;&gt;
-    &lt;place place_id=&quot;kH8dLOubBZRvX_YZ&quot; woeid=&quot;2487956&quot;
-                latitude=&quot;37.779&quot; longitude=&quot;-122.420&quot;
-                place_url=&quot;/United+States/California/San+Francisco&quot;
-                place_type=&quot;locality&quot;/&gt;
- &lt;/place&gt;
+ &lt;places latitude=&quot;37.76513627957266&quot; longitude=&quot;-122.42020770907402&quot; accuracy=&quot;16&quot; total=&quot;1&quot;&gt;
+    &lt;place place_id=&quot;Y12JWsKbApmnSQpbQg&quot; woeid=&quot;23512048&quot;
+       latitude=&quot;37.765&quot; longitude=&quot;-122.424&quot;
+       place_url=&quot;/United+States/California/San+Francisco/Mission+Dolores&quot;
+       place_type=&quot;neighbourhood&quot; place_type_id=&quot;22&quot;
+       timezone=&quot;America/Los_Angeles&quot;
+       name=&quot;Mission Dolores, San Francisco, CA, US, United States&quot;/&gt;
+ &lt;/places&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000043-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000043-source">
+            onclick="toggleCode('M000050-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000050-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -371,11 +373,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000044" class="method-detail">
-        <a name="M000044"></a>
+      <div id="method-M000051" class="method-detail">
+        <a name="M000051"></a>
 
         <div class="method-heading">
-          <a href="#M000044" class="method-signature">
+          <a href="#M000051" class="method-signature">
           <span class="method-name">getChildrenWithPhotosPublic</span><span class="method-args">(:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
           </a>
         </div>
@@ -488,8 +490,8 @@ The XML-RPC request document could not be parsed.
  &lt;/places&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000044-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000044-source">
+            onclick="toggleCode('M000051-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000051-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -502,11 +504,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000045" class="method-detail">
-        <a name="M000045"></a>
+      <div id="method-M000052" class="method-detail">
+        <a name="M000052"></a>
 
         <div class="method-heading">
-          <a href="#M000045" class="method-signature">
+          <a href="#M000052" class="method-signature">
           <span class="method-name">getInfo</span><span class="method-args">(:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
           </a>
         </div>
@@ -605,7 +607,7 @@ The XML-RPC request document could not be parsed.
  &lt;place place_id=&quot;4hLQygSaBJ92&quot; woeid=&quot;3534&quot;
     latitude=&quot;45.512&quot; longitude=&quot;-73.554&quot;
     place_url=&quot;/Canada/Quebec/Montreal&quot; place_type=&quot;locality&quot;
-    has_shapedata=&quot;1&quot;&gt;
+    has_shapedata=&quot;1&quot; timezone=&quot;America/Toronto&quot;&gt;
     &lt;locality place_id=&quot;4hLQygSaBJ92&quot; woeid=&quot;3534&quot;
        latitude=&quot;45.512&quot; longitude=&quot;-73.554&quot;
        place_url=&quot;/Canada/Quebec/Montreal&quot;&gt;Montreal&lt;/locality&gt;
@@ -619,7 +621,8 @@ The XML-RPC request document could not be parsed.
        latitude=&quot;62.358&quot; longitude=&quot;-96.582&quot;
        place_url=&quot;/Canada&quot;&gt;Canada&lt;/country&gt;
     &lt;shapedata created=&quot;1223513357&quot; alpha=&quot;0.012359619140625&quot;
-       count_points=&quot;34778&quot; count_edges=&quot;52&quot;&gt;
+       count_points=&quot;34778&quot; count_edges=&quot;52&quot;
+       has_donuthole=&quot;1&quot; is_donuthole=&quot;1&quot;&gt;
        &lt;polylines&gt;
           &lt;polyline&gt;
              45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...
@@ -634,8 +637,8 @@ The XML-RPC request document could not be parsed.
  &lt;/place&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000045-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000045-source">
+            onclick="toggleCode('M000052-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000052-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -648,11 +651,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000046" class="method-detail">
-        <a name="M000046"></a>
+      <div id="method-M000053" class="method-detail">
+        <a name="M000053"></a>
 
         <div class="method-heading">
-          <a href="#M000046" class="method-signature">
+          <a href="#M000053" class="method-signature">
           <span class="method-name">getInfoByUrl</span><span class="method-args">(:url =&gt; 'url')</span>
           </a>
         </div>
@@ -688,7 +691,7 @@ The flickr.com/places URL was not passed with the API method.
 <li>3: <em>Place not found.</em>
 
 <p>
-Unable to <a href="Places.html#M000042">find</a> a valid place for the
+Unable to <a href="Places.html#M000049">find</a> a valid place for the
 places URL.
 </p>
 </li>
@@ -760,8 +763,8 @@ The XML-RPC request document could not be parsed.
  &lt;/place&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000046-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000046-source">
+            onclick="toggleCode('M000053-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000053-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -774,11 +777,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000047" class="method-detail">
-        <a name="M000047"></a>
+      <div id="method-M000054" class="method-detail">
+        <a name="M000054"></a>
 
         <div class="method-heading">
-          <a href="#M000047" class="method-signature">
+          <a href="#M000054" class="method-signature">
           <span class="method-name">getPlaceTypes</span><span class="method-args">()</span>
           </a>
         </div>
@@ -851,8 +854,8 @@ The XML-RPC request document could not be parsed.
  &lt;/place_types&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000047-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000047-source">
+            onclick="toggleCode('M000054-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000054-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -865,11 +868,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000048" class="method-detail">
-        <a name="M000048"></a>
+      <div id="method-M000055" class="method-detail">
+        <a name="M000055"></a>
 
         <div class="method-heading">
-          <a href="#M000048" class="method-signature">
+          <a href="#M000055" class="method-signature">
           <span class="method-name">getShapeHistory</span><span class="method-args">(:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
           </a>
         </div>
@@ -968,7 +971,7 @@ The XML-RPC request document could not be parsed.
 <pre>
  &lt;shapes total=&quot;2&quot; woe_id=&quot;3534&quot; place_id=&quot;4hLQygSaBJ92&quot; place_type=&quot;locality&quot; place_type_id=&quot;7&quot;&gt;
     &lt;shapedata created=&quot;1223513357&quot; alpha=&quot;0.012359619140625&quot;
-       count_points=&quot;34778&quot; count_edges=&quot;52&quot;&gt;
+       count_points=&quot;34778&quot; count_edges=&quot;52&quot; is_donuthole=&quot;0&quot;&gt;
        &lt;polylines&gt;
           &lt;polyline&gt;
              45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...
@@ -984,8 +987,8 @@ The XML-RPC request document could not be parsed.
  &lt;/shapes&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000048-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000048-source">
+            onclick="toggleCode('M000055-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000055-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -998,11 +1001,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000049" class="method-detail">
-        <a name="M000049"></a>
+      <div id="method-M000056" class="method-detail">
+        <a name="M000056"></a>
 
         <div class="method-heading">
-          <a href="#M000049" class="method-signature">
+          <a href="#M000056" class="method-signature">
           <span class="method-name">placesForBoundingBox</span><span class="method-args">(:bbox =&gt; 'bbox',:place_type =&gt; 'place_type',:place_type_id =&gt; 'place_type_id')</span>
           </a>
         </div>
@@ -1173,8 +1176,8 @@ The XML-RPC request document could not be parsed.
  &lt;/places&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000049-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000049-source">
+            onclick="toggleCode('M000056-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000056-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1187,11 +1190,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000050" class="method-detail">
-        <a name="M000050"></a>
+      <div id="method-M000057" class="method-detail">
+        <a name="M000057"></a>
 
         <div class="method-heading">
-          <a href="#M000050" class="method-signature">
+          <a href="#M000057" class="method-signature">
           <span class="method-name">placesForContacts</span><span class="method-args">(:place_type =&gt; 'place_type',:place_type_id =&gt; 'place_type_id',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:threshold =&gt; 'threshold',:contacts =&gt; 'contacts',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
           </a>
         </div>
@@ -1438,8 +1441,8 @@ The XML-RPC request document could not be parsed.
  &lt;/place&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000050-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000050-source">
+            onclick="toggleCode('M000057-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000057-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1452,11 +1455,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000051" class="method-detail">
-        <a name="M000051"></a>
+      <div id="method-M000058" class="method-detail">
+        <a name="M000058"></a>
 
         <div class="method-heading">
-          <a href="#M000051" class="method-signature">
+          <a href="#M000058" class="method-signature">
           <span class="method-name">placesForTags</span><span class="method-args">(:place_type_id =&gt; 'place_type_id',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:threshold =&gt; 'threshold',:tags =&gt; 'tags',:tag_mode =&gt; 'tag_mode',:machine_tags =&gt; 'machine_tags',:machine_tag_mode =&gt; 'machine_tag_mode',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
           </a>
         </div>
@@ -1654,8 +1657,8 @@ The XML-RPC request document could not be parsed.
  &lt;/place&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000051-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000051-source">
+            onclick="toggleCode('M000058-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000058-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1668,11 +1671,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000052" class="method-detail">
-        <a name="M000052"></a>
+      <div id="method-M000059" class="method-detail">
+        <a name="M000059"></a>
 
         <div class="method-heading">
-          <a href="#M000052" class="method-signature">
+          <a href="#M000059" class="method-signature">
           <span class="method-name">placesForUser</span><span class="method-args">(:place_type_id =&gt; 'place_type_id',:place_type =&gt; 'place_type',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:threshold =&gt; 'threshold',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
           </a>
         </div>
@@ -1908,8 +1911,8 @@ The XML-RPC request document could not be parsed.
  &lt;/place&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000052-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000052-source">
+            onclick="toggleCode('M000059-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000059-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1922,11 +1925,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000053" class="method-detail">
-        <a name="M000053"></a>
+      <div id="method-M000060" class="method-detail">
+        <a name="M000060"></a>
 
         <div class="method-heading">
-          <a href="#M000053" class="method-signature">
+          <a href="#M000060" class="method-signature">
           <span class="method-name">resolvePlaceId</span><span class="method-args">(:place_id =&gt; 'place_id')</span>
           </a>
         </div>
@@ -1942,7 +1945,7 @@ Find <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 information by Place ID.&lt;br /&gt;&lt;br /&gt; This method has been
 deprecated. It won&#8216;t be removed but you should use &lt;a
 href=&quot;/services/api/flickr.places.getInfo.html&quot;&gt;flickr.places.<a
-href="Places.html#M000045">getInfo</a>&lt;/a&gt; instead.
+href="Places.html#M000052">getInfo</a>&lt;/a&gt; instead.
 </p>
 <p>
 <b>Arguments</b>
@@ -2022,8 +2025,8 @@ The XML-RPC request document could not be parsed.
  &lt;/location&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000053-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000053-source">
+            onclick="toggleCode('M000060-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000060-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2036,11 +2039,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000054" class="method-detail">
-        <a name="M000054"></a>
+      <div id="method-M000061" class="method-detail">
+        <a name="M000061"></a>
 
         <div class="method-heading">
-          <a href="#M000054" class="method-signature">
+          <a href="#M000061" class="method-signature">
           <span class="method-name">resolvePlaceURL</span><span class="method-args">(:url =&gt; 'url')</span>
           </a>
         </div>
@@ -2056,7 +2059,7 @@ Find <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 information by Place URL.&lt;br /&gt;&lt;br /&gt; This method has been
 deprecated. It won&#8216;t be removed but you should use &lt;a
 href=&quot;/services/api/flickr.places.getInfoByUrl.html&quot;&gt;flickr.places.<a
-href="Places.html#M000046">getInfoByUrl</a>&lt;/a&gt; instead.
+href="Places.html#M000053">getInfoByUrl</a>&lt;/a&gt; instead.
 </p>
 <p>
 <b>Arguments</b>
@@ -2140,8 +2143,8 @@ The XML-RPC request document could not be parsed.
  &lt;/location&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000054-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000054-source">
+            onclick="toggleCode('M000061-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000061-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2154,11 +2157,11 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000055" class="method-detail">
-        <a name="M000055"></a>
+      <div id="method-M000062" class="method-detail">
+        <a name="M000062"></a>
 
         <div class="method-heading">
-          <a href="#M000055" class="method-signature">
+          <a href="#M000062" class="method-signature">
           <span class="method-name">tagsForPlace</span><span class="method-args">(:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
           </a>
         </div>
@@ -2303,8 +2306,8 @@ The XML-RPC request document could not be parsed.
  &lt;/tags&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000055-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000055-source">
+            onclick="toggleCode('M000062-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000062-source">
 <pre>
 
 # Generated automatically from flickr api

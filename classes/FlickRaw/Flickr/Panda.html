@@ -88,8 +88,8 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000066">getList</a>&nbsp;&nbsp;
-      <a href="#M000067">getPhotos</a>&nbsp;&nbsp;
+      <a href="#M000069">getList</a>&nbsp;&nbsp;
+      <a href="#M000070">getPhotos</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -111,11 +111,11 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000066" class="method-detail">
-        <a name="M000066"></a>
+      <div id="method-M000069" class="method-detail">
+        <a name="M000069"></a>
 
         <div class="method-heading">
-          <a href="#M000066" class="method-signature">
+          <a href="#M000069" class="method-signature">
           <span class="method-name">getList</span><span class="method-args">()</span>
           </a>
         </div>
@@ -131,7 +131,7 @@ Return a list of &lt;a href=&quot;<a
 href="http://www.flickr.com/explore/panda">Flickr">www.flickr.com/explore/panda">Flickr</a>
 pandas&lt;/a&gt;, from whom you can request photos using the &lt;a
 href=&quot;/services/api/flickr.panda.getPhotos.htm&quot;&gt;flickr.panda.<a
-href="Panda.html#M000067">getPhotos</a>&lt;/a&gt; API method.
+href="Panda.html#M000070">getPhotos</a>&lt;/a&gt; API method.
 </p>
 <p>
 <b>Arguments</b>
@@ -188,8 +188,8 @@ The XML-RPC request document could not be parsed.
  &lt;/pandas&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000066-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000066-source">
+            onclick="toggleCode('M000069-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000069-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -202,12 +202,12 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000067" class="method-detail">
-        <a name="M000067"></a>
+      <div id="method-M000070" class="method-detail">
+        <a name="M000070"></a>
 
         <div class="method-heading">
-          <a href="#M000067" class="method-signature">
-          <span class="method-name">getPhotos</span><span class="method-args">(:panda_name =&gt; 'panda_name')</span>
+          <a href="#M000070" class="method-signature">
+          <span class="method-name">getPhotos</span><span class="method-args">(:panda_name =&gt; 'panda_name',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
           </a>
         </div>
       
@@ -245,8 +245,26 @@ wang&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;/ul&gt;
 <p>
 &lt;br /&gt;You can fetch a list of all the current pandas using the &lt;a
 href=&quot;/services/api/flickr.panda.getList.html&quot;&gt;flickr.panda.<a
-href="Panda.html#M000066">getList</a>&lt;/a&gt; API method.
+href="Panda.html#M000069">getList</a>&lt;/a&gt; API method.
 </p>
+<dl>
+<dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
+record. Currently supported fields are: <tt>license</tt>,
+<tt>date_upload</tt>, <tt>date_taken</tt>, <tt>owner_name</tt>,
+<tt>icon_server</tt>, <tt>original_format</tt>, <tt>last_update</tt>,
+<tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>, <tt>o_dims</tt>,
+<tt>views</tt>, <tt>media</tt>.
+
+</dd>
+<dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+
+</dd>
+<dt>page </dt><dd>The page of results to return. If this argument is omitted, it defaults to
+1.
+
+</dd>
+</dl>
 <p>
 <b>Error codes</b>
 </p>
@@ -313,8 +331,8 @@ The XML-RPC request document could not be parsed.
  &lt;/photos&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000067-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000067-source">
+            onclick="toggleCode('M000070-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000070-source">
 <pre>
 
 # Generated automatically from flickr api

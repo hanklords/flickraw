@@ -5,7 +5,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Blogs</title>
+  <title>Class: FlickRaw::Flickr::Collections</title>
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
@@ -50,7 +50,7 @@
         <table class="header-table">
         <tr class="top-aligned-row">
           <td><strong>Class</strong></td>
-          <td class="class-name-in-header">FlickRaw::Flickr::Blogs</td>
+          <td class="class-name-in-header">FlickRaw::Flickr::Collections</td>
         </tr>
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
@@ -88,8 +88,8 @@
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000160">getList</a>&nbsp;&nbsp;
-      <a href="#M000161">postPhoto</a>&nbsp;&nbsp;
+      <a href="#M000026">getInfo</a>&nbsp;&nbsp;
+      <a href="#M000027">getTree</a>&nbsp;&nbsp;
       </div>
     </div>
 
@@ -111,31 +111,44 @@
     <div id="methods">
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000160" class="method-detail">
-        <a name="M000160"></a>
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
 
         <div class="method-heading">
-          <a href="#M000160" class="method-signature">
-          <span class="method-name">getList</span><span class="method-args">()</span>
+          <a href="#M000026" class="method-signature">
+          <span class="method-name">getInfo</span><span class="method-args">(:collection_id =&gt; 'collection_id')</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.blogs.getList.html">flickr.blogs.getList</a>
+href="http://www.flickr.com/services/api/flickr.collections.getInfo.html">flickr.collections.getInfo</a>
 request.
 </p>
 <p>
-Get a list of configured blogs for the calling user.
+Returns information for a single collection. Currently can only be called
+by the collection owner, this may change.
 </p>
 <p>
 <b>Arguments</b>
 </p>
+<dl>
+<dt>collection_id <em>(required)</em> </dt><dd>The ID of the collection to fetch information for.
+
+</dd>
+</dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Collection not found</em>
+
+<p>
+The requested collection could not be found or is not visible to the
+calling user.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -202,21 +215,25 @@ The XML-RPC request document could not be parsed.
 <b>Returns</b>
 </p>
 <pre>
- &lt;blogs&gt;
-        &lt;blog id=&quot;73&quot; name=&quot;Bloxus test&quot; needspassword=&quot;0&quot;
-                url=&quot;http://remote.bloxus.com/&quot; /&gt;
-        &lt;blog id=&quot;74&quot; name=&quot;Manila Test&quot; needspassword=&quot;1&quot;
-                url=&quot;http://flickrtest1.userland.com/&quot; /&gt;
- &lt;/blogs&gt;
+ collection id=&quot;12-72157594586579649&quot; child_count=&quot;6&quot; datecreate=&quot;1173812218&quot; iconlarge=&quot;http://farm1.static.flickr.com/187/cols/73743fac2cf79_l.jpg&quot; iconsmall=&quot;http://farm1.static.flickr.com/187/cols/72157594586579649_43fac2cf79_s.jpg&quot; server=&quot;187&quot; secret=&quot;36&quot;&gt;
+ &lt;title&gt;All My Photos&lt;/title&gt;
+ &lt;description&gt;Photos!&lt;/description&gt;
+ &lt;iconphotos&gt;
+ &lt;photo id=&quot;14&quot; owner=&quot;12@N01&quot; secret=&quot;b57ba5c&quot; server=&quot;51&quot; farm=&quot;1&quot; title=&quot;in full cap and gown&quot; ispublic=&quot;1&quot; isfriend=&quot;0&quot; isfamily=&quot;0&quot;/&gt;
+ &lt;photo id=&quot;15&quot; owner=&quot;12@N01&quot; secret=&quot;ba1c2a8&quot; server=&quot;58&quot; farm=&quot;1&quot; title=&quot;Just beyond the door&quot; ispublic=&quot;0&quot; isfriend=&quot;1&quot; isfamily=&quot;0&quot;/&gt;
+ &lt;photo id=&quot;17&quot; owner=&quot;12@N01&quot; secret=&quot;0001969&quot; server=&quot;73&quot; farm=&quot;1&quot; title=&quot;IMG_3787.JPG&quot; ispublic=&quot;1&quot; isfriend=&quot;0&quot; isfamily=&quot;0&quot;/&gt;
+ ....
+ &lt;/iconphotos&gt;
+ &lt;/collection&gt;
 </pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000160-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000160-source">
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
 <pre>
 
 # Generated automatically from flickr api
-  def getList(*args)
-    @flickr.call 'flickr.blogs.getList', *args
+  def getInfo(*args)
+    @flickr.call 'flickr.collections.getInfo', *args
   end
 
 </pre>
@@ -224,39 +241,34 @@ The XML-RPC request document could not be parsed.
         </div>
       </div>
 
-      <div id="method-M000161" class="method-detail">
-        <a name="M000161"></a>
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
 
         <div class="method-heading">
-          <a href="#M000161" class="method-signature">
-          <span class="method-name">postPhoto</span><span class="method-args">(:blog_id =&gt; 'blog_id',:photo_id =&gt; 'photo_id',:title =&gt; 'title',:description =&gt; 'description',:blog_password =&gt; 'blog_password')</span>
+          <a href="#M000027" class="method-signature">
+          <span class="method-name">getTree</span><span class="method-args">(:collection_id =&gt; 'collection_id',:user_id =&gt; 'user_id')</span>
           </a>
         </div>
       
         <div class="method-description">
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.blogs.postPhoto.html">flickr.blogs.postPhoto</a>
+href="http://www.flickr.com/services/api/flickr.collections.getTree.html">flickr.collections.getTree</a>
 request.
+</p>
+<p>
+Returns a tree (or sub tree) of collections belonging to a given user.
 </p>
 <p>
 <b>Arguments</b>
 </p>
 <dl>
-<dt>blog_id <em>(required)</em> </dt><dd>The id of the blog to post to
+<dt>collection_id </dt><dd>The ID of the collection to fetch a tree for, or zero to fetch the root
+collection. Defaults to zero.
 
 </dd>
-<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to blog
-
-</dd>
-<dt>title <em>(required)</em> </dt><dd>The blog post title
-
-</dd>
-<dt>description <em>(required)</em> </dt><dd>The blog post body
-
-</dd>
-<dt>blog_password </dt><dd>The password for the blog (used when the blog does not have a stored
-password).
+<dt>user_id </dt><dd>The ID of the account to fetch the collection tree for. Deafults to the
+calling user.
 
 </dd>
 </dl>
@@ -264,54 +276,16 @@ password).
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Blog not found</em>
+<li>1: <em>User not found</em>
 
 <p>
-The blog id was not the id of a blog belonging to the calling user
+The specified user could not be found.
 </p>
 </li>
-<li>2: <em>Photo not found</em>
+<li>2: <em>Collection not found</em>
 
 <p>
-The photo id was not the id of a public photo
-</p>
-</li>
-<li>3: <em>Password needed</em>
-
-<p>
-A password is not stored for the blog and one was not passed with the
-request
-</p>
-</li>
-<li>4: <em>Blog post failed</em>
-
-<p>
-The blog posting failed (a blogging API failure of some sort)
-</p>
-</li>
-<li>96: <em>Invalid signature</em>
-
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li>97: <em>Missing signature</em>
-
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li>98: <em>Login failed / Invalid auth token</em>
-
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li>99: <em>User not logged in / Insufficient permissions</em>
-
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
+The specified collection does not exist.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -351,14 +325,26 @@ The XML-RPC request document could not be parsed.
 </p>
 </li>
 </ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;collections&gt;
+ &lt;collection id=&quot;12-72157594586579649&quot; title=&quot;All My Photos&quot; description=&quot;a collection&quot; iconlarge=&quot;http://farm1.static.flickr.com/187/cols/37_43fac2cf79_l.jpg&quot;
+ iconsmall=&quot;http://farm1.static.flickr.com/187/cols/56_43fac2cf79_s.jpg&quot;&gt;
+ &lt;set id=&quot;92157594171298291&quot; title=&quot;kitesurfing&quot; description=&quot;a set&quot;/&gt;
+ &lt;set id=&quot;72157594247596158&quot; title=&quot;faves&quot; description=&quot;some favorites.&quot;/&gt;
+ &lt;/collection&gt;
+ &lt;/collections&gt;
+</pre>
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000161-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000161-source">
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
 <pre>
 
 # Generated automatically from flickr api
-  def postPhoto(*args)
-    @flickr.call 'flickr.blogs.postPhoto', *args
+  def getTree(*args)
+    @flickr.call 'flickr.collections.getTree', *args
   end
 
 </pre>
