@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Photosets::Comments</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr::Photosets::Comments [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,48 +51,62 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="../../Request.html">
+
                 FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000143">addComment</a>&nbsp;&nbsp;
-      <a href="#M000144">deleteComment</a>&nbsp;&nbsp;
-      <a href="#M000145">editComment</a>&nbsp;&nbsp;
-      <a href="#M000146">getList</a>&nbsp;&nbsp;
+
+        <a href="#M000137">addComment</a>&nbsp;&nbsp;
+
+        <a href="#M000138">deleteComment</a>&nbsp;&nbsp;
+
+        <a href="#M000139">editComment</a>&nbsp;&nbsp;
+
+        <a href="#M000140">getList</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -105,24 +115,28 @@
 
 
 
-
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000143" class="method-detail">
-        <a name="M000143"></a>
+
+      <div id="method-M000137" class="method-detail">
+        <a name="M000137"></a>
 
         <div class="method-heading">
-          <a href="#M000143" class="method-signature">
+
+          <a href="#M000137" class="method-signature">
+
           <span class="method-name">addComment</span><span class="method-args">(:photoset_id =&gt; 'photoset_id',:comment_text =&gt; 'comment_text')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photosets.comments.addComment.html">flickr.photosets.comments.addComment</a>
@@ -196,13 +210,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -220,6 +234,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -227,9 +248,10 @@ The XML-RPC request document could not be parsed.
 <pre>
  &lt;comment id=&quot;97777-12492-72057594037942601&quot; /&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000143-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000143-source">
+            onclick="toggleCode('M000137-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000137-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -239,19 +261,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000144" class="method-detail">
-        <a name="M000144"></a>
+
+      <div id="method-M000138" class="method-detail">
+        <a name="M000138"></a>
 
         <div class="method-heading">
-          <a href="#M000144" class="method-signature">
+
+          <a href="#M000138" class="method-signature">
+
           <span class="method-name">deleteComment</span><span class="method-args">(:comment_id =&gt; 'comment_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photosets.comments.deleteComment.html">flickr.photosets.comments.deleteComment</a>
@@ -315,13 +344,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -339,10 +368,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000144-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000144-source">
+            onclick="toggleCode('M000138-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000138-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -352,19 +389,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000145" class="method-detail">
-        <a name="M000145"></a>
+
+      <div id="method-M000139" class="method-detail">
+        <a name="M000139"></a>
 
         <div class="method-heading">
-          <a href="#M000145" class="method-signature">
+
+          <a href="#M000139" class="method-signature">
+
           <span class="method-name">editComment</span><span class="method-args">(:comment_id =&gt; 'comment_id',:comment_text =&gt; 'comment_text')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photosets.comments.editComment.html">flickr.photosets.comments.editComment</a>
@@ -397,7 +441,7 @@ The comment id passed was not a valid comment id.
 <li>8: <em>Blank comment.</em>
 
 <p>
-Comment text can&#8216;t be blank.
+Comment text can&#8217;t be blank.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -437,13 +481,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -461,10 +505,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000145-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000145-source">
+            onclick="toggleCode('M000139-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000139-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -474,19 +526,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000146" class="method-detail">
-        <a name="M000146"></a>
+
+      <div id="method-M000140" class="method-detail">
+        <a name="M000140"></a>
 
         <div class="method-heading">
-          <a href="#M000146" class="method-signature">
+
+          <a href="#M000140" class="method-signature">
+
           <span class="method-name">getList</span><span class="method-args">(:photoset_id =&gt; 'photoset_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photosets.comments.getList.html">flickr.photosets.comments.getList</a>
@@ -525,13 +584,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -549,6 +608,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -561,9 +627,10 @@ The XML-RPC request document could not be parsed.
           &gt;Umm, I'm not sure, can I get back to you on that one?&lt;/comment&gt;
  &lt;/comments&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000146-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000146-source">
+            onclick="toggleCode('M000140-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000140-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -573,15 +640,18 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,28 +51,39 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="Request.html">
-                Request
+
+                FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
-
-
 
   <div id="contextContent">
 
@@ -87,40 +94,62 @@ Root class of the flickr api hierarchy.
 
     </div>
 
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000020">activity</a>&nbsp;&nbsp;
-      <a href="#M000012">auth</a>&nbsp;&nbsp;
-      <a href="#M000013">blogs</a>&nbsp;&nbsp;
-      <a href="#M000004">call</a>&nbsp;&nbsp;
-      <a href="#M000008">collections</a>&nbsp;&nbsp;
-      <a href="#M000021">commons</a>&nbsp;&nbsp;
-      <a href="#M000017">contacts</a>&nbsp;&nbsp;
-      <a href="#M000010">favorites</a>&nbsp;&nbsp;
-      <a href="#M000014">groups</a>&nbsp;&nbsp;
-      <a href="#M000015">interestingness</a>&nbsp;&nbsp;
-      <a href="#M000018">machinetags</a>&nbsp;&nbsp;
-      <a href="#M000022">panda</a>&nbsp;&nbsp;
-      <a href="#M000025">people</a>&nbsp;&nbsp;
-      <a href="#M000023">photos</a>&nbsp;&nbsp;
-      <a href="#M000011">photosets</a>&nbsp;&nbsp;
-      <a href="#M000009">places</a>&nbsp;&nbsp;
-      <a href="#M000006">prefs</a>&nbsp;&nbsp;
-      <a href="#M000024">reflection</a>&nbsp;&nbsp;
-      <a href="#M000016">tags</a>&nbsp;&nbsp;
-      <a href="#M000007">test</a>&nbsp;&nbsp;
-      <a href="#M000005">upload_photo</a>&nbsp;&nbsp;
-      <a href="#M000019">urls</a>&nbsp;&nbsp;
+
+        <a href="#M000010">activity</a>&nbsp;&nbsp;
+
+        <a href="#M000011">auth</a>&nbsp;&nbsp;
+
+        <a href="#M000012">blogs</a>&nbsp;&nbsp;
+
+        <a href="#M000008">call</a>&nbsp;&nbsp;
+
+        <a href="#M000013">collections</a>&nbsp;&nbsp;
+
+        <a href="#M000014">commons</a>&nbsp;&nbsp;
+
+        <a href="#M000015">contacts</a>&nbsp;&nbsp;
+
+        <a href="#M000016">favorites</a>&nbsp;&nbsp;
+
+        <a href="#M000017">groups</a>&nbsp;&nbsp;
+
+        <a href="#M000018">interestingness</a>&nbsp;&nbsp;
+
+        <a href="#M000019">machinetags</a>&nbsp;&nbsp;
+
+        <a href="#M000020">panda</a>&nbsp;&nbsp;
+
+        <a href="#M000021">people</a>&nbsp;&nbsp;
+
+        <a href="#M000022">photos</a>&nbsp;&nbsp;
+
+        <a href="#M000023">photosets</a>&nbsp;&nbsp;
+
+        <a href="#M000024">places</a>&nbsp;&nbsp;
+
+        <a href="#M000025">prefs</a>&nbsp;&nbsp;
+
+        <a href="#M000026">reflection</a>&nbsp;&nbsp;
+
+        <a href="#M000027">tags</a>&nbsp;&nbsp;
+
+        <a href="#M000028">test</a>&nbsp;&nbsp;
+
+        <a href="#M000009">upload_photo</a>&nbsp;&nbsp;
+
+        <a href="#M000029">urls</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -155,65 +184,85 @@ Class <a href="Flickr/Urls.html" class="link">FlickRaw::Flickr::Urls</a><br />
 
 
 
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000020" class="method-detail">
-        <a name="M000020"></a>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
 
         <div class="method-heading">
+
           <span class="method-name">activity</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Flickr/Activity.html">Activity</a> object.
 </p>
+
         </div>
       </div>
+
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">auth</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Auth.html">Auth</a> object.
+</p>
+
+        </div>
+      </div>
+
 
       <div id="method-M000012" class="method-detail">
         <a name="M000012"></a>
 
         <div class="method-heading">
-          <span class="method-name">auth</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Auth.html">Auth</a> object.
-</p>
-        </div>
-      </div>
 
-      <div id="method-M000013" class="method-detail">
-        <a name="M000013"></a>
-
-        <div class="method-heading">
           <span class="method-name">blogs</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Flickr/Blogs.html">Blogs</a> object.
 </p>
+
         </div>
       </div>
 
-      <div id="method-M000004" class="method-detail">
-        <a name="M000004"></a>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
 
         <div class="method-heading">
-          <a href="#M000004" class="method-signature">
+
+          <a href="#M000008" class="method-signature">
+
           <span class="method-name">call</span><span class="method-args">(req, args={})</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 This is the central method. It does the actual request to the flickr
 server.
@@ -222,9 +271,10 @@ server.
 Raises <a href="FailedResponse.html">FailedResponse</a> if the response
 status is <em>failed</em>.
 </p>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000004-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000004-source">
+            onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000008-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/flickraw.rb, line 146</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">args</span>={})
@@ -234,243 +284,330 @@ status is <em>failed</em>.
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000008" class="method-detail">
-        <a name="M000008"></a>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
 
         <div class="method-heading">
+
           <span class="method-name">collections</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Flickr/Collections.html">Collections</a> object.
 </p>
+
         </div>
       </div>
 
-      <div id="method-M000021" class="method-detail">
-        <a name="M000021"></a>
-
-        <div class="method-heading">
-          <span class="method-name">commons</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Commons.html">Commons</a> object.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000017" class="method-detail">
-        <a name="M000017"></a>
-
-        <div class="method-heading">
-          <span class="method-name">contacts</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Contacts.html">Contacts</a> object.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000010" class="method-detail">
-        <a name="M000010"></a>
-
-        <div class="method-heading">
-          <span class="method-name">favorites</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Favorites.html">Favorites</a> object.
-</p>
-        </div>
-      </div>
 
       <div id="method-M000014" class="method-detail">
         <a name="M000014"></a>
 
         <div class="method-heading">
-          <span class="method-name">groups</span><span class="method-args">()</span>
+
+          <span class="method-name">commons</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
-Returns a <a href="Flickr/Groups.html">Groups</a> object.
+Returns a <a href="Flickr/Commons.html">Commons</a> object.
 </p>
+
         </div>
       </div>
+
 
       <div id="method-M000015" class="method-detail">
         <a name="M000015"></a>
 
         <div class="method-heading">
-          <span class="method-name">interestingness</span><span class="method-args">()</span>
+
+          <span class="method-name">contacts</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
-Returns a <a href="Flickr/Interestingness.html">Interestingness</a> object.
+Returns a <a href="Flickr/Contacts.html">Contacts</a> object.
 </p>
+
         </div>
       </div>
 
-      <div id="method-M000018" class="method-detail">
-        <a name="M000018"></a>
-
-        <div class="method-heading">
-          <span class="method-name">machinetags</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Machinetags.html">Machinetags</a> object.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000022" class="method-detail">
-        <a name="M000022"></a>
-
-        <div class="method-heading">
-          <span class="method-name">panda</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Panda.html">Panda</a> object.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000025" class="method-detail">
-        <a name="M000025"></a>
-
-        <div class="method-heading">
-          <span class="method-name">people</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/People.html">People</a> object.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000023" class="method-detail">
-        <a name="M000023"></a>
-
-        <div class="method-heading">
-          <span class="method-name">photos</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Photos.html">Photos</a> object.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000011" class="method-detail">
-        <a name="M000011"></a>
-
-        <div class="method-heading">
-          <span class="method-name">photosets</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Photosets.html">Photosets</a> object.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000009" class="method-detail">
-        <a name="M000009"></a>
-
-        <div class="method-heading">
-          <span class="method-name">places</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Places.html">Places</a> object.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000006" class="method-detail">
-        <a name="M000006"></a>
-
-        <div class="method-heading">
-          <span class="method-name">prefs</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Prefs.html">Prefs</a> object.
-</p>
-        </div>
-      </div>
-
-      <div id="method-M000024" class="method-detail">
-        <a name="M000024"></a>
-
-        <div class="method-heading">
-          <span class="method-name">reflection</span><span class="method-args">()</span>
-        </div>
-      
-        <div class="method-description">
-          <p>
-Returns a <a href="Flickr/Reflection.html">Reflection</a> object.
-</p>
-        </div>
-      </div>
 
       <div id="method-M000016" class="method-detail">
         <a name="M000016"></a>
 
         <div class="method-heading">
-          <span class="method-name">tags</span><span class="method-args">()</span>
+
+          <span class="method-name">favorites</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Favorites.html">Favorites</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">groups</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Groups.html">Groups</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">interestingness</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Interestingness.html">Interestingness</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">machinetags</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Machinetags.html">Machinetags</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">panda</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Panda.html">Panda</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">people</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/People.html">People</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">photos</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Photos.html">Photos</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">photosets</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Photosets.html">Photosets</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">places</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Places.html">Places</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">prefs</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Prefs.html">Prefs</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">reflection</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+Returns a <a href="Flickr/Reflection.html">Reflection</a> object.
+</p>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+
+          <span class="method-name">tags</span><span class="method-args">()</span>
+
+        </div>
+
+        <div class="method-description">
+
           <p>
 Returns a <a href="Flickr/Tags.html">Tags</a> object.
 </p>
+
         </div>
       </div>
 
-      <div id="method-M000007" class="method-detail">
-        <a name="M000007"></a>
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
 
         <div class="method-heading">
+
           <span class="method-name">test</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Flickr/Test.html">Test</a> object.
 </p>
+
         </div>
       </div>
 
-      <div id="method-M000005" class="method-detail">
-        <a name="M000005"></a>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
 
         <div class="method-heading">
-          <a href="#M000005" class="method-signature">
+
+          <a href="#M000009" class="method-signature">
+
           <span class="method-name">upload_photo</span><span class="method-args">(file, args={})</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Use this to upload the photo in <em>file</em>.
 </p>
@@ -482,9 +619,10 @@ See <a
 href="http://www.flickr.com/services/api/upload.api.html">www.flickr.com/services/api/upload.api.html</a>
 for more information on the arguments.
 </p>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000005-source">
+            onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000009-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/flickraw.rb, line 157</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">upload_photo</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>={})
@@ -519,29 +657,37 @@ for more information on the arguments.
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000019" class="method-detail">
-        <a name="M000019"></a>
+
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
 
         <div class="method-heading">
+
           <span class="method-name">urls</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Flickr/Urls.html">Urls</a> object.
 </p>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

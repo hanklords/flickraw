@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Photos::Geo</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr::Photos::Geo [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,53 +51,72 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="../../Request.html">
+
                 FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000114">batchCorrectLocation</a>&nbsp;&nbsp;
-      <a href="#M000115">correctLocation</a>&nbsp;&nbsp;
-      <a href="#M000116">getLocation</a>&nbsp;&nbsp;
-      <a href="#M000117">getPerms</a>&nbsp;&nbsp;
-      <a href="#M000118">photosForLocation</a>&nbsp;&nbsp;
-      <a href="#M000119">removeLocation</a>&nbsp;&nbsp;
-      <a href="#M000120">setContext</a>&nbsp;&nbsp;
-      <a href="#M000121">setLocation</a>&nbsp;&nbsp;
-      <a href="#M000122">setPerms</a>&nbsp;&nbsp;
+
+        <a href="#M000109">batchCorrectLocation</a>&nbsp;&nbsp;
+
+        <a href="#M000110">correctLocation</a>&nbsp;&nbsp;
+
+        <a href="#M000111">getLocation</a>&nbsp;&nbsp;
+
+        <a href="#M000112">getPerms</a>&nbsp;&nbsp;
+
+        <a href="#M000113">photosForLocation</a>&nbsp;&nbsp;
+
+        <a href="#M000114">removeLocation</a>&nbsp;&nbsp;
+
+        <a href="#M000115">setContext</a>&nbsp;&nbsp;
+
+        <a href="#M000116">setLocation</a>&nbsp;&nbsp;
+
+        <a href="#M000117">setPerms</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -110,24 +125,28 @@
 
 
 
-
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000114" class="method-detail">
-        <a name="M000114"></a>
+
+      <div id="method-M000109" class="method-detail">
+        <a name="M000109"></a>
 
         <div class="method-heading">
-          <a href="#M000114" class="method-signature">
+
+          <a href="#M000109" class="method-signature">
+
           <span class="method-name">batchCorrectLocation</span><span class="method-args">(:lat =&gt; 'lat',:lon =&gt; 'lon',:accuracy =&gt; 'accuracy',:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.geo.batchCorrectLocation.html">flickr.photos.geo.batchCorrectLocation</a>
@@ -135,11 +154,11 @@ request.
 </p>
 <p>
 Correct the places hierarchy for all the photos for a user at a given
-latitude, longitude and accuracy.&lt;br /&gt;&lt;br /&gt;
+latitude, longitude and accuracy.<br /><br />
 </p>
 <p>
 Batch corrections are processed in a delayed queue so it may take a few
-minutes before the changes are reflected in a user&#8216;s photos.
+minutes before the changes are reflected in a user&#8217;s photos.
 </p>
 <p>
 <b>Arguments</b>
@@ -247,13 +266,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -271,10 +290,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000114-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000114-source">
+            onclick="toggleCode('M000109-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000109-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -284,19 +311,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000115" class="method-detail">
-        <a name="M000115"></a>
+
+      <div id="method-M000110" class="method-detail">
+        <a name="M000110"></a>
 
         <div class="method-heading">
-          <a href="#M000115" class="method-signature">
+
+          <a href="#M000110" class="method-signature">
+
           <span class="method-name">correctLocation</span><span class="method-args">(:photo_id =&gt; 'photo_id',:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.geo.correctLocation.html">flickr.photos.geo.correctLocation</a>
@@ -328,9 +362,9 @@ data.</em>
 
 <p>
 Before users may assign location data to a photo they must define who, by
-default, may view that information. Users can edit this preference at &lt;a
-href=&quot;<a
-href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>&gt;
+default, may view that information. Users can edit this preference at <a
+href=&#8220;<a
+href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>>
 </p>
 </li>
 <li>2: <em>Missing place ID</em>
@@ -388,13 +422,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -412,10 +446,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000115-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000115-source">
+            onclick="toggleCode('M000110-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000110-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -425,19 +467,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000116" class="method-detail">
-        <a name="M000116"></a>
+
+      <div id="method-M000111" class="method-detail">
+        <a name="M000111"></a>
 
         <div class="method-heading">
-          <a href="#M000116" class="method-signature">
+
+          <a href="#M000111" class="method-signature">
+
           <span class="method-name">getLocation</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.geo.getLocation.html">flickr.photos.geo.getLocation</a>
@@ -485,13 +534,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -509,6 +558,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -518,9 +574,10 @@ The XML-RPC request document could not be parsed.
          &lt;location latitude=&quot;-17.685895&quot; longitude=&quot;-63.36914&quot; accuracy=&quot;6&quot; /&gt;
  &lt;/photo&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000116-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000116-source">
+            onclick="toggleCode('M000111-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000111-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -530,19 +587,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000117" class="method-detail">
-        <a name="M000117"></a>
+
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
 
         <div class="method-heading">
-          <a href="#M000117" class="method-signature">
+
+          <a href="#M000112" class="method-signature">
+
           <span class="method-name">getPerms</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.geo.getPerms.html">flickr.photos.geo.getPerms</a>
@@ -614,13 +678,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -638,6 +702,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -645,9 +716,10 @@ The XML-RPC request document could not be parsed.
 <pre>
  &lt;perms id=&quot;10592&quot; ispublic=&quot;0&quot; iscontact=&quot;0&quot; isfriend=&quot;0&quot; isfamily=&quot;1&quot; /&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000117-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000117-source">
+            onclick="toggleCode('M000112-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000112-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -657,19 +729,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000118" class="method-detail">
-        <a name="M000118"></a>
+
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
 
         <div class="method-heading">
-          <a href="#M000118" class="method-signature">
+
+          <a href="#M000113" class="method-signature">
+
           <span class="method-name">photosForLocation</span><span class="method-args">(:lat =&gt; 'lat',:lon =&gt; 'lon',:accuracy =&gt; 'accuracy',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.geo.photosForLocation.html">flickr.photos.geo.photosForLocation</a>
@@ -778,13 +857,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -802,10 +881,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000118-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000118-source">
+            onclick="toggleCode('M000113-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000113-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -815,19 +902,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000119" class="method-detail">
-        <a name="M000119"></a>
+
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
 
         <div class="method-heading">
-          <a href="#M000119" class="method-signature">
+
+          <a href="#M000114" class="method-signature">
+
           <span class="method-name">removeLocation</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.geo.removeLocation.html">flickr.photos.geo.removeLocation</a>
@@ -898,13 +992,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -922,10 +1016,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000119-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000119-source">
+            onclick="toggleCode('M000114-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000114-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -935,29 +1037,35 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000120" class="method-detail">
-        <a name="M000120"></a>
+
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
 
         <div class="method-heading">
-          <a href="#M000120" class="method-signature">
+
+          <a href="#M000115" class="method-signature">
+
           <span class="method-name">setContext</span><span class="method-args">(:photo_id =&gt; 'photo_id',:context =&gt; 'context')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.geo.setContext.html">flickr.photos.geo.setContext</a>
 request.
 </p>
 <p>
-Indicate the state of a photo&#8216;s geotagginess beyond latitude and
-longitude.&lt;br /&gt;&lt;br /&gt; Note : photos passed to this method must
-already be geotagged (using the
-&lt;q&gt;flickr.photos.geo.setLocation&lt;/q&gt; method).
+Indicate the state of a photo&#8217;s geotagginess beyond latitude and
+longitude.<br /><br /> Note : photos passed to this method must already be
+geotagged (using the <q>flickr.photos.geo.setLocation</q> method).
 </p>
 <p>
 <b>Arguments</b>
@@ -966,18 +1074,17 @@ already be geotagged (using the
 <dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to set context data for.
 
 </dd>
-<dt>context <em>(required)</em> </dt><dd>Context is a numeric value representing the photo&#8216;s geotagginess
+<dt>context <em>(required)</em> </dt><dd>Context is a numeric value representing the photo&#8217;s geotagginess
 beyond latitude and longitude. For example, you may wish to indicate that a
-photo was taken &quot;indoors&quot; or &quot;outdoors&quot;. &lt;br
-/&gt;&lt;br /&gt;
+photo was taken &#8220;indoors&#8221; or &#8220;outdoors&#8221;. <br /><br
+/>
 
 </dd>
 </dl>
 <p>
-The current list of context IDs is :&lt;br /&gt;&lt;br/&gt; &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;0&lt;/strong&gt;, not defined.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;1&lt;/strong&gt;, indoors.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;2&lt;/strong&gt;, outdoors.&lt;/li&gt; &lt;/ul&gt;
+The current list of context IDs is :<br /><br/> <ul>
+<li><strong>0</strong>, not defined.</li> <li><strong>1</strong>,
+indoors.</li> <li><strong>2</strong>, outdoors.</li> </ul>
 </p>
 <p>
 <b>Error codes</b>
@@ -1033,13 +1140,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1057,10 +1164,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000120-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000120-source">
+            onclick="toggleCode('M000115-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000115-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1070,19 +1185,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000121" class="method-detail">
-        <a name="M000121"></a>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
 
         <div class="method-heading">
-          <a href="#M000121" class="method-signature">
+
+          <a href="#M000116" class="method-signature">
+
           <span class="method-name">setLocation</span><span class="method-args">(:photo_id =&gt; 'photo_id',:lat =&gt; 'lat',:lon =&gt; 'lon',:accuracy =&gt; 'accuracy',:context =&gt; 'context')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.geo.setLocation.html">flickr.photos.geo.setLocation</a>
@@ -1094,9 +1216,9 @@ level) for a photo.
 </p>
 <p>
 Before users may assign location data to a photo they must define who, by
-default, may view that information. Users can edit this preference at &lt;a
-href=&quot;<a
-href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>&gt;.
+default, may view that information. Users can edit this preference at <a
+href=&#8220;<a
+href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>>.
 If a user has not set this preference, the API method will return an error.
 </p>
 <p>
@@ -1119,20 +1241,18 @@ Country is ~3, Region ~6, City ~11, Street ~16. Current range is 1-16.
 Defaults to 16 if not specified.
 
 </dd>
-<dt>context </dt><dd>Context is a numeric value representing the photo&#8216;s geotagginess
+<dt>context </dt><dd>Context is a numeric value representing the photo&#8217;s geotagginess
 beyond latitude and longitude. For example, you may wish to indicate that a
-photo was taken &quot;indoors&quot; or &quot;outdoors&quot;. &lt;br
-/&gt;&lt;br /&gt;
+photo was taken &#8220;indoors&#8221; or &#8220;outdoors&#8221;. <br /><br
+/>
 
 </dd>
 </dl>
 <p>
-The current list of context IDs is :&lt;br /&gt;&lt;br/&gt; &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;0&lt;/strong&gt;, not defined.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;1&lt;/strong&gt;, indoors.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;2&lt;/strong&gt;, outdoors.&lt;/li&gt;
-&lt;/ul&gt;&lt;br /&gt; The default context for geotagged photos is 0, or
-&quot;not defined&quot;
+The current list of context IDs is :<br /><br/> <ul>
+<li><strong>0</strong>, not defined.</li> <li><strong>1</strong>,
+indoors.</li> <li><strong>2</strong>, outdoors.</li> </ul><br /> The
+default context for geotagged photos is 0, or &#8220;not defined&#8220;
 </p>
 <p>
 <b>Error codes</b>
@@ -1180,9 +1300,9 @@ data.</em>
 
 <p>
 Before users may assign location data to a photo they must define who, by
-default, may view that information. Users can edit this preference at &lt;a
-href=&quot;<a
-href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>&gt;
+default, may view that information. Users can edit this preference at <a
+href=&#8220;<a
+href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>>
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1222,13 +1342,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1246,10 +1366,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000121-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000121-source">
+            onclick="toggleCode('M000116-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000116-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1259,19 +1387,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000122" class="method-detail">
-        <a name="M000122"></a>
+
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
 
         <div class="method-heading">
-          <a href="#M000122" class="method-signature">
+
+          <a href="#M000117" class="method-signature">
+
           <span class="method-name">setPerms</span><span class="method-args">(:is_public =&gt; 'is_public',:is_contact =&gt; 'is_contact',:is_friend =&gt; 'is_friend',:is_family =&gt; 'is_family',:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.geo.setPerms.html">flickr.photos.geo.setPerms</a>
@@ -1284,19 +1419,19 @@ Set the permission for who may view the geo data associated with a photo.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>is_public <em>(required)</em> </dt><dd>1 to set viewing permissions for the photo&#8216;s location data to public,
+<dt>is_public <em>(required)</em> </dt><dd>1 to set viewing permissions for the photo&#8217;s location data to public,
 0 to set it to private.
 
 </dd>
-<dt>is_contact <em>(required)</em> </dt><dd>1 to set viewing permissions for the photo&#8216;s location data to
+<dt>is_contact <em>(required)</em> </dt><dd>1 to set viewing permissions for the photo&#8217;s location data to
 contacts, 0 to set it to private.
 
 </dd>
-<dt>is_friend <em>(required)</em> </dt><dd>1 to set viewing permissions for the photo&#8216;s location data to
+<dt>is_friend <em>(required)</em> </dt><dd>1 to set viewing permissions for the photo&#8217;s location data to
 friends, 0 to set it to private.
 
 </dd>
-<dt>is_family <em>(required)</em> </dt><dd>1 to set viewing permissions for the photo&#8216;s location data to family,
+<dt>is_family <em>(required)</em> </dt><dd>1 to set viewing permissions for the photo&#8217;s location data to family,
 0 to set it to private.
 
 </dd>
@@ -1365,13 +1500,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1389,10 +1524,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000122-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000122-source">
+            onclick="toggleCode('M000117-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000117-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1402,15 +1545,18 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

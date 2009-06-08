@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Blogs</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr::Blogs [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,46 +51,58 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="../Request.html">
+
                 FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000160">getList</a>&nbsp;&nbsp;
-      <a href="#M000161">postPhoto</a>&nbsp;&nbsp;
+
+        <a href="#M000036">getList</a>&nbsp;&nbsp;
+
+        <a href="#M000037">postPhoto</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -103,24 +111,28 @@
 
 
 
-
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000160" class="method-detail">
-        <a name="M000160"></a>
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
 
         <div class="method-heading">
-          <a href="#M000160" class="method-signature">
+
+          <a href="#M000036" class="method-signature">
+
           <span class="method-name">getList</span><span class="method-args">()</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.blogs.getList.html">flickr.blogs.getList</a>
@@ -173,13 +185,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -197,6 +209,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -209,9 +228,10 @@ The XML-RPC request document could not be parsed.
                 url=&quot;http://flickrtest1.userland.com/&quot; /&gt;
  &lt;/blogs&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000160-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000160-source">
+            onclick="toggleCode('M000036-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000036-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -221,19 +241,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000161" class="method-detail">
-        <a name="M000161"></a>
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
 
         <div class="method-heading">
-          <a href="#M000161" class="method-signature">
+
+          <a href="#M000037" class="method-signature">
+
           <span class="method-name">postPhoto</span><span class="method-args">(:blog_id =&gt; 'blog_id',:photo_id =&gt; 'photo_id',:title =&gt; 'title',:description =&gt; 'description',:blog_password =&gt; 'blog_password')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.blogs.postPhoto.html">flickr.blogs.postPhoto</a>
@@ -326,13 +353,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -350,10 +377,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000161-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000161-source">
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -363,15 +398,18 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

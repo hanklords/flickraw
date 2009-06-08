@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Panda</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr::Panda [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,46 +51,58 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="../Request.html">
+
                 FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000069">getList</a>&nbsp;&nbsp;
-      <a href="#M000070">getPhotos</a>&nbsp;&nbsp;
+
+        <a href="#M000065">getList</a>&nbsp;&nbsp;
+
+        <a href="#M000066">getPhotos</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -103,35 +111,39 @@
 
 
 
-
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000069" class="method-detail">
-        <a name="M000069"></a>
+
+      <div id="method-M000065" class="method-detail">
+        <a name="M000065"></a>
 
         <div class="method-heading">
-          <a href="#M000069" class="method-signature">
+
+          <a href="#M000065" class="method-signature">
+
           <span class="method-name">getList</span><span class="method-args">()</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.panda.getList.html">flickr.panda.getList</a>
 request.
 </p>
 <p>
-Return a list of &lt;a href=&quot;<a
+Return a list of <a href=&#8220;<a
 href="http://www.flickr.com/explore/panda">Flickr">www.flickr.com/explore/panda">Flickr</a>
-pandas&lt;/a&gt;, from whom you can request photos using the &lt;a
-href=&quot;/services/api/flickr.panda.getPhotos.htm&quot;&gt;flickr.panda.<a
-href="Panda.html#M000070">getPhotos</a>&lt;/a&gt; API method.
+pandas</a>, from whom you can request photos using the <a
+href=&#8220;/services/api/flickr.panda.getPhotos.htm&#8220;>flickr.panda.getPhotos</a>
+API method.
 </p>
 <p>
 <b>Arguments</b>
@@ -152,13 +164,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -176,6 +188,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -187,9 +206,10 @@ The XML-RPC request document could not be parsed.
     &lt;panda&gt;wang wang&lt;/panda&gt;
  &lt;/pandas&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000069-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000069-source">
+            onclick="toggleCode('M000065-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000065-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -199,53 +219,58 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000070" class="method-detail">
-        <a name="M000070"></a>
+
+      <div id="method-M000066" class="method-detail">
+        <a name="M000066"></a>
 
         <div class="method-heading">
-          <a href="#M000070" class="method-signature">
+
+          <a href="#M000066" class="method-signature">
+
           <span class="method-name">getPhotos</span><span class="method-args">(:panda_name =&gt; 'panda_name',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.panda.getPhotos.html">flickr.panda.getPhotos</a>
 request.
 </p>
 <p>
-Ask the &lt;a href=&quot;<a
+Ask the <a href=&#8220;<a
 href="http://www.flickr.com/explore/panda">Flickr">www.flickr.com/explore/panda">Flickr</a>
-Pandas&lt;/a&gt; for a list of recent public (and &quot;safe&quot;) photos.
+Pandas</a> for a list of recent public (and &#8220;safe&#8221;) photos.
 </p>
 <p>
 <b>Arguments</b>
 </p>
 <dl>
 <dt>panda_name <em>(required)</em> </dt><dd>The name of the panda to ask for photos from. There are currently three
-pandas named:&lt;br /&gt;&lt;br /&gt;
+pandas named:<br /><br />
 
 </dd>
 </dl>
 <p>
-&lt;ul&gt; &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;<a
+<ul> <li><strong><a href=&#8220;<a
 href="http://flickr.com/photos/ucumari/126073203/">ling">flickr.com/photos/ucumari/126073203/">ling</a>
-ling&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;&lt;a
-href=&quot;<a
+ling</a></strong></li> <li><strong><a href=&#8220;<a
 href="http://flickr.com/photos/lynnehicks/136407353">hsing">flickr.com/photos/lynnehicks/136407353">hsing</a>
-hsing&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;&lt;a
-href=&quot;<a
+hsing</a></strong></li> <li><strong><a href=&#8220;<a
 href="http://flickr.com/photos/perfectpandas/1597067182/">wang">flickr.com/photos/perfectpandas/1597067182/">wang</a>
-wang&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;/ul&gt;
+wang</a></strong></li> </ul>
 </p>
 <p>
-&lt;br /&gt;You can fetch a list of all the current pandas using the &lt;a
-href=&quot;/services/api/flickr.panda.getList.html&quot;&gt;flickr.panda.<a
-href="Panda.html#M000069">getList</a>&lt;/a&gt; API method.
+<br />You can fetch a list of all the current pandas using the <a
+href=&#8220;/services/api/flickr.panda.getList.html&#8220;>flickr.panda.getList</a>
+API method.
 </p>
 <dl>
 <dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
@@ -278,7 +303,7 @@ One or more required parameters was not included with your request.
 <li>2: <em>Unknown panda</em>
 
 <p>
-You requested a panda we haven&#8216;t met yet.
+You requested a panda we haven&#8217;t met yet.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -293,13 +318,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -317,6 +342,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -330,9 +362,10 @@ The XML-RPC request document could not be parsed.
      &lt;!-- and so on --&gt;
  &lt;/photos&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000070-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000070-source">
+            onclick="toggleCode('M000066-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000066-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -342,15 +375,18 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

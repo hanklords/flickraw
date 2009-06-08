@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>File: flickraw.rb</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>File: flickraw.rb [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
   <div id="fileHeader">
@@ -52,11 +48,12 @@
     <tr class="top-aligned-row">
       <td><strong>Path:</strong></td>
       <td>lib/flickraw.rb
+
       </td>
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>Sun Mar 08 13:42:54 +0100 2009</td>
+      <td>2009-06-08 18:36:00 +0200</td>
     </tr>
     </table>
   </div>
@@ -64,18 +61,16 @@
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
     <div id="description">
       <p>
-Copyright (c) 2006 Mael Clerambault &lt;maelclerambault@yahoo.fr&gt;
+Copyright &#169; 2006 Mael Clerambault <maelclerambault@yahoo.fr>
 </p>
 <p>
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
-&quot;Software&quot;), to deal in the Software without restriction,
+&#8220;Software&#8221;), to deal in the Software without restriction,
 including without limitation the rights to use, copy, modify, merge,
 publish, distribute, sublicense, and/or sell copies of the Software, and to
 permit persons to whom the Software is furnished to do so, subject to the
@@ -86,7 +81,7 @@ The above copyright notice and this permission notice shall be included in
 all copies or substantial portions of the Software.
 </p>
 <p>
-THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+THE SOFTWARE IS PROVIDED &#8220;AS IS&#8221;, WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
 MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
 NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
@@ -101,25 +96,32 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
       <h3 class="section-bar">Required files</h3>
 
       <div class="name-list">
-      net/http&nbsp;&nbsp;
-      md5&nbsp;&nbsp;
-      json&nbsp;&nbsp;
-      cgi&nbsp;&nbsp;
+
+        net/http&nbsp;&nbsp;
+
+        digest/md5&nbsp;&nbsp;
+
+        json&nbsp;&nbsp;
+
+        cgi&nbsp;&nbsp;
+
       </div>
     </div>
 
    </div>
 
+
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000001">flickr</a>&nbsp;&nbsp;
+
+        <a href="#M000001">flickr</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -128,29 +130,31 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
 
-
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
+
 
       <div id="method-M000001" class="method-detail">
         <a name="M000001"></a>
 
         <div class="method-heading">
+
           <a href="#M000001" class="method-signature">
+
           <span class="method-name">flickr</span><span class="method-args">()</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
-Use this to access the <a href="flickraw_rb.html#M000001">flickr</a> API
-easily. You can type directly the <a
-href="flickraw_rb.html#M000001">flickr</a> requests as they are described
-on the <a href="flickraw_rb.html#M000001">flickr</a> website.
+Use this to access the flickr API easily. You can type directly the flickr
+requests as they are described on the flickr website.
 </p>
 <pre>
  require 'flickraw'
@@ -158,6 +162,7 @@ on the <a href="flickraw_rb.html#M000001">flickr</a> website.
  recent_photos = flickr.photos.getRecent
  puts recent_photos[0].title
 </pre>
+
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000001-source">
@@ -166,15 +171,18 @@ on the <a href="flickraw_rb.html#M000001">flickr</a> website.
 <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">flickr</span>; <span class="ruby-identifier">$flickraw</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">FlickRaw</span><span class="ruby-operator">::</span><span class="ruby-constant">Flickr</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

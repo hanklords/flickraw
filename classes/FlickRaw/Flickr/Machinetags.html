@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Machinetags</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr::Machinetags [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,48 +51,64 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="../Request.html">
+
                 FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000030">getNamespaces</a>&nbsp;&nbsp;
-      <a href="#M000031">getPairs</a>&nbsp;&nbsp;
-      <a href="#M000032">getPredicates</a>&nbsp;&nbsp;
-      <a href="#M000033">getValues</a>&nbsp;&nbsp;
+
+        <a href="#M000060">getNamespaces</a>&nbsp;&nbsp;
+
+        <a href="#M000061">getPairs</a>&nbsp;&nbsp;
+
+        <a href="#M000062">getPredicates</a>&nbsp;&nbsp;
+
+        <a href="#M000063">getRecentValues</a>&nbsp;&nbsp;
+
+        <a href="#M000064">getValues</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -105,24 +117,28 @@
 
 
 
-
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000030" class="method-detail">
-        <a name="M000030"></a>
+
+      <div id="method-M000060" class="method-detail">
+        <a name="M000060"></a>
 
         <div class="method-heading">
-          <a href="#M000030" class="method-signature">
+
+          <a href="#M000060" class="method-signature">
+
           <span class="method-name">getNamespaces</span><span class="method-args">(:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.machinetags.getNamespaces.html">flickr.machinetags.getNamespaces</a>
@@ -171,13 +187,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -195,6 +211,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -208,9 +231,10 @@ The XML-RPC request document could not be parsed.
    &lt;namespace usage=&quot;50449&quot; predicates=&quot;4&quot;&gt;upcoming&lt;/namespace&gt;
  &lt;/namespace&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000030-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000030-source">
+            onclick="toggleCode('M000060-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000060-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -220,19 +244,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000031" class="method-detail">
-        <a name="M000031"></a>
+
+      <div id="method-M000061" class="method-detail">
+        <a name="M000061"></a>
 
         <div class="method-heading">
-          <a href="#M000031" class="method-signature">
+
+          <a href="#M000061" class="method-signature">
+
           <span class="method-name">getPairs</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.machinetags.getPairs.html">flickr.machinetags.getPairs</a>
@@ -291,13 +322,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -315,6 +346,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -327,9 +365,10 @@ The XML-RPC request document could not be parsed.
     &lt;pair namespace=&quot;aero&quot; predicate=&quot;tail&quot; usage=&quot;1048&quot;&gt;aero:tail&lt;/pair&gt;
  &lt;/pairs&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000031-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000031-source">
+            onclick="toggleCode('M000061-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000061-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -339,19 +378,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000032" class="method-detail">
-        <a name="M000032"></a>
+
+      <div id="method-M000062" class="method-detail">
+        <a name="M000062"></a>
 
         <div class="method-heading">
-          <a href="#M000032" class="method-signature">
+
+          <a href="#M000062" class="method-signature">
+
           <span class="method-name">getPredicates</span><span class="method-args">(:namespace =&gt; 'namespace',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.machinetags.getPredicates.html">flickr.machinetags.getPredicates</a>
@@ -400,13 +446,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -424,6 +470,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -435,9 +488,10 @@ The XML-RPC request document could not be parsed.
      &lt;predicate usage=&quot;10&quot; namespaces=&quot;1&quot;&gt;hand&lt;/predicate&gt;
  &lt;/predicates&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000032-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000032-source">
+            onclick="toggleCode('M000062-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000062-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -447,19 +501,144 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000033" class="method-detail">
-        <a name="M000033"></a>
+
+      <div id="method-M000063" class="method-detail">
+        <a name="M000063"></a>
 
         <div class="method-heading">
-          <a href="#M000033" class="method-signature">
-          <span class="method-name">getValues</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
+          <a href="#M000063" class="method-signature">
+
+          <span class="method-name">getRecentValues</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:added_since =&gt; 'added_since')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.machinetags.getRecentValues.html">flickr.machinetags.getRecentValues</a>
+request.
+</p>
+<p>
+Fetch recently used machine tags values.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>namespace </dt><dd>A namespace that all values should be restricted to.
+
+</dd>
+<dt>predicate </dt><dd>A predicate that all values should be restricted to.
+
+</dd>
+<dt>added_since </dt><dd>Only return machine tags values that have been added since this timestamp,
+in epoch seconds.
+
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;values namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; page=&quot;1&quot; total=&quot;500&quot; perpage=&quot;500&quot; pages=&quot;1&quot;&gt;
+        &lt;value usage=&quot;4&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1244232796&quot; last_added=&quot;1244232796&quot;&gt;maui chaff flower&lt;/value&gt;
+        &lt;value usage=&quot;1&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1244231247&quot; last_added=&quot;1244231247&quot;&gt;alahe'e&lt;/value&gt;
+        &lt;value usage=&quot;1&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1244230234&quot; last_added=&quot;1244230234&quot;&gt;edible seed cycas&lt;/value&gt;
+        &lt;value usage=&quot;1&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1244229646&quot; last_added=&quot;1244229646&quot;&gt;zamia&lt;/value&gt;
+        &lt;value usage=&quot;281&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1234197784&quot; last_added=&quot;1244214354&quot;&gt;great tit&lt;/value&gt;
+        &lt;value usage=&quot;13&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1226106315&quot; last_added=&quot;1244212395&quot;&gt;butterfly&lt;/value&gt;
+        ....
+ &lt;/values&gt;
+</pre>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000063-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000063-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getRecentValues(*args)
+    @flickr.call 'flickr.machinetags.getRecentValues', *args
+  end
+
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000064" class="method-detail">
+        <a name="M000064"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000064" class="method-signature">
+
+          <span class="method-name">getValues</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.machinetags.getValues.html">flickr.machinetags.getValues</a>
@@ -515,13 +694,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -539,6 +718,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -550,9 +736,10 @@ The XML-RPC request document could not be parsed.
      &lt;value usage=&quot;147&quot;&gt;789&lt;/value&gt;
  &lt;/values&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000033-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000033-source">
+            onclick="toggleCode('M000064-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000064-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -562,15 +749,18 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

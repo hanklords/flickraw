@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Photos::Notes</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr::Photos::Notes [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,47 +51,60 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="../../Request.html">
+
                 FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000109">add</a>&nbsp;&nbsp;
-      <a href="#M000110">delete</a>&nbsp;&nbsp;
-      <a href="#M000111">edit</a>&nbsp;&nbsp;
+
+        <a href="#M000120">add</a>&nbsp;&nbsp;
+
+        <a href="#M000121">delete</a>&nbsp;&nbsp;
+
+        <a href="#M000122">edit</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -104,24 +113,28 @@
 
 
 
-
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000109" class="method-detail">
-        <a name="M000109"></a>
+
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
 
         <div class="method-heading">
-          <a href="#M000109" class="method-signature">
+
+          <a href="#M000120" class="method-signature">
+
           <span class="method-name">add</span><span class="method-args">(:photo_id =&gt; 'photo_id',:note_x =&gt; 'note_x',:note_y =&gt; 'note_y',:note_w =&gt; 'note_w',:note_h =&gt; 'note_h',:note_text =&gt; 'note_text')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.notes.add.html">flickr.photos.notes.add</a>
@@ -135,7 +148,7 @@ Add a note to a photo. Coordinates and sizes are in pixels, based on the
 <b>Arguments</b>
 </p>
 <dl>
-<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to <a href="Notes.html#M000109">add</a> a note to
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to add a note to
 
 </dd>
 <dt>note_x <em>(required)</em> </dt><dd>The left coordinate of the note
@@ -164,11 +177,10 @@ Add a note to a photo. Coordinates and sizes are in pixels, based on the
 The photo id passed was not a valid photo id
 </p>
 </li>
-<li>2: <em>User cannot <a href="Notes.html#M000109">add</a> notes</em>
+<li>2: <em>User cannot add notes</em>
 
 <p>
-The calling user does not have permission to <a
-href="Notes.html#M000109">add</a> a note to this photo
+The calling user does not have permission to add a note to this photo
 </p>
 </li>
 <li>3: <em>Missing required arguments</em>
@@ -214,13 +226,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -238,6 +250,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -245,9 +264,10 @@ The XML-RPC request document could not be parsed.
 <pre>
  &lt;note id=&quot;1234&quot; /&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000109-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000109-source">
+            onclick="toggleCode('M000120-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000120-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -257,19 +277,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000110" class="method-detail">
-        <a name="M000110"></a>
+
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
 
         <div class="method-heading">
-          <a href="#M000110" class="method-signature">
+
+          <a href="#M000121" class="method-signature">
+
           <span class="method-name">delete</span><span class="method-args">(:note_id =&gt; 'note_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.notes.delete.html">flickr.photos.notes.delete</a>
@@ -282,7 +309,7 @@ Delete a note from a photo.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>note_id <em>(required)</em> </dt><dd>The id of the note to <a href="Notes.html#M000110">delete</a>
+<dt>note_id <em>(required)</em> </dt><dd>The id of the note to delete
 
 </dd>
 </dl>
@@ -296,11 +323,10 @@ Delete a note from a photo.
 The note id passed was not a valid note id
 </p>
 </li>
-<li>2: <em>User cannot <a href="Notes.html#M000110">delete</a> note</em>
+<li>2: <em>User cannot delete note</em>
 
 <p>
-The calling user does not have permission to <a
-href="Notes.html#M000110">delete</a> the specified note
+The calling user does not have permission to delete the specified note
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -340,13 +366,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -364,10 +390,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000110-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000110-source">
+            onclick="toggleCode('M000121-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000121-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -377,19 +411,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000111" class="method-detail">
-        <a name="M000111"></a>
+
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
 
         <div class="method-heading">
-          <a href="#M000111" class="method-signature">
+
+          <a href="#M000122" class="method-signature">
+
           <span class="method-name">edit</span><span class="method-args">(:note_id =&gt; 'note_id',:note_x =&gt; 'note_x',:note_y =&gt; 'note_y',:note_w =&gt; 'note_w',:note_h =&gt; 'note_h',:note_text =&gt; 'note_text')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.notes.edit.html">flickr.photos.notes.edit</a>
@@ -403,7 +444,7 @@ Edit a note on a photo. Coordinates and sizes are in pixels, based on the
 <b>Arguments</b>
 </p>
 <dl>
-<dt>note_id <em>(required)</em> </dt><dd>The id of the note to <a href="Notes.html#M000111">edit</a>
+<dt>note_id <em>(required)</em> </dt><dd>The id of the note to edit
 
 </dd>
 <dt>note_x <em>(required)</em> </dt><dd>The left coordinate of the note
@@ -432,11 +473,10 @@ Edit a note on a photo. Coordinates and sizes are in pixels, based on the
 The note id passed was not a valid note id
 </p>
 </li>
-<li>2: <em>User cannot <a href="Notes.html#M000111">edit</a> note</em>
+<li>2: <em>User cannot edit note</em>
 
 <p>
-The calling user does not have permission to <a
-href="Notes.html#M000111">edit</a> the specified note
+The calling user does not have permission to edit the specified note
 </p>
 </li>
 <li>3: <em>Missing required arguments</em>
@@ -482,13 +522,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -506,10 +546,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000111-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000111-source">
+            onclick="toggleCode('M000122-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000122-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -519,15 +567,18 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

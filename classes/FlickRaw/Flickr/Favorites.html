@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Favorites</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr::Favorites [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,48 +51,62 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="../Request.html">
+
                 FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000045">add</a>&nbsp;&nbsp;
-      <a href="#M000046">getList</a>&nbsp;&nbsp;
-      <a href="#M000047">getPublicList</a>&nbsp;&nbsp;
-      <a href="#M000048">remove</a>&nbsp;&nbsp;
+
+        <a href="#M000044">add</a>&nbsp;&nbsp;
+
+        <a href="#M000045">getList</a>&nbsp;&nbsp;
+
+        <a href="#M000046">getPublicList</a>&nbsp;&nbsp;
+
+        <a href="#M000047">remove</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -105,38 +115,41 @@
 
 
 
-
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000045" class="method-detail">
-        <a name="M000045"></a>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
 
         <div class="method-heading">
-          <a href="#M000045" class="method-signature">
+
+          <a href="#M000044" class="method-signature">
+
           <span class="method-name">add</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.favorites.add.html">flickr.favorites.add</a>
 request.
 </p>
 <p>
-Adds a photo to a user&#8216;s favorites list.
+Adds a photo to a user&#8217;s favorites list.
 </p>
 <p>
 <b>Arguments</b>
 </p>
 <dl>
-<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to <a href="Favorites.html#M000045">add</a> to the
-user&#8216;s favorites.
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to add to the user&#8217;s favorites.
 
 </dd>
 </dl>
@@ -159,14 +172,13 @@ The photo belongs to the user and so cannot be added to their favorites.
 <li>3: <em>Photo is already in favorites</em>
 
 <p>
-The photo is already in the user&#8216;s list of favorites.
+The photo is already in the user&#8217;s list of favorites.
 </p>
 </li>
 <li>4: <em>User cannot see photo</em>
 
 <p>
-The user does not have permission to <a
-href="Favorites.html#M000045">add</a> the photo to their favorites.
+The user does not have permission to add the photo to their favorites.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -206,13 +218,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -230,10 +242,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000045-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000045-source">
+            onclick="toggleCode('M000044-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000044-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -243,26 +263,33 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000046" class="method-detail">
-        <a name="M000046"></a>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
 
         <div class="method-heading">
-          <a href="#M000046" class="method-signature">
+
+          <a href="#M000045" class="method-signature">
+
           <span class="method-name">getList</span><span class="method-args">(:user_id =&gt; 'user_id',:min_fave_date =&gt; 'min_fave_date',:max_fave_date =&gt; 'max_fave_date',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.favorites.getList.html">flickr.favorites.getList</a>
 request.
 </p>
 <p>
-Returns a list of the user&#8216;s favorite photos. Only photos which the
+Returns a list of the user&#8217;s favorite photos. Only photos which the
 calling user has permission to see are returned.
 </p>
 <p>
@@ -345,13 +372,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -369,10 +396,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000046-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000046-source">
+            onclick="toggleCode('M000045-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000045-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -382,19 +417,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000047" class="method-detail">
-        <a name="M000047"></a>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
 
         <div class="method-heading">
-          <a href="#M000047" class="method-signature">
+
+          <a href="#M000046" class="method-signature">
+
           <span class="method-name">getPublicList</span><span class="method-args">(:user_id =&gt; 'user_id',:min_fave_date =&gt; 'min_fave_date',:max_fave_date =&gt; 'max_fave_date',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.favorites.getPublicList.html">flickr.favorites.getPublicList</a>
@@ -457,13 +499,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -481,10 +523,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000047-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000047-source">
+            onclick="toggleCode('M000046-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000046-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -494,33 +544,39 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000048" class="method-detail">
-        <a name="M000048"></a>
+
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
 
         <div class="method-heading">
-          <a href="#M000048" class="method-signature">
+
+          <a href="#M000047" class="method-signature">
+
           <span class="method-name">remove</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.favorites.remove.html">flickr.favorites.remove</a>
 request.
 </p>
 <p>
-Removes a photo from a user&#8216;s favorites list.
+Removes a photo from a user&#8217;s favorites list.
 </p>
 <p>
 <b>Arguments</b>
 </p>
 <dl>
-<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to <a href="Favorites.html#M000048">remove</a> from the
-user&#8216;s favorites.
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to remove from the user&#8217;s favorites.
 
 </dd>
 </dl>
@@ -531,7 +587,7 @@ user&#8216;s favorites.
 <li>1: <em>Photo not in favorites</em>
 
 <p>
-The photo id passed was not in the user&#8216;s favorites.
+The photo id passed was not in the user&#8217;s favorites.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -571,13 +627,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -595,10 +651,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000048-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000048-source">
+            onclick="toggleCode('M000047-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000047-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -608,15 +672,18 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

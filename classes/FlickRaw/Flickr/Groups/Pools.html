@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Groups::Pools</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr::Groups::Pools [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,49 +51,64 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="../../Request.html">
+
                 FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000040">add</a>&nbsp;&nbsp;
-      <a href="#M000041">getContext</a>&nbsp;&nbsp;
-      <a href="#M000042">getGroups</a>&nbsp;&nbsp;
-      <a href="#M000043">getPhotos</a>&nbsp;&nbsp;
-      <a href="#M000044">remove</a>&nbsp;&nbsp;
+
+        <a href="#M000054">add</a>&nbsp;&nbsp;
+
+        <a href="#M000055">getContext</a>&nbsp;&nbsp;
+
+        <a href="#M000056">getGroups</a>&nbsp;&nbsp;
+
+        <a href="#M000057">getPhotos</a>&nbsp;&nbsp;
+
+        <a href="#M000058">remove</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -106,41 +117,45 @@
 
 
 
-
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000040" class="method-detail">
-        <a name="M000040"></a>
+
+      <div id="method-M000054" class="method-detail">
+        <a name="M000054"></a>
 
         <div class="method-heading">
-          <a href="#M000040" class="method-signature">
+
+          <a href="#M000054" class="method-signature">
+
           <span class="method-name">add</span><span class="method-args">(:photo_id =&gt; 'photo_id',:group_id =&gt; 'group_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.groups.pools.add.html">flickr.groups.pools.add</a>
 request.
 </p>
 <p>
-Add a photo to a group&#8216;s pool.
+Add a photo to a group&#8217;s pool.
 </p>
 <p>
 <b>Arguments</b>
 </p>
 <dl>
-<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to <a href="Pools.html#M000040">add</a> to the group
-pool. The photo must belong to the calling user.
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to add to the group pool. The photo must belong to the
+calling user.
 
 </dd>
-<dt>group_id <em>(required)</em> </dt><dd>The NSID of the group who&#8216;s pool the photo is to be added to.
+<dt>group_id <em>(required)</em> </dt><dd>The NSID of the group who&#8217;s pool the photo is to be added to.
 
 </dd>
 </dl>
@@ -231,13 +246,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -255,10 +270,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000040-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000040-source">
+            onclick="toggleCode('M000054-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000054-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -268,19 +291,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000041" class="method-detail">
-        <a name="M000041"></a>
+
+      <div id="method-M000055" class="method-detail">
+        <a name="M000055"></a>
 
         <div class="method-heading">
-          <a href="#M000041" class="method-signature">
+
+          <a href="#M000055" class="method-signature">
+
           <span class="method-name">getContext</span><span class="method-args">(:photo_id =&gt; 'photo_id',:group_id =&gt; 'group_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.groups.pools.getContext.html">flickr.groups.pools.getContext</a>
@@ -296,7 +326,7 @@ Returns next and previous photos for a photo in a group pool.
 <dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to fetch the context for.
 
 </dd>
-<dt>group_id <em>(required)</em> </dt><dd>The nsid of the group who&#8216;s pool to fetch the photo&#8216;s context
+<dt>group_id <em>(required)</em> </dt><dd>The nsid of the group who&#8217;s pool to fetch the photo&#8217;s context
 for.
 
 </dd>
@@ -315,14 +345,14 @@ the calling user does not have permission to view.
 <li>2: <em>Photo not in pool</em>
 
 <p>
-The specified photo is not in the specified group&#8216;s pool.
+The specified photo is not in the specified group&#8217;s pool.
 </p>
 </li>
 <li>3: <em>Group not found</em>
 
 <p>
 The specified group nsid was not a valid group or the caller does not have
-permission to view the group&#8216;s pool.
+permission to view the group&#8217;s pool.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -337,13 +367,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -361,6 +391,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -371,9 +408,10 @@ The XML-RPC request document could not be parsed.
  &lt;nextphoto id=&quot;2985&quot; secret=&quot;059b664012&quot;
         title=&quot;Amsterdam Amstel&quot; url=&quot;/photos/bees/2985/&quot; /&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000041-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000041-source">
+            onclick="toggleCode('M000055-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000055-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -383,27 +421,33 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000042" class="method-detail">
-        <a name="M000042"></a>
+
+      <div id="method-M000056" class="method-detail">
+        <a name="M000056"></a>
 
         <div class="method-heading">
-          <a href="#M000042" class="method-signature">
+
+          <a href="#M000056" class="method-signature">
+
           <span class="method-name">getGroups</span><span class="method-args">(:page =&gt; 'page',:per_page =&gt; 'per_page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.groups.pools.getGroups.html">flickr.groups.pools.getGroups</a>
 request.
 </p>
 <p>
-Returns a list of groups to which you can <a
-href="Pools.html#M000040">add</a> photos.
+Returns a list of groups to which you can add photos.
 </p>
 <p>
 <b>Arguments</b>
@@ -459,13 +503,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -483,6 +527,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -497,9 +548,10 @@ The XML-RPC request document could not be parsed.
                 admin=&quot;0&quot; privacy=&quot;3&quot; photos=&quot;4&quot; iconserver=&quot;1&quot; /&gt;
  &lt;/groups&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000042-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000042-source">
+            onclick="toggleCode('M000056-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000056-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -509,19 +561,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000043" class="method-detail">
-        <a name="M000043"></a>
+
+      <div id="method-M000057" class="method-detail">
+        <a name="M000057"></a>
 
         <div class="method-heading">
-          <a href="#M000043" class="method-signature">
+
+          <a href="#M000057" class="method-signature">
+
           <span class="method-name">getPhotos</span><span class="method-args">(:group_id =&gt; 'group_id',:tags =&gt; 'tags',:user_id =&gt; 'user_id',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.groups.pools.getPhotos.html">flickr.groups.pools.getPhotos</a>
@@ -535,7 +594,7 @@ of the group and the user logged in (if any).
 <b>Arguments</b>
 </p>
 <dl>
-<dt>group_id <em>(required)</em> </dt><dd>The id of the group who&#8216;s pool you which to get the photo list for.
+<dt>group_id <em>(required)</em> </dt><dd>The id of the group who&#8217;s pool you which to get the photo list for.
 
 </dd>
 <dt>tags </dt><dd>A tag to filter the pool with. At the moment only one tag at a time is
@@ -573,7 +632,7 @@ defaults to 100. The maximum allowed value is 500.
 The group id passed was not a valid group id.
 </p>
 </li>
-<li>2: <em>You don&#8216;t have permission to view this pool</em>
+<li>2: <em>You don&#8217;t have permission to view this pool</em>
 
 <p>
 The logged in user (if any) does not have permission to view the pool for
@@ -598,13 +657,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -622,6 +681,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -634,9 +700,10 @@ The XML-RPC request document could not be parsed.
         ownername=&quot;Bees / ?&quot; dateadded=&quot;1089918707&quot; /&gt;
  &lt;/photos&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000043-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000043-source">
+            onclick="toggleCode('M000057-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000057-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -646,19 +713,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000044" class="method-detail">
-        <a name="M000044"></a>
+
+      <div id="method-M000058" class="method-detail">
+        <a name="M000058"></a>
 
         <div class="method-heading">
-          <a href="#M000044" class="method-signature">
+
+          <a href="#M000058" class="method-signature">
+
           <span class="method-name">remove</span><span class="method-args">(:photo_id =&gt; 'photo_id',:group_id =&gt; 'group_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.groups.pools.remove.html">flickr.groups.pools.remove</a>
@@ -671,12 +745,12 @@ Remove a photo from a group pool.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to <a href="Pools.html#M000044">remove</a> from the
-group pool. The photo must either be owned by the calling user of the
-calling user must be an administrator of the group.
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to remove from the group pool. The photo must either be
+owned by the calling user of the calling user must be an administrator of
+the group.
 
 </dd>
-<dt>group_id <em>(required)</em> </dt><dd>The NSID of the group who&#8216;s pool the photo is to removed from.
+<dt>group_id <em>(required)</em> </dt><dd>The NSID of the group who&#8217;s pool the photo is to removed from.
 
 </dd>
 </dl>
@@ -696,13 +770,11 @@ The group_id passed did not refer to a valid group.
 The photo_id passed was not a valid id of a photo in the group pool.
 </p>
 </li>
-<li>3: <em>Insufficient permission to <a href="Pools.html#M000044">remove</a>
-photo</em>
+<li>3: <em>Insufficient permission to remove photo</em>
 
 <p>
-The calling user doesn&#8216;t own the photo and is not an administrator of
-the group, so may not <a href="Pools.html#M000044">remove</a> the photo
-from the pool.
+The calling user doesn&#8217;t own the photo and is not an administrator of
+the group, so may not remove the photo from the pool.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -742,13 +814,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -766,10 +838,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000044-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000044-source">
+            onclick="toggleCode('M000058-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000058-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -779,15 +859,18 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

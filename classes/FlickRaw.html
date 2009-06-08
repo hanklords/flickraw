@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Module: FlickRaw</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Module: FlickRaw [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,12 +51,20 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         </table>
     </div>
@@ -68,25 +72,24 @@
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000003">api_sig</a>&nbsp;&nbsp;
-      <a href="#M000002">auth_url</a>&nbsp;&nbsp;
+
+        <a href="#M000003">api_sig</a>&nbsp;&nbsp;
+
+        <a href="#M000002">auth_url</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -106,46 +109,60 @@ Class <a href="FlickRaw/Request.html" class="link">FlickRaw::Request</a><br />
 
       <div class="name-list">
         <table summary="Constants">
+
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">VERSION</td>
           <td>=</td>
-          <td class="context-item-value">'0.5.1'</td>
+          <td class="context-item-value">'0.6'</td>
+
         </tr>
+
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">FLICKR_HOST</td>
           <td>=</td>
           <td class="context-item-value">'api.flickr.com'.freeze</td>
+
         </tr>
+
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">REST_PATH</td>
           <td>=</td>
           <td class="context-item-value">'/services/rest/?'.freeze</td>
-          <td width="3em">&nbsp;</td>
+
+          <td>&nbsp;</td>
           <td class="context-item-desc">
 Path of flickr REST API
 
 </td>
+
         </tr>
+
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">AUTH_PATH</td>
           <td>=</td>
           <td class="context-item-value">'/services/auth/?'.freeze</td>
-          <td width="3em">&nbsp;</td>
+
+          <td>&nbsp;</td>
           <td class="context-item-desc">
 Path of flickr auth page
 
 </td>
+
         </tr>
+
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">UPLOAD_PATH</td>
           <td>=</td>
           <td class="context-item-value">'/services/upload/'.freeze</td>
-          <td width="3em">&nbsp;</td>
+
+          <td>&nbsp;</td>
           <td class="context-item-desc">
 Path of flickr upload
 
 </td>
+
         </tr>
+
         </table>
       </div>
     </div>
@@ -157,9 +174,12 @@ Path of flickr upload
 
       <div class="name-list">
         <table>
+
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">api_key</td>
+
           <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+
           <td class="context-item-desc">
 Your flickr API key, see <a
 href="http://www.flickr.com/services/api/keys">www.flickr.com/services/api/keys</a>
@@ -167,9 +187,12 @@ for more information
 
 </td>
         </tr>
+
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">shared_secret</td>
+
           <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+
           <td class="context-item-desc">
 The shared secret of <em>api_key</em>, see <a
 href="http://www.flickr.com/services/api/keys">www.flickr.com/services/api/keys</a>
@@ -177,30 +200,39 @@ for more information
 
 </td>
         </tr>
+
         </table>
       </div>
     </div>
-      
 
 
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Class methods</h3>
+
 
       <div id="method-M000003" class="method-detail">
         <a name="M000003"></a>
 
         <div class="method-heading">
+
           <a href="#M000003" class="method-signature">
+
           <span class="method-name">api_sig</span><span class="method-args">(hsh)</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns the signature of hsh. This is meant to be passed in the <em><a
 href="FlickRaw.html#M000003">api_sig</a></em> parameter.
 </p>
+
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000003-source">
@@ -211,22 +243,30 @@ href="FlickRaw.html#M000003">api_sig</a></em> parameter.
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
+
         </div>
       </div>
+
 
       <div id="method-M000002" class="method-detail">
         <a name="M000002"></a>
 
         <div class="method-heading">
+
           <a href="#M000002" class="method-signature">
+
           <span class="method-name">auth_url</span><span class="method-args">(args={})</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns the flickr auth URL.
 </p>
+
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000002-source">
@@ -241,15 +281,18 @@ Returns the flickr auth URL.
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

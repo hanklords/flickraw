@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Places</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr::Places [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,58 +51,82 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="../Request.html">
+
                 FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000049">find</a>&nbsp;&nbsp;
-      <a href="#M000050">findByLatLon</a>&nbsp;&nbsp;
-      <a href="#M000051">getChildrenWithPhotosPublic</a>&nbsp;&nbsp;
-      <a href="#M000052">getInfo</a>&nbsp;&nbsp;
-      <a href="#M000053">getInfoByUrl</a>&nbsp;&nbsp;
-      <a href="#M000054">getPlaceTypes</a>&nbsp;&nbsp;
-      <a href="#M000055">getShapeHistory</a>&nbsp;&nbsp;
-      <a href="#M000056">placesForBoundingBox</a>&nbsp;&nbsp;
-      <a href="#M000057">placesForContacts</a>&nbsp;&nbsp;
-      <a href="#M000058">placesForTags</a>&nbsp;&nbsp;
-      <a href="#M000059">placesForUser</a>&nbsp;&nbsp;
-      <a href="#M000060">resolvePlaceId</a>&nbsp;&nbsp;
-      <a href="#M000061">resolvePlaceURL</a>&nbsp;&nbsp;
-      <a href="#M000062">tagsForPlace</a>&nbsp;&nbsp;
+
+        <a href="#M000141">find</a>&nbsp;&nbsp;
+
+        <a href="#M000142">findByLatLon</a>&nbsp;&nbsp;
+
+        <a href="#M000143">getChildrenWithPhotosPublic</a>&nbsp;&nbsp;
+
+        <a href="#M000144">getInfo</a>&nbsp;&nbsp;
+
+        <a href="#M000145">getInfoByUrl</a>&nbsp;&nbsp;
+
+        <a href="#M000146">getPlaceTypes</a>&nbsp;&nbsp;
+
+        <a href="#M000147">getShapeHistory</a>&nbsp;&nbsp;
+
+        <a href="#M000148">placesForBoundingBox</a>&nbsp;&nbsp;
+
+        <a href="#M000149">placesForContacts</a>&nbsp;&nbsp;
+
+        <a href="#M000150">placesForTags</a>&nbsp;&nbsp;
+
+        <a href="#M000151">placesForUser</a>&nbsp;&nbsp;
+
+        <a href="#M000152">resolvePlaceId</a>&nbsp;&nbsp;
+
+        <a href="#M000153">resolvePlaceURL</a>&nbsp;&nbsp;
+
+        <a href="#M000154">tagsForPlace</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -115,36 +135,39 @@
 
 
 
-
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000049" class="method-detail">
-        <a name="M000049"></a>
+
+      <div id="method-M000141" class="method-detail">
+        <a name="M000141"></a>
 
         <div class="method-heading">
-          <a href="#M000049" class="method-signature">
+
+          <a href="#M000141" class="method-signature">
+
           <span class="method-name">find</span><span class="method-args">(:query =&gt; 'query')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.find.html">flickr.places.find</a>
 request.
 </p>
 <p>
-Return a list of place IDs for a query string.&lt;br /&gt;&lt;br /&gt; The
-flickr.places.<a href="Places.html#M000049">find</a> method is <b>not</b> a
-geocoder. It will round &lt;q&gt;up&lt;/q&gt; to the nearest place type to
-which place IDs apply. For example, if you pass it a street level address
-it will return the city that contains the address rather than the street,
-or building, itself.
+Return a list of place IDs for a query string.<br /><br /> The
+flickr.places.find method is <b>not</b> a geocoder. It will round <q>up</q>
+to the nearest place type to which place IDs apply. For example, if you
+pass it a street level address it will return the city that contains the
+address rather than the street, or building, itself.
 </p>
 <p>
 <b>Arguments</b>
@@ -176,13 +199,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -198,6 +221,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -220,9 +250,10 @@ The XML-RPC request document could not be parsed.
                 place_type=&quot;locality&quot;&gt;Alabama, North West, South Africa&lt;/place&gt;
  &lt;/places&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000049-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000049-source">
+            onclick="toggleCode('M000141-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000141-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -232,35 +263,40 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000050" class="method-detail">
-        <a name="M000050"></a>
+
+      <div id="method-M000142" class="method-detail">
+        <a name="M000142"></a>
 
         <div class="method-heading">
-          <a href="#M000050" class="method-signature">
+
+          <a href="#M000142" class="method-signature">
+
           <span class="method-name">findByLatLon</span><span class="method-args">(:lat =&gt; 'lat',:lon =&gt; 'lon',:accuracy =&gt; 'accuracy')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.findByLatLon.html">flickr.places.findByLatLon</a>
 request.
 </p>
 <p>
-Return a place ID for a latitude, longitude and accuracy triple.&lt;br
-/&gt;&lt;br /&gt; The flickr.places.<a
-href="Places.html#M000050">findByLatLon</a> method is not meant to be a
-(reverse) geocoder in the traditional sense. It is designed to allow users
-to <a href="Places.html#M000049">find</a> photos for &quot;places&quot; and
-will round up to the nearest place type to which corresponding place IDs
-apply.&lt;br /&gt;&lt;br /&gt; For example, if you pass it a street level
-coordinate it will return the city that contains the point rather than the
-street, or building, itself.&lt;br /&gt;&lt;br /&gt; It will also truncate
-latitudes and longitudes to three decimal points.
+Return a place ID for a latitude, longitude and accuracy triple.<br /><br
+/> The flickr.places.findByLatLon method is not meant to be a (reverse)
+geocoder in the traditional sense. It is designed to allow users to find
+photos for &#8220;places&#8221; and will round up to the nearest place type
+to which corresponding place IDs apply.<br /><br /> For example, if you
+pass it a street level coordinate it will return the city that contains the
+point rather than the street, or building, itself.<br /><br /> It will also
+truncate latitudes and longitudes to three decimal points.
 </p>
 <p>
 <b>Arguments</b>
@@ -320,13 +356,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -344,6 +380,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -358,9 +401,10 @@ The XML-RPC request document could not be parsed.
        name=&quot;Mission Dolores, San Francisco, CA, US, United States&quot;/&gt;
  &lt;/places&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000050-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000050-source">
+            onclick="toggleCode('M000142-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000142-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -370,19 +414,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000051" class="method-detail">
-        <a name="M000051"></a>
+
+      <div id="method-M000143" class="method-detail">
+        <a name="M000143"></a>
 
         <div class="method-heading">
-          <a href="#M000051" class="method-signature">
+
+          <a href="#M000143" class="method-signature">
+
           <span class="method-name">getChildrenWithPhotosPublic</span><span class="method-args">(:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.getChildrenWithPhotosPublic.html">flickr.places.getChildrenWithPhotosPublic</a>
@@ -442,13 +493,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -464,6 +515,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -489,9 +547,10 @@ The XML-RPC request document could not be parsed.
 
  &lt;/places&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000051-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000051-source">
+            onclick="toggleCode('M000143-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000143-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -501,19 +560,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000052" class="method-detail">
-        <a name="M000052"></a>
+
+      <div id="method-M000144" class="method-detail">
+        <a name="M000144"></a>
 
         <div class="method-heading">
-          <a href="#M000052" class="method-signature">
+
+          <a href="#M000144" class="method-signature">
+
           <span class="method-name">getInfo</span><span class="method-args">(:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.getInfo.html">flickr.places.getInfo</a>
@@ -527,15 +593,13 @@ Get informations about a place.
 </p>
 <dl>
 <dt>place_id </dt><dd>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> ID.
-&lt;span style=&quot;font-style:italic;&quot;&gt;(While optional, you must
-pass either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<span style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 
 </dd>
-<dt>woe_id </dt><dd>A Where On Earth (WOE) ID. &lt;span
-style=&quot;font-style:italic;&quot;&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<dt>woe_id </dt><dd>A Where On Earth (WOE) ID. <span
+style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 
 </dd>
 </dl>
@@ -575,13 +639,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -597,6 +661,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -636,9 +707,10 @@ The XML-RPC request document could not be parsed.
     &lt;/shapedata&gt;
  &lt;/place&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000052-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000052-source">
+            onclick="toggleCode('M000144-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000144-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -648,19 +720,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000053" class="method-detail">
-        <a name="M000053"></a>
+
+      <div id="method-M000145" class="method-detail">
+        <a name="M000145"></a>
 
         <div class="method-heading">
-          <a href="#M000053" class="method-signature">
+
+          <a href="#M000145" class="method-signature">
+
           <span class="method-name">getInfoByUrl</span><span class="method-args">(:url =&gt; 'url')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.getInfoByUrl.html">flickr.places.getInfoByUrl</a>
@@ -691,8 +770,7 @@ The flickr.com/places URL was not passed with the API method.
 <li>3: <em>Place not found.</em>
 
 <p>
-Unable to <a href="Places.html#M000049">find</a> a valid place for the
-places URL.
+Unable to find a valid place for the places URL.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -707,13 +785,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -729,6 +807,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -762,9 +847,10 @@ The XML-RPC request document could not be parsed.
     &lt;/shapedata&gt;
  &lt;/place&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000053-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000053-source">
+            onclick="toggleCode('M000145-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000145-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -774,19 +860,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000054" class="method-detail">
-        <a name="M000054"></a>
+
+      <div id="method-M000146" class="method-detail">
+        <a name="M000146"></a>
 
         <div class="method-heading">
-          <a href="#M000054" class="method-signature">
+
+          <a href="#M000146" class="method-signature">
+
           <span class="method-name">getPlaceTypes</span><span class="method-args">()</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a>
@@ -815,13 +908,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -839,6 +932,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -853,9 +953,10 @@ The XML-RPC request document could not be parsed.
     &lt;place_type place_type_id=&quot;29&quot;&gt;continent&lt;/place_type&gt;
  &lt;/place_types&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000054-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000054-source">
+            onclick="toggleCode('M000146-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000146-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -865,19 +966,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000055" class="method-detail">
-        <a name="M000055"></a>
+
+      <div id="method-M000147" class="method-detail">
+        <a name="M000147"></a>
 
         <div class="method-heading">
-          <a href="#M000055" class="method-signature">
+
+          <a href="#M000147" class="method-signature">
+
           <span class="method-name">getShapeHistory</span><span class="method-args">(:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.getShapeHistory.html">flickr.places.getShapeHistory</a>
@@ -892,15 +1000,13 @@ href="Places.html">Places</a> or Where on Earth (WOE) ID.
 </p>
 <dl>
 <dt>place_id </dt><dd>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> ID.
-&lt;span style=&quot;font-style:italic;&quot;&gt;(While optional, you must
-pass either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<span style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 
 </dd>
-<dt>woe_id </dt><dd>A Where On Earth (WOE) ID. &lt;span
-style=&quot;font-style:italic;&quot;&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<dt>woe_id </dt><dd>A Where On Earth (WOE) ID. <span
+style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 
 </dd>
 </dl>
@@ -940,13 +1046,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -962,6 +1068,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -986,9 +1099,10 @@ The XML-RPC request document could not be parsed.
     &lt;!-- and so on... --&gt;
  &lt;/shapes&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000055-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000055-source">
+            onclick="toggleCode('M000147-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000147-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -998,27 +1112,34 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000056" class="method-detail">
-        <a name="M000056"></a>
+
+      <div id="method-M000148" class="method-detail">
+        <a name="M000148"></a>
 
         <div class="method-heading">
-          <a href="#M000056" class="method-signature">
+
+          <a href="#M000148" class="method-signature">
+
           <span class="method-name">placesForBoundingBox</span><span class="method-args">(:bbox =&gt; 'bbox',:place_type =&gt; 'place_type',:place_type_id =&gt; 'place_type_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.placesForBoundingBox.html">flickr.places.placesForBoundingBox</a>
 request.
 </p>
 <p>
-Return all the locations of a matching place type for a bounding box.&lt;br
-/&gt;&lt;br /&gt;
+Return all the locations of a matching place type for a bounding box.<br
+/><br />
 </p>
 <p>
 The maximum allowable size of a bounding box (the distance between the SW
@@ -1026,13 +1147,11 @@ and NE corners) is governed by the place type you are requesting. Allowable
 sizes are as follows:
 </p>
 <p>
-&lt;ul&gt; &lt;li&gt;&lt;strong&gt;neighbourhood&lt;/strong&gt;: 3km
-(1.8mi)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;locality&lt;/strong&gt;: 7km
-(4.3mi)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;county&lt;/strong&gt;: 50km
-(31mi)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;region&lt;/strong&gt;: 200km
-(124mi)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;country&lt;/strong&gt;: 500km
-(310mi)&lt;/li&gt; &lt;li&gt;&lt;strong&gt;continent&lt;/strong&gt;: 1500km
-(932mi)&lt;/li&gt; &lt;/ul&gt;
+<ul> <li><strong>neighbourhood</strong>: 3km (1.8mi)</li>
+<li><strong>locality</strong>: 7km (4.3mi)</li>
+<li><strong>county</strong>: 50km (31mi)</li> <li><strong>region</strong>:
+200km (124mi)</li> <li><strong>country</strong>: 500km (310mi)</li>
+<li><strong>continent</strong>: 1500km (932mi)</li> </ul>
 </p>
 <p>
 <b>Arguments</b>
@@ -1050,21 +1169,18 @@ in a bounding box. Valid placetypes are:
 </dd>
 </dl>
 <p>
-&lt;ul&gt; &lt;li&gt;neighbourhood&lt;/li&gt; &lt;li&gt;locality&lt;/li&gt;
-&lt;li&gt;county&lt;/li&gt; &lt;li&gt;region&lt;/li&gt;
-&lt;li&gt;country&lt;/li&gt; &lt;li&gt;continent&lt;/li&gt; &lt;/ul&gt;
-&lt;br /&gt; &lt;span style=&quot;font-style:italic;&quot;&gt;The
-&quot;place_type&quot; argument has been deprecated in favor of the
-&quot;place_type_id&quot; argument. It won&#8216;t go away but it will not
-be added to new methods. A complete list of place type IDs is available
-using the &lt;a href=&quot;<a
-href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a">www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a</a>&gt;
+<ul> <li>neighbourhood</li> <li>locality</li> <li>county</li>
+<li>region</li> <li>country</li> <li>continent</li> </ul> <br /> <span
+style=&#8220;font-style:italic;&#8221;>The &#8220;place_type&#8220;
+argument has been deprecated in favor of the &#8220;place_type_id&#8220;
+argument. It won&#8217;t go away but it will not be added to new methods. A
+complete list of place type IDs is available using the <a href=&#8220;<a
+href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a">www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a</a>>
 method. (While optional, you must pass either a valid place type or place
-type ID.)&lt;/span&gt;
+type ID.)</span>
 </p>
 <dl>
-<dt>place_type_id </dt><dd>The numeric ID for a specific place type to cluster photos by. &lt;br
-/&gt;&lt;br /&gt;
+<dt>place_type_id </dt><dd>The numeric ID for a specific place type to cluster photos by. <br /><br />
 
 </dd>
 </dl>
@@ -1072,14 +1188,11 @@ type ID.)&lt;/span&gt;
 Valid place type IDs are :
 </p>
 <p>
-&lt;ul&gt; &lt;li&gt;&lt;strong&gt;22&lt;/strong&gt;:
-neighbourhood&lt;/li&gt; &lt;li&gt;&lt;strong&gt;7&lt;/strong&gt;:
-locality&lt;/li&gt; &lt;li&gt;&lt;strong&gt;8&lt;/strong&gt;:
-region&lt;/li&gt; &lt;li&gt;&lt;strong&gt;12&lt;/strong&gt;:
-country&lt;/li&gt; &lt;li&gt;&lt;strong&gt;29&lt;/strong&gt;:
-continent&lt;/li&gt; &lt;/ul&gt; &lt;br /&gt;&lt;span
-style=&quot;font-style:italic;&quot;&gt;(While optional, you must pass
-either a valid place type or place type ID.)&lt;/span&gt;
+<ul> <li><strong>22</strong>: neighbourhood</li> <li><strong>7</strong>:
+locality</li> <li><strong>8</strong>: region</li> <li><strong>12</strong>:
+country</li> <li><strong>29</strong>: continent</li> </ul> <br /><span
+style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid place type or place type ID.)</span>
 </p>
 <p>
 <b>Error codes</b>
@@ -1122,13 +1235,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1144,6 +1257,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -1175,9 +1295,10 @@ The XML-RPC request document could not be parsed.
     &lt;!-- and so on ---&gt;
  &lt;/places&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000056-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000056-source">
+            onclick="toggleCode('M000148-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000148-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1187,19 +1308,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000057" class="method-detail">
-        <a name="M000057"></a>
+
+      <div id="method-M000149" class="method-detail">
+        <a name="M000149"></a>
 
         <div class="method-heading">
-          <a href="#M000057" class="method-signature">
+
+          <a href="#M000149" class="method-signature">
+
           <span class="method-name">placesForContacts</span><span class="method-args">(:place_type =&gt; 'place_type',:place_type_id =&gt; 'place_type_id',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:threshold =&gt; 'threshold',:contacts =&gt; 'contacts',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.placesForContacts.html">flickr.places.placesForContacts</a>
@@ -1207,13 +1335,13 @@ request.
 </p>
 <p>
 Return a list of the top 100 unique places clustered by a given placetype
-for a user&#8216;s contacts.
+for a user&#8217;s contacts.
 </p>
 <p>
 <b>Arguments</b>
 </p>
 <dl>
-<dt>place_type </dt><dd>A specific place type to cluster photos by. &lt;br /&gt;&lt;br /&gt;
+<dt>place_type </dt><dd>A specific place type to cluster photos by. <br /><br />
 
 </dd>
 </dl>
@@ -1221,24 +1349,20 @@ for a user&#8216;s contacts.
 Valid place types are :
 </p>
 <p>
-&lt;ul&gt; &lt;li&gt;&lt;strong&gt;neighbourhood&lt;/strong&gt; (and
-neighborhood)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;locality&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;region&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;country&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;continent&lt;/strong&gt;&lt;/li&gt; &lt;/ul&gt;
-&lt;br /&gt; &lt;span style=&quot;font-style:italic;&quot;&gt;The
-&quot;place_type&quot; argument has been deprecated in favor of the
-&quot;place_type_id&quot; argument. It won&#8216;t go away but it will not
-be added to new methods. A complete list of place type IDs is available
-using the &lt;a href=&quot;<a
-href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a">www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a</a>&gt;
+<ul> <li><strong>neighbourhood</strong> (and neighborhood)</li>
+<li><strong>locality</strong></li> <li><strong>region</strong></li>
+<li><strong>country</strong></li> <li><strong>continent</strong></li> </ul>
+<br /> <span style=&#8220;font-style:italic;&#8221;>The
+&#8220;place_type&#8220; argument has been deprecated in favor of the
+&#8220;place_type_id&#8220; argument. It won&#8217;t go away but it will
+not be added to new methods. A complete list of place type IDs is available
+using the <a href=&#8220;<a
+href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a">www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a</a>>
 method. (While optional, you must pass either a valid place type or place
-type ID.)&lt;/span&gt;
+type ID.)</span>
 </p>
 <dl>
-<dt>place_type_id </dt><dd>The numeric ID for a specific place type to cluster photos by. &lt;br
-/&gt;&lt;br /&gt;
+<dt>place_type_id </dt><dd>The numeric ID for a specific place type to cluster photos by. <br /><br />
 
 </dd>
 </dl>
@@ -1246,55 +1370,49 @@ type ID.)&lt;/span&gt;
 Valid place type IDs are :
 </p>
 <p>
-&lt;ul&gt; &lt;li&gt;&lt;strong&gt;22&lt;/strong&gt;:
-neighbourhood&lt;/li&gt; &lt;li&gt;&lt;strong&gt;7&lt;/strong&gt;:
-locality&lt;/li&gt; &lt;li&gt;&lt;strong&gt;8&lt;/strong&gt;:
-region&lt;/li&gt; &lt;li&gt;&lt;strong&gt;12&lt;/strong&gt;:
-country&lt;/li&gt; &lt;li&gt;&lt;strong&gt;29&lt;/strong&gt;:
-continent&lt;/li&gt; &lt;/ul&gt; &lt;br /&gt;&lt;span
-style=&quot;font-style:italic;&quot;&gt;(While optional, you must pass
-either a valid place type or place type ID.)&lt;/span&gt;
+<ul> <li><strong>22</strong>: neighbourhood</li> <li><strong>7</strong>:
+locality</li> <li><strong>8</strong>: region</li> <li><strong>12</strong>:
+country</li> <li><strong>29</strong>: continent</li> </ul> <br /><span
+style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid place type or place type ID.)</span>
 </p>
 <dl>
 <dt>woe_id </dt><dd>A Where on Earth identifier to use to filter photo clusters. For example
-all the photos clustered by &lt;strong&gt;locality&lt;/strong&gt; in the
-United States (WOE ID &lt;strong&gt;23424977&lt;/strong&gt;).&lt;br
-/&gt;&lt;br /&gt;
+all the photos clustered by <strong>locality</strong> in the United States
+(WOE ID <strong>23424977</strong>).<br /><br />
 
 </dd>
 </dl>
 <p>
-&lt;span style=&quot;font-style:italic;&quot;&gt;(While optional, you must
-pass either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<span style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 </p>
 <dl>
 <dt>place_id </dt><dd>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier to use to filter photo clusters. For example all the photos
-clustered by &lt;strong&gt;locality&lt;/strong&gt; in the United States
-(Place ID &lt;strong&gt;4KO02SibApitvSBieQ&lt;/strong&gt;).
+clustered by <strong>locality</strong> in the United States (Place ID
+<strong>4KO02SibApitvSBieQ</strong>).
 
 </dd>
 </dl>
 <p>
-&lt;br /&gt;&lt;br /&gt; &lt;span
-style=&quot;font-style:italic;&quot;&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<br /><br /> <span style=&#8220;font-style:italic;&#8221;>(While optional,
+you must pass either a valid <a href="Places.html">Places</a> ID or a WOE
+ID.)</span>
 </p>
 <dl>
 <dt>threshold </dt><dd>The minimum number of photos that a place type must have to be included. If
 the number of photos is lowered then the parent place type for that place
-will be used.&lt;br /&gt;&lt;br /&gt;
+will be used.<br /><br />
 
 </dd>
 </dl>
 <p>
-For example if your contacts only have &lt;strong&gt;3&lt;/strong&gt;
-photos taken in the locality of Montreal&lt;/strong&gt; (WOE ID 3534) but
-your threshold is set to &lt;strong&gt;5&lt;/strong&gt; then those photos
-will be &quot;rolled up&quot; and included instead with a place record for
-the region of Quebec (WOE ID 2344924).
+For example if your contacts only have <strong>3</strong> photos taken in
+the locality of Montreal</strong> (WOE ID 3534) but your threshold is set
+to <strong>5</strong> then those photos will be &#8220;rolled up&#8221; and
+included instead with a place record for the region of Quebec (WOE ID
+2344924).
 </p>
 <dl>
 <dt>contacts </dt><dd>Search your contacts. Either &#8216;all&#8217; or &#8216;ff&#8217; for just
@@ -1362,8 +1480,8 @@ The threshold passed was invalid.
 <li>6: <em>Not a valid contacts type</em>
 
 <p>
-<a href="Contacts.html">Contacts</a> must be either &quot;all&quot; or
-&quot;ff&quot; (friends and family).
+<a href="Contacts.html">Contacts</a> must be either &#8220;all&#8221; or
+&#8220;ff&#8221; (friends and family).
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1403,13 +1521,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1427,6 +1545,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -1440,9 +1565,10 @@ The XML-RPC request document could not be parsed.
                 photo_count=&quot;156&quot;&gt;San Francisco, California&lt;/place&gt;
  &lt;/place&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000057-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000057-source">
+            onclick="toggleCode('M000149-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000149-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1452,19 +1578,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000058" class="method-detail">
-        <a name="M000058"></a>
+
+      <div id="method-M000150" class="method-detail">
+        <a name="M000150"></a>
 
         <div class="method-heading">
-          <a href="#M000058" class="method-signature">
+
+          <a href="#M000150" class="method-signature">
+
           <span class="method-name">placesForTags</span><span class="method-args">(:place_type_id =&gt; 'place_type_id',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:threshold =&gt; 'threshold',:tags =&gt; 'tags',:tag_mode =&gt; 'tag_mode',:machine_tags =&gt; 'machine_tags',:machine_tag_mode =&gt; 'machine_tag_mode',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.placesForTags.html">flickr.places.placesForTags</a>
@@ -1478,8 +1611,7 @@ for set of tags or machine tags.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>place_type_id <em>(required)</em> </dt><dd>The numeric ID for a specific place type to cluster photos by. &lt;br
-/&gt;&lt;br /&gt;
+<dt>place_type_id <em>(required)</em> </dt><dd>The numeric ID for a specific place type to cluster photos by. <br /><br />
 
 </dd>
 </dl>
@@ -1487,53 +1619,48 @@ for set of tags or machine tags.
 Valid place type IDs are :
 </p>
 <p>
-&lt;ul&gt; &lt;li&gt;&lt;strong&gt;22&lt;/strong&gt;:
-neighbourhood&lt;/li&gt; &lt;li&gt;&lt;strong&gt;7&lt;/strong&gt;:
-locality&lt;/li&gt; &lt;li&gt;&lt;strong&gt;8&lt;/strong&gt;:
-region&lt;/li&gt; &lt;li&gt;&lt;strong&gt;12&lt;/strong&gt;:
-country&lt;/li&gt; &lt;li&gt;&lt;strong&gt;29&lt;/strong&gt;:
-continent&lt;/li&gt; &lt;/ul&gt;
+<ul> <li><strong>22</strong>: neighbourhood</li> <li><strong>7</strong>:
+locality</li> <li><strong>8</strong>: region</li> <li><strong>12</strong>:
+country</li> <li><strong>29</strong>: continent</li> </ul>
 </p>
 <dl>
 <dt>woe_id </dt><dd>A Where on Earth identifier to use to filter photo clusters. For example
-all the photos clustered by &lt;strong&gt;locality&lt;/strong&gt; in the
-United States (WOE ID &lt;strong&gt;23424977&lt;/strong&gt;).
+all the photos clustered by <strong>locality</strong> in the United States
+(WOE ID <strong>23424977</strong>).
 
 </dd>
 </dl>
 <p>
-&lt;br /&gt;&lt;br /&gt; &lt;span
-style=&quot;font-style:italic;&quot;&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<br /><br /> <span style=&#8220;font-style:italic;&#8221;>(While optional,
+you must pass either a valid <a href="Places.html">Places</a> ID or a WOE
+ID.)</span>
 </p>
 <dl>
 <dt>place_id </dt><dd>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier to use to filter photo clusters. For example all the photos
-clustered by &lt;strong&gt;locality&lt;/strong&gt; in the United States
-(Place ID &lt;strong&gt;4KO02SibApitvSBieQ&lt;/strong&gt;).
+clustered by <strong>locality</strong> in the United States (Place ID
+<strong>4KO02SibApitvSBieQ</strong>).
 
 </dd>
 </dl>
 <p>
-&lt;br /&gt;&lt;br /&gt; &lt;span
-style=&quot;font-style:italic;&quot;&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<br /><br /> <span style=&#8220;font-style:italic;&#8221;>(While optional,
+you must pass either a valid <a href="Places.html">Places</a> ID or a WOE
+ID.)</span>
 </p>
 <dl>
 <dt>threshold </dt><dd>The minimum number of photos that a place type must have to be included. If
 the number of photos is lowered then the parent place type for that place
-will be used.&lt;br /&gt;&lt;br /&gt;
+will be used.<br /><br />
 
 </dd>
 </dl>
 <p>
-For example if you only have &lt;strong&gt;3&lt;/strong&gt; photos taken in
-the locality of Montreal&lt;/strong&gt; (WOE ID 3534) but your threshold is
-set to &lt;strong&gt;5&lt;/strong&gt; then those photos will be
-&quot;rolled up&quot; and included instead with a place record for the
-region of Quebec (WOE ID 2344924).
+For example if you only have <strong>3</strong> photos taken in the
+locality of Montreal</strong> (WOE ID 3534) but your threshold is set to
+<strong>5</strong> then those photos will be &#8220;rolled up&#8221; and
+included instead with a place record for the region of Quebec (WOE ID
+2344924).
 </p>
 <dl>
 <dt>tags </dt><dd>A comma-delimited list of tags. <a href="Photos.html">Photos</a> with one
@@ -1551,7 +1678,7 @@ for searching on specific properties :
 </dd>
 </dl>
 <p>
-&lt;ul&gt;
+<ul>
 </p>
 <pre>
   &lt;li&gt;Find photos using the 'dc' namespace :    &lt;code&gt;&quot;machine_tags&quot; =&gt; &quot;dc:&quot;&lt;/code&gt;&lt;/li&gt;
@@ -1573,8 +1700,8 @@ for searching on specific properties :
 <p>
 Multiple machine tags may be queried by passing a comma-separated list. The
 number of machine tags you can pass in a single query depends on the tag
-mode (AND or OR) that you are querying with. &quot;AND&quot; queries are
-limited to (16) machine tags. &quot;OR&quot; queries are limited to (8).
+mode (AND or OR) that you are querying with. &#8220;AND&#8221; queries are
+limited to (16) machine tags. &#8220;OR&#8221; queries are limited to (8).
 </p>
 <dl>
 <dt>machine_tag_mode </dt><dd>Either &#8216;any&#8217; for an OR combination of tags, or
@@ -1619,13 +1746,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1643,6 +1770,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -1656,9 +1790,10 @@ The XML-RPC request document could not be parsed.
                 photo_count=&quot;156&quot;&gt;San Francisco, California&lt;/place&gt;
  &lt;/place&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000058-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000058-source">
+            onclick="toggleCode('M000150-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000150-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1668,19 +1803,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000059" class="method-detail">
-        <a name="M000059"></a>
+
+      <div id="method-M000151" class="method-detail">
+        <a name="M000151"></a>
 
         <div class="method-heading">
-          <a href="#M000059" class="method-signature">
+
+          <a href="#M000151" class="method-signature">
+
           <span class="method-name">placesForUser</span><span class="method-args">(:place_type_id =&gt; 'place_type_id',:place_type =&gt; 'place_type',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:threshold =&gt; 'threshold',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.placesForUser.html">flickr.places.placesForUser</a>
@@ -1694,8 +1836,7 @@ for a user.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>place_type_id </dt><dd>The numeric ID for a specific place type to cluster photos by. &lt;br
-/&gt;&lt;br /&gt;
+<dt>place_type_id </dt><dd>The numeric ID for a specific place type to cluster photos by. <br /><br />
 
 </dd>
 </dl>
@@ -1703,22 +1844,19 @@ for a user.
 Valid place type IDs are :
 </p>
 <p>
-&lt;ul&gt; &lt;li&gt;&lt;strong&gt;22&lt;/strong&gt;:
-neighbourhood&lt;/li&gt; &lt;li&gt;&lt;strong&gt;7&lt;/strong&gt;:
-locality&lt;/li&gt; &lt;li&gt;&lt;strong&gt;8&lt;/strong&gt;:
-region&lt;/li&gt; &lt;li&gt;&lt;strong&gt;12&lt;/strong&gt;:
-country&lt;/li&gt; &lt;li&gt;&lt;strong&gt;29&lt;/strong&gt;:
-continent&lt;/li&gt; &lt;/ul&gt; &lt;br /&gt; &lt;span
-style=&quot;font-style:italic;&quot;&gt;The &quot;place_type&quot; argument
-has been deprecated in favor of the &quot;place_type_id&quot; argument. It
-won&#8216;t go away but it will not be added to new methods. A complete
-list of place type IDs is available using the &lt;a href=&quot;<a
-href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a">www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a</a>&gt;
+<ul> <li><strong>22</strong>: neighbourhood</li> <li><strong>7</strong>:
+locality</li> <li><strong>8</strong>: region</li> <li><strong>12</strong>:
+country</li> <li><strong>29</strong>: continent</li> </ul> <br /> <span
+style=&#8220;font-style:italic;&#8221;>The &#8220;place_type&#8220;
+argument has been deprecated in favor of the &#8220;place_type_id&#8220;
+argument. It won&#8217;t go away but it will not be added to new methods. A
+complete list of place type IDs is available using the <a href=&#8220;<a
+href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a">www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a</a>>
 method. (While optional, you must pass either a valid place type or place
-type ID.)&lt;/span&gt;
+type ID.)</span>
 </p>
 <dl>
-<dt>place_type </dt><dd>A specific place type to cluster photos by. &lt;br /&gt;&lt;br /&gt;
+<dt>place_type </dt><dd>A specific place type to cluster photos by. <br /><br />
 
 </dd>
 </dl>
@@ -1726,56 +1864,48 @@ type ID.)&lt;/span&gt;
 Valid place types are :
 </p>
 <p>
-&lt;ul&gt; &lt;li&gt;&lt;strong&gt;neighbourhood&lt;/strong&gt; (and
-neighborhood)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;locality&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;region&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;country&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;continent&lt;/strong&gt;&lt;/li&gt; &lt;/ul&gt;
-&lt;br /&gt;&lt;span style=&quot;font-style:italic;&quot;&gt;(While
-optional, you must pass either a valid place type or place type
-ID.)&lt;/span&gt;
+<ul> <li><strong>neighbourhood</strong> (and neighborhood)</li>
+<li><strong>locality</strong></li> <li><strong>region</strong></li>
+<li><strong>country</strong></li> <li><strong>continent</strong></li> </ul>
+<br /><span style=&#8220;font-style:italic;&#8221;>(While optional, you
+must pass either a valid place type or place type ID.)</span>
 </p>
 <dl>
 <dt>woe_id </dt><dd>A Where on Earth identifier to use to filter photo clusters. For example
-all the photos clustered by &lt;strong&gt;locality&lt;/strong&gt; in the
-United States (WOE ID &lt;strong&gt;23424977&lt;/strong&gt;).&lt;br
-/&gt;&lt;br /&gt;
+all the photos clustered by <strong>locality</strong> in the United States
+(WOE ID <strong>23424977</strong>).<br /><br />
 
 </dd>
 </dl>
 <p>
-&lt;span style=&quot;font-style:italic;&quot;&gt;(While optional, you must
-pass either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<span style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 </p>
 <dl>
 <dt>place_id </dt><dd>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier to use to filter photo clusters. For example all the photos
-clustered by &lt;strong&gt;locality&lt;/strong&gt; in the United States
-(Place ID &lt;strong&gt;4KO02SibApitvSBieQ&lt;/strong&gt;).&lt;br
-/&gt;&lt;br /&gt;
+clustered by <strong>locality</strong> in the United States (Place ID
+<strong>4KO02SibApitvSBieQ</strong>).<br /><br />
 
 </dd>
 </dl>
 <p>
-&lt;span style=&quot;font-style:italic;&quot;&gt;(While optional, you must
-pass either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<span style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 </p>
 <dl>
 <dt>threshold </dt><dd>The minimum number of photos that a place type must have to be included. If
 the number of photos is lowered then the parent place type for that place
-will be used.&lt;br /&gt;&lt;br /&gt;
+will be used.<br /><br />
 
 </dd>
 </dl>
 <p>
-For example if you only have &lt;strong&gt;3&lt;/strong&gt; photos taken in
-the locality of Montreal&lt;/strong&gt; (WOE ID 3534) but your threshold is
-set to &lt;strong&gt;5&lt;/strong&gt; then those photos will be
-&quot;rolled up&quot; and included instead with a place record for the
-region of Quebec (WOE ID 2344924).
+For example if you only have <strong>3</strong> photos taken in the
+locality of Montreal</strong> (WOE ID 3534) but your threshold is set to
+<strong>5</strong> then those photos will be &#8220;rolled up&#8221; and
+included instead with a place record for the region of Quebec (WOE ID
+2344924).
 </p>
 <dl>
 <dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
@@ -1873,13 +2003,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1897,6 +2027,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -1910,9 +2047,10 @@ The XML-RPC request document could not be parsed.
                 photo_count=&quot;156&quot;&gt;San Francisco, California&lt;/place&gt;
  &lt;/place&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000059-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000059-source">
+            onclick="toggleCode('M000151-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000151-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1922,19 +2060,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000060" class="method-detail">
-        <a name="M000060"></a>
+
+      <div id="method-M000152" class="method-detail">
+        <a name="M000152"></a>
 
         <div class="method-heading">
-          <a href="#M000060" class="method-signature">
+
+          <a href="#M000152" class="method-signature">
+
           <span class="method-name">resolvePlaceId</span><span class="method-args">(:place_id =&gt; 'place_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.resolvePlaceId.html">flickr.places.resolvePlaceId</a>
@@ -1942,10 +2087,10 @@ request.
 </p>
 <p>
 Find <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
-information by Place ID.&lt;br /&gt;&lt;br /&gt; This method has been
-deprecated. It won&#8216;t be removed but you should use &lt;a
-href=&quot;/services/api/flickr.places.getInfo.html&quot;&gt;flickr.places.<a
-href="Places.html#M000052">getInfo</a>&lt;/a&gt; instead.
+information by Place ID.<br /><br /> This method has been deprecated. It
+won&#8217;t be removed but you should use <a
+href=&#8220;/services/api/flickr.places.getInfo.html&#8220;>flickr.places.getInfo</a>
+instead.
 </p>
 <p>
 <b>Arguments</b>
@@ -1977,13 +2122,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1999,6 +2144,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -2024,9 +2176,10 @@ The XML-RPC request document could not be parsed.
                    place_url=&quot;/United+States&quot;&gt;United States&lt;/country&gt;
  &lt;/location&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000060-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000060-source">
+            onclick="toggleCode('M000152-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000152-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2036,19 +2189,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000061" class="method-detail">
-        <a name="M000061"></a>
+
+      <div id="method-M000153" class="method-detail">
+        <a name="M000153"></a>
 
         <div class="method-heading">
-          <a href="#M000061" class="method-signature">
+
+          <a href="#M000153" class="method-signature">
+
           <span class="method-name">resolvePlaceURL</span><span class="method-args">(:url =&gt; 'url')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.resolvePlaceURL.html">flickr.places.resolvePlaceURL</a>
@@ -2056,10 +2216,10 @@ request.
 </p>
 <p>
 Find <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
-information by Place URL.&lt;br /&gt;&lt;br /&gt; This method has been
-deprecated. It won&#8216;t be removed but you should use &lt;a
-href=&quot;/services/api/flickr.places.getInfoByUrl.html&quot;&gt;flickr.places.<a
-href="Places.html#M000053">getInfoByUrl</a>&lt;/a&gt; instead.
+information by Place URL.<br /><br /> This method has been deprecated. It
+won&#8217;t be removed but you should use <a
+href=&#8220;/services/api/flickr.places.getInfoByUrl.html&#8220;>flickr.places.getInfoByUrl</a>
+instead.
 </p>
 <p>
 <b>Arguments</b>
@@ -2070,8 +2230,8 @@ href="Places.html#M000053">getInfoByUrl</a>&lt;/a&gt; instead.
 </dd>
 </dl>
 <p>
-&lt;br /&gt;&lt;br /&gt; <a href="../Flickr.html">Flickr</a> Place URLs are
-of the form /country/region/city
+<br /><br /> <a href="../Flickr.html">Flickr</a> Place URLs are of the form
+/country/region/city
 </p>
 <p>
 <b>Error codes</b>
@@ -2095,13 +2255,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -2117,6 +2277,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -2142,9 +2309,10 @@ The XML-RPC request document could not be parsed.
                    place_url=&quot;/United+States&quot;&gt;United States&lt;/country&gt;
  &lt;/location&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000061-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000061-source">
+            onclick="toggleCode('M000153-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000153-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2154,19 +2322,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000062" class="method-detail">
-        <a name="M000062"></a>
+
+      <div id="method-M000154" class="method-detail">
+        <a name="M000154"></a>
 
         <div class="method-heading">
-          <a href="#M000062" class="method-signature">
+
+          <a href="#M000154" class="method-signature">
+
           <span class="method-name">tagsForPlace</span><span class="method-args">(:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.places.tagsForPlace.html">flickr.places.tagsForPlace</a>
@@ -2181,26 +2356,23 @@ on Earth (WOE) ID
 <b>Arguments</b>
 </p>
 <dl>
-<dt>woe_id </dt><dd>A Where on Earth identifier to use to filter photo clusters.&lt;br
-/&gt;&lt;br /&gt;
+<dt>woe_id </dt><dd>A Where on Earth identifier to use to filter photo clusters.<br /><br />
 
 </dd>
 </dl>
 <p>
-&lt;span style=&quot;font-style:italic;&quot;&gt;(While optional, you must
-pass either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<span style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 </p>
 <dl>
 <dt>place_id </dt><dd>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
-identifier to use to filter photo clusters.&lt;br /&gt;&lt;br /&gt;
+identifier to use to filter photo clusters.<br /><br />
 
 </dd>
 </dl>
 <p>
-&lt;span style=&quot;font-style:italic;&quot;&gt;(While optional, you must
-pass either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;
+<span style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
+either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 </p>
 <dl>
 <dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
@@ -2260,13 +2432,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -2282,6 +2454,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -2305,9 +2484,10 @@ The XML-RPC request document could not be parsed.
     &lt;!-- and so on --&gt;
  &lt;/tags&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000062-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000062-source">
+            onclick="toggleCode('M000154-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000154-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2317,15 +2497,18 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>

@@ -1,12 +1,9 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
-<!DOCTYPE html 
-     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Photos</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <title>Class: FlickRaw::Flickr::Photos [RDoc Documentation]</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
   <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
@@ -25,7 +22,7 @@
       return false;
 
     elemStyle = elem.style;
-    
+
     if ( elemStyle.display != "block" ) {
       elemStyle.display = "block"
     } else {
@@ -34,16 +31,15 @@
 
     return true;
   }
-  
+
   // Make codeblocks hidden by default
-  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
-  
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }<\/style>" )
+
   // ]]>
   </script>
 
 </head>
 <body>
-
 
 
     <div id="classHeader">
@@ -55,76 +51,118 @@
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
+
+
                 <a href="../../../files/lib/flickraw_rb.html">
+
                 lib/flickraw.rb
+
                 </a>
+
+
         <br />
+
             </td>
         </tr>
+
 
         <tr class="top-aligned-row">
             <td><strong>Parent:</strong></td>
             <td>
+
                 <a href="../Request.html">
+
                 FlickRaw::Request
+
                </a>
+
             </td>
         </tr>
+
         </table>
     </div>
   <!-- banner header -->
 
   <div id="bodyContent">
 
-
-
   <div id="contextContent">
 
-
-
    </div>
+
 
     <div id="method-list">
       <h3 class="section-bar">Methods</h3>
 
       <div class="name-list">
-      <a href="#M000077">addTags</a>&nbsp;&nbsp;
-      <a href="#M000075">comments</a>&nbsp;&nbsp;
-      <a href="#M000078">delete</a>&nbsp;&nbsp;
-      <a href="#M000071">geo</a>&nbsp;&nbsp;
-      <a href="#M000079">getAllContexts</a>&nbsp;&nbsp;
-      <a href="#M000080">getContactsPhotos</a>&nbsp;&nbsp;
-      <a href="#M000081">getContactsPublicPhotos</a>&nbsp;&nbsp;
-      <a href="#M000082">getContext</a>&nbsp;&nbsp;
-      <a href="#M000083">getCounts</a>&nbsp;&nbsp;
-      <a href="#M000084">getExif</a>&nbsp;&nbsp;
-      <a href="#M000085">getFavorites</a>&nbsp;&nbsp;
-      <a href="#M000086">getInfo</a>&nbsp;&nbsp;
-      <a href="#M000087">getNotInSet</a>&nbsp;&nbsp;
-      <a href="#M000088">getPerms</a>&nbsp;&nbsp;
-      <a href="#M000089">getRecent</a>&nbsp;&nbsp;
-      <a href="#M000090">getSizes</a>&nbsp;&nbsp;
-      <a href="#M000091">getUntagged</a>&nbsp;&nbsp;
-      <a href="#M000092">getWithGeoData</a>&nbsp;&nbsp;
-      <a href="#M000093">getWithoutGeoData</a>&nbsp;&nbsp;
-      <a href="#M000074">licenses</a>&nbsp;&nbsp;
-      <a href="#M000076">notes</a>&nbsp;&nbsp;
-      <a href="#M000094">recentlyUpdated</a>&nbsp;&nbsp;
-      <a href="#M000095">removeTag</a>&nbsp;&nbsp;
-      <a href="#M000096">search</a>&nbsp;&nbsp;
-      <a href="#M000097">setContentType</a>&nbsp;&nbsp;
-      <a href="#M000098">setDates</a>&nbsp;&nbsp;
-      <a href="#M000099">setMeta</a>&nbsp;&nbsp;
-      <a href="#M000100">setPerms</a>&nbsp;&nbsp;
-      <a href="#M000101">setSafetyLevel</a>&nbsp;&nbsp;
-      <a href="#M000102">setTags</a>&nbsp;&nbsp;
-      <a href="#M000072">transform</a>&nbsp;&nbsp;
-      <a href="#M000073">upload</a>&nbsp;&nbsp;
+
+        <a href="#M000079">addTags</a>&nbsp;&nbsp;
+
+        <a href="#M000073">comments</a>&nbsp;&nbsp;
+
+        <a href="#M000080">delete</a>&nbsp;&nbsp;
+
+        <a href="#M000074">geo</a>&nbsp;&nbsp;
+
+        <a href="#M000081">getAllContexts</a>&nbsp;&nbsp;
+
+        <a href="#M000082">getContactsPhotos</a>&nbsp;&nbsp;
+
+        <a href="#M000083">getContactsPublicPhotos</a>&nbsp;&nbsp;
+
+        <a href="#M000084">getContext</a>&nbsp;&nbsp;
+
+        <a href="#M000085">getCounts</a>&nbsp;&nbsp;
+
+        <a href="#M000086">getExif</a>&nbsp;&nbsp;
+
+        <a href="#M000087">getFavorites</a>&nbsp;&nbsp;
+
+        <a href="#M000088">getInfo</a>&nbsp;&nbsp;
+
+        <a href="#M000089">getNotInSet</a>&nbsp;&nbsp;
+
+        <a href="#M000090">getPerms</a>&nbsp;&nbsp;
+
+        <a href="#M000091">getRecent</a>&nbsp;&nbsp;
+
+        <a href="#M000092">getSizes</a>&nbsp;&nbsp;
+
+        <a href="#M000093">getUntagged</a>&nbsp;&nbsp;
+
+        <a href="#M000094">getWithGeoData</a>&nbsp;&nbsp;
+
+        <a href="#M000095">getWithoutGeoData</a>&nbsp;&nbsp;
+
+        <a href="#M000075">licenses</a>&nbsp;&nbsp;
+
+        <a href="#M000076">notes</a>&nbsp;&nbsp;
+
+        <a href="#M000096">recentlyUpdated</a>&nbsp;&nbsp;
+
+        <a href="#M000097">removeTag</a>&nbsp;&nbsp;
+
+        <a href="#M000098">search</a>&nbsp;&nbsp;
+
+        <a href="#M000099">setContentType</a>&nbsp;&nbsp;
+
+        <a href="#M000100">setDates</a>&nbsp;&nbsp;
+
+        <a href="#M000101">setMeta</a>&nbsp;&nbsp;
+
+        <a href="#M000102">setPerms</a>&nbsp;&nbsp;
+
+        <a href="#M000103">setSafetyLevel</a>&nbsp;&nbsp;
+
+        <a href="#M000104">setTags</a>&nbsp;&nbsp;
+
+        <a href="#M000077">transform</a>&nbsp;&nbsp;
+
+        <a href="#M000078">upload</a>&nbsp;&nbsp;
+
       </div>
     </div>
 
   </div>
-
 
     <!-- if includes -->
 
@@ -145,23 +183,28 @@ Class <a href="Photos/Upload.html" class="link">FlickRaw::Flickr::Photos::Upload
 
 
 
-      
-
-
     <!-- if method_list -->
+
     <div id="methods">
+
       <h3 class="section-bar">Public Instance methods</h3>
 
-      <div id="method-M000077" class="method-detail">
-        <a name="M000077"></a>
+
+      <div id="method-M000079" class="method-detail">
+        <a name="M000079"></a>
 
         <div class="method-heading">
-          <a href="#M000077" class="method-signature">
+
+          <a href="#M000079" class="method-signature">
+
           <span class="method-name">addTags</span><span class="method-args">(:photo_id =&gt; 'photo_id',:tags =&gt; 'tags')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.addTags.html">flickr.photos.addTags</a>
@@ -240,13 +283,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -264,10 +307,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000077-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000077-source">
+            onclick="toggleCode('M000079-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000079-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -277,33 +328,45 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000075" class="method-detail">
-        <a name="M000075"></a>
+
+      <div id="method-M000073" class="method-detail">
+        <a name="M000073"></a>
 
         <div class="method-heading">
+
           <span class="method-name">comments</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Photos/Comments.html">Comments</a> object.
 </p>
+
         </div>
       </div>
 
-      <div id="method-M000078" class="method-detail">
-        <a name="M000078"></a>
+
+      <div id="method-M000080" class="method-detail">
+        <a name="M000080"></a>
 
         <div class="method-heading">
-          <a href="#M000078" class="method-signature">
+
+          <a href="#M000080" class="method-signature">
+
           <span class="method-name">delete</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.delete.html">flickr.photos.delete</a>
@@ -316,7 +379,7 @@ Delete a photo from flickr.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to <a href="Photos.html#M000078">delete</a>.
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to delete.
 
 </dd>
 </dl>
@@ -367,13 +430,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -391,10 +454,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000078-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000078-source">
+            onclick="toggleCode('M000080-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000080-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -404,33 +475,45 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000071" class="method-detail">
-        <a name="M000071"></a>
+
+      <div id="method-M000074" class="method-detail">
+        <a name="M000074"></a>
 
         <div class="method-heading">
+
           <span class="method-name">geo</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Photos/Geo.html">Geo</a> object.
 </p>
+
         </div>
       </div>
 
-      <div id="method-M000079" class="method-detail">
-        <a name="M000079"></a>
+
+      <div id="method-M000081" class="method-detail">
+        <a name="M000081"></a>
 
         <div class="method-heading">
-          <a href="#M000079" class="method-signature">
+
+          <a href="#M000081" class="method-signature">
+
           <span class="method-name">getAllContexts</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getAllContexts.html">flickr.photos.getAllContexts</a>
@@ -469,13 +552,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -493,6 +576,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -501,9 +591,10 @@ The XML-RPC request document could not be parsed.
  &lt;set id=&quot;392&quot; title=&quot;记忆群组&quot; /&gt;
  &lt;pool id=&quot;34427465471@N01&quot; title=&quot;FlickrDiscuss&quot; /&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000079-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000079-source">
+            onclick="toggleCode('M000081-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000081-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -513,19 +604,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000080" class="method-detail">
-        <a name="M000080"></a>
+
+      <div id="method-M000082" class="method-detail">
+        <a name="M000082"></a>
 
         <div class="method-heading">
-          <a href="#M000080" class="method-signature">
+
+          <a href="#M000082" class="method-signature">
+
           <span class="method-name">getContactsPhotos</span><span class="method-args">(:count =&gt; 'count',:just_friends =&gt; 'just_friends',:single_photo =&gt; 'single_photo',:include_self =&gt; 'include_self',:extras =&gt; 'extras')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getContactsPhotos.html">flickr.photos.getContactsPhotos</a>
@@ -600,13 +698,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -622,6 +720,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -641,9 +746,10 @@ The XML-RPC request document could not be parsed.
                 username=&quot;georgie parker&quot; title=&quot;phoenix9_stewart&quot; /&gt;
  &lt;/photos&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000080-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000080-source">
+            onclick="toggleCode('M000082-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000082-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -653,19 +759,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000081" class="method-detail">
-        <a name="M000081"></a>
+
+      <div id="method-M000083" class="method-detail">
+        <a name="M000083"></a>
 
         <div class="method-heading">
-          <a href="#M000081" class="method-signature">
+
+          <a href="#M000083" class="method-signature">
+
           <span class="method-name">getContactsPublicPhotos</span><span class="method-args">(:user_id =&gt; 'user_id',:count =&gt; 'count',:just_friends =&gt; 'just_friends',:single_photo =&gt; 'single_photo',:include_self =&gt; 'include_self',:extras =&gt; 'extras')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getContactsPublicPhotos.html">flickr.photos.getContactsPublicPhotos</a>
@@ -724,13 +837,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -746,6 +859,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -765,9 +885,10 @@ The XML-RPC request document could not be parsed.
                 username=&quot;georgie parker&quot; title=&quot;phoenix9_stewart&quot; /&gt;
  &lt;/photos&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000081-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000081-source">
+            onclick="toggleCode('M000083-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000083-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -777,19 +898,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000082" class="method-detail">
-        <a name="M000082"></a>
+
+      <div id="method-M000084" class="method-detail">
+        <a name="M000084"></a>
 
         <div class="method-heading">
-          <a href="#M000082" class="method-signature">
+
+          <a href="#M000084" class="method-signature">
+
           <span class="method-name">getContext</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getContext.html">flickr.photos.getContext</a>
@@ -829,13 +957,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -853,6 +981,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -863,9 +998,10 @@ The XML-RPC request document could not be parsed.
  &lt;nextphoto id=&quot;2985&quot; secret=&quot;059b664012&quot;
         title=&quot;Amsterdam Amstel&quot; url=&quot;/photos/bees/2985/&quot; /&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000082-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000082-source">
+            onclick="toggleCode('M000084-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000084-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -875,19 +1011,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000083" class="method-detail">
-        <a name="M000083"></a>
+
+      <div id="method-M000085" class="method-detail">
+        <a name="M000085"></a>
 
         <div class="method-heading">
-          <a href="#M000083" class="method-signature">
+
+          <a href="#M000085" class="method-signature">
+
           <span class="method-name">getCounts</span><span class="method-args">(:dates =&gt; 'dates',:taken_dates =&gt; 'taken_dates')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getCounts.html">flickr.photos.getCounts</a>
@@ -956,13 +1099,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -980,6 +1123,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -995,9 +1145,10 @@ The XML-RPC request document could not be parsed.
         &lt;photocount count=&quot;0&quot; fromdate=&quot;1094085350&quot; todate=&quot;1094171750&quot; /&gt;
  &lt;/photocounts&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000083-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000083-source">
+            onclick="toggleCode('M000085-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000085-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1007,19 +1158,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000084" class="method-detail">
-        <a name="M000084"></a>
+
+      <div id="method-M000086" class="method-detail">
+        <a name="M000086"></a>
 
         <div class="method-heading">
-          <a href="#M000084" class="method-signature">
+
+          <a href="#M000086" class="method-signature">
+
           <span class="method-name">getExif</span><span class="method-args">(:photo_id =&gt; 'photo_id',:secret =&gt; 'secret')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getExif.html">flickr.photos.getExif</a>
@@ -1071,13 +1229,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1093,6 +1251,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -1114,9 +1279,10 @@ The XML-RPC request document could not be parsed.
         &lt;/exif&gt;
  &lt;/photo&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000084-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000084-source">
+            onclick="toggleCode('M000086-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000086-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1126,19 +1292,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000085" class="method-detail">
-        <a name="M000085"></a>
+
+      <div id="method-M000087" class="method-detail">
+        <a name="M000087"></a>
 
         <div class="method-heading">
-          <a href="#M000085" class="method-signature">
+
+          <a href="#M000087" class="method-signature">
+
           <span class="method-name">getFavorites</span><span class="method-args">(:photo_id =&gt; 'photo_id',:page =&gt; 'page',:per_page =&gt; 'per_page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getFavorites.html">flickr.photos.getFavorites</a>
@@ -1186,13 +1359,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1208,6 +1381,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -1229,9 +1409,10 @@ The XML-RPC request document could not be parsed.
         &lt;person nsid=&quot;54309070@N00&quot; username=&quot;Shinayaker&quot; favedate=&quot;1142584219&quot;/&gt;
  &lt;/photo&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000085-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000085-source">
+            onclick="toggleCode('M000087-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000087-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1241,19 +1422,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000086" class="method-detail">
-        <a name="M000086"></a>
+
+      <div id="method-M000088" class="method-detail">
+        <a name="M000088"></a>
 
         <div class="method-heading">
-          <a href="#M000086" class="method-signature">
+
+          <a href="#M000088" class="method-signature">
+
           <span class="method-name">getInfo</span><span class="method-args">(:photo_id =&gt; 'photo_id',:secret =&gt; 'secret')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getInfo.html">flickr.photos.getInfo</a>
@@ -1299,13 +1487,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1321,6 +1509,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -1355,9 +1550,10 @@ The XML-RPC request document could not be parsed.
         &lt;/urls&gt;
  &lt;/photo&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000086-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000086-source">
+            onclick="toggleCode('M000088-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000088-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1367,19 +1563,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000087" class="method-detail">
-        <a name="M000087"></a>
+
+      <div id="method-M000089" class="method-detail">
+        <a name="M000089"></a>
 
         <div class="method-heading">
-          <a href="#M000087" class="method-signature">
+
+          <a href="#M000089" class="method-signature">
+
           <span class="method-name">getNotInSet</span><span class="method-args">(:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:privacy_filter =&gt; 'privacy_filter',:media =&gt; 'media',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getNotInSet.html">flickr.photos.getNotInSet</a>
@@ -1392,16 +1595,14 @@ Returns a list of your photos that are not part of any sets.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>min_upload_date </dt><dd>Minimum <a href="Photos.html#M000073">upload</a> date. <a
-href="Photos.html">Photos</a> with an <a
-href="Photos.html#M000073">upload</a> date greater than or equal to this
-value will be returned. The date should be in the form of a unix timestamp.
+<dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
+greater than or equal to this value will be returned. The date should be in
+the form of a unix timestamp.
 
 </dd>
-<dt>max_upload_date </dt><dd>Maximum <a href="Photos.html#M000073">upload</a> date. <a
-href="Photos.html">Photos</a> with an <a
-href="Photos.html#M000073">upload</a> date less than or equal to this value
-will be returned. The date should be in the form of a unix timestamp.
+<dt>max_upload_date </dt><dd>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
+less than or equal to this value will be returned. The date should be in
+the form of a unix timestamp.
 
 </dd>
 <dt>min_taken_date </dt><dd>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
@@ -1419,11 +1620,9 @@ the form of a mysql datetime.
 </dd>
 </dl>
 <p>
-&lt;ul&gt; &lt;li&gt;1 public photos&lt;/li&gt; &lt;li&gt;2 private photos
-visible to friends&lt;/li&gt; &lt;li&gt;3 private photos visible to
-family&lt;/li&gt; &lt;li&gt;4 private photos visible to friends &amp;
-family&lt;/li&gt; &lt;li&gt;5 completely private photos&lt;/li&gt;
-&lt;/ul&gt;
+<ul> <li>1 public photos</li> <li>2 private photos visible to friends</li>
+<li>3 private photos visible to family</li> <li>4 private photos visible to
+friends &amp; family</li> <li>5 completely private photos</li> </ul>
 </p>
 <dl>
 <dt>media </dt><dd>Filter results by media type. Possible values are <tt>all</tt> (default),
@@ -1434,8 +1633,8 @@ family&lt;/li&gt; &lt;li&gt;5 completely private photos&lt;/li&gt;
 record. Currently supported fields are: <tt>license</tt>,
 <tt>date_upload</tt>, <tt>date_taken</tt>, <tt>owner_name</tt>,
 <tt>icon_server</tt>, <tt>original_format</tt>, <tt>last_update</tt>,
-<tt><a href="Photos.html#M000071">geo</a></tt>, <tt>tags</tt>,
-<tt>machine_tags</tt>, <tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>.
+<tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>, <tt>o_dims</tt>,
+<tt>views</tt>, <tt>media</tt>.
 
 </dd>
 <dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
@@ -1488,13 +1687,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1512,10 +1711,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000087-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000087-source">
+            onclick="toggleCode('M000089-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000089-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1525,19 +1732,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000088" class="method-detail">
-        <a name="M000088"></a>
+
+      <div id="method-M000090" class="method-detail">
+        <a name="M000090"></a>
 
         <div class="method-heading">
-          <a href="#M000088" class="method-signature">
+
+          <a href="#M000090" class="method-signature">
+
           <span class="method-name">getPerms</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getPerms.html">flickr.photos.getPerms</a>
@@ -1602,13 +1816,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1626,6 +1840,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -1633,9 +1854,10 @@ The XML-RPC request document could not be parsed.
 <pre>
  &lt;perms id=&quot;2733&quot; ispublic=&quot;1&quot; isfriend=&quot;1&quot; isfamily=&quot;0&quot; permcomment=&quot;0&quot; permaddmeta=&quot;1&quot; /&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000088-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000088-source">
+            onclick="toggleCode('M000090-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000090-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1645,19 +1867,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000089" class="method-detail">
-        <a name="M000089"></a>
+
+      <div id="method-M000091" class="method-detail">
+        <a name="M000091"></a>
 
         <div class="method-heading">
-          <a href="#M000089" class="method-signature">
+
+          <a href="#M000091" class="method-signature">
+
           <span class="method-name">getRecent</span><span class="method-args">(:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getRecent.html">flickr.photos.getRecent</a>
@@ -1674,8 +1903,8 @@ Returns a list of the latest public photos uploaded to flickr.
 record. Currently supported fields are: <tt>license</tt>,
 <tt>date_upload</tt>, <tt>date_taken</tt>, <tt>owner_name</tt>,
 <tt>icon_server</tt>, <tt>original_format</tt>, <tt>last_update</tt>,
-<tt><a href="Photos.html#M000071">geo</a></tt>, <tt>tags</tt>,
-<tt>machine_tags</tt>, <tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>.
+<tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>, <tt>o_dims</tt>,
+<tt>views</tt>, <tt>media</tt>.
 
 </dd>
 <dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
@@ -1706,13 +1935,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1730,10 +1959,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000089-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000089-source">
+            onclick="toggleCode('M000091-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000091-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1743,19 +1980,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000090" class="method-detail">
-        <a name="M000090"></a>
+
+      <div id="method-M000092" class="method-detail">
+        <a name="M000092"></a>
 
         <div class="method-heading">
-          <a href="#M000090" class="method-signature">
+
+          <a href="#M000092" class="method-signature">
+
           <span class="method-name">getSizes</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getSizes.html">flickr.photos.getSizes</a>
@@ -1801,13 +2045,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -1823,6 +2067,13 @@ The SOAP envelope send in the request could not be parsed.
 
 <p>
 The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -1848,9 +2099,10 @@ The XML-RPC request document could not be parsed.
        url=&quot;http://www.flickr.com/photos/stewart/567229075/sizes/o/&quot;/&gt;
  &lt;/sizes&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000090-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000090-source">
+            onclick="toggleCode('M000092-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000092-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1860,19 +2112,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000091" class="method-detail">
-        <a name="M000091"></a>
+
+      <div id="method-M000093" class="method-detail">
+        <a name="M000093"></a>
 
         <div class="method-heading">
-          <a href="#M000091" class="method-signature">
+
+          <a href="#M000093" class="method-signature">
+
           <span class="method-name">getUntagged</span><span class="method-args">(:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:privacy_filter =&gt; 'privacy_filter',:media =&gt; 'media',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getUntagged.html">flickr.photos.getUntagged</a>
@@ -1885,16 +2144,14 @@ Returns a list of your photos with no tags.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>min_upload_date </dt><dd>Minimum <a href="Photos.html#M000073">upload</a> date. <a
-href="Photos.html">Photos</a> with an <a
-href="Photos.html#M000073">upload</a> date greater than or equal to this
-value will be returned. The date should be in the form of a unix timestamp.
+<dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
+greater than or equal to this value will be returned. The date should be in
+the form of a unix timestamp.
 
 </dd>
-<dt>max_upload_date </dt><dd>Maximum <a href="Photos.html#M000073">upload</a> date. <a
-href="Photos.html">Photos</a> with an <a
-href="Photos.html#M000073">upload</a> date less than or equal to this value
-will be returned. The date should be in the form of a unix timestamp.
+<dt>max_upload_date </dt><dd>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
+less than or equal to this value will be returned. The date should be in
+the form of a unix timestamp.
 
 </dd>
 <dt>min_taken_date </dt><dd>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
@@ -1912,11 +2169,9 @@ the form of a mysql datetime.
 </dd>
 </dl>
 <p>
-&lt;ul&gt; &lt;li&gt;1 public photos&lt;/li&gt; &lt;li&gt;2 private photos
-visible to friends&lt;/li&gt; &lt;li&gt;3 private photos visible to
-family&lt;/li&gt; &lt;li&gt;4 private photos visible to friends &amp;
-family&lt;/li&gt; &lt;li&gt;5 completely private photos&lt;/li&gt;
-&lt;/ul&gt;
+<ul> <li>1 public photos</li> <li>2 private photos visible to friends</li>
+<li>3 private photos visible to family</li> <li>4 private photos visible to
+friends &amp; family</li> <li>5 completely private photos</li> </ul>
 </p>
 <dl>
 <dt>media </dt><dd>Filter results by media type. Possible values are <tt>all</tt> (default),
@@ -1927,8 +2182,8 @@ family&lt;/li&gt; &lt;li&gt;5 completely private photos&lt;/li&gt;
 record. Currently supported fields are: <tt>license</tt>,
 <tt>date_upload</tt>, <tt>date_taken</tt>, <tt>owner_name</tt>,
 <tt>icon_server</tt>, <tt>original_format</tt>, <tt>last_update</tt>,
-<tt><a href="Photos.html#M000071">geo</a></tt>, <tt>tags</tt>,
-<tt>machine_tags</tt>, <tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>.
+<tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>, <tt>o_dims</tt>,
+<tt>views</tt>, <tt>media</tt>.
 
 </dd>
 <dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
@@ -1981,13 +2236,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -2005,10 +2260,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000091-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000091-source">
+            onclick="toggleCode('M000093-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000093-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2018,41 +2281,46 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000092" class="method-detail">
-        <a name="M000092"></a>
+
+      <div id="method-M000094" class="method-detail">
+        <a name="M000094"></a>
 
         <div class="method-heading">
-          <a href="#M000092" class="method-signature">
+
+          <a href="#M000094" class="method-signature">
+
           <span class="method-name">getWithGeoData</span><span class="method-args">(:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:privacy_filter =&gt; 'privacy_filter',:sort =&gt; 'sort',:media =&gt; 'media',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getWithGeoData.html">flickr.photos.getWithGeoData</a>
 request.
 </p>
 <p>
-Returns a list of your <a href="Photos.html#M000071">geo</a>-tagged photos.
+Returns a list of your geo-tagged photos.
 </p>
 <p>
 <b>Arguments</b>
 </p>
 <dl>
-<dt>min_upload_date </dt><dd>Minimum <a href="Photos.html#M000073">upload</a> date. <a
-href="Photos.html">Photos</a> with an <a
-href="Photos.html#M000073">upload</a> date greater than or equal to this
-value will be returned. The date should be in the form of a unix timestamp.
+<dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
+greater than or equal to this value will be returned. The date should be in
+the form of a unix timestamp.
 
 </dd>
-<dt>max_upload_date </dt><dd>Maximum <a href="Photos.html#M000073">upload</a> date. <a
-href="Photos.html">Photos</a> with an <a
-href="Photos.html#M000073">upload</a> date less than or equal to this value
-will be returned. The date should be in the form of a unix timestamp.
+<dt>max_upload_date </dt><dd>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
+less than or equal to this value will be returned. The date should be in
+the form of a unix timestamp.
 
 </dd>
 <dt>min_taken_date </dt><dd>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
@@ -2070,11 +2338,9 @@ the form of a mysql datetime.
 </dd>
 </dl>
 <p>
-&lt;ul&gt; &lt;li&gt;1 public photos&lt;/li&gt; &lt;li&gt;2 private photos
-visible to friends&lt;/li&gt; &lt;li&gt;3 private photos visible to
-family&lt;/li&gt; &lt;li&gt;4 private photos visible to friends &amp;
-family&lt;/li&gt; &lt;li&gt;5 completely private photos&lt;/li&gt;
-&lt;/ul&gt;
+<ul> <li>1 public photos</li> <li>2 private photos visible to friends</li>
+<li>3 private photos visible to family</li> <li>4 private photos visible to
+friends &amp; family</li> <li>5 completely private photos</li> </ul>
 </p>
 <dl>
 <dt>sort </dt><dd>The order in which to sort returned photos. Deafults to date-posted-desc.
@@ -2090,8 +2356,8 @@ date-taken-desc, interestingness-desc, and interestingness-asc.
 record. Currently supported fields are: <tt>license</tt>,
 <tt>date_upload</tt>, <tt>date_taken</tt>, <tt>owner_name</tt>,
 <tt>icon_server</tt>, <tt>original_format</tt>, <tt>last_update</tt>,
-<tt><a href="Photos.html#M000071">geo</a></tt>, <tt>tags</tt>,
-<tt>machine_tags</tt>, <tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>.
+<tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>, <tt>o_dims</tt>,
+<tt>views</tt>, <tt>media</tt>.
 
 </dd>
 <dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
@@ -2144,13 +2410,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -2168,10 +2434,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000092-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000092-source">
+            onclick="toggleCode('M000094-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000094-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2181,42 +2455,46 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000093" class="method-detail">
-        <a name="M000093"></a>
+
+      <div id="method-M000095" class="method-detail">
+        <a name="M000095"></a>
 
         <div class="method-heading">
-          <a href="#M000093" class="method-signature">
+
+          <a href="#M000095" class="method-signature">
+
           <span class="method-name">getWithoutGeoData</span><span class="method-args">(:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:privacy_filter =&gt; 'privacy_filter',:sort =&gt; 'sort',:media =&gt; 'media',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.getWithoutGeoData.html">flickr.photos.getWithoutGeoData</a>
 request.
 </p>
 <p>
-Returns a list of your photos which haven&#8216;t been <a
-href="Photos.html#M000071">geo</a>-tagged.
+Returns a list of your photos which haven&#8217;t been geo-tagged.
 </p>
 <p>
 <b>Arguments</b>
 </p>
 <dl>
-<dt>min_upload_date </dt><dd>Minimum <a href="Photos.html#M000073">upload</a> date. <a
-href="Photos.html">Photos</a> with an <a
-href="Photos.html#M000073">upload</a> date greater than or equal to this
-value will be returned. The date should be in the form of a unix timestamp.
+<dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
+greater than or equal to this value will be returned. The date should be in
+the form of a unix timestamp.
 
 </dd>
-<dt>max_upload_date </dt><dd>Maximum <a href="Photos.html#M000073">upload</a> date. <a
-href="Photos.html">Photos</a> with an <a
-href="Photos.html#M000073">upload</a> date less than or equal to this value
-will be returned. The date should be in the form of a unix timestamp.
+<dt>max_upload_date </dt><dd>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
+less than or equal to this value will be returned. The date should be in
+the form of a unix timestamp.
 
 </dd>
 <dt>min_taken_date </dt><dd>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
@@ -2234,11 +2512,9 @@ the form of a mysql datetime.
 </dd>
 </dl>
 <p>
-&lt;ul&gt; &lt;li&gt;1 public photos&lt;/li&gt; &lt;li&gt;2 private photos
-visible to friends&lt;/li&gt; &lt;li&gt;3 private photos visible to
-family&lt;/li&gt; &lt;li&gt;4 private photos visible to friends &amp;
-family&lt;/li&gt; &lt;li&gt;5 completely private photos&lt;/li&gt;
-&lt;/ul&gt;
+<ul> <li>1 public photos</li> <li>2 private photos visible to friends</li>
+<li>3 private photos visible to family</li> <li>4 private photos visible to
+friends &amp; family</li> <li>5 completely private photos</li> </ul>
 </p>
 <dl>
 <dt>sort </dt><dd>The order in which to sort returned photos. Deafults to date-posted-desc.
@@ -2254,8 +2530,8 @@ date-taken-desc, interestingness-desc, and interestingness-asc.
 record. Currently supported fields are: <tt>license</tt>,
 <tt>date_upload</tt>, <tt>date_taken</tt>, <tt>owner_name</tt>,
 <tt>icon_server</tt>, <tt>original_format</tt>, <tt>last_update</tt>,
-<tt><a href="Photos.html#M000071">geo</a></tt>, <tt>tags</tt>,
-<tt>machine_tags</tt>, <tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>.
+<tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>, <tt>o_dims</tt>,
+<tt>views</tt>, <tt>media</tt>.
 
 </dd>
 <dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
@@ -2308,13 +2584,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -2332,10 +2608,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000093-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000093-source">
+            onclick="toggleCode('M000095-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000095-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2345,60 +2629,77 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000074" class="method-detail">
-        <a name="M000074"></a>
+
+      <div id="method-M000075" class="method-detail">
+        <a name="M000075"></a>
 
         <div class="method-heading">
+
           <span class="method-name">licenses</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Photos/Licenses.html">Licenses</a> object.
 </p>
+
         </div>
       </div>
+
 
       <div id="method-M000076" class="method-detail">
         <a name="M000076"></a>
 
         <div class="method-heading">
+
           <span class="method-name">notes</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Photos/Notes.html">Notes</a> object.
 </p>
+
         </div>
       </div>
 
-      <div id="method-M000094" class="method-detail">
-        <a name="M000094"></a>
+
+      <div id="method-M000096" class="method-detail">
+        <a name="M000096"></a>
 
         <div class="method-heading">
-          <a href="#M000094" class="method-signature">
+
+          <a href="#M000096" class="method-signature">
+
           <span class="method-name">recentlyUpdated</span><span class="method-args">(:min_date =&gt; 'min_date',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.recentlyUpdated.html">flickr.photos.recentlyUpdated</a>
 request.
 </p>
 <p>
-&lt;p&gt;Return a list of your photos that have been recently created or
-which have been recently modified.&lt;/p&gt;
+<p>Return a list of your photos that have been recently created or which
+have been recently modified.</p>
 </p>
 <p>
-&lt;p&gt;Recently modified may mean that the photo&#8216;s metadata (title,
+<p>Recently modified may mean that the photo&#8217;s metadata (title,
 description, tags) may have been changed or a comment has been added (or
-just modified somehow :-)&lt;/p&gt;
+just modified somehow :-)</p>
 </p>
 <p>
 <b>Arguments</b>
@@ -2412,8 +2713,8 @@ compared.
 record. Currently supported fields are: <tt>license</tt>,
 <tt>date_upload</tt>, <tt>date_taken</tt>, <tt>owner_name</tt>,
 <tt>icon_server</tt>, <tt>original_format</tt>, <tt>last_update</tt>,
-<tt><a href="Photos.html#M000071">geo</a></tt>, <tt>tags</tt>,
-<tt>machine_tags</tt>, <tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>.
+<tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>, <tt>o_dims</tt>,
+<tt>views</tt>, <tt>media</tt>.
 
 </dd>
 <dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
@@ -2478,13 +2779,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -2502,6 +2803,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -2517,9 +2825,10 @@ The XML-RPC request document could not be parsed.
                 ispublic=&quot;1&quot; isfriend=&quot;0&quot; isfamily=&quot;0&quot; lastupdate=&quot;1150564974&quot; /&gt;
  &lt;/photos&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000094-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000094-source">
+            onclick="toggleCode('M000096-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000096-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2529,19 +2838,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000095" class="method-detail">
-        <a name="M000095"></a>
+
+      <div id="method-M000097" class="method-detail">
+        <a name="M000097"></a>
 
         <div class="method-heading">
-          <a href="#M000095" class="method-signature">
+
+          <a href="#M000097" class="method-signature">
+
           <span class="method-name">removeTag</span><span class="method-args">(:tag_id =&gt; 'tag_id')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.removeTag.html">flickr.photos.removeTag</a>
@@ -2555,9 +2871,8 @@ Remove a tag from a photo.
 </p>
 <dl>
 <dt>tag_id <em>(required)</em> </dt><dd>The tag to remove from the photo. This parameter should contain a tag id,
-as returned by &lt;a
-href=&quot;/services/api/flickr.photos.getInfo.html&quot;&gt;flickr.photos.<a
-href="Photos.html#M000086">getInfo</a>&lt;/a&gt;.
+as returned by <a
+href=&#8220;/services/api/flickr.photos.getInfo.html&#8220;>flickr.photos.getInfo</a>.
 
 </dd>
 </dl>
@@ -2568,9 +2883,8 @@ href="Photos.html#M000086">getInfo</a>&lt;/a&gt;.
 <li>1: <em>Tag not found</em>
 
 <p>
-The calling user doesn&#8216;t have permission to <a
-href="Photos.html#M000078">delete</a> the specified tag. This could mean it
-belongs to someone else, or doesn&#8216;t exist.
+The calling user doesn&#8217;t have permission to delete the specified tag.
+This could mean it belongs to someone else, or doesn&#8217;t exist.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -2610,13 +2924,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -2634,10 +2948,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000095-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000095-source">
+            onclick="toggleCode('M000097-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000097-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2647,19 +2969,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000096" class="method-detail">
-        <a name="M000096"></a>
+
+      <div id="method-M000098" class="method-detail">
+        <a name="M000098"></a>
 
         <div class="method-heading">
-          <a href="#M000096" class="method-signature">
+
+          <a href="#M000098" class="method-signature">
+
           <span class="method-name">search</span><span class="method-args">(:user_id =&gt; 'user_id',:tags =&gt; 'tags',:tag_mode =&gt; 'tag_mode',:text =&gt; 'text',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:license =&gt; 'license',:sort =&gt; 'sort',:privacy_filter =&gt; 'privacy_filter',:bbox =&gt; 'bbox',:accuracy =&gt; 'accuracy',:safe_search =&gt; 'safe_search',:content_type =&gt; 'content_type',:machine_tags =&gt; 'machine_tags',:machine_tag_mode =&gt; 'machine_tag_mode',:group_id =&gt; 'group_id',:contacts =&gt; 'contacts',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:media =&gt; 'media',:has_geo =&gt; 'has_geo',:geo_context =&gt; 'geo_context',:lat =&gt; 'lat',:lon =&gt; 'lon',:radius =&gt; 'radius',:radius_units =&gt; 'radius_units',:is_commons =&gt; 'is_commons',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.search.html">flickr.photos.search</a>
@@ -2676,11 +3005,10 @@ public photos.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>user_id </dt><dd>The NSID of the user who&#8216;s photo to <a
-href="Photos.html#M000096">search</a>. If this parameter isn&#8216;t passed
-then everybody&#8216;s public photos will be searched. A value of
-&quot;me&quot; will <a href="Photos.html#M000096">search</a> against the
-calling user&#8216;s photos for authenticated calls.
+<dt>user_id </dt><dd>The NSID of the user who&#8217;s photo to search. If this parameter
+isn&#8217;t passed then everybody&#8217;s public photos will be searched. A
+value of &#8220;me&#8221; will search against the calling user&#8217;s
+photos for authenticated calls.
 
 </dd>
 <dt>tags </dt><dd>A comma-delimited list of tags. <a href="Photos.html">Photos</a> with one
@@ -2692,21 +3020,18 @@ or more of the tags listed will be returned.
 not specified.
 
 </dd>
-<dt>text </dt><dd>A free text <a href="Photos.html#M000096">search</a>. <a
-href="Photos.html">Photos</a> who&#8216;s title, description or tags
-contain the text will be returned.
+<dt>text </dt><dd>A free text search. <a href="Photos.html">Photos</a> who&#8217;s title,
+description or tags contain the text will be returned.
 
 </dd>
-<dt>min_upload_date </dt><dd>Minimum <a href="Photos.html#M000073">upload</a> date. <a
-href="Photos.html">Photos</a> with an <a
-href="Photos.html#M000073">upload</a> date greater than or equal to this
-value will be returned. The date should be in the form of a unix timestamp.
+<dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
+greater than or equal to this value will be returned. The date should be in
+the form of a unix timestamp.
 
 </dd>
-<dt>max_upload_date </dt><dd>Maximum <a href="Photos.html#M000073">upload</a> date. <a
-href="Photos.html">Photos</a> with an <a
-href="Photos.html#M000073">upload</a> date less than or equal to this value
-will be returned. The date should be in the form of a unix timestamp.
+<dt>max_upload_date </dt><dd>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
+less than or equal to this value will be returned. The date should be in
+the form of a unix timestamp.
 
 </dd>
 <dt>min_taken_date </dt><dd>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
@@ -2720,16 +3045,15 @@ the form of a mysql datetime.
 
 </dd>
 <dt>license </dt><dd>The license id for photos (for possible values see the
-flickr.photos.licenses.getInfo method). Multiple <a
-href="Photos.html#M000074">licenses</a> may be comma-separated.
+flickr.photos.licenses.getInfo method). Multiple licenses may be
+comma-separated.
 
 </dd>
 <dt>sort </dt><dd>The order in which to sort returned photos. Deafults to date-posted-desc
-(unless you are doing a radial <a href="Photos.html#M000071">geo</a> query,
-in which case the default sorting is by ascending distance from the point
-specified). The possible values are: date-posted-asc, date-posted-desc,
-date-taken-asc, date-taken-desc, interestingness-desc, interestingness-asc,
-and relevance.
+(unless you are doing a radial geo query, in which case the default sorting
+is by ascending distance from the point specified). The possible values
+are: date-posted-asc, date-posted-desc, date-taken-asc, date-taken-desc,
+interestingness-desc, interestingness-asc, and relevance.
 
 </dd>
 <dt>privacy_filter </dt><dd>Return photos only matching a certain privacy level. This only applies when
@@ -2738,11 +3062,9 @@ making an authenticated call to view photos you own. Valid values are:
 </dd>
 </dl>
 <p>
-&lt;ul&gt; &lt;li&gt;1 public photos&lt;/li&gt; &lt;li&gt;2 private photos
-visible to friends&lt;/li&gt; &lt;li&gt;3 private photos visible to
-family&lt;/li&gt; &lt;li&gt;4 private photos visible to friends &amp;
-family&lt;/li&gt; &lt;li&gt;5 completely private photos&lt;/li&gt;
-&lt;/ul&gt;
+<ul> <li>1 public photos</li> <li>2 private photos visible to friends</li>
+<li>3 private photos visible to family</li> <li>4 private photos visible to
+friends &amp; family</li> <li>5 completely private photos</li> </ul>
 </p>
 <dl>
 <dt>bbox </dt><dd>A comma-delimited list of 4 values defining the Bounding Box of the area
@@ -2751,21 +3073,19 @@ that will be searched.
 </dd>
 </dl>
 <p>
-&lt;br /&gt;&lt;br /&gt; The 4 values represent the bottom-left corner of
-the box and the top-right corner, minimum_longitude, minimum_latitude,
-maximum_longitude, maximum_latitude. &lt;br /&gt;&lt;br /&gt; Longitude has
-a range of -180 to 180 , latitude of -90 to 90. Defaults to -180, -90, 180,
-90 if not specified. &lt;br /&gt;&lt;br /&gt; Unlike standard photo
-queries, <a href="Photos.html#M000071">geo</a> (or bounding box) queries
-will only return 250 results per page. &lt;br /&gt;&lt;br /&gt; <a
+<br /><br /> The 4 values represent the bottom-left corner of the box and
+the top-right corner, minimum_longitude, minimum_latitude,
+maximum_longitude, maximum_latitude. <br /><br /> Longitude has a range of
+-180 to 180 , latitude of -90 to 90. Defaults to -180, -90, 180, 90 if not
+specified. <br /><br /> Unlike standard photo queries, geo (or bounding
+box) queries will only return 250 results per page. <br /><br /> <a
 href="Photos/Geo.html">Geo</a> queries require some sort of limiting agent
 in order to prevent the database from crying. This is basically like the
-check against &quot;parameterless searches&quot; for queries without a <a
-href="Photos.html#M000071">geo</a> component. &lt;br /&gt;&lt;br /&gt; A
-tag, for instance, is considered a limiting agent as are user defined
-min_date_taken and min_date_upload parameters &amp;8212; If no limiting
-factor is passed we return only photos added in the last 12 hours (though
-we may extend the limit in the future).
+check against &#8220;parameterless searches&#8221; for queries without a
+geo component. <br /><br /> A tag, for instance, is considered a limiting
+agent as are user defined min_date_taken and min_date_upload parameters —
+If no limiting factor is passed we return only photos added in the last 12
+hours (though we may extend the limit in the future).
 </p>
 <dl>
 <dt>accuracy </dt><dd>Recorded accuracy level of the location information. Current range is 1-16
@@ -2774,21 +3094,20 @@ we may extend the limit in the future).
 </dd>
 </dl>
 <p>
-&lt;ul&gt; &lt;li&gt;World level is 1&lt;/li&gt; &lt;li&gt;Country is
-~3&lt;/li&gt; &lt;li&gt;Region is ~6&lt;/li&gt; &lt;li&gt;City is
-~11&lt;/li&gt; &lt;li&gt;Street is ~16&lt;/li&gt; &lt;/ul&gt;
+<ul> <li>World level is 1</li> <li>Country is ~3</li> <li>Region is ~6</li>
+<li>City is ~11</li> <li>Street is ~16</li> </ul>
 </p>
 <p>
 Defaults to maximum value if not specified.
 </p>
 <dl>
-<dt>safe_search </dt><dd>Safe <a href="Photos.html#M000096">search</a> setting:
+<dt>safe_search </dt><dd>Safe search setting:
 
 </dd>
 </dl>
 <p>
-&lt;ul&gt; &lt;li&gt;1 for safe.&lt;/li&gt; &lt;li&gt;2 for
-moderate.&lt;/li&gt; &lt;li&gt;3 for restricted.&lt;/li&gt; &lt;/ul&gt;
+<ul> <li>1 for safe.</li> <li>2 for moderate.</li> <li>3 for
+restricted.</li> </ul>
 </p>
 <p>
 (Please note: Un-authed calls can only see Safe content.)
@@ -2799,12 +3118,11 @@ moderate.&lt;/li&gt; &lt;li&gt;3 for restricted.&lt;/li&gt; &lt;/ul&gt;
 </dd>
 </dl>
 <p>
-&lt;ul&gt; &lt;li&gt;1 for photos only.&lt;/li&gt; &lt;li&gt;2 for
-screenshots only.&lt;/li&gt; &lt;li&gt;3 for &#8216;other&#8217;
-only.&lt;/li&gt; &lt;li&gt;4 for photos and screenshots.&lt;/li&gt;
-&lt;li&gt;5 for screenshots and &#8216;other&#8217;.&lt;/li&gt; &lt;li&gt;6
-for photos and &#8216;other&#8217;.&lt;/li&gt; &lt;li&gt;7 for photos,
-screenshots, and &#8216;other&#8217; (all).&lt;/li&gt; &lt;/ul&gt;
+<ul> <li>1 for photos only.</li> <li>2 for screenshots only.</li> <li>3 for
+&#8216;other&#8217; only.</li> <li>4 for photos and screenshots.</li> <li>5
+for screenshots and &#8216;other&#8217;.</li> <li>6 for photos and
+&#8216;other&#8217;.</li> <li>7 for photos, screenshots, and
+&#8216;other&#8217; (all).</li> </ul>
 </p>
 <dl>
 <dt>machine_tags </dt><dd>Aside from passing in a fully formed machine tag, there is a special syntax
@@ -2813,7 +3131,7 @@ for searching on specific properties :
 </dd>
 </dl>
 <p>
-&lt;ul&gt;
+<ul>
 </p>
 <pre>
   &lt;li&gt;Find photos using the 'dc' namespace :    &lt;code&gt;&quot;machine_tags&quot; =&gt; &quot;dc:&quot;&lt;/code&gt;&lt;/li&gt;
@@ -2835,8 +3153,8 @@ for searching on specific properties :
 <p>
 Multiple machine tags may be queried by passing a comma-separated list. The
 number of machine tags you can pass in a single query depends on the tag
-mode (AND or OR) that you are querying with. &quot;AND&quot; queries are
-limited to (16) machine tags. &quot;OR&quot; queries are limited to (8).
+mode (AND or OR) that you are querying with. &#8220;AND&#8221; queries are
+limited to (16) machine tags. &#8220;OR&#8221; queries are limited to (8).
 </p>
 <dl>
 <dt>machine_tag_mode <em>(required)</em> </dt><dd>Either &#8216;any&#8217; for an OR combination of tags, or
@@ -2844,9 +3162,8 @@ limited to (16) machine tags. &quot;OR&quot; queries are limited to (8).
 not specified.
 
 </dd>
-<dt>group_id </dt><dd>The id of a group who&#8216;s pool to <a
-href="Photos.html#M000096">search</a>. If specified, only matching photos
-posted to the group&#8216;s pool will be returned.
+<dt>group_id </dt><dd>The id of a group who&#8217;s pool to search. If specified, only matching
+photos posted to the group&#8217;s pool will be returned.
 
 </dd>
 <dt>contacts </dt><dd>Search your contacts. Either &#8216;all&#8217; or &#8216;ff&#8217; for just
@@ -2859,14 +3176,14 @@ bbox argument is present).
 </dd>
 </dl>
 <p>
-&lt;br /&gt;&lt;br /&gt; <a href="Photos/Geo.html">Geo</a> queries require
-some sort of limiting agent in order to prevent the database from crying.
-This is basically like the check against &quot;parameterless searches&quot;
-for queries without a <a href="Photos.html#M000071">geo</a> component.
-&lt;br /&gt;&lt;br /&gt; A tag, for instance, is considered a limiting
-agent as are user defined min_date_taken and min_date_upload parameters
-&amp;emdash; If no limiting factor is passed we return only photos added in
-the last 12 hours (though we may extend the limit in the future).
+<br /><br /> <a href="Photos/Geo.html">Geo</a> queries require some sort of
+limiting agent in order to prevent the database from crying. This is
+basically like the check against &#8220;parameterless searches&#8221; for
+queries without a geo component. <br /><br /> A tag, for instance, is
+considered a limiting agent as are user defined min_date_taken and
+min_date_upload parameters &amp;emdash; If no limiting factor is passed we
+return only photos added in the last 12 hours (though we may extend the
+limit in the future).
 </p>
 <dl>
 <dt>place_id </dt><dd>A <a href="../Flickr.html">Flickr</a> place id. (not used if bbox argument
@@ -2875,114 +3192,108 @@ is present).
 </dd>
 </dl>
 <p>
-&lt;br /&gt;&lt;br /&gt; <a href="Photos/Geo.html">Geo</a> queries require
-some sort of limiting agent in order to prevent the database from crying.
-This is basically like the check against &quot;parameterless searches&quot;
-for queries without a <a href="Photos.html#M000071">geo</a> component.
-&lt;br /&gt;&lt;br /&gt; A tag, for instance, is considered a limiting
-agent as are user defined min_date_taken and min_date_upload parameters
-&amp;emdash; If no limiting factor is passed we return only photos added in
-the last 12 hours (though we may extend the limit in the future).
+<br /><br /> <a href="Photos/Geo.html">Geo</a> queries require some sort of
+limiting agent in order to prevent the database from crying. This is
+basically like the check against &#8220;parameterless searches&#8221; for
+queries without a geo component. <br /><br /> A tag, for instance, is
+considered a limiting agent as are user defined min_date_taken and
+min_date_upload parameters &amp;emdash; If no limiting factor is passed we
+return only photos added in the last 12 hours (though we may extend the
+limit in the future).
 </p>
 <dl>
 <dt>media </dt><dd>Filter results by media type. Possible values are <tt>all</tt> (default),
 <tt>photos</tt> or <tt>videos</tt>
 
 </dd>
-<dt>has_geo </dt><dd>Any photo that has been geotagged, or if the value is &quot;0&quot; any
+<dt>has_geo </dt><dd>Any photo that has been geotagged, or if the value is &#8220;0&#8221; any
 photo that has <em>not</em> been geotagged.
 
 </dd>
 </dl>
 <p>
-&lt;br /&gt;&lt;br /&gt; <a href="Photos/Geo.html">Geo</a> queries require
-some sort of limiting agent in order to prevent the database from crying.
-This is basically like the check against &quot;parameterless searches&quot;
-for queries without a <a href="Photos.html#M000071">geo</a> component.
-&lt;br /&gt;&lt;br /&gt; A tag, for instance, is considered a limiting
-agent as are user defined min_date_taken and min_date_upload parameters
-&amp;emdash; If no limiting factor is passed we return only photos added in
-the last 12 hours (though we may extend the limit in the future).
+<br /><br /> <a href="Photos/Geo.html">Geo</a> queries require some sort of
+limiting agent in order to prevent the database from crying. This is
+basically like the check against &#8220;parameterless searches&#8221; for
+queries without a geo component. <br /><br /> A tag, for instance, is
+considered a limiting agent as are user defined min_date_taken and
+min_date_upload parameters &amp;emdash; If no limiting factor is passed we
+return only photos added in the last 12 hours (though we may extend the
+limit in the future).
 </p>
 <dl>
 <dt>geo_context </dt><dd><a href="Photos/Geo.html">Geo</a> context is a numeric value representing
-the photo&#8216;s geotagginess beyond latitude and longitude. For example,
-you may wish to <a href="Photos.html#M000096">search</a> for photos that
-were taken &quot;indoors&quot; or &quot;outdoors&quot;. &lt;br /&gt;&lt;br
-/&gt;
+the photo&#8217;s geotagginess beyond latitude and longitude. For example,
+you may wish to search for photos that were taken &#8220;indoors&#8221; or
+&#8220;outdoors&#8221;. <br /><br />
 
 </dd>
 </dl>
 <p>
-The current list of context IDs is :&lt;br /&gt;&lt;br/&gt; &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;0&lt;/strong&gt;, not defined.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;1&lt;/strong&gt;, indoors.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;2&lt;/strong&gt;, outdoors.&lt;/li&gt; &lt;/ul&gt;
-&lt;br /&gt;&lt;br /&gt; <a href="Photos/Geo.html">Geo</a> queries require
-some sort of limiting agent in order to prevent the database from crying.
-This is basically like the check against &quot;parameterless searches&quot;
-for queries without a <a href="Photos.html#M000071">geo</a> component.
-&lt;br /&gt;&lt;br /&gt; A tag, for instance, is considered a limiting
+The current list of context IDs is :<br /><br/> <ul>
+<li><strong>0</strong>, not defined.</li> <li><strong>1</strong>,
+indoors.</li> <li><strong>2</strong>, outdoors.</li> </ul> <br /><br /> <a
+href="Photos/Geo.html">Geo</a> queries require some sort of limiting agent
+in order to prevent the database from crying. This is basically like the
+check against &#8220;parameterless searches&#8221; for queries without a
+geo component. <br /><br /> A tag, for instance, is considered a limiting
 agent as are user defined min_date_taken and min_date_upload parameters
 &amp;emdash; If no limiting factor is passed we return only photos added in
 the last 12 hours (though we may extend the limit in the future).
 </p>
 <dl>
-<dt>lat </dt><dd>A valid latitude, in decimal format, for doing radial <a
-href="Photos.html#M000071">geo</a> queries.
+<dt>lat </dt><dd>A valid latitude, in decimal format, for doing radial geo queries.
 
 </dd>
 </dl>
 <p>
-&lt;br /&gt;&lt;br /&gt; <a href="Photos/Geo.html">Geo</a> queries require
-some sort of limiting agent in order to prevent the database from crying.
-This is basically like the check against &quot;parameterless searches&quot;
-for queries without a <a href="Photos.html#M000071">geo</a> component.
-&lt;br /&gt;&lt;br /&gt; A tag, for instance, is considered a limiting
-agent as are user defined min_date_taken and min_date_upload parameters
-&amp;emdash; If no limiting factor is passed we return only photos added in
-the last 12 hours (though we may extend the limit in the future).
+<br /><br /> <a href="Photos/Geo.html">Geo</a> queries require some sort of
+limiting agent in order to prevent the database from crying. This is
+basically like the check against &#8220;parameterless searches&#8221; for
+queries without a geo component. <br /><br /> A tag, for instance, is
+considered a limiting agent as are user defined min_date_taken and
+min_date_upload parameters &amp;emdash; If no limiting factor is passed we
+return only photos added in the last 12 hours (though we may extend the
+limit in the future).
 </p>
 <dl>
-<dt>lon </dt><dd>A valid longitude, in decimal format, for doing radial <a
-href="Photos.html#M000071">geo</a> queries.
+<dt>lon </dt><dd>A valid longitude, in decimal format, for doing radial geo queries.
 
 </dd>
 </dl>
 <p>
-&lt;br /&gt;&lt;br /&gt; <a href="Photos/Geo.html">Geo</a> queries require
-some sort of limiting agent in order to prevent the database from crying.
-This is basically like the check against &quot;parameterless searches&quot;
-for queries without a <a href="Photos.html#M000071">geo</a> component.
-&lt;br /&gt;&lt;br /&gt; A tag, for instance, is considered a limiting
-agent as are user defined min_date_taken and min_date_upload parameters
-&amp;emdash; If no limiting factor is passed we return only photos added in
-the last 12 hours (though we may extend the limit in the future).
+<br /><br /> <a href="Photos/Geo.html">Geo</a> queries require some sort of
+limiting agent in order to prevent the database from crying. This is
+basically like the check against &#8220;parameterless searches&#8221; for
+queries without a geo component. <br /><br /> A tag, for instance, is
+considered a limiting agent as are user defined min_date_taken and
+min_date_upload parameters &amp;emdash; If no limiting factor is passed we
+return only photos added in the last 12 hours (though we may extend the
+limit in the future).
 </p>
 <dl>
-<dt>radius </dt><dd>A valid radius used for <a href="Photos.html#M000071">geo</a> queries,
-greater than zero and less than 20 miles (or 32 kilometers), for use with
-point-based <a href="Photos.html#M000071">geo</a> queries. The default
+<dt>radius </dt><dd>A valid radius used for geo queries, greater than zero and less than 20
+miles (or 32 kilometers), for use with point-based geo queries. The default
 value is 5 (km).
 
 </dd>
-<dt>radius_units </dt><dd>The unit of measure when doing radial <a href="Photos.html#M000071">geo</a>
-queries. Valid options are &quot;mi&quot; (miles) and &quot;km&quot;
-(kilometers). The default is &quot;km&quot;.
+<dt>radius_units </dt><dd>The unit of measure when doing radial geo queries. Valid options are
+&#8220;mi&#8221; (miles) and &#8220;km&#8221; (kilometers). The default is
+&#8220;km&#8221;.
 
 </dd>
-<dt>is_commons </dt><dd>Limit the scope of the <a href="Photos.html#M000096">search</a> to only
-photos that are part of the &lt;a href=&quot;<a
+<dt>is_commons </dt><dd>Limit the scope of the search to only photos that are part of the <a
+href=&#8220;<a
 href="http://flickr.com/commons">Flickr">flickr.com/commons">Flickr</a> <a
-href="Commons.html">Commons</a> project&lt;/a&gt;. Default is false.
+href="Commons.html">Commons</a> project</a>. Default is false.
 
 </dd>
 <dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: <tt>license</tt>,
 <tt>date_upload</tt>, <tt>date_taken</tt>, <tt>owner_name</tt>,
 <tt>icon_server</tt>, <tt>original_format</tt>, <tt>last_update</tt>,
-<tt><a href="Photos.html#M000071">geo</a></tt>, <tt>tags</tt>,
-<tt>machine_tags</tt>, <tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>.
+<tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>, <tt>o_dims</tt>,
+<tt>views</tt>, <tt>media</tt>.
 
 </dd>
 <dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
@@ -3001,9 +3312,8 @@ defaults to 100. The maximum allowed value is 500.
 <li>1: <em>Too many tags in ALL query</em>
 
 <p>
-When performing an &#8216;all tags&#8217; <a
-href="Photos.html#M000096">search</a>, you may not specify more than 20
-tags to join together.
+When performing an &#8216;all tags&#8217; search, you may not specify more
+than 20 tags to join together.
 </p>
 </li>
 <li>2: <em>Unknown user</em>
@@ -3015,24 +3325,23 @@ A user_id was passed which did not match a valid flickr user.
 <li>3: <em>Parameterless searches have been disabled</em>
 
 <p>
-To perform a <a href="Photos.html#M000096">search</a> with no parameters
-(to get the latest public photos, please use flickr.photos.<a
-href="Photos.html#M000089">getRecent</a> instead).
+To perform a search with no parameters (to get the latest public photos,
+please use flickr.photos.getRecent instead).
 </p>
 </li>
-<li>4: <em>You don&#8216;t have permission to view this pool</em>
+<li>4: <em>You don&#8217;t have permission to view this pool</em>
 
 <p>
 The logged in user (if any) does not have permission to view the pool for
 this group.
 </p>
 </li>
-<li>10: <em>Sorry, the <a href="../Flickr.html">Flickr</a> <a
-href="Photos.html#M000096">search</a> API is not currently available.</em>
+<li>10: <em>Sorry, the <a href="../Flickr.html">Flickr</a> search API is not
+currently available.</em>
 
 <p>
-The <a href="../Flickr.html">Flickr</a> API <a
-href="Photos.html#M000096">search</a> databases are temporarily unavailable
+The <a href="../Flickr.html">Flickr</a> API search databases are
+temporarily unavailable
 </p>
 </li>
 <li>11: <em>No valid machine tags</em>
@@ -3059,13 +3368,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -3083,10 +3392,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000096-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000096-source">
+            onclick="toggleCode('M000098-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000098-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3096,19 +3413,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000097" class="method-detail">
-        <a name="M000097"></a>
+
+      <div id="method-M000099" class="method-detail">
+        <a name="M000099"></a>
 
         <div class="method-heading">
-          <a href="#M000097" class="method-signature">
+
+          <a href="#M000099" class="method-signature">
+
           <span class="method-name">setContentType</span><span class="method-args">(:photo_id =&gt; 'photo_id',:content_type =&gt; 'content_type')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.setContentType.html">flickr.photos.setContentType</a>
@@ -3189,13 +3513,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -3213,6 +3537,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -3222,9 +3553,10 @@ The XML-RPC request document could not be parsed.
  &lt;photo id=&quot;14814&quot; content_type=&quot;3&quot;/&gt;
  &lt;/rsp&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000097-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000097-source">
+            onclick="toggleCode('M000099-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000099-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3234,19 +3566,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000098" class="method-detail">
-        <a name="M000098"></a>
+
+      <div id="method-M000100" class="method-detail">
+        <a name="M000100"></a>
 
         <div class="method-heading">
-          <a href="#M000098" class="method-signature">
+
+          <a href="#M000100" class="method-signature">
+
           <span class="method-name">setDates</span><span class="method-args">(:photo_id =&gt; 'photo_id',:date_posted =&gt; 'date_posted',:date_taken =&gt; 'date_taken',:date_taken_granularity =&gt; 'date_taken_granularity')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.setDates.html">flickr.photos.setDates</a>
@@ -3262,19 +3601,16 @@ Set one or both of the dates for a photo.
 <dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to edit dates for.
 
 </dd>
-<dt>date_posted </dt><dd>The date the photo was uploaded to flickr (see the &lt;a
-href=&quot;/services/api/misc.dates.html&quot;&gt;dates
-documentation&lt;/a&gt;)
+<dt>date_posted </dt><dd>The date the photo was uploaded to flickr (see the <a
+href=&#8220;/services/api/misc.dates.html&#8220;>dates documentation</a>)
 
 </dd>
-<dt>date_taken </dt><dd>The date the photo was taken (see the &lt;a
-href=&quot;/services/api/misc.dates.html&quot;&gt;dates
-documentation&lt;/a&gt;)
+<dt>date_taken </dt><dd>The date the photo was taken (see the <a
+href=&#8220;/services/api/misc.dates.html&#8220;>dates documentation</a>)
 
 </dd>
-<dt>date_taken_granularity </dt><dd>The granularity of the date the photo was taken (see the &lt;a
-href=&quot;/services/api/misc.dates.html&quot;&gt;dates
-documentation&lt;/a&gt;)
+<dt>date_taken_granularity </dt><dd>The granularity of the date the photo was taken (see the <a
+href=&#8220;/services/api/misc.dates.html&#8220;>dates documentation</a>)
 
 </dd>
 </dl>
@@ -3338,13 +3674,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -3362,10 +3698,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000098-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000098-source">
+            onclick="toggleCode('M000100-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000100-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3375,19 +3719,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000099" class="method-detail">
-        <a name="M000099"></a>
+
+      <div id="method-M000101" class="method-detail">
+        <a name="M000101"></a>
 
         <div class="method-heading">
-          <a href="#M000099" class="method-signature">
+
+          <a href="#M000101" class="method-signature">
+
           <span class="method-name">setMeta</span><span class="method-args">(:photo_id =&gt; 'photo_id',:title =&gt; 'title',:description =&gt; 'description')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.setMeta.html">flickr.photos.setMeta</a>
@@ -3459,13 +3810,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -3483,10 +3834,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000099-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000099-source">
+            onclick="toggleCode('M000101-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000101-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3496,19 +3855,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000100" class="method-detail">
-        <a name="M000100"></a>
+
+      <div id="method-M000102" class="method-detail">
+        <a name="M000102"></a>
 
         <div class="method-heading">
-          <a href="#M000100" class="method-signature">
+
+          <a href="#M000102" class="method-signature">
+
           <span class="method-name">setPerms</span><span class="method-args">(:photo_id =&gt; 'photo_id',:is_public =&gt; 'is_public',:is_friend =&gt; 'is_friend',:is_family =&gt; 'is_family',:perm_comment =&gt; 'perm_comment',:perm_addmeta =&gt; 'perm_addmeta')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.setPerms.html">flickr.photos.setPerms</a>
@@ -3533,24 +3899,22 @@ Set permissions for a photo.
 <dt>is_family <em>(required)</em> </dt><dd>1 to make the photo visible to family when private, 0 to not.
 
 </dd>
-<dt>perm_comment <em>(required)</em> </dt><dd>who can add <a href="Photos.html#M000075">comments</a> to the photo and
-it&#8216;s <a href="Photos.html#M000076">notes</a>. one of:&lt;br /&gt;
+<dt>perm_comment <em>(required)</em> </dt><dd>who can add comments to the photo and it&#8217;s notes. one of:<br />
 
 </dd>
 </dl>
 <p>
-<tt>0</tt>: nobody&lt;br /&gt; <tt>1</tt>: friends &amp; family&lt;br /&gt;
-<tt>2</tt>: contacts&lt;br /&gt; <tt>3</tt>: everybody
+<tt>0</tt>: nobody<br /> <tt>1</tt>: friends &amp; family<br /> <tt>2</tt>:
+contacts<br /> <tt>3</tt>: everybody
 </p>
 <dl>
-<dt>perm_addmeta <em>(required)</em> </dt><dd>who can add <a href="Photos.html#M000076">notes</a> and tags to the photo.
-one of:&lt;br /&gt;
+<dt>perm_addmeta <em>(required)</em> </dt><dd>who can add notes and tags to the photo. one of:<br />
 
 </dd>
 </dl>
 <p>
-<tt>0</tt>: nobody / just the owner&lt;br /&gt; <tt>1</tt>: friends &amp;
-family&lt;br /&gt; <tt>2</tt>: contacts&lt;br /&gt; <tt>3</tt>: everybody
+<tt>0</tt>: nobody / just the owner<br /> <tt>1</tt>: friends &amp;
+family<br /> <tt>2</tt>: contacts<br /> <tt>3</tt>: everybody
 </p>
 <p>
 <b>Error codes</b>
@@ -3606,13 +3970,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -3630,6 +3994,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -3637,9 +4008,10 @@ The XML-RPC request document could not be parsed.
 <pre>
  &lt;photoid secret=&quot;abcdef&quot; originalsecret=&quot;abcdef&quot;&gt;1234&lt;/photoid&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000100-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000100-source">
+            onclick="toggleCode('M000102-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000102-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3649,19 +4021,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000101" class="method-detail">
-        <a name="M000101"></a>
+
+      <div id="method-M000103" class="method-detail">
+        <a name="M000103"></a>
 
         <div class="method-heading">
-          <a href="#M000101" class="method-signature">
+
+          <a href="#M000103" class="method-signature">
+
           <span class="method-name">setSafetyLevel</span><span class="method-args">(:photo_id =&gt; 'photo_id',:safety_level =&gt; 'safety_level',:hidden =&gt; 'hidden')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.setSafetyLevel.html">flickr.photos.setSafetyLevel</a>
@@ -3750,13 +4129,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -3774,6 +4153,13 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
 <p>
 <b>Returns</b>
@@ -3783,9 +4169,10 @@ The XML-RPC request document could not be parsed.
  &lt;photo id=&quot;14814&quot; safety_level=&quot;2&quot; hidden=&quot;0&quot;/&gt;
  &lt;/rsp&gt;
 </pre>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000101-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000101-source">
+            onclick="toggleCode('M000103-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000103-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3795,19 +4182,26 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000102" class="method-detail">
-        <a name="M000102"></a>
+
+      <div id="method-M000104" class="method-detail">
+        <a name="M000104"></a>
 
         <div class="method-heading">
-          <a href="#M000102" class="method-signature">
+
+          <a href="#M000104" class="method-signature">
+
           <span class="method-name">setTags</span><span class="method-args">(:photo_id =&gt; 'photo_id',:tags =&gt; 'tags')</span>
+
           </a>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 <a
 href="http://www.flickr.com/services/api/flickr.photos.setTags.html">flickr.photos.setTags</a>
@@ -3883,13 +4277,13 @@ The API key passed was not valid or has expired.
 The requested service is temporarily unavailable.
 </p>
 </li>
-<li>111: <em>Format &quot;xxx&quot; not found</em>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested response format was not found.
 </p>
 </li>
-<li>112: <em>Method &quot;xxx&quot; not found</em>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
 
 <p>
 The requested method was not found.
@@ -3907,10 +4301,18 @@ The SOAP envelope send in the request could not be parsed.
 The XML-RPC request document could not be parsed.
 </p>
 </li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
 </ul>
+
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000102-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000102-source">
+            onclick="toggleCode('M000104-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000104-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3920,43 +4322,56 @@ The XML-RPC request document could not be parsed.
 
 </pre>
           </div>
+
         </div>
       </div>
 
-      <div id="method-M000072" class="method-detail">
-        <a name="M000072"></a>
+
+      <div id="method-M000077" class="method-detail">
+        <a name="M000077"></a>
 
         <div class="method-heading">
+
           <span class="method-name">transform</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Photos/Transform.html">Transform</a> object.
 </p>
+
         </div>
       </div>
 
-      <div id="method-M000073" class="method-detail">
-        <a name="M000073"></a>
+
+      <div id="method-M000078" class="method-detail">
+        <a name="M000078"></a>
 
         <div class="method-heading">
+
           <span class="method-name">upload</span><span class="method-args">()</span>
+
         </div>
-      
+
         <div class="method-description">
+
           <p>
 Returns a <a href="Photos/Upload.html">Upload</a> object.
 </p>
+
         </div>
       </div>
+
 
 
     </div>
 
 
-  </div>
 
+
+  </div>
 
 <div id="validator-badges">
   <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
