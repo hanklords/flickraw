@@ -19,6 +19,7 @@ spec = Gem::Specification.new do |s|
   s.files = PKG_FILES
   s.test_files = FileList["test/*.rb"].to_a
   s.add_dependency 'json'
+  s.required_ruby_version = '>= 1.9'
 end
 
 Rake::RDocTask.new do |rd|
