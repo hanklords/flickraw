@@ -97,7 +97,9 @@
 
         <a href="#M000036">getList</a>&nbsp;&nbsp;
 
-        <a href="#M000037">postPhoto</a>&nbsp;&nbsp;
+        <a href="#M000037">getServices</a>&nbsp;&nbsp;
+
+        <a href="#M000038">postPhoto</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -125,7 +127,7 @@
 
           <a href="#M000036" class="method-signature">
 
-          <span class="method-name">getList</span><span class="method-args">()</span>
+          <span class="method-name">getList</span><span class="method-args">(:service =&gt; 'service')</span>
 
           </a>
 
@@ -144,6 +146,13 @@ Get a list of configured blogs for the calling user.
 <p>
 <b>Arguments</b>
 </p>
+<dl>
+<dt>service </dt><dd>Optionally only return blogs for a given service id. You can get a list of
+from <a
+href=&#8220;/services/api/flickr.blogs.getServices.html&#8220;>flickr.blogs.getServices()</a>.
+
+</dd>
+</dl>
 <p>
 <b>Error codes</b>
 </p>
@@ -253,7 +262,118 @@ href="../Flickr.html">Flickr</a>.
 
           <a href="#M000037" class="method-signature">
 
-          <span class="method-name">postPhoto</span><span class="method-args">(:blog_id =&gt; 'blog_id',:photo_id =&gt; 'photo_id',:title =&gt; 'title',:description =&gt; 'description',:blog_password =&gt; 'blog_password')</span>
+          <span class="method-name">getServices</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.blogs.getServices.html">flickr.blogs.getServices</a>
+request.
+</p>
+<p>
+Return a list of <a href="../Flickr.html">Flickr</a> supported blogging
+services
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;services&gt;
+ &lt;service id=&quot;beta.blogger.com&quot;&gt;Blogger&lt;/service&gt;
+ &lt;service id=&quot;Typepad&quot;&gt;Typepad&lt;/service&gt;
+ &lt;service id=&quot;MovableType&quot;&gt;Movable Type&lt;/service&gt;
+ &lt;service id=&quot;LiveJournal&quot;&gt;LiveJournal&lt;/service&gt;
+ &lt;service id=&quot;MetaWeblogAPI&quot;&gt;Wordpress&lt;/service&gt;
+ &lt;service id=&quot;MetaWeblogAPI&quot;&gt;MetaWeblogAPI&lt;/service&gt;
+ &lt;service id=&quot;Manila&quot;&gt;Manila&lt;/service&gt;
+ &lt;service id=&quot;AtomAPI&quot;&gt;AtomAPI&lt;/service&gt;
+ &lt;service id=&quot;BloggerAPI&quot;&gt;BloggerAPI&lt;/service&gt;
+ &lt;service id=&quot;Vox&quot;&gt;Vox&lt;/service&gt;
+ &lt;service id=&quot;Twitter&quot;&gt;Twitter&lt;/service&gt;
+ &lt;/services&gt;
+</pre>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000037-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getServices(*args)
+    @flickr.call 'flickr.blogs.getServices', *args
+  end
+
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000038" class="method-signature">
+
+          <span class="method-name">postPhoto</span><span class="method-args">(:blog_id =&gt; 'blog_id',:photo_id =&gt; 'photo_id',:title =&gt; 'title',:description =&gt; 'description',:blog_password =&gt; 'blog_password',:service =&gt; 'service')</span>
 
           </a>
 
@@ -270,7 +390,7 @@ request.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>blog_id <em>(required)</em> </dt><dd>The id of the blog to post to
+<dt>blog_id </dt><dd>The id of the blog to post to.
 
 </dd>
 <dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to blog
@@ -284,6 +404,11 @@ request.
 </dd>
 <dt>blog_password </dt><dd>The password for the blog (used when the blog does not have a stored
 password).
+
+</dd>
+<dt>service </dt><dd>A <a href="../Flickr.html">Flickr</a> supported blogging service. Instead
+of passing a blog id you can pass a service id and we&#8217;ll post to the
+first blog of that service we find.
 
 </dd>
 </dl>
@@ -387,8 +512,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000037-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000037-source">
+            onclick="toggleCode('M000038-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000038-source">
 <pre>
 
 # Generated automatically from flickr api

@@ -95,15 +95,15 @@
 
       <div class="name-list">
 
-        <a href="#M000060">getNamespaces</a>&nbsp;&nbsp;
+        <a href="#M000061">getNamespaces</a>&nbsp;&nbsp;
 
-        <a href="#M000061">getPairs</a>&nbsp;&nbsp;
+        <a href="#M000062">getPairs</a>&nbsp;&nbsp;
 
-        <a href="#M000062">getPredicates</a>&nbsp;&nbsp;
+        <a href="#M000063">getPredicates</a>&nbsp;&nbsp;
 
-        <a href="#M000063">getRecentValues</a>&nbsp;&nbsp;
+        <a href="#M000064">getRecentValues</a>&nbsp;&nbsp;
 
-        <a href="#M000064">getValues</a>&nbsp;&nbsp;
+        <a href="#M000065">getValues</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -124,12 +124,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000060" class="method-detail">
-        <a name="M000060"></a>
+      <div id="method-M000061" class="method-detail">
+        <a name="M000061"></a>
 
         <div class="method-heading">
 
-          <a href="#M000060" class="method-signature">
+          <a href="#M000061" class="method-signature">
 
           <span class="method-name">getNamespaces</span><span class="method-args">(:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -233,8 +233,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000060-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000060-source">
+            onclick="toggleCode('M000061-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000061-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -249,12 +249,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000061" class="method-detail">
-        <a name="M000061"></a>
+      <div id="method-M000062" class="method-detail">
+        <a name="M000062"></a>
 
         <div class="method-heading">
 
-          <a href="#M000061" class="method-signature">
+          <a href="#M000062" class="method-signature">
 
           <span class="method-name">getPairs</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -367,8 +367,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000061-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000061-source">
+            onclick="toggleCode('M000062-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000062-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -383,12 +383,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000062" class="method-detail">
-        <a name="M000062"></a>
+      <div id="method-M000063" class="method-detail">
+        <a name="M000063"></a>
 
         <div class="method-heading">
 
-          <a href="#M000062" class="method-signature">
+          <a href="#M000063" class="method-signature">
 
           <span class="method-name">getPredicates</span><span class="method-args">(:namespace =&gt; 'namespace',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -490,8 +490,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000062-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000062-source">
+            onclick="toggleCode('M000063-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000063-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -506,12 +506,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000063" class="method-detail">
-        <a name="M000063"></a>
+      <div id="method-M000064" class="method-detail">
+        <a name="M000064"></a>
 
         <div class="method-heading">
 
-          <a href="#M000063" class="method-signature">
+          <a href="#M000064" class="method-signature">
 
           <span class="method-name">getRecentValues</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:added_since =&gt; 'added_since')</span>
 
@@ -527,7 +527,7 @@ href="http://www.flickr.com/services/api/flickr.machinetags.getRecentValues.html
 request.
 </p>
 <p>
-Fetch recently used machine tags values.
+Fetch recently used (or created) machine tags values.
 </p>
 <p>
 <b>Arguments</b>
@@ -597,19 +597,16 @@ href="../Flickr.html">Flickr</a>.
 </p>
 <pre>
  &lt;values namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; page=&quot;1&quot; total=&quot;500&quot; perpage=&quot;500&quot; pages=&quot;1&quot;&gt;
-        &lt;value usage=&quot;4&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1244232796&quot; last_added=&quot;1244232796&quot;&gt;maui chaff flower&lt;/value&gt;
-        &lt;value usage=&quot;1&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1244231247&quot; last_added=&quot;1244231247&quot;&gt;alahe'e&lt;/value&gt;
-        &lt;value usage=&quot;1&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1244230234&quot; last_added=&quot;1244230234&quot;&gt;edible seed cycas&lt;/value&gt;
-        &lt;value usage=&quot;1&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1244229646&quot; last_added=&quot;1244229646&quot;&gt;zamia&lt;/value&gt;
-        &lt;value usage=&quot;281&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1234197784&quot; last_added=&quot;1244214354&quot;&gt;great tit&lt;/value&gt;
-        &lt;value usage=&quot;13&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot; first_added=&quot;1226106315&quot; last_added=&quot;1244212395&quot;&gt;butterfly&lt;/value&gt;
-        ....
+     &lt;value usage=&quot;4&quot; namespace=&quot;taxonomy&quot; predicate=&quot;common&quot;
+            first_added=&quot;1244232796&quot; last_added=&quot;1244232796&quot;&gt;maui chaff flower&lt;/value&gt;
+
+     &lt;!-- and so on... --&gt;
  &lt;/values&gt;
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000063-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000063-source">
+            onclick="toggleCode('M000064-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000064-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -624,12 +621,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000064" class="method-detail">
-        <a name="M000064"></a>
+      <div id="method-M000065" class="method-detail">
+        <a name="M000065"></a>
 
         <div class="method-heading">
 
-          <a href="#M000064" class="method-signature">
+          <a href="#M000065" class="method-signature">
 
           <span class="method-name">getValues</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -738,8 +735,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000064-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000064-source">
+            onclick="toggleCode('M000065-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000065-source">
 <pre>
 
 # Generated automatically from flickr api

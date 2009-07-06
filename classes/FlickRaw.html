@@ -113,7 +113,7 @@ Class <a href="FlickRaw/Request.html" class="link">FlickRaw::Request</a><br />
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">VERSION</td>
           <td>=</td>
-          <td class="context-item-value">'0.6'</td>
+          <td class="context-item-value">'0.6.1'</td>
 
         </tr>
 
@@ -239,7 +239,7 @@ href="FlickRaw.html#M000003">api_sig</a></em> parameter.
 <pre>
 <span class="ruby-comment cmt"># File lib/flickraw.rb, line 232</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">api_sig</span>(<span class="ruby-identifier">hsh</span>)
-      <span class="ruby-constant">MD5</span>.<span class="ruby-identifier">md5</span>(<span class="ruby-constant">FlickRaw</span>.<span class="ruby-identifier">shared_secret</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">hsh</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">join</span>).<span class="ruby-identifier">to_s</span>
+      <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-constant">FlickRaw</span>.<span class="ruby-identifier">shared_secret</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">hsh</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">join</span>).<span class="ruby-identifier">to_s</span>
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>

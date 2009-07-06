@@ -95,13 +95,15 @@
 
       <div class="name-list">
 
-        <a href="#M000105">addComment</a>&nbsp;&nbsp;
+        <a href="#M000106">addComment</a>&nbsp;&nbsp;
 
-        <a href="#M000106">deleteComment</a>&nbsp;&nbsp;
+        <a href="#M000107">deleteComment</a>&nbsp;&nbsp;
 
-        <a href="#M000107">editComment</a>&nbsp;&nbsp;
+        <a href="#M000108">editComment</a>&nbsp;&nbsp;
 
-        <a href="#M000108">getList</a>&nbsp;&nbsp;
+        <a href="#M000109">getList</a>&nbsp;&nbsp;
+
+        <a href="#M000110">getRecentForContacts</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -122,12 +124,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000105" class="method-detail">
-        <a name="M000105"></a>
+      <div id="method-M000106" class="method-detail">
+        <a name="M000106"></a>
 
         <div class="method-heading">
 
-          <a href="#M000105" class="method-signature">
+          <a href="#M000106" class="method-signature">
 
           <span class="method-name">addComment</span><span class="method-args">(:photo_id =&gt; 'photo_id',:comment_text =&gt; 'comment_text')</span>
 
@@ -256,8 +258,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000105-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000105-source">
+            onclick="toggleCode('M000106-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000106-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -272,12 +274,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000106" class="method-detail">
-        <a name="M000106"></a>
+      <div id="method-M000107" class="method-detail">
+        <a name="M000107"></a>
 
         <div class="method-heading">
 
-          <a href="#M000106" class="method-signature">
+          <a href="#M000107" class="method-signature">
 
           <span class="method-name">deleteComment</span><span class="method-args">(:comment_id =&gt; 'comment_id')</span>
 
@@ -390,8 +392,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000106-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000106-source">
+            onclick="toggleCode('M000107-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000107-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -406,12 +408,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000107" class="method-detail">
-        <a name="M000107"></a>
+      <div id="method-M000108" class="method-detail">
+        <a name="M000108"></a>
 
         <div class="method-heading">
 
-          <a href="#M000107" class="method-signature">
+          <a href="#M000108" class="method-signature">
 
           <span class="method-name">editComment</span><span class="method-args">(:comment_id =&gt; 'comment_id',:comment_text =&gt; 'comment_text')</span>
 
@@ -533,8 +535,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000107-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000107-source">
+            onclick="toggleCode('M000108-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000108-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -549,12 +551,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000108" class="method-detail">
-        <a name="M000108"></a>
+      <div id="method-M000109" class="method-detail">
+        <a name="M000109"></a>
 
         <div class="method-heading">
 
-          <a href="#M000108" class="method-signature">
+          <a href="#M000109" class="method-signature">
 
           <span class="method-name">getList</span><span class="method-args">(:photo_id =&gt; 'photo_id',:min_comment_date =&gt; 'min_comment_date',:max_comment_date =&gt; 'max_comment_date')</span>
 
@@ -656,13 +658,162 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000108-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000108-source">
+            onclick="toggleCode('M000109-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000109-source">
 <pre>
 
 # Generated automatically from flickr api
   def getList(*args)
     @flickr.call 'flickr.photos.comments.getList', *args
+  end
+
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000110" class="method-detail">
+        <a name="M000110"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000110" class="method-signature">
+
+          <span class="method-name">getRecentForContacts</span><span class="method-args">(:date_lastcomment =&gt; 'date_lastcomment',:contacts_filter =&gt; 'contacts_filter',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.comments.getRecentForContacts.html">flickr.photos.comments.getRecentForContacts</a>
+request.
+</p>
+<p>
+Return the list of photos belonging to your contacts that have been
+commented on recently.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>date_lastcomment </dt><dd>Limits the resultset to photos that have been commented on since this date.
+The date should be in the form of a Unix timestamp.<br /><br />
+
+</dd>
+</dl>
+<p>
+The default, and maximum, offset is (1) hour.
+</p>
+<dl>
+<dt>contacts_filter </dt><dd>A comma-separated list of contact NSIDs to limit the scope of the query to.
+
+</dd>
+<dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
+record. Currently supported fields are: <tt>license</tt>,
+<tt>date_upload</tt>, <tt>date_taken</tt>, <tt>owner_name</tt>,
+<tt>icon_server</tt>, <tt>original_format</tt>, <tt>last_update</tt>,
+<tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>, <tt>o_dims</tt>,
+<tt>views</tt>, <tt>media</tt>, <tt>path_alias</tt>, <tt>url_sq</tt>,
+<tt>url_t</tt>, <tt>url_s</tt>, <tt>url_m</tt>, <tt>url_o</tt>
+
+</dd>
+<dt>per_page </dt><dd>Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+
+</dd>
+<dt>page </dt><dd>The page of results to return. If this argument is omitted, it defaults to
+1.
+
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>96: <em>Invalid signature</em>
+
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li>97: <em>Missing signature</em>
+
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li>98: <em>Login failed / Invalid auth token</em>
+
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li>99: <em>User not logged in / Insufficient permissions</em>
+
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000110-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000110-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getRecentForContacts(*args)
+    @flickr.call 'flickr.photos.comments.getRecentForContacts', *args
   end
 
 </pre>
