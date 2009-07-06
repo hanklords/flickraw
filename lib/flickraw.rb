@@ -103,7 +103,7 @@ module FlickRaw
       if method_nesting.size > 1
         name = method_nesting.first
         class_name = name.capitalize
-        if const_defined?(class_name, false)
+        if flickr_objects.include? name
           klass = const_get(class_name)
         else
           klass = Class.new Request
