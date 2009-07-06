@@ -230,7 +230,7 @@ module FlickRaw
 
     # Returns the signature of hsh. This is meant to be passed in the _api_sig_ parameter.
     def api_sig(hsh)
-      MD5.md5(FlickRaw.shared_secret + hsh.sort{|a, b| a[0].to_s <=> b[0].to_s }.flatten.join).to_s
+      Digest::MD5.hexdigest(FlickRaw.shared_secret + hsh.sort{|a, b| a[0].to_s <=> b[0].to_s }.flatten.join).to_s
     end
   end
 
