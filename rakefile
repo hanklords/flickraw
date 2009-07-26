@@ -18,7 +18,6 @@ spec = Gem::Specification.new do |s|
   s.version = FlickRaw::VERSION
   s.files = PKG_FILES
   s.test_files = FileList["test/*.rb"].to_a
-  s.required_ruby_version = '>= 1.8'
 end
 
 Rake::RDocTask.new do |rd|
