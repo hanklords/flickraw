@@ -25,8 +25,14 @@ require 'digest/md5'
 require 'json'
 require 'cgi'
 
+FlickrawOptions ||= {}
+if ENV['http_proxy'] and not FlickrawOptions[:proxy_host]
+  proxy = URI.parse ENV['http_proxy']
+  FlickrawOptions.update(:proxy_host => proxy.host, :proxy_port => proxy.port, :proxy_user => proxy.user, :proxy_password => proxy.password)
+end
+
 module FlickRaw
-  VERSION='0.7'
+  VERSION='0.7.1'
 
   FLICKR_HOST='api.flickr.com'.freeze
 
@@ -148,7 +154,7 @@ module FlickRaw
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={})
       path = REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{v}" }.join('&')
-      http_response = Net::HTTP.start(FLICKR_HOST) { |http| http.get(path, 'User-Agent' => "Flickraw/#{VERSION}") }
+      http_response = open_flickr {|http| http.get(path, 'User-Agent' => "Flickraw/#{VERSION}") }
       parse_response(http_response, req)
     end
 
@@ -159,7 +165,7 @@ module FlickRaw
     # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
     def upload_photo(file, args={})
       photo = File.open(file, 'rb') { |f| f.read }
-      boundary = MD5.md5(photo).to_s
+      boundary = Digest::MD5.hexdigest(photo)
 
       header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}
       query = ''
@@ -178,7 +184,7 @@ module FlickRaw
         "\r\n" <<
         "--#{boundary}--"
 
-      http_response = Net::HTTP.start(FLICKR_HOST) { |http| http.post(UPLOAD_PATH, query, header) }
+      http_response = open_flickr {|http| http.post(UPLOAD_PATH, query, header) }
       xml = http_response.body
       if xml[/stat="(\w+)"/, 1] == 'fail'
         msg = xml[/msg="([^"]+)"/, 1]
@@ -213,6 +219,13 @@ module FlickRaw
       token_reqs = ['flickr.auth.getToken', 'flickr.auth.getFullToken', 'flickr.auth.checkToken']
       @token = res.token if token_reqs.include?(req) and res.respond_to?(:token)
     end
+
+    def open_flickr
+      Net::HTTP.start(FLICKR_HOST, FlickrawOptions[:proxy_host], FlickrawOptions[:proxy_port], FlickrawOptions[:proxy_user], FlickrawOptions[:proxy_password]) {|http|
+        http.read_timeout = FlickrawOptions[:timeout] if FlickrawOptions[:timeout]
+        yield http
+      }
+    end
   end
 
   class << self
@@ -233,7 +246,7 @@ module FlickRaw
 
     # Returns the signature of hsh. This is meant to be passed in the _api_sig_ parameter.
     def api_sig(hsh)
-      Digest::MD5.hexdigest(FlickRaw.shared_secret + hsh.sort{|a, b| a[0].to_s <=> b[0].to_s }.flatten.join).to_s
+      Digest::MD5.hexdigest(FlickRaw.shared_secret + hsh.sort{|a, b| a[0].to_s <=> b[0].to_s }.flatten.join)
     end
   end
 end
@@ -243,5 +256,7 @@ end
 #
 #  recent_photos = flickr.photos.getRecent
 #  puts recent_photos[0].title
-def flickr; $flickraw end
-$flickraw = FlickRaw::Flickr.new
+def flickr; $flickraw ||= FlickRaw::Flickr.new end
+
+# Load the methods if the option lazyload is not specified
+flickr if not FlickrawOptions[:lazyload]
