@@ -135,7 +135,10 @@ module FlickRaw
 
   # Root class of the flickr api hierarchy.
   class Flickr < Request
+    def self.build(methods); methods.each { |m| build_request m } end
+
     def initialize # :nodoc:
+      Flickr.build(call('flickr.reflection.getMethods')) if Flickr.flickr_objects.empty?
       super self
       @token = nil
     end
@@ -233,9 +236,6 @@ module FlickRaw
       Digest::MD5.hexdigest(FlickRaw.shared_secret + hsh.sort{|a, b| a[0].to_s <=> b[0].to_s }.flatten.join).to_s
     end
   end
-
-  methods = Flickr.new.call 'flickr.reflection.getMethods'
-  methods.each { |method| Flickr.build_request method }
 end
 
 # Use this to access the flickr API easily. You can type directly the flickr requests as they are described on the flickr website.
@@ -243,5 +243,5 @@ end
 #
 #  recent_photos = flickr.photos.getRecent
 #  puts recent_photos[0].title
-def flickr; $flickraw ||= FlickRaw::Flickr.new end
-
+def flickr; $flickraw end
+$flickraw = FlickRaw::Flickr.new
