@@ -221,7 +221,7 @@ module FlickRaw
     end
 
     def open_flickr
-      Net::HTTP.start(FLICKR_HOST, FlickrawOptions[:proxy_host], FlickrawOptions[:proxy_port], FlickrawOptions[:proxy_user], FlickrawOptions[:proxy_password]) {|http|
+      Net::HTTP::Proxy(FlickrawOptions[:proxy_host], FlickrawOptions[:proxy_port], FlickrawOptions[:proxy_user], FlickrawOptions[:proxy_password]).start(FLICKR_HOST) {|http|
         http.read_timeout = FlickrawOptions[:timeout] if FlickrawOptions[:timeout]
         yield http
       }
