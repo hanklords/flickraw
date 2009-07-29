@@ -25,7 +25,7 @@ require 'digest/md5'
 require 'json'
 require 'cgi'
 
-FlickrawOptions ||= {}
+FlickrawOptions = {} if not Object.const_defined? :FlickrawOptions
 if ENV['http_proxy'] and not FlickrawOptions[:proxy_host]
   proxy = URI.parse ENV['http_proxy']
   FlickrawOptions.update(:proxy_host => proxy.host, :proxy_port => proxy.port, :proxy_user => proxy.user, :proxy_password => proxy.password)
