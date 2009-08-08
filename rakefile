@@ -4,7 +4,7 @@ require 'rake/gempackagetask'
 require 'rake/testtask'
 
 require 'lib/flickraw'
-require 'flickraw_rdoc'
+require 'flickraw_rdoc' if RUBY_VERSION >= "1.9"
 
 PKG_FILES = FileList["lib/flickraw.rb", "flickraw_rdoc.rb", "LICENSE", "README.rdoc", "rakefile", "examples/*.rb", "test/*.rb"].to_a
 
