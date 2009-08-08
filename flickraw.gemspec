@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{flickraw}
-  s.version = "0.7"
+  s.version = "0.7.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mael Clerambault"]
-  s.date = %q{2009-07-26}
+  s.date = %q{2009-08-08}
   s.email = %q{maelclerambault@yahoo.fr}
   s.files = ["lib/flickraw.rb", "flickraw_rdoc.rb", "LICENSE", "README.rdoc", "rakefile", "examples/flickr_KDE.rb", "examples/upload.rb", "examples/auth.rb", "examples/interestingness.rb", "test/test.rb"]
   s.homepage = %q{http://hanklords.github.com/flickraw/}
