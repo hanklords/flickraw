@@ -53,7 +53,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>2009-07-26 17:50:00 +0200</td>
+      <td>2009-07-29 22:36:17 +0200</td>
     </tr>
     </table>
   </div>
@@ -127,6 +127,23 @@ USE OR OTHER DEALINGS IN THE SOFTWARE.
 
     <div id="section">
 
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">FlickrawOptions</td>
+          <td>=</td>
+          <td class="context-item-value">{} if not Object.const_defined? :FlickrawOptions</td>
+
+        </tr>
+
+        </table>
+      </div>
+    </div>
+
 
 
 
@@ -167,8 +184,8 @@ requests as they are described on the flickr website.
             onclick="toggleCode('M000001-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000001-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 246</span>
-<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">flickr</span>; <span class="ruby-identifier">$flickraw</span> <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 259</span>
+<span class="ruby-keyword kw">def</span> <span class="ruby-identifier">flickr</span>; <span class="ruby-identifier">$flickraw</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">FlickRaw</span><span class="ruby-operator">::</span><span class="ruby-constant">Flickr</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
 

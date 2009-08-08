@@ -212,7 +212,7 @@ Class <a href="Flickr/Urls.html" class="link">FlickRaw::Flickr::Urls</a><br />
             onclick="toggleCode('M000008-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000008-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 138</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 144</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">methods</span>); <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">build_request</span> <span class="ruby-identifier">m</span> } <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -309,10 +309,10 @@ status is <em>failed</em>.
             onclick="toggleCode('M000009-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000009-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 149</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 155</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">args</span>={})
       <span class="ruby-identifier">path</span> = <span class="ruby-constant">REST_PATH</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">build_args</span>(<span class="ruby-identifier">args</span>, <span class="ruby-identifier">req</span>).<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{a}=#{v}&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'&amp;'</span>)
-      <span class="ruby-identifier">http_response</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">start</span>(<span class="ruby-constant">FLICKR_HOST</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span> <span class="ruby-identifier">http</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value str">'User-Agent'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Flickraw/#{VERSION}&quot;</span>) }
+      <span class="ruby-identifier">http_response</span> = <span class="ruby-identifier">open_flickr</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span> <span class="ruby-identifier">http</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">path</span>, <span class="ruby-value str">'User-Agent'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Flickraw/#{VERSION}&quot;</span>) }
       <span class="ruby-identifier">parse_response</span>(<span class="ruby-identifier">http_response</span>, <span class="ruby-identifier">req</span>)
     <span class="ruby-keyword kw">end</span>
 </pre>
@@ -657,10 +657,10 @@ for more information on the arguments.
             onclick="toggleCode('M000010-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000010-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 160</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 166</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">upload_photo</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>={})
       <span class="ruby-identifier">photo</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value str">'rb'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span> }
-      <span class="ruby-identifier">boundary</span> = <span class="ruby-constant">MD5</span>.<span class="ruby-identifier">md5</span>(<span class="ruby-identifier">photo</span>).<span class="ruby-identifier">to_s</span>
+      <span class="ruby-identifier">boundary</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-identifier">photo</span>)
 
       <span class="ruby-identifier">header</span> = {<span class="ruby-value str">'Content-type'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;multipart/form-data, boundary=#{boundary} &quot;</span>, <span class="ruby-value str">'User-Agent'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Flickraw/#{VERSION}&quot;</span>}
       <span class="ruby-identifier">query</span> = <span class="ruby-value str">''</span>
@@ -679,7 +679,7 @@ for more information on the arguments.
         <span class="ruby-value str">&quot;\r\n&quot;</span> <span class="ruby-operator">&lt;&lt;</span>
         <span class="ruby-node">&quot;--#{boundary}--&quot;</span>
 
-      <span class="ruby-identifier">http_response</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">start</span>(<span class="ruby-constant">FLICKR_HOST</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span> <span class="ruby-identifier">http</span>.<span class="ruby-identifier">post</span>(<span class="ruby-constant">UPLOAD_PATH</span>, <span class="ruby-identifier">query</span>, <span class="ruby-identifier">header</span>) }
+      <span class="ruby-identifier">http_response</span> = <span class="ruby-identifier">open_flickr</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span> <span class="ruby-identifier">http</span>.<span class="ruby-identifier">post</span>(<span class="ruby-constant">UPLOAD_PATH</span>, <span class="ruby-identifier">query</span>, <span class="ruby-identifier">header</span>) }
       <span class="ruby-identifier">xml</span> = <span class="ruby-identifier">http_response</span>.<span class="ruby-identifier">body</span>
       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">xml</span>[<span class="ruby-regexp re">/stat=&quot;(\w+)&quot;/</span>, <span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'fail'</span>
         <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">xml</span>[<span class="ruby-regexp re">/msg=&quot;([^&quot;]+)&quot;/</span>, <span class="ruby-value">1</span>]

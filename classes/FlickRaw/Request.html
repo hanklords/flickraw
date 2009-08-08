@@ -139,7 +139,7 @@ List of the flickr methods of this object
             onclick="toggleCode('M000006-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000006-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 130</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 136</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">flickr_methods</span>; <span class="ruby-ivar">@flickr_methods</span> <span class="ruby-operator">||=</span> [] <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -171,7 +171,7 @@ List of the flickr subobjects of this object
             onclick="toggleCode('M000005-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000005-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 127</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 133</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">flickr_objects</span>; <span class="ruby-ivar">@flickr_objects</span> <span class="ruby-operator">||=</span> [] <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -203,7 +203,7 @@ Returns the prefix of the request corresponding to this class.
             onclick="toggleCode('M000007-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000007-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 133</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 139</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request_name</span>; <span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/::/</span>, <span class="ruby-value str">'.'</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/[^\.]+\./</span>, <span class="ruby-value str">''</span>) <span class="ruby-keyword kw">end</span>
 </pre>
           </div>

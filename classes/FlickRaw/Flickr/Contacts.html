@@ -309,7 +309,12 @@ request.
 </p>
 <p>
 Return a list of contacts for a user who have recently uploaded photos
-along with the total count of photos uploaded.
+along with the total count of photos uploaded.<br /><br />
+</p>
+<p>
+This method is still considered experimental. We don&#8217;t plan for it to
+change or to go away but so long as this notice is present you should write
+your code accordingly.
 </p>
 <p>
 <b>Arguments</b>
@@ -321,7 +326,7 @@ The date should be in the form of a Unix timestamp.
 </dd>
 </dl>
 <p>
-The default, and maximum, offset is (1) hour.
+The default offset is (1) hour and the maximum (24) hours.
 </p>
 <dl>
 <dt>filter </dt><dd>Limit the result set to all contacts or only those who are friends or

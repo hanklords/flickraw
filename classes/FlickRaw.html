@@ -113,7 +113,7 @@ Class <a href="FlickRaw/Request.html" class="link">FlickRaw::Request</a><br />
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">VERSION</td>
           <td>=</td>
-          <td class="context-item-value">'0.7'</td>
+          <td class="context-item-value">'0.7.1'</td>
 
         </tr>
 
@@ -237,9 +237,9 @@ href="FlickRaw.html#M000003">api_sig</a></em> parameter.
             onclick="toggleCode('M000003-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000003-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 235</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 248</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">api_sig</span>(<span class="ruby-identifier">hsh</span>)
-      <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-constant">FlickRaw</span>.<span class="ruby-identifier">shared_secret</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">hsh</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">join</span>).<span class="ruby-identifier">to_s</span>
+      <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-constant">FlickRaw</span>.<span class="ruby-identifier">shared_secret</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">hsh</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">join</span>)
     <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -271,7 +271,7 @@ Returns the flickr auth URL.
             onclick="toggleCode('M000002-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000002-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 226</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 239</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">auth_url</span>(<span class="ruby-identifier">args</span>={})
       <span class="ruby-identifier">full_args</span> = {<span class="ruby-identifier">:api_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">FlickRaw</span>.<span class="ruby-identifier">api_key</span>, <span class="ruby-identifier">:perms</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'read'</span>}
       <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">full_args</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span> }
