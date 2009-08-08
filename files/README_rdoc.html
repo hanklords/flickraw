@@ -53,7 +53,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>2009-07-26 18:20:21 +0200</td>
+      <td>2009-08-08 19:02:10 +0200</td>
     </tr>
     </table>
   </div>
@@ -90,12 +90,40 @@ Type this in a console (you might need to be superuser)
  gem install flickraw
 </pre>
 <p>
-You can recreate this documentation by typing this in the source directory:
+This will recreate the documentation by fetching the methods descriptions
+from flickr and then virtually plugging them in standard rdoc
+documentation.
 </p>
 <pre>
  rake rdoc
 </pre>
+<h1>Features</h1>
+<ul>
+<li>Small single file: flickraw.rb is less than 300 lines
+
+</li>
+<li>Complete support of flickr API. This doesn&#8217;t require an update of the
+library
+
+</li>
+<li>Ruby syntax similar to the flickr api
+
+</li>
+<li>Flickr authentication
+
+</li>
+<li>Photo upload
+
+</li>
+<li>Proxy support
+
+</li>
+<li>Delayed library loading (for rails users)
+
+</li>
+</ul>
 <h1>Usage</h1>
+<h2>Simple</h2>
 <pre>
  require 'flickraw'
 
@@ -112,6 +140,72 @@ You can recreate this documentation by typing this in the source directory:
 
  original = sizes.find {|s| s.label == 'Original' }
  original.width       # =&gt; &quot;800&quot;
+</pre>
+<h2>Authentication</h2>
+<pre>
+  require 'flickraw'
+
+  FlickRaw.api_key=&quot;... Your API key ...&quot;
+  FlickRaw.shared_secret=&quot;... Your shared secret ...&quot;
+
+  frob = flickr.auth.getFrob
+  auth_url = FlickRaw.auth_url :frob =&gt; frob, :perms =&gt; 'read'
+
+  puts &quot;Open this url in your process to complete the authication process : #{auth_url}&quot;
+  puts &quot;Press Enter when you are finished.&quot;
+  STDIN.getc
+
+  begin
+    flickr.auth.getToken :frob =&gt; frob
+    login = flickr.test.login
+    puts &quot;You are now authenticated as #{login.username}&quot;
+  rescue FlickRaw::FailedResponse =&gt; e
+    puts &quot;Authentication failed : #{e.msg}&quot;
+  end
+</pre>
+<p>
+You don&#8217;t need to do that each time, you can reuse your token:
+</p>
+<pre>
+  require 'flickraw'
+
+  FlickRaw.api_key=&quot;... Your API key ...&quot;
+  FlickRaw.shared_secret=&quot;... Your shared secret ...&quot;
+
+  auth = flickr.auth.checkToken :auth_token =&gt; &quot;... Your saved token ...&quot;
+
+  # From here you are logged:
+  puts auth.user.username
+</pre>
+<h2>Upload</h2>
+<pre>
+  require 'flickraw'
+
+  FlickRaw.api_key=&quot;... Your API key ...&quot;
+  FlickRaw.shared_secret=&quot;... Your shared secret ...&quot;
+
+  PHOTO_PATH='photo.jpg'
+
+  # You need to be authentified to do that, see the previous examples.
+  flickr.upload_photo PHOTO_PATH, :title =&gt; &quot;Title&quot;, :description =&gt; &quot;This is the description&quot;
+</pre>
+<h2>Flickraw Options</h2>
+<p>
+You can pass some options to modify flickraw behavior:
+</p>
+<pre>
+  FlickrawOptions = {
+    :lazyload =&gt; true,     # This delay the loading of the library until the first call
+
+    # Proxy support. alternatively, you can use the http_proxy environment variable
+    :proxy_host =&gt; &quot;proxy_host&quot;,
+    :proxy_port =&gt; &quot;proxy_port&quot;,
+    :proxy_user =&gt; &quot;proxy_user&quot;,
+    :proxy_password =&gt; &quot;proxy_password&quot;,
+
+    :timeout =&gt; 5          # Set the request timeout
+  }
+  require 'flickraw'
 </pre>
 <p>
 See the <em>examples</em> directory to find more examples.
