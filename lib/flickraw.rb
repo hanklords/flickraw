@@ -47,40 +47,42 @@ module FlickRaw
 
   @api_key = '7b124df89b638e545e3165293883ef62'
 
-  module SimpleOStruct # :nodoc:
-    def __attr_define(k,v)
-      instance_variable_set "@#{k}", v
-      meta = class << self; self; end
-      meta.class_eval { attr_reader k.to_s }
-    end
-  end
-
-  class Response # :nodoc:
-    include SimpleOStruct
-    def initialize(h)
-      h.each {|k, v| __attr_define k, Response.structify(v, k) }
-    end
-
-    def self.structify(obj, name = '')
-      if obj.is_a? Hash
-        if name =~ /s$/ and obj[$`].is_a? Array
-          list = structify obj.delete($`)
-          list.extend SimpleOStruct
-          list.instance_eval { obj.each {|kv, vv| __attr_define kv, vv } }
-          list
-        elsif obj.keys == ['_content']
-          obj['_content'].to_s
-        else
-          Response.new obj
-        end
-      elsif obj.is_a? Array
-        obj.collect {|e| structify e}
+  class Response
+    def self.build(h, name = '')
+      if name =~ /s$/ and (a = h[$`]).is_a? Array
+        ResponseList.new(h, a.collect {|e| Response.build(e)})
+      elsif h.keys == ["_content"]
+        h["_content"]
       else
-        obj
+	Response.new(h)
       end
     end
 
-    def to_s; @_content || super end
+    def initialize(h)
+      @h = {}
+      methods = "class << self;"
+      h.each {|k,v|
+        @h[k] = case v
+	when Hash  then self.build(v, k)
+	when Array then v.collect {|e| Response.build(e)}
+	else v
+	end
+	methods << "def #{k}; @h['#{k}'] end;"
+      }
+      eval methods << "end"
+    end
+    def [](k); @h[k] end
+    def to_s; @h["_content"] || super end
+    def inspect; @h.inspect end
+    def to_hash; @h end
+  end
+
+  class ResponseList < Response
+    include Enumerable
+    def initialize(h, a); super(h); @a = a end
+    def [](k); k.is_a?(Fixnum) ? @a[k] : super(k) end
+    def each; @a.each{|e| yield e} end
+    def to_a; @a end
   end
 
   class FailedResponse < StandardError
@@ -200,7 +202,7 @@ module FlickRaw
       raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
       name, json = json.to_a.first if json.size == 1
 
-      res = Response.structify json, name
+      res = Response.build json, name
       lookup_token(req, res)
       res
     end
