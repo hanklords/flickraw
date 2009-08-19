@@ -225,8 +225,7 @@ module FlickRaw
     end
 
     def lookup_token(req, res)
-      token_reqs = ['flickr.auth.getToken', 'flickr.auth.getFullToken', 'flickr.auth.checkToken']
-      @token = res.token if token_reqs.include?(req) and res.respond_to?(:token)
+      @token = res.token if res.flickr_type == "auth"
     end
 
     def open_flickr
