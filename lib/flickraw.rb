@@ -35,17 +35,10 @@ module FlickRaw
   VERSION='0.7.1'
 
   FLICKR_HOST='api.flickr.com'.freeze
-
-  # Path of flickr REST API
   REST_PATH='/services/rest/?'.freeze
-
-  # Path of flickr auth page
-  AUTH_PATH='http://flickr.com/services/auth/?'.freeze
-
-  # Path of flickr upload
   UPLOAD_PATH='/services/upload/'.freeze
 
-  BASE58_ALPHABET="123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ".freeze
+  AUTH_PATH='http://flickr.com/services/auth/?'.freeze
   PHOTO_SOURCE_URL='http://farm%s.static.flickr.com/%s/%s_%s%s.%s'.freeze
   URL_PROFILE='http://www.flickr.com/people/'.freeze
   URL_PHOTOSTREAM='http://www.flickr.com/photos/'.freeze
@@ -263,6 +256,7 @@ module FlickRaw
       Digest::MD5.hexdigest(FlickRaw.shared_secret + hsh.sort{|a, b| a[0].to_s <=> b[0].to_s }.flatten.join)
     end
 
+    BASE58_ALPHABET="123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ".freeze
     def base58(id)
       id = id.to_i
       alphabet = BASE58_ALPHABET.split(//)
