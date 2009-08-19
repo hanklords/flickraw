@@ -40,7 +40,7 @@ module FlickRaw
   REST_PATH='/services/rest/?'.freeze
 
   # Path of flickr auth page
-  AUTH_PATH='/services/auth/?'.freeze
+  AUTH_PATH='http://flickr.com/services/auth/?'.freeze
 
   # Path of flickr upload
   UPLOAD_PATH='/services/upload/'.freeze
@@ -243,7 +243,7 @@ module FlickRaw
       args.each {|k, v| full_args[k.to_sym] = v }
       full_args[:api_sig] = api_sig(full_args) if FlickRaw.shared_secret
 
-      'http://' + FLICKR_HOST + AUTH_PATH + full_args.collect { |a, v| "#{a}=#{v}" }.join('&')
+      AUTH_PATH + full_args.collect { |a, v| "#{a}=#{v}" }.join('&')
     end
 
     # Returns the signature of hsh. This is meant to be passed in the _api_sig_ parameter.
