@@ -209,7 +209,7 @@ module FlickRaw
       name, json = json.to_a.first if json.size == 1
 
       res = Response.build json, name
-      lookup_token(req, res)
+      @token = res.token if res.flickr_type == "auth"
       res
     end
 
@@ -221,10 +221,6 @@ module FlickRaw
       full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
       args.each {|k, v| full_args[k.to_sym] = CGI.escape(v.to_s) } if req
       full_args
-    end
-
-    def lookup_token(req, res)
-      @token = res.token if res.flickr_type == "auth"
     end
 
     def open_flickr
