@@ -48,23 +48,24 @@ module FlickRaw
   @api_key = '7b124df89b638e545e3165293883ef62'
 
   class Response
-    def self.build(h, name = '')
-      if name =~ /s$/ and (a = h[$`]).is_a? Array
-        ResponseList.new(h, a.collect {|e| Response.build(e)})
+    def self.build(h, type)
+      if type =~ /s$/ and (a = h[$`]).is_a? Array
+        ResponseList.new(h, type, a.collect {|e| Response.build(e, $`)})
       elsif h.keys == ["_content"]
         h["_content"]
       else
-	Response.new(h)
+	Response.new(h, type)
       end
     end
 
-    def initialize(h)
-      @h = {}
+    attr_reader :flickr_type
+    def initialize(h, type)
+      @flickr_type, @h = type, {}
       methods = "class << self;"
       h.each {|k,v|
         @h[k] = case v
-	when Hash  then self.build(v, k)
-	when Array then v.collect {|e| Response.build(e)}
+	when Hash  then Response.build(v, k)
+	when Array then v.collect {|e| Response.build(e, k)}
 	else v
 	end
 	methods << "def #{k}; @h['#{k}'] end;"
@@ -79,7 +80,7 @@ module FlickRaw
 
   class ResponseList < Response
     include Enumerable
-    def initialize(h, a); super(h); @a = a end
+    def initialize(h, t, a); super(h, t); @a = a end
     def [](k); k.is_a?(Fixnum) ? @a[k] : super(k) end
     def each; @a.each{|e| yield e} end
     def to_a; @a end
@@ -193,7 +194,13 @@ module FlickRaw
         code = xml[/code="([^"]+)"/, 1]
         raise FailedResponse.new(msg, code, 'flickr.upload')
       end
-      Response.structify( {:stat => 'ok', :photoid => xml[/<photoid>(\w+)<\/photoid>/, 1], :ticketid => xml[/<ticketid>([^<]+)<\/ticketid>/, 1]})
+      type = xml[/<(\w+)/, 1]
+      h = {
+        :secret => xml[/secret="([^"]+)"/, 1],
+        :originalsecret => xml[/originalsecret="([^"]+)"/, 1],
+        :_content => xml[/>([^<]+)<\//, 1]
+      }.delete_if {|k,v| v.nil? }
+      Response.build(h, type)
     end
 
     private
