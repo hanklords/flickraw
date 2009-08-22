@@ -53,7 +53,7 @@ module FlickRaw
       elsif h.keys == ["_content"]
         h["_content"]
       else
-	Response.new(h, type)
+        Response.new(h, type)
       end
     end
 
@@ -63,11 +63,11 @@ module FlickRaw
       methods = "class << self;"
       h.each {|k,v|
         @h[k] = case v
-	when Hash  then Response.build(v, k)
-	when Array then v.collect {|e| Response.build(e, k)}
-	else v
-	end
-	methods << "def #{k}; @h['#{k}'] end;"
+          when Hash  then Response.build(v, k)
+          when Array then v.collect {|e| Response.build(e, k)}
+          else v
+        end
+        methods << "def #{k}; @h['#{k}'] end;"
       }
       eval methods << "end"
     end
