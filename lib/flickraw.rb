@@ -159,7 +159,14 @@ module FlickRaw
     def call(req, args={})
       path = REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{v}" }.join('&')
       http_response = open_flickr {|http| http.get(path, 'User-Agent' => "Flickraw/#{VERSION}") }
-      parse_response(http_response, req)
+      
+      json = JSON.load(http_response.body.empty? ? "{}" : http_response.body)
+      raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
+      type, json = json.to_a.first if json.size == 1 and json.all? {|k,v| v.is_a? Hash}
+      
+      res = Response.build json, type
+      @token = res.token if res.respond_to? :flickr_type and res.flickr_type == "auth"
+      res
     end
 
     # Use this to upload the photo in _file_.
@@ -205,16 +212,6 @@ module FlickRaw
     end
 
     private
-    def parse_response(response, req = nil)
-      json = JSON.load(response.body)
-      raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
-      name, json = json.to_a.first if json.size == 1
-
-      res = Response.build json, name
-      @token = res.token if res.flickr_type == "auth"
-      res
-    end
-
     def build_args(args={}, req = nil)
       full_args = {:api_key => FlickRaw.api_key, :format => 'json', :nojsoncallback => 1}
       full_args[:method] = req if req
