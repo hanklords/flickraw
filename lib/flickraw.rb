@@ -263,17 +263,17 @@ module FlickRaw
       r
     end
 
-    def url(r);   PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "", "jpg"]   end
+    def url(r);   PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "",   "jpg"]   end
     def url_m(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_m", "jpg"] end
     def url_s(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_s", "jpg"] end
     def url_t(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_t", "jpg"] end
     def url_b(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_b", "jpg"] end
     def url_o(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.originalsecret, "_o", r.originalformat] end
-    def url_profile(r); URL_PROFILE + r.owner.respond_to?(:nsid) ? r.owner.nsid : r.owner + "/" end
-    def url_photostream(r); URL_PHOTOSTREAM + r.owner.respond_to?(:nsid) ? r.owner.nsid : r.owner + "/" end
+    def url_profile(r); URL_PROFILE + (r.owner.respond_to?(:nsid) ? r.owner.nsid : r.owner) + "/" end
+    def url_photostream(r); URL_PHOTOSTREAM + (r.owner.respond_to?(:nsid) ? r.owner.nsid : r.owner) + "/" end
     def url_photopage(r); url_photostream(r) + r.id end
-    def url_photosets(r); url_photostream(r) + "/sets/" end
-    def url_photoset(r); url_photosets + r.id end
+    def url_photosets(r); url_photostream(r) + "sets/" end
+    def url_photoset(r); url_photosets(r) + r.id end
     def url_short(r); URL_SHORT + base58(r.id) end
   end
 end
