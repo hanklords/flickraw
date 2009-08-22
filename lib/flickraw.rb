@@ -25,7 +25,10 @@ require 'digest/md5'
 require 'json'
 require 'cgi'
 
-FlickRawOptions = {} if not Object.const_defined? :FlickRawOptions # :nodoc:
+if not Object.const_defined? :FlickRawOptions
+  FlickRawOptions = JSON.load(open(ENV['HOME'] + '/.flickraw.json')) rescue {}
+end
+
 FlickRawOptions['api_key'] ||= '7b124df89b638e545e3165293883ef62'
 if ENV['http_proxy'] and not FlickRawOptions['proxy_host']
   proxy = URI.parse ENV['http_proxy']
