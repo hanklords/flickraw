@@ -98,17 +98,29 @@ You don't need to do that each time, you can reuse your token:
 You can pass some options to modify flickraw behavior:
 
   FlickrawOptions = {
-    :lazyload => true,     # This delay the loading of the library until the first call
+    "api_key" => "... Your API key ...",
+    "shared_secret" => "... Your shared secret ...",
+    "auth_token" => "... Your saved token..."  # if you set this you will be automatically loggued
+    "lazyload" => true,     # This delay the loading of the library until the first call
 
     # Proxy support. alternatively, you can use the http_proxy environment variable
-    :proxy_host => "proxy_host",
-    :proxy_port => "proxy_port",
-    :proxy_user => "proxy_user",
-    :proxy_password => "proxy_password",
+    "proxy_host" => "proxy_host",
+    "proxy_port" => "proxy_port",
+    "proxy_user" => "proxy_user",
+    "proxy_password" => "proxy_password",
 
-    :timeout => 5          # Set the request timeout
+    "timeout" => 5          # Set the request timeout
   }
+
   require 'flickraw'
+
+Another option is to create the file ~/.flickraw.json and set the data as JSON. This file is not read if FlickrawOptions is already set when loading the library
+
+  {
+    "api_key": "... Your API key ...",
+    "shared_secret": "... Your shared secret ...",
+    "auth_token": "... Your saved token..."
+  }
 
 
 See the _examples_ directory to find more examples.
