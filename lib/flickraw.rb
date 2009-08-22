@@ -83,6 +83,8 @@ module FlickRaw
     def [](k); k.is_a?(Fixnum) ? @a[k] : super(k) end
     def each; @a.each{|e| yield e} end
     def to_a; @a end
+    def inspect; @a.inspect end
+    def size; @a.size end
   end
 
   class FailedResponse < StandardError
