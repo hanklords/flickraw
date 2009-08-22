@@ -25,10 +25,11 @@ require 'digest/md5'
 require 'json'
 require 'cgi'
 
-FlickrawOptions = {} if not Object.const_defined? :FlickrawOptions # :nodoc:
-if ENV['http_proxy'] and not FlickrawOptions[:proxy_host]
+FlickRawOptions = {} if not Object.const_defined? :FlickRawOptions # :nodoc:
+FlickRawOptions[:api_key] ||= '7b124df89b638e545e3165293883ef62'
+if ENV['http_proxy'] and not FlickRawOptions[:proxy_host]
   proxy = URI.parse ENV['http_proxy']
-  FlickrawOptions.update(:proxy_host => proxy.host, :proxy_port => proxy.port, :proxy_user => proxy.user, :proxy_password => proxy.password)
+  FlickRawOptions.update(:proxy_host => proxy.host, :proxy_port => proxy.port, :proxy_user => proxy.user, :proxy_password => proxy.password)
 end
 
 module FlickRaw
@@ -43,8 +44,6 @@ module FlickRaw
   URL_PROFILE='http://www.flickr.com/people/'.freeze
   URL_PHOTOSTREAM='http://www.flickr.com/photos/'.freeze
   URL_SHORT="http://flic.kr/p/".freeze
-
-  @api_key = '7b124df89b638e545e3165293883ef62'
 
   class Response
     def self.build(h, type)
@@ -147,10 +146,10 @@ module FlickRaw
   class Flickr < Request
     def self.build(methods); methods.each { |m| build_request m } end
 
-    def initialize # :nodoc:
+    def initialize(token = FlickRawOptions[:auth_token]) # :nodoc:
       Flickr.build(call('flickr.reflection.getMethods')) if Flickr.flickr_objects.empty?
       super self
-      @token = nil
+      @token = token
     end
 
     # This is the central method. It does the actual request to the flickr server.
@@ -223,8 +222,8 @@ module FlickRaw
     end
 
     def open_flickr
-      Net::HTTP::Proxy(FlickrawOptions[:proxy_host], FlickrawOptions[:proxy_port], FlickrawOptions[:proxy_user], FlickrawOptions[:proxy_password]).start(FLICKR_HOST) {|http|
-        http.read_timeout = FlickrawOptions[:timeout] if FlickrawOptions[:timeout]
+      Net::HTTP::Proxy(FlickRawOptions[:proxy_host], FlickRawOptions[:proxy_port], FlickRawOptions[:proxy_user], FlickRawOptions[:proxy_password]).start(FLICKR_HOST) {|http|
+        http.read_timeout = FlickRawOptions[:timeout] if FlickRawOptions[:timeout]
         yield http
       }
     end
@@ -232,16 +231,18 @@ module FlickRaw
 
   class << self
     # Your flickr API key, see http://www.flickr.com/services/api/keys for more information
-    attr_accessor :api_key
+    def api_key; FlickRawOptions[:api_key] end
+    def api_key=(key); FlickRawOptions[:api_key] = key end
 
     # The shared secret of _api_key_, see http://www.flickr.com/services/api/keys for more information
-    attr_accessor :shared_secret
+    def shared_secret; FlickRawOptions[:shared_secret] end
+    def shared_secret=(key); FlickRawOptions[:shared_secret] = key end
 
     # Returns the flickr auth URL.
     def auth_url(args={})
-      full_args = {:api_key => FlickRaw.api_key, :perms => 'read'}
+      full_args = {:api_key => api_key, :perms => 'read'}
       args.each {|k, v| full_args[k.to_sym] = v }
-      full_args[:api_sig] = api_sig(full_args) if FlickRaw.shared_secret
+      full_args[:api_sig] = api_sig(full_args) if shared_secret
 
       AUTH_PATH + full_args.collect { |a, v| "#{a}=#{v}" }.join('&')
     end
@@ -286,5 +287,5 @@ end
 def flickr; $flickraw ||= FlickRaw::Flickr.new end
 
 # Load the methods if the option lazyload is not specified
-flickr if not FlickrawOptions[:lazyload]
+flickr if not FlickRawOptions[:lazyload]
 
