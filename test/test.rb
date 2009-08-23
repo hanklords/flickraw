@@ -172,8 +172,110 @@ class Basic < Test::Unit::TestCase
     assert_instance_of FlickRaw::ResponseList, list
     assert_equal(list.size, 10)
   end
-
-  def test_photo
+  
+  def people(user)
+    assert_equal "41650587@N02", user.id
+    assert_equal "41650587@N02", user.nsid
+    assert_equal "ruby_flickraw", user.username
+  end
+  
+  def photo(info)
+    assert_equal "3839885270", info.id
+    assert_equal "41650587@N02", info.owner
+    assert_equal "6fb8b54e06", info.secret
+    assert_equal "2485", info.server
+    assert_equal 3, info.farm
+    assert_equal "cat", info.title
+    assert_equal 1, info.ispublic
+  end
+  
+  # commons
+  def test_commons_getInstitutions
+    institutions = [
+      "Australian War Memorial collection", "Biblioteca de Arte-Fundação Calouste Gulbenkian",
+      "Bibliothèque de Toulouse", "Brooklyn Museum", "DC Public Library Commons",
+      "George Eastman House", "Getty Research Institute", "Imperial War Museum",
+      "LlGC ~ NLW", "Musée McCord Museum", "Nationaal Archief",
+      "National Galleries of Scotland Commons", "National Library NZ on The Commons",
+      "National Maritime Museum", "National Media Museum", "New York Public Library",
+      "Oregon State University Archives", "Powerhouse Museum Collection",
+      "Smithsonian Institution", "State Library and Archives of Florida",
+      "State Library of New South Wales collection", "State Library of Queensland, Australia",
+      "Swedish National Heritage Board", "The Field Museum Library", "The Library of Congress",
+      "The Library of Virginia", "nha.library"]
+    found = flickr.commons.getInstitutions.map {|i| i.name}.sort
+    assert_equal institutions, found
+  end
+  
+  # favorites
+  def test_favorites_getPublicList
+    list = flickr.favorites.getPublicList :user_id => "41650587@N02"
+    assert_equal 1, list.size
+    assert_equal "3829093290", list[0].id
+  end
+  
+  # groups
+  def test_groups_getInfo
+    info = flickr.groups.getInfo :group_id => "51035612836@N01"
+    assert_equal "51035612836@N01", info.id
+    assert_equal "Flickr API", info.name
+  end
+  
+  def test_groups_search
+    list = flickr.groups.search :text => "Flickr API"
+    assert list.any? {|g| g.nsid == "51035612836@N01"}
+  end
+  
+  # panda
+  def test_panda_getList
+    pandas = flickr.panda.getList
+    assert_equal ["ling ling", "hsing hsing", "wang wang"], pandas.to_a
+  end
+  
+  def test_panda_getList
+    pandas = flickr.panda.getPhotos :panda_name => "wang wang"
+    assert_equal "wang wang", pandas.panda
+    assert_respond_to :title, pandas[0]
+  end
+  
+  # people
+  def test_people_findByEmail
+    user = flickr.people.findByEmail :find_email => "flickraw@yahoo.com"
+    people user
+  end
+    
+  def test_people_findByUsername
+    user = flickr.people.findByUsername :username => "ruby_flickraw"
+    people user
+  end
+  
+  def test_people_getInfo
+    user = flickr.people.getInfo :user_id => "41650587@N02"
+    people user
+    assert_equal "Flickraw", user.realname
+    assert_equal "http://www.flickr.com/photos/41650587@N02/", user.photosurl
+    assert_equal "http://www.flickr.com/people/41650587@N02/", user.profileurl
+    assert_equal "http://m.flickr.com/photostream.gne?id=41630239", user.mobileurl
+    assert_equal 0, user.isadmin
+    assert_equal 0, user.ispro
+  end
+  
+  def test_people_getPublicGroups
+    groups = flickr.people.getPublicGroups :user_id => "41650587@N02"
+    assert groups.to_a.empty?
+  end
+  
+  def test_people_getPublicPhotos
+    info = flickr.people.getPublicPhotos :user_id => "41650587@N02"
+    assert_equal 1, info.size
+    assert_equal "1", info.total
+    assert_equal 1, info.pages
+    assert_equal 1, info.page
+    photo info.first
+  end
+  
+  # photos
+  def test_photos_getInfo
     id = "3839885270"
     info = nil
     assert_nothing_raised(FlickRaw::FailedResponse) {
@@ -185,13 +287,95 @@ class Basic < Test::Unit::TestCase
       assert_not_nil info[m]
     }
 
-    assert_equal info.id, id
+    assert_equal id, info.id
     assert_equal "cat", info.title
     assert_equal "This is my cat", info.description
     assert_equal "ruby_flickraw", info.owner["username"]
     assert_equal "Flickraw", info.owner["realname"]
     assert_equal %w{cat pet}, info.tags.map {|t| t.to_s}.sort
-    
+  end
+  
+  def test_photos_getExif
+    info = flickr.photos.getExif :photo_id => "3839885270"
+    assert_equal "Canon DIGITAL IXUS 55", info.exif.find {|f| f.tag == "Model"}.raw
+    assert_equal "1/60", info.exif.find {|f| f.tag == "ExposureTime"}.raw
+    assert_equal "4.9", info.exif.find {|f| f.tag == "FNumber"}.raw
+    assert_equal "1600", info.exif.find {|f| f.tag == "ImageWidth"}.raw
+    assert_equal "1200", info.exif.find {|f| f.tag == "ImageHeight"}.raw
+  end
+  
+  def test_photos_getSizes
+    info = flickr.photos.getSizes :photo_id => "3839885270"
+    assert_equal "http://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find {|f| f.label == "Large"}.url
+    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg", info.find {|f| f.label == "Large"}.source
+  end
+  
+  def test_photos_search
+    info = flickr.photos.search :user_id => "41650587@N02"
+    photo info.first
+  end
+  
+  # photos.comments
+  def test_photos_comments_getList
+    comments = flickr.photos.comments.getList :photo_id => "3839885270"
+    assert_equal 1, comments.size
+    assert_equal "3839885270", comments.photo_id
+    assert_equal "41630239-3839885270-72157621986549875", comments[0].id
+    assert_equal "41650587@N02", comments[0].author
+    assert_equal "ruby_flickraw", comments[0].authorname
+    assert_equal "http://www.flickr.com/photos/41650587@N02/3839885270/#comment72157621986549875", comments[0].permalink
+    assert_equal "This is a cute cat !", comments[0].to_s
+  end
+  
+  # tags
+  def test_tags_getListPhoto
+    tags = flickr.tags.getListPhoto :photo_id => "3839885270"
+    assert_equal 2, tags.tags.size
+    assert_equal "3839885270", tags.id
+    assert_equal %w{cat pet}, tags.tags.map {|t| t.to_s}.sort
+  end
+  
+  def test_tags_getListUser
+    tags =  flickr.tags.getListUser :user_id => "41650587@N02"
+    assert_equal "41650587@N02", tags.id
+    assert_equal %w{cat pet}, tags.tags.sort
+  end
+  
+  # urls
+  def test_urls_getGroup
+    info = flickr.urls.getGroup :group_id => "51035612836@N01"
+    assert_equal "51035612836@N01", info.nsid
+    assert_equal "http://www.flickr.com/groups/api/", info.url
+  end
+  
+  def test_urls_getUserPhotos
+    info = flickr.urls.getUserPhotos :user_id => "41650587@N02"
+    assert_equal "41650587@N02", info.nsid
+    assert_equal "http://www.flickr.com/photos/41650587@N02/", info.url
+  end
+  
+  def test_urls_getUserProfile
+    info = flickr.urls.getUserProfile :user_id => "41650587@N02"
+    assert_equal "41650587@N02", info.nsid
+    assert_equal "http://www.flickr.com/people/41650587@N02/", info.url
+  end
+  
+  def test_urls_lookupGroup
+    info = flickr.urls.lookupGroup :url => "http://www.flickr.com/groups/api/"
+    assert_equal "51035612836@N01", info.id
+    assert_equal "Flickr API", info.groupname
+  end
+  
+  def test_urls_lookupUser
+    info = flickr.urls.lookupUser :url => "http://www.flickr.com/photos/41650587@N02/"
+    assert_equal "41650587@N02", info.id
+    assert_equal "ruby_flickraw", info.username
+  end
+  
+  def test_urls
+    id = "3839885270"
+    info = flickr.photos.getInfo(:photo_id => id)
+
     assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06.jpg", FlickRaw.url(info)
     assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_m.jpg", FlickRaw.url_m(info)
     assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_s.jpg", FlickRaw.url_s(info)
