@@ -109,18 +109,11 @@ You can pass some options to modify flickraw behavior:
     "proxy_user" => "proxy_user",
     "proxy_password" => "proxy_password",
 
-    "timeout" => 5          # Set the request timeout
+    "timeout" => 5,                # Set the request timeout
+    "auth_token" => "SAVED_TOKEN"  # Set the initial token
   }
 
   require 'flickraw'
-
-Another option is to create the file ~/.flickraw.json and set the data as JSON. This file is not read if FlickrawOptions is already set when loading the library
-
-  {
-    "api_key": "... Your API key ...",
-    "shared_secret": "... Your shared secret ...",
-    "auth_token": "... Your saved token..."
-  }
 
 
 See the _examples_ directory to find more examples.
