@@ -194,7 +194,9 @@ class Basic < Test::Unit::TestCase
     institutions = [
       "Australian War Memorial collection", "Biblioteca de Arte-Fundação Calouste Gulbenkian",
       "Bibliothèque de Toulouse", "Brooklyn Museum", "DC Public Library Commons",
-      "George Eastman House", "Getty Research Institute", "Imperial War Museum",
+      "Galt Museum & Archives on The Commons",
+      "George Eastman House", "Getty Research Institute", "Imperial War Museum Collections",
+      "JWA Commons", "LSE Library",
       "LlGC ~ NLW", "Musée McCord Museum", "Nationaal Archief",
       "National Galleries of Scotland Commons", "National Library NZ on The Commons",
       "National Maritime Museum", "National Media Museum", "New York Public Library",
