@@ -174,84 +174,14 @@ module FlickRaw
     #  flickr.upload_photo '/path/to/the/photo', :title => 'Title', :description => 'This is the description'
     #
     # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
-    def upload_photo(file, args={})
-      photo = File.open(file, 'rb') { |f| f.read }
-      boundary = Digest::MD5.hexdigest(photo)
+    def upload_photo(file, args={}); upload_flickr(UPLOAD_PATH, file, args={}) end
 
-      header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}
-      query = ''
-      build_args(args).each { |a, v|
-        query <<
-          "--#{boundary}\r\n" <<
-          "Content-Disposition: form-data; name=\"#{a}\"\r\n\r\n" <<
-          "#{v}\r\n"
-      }
-      query <<
-        "--#{boundary}\r\n" <<
-        "Content-Disposition: form-data; name=\"photo\"; filename=\"#{file}\"\r\n" <<
-        "Content-Transfer-Encoding: binary\r\n" <<
-        "Content-Type: image/jpeg\r\n\r\n" <<
-        photo <<
-        "\r\n" <<
-        "--#{boundary}--"
-
-      http_response = open_flickr {|http| http.post(UPLOAD_PATH, query, header) }
-      xml = http_response.body
-      if xml[/stat="(\w+)"/, 1] == 'fail'
-        msg = xml[/msg="([^"]+)"/, 1]
-        code = xml[/code="([^"]+)"/, 1]
-        raise FailedResponse.new(msg, code, 'flickr.upload')
-      end
-      type = xml[/<(\w+)/, 1]
-      h = {
-        :secret => xml[/secret="([^"]+)"/, 1],
-        :originalsecret => xml[/originalsecret="([^"]+)"/, 1],
-        :_content => xml[/>([^<]+)<\//, 1]
-      }.delete_if {|k,v| v.nil? }
-      Response.build(h, type)
-    end
-
-    # Use this to replace the photo with :photo_id with the photo in _file_. Async not yet supported.
+    # Use this to replace the photo with :photo_id with the photo in _file_.
     #
     #  flickr.replace_photo '/path/to/the/photo', :photo_id => id
     #
-    # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
-    def replace_photo(file, args={})
-      photo = File.open(file, 'rb') { |f| f.read }
-      boundary = Digest::MD5.hexdigest(photo)
-
-      header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}
-      query = ''
-      build_args(args).each { |a, v|
-        query <<
-          "--#{boundary}\r\n" <<
-          "Content-Disposition: form-data; name=\"#{a}\"\r\n\r\n" <<
-          "#{v}\r\n"
-      }
-      query <<
-        "--#{boundary}\r\n" <<
-        "Content-Disposition: form-data; name=\"photo\"; filename=\"#{file}\"\r\n" <<
-        "Content-Transfer-Encoding: binary\r\n" <<
-        "Content-Type: image/jpeg\r\n\r\n" <<
-        photo <<
-        "\r\n" <<
-        "--#{boundary}--"
-
-      http_response = open_flickr {|http| http.post(REPLACE_PATH, query, header) }
-      xml = http_response.body
-      if xml[/stat="(\w+)"/, 1] == 'fail'
-        msg = xml[/msg="([^"]+)"/, 1]
-        code = xml[/code="([^"]+)"/, 1]
-        raise FailedResponse.new(msg, code, 'flickr.replace')
-      end
-      type = xml[/<(\w+)/, 1]
-      h = {
-        :secret => xml[/secret="([^"]+)"/, 1],
-        :originalsecret => xml[/originalsecret="([^"]+)"/, 1],
-        :_content => xml[/>([^<]+)<\//, 1]
-      }.delete_if {|k,v| v.nil? }
-      Response.build(h, type)
-    end
+    # See http://www.flickr.com/services/api/replace.api.html for more information on the arguments.
+    def replace_photo(file, args={}); upload_flickr(REPLACE_PATH, file, args={}) end
 
     private
     def build_args(args={}, req = nil)
@@ -269,6 +199,43 @@ module FlickRaw
         http.read_timeout = FlickRawOptions['timeout'] if FlickRawOptions['timeout']
         yield http
       }
+    end
+
+    def upload_flickr(method, file, args={})
+      photo = File.open(file, 'rb') { |f| f.read }
+      boundary = Digest::MD5.hexdigest(photo)
+
+      header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}
+      query = ''
+      build_args(args).each { |a, v|
+        query <<
+          "--#{boundary}\r\n" <<
+          "Content-Disposition: form-data; name=\"#{a}\"\r\n\r\n" <<
+          "#{v}\r\n"
+      }
+      query <<
+        "--#{boundary}\r\n" <<
+        "Content-Disposition: form-data; name=\"photo\"; filename=\"#{file}\"\r\n" <<
+        "Content-Transfer-Encoding: binary\r\n" <<
+        "Content-Type: image/jpeg\r\n\r\n" <<
+        photo <<
+        "\r\n" <<
+        "--#{boundary}--"
+
+      http_response = open_flickr {|http| http.post(method, query, header) }
+      xml = http_response.body
+      if xml[/stat="(\w+)"/, 1] == 'fail'
+        msg = xml[/msg="([^"]+)"/, 1]
+        code = xml[/code="([^"]+)"/, 1]
+        raise FailedResponse.new(msg, code, 'flickr.upload')
+      end
+      type = xml[/<(\w+)/, 1]
+      h = {
+        :secret => xml[/secret="([^"]+)"/, 1],
+        :originalsecret => xml[/originalsecret="([^"]+)"/, 1],
+        :_content => xml[/>([^<]+)<\//, 1]
+      }.delete_if {|k,v| v.nil? }
+      Response.build(h, type)
     end
   end
 
