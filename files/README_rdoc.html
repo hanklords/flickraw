@@ -53,7 +53,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>2009-08-08 19:02:10 +0200</td>
+      <td>2009-09-10 18:14:27 +0200</td>
     </tr>
     </table>
   </div>
@@ -195,16 +195,21 @@ You can pass some options to modify flickraw behavior:
 </p>
 <pre>
   FlickrawOptions = {
-    :lazyload =&gt; true,     # This delay the loading of the library until the first call
+    &quot;api_key&quot; =&gt; &quot;... Your API key ...&quot;,
+    &quot;shared_secret&quot; =&gt; &quot;... Your shared secret ...&quot;,
+    &quot;auth_token&quot; =&gt; &quot;... Your saved token...&quot;  # if you set this you will be automatically loggued
+    &quot;lazyload&quot; =&gt; true,     # This delay the loading of the library until the first call
 
     # Proxy support. alternatively, you can use the http_proxy environment variable
-    :proxy_host =&gt; &quot;proxy_host&quot;,
-    :proxy_port =&gt; &quot;proxy_port&quot;,
-    :proxy_user =&gt; &quot;proxy_user&quot;,
-    :proxy_password =&gt; &quot;proxy_password&quot;,
+    &quot;proxy_host&quot; =&gt; &quot;proxy_host&quot;,
+    &quot;proxy_port&quot; =&gt; &quot;proxy_port&quot;,
+    &quot;proxy_user&quot; =&gt; &quot;proxy_user&quot;,
+    &quot;proxy_password&quot; =&gt; &quot;proxy_password&quot;,
 
-    :timeout =&gt; 5          # Set the request timeout
+    &quot;timeout&quot; =&gt; 5,                # Set the request timeout
+    &quot;auth_token&quot; =&gt; &quot;SAVED_TOKEN&quot;  # Set the initial token
   }
+
   require 'flickraw'
 </pre>
 <p>
