@@ -174,14 +174,14 @@ module FlickRaw
     #  flickr.upload_photo '/path/to/the/photo', :title => 'Title', :description => 'This is the description'
     #
     # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
-    def upload_photo(file, args={}); upload_flickr(UPLOAD_PATH, file, args={}) end
+    def upload_photo(file, args={}); upload_flickr(UPLOAD_PATH, file, args) end
 
     # Use this to replace the photo with :photo_id with the photo in _file_.
     #
     #  flickr.replace_photo '/path/to/the/photo', :photo_id => id
     #
     # See http://www.flickr.com/services/api/replace.api.html for more information on the arguments.
-    def replace_photo(file, args={}); upload_flickr(REPLACE_PATH, file, args={}) end
+    def replace_photo(file, args={}); upload_flickr(REPLACE_PATH, file, args) end
 
     private
     def build_args(args={}, req = nil)
