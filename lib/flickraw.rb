@@ -157,8 +157,11 @@ module FlickRaw
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={})
-      path = REST_PATH + build_args(args, req).collect { |a, v| "#{a}=#{v}" }.join('&')
-      http_response = open_flickr {|http| http.get(path, 'User-Agent' => "Flickraw/#{VERSION}") }
+      http_response = open_flickr do |http|
+        request = Net::HTTP::Post.new(REST_PATH, 'User-Agent' => "Flickraw/#{VERSION}")
+        request.set_form_data(build_args(args, req))
+        http.request(request)
+      end
 
       json = JSON.load(http_response.body.empty? ? "{}" : http_response.body)
       raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
@@ -184,13 +187,13 @@ module FlickRaw
     def replace_photo(file, args={}); upload_flickr(REPLACE_PATH, file, args) end
 
     private
-    def build_args(args={}, req = nil)
+    def build_args(args={}, req = nil, escape = false)
       full_args = {:api_key => FlickRaw.api_key, :format => 'json', :nojsoncallback => 1}
       full_args[:method] = req if req
       full_args[:auth_token] = @token if @token
       args.each {|k, v| full_args[k.to_sym] = v.to_s }
       full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
-      args.each {|k, v| full_args[k.to_sym] = CGI.escape(v.to_s) } if req
+      args.each {|k, v| full_args[k.to_sym] = CGI.escape(v.to_s) } if escape
       full_args
     end
 
