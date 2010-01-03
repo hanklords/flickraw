@@ -1,3 +1,4 @@
+# encoding: ascii-8bit
 # Copyright (c) 2006 Mael Clerambault <maelclerambault@yahoo.fr>
 #
 # Permission is hereby granted, free of charge, to any person obtaining
@@ -190,7 +191,10 @@ module FlickRaw
       full_args = {:api_key => FlickRaw.api_key, :format => 'json', :nojsoncallback => "1"}
       full_args[:method] = req if req
       full_args[:auth_token] = @token if @token
-      args.each {|k, v| full_args[k.to_sym] = v.to_s }
+      args.each {|k, v|
+        v = v.to_s.encode("utf-8").force_encoding("ascii-8bit") if RUBY_VERSION >= "1.9"
+        full_args[k.to_sym] = v.to_s
+      }
       full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
       full_args
     end
@@ -208,6 +212,8 @@ module FlickRaw
 
       header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}
       query = ''
+
+      file = file.to_s.encode("utf-8").force_encoding("ascii-8bit") if RUBY_VERSION >= "1.9"
       build_args(args).each { |a, v|
         query <<
           "--#{boundary}\r\n" <<
@@ -232,9 +238,9 @@ module FlickRaw
       end
       type = xml[/<(\w+)/, 1]
       h = {
-        :secret => xml[/secret="([^"]+)"/, 1],
-        :originalsecret => xml[/originalsecret="([^"]+)"/, 1],
-        :_content => xml[/>([^<]+)<\//, 1]
+        "secret" => xml[/secret="([^"]+)"/, 1],
+        "originalsecret" => xml[/originalsecret="([^"]+)"/, 1],
+        "_content" => xml[/>([^<]+)<\//, 1]
       }.delete_if {|k,v| v.nil? }
       Response.build(h, type)
     end
