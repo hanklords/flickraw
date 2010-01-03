@@ -188,27 +188,7 @@ class Basic < Test::Unit::TestCase
     assert_equal "cat", info.title
     assert_equal 1, info.ispublic
   end
-  
-  # commons
-  def test_commons_getInstitutions
-    institutions = [
-      "Australian War Memorial collection", "Biblioteca de Arte-Fundação Calouste Gulbenkian",
-      "Bibliothèque de Toulouse", "Brooklyn Museum", "DC Public Library Commons",
-      "Galt Museum & Archives on The Commons",
-      "George Eastman House", "Getty Research Institute", "Imperial War Museum Collections",
-      "JWA Commons", "LSE Library",
-      "LlGC ~ NLW", "Musée McCord Museum", "Nationaal Archief",
-      "National Galleries of Scotland Commons", "National Library NZ on The Commons",
-      "National Maritime Museum", "National Media Museum", "New York Public Library",
-      "Oregon State University Archives", "Powerhouse Museum Collection",
-      "Smithsonian Institution", "State Library and Archives of Florida",
-      "State Library of New South Wales collection", "State Library of Queensland, Australia",
-      "Swedish National Heritage Board", "The Field Museum Library", "The Library of Congress",
-      "The Library of Virginia", "nha.library"]
-    found = flickr.commons.getInstitutions.map {|i| i.name}.sort
-    assert_equal institutions, found
-  end
-  
+
   # favorites
   def test_favorites_getPublicList
     list = flickr.favorites.getPublicList :user_id => "41650587@N02"
@@ -258,7 +238,6 @@ class Basic < Test::Unit::TestCase
     assert_equal "http://www.flickr.com/photos/41650587@N02/", user.photosurl
     assert_equal "http://www.flickr.com/people/41650587@N02/", user.profileurl
     assert_equal "http://m.flickr.com/photostream.gne?id=41630239", user.mobileurl
-    assert_equal 0, user.isadmin
     assert_equal 0, user.ispro
   end
   
