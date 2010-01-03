@@ -62,9 +62,9 @@ This will recreate the documentation by fetching the methods descriptions from f
   STDIN.getc
 
   begin
-    flickr.auth.getToken :frob => frob
+    auth = flickr.auth.getToken :frob => frob
     login = flickr.test.login
-    puts "You are now authenticated as #{login.username}"
+    puts "You are now authenticated as #{login.username} with token #{auth.token}"
   rescue FlickRaw::FailedResponse => e
     puts "Authentication failed : #{e.msg}"
   end
