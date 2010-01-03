@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
-FlickRaw.shared_secret = # Shared secret
-flickr.auth.checkToken :auth_token => # Auth token
+# FlickRaw.shared_secret = # Shared secret
+# flickr.auth.checkToken :auth_token => # Auth token
 
 class Upload < Test::Unit::TestCase
   def test_upload
