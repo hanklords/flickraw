@@ -217,7 +217,7 @@ class Basic < Test::Unit::TestCase
   def test_panda_getList
     pandas = flickr.panda.getPhotos :panda_name => "wang wang"
     assert_equal "wang wang", pandas.panda
-    assert_respond_to :title, pandas[0]
+    assert_respond_to pandas[0], :title
   end
   
   # people
@@ -252,7 +252,7 @@ class Basic < Test::Unit::TestCase
     assert_equal "1", info.total
     assert_equal 1, info.pages
     assert_equal 1, info.page
-    photo info.first
+    photo info[0]
   end
   
   # photos
@@ -293,7 +293,7 @@ class Basic < Test::Unit::TestCase
   
   def test_photos_search
     info = flickr.photos.search :user_id => "41650587@N02"
-    photo info.first
+    photo info[0]
   end
   
   # photos.comments
