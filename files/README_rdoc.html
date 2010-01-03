@@ -53,7 +53,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>2009-09-10 18:14:27 +0200</td>
+      <td>2010-01-03 21:13:49 +0100</td>
     </tr>
     </table>
   </div>
@@ -156,9 +156,9 @@ library
   STDIN.getc
 
   begin
-    flickr.auth.getToken :frob =&gt; frob
+    auth = flickr.auth.getToken :frob =&gt; frob
     login = flickr.test.login
-    puts &quot;You are now authenticated as #{login.username}&quot;
+    puts &quot;You are now authenticated as #{login.username} with token #{auth.token}&quot;
   rescue FlickRaw::FailedResponse =&gt; e
     puts &quot;Authentication failed : #{e.msg}&quot;
   end

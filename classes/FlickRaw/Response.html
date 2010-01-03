@@ -91,17 +91,13 @@
 
       <div class="name-list">
 
-        <a href="#M000023">[]</a>&nbsp;&nbsp;
+        <a href="#M000021">[]</a>&nbsp;&nbsp;
 
-        <a href="#M000021">build</a>&nbsp;&nbsp;
+        <a href="#M000023">inspect</a>&nbsp;&nbsp;
 
-        <a href="#M000025">inspect</a>&nbsp;&nbsp;
+        <a href="#M000024">to_hash</a>&nbsp;&nbsp;
 
-        <a href="#M000022">new</a>&nbsp;&nbsp;
-
-        <a href="#M000026">to_hash</a>&nbsp;&nbsp;
-
-        <a href="#M000024">to_s</a>&nbsp;&nbsp;
+        <a href="#M000022">to_s</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -137,7 +133,7 @@
 
     <div id="methods">
 
-      <h3 class="section-bar">Public Class methods</h3>
+      <h3 class="section-bar">Public Instance methods</h3>
 
 
       <div id="method-M000021" class="method-detail">
@@ -147,7 +143,7 @@
 
           <a href="#M000021" class="method-signature">
 
-          <span class="method-name">build</span><span class="method-args">(h, type)</span>
+          <span class="method-name">[]</span><span class="method-args">(k)</span>
 
           </a>
 
@@ -159,64 +155,13 @@
             onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000021-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 50</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">type</span>)
-      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/s$/</span> <span class="ruby-keyword kw">and</span> (<span class="ruby-identifier">a</span> = <span class="ruby-identifier">h</span>[<span class="ruby-identifier">$`</span>]).<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
-        <span class="ruby-constant">ResponseList</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">a</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-constant">Response</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">$`</span>)})
-      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">keys</span> <span class="ruby-operator">==</span> [<span class="ruby-value str">&quot;_content&quot;</span>]
-        <span class="ruby-identifier">h</span>[<span class="ruby-value str">&quot;_content&quot;</span>]
-      <span class="ruby-keyword kw">else</span>
-        <span class="ruby-constant">Response</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">type</span>)
-      <span class="ruby-keyword kw">end</span>
-    <span class="ruby-keyword kw">end</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 74</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">k</span>); <span class="ruby-ivar">@h</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
 
         </div>
       </div>
-
-
-      <div id="method-M000022" class="method-detail">
-        <a name="M000022"></a>
-
-        <div class="method-heading">
-
-          <a href="#M000022" class="method-signature">
-
-          <span class="method-name">new</span><span class="method-args">(h, type)</span>
-
-          </a>
-
-        </div>
-
-        <div class="method-description">
-
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000022-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 61</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">type</span>)
-      <span class="ruby-ivar">@flickr_type</span>, <span class="ruby-ivar">@h</span> = <span class="ruby-identifier">type</span>, {}
-      <span class="ruby-identifier">methods</span> = <span class="ruby-value str">&quot;class &lt;&lt; self;&quot;</span>
-      <span class="ruby-identifier">h</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
-        <span class="ruby-ivar">@h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">v</span>
-          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Hash</span>  <span class="ruby-keyword kw">then</span> <span class="ruby-constant">Response</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">v</span>, <span class="ruby-identifier">k</span>)
-          <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Array</span> <span class="ruby-keyword kw">then</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-constant">Response</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">k</span>)}
-          <span class="ruby-keyword kw">else</span> <span class="ruby-identifier">v</span>
-        <span class="ruby-keyword kw">end</span>
-        <span class="ruby-identifier">methods</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;def #{k}; @h['#{k}'] end;&quot;</span>
-      }
-      <span class="ruby-identifier">eval</span> <span class="ruby-identifier">methods</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;end&quot;</span>
-    <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-
-        </div>
-      </div>
-
-
-      <h3 class="section-bar">Public Instance methods</h3>
 
 
       <div id="method-M000023" class="method-detail">
@@ -226,7 +171,7 @@
 
           <a href="#M000023" class="method-signature">
 
-          <span class="method-name">[]</span><span class="method-args">(k)</span>
+          <span class="method-name">inspect</span><span class="method-args">()</span>
 
           </a>
 
@@ -238,64 +183,8 @@
             onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000023-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 74</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">k</span>); <span class="ruby-ivar">@h</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div id="method-M000025" class="method-detail">
-        <a name="M000025"></a>
-
-        <div class="method-heading">
-
-          <a href="#M000025" class="method-signature">
-
-          <span class="method-name">inspect</span><span class="method-args">()</span>
-
-          </a>
-
-        </div>
-
-        <div class="method-description">
-
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000025-source">
-<pre>
 <span class="ruby-comment cmt"># File lib/flickraw.rb, line 76</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>; <span class="ruby-ivar">@h</span>.<span class="ruby-identifier">inspect</span> <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div id="method-M000026" class="method-detail">
-        <a name="M000026"></a>
-
-        <div class="method-heading">
-
-          <a href="#M000026" class="method-signature">
-
-          <span class="method-name">to_hash</span><span class="method-args">()</span>
-
-          </a>
-
-        </div>
-
-        <div class="method-description">
-
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000026-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 77</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>; <span class="ruby-ivar">@h</span> <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
 
@@ -310,7 +199,7 @@
 
           <a href="#M000024" class="method-signature">
 
-          <span class="method-name">to_s</span><span class="method-args">()</span>
+          <span class="method-name">to_hash</span><span class="method-args">()</span>
 
           </a>
 
@@ -321,6 +210,34 @@
           <p><a class="source-toggle" href="#"
             onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000024-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 77</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>; <span class="ruby-ivar">@h</span> <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000022" class="method-signature">
+
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
 <pre>
 <span class="ruby-comment cmt"># File lib/flickraw.rb, line 75</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>; <span class="ruby-ivar">@h</span>[<span class="ruby-value str">&quot;_content&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword kw">super</span> <span class="ruby-keyword kw">end</span>
