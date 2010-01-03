@@ -47,7 +47,7 @@ module FlickRaw
   URL_SHORT="http://flic.kr/p/".freeze
 
   class Response
-    def self.build(h, type)
+    def self.build(h, type) # :nodoc:
       if type =~ /s$/ and (a = h[$`]).is_a? Array
         ResponseList.new(h, type, a.collect {|e| Response.build(e, $`)})
       elsif h.keys == ["_content"]
@@ -58,7 +58,7 @@ module FlickRaw
     end
 
     attr_reader :flickr_type
-    def initialize(h, type)
+    def initialize(h, type) # :nodoc:
       @flickr_type, @h = type, {}
       methods = "class << self;"
       h.each {|k,v|
