@@ -294,7 +294,7 @@ module FlickRaw
     def url_short(r); URL_SHORT + base58(r.id) end
     def url_photostream(r)
       URL_PHOTOSTREAM +
-        if r.respond_to?(:pathalias)
+        if r.respond_to?(:pathalias) and r.pathalias
           r.pathalias
         elsif r.owner.respond_to?(:nsid)
           r.owner.nsid
