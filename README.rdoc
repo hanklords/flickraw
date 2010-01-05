@@ -97,7 +97,7 @@ You don't need to do that each time, you can reuse your token:
 
 You can pass some options to modify flickraw behavior:
 
-  FlickrawOptions = {
+  FlickRawOptions = {
     "api_key" => "... Your API key ...",
     "shared_secret" => "... Your shared secret ...",
     "auth_token" => "... Your saved token..."  # if you set this you will be automatically loggued
