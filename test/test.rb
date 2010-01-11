@@ -6,7 +6,7 @@ require 'lib/flickraw'
 class Basic < Test::Unit::TestCase
   def test_request
     flickr_objects = %w{activity auth blogs collections commons contacts
-       favorites groups interestingness machinetags panda
+       favorites galleries groups interestingness machinetags panda
        people photos photosets places prefs reflection tags
        test urls
     }
@@ -38,6 +38,9 @@ class Basic < Test::Unit::TestCase
       flickr.favorites.getList
       flickr.favorites.getPublicList
       flickr.favorites.remove
+      flickr.galleries.addPhoto
+      flickr.galleries.getList
+      flickr.galleries.getListForPhoto
       flickr.groups.browse
       flickr.groups.getInfo
       flickr.groups.members.getList
