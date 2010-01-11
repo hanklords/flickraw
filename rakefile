@@ -18,6 +18,7 @@ spec = Gem::Specification.new do |s|
   s.version = FlickRaw::VERSION
   s.files = PKG_FILES
   s.test_files = FileList["test/*.rb"].to_a
+  s.add_dependency 'json', '>= 1.1.1'
 end
 
 Rake::RDocTask.new do |rd|
