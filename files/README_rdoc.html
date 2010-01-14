@@ -53,7 +53,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>2010-01-05 18:51:02 +0100</td>
+      <td>2010-01-14 22:59:05 +0100</td>
     </tr>
     </table>
   </div>
@@ -119,6 +119,9 @@ library
 
 </li>
 <li>Delayed library loading (for rails users)
+
+</li>
+<li>Flickr URLs helpers
 
 </li>
 </ul>
@@ -211,6 +214,40 @@ You can pass some options to modify flickraw behavior:
   }
 
   require 'flickraw'
+</pre>
+<h2>Flickr URL Helpers</h2>
+<p>
+There are some helpers to build flickr urls :
+</p>
+<h3>url, url_m, url_s, url_t, url_b, url_o</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_b(info) # =&gt; &quot;http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg&quot;
+</pre>
+<h3>url_profile</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_profile(info) # =&gt; &quot;http://www.flickr.com/people/41650587@N02/&quot;
+</pre>
+<h3>url_photopage</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_photopage(photo) # =&gt; &quot;http://www.flickr.com/photos/41650587@N02/3839885270&quot;
+</pre>
+<h3>url_photoset, url_photosets</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_photosets(photo) # =&gt; &quot;http://www.flickr.com/photos/41650587@N02/sets/&quot;
+</pre>
+<h3>url_short</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_short(photo) # =&gt; &quot;http://flic.kr/p/6Rjq7s&quot;
+</pre>
+<h3>url_photostream</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_photostream(photo) # =&gt; &quot;http://flic.kr/p/6Rjq7s&quot;
 </pre>
 <p>
 See the <em>examples</em> directory to find more examples.
