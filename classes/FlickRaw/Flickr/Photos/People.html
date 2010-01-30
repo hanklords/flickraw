@@ -2,10 +2,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <title>Class: FlickRaw::Flickr::Prefs [RDoc Documentation]</title>
+  <title>Class: FlickRaw::Flickr::Photos::People [RDoc Documentation]</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Script-Type" content="text/javascript" />
-  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
   <script type="text/javascript">
   // <![CDATA[
 
@@ -46,14 +46,14 @@
         <table class="header-table">
         <tr class="top-aligned-row">
           <td><strong>Class</strong></td>
-          <td class="class-name-in-header">FlickRaw::Flickr::Prefs</td>
+          <td class="class-name-in-header">FlickRaw::Flickr::Photos::People</td>
         </tr>
         <tr class="top-aligned-row">
             <td><strong>In:</strong></td>
             <td>
 
 
-                <a href="../../../files/lib/flickraw_rb.html">
+                <a href="../../../../files/lib/flickraw_rb.html">
 
                 lib/flickraw.rb
 
@@ -70,7 +70,7 @@
             <td><strong>Parent:</strong></td>
             <td>
 
-                <a href="../Request.html">
+                <a href="../../Request.html">
 
                 FlickRaw::Request
 
@@ -95,15 +95,15 @@
 
       <div class="name-list">
 
-        <a href="#M000198">getContentType</a>&nbsp;&nbsp;
+        <a href="#M000160">add</a>&nbsp;&nbsp;
 
-        <a href="#M000199">getGeoPerms</a>&nbsp;&nbsp;
+        <a href="#M000161">delete</a>&nbsp;&nbsp;
 
-        <a href="#M000200">getHidden</a>&nbsp;&nbsp;
+        <a href="#M000162">deleteCoords</a>&nbsp;&nbsp;
 
-        <a href="#M000201">getPrivacy</a>&nbsp;&nbsp;
+        <a href="#M000163">editCoords</a>&nbsp;&nbsp;
 
-        <a href="#M000202">getSafetyLevel</a>&nbsp;&nbsp;
+        <a href="#M000164">getList</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -124,14 +124,14 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000198" class="method-detail">
-        <a name="M000198"></a>
+      <div id="method-M000160" class="method-detail">
+        <a name="M000160"></a>
 
         <div class="method-heading">
 
-          <a href="#M000198" class="method-signature">
+          <a href="#M000160" class="method-signature">
 
-          <span class="method-name">getContentType</span><span class="method-args">()</span>
+          <span class="method-name">add</span><span class="method-args">(:photo_id =&gt; 'photo_id',:user_id =&gt; 'user_id',:person_x =&gt; 'person_x',:person_y =&gt; 'person_y',:person_w =&gt; 'person_w',:person_h =&gt; 'person_h')</span>
 
           </a>
 
@@ -141,19 +141,93 @@
 
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.prefs.getContentType.html">flickr.prefs.getContentType</a>
+href="http://www.flickr.com/services/api/flickr.photos.people.add.html">flickr.photos.people.add</a>
 request.
 </p>
 <p>
-Returns the default content type preference for the user.
+Add a person to a photo. Coordinates and sizes of boxes are optional; they
+are measured in pixels, based on the 500px image size shown on individual
+photo pages.
 </p>
 <p>
 <b>Arguments</b>
 </p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to add a person to.
+
+</dd>
+<dt>user_id <em>(required)</em> </dt><dd>The NSID of the user to add to the photo.
+
+</dd>
+<dt>person_x </dt><dd>The left-most pixel co-ordinate of the box around the person.
+
+</dd>
+<dt>person_y </dt><dd>The top-most pixel co-ordinate of the box around the person.
+
+</dd>
+<dt>person_w </dt><dd>The width (in pixels) of the box around the person.
+
+</dd>
+<dt>person_h </dt><dd>The height (in pixels) of the box around the person.
+
+</dd>
+</dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Person not found</em>
+
+<p>
+The NSID passed was not a valid user id.
+</p>
+</li>
+<li>2: <em>Photo not found</em>
+
+<p>
+The photo id passed was not a valid photo id.
+</p>
+</li>
+<li>3: <em>User cannot add this person to photos</em>
+
+<p>
+The person being added to the photo does not allow the calling user to add
+them.
+</p>
+</li>
+<li>4: <em>User cannot add people to that photo</em>
+
+<p>
+The owner of the photo doesn&#8217;t allow the calling user to add people
+to their photos.
+</p>
+</li>
+<li>5: <em>Person can&#8217;t be tagged in that photo</em>
+
+<p>
+The person being added to the photo does not want to be identified in this
+photo.
+</p>
+</li>
+<li>6: <em>Some co-ordinate paramters were blank</em>
+
+<p>
+Not all of the co-ordinate parameters (person_x, person_y, person_w,
+person_h) were passed with valid values.
+</p>
+</li>
+<li>7: <em>Can&#8217;t add that person to a non-public photo</em>
+
+<p>
+You can only add yourself to another member&#8217;s non-public photos.
+</p>
+</li>
+<li>8: <em>Too many people in that photo</em>
+
+<p>
+The maximum number of people has already been added to the photo.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -219,27 +293,19 @@ The XML-RPC request document could not be parsed.
 
 <p>
 One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
+href="../../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
-<p>
-<b>Returns</b>
-</p>
-<pre>
- &lt;rsp stat=&quot;ok&quot;&gt;
- &lt;person nsid=&quot;12037949754@N01&quot; content_type=&quot;1&quot; /&gt;
- &lt;/rsp&gt;
-</pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000198-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000198-source">
+            onclick="toggleCode('M000160-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000160-source">
 <pre>
 
 # Generated automatically from flickr api
-  def getContentType(*args)
-    @flickr.call 'flickr.prefs.getContentType', *args
+  def add(*args)
+    @flickr.call 'flickr.photos.people.add', *args
   end
 
 </pre>
@@ -249,14 +315,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000199" class="method-detail">
-        <a name="M000199"></a>
+      <div id="method-M000161" class="method-detail">
+        <a name="M000161"></a>
 
         <div class="method-heading">
 
-          <a href="#M000199" class="method-signature">
+          <a href="#M000161" class="method-signature">
 
-          <span class="method-name">getGeoPerms</span><span class="method-args">()</span>
+          <span class="method-name">delete</span><span class="method-args">(:photo_id =&gt; 'photo_id',:user_id =&gt; 'user_id')</span>
 
           </a>
 
@@ -266,45 +332,46 @@ href="../Flickr.html">Flickr</a>.
 
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.prefs.getGeoPerms.html">flickr.prefs.getGeoPerms</a>
+href="http://www.flickr.com/services/api/flickr.photos.people.delete.html">flickr.photos.people.delete</a>
 request.
 </p>
 <p>
-Returns the default privacy level for geographic information attached to
-the user&#8217;s photos and whether or not the user has chosen to use
-geo-related EXIF information to automatically geotag their photos.
-</p>
-<p>
-Possible values, for viewing geotagged photos, are:
-</p>
-<p>
-<ul> <li>0 : <em>No default set</em></li> <li>1 : Public</li> <li>2 : <a
-href="Contacts.html">Contacts</a> only</li> <li>3 : Friends and Family
-only</li> <li>4 : Friends only</li> <li>5 : Family only</li> <li>6 :
-Private</li> </ul>
-</p>
-<p>
-Users can edit this preference at <a href=&#8220;<a
-href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>>.
-<br /><br /> Possible values for whether or not geo-related EXIF
-information will be used to geotag a photo are:
-</p>
-<p>
-<ul> <li>0: Geo-related EXIF information will be ignored</li> <li>1:
-Geo-related EXIF information will be used to try and geotag photos on
-upload</li> </ul>
-</p>
-<p>
-Users can edit this preference at <a href=&#8220;<a
-href="http://www.flickr.com/account/geo/exif/?from=privacy">http://www.flickr.com/account/geo/exif/?from=privacy</a">www.flickr.com/account/geo/exif/?from=privacy">http://www.flickr.com/account/geo/exif/?from=privacy</a</a>>
+Remove a person from a photo.
 </p>
 <p>
 <b>Arguments</b>
 </p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to remove a person from.
+
+</dd>
+<dt>user_id <em>(required)</em> </dt><dd>The NSID of the person to remove from the photo.
+
+</dd>
+</dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Person not found</em>
+
+<p>
+The NSID passed was not a valid user id.
+</p>
+</li>
+<li>2: <em>Photo not found</em>
+
+<p>
+The photo id passed was not a valid photo id.
+</p>
+</li>
+<li>3: <em>User cannot remove that person</em>
+
+<p>
+The calling user did not have permission to remove this person from this
+photo.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -370,27 +437,19 @@ The XML-RPC request document could not be parsed.
 
 <p>
 One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
+href="../../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
-<p>
-<b>Returns</b>
-</p>
-<pre>
- &lt;rsp stat=&quot;ok&quot;&gt;
- &lt;person nsid=&quot;12037949754@N01&quot; geoperms=&quot;1&quot; importgeoexif=&quot;0&quot; /&gt;
- &lt;/rsp&gt;
-</pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000199-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000199-source">
+            onclick="toggleCode('M000161-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000161-source">
 <pre>
 
 # Generated automatically from flickr api
-  def getGeoPerms(*args)
-    @flickr.call 'flickr.prefs.getGeoPerms', *args
+  def delete(*args)
+    @flickr.call 'flickr.photos.people.delete', *args
   end
 
 </pre>
@@ -400,14 +459,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000200" class="method-detail">
-        <a name="M000200"></a>
+      <div id="method-M000162" class="method-detail">
+        <a name="M000162"></a>
 
         <div class="method-heading">
 
-          <a href="#M000200" class="method-signature">
+          <a href="#M000162" class="method-signature">
 
-          <span class="method-name">getHidden</span><span class="method-args">()</span>
+          <span class="method-name">deleteCoords</span><span class="method-args">(:photo_id =&gt; 'photo_id',:user_id =&gt; 'user_id')</span>
 
           </a>
 
@@ -417,19 +476,46 @@ href="../Flickr.html">Flickr</a>.
 
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.prefs.getHidden.html">flickr.prefs.getHidden</a>
+href="http://www.flickr.com/services/api/flickr.photos.people.deleteCoords.html">flickr.photos.people.deleteCoords</a>
 request.
 </p>
 <p>
-Returns the default hidden preference for the user.
+Remove the bounding box from a person in a photo
 </p>
 <p>
 <b>Arguments</b>
 </p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to edit a person in.
+
+</dd>
+<dt>user_id <em>(required)</em> </dt><dd>The NSID of the person whose bounding box you want to remove.
+
+</dd>
+</dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Person not found</em>
+
+<p>
+The NSID passed was not a valid user id.
+</p>
+</li>
+<li>2: <em>Photo not found</em>
+
+<p>
+The photo id passed was not a valid photo id.
+</p>
+</li>
+<li>3: <em>User cannot edit that person in that photo</em>
+
+<p>
+The calling user is neither the person depicted in the photo nor the person
+who added the bounding box.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -495,27 +581,19 @@ The XML-RPC request document could not be parsed.
 
 <p>
 One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
+href="../../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
-<p>
-<b>Returns</b>
-</p>
-<pre>
- &lt;rsp stat=&quot;ok&quot;&gt;
- &lt;person nsid=&quot;12037949754@N01&quot; hidden=&quot;1&quot; /&gt;
- &lt;/rsp&gt;
-</pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000200-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000200-source">
+            onclick="toggleCode('M000162-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000162-source">
 <pre>
 
 # Generated automatically from flickr api
-  def getHidden(*args)
-    @flickr.call 'flickr.prefs.getHidden', *args
+  def deleteCoords(*args)
+    @flickr.call 'flickr.photos.people.deleteCoords', *args
   end
 
 </pre>
@@ -525,14 +603,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000201" class="method-detail">
-        <a name="M000201"></a>
+      <div id="method-M000163" class="method-detail">
+        <a name="M000163"></a>
 
         <div class="method-heading">
 
-          <a href="#M000201" class="method-signature">
+          <a href="#M000163" class="method-signature">
 
-          <span class="method-name">getPrivacy</span><span class="method-args">()</span>
+          <span class="method-name">editCoords</span><span class="method-args">(:photo_id =&gt; 'photo_id',:user_id =&gt; 'user_id',:person_x =&gt; 'person_x',:person_y =&gt; 'person_y',:person_w =&gt; 'person_w',:person_h =&gt; 'person_h')</span>
 
           </a>
 
@@ -542,24 +620,71 @@ href="../Flickr.html">Flickr</a>.
 
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.prefs.getPrivacy.html">flickr.prefs.getPrivacy</a>
+href="http://www.flickr.com/services/api/flickr.photos.people.editCoords.html">flickr.photos.people.editCoords</a>
 request.
 </p>
 <p>
-Returns the default privacy level preference for the user.
-</p>
-<p>
-Possible values are: <ul> <li>1 : Public</li> <li>2 : Friends only</li>
-<li>3 : Family only</li> <li>4 : Friends and Family</li> <li>5 :
-Private</li> </ul>
+Edit the bounding box of an existing person on a photo.
 </p>
 <p>
 <b>Arguments</b>
 </p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to edit a person in.
+
+</dd>
+<dt>user_id <em>(required)</em> </dt><dd>The NSID of the person to edit in a photo.
+
+</dd>
+<dt>person_x <em>(required)</em> </dt><dd>The left-most pixel co-ordinate of the box around the person.
+
+</dd>
+<dt>person_y <em>(required)</em> </dt><dd>The top-most pixel co-ordinate of the box around the person.
+
+</dd>
+<dt>person_w <em>(required)</em> </dt><dd>The width (in pixels) of the box around the person.
+
+</dd>
+<dt>person_h <em>(required)</em> </dt><dd>The height (in pixels) of the box around the person.
+
+</dd>
+</dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Person not found</em>
+
+<p>
+The NSID passed was not a valid user id.
+</p>
+</li>
+<li>2: <em>Photo not found</em>
+
+<p>
+The photo id passed was not a valid photo id.
+</p>
+</li>
+<li>3: <em>User cannot edit that person in that photo</em>
+
+<p>
+The calling user did not originally add this person to the photo, and is
+not the person in question.
+</p>
+</li>
+<li>4: <em>Some co-ordinate paramters were blank</em>
+
+<p>
+Not all of the co-ordinate parameters (person_x, person_y, person_w,
+person_h) were passed with valid values.
+</p>
+</li>
+<li>5: <em>No co-ordinates given</em>
+
+<p>
+None of the co-ordinate parameters were valid.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -625,27 +750,19 @@ The XML-RPC request document could not be parsed.
 
 <p>
 One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
+href="../../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
-<p>
-<b>Returns</b>
-</p>
-<pre>
- &lt;rsp stat=&quot;ok&quot;&gt;
- &lt;person nsid=&quot;12037949754@N01&quot; privacy=&quot;1&quot; /&gt;
- &lt;/rsp&gt;
-</pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000201-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000201-source">
+            onclick="toggleCode('M000163-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000163-source">
 <pre>
 
 # Generated automatically from flickr api
-  def getPrivacy(*args)
-    @flickr.call 'flickr.prefs.getPrivacy', *args
+  def editCoords(*args)
+    @flickr.call 'flickr.photos.people.editCoords', *args
   end
 
 </pre>
@@ -655,14 +772,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000202" class="method-detail">
-        <a name="M000202"></a>
+      <div id="method-M000164" class="method-detail">
+        <a name="M000164"></a>
 
         <div class="method-heading">
 
-          <a href="#M000202" class="method-signature">
+          <a href="#M000164" class="method-signature">
 
-          <span class="method-name">getSafetyLevel</span><span class="method-args">()</span>
+          <span class="method-name">getList</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
 
           </a>
 
@@ -672,42 +789,28 @@ href="../Flickr.html">Flickr</a>.
 
           <p>
 <a
-href="http://www.flickr.com/services/api/flickr.prefs.getSafetyLevel.html">flickr.prefs.getSafetyLevel</a>
+href="http://www.flickr.com/services/api/flickr.photos.people.getList.html">flickr.photos.people.getList</a>
 request.
 </p>
 <p>
-Returns the default safety level preference for the user.
+Get a list of people in a given photo.
 </p>
 <p>
 <b>Arguments</b>
 </p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd>The id of the photo to get a list of people for.
+
+</dd>
+</dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>96: <em>Invalid signature</em>
+<li>1: <em>Photo not found</em>
 
 <p>
-The passed signature was invalid.
-</p>
-</li>
-<li>97: <em>Missing signature</em>
-
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li>98: <em>Login failed / Invalid auth token</em>
-
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li>99: <em>User not logged in / Insufficient permissions</em>
-
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
+The photo id passed was not a valid photo id.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -750,7 +853,7 @@ The XML-RPC request document could not be parsed.
 
 <p>
 One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
+href="../../Flickr.html">Flickr</a>.
 </p>
 </li>
 </ul>
@@ -758,19 +861,21 @@ href="../Flickr.html">Flickr</a>.
 <b>Returns</b>
 </p>
 <pre>
- &lt;rsp stat=&quot;ok&quot;&gt;
- &lt;person nsid=&quot;12037949754@N01&quot; safety_level=&quot;1&quot; /&gt;
- &lt;/rsp&gt;
+ &lt;people total=&quot;1&quot;&gt;
+   &lt;person nsid=&quot;87944415@N00&quot; username=&quot;hitherto&quot; iconserver=&quot;1&quot; iconfarm=&quot;1&quot;
+           realname=&quot;Simon Batistoni&quot; added_by=&quot;12037949754@N01&quot; x=&quot;50&quot; y=&quot;50&quot;
+           w=&quot;100&quot; h=&quot;100&quot;/&gt;
+ &lt;/people&gt;
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000202-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000202-source">
+            onclick="toggleCode('M000164-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000164-source">
 <pre>
 
 # Generated automatically from flickr api
-  def getSafetyLevel(*args)
-    @flickr.call 'flickr.prefs.getSafetyLevel', *args
+  def getList(*args)
+    @flickr.call 'flickr.photos.people.getList', *args
   end
 
 </pre>
