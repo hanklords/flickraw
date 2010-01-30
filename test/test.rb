@@ -61,6 +61,7 @@ class Basic < Test::Unit::TestCase
       flickr.people.findByEmail
       flickr.people.findByUsername
       flickr.people.getInfo
+      flickr.people.getPhotosOf
       flickr.people.getPublicGroups
       flickr.people.getPublicPhotos
       flickr.people.getUploadStatus
@@ -100,6 +101,11 @@ class Basic < Test::Unit::TestCase
       flickr.photos.notes.add
       flickr.photos.notes.delete
       flickr.photos.notes.edit
+      flickr.photos.people.add
+      flickr.photos.people.delete
+      flickr.photos.people.deleteCoords
+      flickr.photos.people.editCoords
+      flickr.photos.people.getList
       flickr.photos.recentlyUpdated
       flickr.photos.removeTag
       flickr.photos.search
