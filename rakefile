@@ -29,6 +29,7 @@ file "flickraw.gemspec" do
   open("flickraw.gemspec", "w") {|g| g.puts spec.to_ruby }
 end
 task :gem => ["flickraw.gemspec"]
+CLOBBER.add "flickraw.gemspec"
 
 Rake::RDocTask.new do |rd|
   rd.rdoc_files.include "README.rdoc", "lib/flickraw.rb"
