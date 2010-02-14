@@ -292,6 +292,9 @@ module FlickRaw
     def url_photosets(r); url_photostream(r) + "sets/" end
     def url_photoset(r); url_photosets(r) + r.id end
     def url_short(r); URL_SHORT + base58(r.id) end
+    def url_short_m(r); URL_SHORT + "img/" + base58(r.id) + "_m.jpg" end
+    def url_short_s(r); URL_SHORT + "img/" + base58(r.id) + ".jpg" end
+    def url_short_t(r); URL_SHORT + "img/" + base58(r.id) + "_t.jpg" end
     def url_photostream(r)
       URL_PHOTOSTREAM +
         if r.respond_to?(:pathalias) and r.pathalias
