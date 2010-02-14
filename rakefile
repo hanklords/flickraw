@@ -50,13 +50,17 @@ file "flickraw-cached.rb" do |t|
 end
 CLOBBER.add "flickraw-cached.rb"
 
-spec_cached = spec.clone
-spec_cached.name += '-cached'
-spec_cached.summary = "Cached version of Flickraw"
-spec_cached.version = Time.now.strftime("%Y%m%d")
-spec_cached.files = ["flickraw-cached.rb"]
-spec_cached.require_path = '.'
-spec_cached.add_dependency 'flickraw'
+spec_cached = Gem::Specification.new do |s|
+  s.name = 'flickraw-cached'
+  s.summary = "Cached version of Flickraw"
+  s.author = "Mael Clerambault"
+  s.email =  "maelclerambault@yahoo.fr"
+  s.homepage = "http://hanklords.github.com/flickraw/"
+  s.version = Time.now.strftime("%Y%m%d")
+  s.files = ["flickraw-cached.rb"]
+  s.require_path = '.'
+  s.add_dependency 'flickraw'
+end
 Rake::GemPackageTask.new(spec_cached).define
 task :gem => ["flickraw-cached.rb"]
 
