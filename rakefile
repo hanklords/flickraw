@@ -1,8 +1,10 @@
+require 'rake/clean'
 require 'rake/rdoctask'
 require 'rake/packagetask'
 require 'rake/gempackagetask'
 require 'rake/testtask'
 
+FlickRawOptions = {'lazyload' => true}
 require 'lib/flickraw'
 require 'flickraw_rdoc' if RUBY_VERSION >= "1.9"
 
@@ -17,24 +19,49 @@ spec = Gem::Specification.new do |s|
   s.rubyforge_project = "flickraw"
   s.version = FlickRaw::VERSION
   s.files = PKG_FILES
-  s.test_files = FileList["test/*.rb"].to_a
   s.add_dependency 'json', '>= 1.1.1'
 end
+
+Rake::GemPackageTask.new(spec).define
+
+desc "Create default gemspec file"
+file "flickraw.gemspec" do
+  open("flickraw.gemspec", "w") {|g| g.puts spec.to_ruby }
+end
+task :gem => ["flickraw.gemspec"]
 
 Rake::RDocTask.new do |rd|
   rd.rdoc_files.include "README.rdoc", "lib/flickraw.rb"
   rd.options << "--inline-source"
 end
 
-Rake::GemPackageTask.new spec do |p|
-  p.need_tar_gz = true
-end
-
 Rake::TestTask.new
 
-desc "Create a gemspec file"
-task :spec do
-  spec_clone = spec.clone
-  spec_clone.test_files = nil
-  open("flickraw.gemspec", "w") {|g| g.puts spec_clone.to_ruby }
+
+# Freezed version tasks
+file "flickraw-freezed.rb" do |t|
+  open(t.name, "w") {|f|
+    f.puts %{FlickRawOptions = {'lazyload' => true}}
+    f.puts %{require 'flickraw'}
+    f.puts %{FlickRaw::VERSION << '.#{Time.now.strftime("%Y%m%d")}-freezed'} 
+    f.puts 'ms = %w{' + flickr.reflection.getMethods.to_a.join(' ') + '}'
+    f.puts %{FlickRaw::Flickr.build(ms)}
+  }
 end
+CLOBBER.add "flickraw-freezed.rb"
+
+spec_freezed = spec.clone
+spec_freezed.name += '-freezed'
+spec_freezed.version = Time.now.strftime("%Y%m%d")
+spec_freezed.files = ["flickraw-freezed.rb"]
+spec_freezed.require_path = '.'
+spec_freezed.add_dependency 'flickraw'
+Rake::GemPackageTask.new(spec_freezed).define
+task :gem => ["flickraw-freezed.rb"]
+
+desc "Create freezed gemspec file"
+file "flickraw-freezed.gemspec" do
+  open("flickraw-freezed.gemspec", "w") {|g| g.puts spec.to_ruby }
+end
+task :gem => ["flickraw-freezed.gemspec"]
+CLOBBER.add "flickraw-freezed.gemspec"

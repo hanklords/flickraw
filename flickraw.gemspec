@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Mael Clerambault"]
-  s.date = %q{2010-01-11}
+  s.date = %q{2010-02-13}
   s.email = %q{maelclerambault@yahoo.fr}
   s.files = ["lib/flickraw.rb", "flickraw_rdoc.rb", "LICENSE", "README.rdoc", "rakefile", "examples/auth.rb", "examples/flickr_KDE.rb", "examples/interestingness.rb", "examples/upload.rb", "test/test.rb", "test/test_upload.rb"]
   s.homepage = %q{http://hanklords.github.com/flickraw/}

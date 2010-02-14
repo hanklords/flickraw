@@ -44,7 +44,7 @@ module FlickRaw
   PHOTO_SOURCE_URL='http://farm%s.static.flickr.com/%s/%s_%s%s.%s'.freeze
   URL_PROFILE='http://www.flickr.com/people/'.freeze
   URL_PHOTOSTREAM='http://www.flickr.com/photos/'.freeze
-  URL_SHORT="http://flic.kr/p/".freeze
+  URL_SHORT='http://flic.kr/p/'.freeze
 
   class Response
     def self.build(h, type) # :nodoc:
