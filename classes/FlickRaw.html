@@ -110,13 +110,19 @@
 
         <a href="#M000017">url_photosets</a>&nbsp;&nbsp;
 
-        <a href="#M000020">url_photostream</a>&nbsp;&nbsp;
+        <a href="#M000023">url_photostream</a>&nbsp;&nbsp;
 
         <a href="#M000015">url_profile</a>&nbsp;&nbsp;
 
         <a href="#M000011">url_s</a>&nbsp;&nbsp;
 
         <a href="#M000019">url_short</a>&nbsp;&nbsp;
+
+        <a href="#M000020">url_short_m</a>&nbsp;&nbsp;
+
+        <a href="#M000021">url_short_s</a>&nbsp;&nbsp;
+
+        <a href="#M000022">url_short_t</a>&nbsp;&nbsp;
 
         <a href="#M000012">url_t</a>&nbsp;&nbsp;
 
@@ -212,7 +218,7 @@ Class <a href="FlickRaw/ResponseList.html" class="link">FlickRaw::ResponseList</
         <tr class="top-aligned-row context-row">
           <td class="context-item-name">URL_SHORT</td>
           <td>=</td>
-          <td class="context-item-value">&quot;http://flic.kr/p/&quot;.freeze</td>
+          <td class="context-item-value">'http://flic.kr/p/'.freeze</td>
 
         </tr>
 
@@ -668,12 +674,12 @@ for more information
       </div>
 
 
-      <div id="method-M000020" class="method-detail">
-        <a name="M000020"></a>
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
 
         <div class="method-heading">
 
-          <a href="#M000020" class="method-signature">
+          <a href="#M000023" class="method-signature">
 
           <span class="method-name">url_photostream</span><span class="method-args">(r)</span>
 
@@ -684,10 +690,10 @@ for more information
         <div class="method-description">
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000020-source">
+            onclick="toggleCode('M000023-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000023-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 295</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 298</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_photostream</span>(<span class="ruby-identifier">r</span>)
       <span class="ruby-constant">URL_PHOTOSTREAM</span> <span class="ruby-operator">+</span>
         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:pathalias</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">pathalias</span>
@@ -782,6 +788,90 @@ for more information
 <pre>
 <span class="ruby-comment cmt"># File lib/flickraw.rb, line 294</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_short</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000020" class="method-signature">
+
+          <span class="method-name">url_short_m</span><span class="method-args">(r)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000020-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000020-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 295</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_short_m</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;img/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;_m.jpg&quot;</span> <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000021" class="method-signature">
+
+          <span class="method-name">url_short_s</span><span class="method-args">(r)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000021-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000021-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 296</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_short_s</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;img/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;.jpg&quot;</span> <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000022" class="method-signature">
+
+          <span class="method-name">url_short_t</span><span class="method-args">(r)</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000022-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000022-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 297</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_short_t</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;img/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;_t.jpg&quot;</span> <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
 
