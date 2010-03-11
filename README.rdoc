@@ -153,6 +153,19 @@ There are some helpers to build flickr urls :
 
 See the _examples_ directory to find more examples.
 
+== Cached version
+
+You can use
+
+  require 'flickraw-cached'
+
+instead of
+
+   require 'flickraw'
+
+This way it it doesn't fetch available flickr methods each time it is loaded.
+The flickraw-cached gem is on rubyforge and should be up-to-date with regard to flickr api most of the time.
+
 = Notes
 If you want to use the api authenticated with several user at the same time, you must pass the authentication token explicitely each time.
 This is because it is keeping the authentication token internally.
