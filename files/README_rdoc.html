@@ -53,7 +53,7 @@
     </tr>
     <tr class="top-aligned-row">
       <td><strong>Last Update:</strong></td>
-      <td>2010-01-30 23:02:20 +0100</td>
+      <td>2010-03-11 20:01:35 +0100</td>
     </tr>
     </table>
   </div>
@@ -251,6 +251,24 @@ There are some helpers to build flickr urls :
 </pre>
 <p>
 See the <em>examples</em> directory to find more examples.
+</p>
+<h2>Cached version</h2>
+<p>
+You can use
+</p>
+<pre>
+  require 'flickraw-cached'
+</pre>
+<p>
+instead of
+</p>
+<pre>
+   require 'flickraw'
+</pre>
+<p>
+This way it it doesn&#8217;t fetch available flickr methods each time it is
+loaded. The flickraw-cached gem is on rubyforge and should be up-to-date
+with regard to flickr api most of the time.
 </p>
 <h1>Notes</h1>
 <p>
