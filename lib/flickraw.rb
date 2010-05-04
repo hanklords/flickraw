@@ -316,4 +316,7 @@ end
 def flickr; $flickraw ||= FlickRaw::Flickr.new end
 
 # Load the methods if the option lazyload is not specified
-flickr if not FlickRawOptions['lazyload']
+begin
+flickr
+rescue
+end if not FlickRawOptions['lazyload']
