@@ -207,7 +207,7 @@ module FlickRaw
     end
 
     def upload_flickr(method, file, args={})
-      photo = File.open(file, 'rb') { |f| f.read }
+      photo = open(file, 'rb') { |f| f.read }
       boundary = Digest::MD5.hexdigest(photo)
 
       header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}
