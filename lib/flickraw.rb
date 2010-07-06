@@ -156,6 +156,7 @@ module FlickRaw
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={})
+      @token = nil if req == "flickr.auth.getFrob"
       http_response = open_flickr do |http|
         request = Net::HTTP::Post.new(REST_PATH, 'User-Agent' => "Flickraw/#{VERSION}")
         request.set_form_data(build_args(args, req))
