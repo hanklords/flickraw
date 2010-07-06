@@ -26,7 +26,6 @@ require 'digest/md5'
 require 'json'
 
 FlickRawOptions = {} if not Object.const_defined? :FlickRawOptions # :nodoc:
-FlickRawOptions['api_key'] ||= '7b124df89b638e545e3165293883ef62'
 if ENV['http_proxy'] and not FlickRawOptions['proxy_host']
   proxy = URI.parse ENV['http_proxy']
   FlickRawOptions.update('proxy_host' => proxy.host, 'proxy_port' => proxy.port, 'proxy_user' => proxy.user, 'proxy_password' => proxy.password)
