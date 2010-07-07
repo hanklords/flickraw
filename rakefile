@@ -101,6 +101,6 @@ New Flickr API methods :
 
     # Update cache and clean gem files
     open(FREEZED_CACHE_FILE, 'w') {|f| remote_list.each {|m| f.puts m} }
-    Rake.application[:clobber_package].invoke
+    Rake.application[:clobber].invoke
   end
 end
