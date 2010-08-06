@@ -120,7 +120,7 @@ You can pass some options to modify flickraw behavior:
 
 There are some helpers to build flickr urls :
 
-=== url, url_m, url_s, url_t, url_b, url_o
+=== url, url_m, url_s, url_t, url_b, url_z, url_o
 
   info = flickr.photos.getInfo(:photo_id => "3839885270")
   FlickRaw.url_b(info) # => "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg"
