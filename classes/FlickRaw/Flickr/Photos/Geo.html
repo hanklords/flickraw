@@ -95,23 +95,23 @@
 
       <div class="name-list">
 
-        <a href="#M000151">batchCorrectLocation</a>&nbsp;&nbsp;
+        <a href="#M000158">batchCorrectLocation</a>&nbsp;&nbsp;
 
-        <a href="#M000152">correctLocation</a>&nbsp;&nbsp;
+        <a href="#M000159">correctLocation</a>&nbsp;&nbsp;
 
-        <a href="#M000153">getLocation</a>&nbsp;&nbsp;
+        <a href="#M000160">getLocation</a>&nbsp;&nbsp;
 
-        <a href="#M000154">getPerms</a>&nbsp;&nbsp;
+        <a href="#M000161">getPerms</a>&nbsp;&nbsp;
 
-        <a href="#M000155">photosForLocation</a>&nbsp;&nbsp;
+        <a href="#M000162">photosForLocation</a>&nbsp;&nbsp;
 
-        <a href="#M000156">removeLocation</a>&nbsp;&nbsp;
+        <a href="#M000163">removeLocation</a>&nbsp;&nbsp;
 
-        <a href="#M000157">setContext</a>&nbsp;&nbsp;
+        <a href="#M000164">setContext</a>&nbsp;&nbsp;
 
-        <a href="#M000158">setLocation</a>&nbsp;&nbsp;
+        <a href="#M000165">setLocation</a>&nbsp;&nbsp;
 
-        <a href="#M000159">setPerms</a>&nbsp;&nbsp;
+        <a href="#M000166">setPerms</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -132,12 +132,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000151" class="method-detail">
-        <a name="M000151"></a>
+      <div id="method-M000158" class="method-detail">
+        <a name="M000158"></a>
 
         <div class="method-heading">
 
-          <a href="#M000151" class="method-signature">
+          <a href="#M000158" class="method-signature">
 
           <span class="method-name">batchCorrectLocation</span><span class="method-args">(:lat =&gt; 'lat',:lon =&gt; 'lon',:accuracy =&gt; 'accuracy',:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
 
@@ -191,42 +191,10 @@ href="../Places.html">Places</a> ID or a WOE ID.)
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required arguments missing</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-Some or all of the required arguments were not supplied.
-</p>
-</li>
-<li>2: <em>Not a valid latitude</em>
-
-<p>
-The latitude argument failed validation.
-</p>
-</li>
-<li>3: <em>Not a valid longitude</em>
-
-<p>
-The longitude argument failed validation.
-</p>
-</li>
-<li>4: <em>Not a valid accuracy</em>
-
-<p>
-The accuracy argument failed validation.
-</p>
-</li>
-<li>5: <em>Not a valid <a href="../Places.html">Places</a> ID</em>
-
-<p>
-An invalid <a href="../Places.html">Places</a> (or WOE) ID was passed with
-the API call.
-</p>
-</li>
-<li>6: <em>No photos geotagged at that location</em>
-
-<p>
-There were no geotagged photos found for the authed user at the supplied
-latitude, longitude and accuracy.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -300,8 +268,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000151-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000151-source">
+            onclick="toggleCode('M000158-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000158-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -316,12 +284,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000152" class="method-detail">
-        <a name="M000152"></a>
+      <div id="method-M000159" class="method-detail">
+        <a name="M000159"></a>
 
         <div class="method-heading">
 
-          <a href="#M000152" class="method-signature">
+          <a href="#M000159" class="method-signature">
 
           <span class="method-name">correctLocation</span><span class="method-args">(:photo_id =&gt; 'photo_id',:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
 
@@ -357,32 +325,10 @@ href="../Places.html">Places</a> ID or a WOE ID.)
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User has not configured default viewing settings for location
-data.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-Before users may assign location data to a photo they must define who, by
-default, may view that information. Users can edit this preference at <a
-href=&#8220;<a
-href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>>
-</p>
-</li>
-<li>2: <em>Missing place ID</em>
-
-<p>
-No place ID was passed to the method
-</p>
-</li>
-<li>3: <em>Not a valid place ID</em>
-
-<p>
-The place ID passed to the method could not be identified
-</p>
-</li>
-<li>4: <em>Server error correcting location.</em>
-
-<p>
-There was an error trying to correct the location.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -456,8 +402,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000152-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000152-source">
+            onclick="toggleCode('M000159-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000159-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -472,12 +418,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000153" class="method-detail">
-        <a name="M000153"></a>
+      <div id="method-M000160" class="method-detail">
+        <a name="M000160"></a>
 
         <div class="method-heading">
 
-          <a href="#M000153" class="method-signature">
+          <a href="#M000160" class="method-signature">
 
           <span class="method-name">getLocation</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
 
@@ -508,18 +454,10 @@ photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was either invalid or was for a photo not viewable by the
-calling user.
-</p>
-</li>
-<li>2: <em>Photo has no location information.</em>
-
-<p>
-The photo requested has no location data or is not viewable by the calling
-user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -576,8 +514,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000153-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000153-source">
+            onclick="toggleCode('M000160-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000160-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -592,12 +530,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000154" class="method-detail">
-        <a name="M000154"></a>
+      <div id="method-M000161" class="method-detail">
+        <a name="M000161"></a>
 
         <div class="method-heading">
 
-          <a href="#M000154" class="method-signature">
+          <a href="#M000161" class="method-signature">
 
           <span class="method-name">getPerms</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
 
@@ -627,18 +565,10 @@ Get permissions for who may view geo data for a photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was either invalid or was for a photo not viewable by the
-calling user.
-</p>
-</li>
-<li>2: <em>Photo has no location information</em>
-
-<p>
-The photo requested has no location data or is not viewable by the calling
-user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -718,8 +648,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000154-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000154-source">
+            onclick="toggleCode('M000161-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000161-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -734,12 +664,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000155" class="method-detail">
-        <a name="M000155"></a>
+      <div id="method-M000162" class="method-detail">
+        <a name="M000162"></a>
 
         <div class="method-heading">
 
-          <a href="#M000155" class="method-signature">
+          <a href="#M000162" class="method-signature">
 
           <span class="method-name">photosForLocation</span><span class="method-args">(:lat =&gt; 'lat',:lon =&gt; 'lon',:accuracy =&gt; 'accuracy',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -798,28 +728,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required arguments missing</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-One or more required arguments was missing from the method call.
-</p>
-</li>
-<li>2: <em>Not a valid latitude</em>
-
-<p>
-The latitude argument failed validation.
-</p>
-</li>
-<li>3: <em>Not a valid longitude</em>
-
-<p>
-The longitude argument failed validation.
-</p>
-</li>
-<li>4: <em>Not a valid accuracy</em>
-
-<p>
-The accuracy argument failed validation.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -893,8 +805,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000155-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000155-source">
+            onclick="toggleCode('M000162-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000162-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -909,12 +821,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000156" class="method-detail">
-        <a name="M000156"></a>
+      <div id="method-M000163" class="method-detail">
+        <a name="M000163"></a>
 
         <div class="method-heading">
 
-          <a href="#M000156" class="method-signature">
+          <a href="#M000163" class="method-signature">
 
           <span class="method-name">removeLocation</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
 
@@ -944,17 +856,10 @@ Removes the geo data associated with a photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was either invalid or was for a photo not viewable by the
-calling user.
-</p>
-</li>
-<li>2: <em>Photo has no location information</em>
-
-<p>
-The specified photo has not been geotagged - there is nothing to remove.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1028,8 +933,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000156-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000156-source">
+            onclick="toggleCode('M000163-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000163-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1044,12 +949,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000157" class="method-detail">
-        <a name="M000157"></a>
+      <div id="method-M000164" class="method-detail">
+        <a name="M000164"></a>
 
         <div class="method-heading">
 
-          <a href="#M000157" class="method-signature">
+          <a href="#M000164" class="method-signature">
 
           <span class="method-name">setContext</span><span class="method-args">(:photo_id =&gt; 'photo_id',:context =&gt; 'context')</span>
 
@@ -1092,17 +997,10 @@ indoors.</li> <li><strong>2</strong>, outdoors.</li> </ul>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was either invalid or was for a photo not viewable by the
-calling user.
-</p>
-</li>
-<li>2: <em>Not a valid context</em>
-
-<p>
-The context ID passed to the method is invalid.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1176,8 +1074,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000157-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000157-source">
+            onclick="toggleCode('M000164-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000164-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1192,14 +1090,14 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000158" class="method-detail">
-        <a name="M000158"></a>
+      <div id="method-M000165" class="method-detail">
+        <a name="M000165"></a>
 
         <div class="method-heading">
 
-          <a href="#M000158" class="method-signature">
+          <a href="#M000165" class="method-signature">
 
-          <span class="method-name">setLocation</span><span class="method-args">(:photo_id =&gt; 'photo_id',:lat =&gt; 'lat',:lon =&gt; 'lon',:accuracy =&gt; 'accuracy',:context =&gt; 'context')</span>
+          <span class="method-name">setLocation</span><span class="method-args">(:photo_id =&gt; 'photo_id',:lat =&gt; 'lat',:lon =&gt; 'lon',:accuracy =&gt; 'accuracy',:context =&gt; 'context',:bookmark_id =&gt; 'bookmark_id')</span>
 
           </a>
 
@@ -1256,55 +1154,19 @@ The current list of context IDs is :<br /><br/> <ul>
 indoors.</li> <li><strong>2</strong>, outdoors.</li> </ul><br /> The
 default context for geotagged photos is 0, or &#8220;not defined&#8220;
 </p>
+<dl>
+<dt>bookmark_id </dt><dd>Associate a geo bookmark with this photo.
+
+</dd>
+</dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was either invalid or was for a photo not viewable by the
-calling user.
-</p>
-</li>
-<li>2: <em>Required arguments missing.</em>
-
-<p>
-Some or all of the required arguments were not supplied.
-</p>
-</li>
-<li>3: <em>Not a valid latitude.</em>
-
-<p>
-The latitude argument failed validation.
-</p>
-</li>
-<li>4: <em>Not a valid longitude.</em>
-
-<p>
-The longitude argument failed validation.
-</p>
-</li>
-<li>5: <em>Not a valid accuracy.</em>
-
-<p>
-The accuracy argument failed validation.
-</p>
-</li>
-<li>6: <em>Server error.</em>
-
-<p>
-There was an unexpected problem setting location information to the photo.
-</p>
-</li>
-<li>7: <em>User has not configured default viewing settings for location
-data.</em>
-
-<p>
-Before users may assign location data to a photo they must define who, by
-default, may view that information. Users can edit this preference at <a
-href=&#8220;<a
-href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>>
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1378,8 +1240,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000158-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000158-source">
+            onclick="toggleCode('M000165-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000165-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1394,12 +1256,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000159" class="method-detail">
-        <a name="M000159"></a>
+      <div id="method-M000166" class="method-detail">
+        <a name="M000166"></a>
 
         <div class="method-heading">
 
-          <a href="#M000159" class="method-signature">
+          <a href="#M000166" class="method-signature">
 
           <span class="method-name">setPerms</span><span class="method-args">(:is_public =&gt; 'is_public',:is_contact =&gt; 'is_contact',:is_friend =&gt; 'is_friend',:is_family =&gt; 'is_family',:photo_id =&gt; 'photo_id')</span>
 
@@ -1445,24 +1307,10 @@ friends, 0 to set it to private.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was either invalid or was for a photo not viewable by the
-calling user.
-</p>
-</li>
-<li>2: <em>Photo has no location information</em>
-
-<p>
-The photo requested has no location data or is not viewable by the calling
-user.
-</p>
-</li>
-<li>3: <em>Required arguments missing.</em>
-
-<p>
-Some or all of the required arguments were not supplied.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1536,8 +1384,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000159-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000159-source">
+            onclick="toggleCode('M000166-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000166-source">
 <pre>
 
 # Generated automatically from flickr api

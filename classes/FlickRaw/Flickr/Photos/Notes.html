@@ -95,11 +95,11 @@
 
       <div class="name-list">
 
-        <a href="#M000162">add</a>&nbsp;&nbsp;
+        <a href="#M000169">add</a>&nbsp;&nbsp;
 
-        <a href="#M000163">delete</a>&nbsp;&nbsp;
+        <a href="#M000170">delete</a>&nbsp;&nbsp;
 
-        <a href="#M000164">edit</a>&nbsp;&nbsp;
+        <a href="#M000171">edit</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -120,12 +120,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000162" class="method-detail">
-        <a name="M000162"></a>
+      <div id="method-M000169" class="method-detail">
+        <a name="M000169"></a>
 
         <div class="method-heading">
 
-          <a href="#M000162" class="method-signature">
+          <a href="#M000169" class="method-signature">
 
           <span class="method-name">add</span><span class="method-args">(:photo_id =&gt; 'photo_id',:note_x =&gt; 'note_x',:note_y =&gt; 'note_y',:note_w =&gt; 'note_w',:note_h =&gt; 'note_h',:note_text =&gt; 'note_text')</span>
 
@@ -171,22 +171,10 @@ Add a note to a photo. Coordinates and sizes are in pixels, based on the
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id
-</p>
-</li>
-<li>2: <em>User cannot add notes</em>
-
-<p>
-The calling user does not have permission to add a note to this photo
-</p>
-</li>
-<li>3: <em>Missing required arguments</em>
-
-<p>
-One or more of the required arguments were not supplied.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -266,8 +254,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000162-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000162-source">
+            onclick="toggleCode('M000169-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000169-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -282,12 +270,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000163" class="method-detail">
-        <a name="M000163"></a>
+      <div id="method-M000170" class="method-detail">
+        <a name="M000170"></a>
 
         <div class="method-heading">
 
-          <a href="#M000163" class="method-signature">
+          <a href="#M000170" class="method-signature">
 
           <span class="method-name">delete</span><span class="method-args">(:note_id =&gt; 'note_id')</span>
 
@@ -317,16 +305,10 @@ Delete a note from a photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Note not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The note id passed was not a valid note id
-</p>
-</li>
-<li>2: <em>User cannot delete note</em>
-
-<p>
-The calling user does not have permission to delete the specified note
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -400,8 +382,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000163-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000163-source">
+            onclick="toggleCode('M000170-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000170-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -416,12 +398,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000164" class="method-detail">
-        <a name="M000164"></a>
+      <div id="method-M000171" class="method-detail">
+        <a name="M000171"></a>
 
         <div class="method-heading">
 
-          <a href="#M000164" class="method-signature">
+          <a href="#M000171" class="method-signature">
 
           <span class="method-name">edit</span><span class="method-args">(:note_id =&gt; 'note_id',:note_x =&gt; 'note_x',:note_y =&gt; 'note_y',:note_w =&gt; 'note_w',:note_h =&gt; 'note_h',:note_text =&gt; 'note_text')</span>
 
@@ -467,22 +449,10 @@ Edit a note on a photo. Coordinates and sizes are in pixels, based on the
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Note not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The note id passed was not a valid note id
-</p>
-</li>
-<li>2: <em>User cannot edit note</em>
-
-<p>
-The calling user does not have permission to edit the specified note
-</p>
-</li>
-<li>3: <em>Missing required arguments</em>
-
-<p>
-One or more of the required arguments were not supplied.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -556,8 +526,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000164-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000164-source">
+            onclick="toggleCode('M000171-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000171-source">
 <pre>
 
 # Generated automatically from flickr api

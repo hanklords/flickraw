@@ -95,13 +95,13 @@
 
       <div class="name-list">
 
-        <a href="#M000066">checkToken</a>&nbsp;&nbsp;
+        <a href="#M000067">checkToken</a>&nbsp;&nbsp;
 
-        <a href="#M000067">getFrob</a>&nbsp;&nbsp;
+        <a href="#M000068">getFrob</a>&nbsp;&nbsp;
 
-        <a href="#M000068">getFullToken</a>&nbsp;&nbsp;
+        <a href="#M000069">getFullToken</a>&nbsp;&nbsp;
 
-        <a href="#M000069">getToken</a>&nbsp;&nbsp;
+        <a href="#M000070">getToken</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -122,12 +122,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000066" class="method-detail">
-        <a name="M000066"></a>
+      <div id="method-M000067" class="method-detail">
+        <a name="M000067"></a>
 
         <div class="method-heading">
 
-          <a href="#M000066" class="method-signature">
+          <a href="#M000067" class="method-signature">
 
           <span class="method-name">checkToken</span><span class="method-args">(:auth_token =&gt; 'auth_token')</span>
 
@@ -160,6 +160,12 @@ spec</a>.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>98: <em>Login failed / Invalid auth token</em>
 
 <p>
@@ -222,8 +228,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000066-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000066-source">
+            onclick="toggleCode('M000067-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000067-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -238,12 +244,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000067" class="method-detail">
-        <a name="M000067"></a>
+      <div id="method-M000068" class="method-detail">
+        <a name="M000068"></a>
 
         <div class="method-heading">
 
-          <a href="#M000067" class="method-signature">
+          <a href="#M000068" class="method-signature">
 
           <span class="method-name">getFrob</span><span class="method-args">()</span>
 
@@ -269,6 +275,12 @@ be signed</b>.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -333,8 +345,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000067-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000067-source">
+            onclick="toggleCode('M000068-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000068-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -349,12 +361,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000068" class="method-detail">
-        <a name="M000068"></a>
+      <div id="method-M000069" class="method-detail">
+        <a name="M000069"></a>
 
         <div class="method-heading">
 
-          <a href="#M000068" class="method-signature">
+          <a href="#M000069" class="method-signature">
 
           <span class="method-name">getFullToken</span><span class="method-args">(:mini_token =&gt; 'mini_token')</span>
 
@@ -386,10 +398,10 @@ optionally contain dashes.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Mini-token not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The passed mini-token was not valid.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -448,8 +460,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000068-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000068-source">
+            onclick="toggleCode('M000069-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000069-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -464,12 +476,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000069" class="method-detail">
-        <a name="M000069"></a>
+      <div id="method-M000070" class="method-detail">
+        <a name="M000070"></a>
 
         <div class="method-heading">
 
-          <a href="#M000069" class="method-signature">
+          <a href="#M000070" class="method-signature">
 
           <span class="method-name">getToken</span><span class="method-args">(:frob =&gt; 'frob')</span>
 
@@ -500,10 +512,10 @@ Returns the auth token for the given frob, if one has been attached.
 <b>Error codes</b>
 </p>
 <ul>
-<li>108: <em>Invalid frob</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The specified frob does not exist or has already been used.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -574,8 +586,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000069-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000069-source">
+            onclick="toggleCode('M000070-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000070-source">
 <pre>
 
 # Generated automatically from flickr api

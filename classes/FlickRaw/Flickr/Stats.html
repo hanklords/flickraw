@@ -95,33 +95,35 @@
 
       <div class="name-list">
 
-        <a href="#M000210">getCollectionDomains</a>&nbsp;&nbsp;
+        <a href="#M000223">getCSVFiles</a>&nbsp;&nbsp;
 
-        <a href="#M000211">getCollectionReferrers</a>&nbsp;&nbsp;
+        <a href="#M000220">getCollectionDomains</a>&nbsp;&nbsp;
 
-        <a href="#M000212">getCollectionStats</a>&nbsp;&nbsp;
+        <a href="#M000221">getCollectionReferrers</a>&nbsp;&nbsp;
 
-        <a href="#M000213">getPhotoDomains</a>&nbsp;&nbsp;
+        <a href="#M000222">getCollectionStats</a>&nbsp;&nbsp;
 
-        <a href="#M000214">getPhotoReferrers</a>&nbsp;&nbsp;
+        <a href="#M000224">getPhotoDomains</a>&nbsp;&nbsp;
 
-        <a href="#M000218">getPhotoStats</a>&nbsp;&nbsp;
+        <a href="#M000225">getPhotoReferrers</a>&nbsp;&nbsp;
 
-        <a href="#M000215">getPhotosetDomains</a>&nbsp;&nbsp;
+        <a href="#M000229">getPhotoStats</a>&nbsp;&nbsp;
 
-        <a href="#M000216">getPhotosetReferrers</a>&nbsp;&nbsp;
+        <a href="#M000226">getPhotosetDomains</a>&nbsp;&nbsp;
 
-        <a href="#M000217">getPhotosetStats</a>&nbsp;&nbsp;
+        <a href="#M000227">getPhotosetReferrers</a>&nbsp;&nbsp;
 
-        <a href="#M000219">getPhotostreamDomains</a>&nbsp;&nbsp;
+        <a href="#M000228">getPhotosetStats</a>&nbsp;&nbsp;
 
-        <a href="#M000220">getPhotostreamReferrers</a>&nbsp;&nbsp;
+        <a href="#M000230">getPhotostreamDomains</a>&nbsp;&nbsp;
 
-        <a href="#M000221">getPhotostreamStats</a>&nbsp;&nbsp;
+        <a href="#M000231">getPhotostreamReferrers</a>&nbsp;&nbsp;
 
-        <a href="#M000222">getPopularPhotos</a>&nbsp;&nbsp;
+        <a href="#M000232">getPhotostreamStats</a>&nbsp;&nbsp;
 
-        <a href="#M000223">getTotalViews</a>&nbsp;&nbsp;
+        <a href="#M000233">getPopularPhotos</a>&nbsp;&nbsp;
+
+        <a href="#M000234">getTotalViews</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -142,12 +144,156 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000210" class="method-detail">
-        <a name="M000210"></a>
+      <div id="method-M000223" class="method-detail">
+        <a name="M000223"></a>
 
         <div class="method-heading">
 
-          <a href="#M000210" class="method-signature">
+          <a href="#M000223" class="method-signature">
+
+          <span class="method-name">getCSVFiles</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p>
+<a
+href="http://www.flickr.com/services/api/flickr.stats.getCSVFiles.html">flickr.stats.getCSVFiles</a>
+request.
+</p>
+<p>
+Returns a list of URLs for text files containing <em>all</em> your stats
+data (from November 26th 2007 onwards) for the currently auth&#8217;d user.
+</p>
+<p>
+<b>Please note, these files will only be available until June 1, 2010 Noon
+PDT.</b> For more information <a
+href=&#8220;/help/stats/#1369409&#8220;>please check out this FAQ</a>, or
+just <a href=&#8220;/photos/me/stats/downloads/&#8220;>go download your
+files</a>.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
+<li>96: <em>Invalid signature</em>
+
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li>97: <em>Missing signature</em>
+
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li>98: <em>Login failed / Invalid auth token</em>
+
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li>99: <em>User not logged in / Insufficient permissions</em>
+
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li>100: <em>Invalid API Key</em>
+
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li>105: <em>Service currently unavailable</em>
+
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li>111: <em>Format &#8220;xxx&#8221; not found</em>
+
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li>112: <em>Method &#8220;xxx&#8221; not found</em>
+
+<p>
+The requested method was not found.
+</p>
+</li>
+<li>114: <em>Invalid SOAP envelope</em>
+
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li>115: <em>Invalid XML-RPC Method Call</em>
+
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li>116: <em>Bad URL found</em>
+
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;stats&gt;
+    &lt;csvfiles&gt;
+       &lt;csv href=&quot;http://farm4.static.flickr.com/3496/stats/72157623902771865_faaa.csv&quot; type=&quot;daily&quot; date=&quot;2010-04-01&quot; /&gt;
+       &lt;csv href=&quot;http://farm4.static.flickr.com/3376/stats/72157624027152370_fbbb.csv&quot; type=&quot;monthly&quot; date=&quot;2010-04-01&quot; /&gt;
+       &lt;csv href=&quot;http://farm5.static.flickr.com/4006/stats/72157623627769689_fccc.csv&quot; type=&quot;daily&quot; date=&quot;2010-03-01&quot; /&gt;
+       ....
+     &lt;/csvfiles&gt;
+ &lt;/stats&gt;
+</pre>
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000223-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000223-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getCSVFiles(*args)
+    @flickr.call 'flickr.stats.getCSVFiles', *args
+  end
+
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000220" class="method-detail">
+        <a name="M000220"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000220" class="method-signature">
 
           <span class="method-name">getCollectionDomains</span><span class="method-args">(:date =&gt; 'date',:collection_id =&gt; 'collection_id',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -197,31 +343,10 @@ defaults to 25. The maximum allowed value is 100.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>4: <em>Collection not found</em>
-
-<p>
-The collection id was either invalid or was for a collection not owned by
-the calling user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -305,8 +430,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000210-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000210-source">
+            onclick="toggleCode('M000220-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000220-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -321,12 +446,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000211" class="method-detail">
-        <a name="M000211"></a>
+      <div id="method-M000221" class="method-detail">
+        <a name="M000221"></a>
 
         <div class="method-heading">
 
-          <a href="#M000211" class="method-signature">
+          <a href="#M000221" class="method-signature">
 
           <span class="method-name">getCollectionReferrers</span><span class="method-args">(:date =&gt; 'date',:domain =&gt; 'domain',:collection_id =&gt; 'collection_id',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -380,37 +505,10 @@ defaults to 25. The maximum allowed value is 100.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>4: <em>Collection not found</em>
-
-<p>
-The collection id was either invalid or was for a collection not owned by
-the calling user.
-</p>
-</li>
-<li>5: <em>Invalid domain</em>
-
-<p>
-The domain provided is not in the expected format.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -494,8 +592,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000211-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000211-source">
+            onclick="toggleCode('M000221-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000221-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -510,12 +608,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000212" class="method-detail">
-        <a name="M000212"></a>
+      <div id="method-M000222" class="method-detail">
+        <a name="M000222"></a>
 
         <div class="method-heading">
 
-          <a href="#M000212" class="method-signature">
+          <a href="#M000222" class="method-signature">
 
           <span class="method-name">getCollectionStats</span><span class="method-args">(:date =&gt; 'date',:collection_id =&gt; 'collection_id')</span>
 
@@ -556,31 +654,10 @@ timestamps will automatically be rounded down to the start of the day.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>4: <em>Collection not found</em>
-
-<p>
-The collection id was either invalid or was for a collection not owned by
-the calling user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -660,8 +737,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000212-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000212-source">
+            onclick="toggleCode('M000222-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000222-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -676,12 +753,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000213" class="method-detail">
-        <a name="M000213"></a>
+      <div id="method-M000224" class="method-detail">
+        <a name="M000224"></a>
 
         <div class="method-heading">
 
-          <a href="#M000213" class="method-signature">
+          <a href="#M000224" class="method-signature">
 
           <span class="method-name">getPhotoDomains</span><span class="method-args">(:date =&gt; 'date',:photo_id =&gt; 'photo_id',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -731,31 +808,10 @@ defaults to 25. The maximum allowed value is 100.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>4: <em>Photo not found</em>
-
-<p>
-The photo id was either invalid or was for a photo not owned by the calling
-user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -839,8 +895,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000213-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000213-source">
+            onclick="toggleCode('M000224-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000224-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -855,12 +911,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000214" class="method-detail">
-        <a name="M000214"></a>
+      <div id="method-M000225" class="method-detail">
+        <a name="M000225"></a>
 
         <div class="method-heading">
 
-          <a href="#M000214" class="method-signature">
+          <a href="#M000225" class="method-signature">
 
           <span class="method-name">getPhotoReferrers</span><span class="method-args">(:date =&gt; 'date',:domain =&gt; 'domain',:photo_id =&gt; 'photo_id',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -914,37 +970,10 @@ defaults to 25. The maximum allowed value is 100.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>4: <em>Photo not found</em>
-
-<p>
-The photo id was either invalid or was for a photo not owned by the calling
-user.
-</p>
-</li>
-<li>5: <em>Invalid domain</em>
-
-<p>
-The domain provided is not in the expected format.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1028,8 +1057,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000214-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000214-source">
+            onclick="toggleCode('M000225-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000225-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1044,12 +1073,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000218" class="method-detail">
-        <a name="M000218"></a>
+      <div id="method-M000229" class="method-detail">
+        <a name="M000229"></a>
 
         <div class="method-heading">
 
-          <a href="#M000218" class="method-signature">
+          <a href="#M000229" class="method-signature">
 
           <span class="method-name">getPhotoStats</span><span class="method-args">(:date =&gt; 'date',:photo_id =&gt; 'photo_id')</span>
 
@@ -1091,31 +1120,10 @@ timestamps will automatically be rounded down to the start of the day.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>4: <em>Photo not found</em>
-
-<p>
-The photo id was either invalid or was for a photo not owned by the calling
-user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1195,8 +1203,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000218-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000218-source">
+            onclick="toggleCode('M000229-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000229-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1211,12 +1219,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000215" class="method-detail">
-        <a name="M000215"></a>
+      <div id="method-M000226" class="method-detail">
+        <a name="M000226"></a>
 
         <div class="method-heading">
 
-          <a href="#M000215" class="method-signature">
+          <a href="#M000226" class="method-signature">
 
           <span class="method-name">getPhotosetDomains</span><span class="method-args">(:date =&gt; 'date',:photoset_id =&gt; 'photoset_id',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -1266,31 +1274,10 @@ defaults to 25. The maximum allowed value is 100.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>4: <em>Photoset not found</em>
-
-<p>
-The photoset id was either invalid or was for a set not owned by the
-calling user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1374,8 +1361,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000215-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000215-source">
+            onclick="toggleCode('M000226-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000226-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1390,12 +1377,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000216" class="method-detail">
-        <a name="M000216"></a>
+      <div id="method-M000227" class="method-detail">
+        <a name="M000227"></a>
 
         <div class="method-heading">
 
-          <a href="#M000216" class="method-signature">
+          <a href="#M000227" class="method-signature">
 
           <span class="method-name">getPhotosetReferrers</span><span class="method-args">(:date =&gt; 'date',:domain =&gt; 'domain',:photoset_id =&gt; 'photoset_id',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -1449,37 +1436,10 @@ defaults to 25. The maximum allowed value is 100.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>4: <em>Photoset not found</em>
-
-<p>
-The photoset id was either invalid or was for a set not owned by the
-calling user.
-</p>
-</li>
-<li>5: <em>Invalid domain</em>
-
-<p>
-The domain provided is not in the expected format.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1563,8 +1523,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000216-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000216-source">
+            onclick="toggleCode('M000227-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000227-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1579,12 +1539,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000217" class="method-detail">
-        <a name="M000217"></a>
+      <div id="method-M000228" class="method-detail">
+        <a name="M000228"></a>
 
         <div class="method-heading">
 
-          <a href="#M000217" class="method-signature">
+          <a href="#M000228" class="method-signature">
 
           <span class="method-name">getPhotosetStats</span><span class="method-args">(:date =&gt; 'date',:photoset_id =&gt; 'photoset_id')</span>
 
@@ -1625,31 +1585,10 @@ timestamps will automatically be rounded down to the start of the day.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>4: <em>Photoset not found</em>
-
-<p>
-The photoset id was either invalid or was for a set not owned by the
-calling user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1729,8 +1668,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000217-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000217-source">
+            onclick="toggleCode('M000228-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000228-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1745,12 +1684,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000219" class="method-detail">
-        <a name="M000219"></a>
+      <div id="method-M000230" class="method-detail">
+        <a name="M000230"></a>
 
         <div class="method-heading">
 
-          <a href="#M000219" class="method-signature">
+          <a href="#M000230" class="method-signature">
 
           <span class="method-name">getPhotostreamDomains</span><span class="method-args">(:date =&gt; 'date',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -1796,24 +1735,10 @@ defaults to 25. The maximum allowed value is 100
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1897,8 +1822,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000219-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000219-source">
+            onclick="toggleCode('M000230-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000230-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1913,12 +1838,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000220" class="method-detail">
-        <a name="M000220"></a>
+      <div id="method-M000231" class="method-detail">
+        <a name="M000231"></a>
 
         <div class="method-heading">
 
-          <a href="#M000220" class="method-signature">
+          <a href="#M000231" class="method-signature">
 
           <span class="method-name">getPhotostreamReferrers</span><span class="method-args">(:date =&gt; 'date',:domain =&gt; 'domain',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -1968,30 +1893,10 @@ defaults to 25. The maximum allowed value is 100.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>5: <em>Invalid domain</em>
-
-<p>
-The domain provided is not in the expected format.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -2075,8 +1980,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000220-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000220-source">
+            onclick="toggleCode('M000231-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000231-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2091,12 +1996,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000221" class="method-detail">
-        <a name="M000221"></a>
+      <div id="method-M000232" class="method-detail">
+        <a name="M000232"></a>
 
         <div class="method-heading">
 
-          <a href="#M000221" class="method-signature">
+          <a href="#M000232" class="method-signature">
 
           <span class="method-name">getPhotostreamStats</span><span class="method-args">(:date =&gt; 'date')</span>
 
@@ -2132,24 +2037,10 @@ timestamps will automatically be rounded down to the start of the day.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -2229,8 +2120,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000221-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000221-source">
+            onclick="toggleCode('M000232-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000232-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2245,12 +2136,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000222" class="method-detail">
-        <a name="M000222"></a>
+      <div id="method-M000233" class="method-detail">
+        <a name="M000233"></a>
 
         <div class="method-heading">
 
-          <a href="#M000222" class="method-signature">
+          <a href="#M000233" class="method-signature">
 
           <span class="method-name">getPopularPhotos</span><span class="method-args">(:date =&gt; 'date',:sort =&gt; 'sort',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -2309,30 +2200,10 @@ defaults to 25. The maximum allowed value is 100.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li>5: <em>Invalid sort</em>
-
-<p>
-The sort provided is not valid
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -2423,8 +2294,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000222-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000222-source">
+            onclick="toggleCode('M000233-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000233-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2439,12 +2310,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000223" class="method-detail">
-        <a name="M000223"></a>
+      <div id="method-M000234" class="method-detail">
+        <a name="M000234"></a>
 
         <div class="method-heading">
 
-          <a href="#M000223" class="method-signature">
+          <a href="#M000234" class="method-signature">
 
           <span class="method-name">getTotalViews</span><span class="method-args">(:date =&gt; 'date')</span>
 
@@ -2483,24 +2354,10 @@ If no date is provided, all time view counts will be returned.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User does not have stats</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li>2: <em>No stats for that date</em>
-
-<p>
-No stats are available for the date requested. <a
-href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li>3: <em>Invalid date</em>
-
-<p>
-The date provided could not be parsed
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -2586,8 +2443,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000223-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000223-source">
+            onclick="toggleCode('M000234-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000234-source">
 <pre>
 
 # Generated automatically from flickr api

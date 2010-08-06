@@ -95,11 +95,11 @@
 
       <div class="name-list">
 
-        <a href="#M000070">getList</a>&nbsp;&nbsp;
+        <a href="#M000071">getList</a>&nbsp;&nbsp;
 
-        <a href="#M000071">getServices</a>&nbsp;&nbsp;
+        <a href="#M000072">getServices</a>&nbsp;&nbsp;
 
-        <a href="#M000072">postPhoto</a>&nbsp;&nbsp;
+        <a href="#M000073">postPhoto</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -120,12 +120,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000070" class="method-detail">
-        <a name="M000070"></a>
+      <div id="method-M000071" class="method-detail">
+        <a name="M000071"></a>
 
         <div class="method-heading">
 
-          <a href="#M000070" class="method-signature">
+          <a href="#M000071" class="method-signature">
 
           <span class="method-name">getList</span><span class="method-args">(:service =&gt; 'service')</span>
 
@@ -157,6 +157,12 @@ href=&#8220;/services/api/flickr.blogs.getServices.html&#8220;>flickr.blogs.getS
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -239,8 +245,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000070-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000070-source">
+            onclick="toggleCode('M000071-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000071-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -255,12 +261,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000071" class="method-detail">
-        <a name="M000071"></a>
+      <div id="method-M000072" class="method-detail">
+        <a name="M000072"></a>
 
         <div class="method-heading">
 
-          <a href="#M000071" class="method-signature">
+          <a href="#M000072" class="method-signature">
 
           <span class="method-name">getServices</span><span class="method-args">()</span>
 
@@ -286,6 +292,12 @@ services
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>100: <em>Invalid API Key</em>
 
 <p>
@@ -350,8 +362,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000071-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000071-source">
+            onclick="toggleCode('M000072-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000072-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -366,12 +378,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000072" class="method-detail">
-        <a name="M000072"></a>
+      <div id="method-M000073" class="method-detail">
+        <a name="M000073"></a>
 
         <div class="method-heading">
 
-          <a href="#M000072" class="method-signature">
+          <a href="#M000073" class="method-signature">
 
           <span class="method-name">postPhoto</span><span class="method-args">(:blog_id =&gt; 'blog_id',:photo_id =&gt; 'photo_id',:title =&gt; 'title',:description =&gt; 'description',:blog_password =&gt; 'blog_password',:service =&gt; 'service')</span>
 
@@ -416,29 +428,10 @@ first blog of that service we find.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Blog not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The blog id was not the id of a blog belonging to the calling user
-</p>
-</li>
-<li>2: <em>Photo not found</em>
-
-<p>
-The photo id was not the id of a public photo
-</p>
-</li>
-<li>3: <em>Password needed</em>
-
-<p>
-A password is not stored for the blog and one was not passed with the
-request
-</p>
-</li>
-<li>4: <em>Blog post failed</em>
-
-<p>
-The blog posting failed (a blogging API failure of some sort)
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -512,8 +505,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000072-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000072-source">
+            onclick="toggleCode('M000073-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000073-source">
 <pre>
 
 # Generated automatically from flickr api

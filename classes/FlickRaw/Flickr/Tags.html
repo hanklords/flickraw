@@ -95,21 +95,21 @@
 
       <div class="name-list">
 
-        <a href="#M000224">getClusterPhotos</a>&nbsp;&nbsp;
+        <a href="#M000235">getClusterPhotos</a>&nbsp;&nbsp;
 
-        <a href="#M000225">getClusters</a>&nbsp;&nbsp;
+        <a href="#M000236">getClusters</a>&nbsp;&nbsp;
 
-        <a href="#M000226">getHotList</a>&nbsp;&nbsp;
+        <a href="#M000237">getHotList</a>&nbsp;&nbsp;
 
-        <a href="#M000227">getListPhoto</a>&nbsp;&nbsp;
+        <a href="#M000238">getListPhoto</a>&nbsp;&nbsp;
 
-        <a href="#M000228">getListUser</a>&nbsp;&nbsp;
+        <a href="#M000239">getListUser</a>&nbsp;&nbsp;
 
-        <a href="#M000229">getListUserPopular</a>&nbsp;&nbsp;
+        <a href="#M000240">getListUserPopular</a>&nbsp;&nbsp;
 
-        <a href="#M000230">getListUserRaw</a>&nbsp;&nbsp;
+        <a href="#M000241">getListUserRaw</a>&nbsp;&nbsp;
 
-        <a href="#M000231">getRelated</a>&nbsp;&nbsp;
+        <a href="#M000242">getRelated</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -130,12 +130,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000224" class="method-detail">
-        <a name="M000224"></a>
+      <div id="method-M000235" class="method-detail">
+        <a name="M000235"></a>
 
         <div class="method-heading">
 
-          <a href="#M000224" class="method-signature">
+          <a href="#M000235" class="method-signature">
 
           <span class="method-name">getClusterPhotos</span><span class="method-args">(:tag =&gt; 'tag',:cluster_id =&gt; 'cluster_id')</span>
 
@@ -169,6 +169,12 @@ url).
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>100: <em>Invalid API Key</em>
 
 <p>
@@ -215,8 +221,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000224-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000224-source">
+            onclick="toggleCode('M000235-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000235-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -231,12 +237,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000225" class="method-detail">
-        <a name="M000225"></a>
+      <div id="method-M000236" class="method-detail">
+        <a name="M000236"></a>
 
         <div class="method-heading">
 
-          <a href="#M000225" class="method-signature">
+          <a href="#M000236" class="method-signature">
 
           <span class="method-name">getClusters</span><span class="method-args">(:tag =&gt; 'tag')</span>
 
@@ -266,10 +272,10 @@ Gives you a list of tag clusters for the given tag.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Tag cluster not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The tag was invalid or no cluster exists for that tag.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -335,8 +341,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000225-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000225-source">
+            onclick="toggleCode('M000236-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000236-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -351,12 +357,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000226" class="method-detail">
-        <a name="M000226"></a>
+      <div id="method-M000237" class="method-detail">
+        <a name="M000237"></a>
 
         <div class="method-heading">
 
-          <a href="#M000226" class="method-signature">
+          <a href="#M000237" class="method-signature">
 
           <span class="method-name">getHotList</span><span class="method-args">(:period =&gt; 'period',:count =&gt; 'count')</span>
 
@@ -390,10 +396,10 @@ Returns a list of hot tags for the given period.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Invalid period</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The specified period was not understood.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -455,8 +461,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000226-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000226-source">
+            onclick="toggleCode('M000237-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000237-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -471,12 +477,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000227" class="method-detail">
-        <a name="M000227"></a>
+      <div id="method-M000238" class="method-detail">
+        <a name="M000238"></a>
 
         <div class="method-heading">
 
-          <a href="#M000227" class="method-signature">
+          <a href="#M000238" class="method-signature">
 
           <span class="method-name">getListPhoto</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
 
@@ -506,10 +512,10 @@ Get the tag list for a given photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -571,8 +577,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000227-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000227-source">
+            onclick="toggleCode('M000238-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000238-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -587,12 +593,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000228" class="method-detail">
-        <a name="M000228"></a>
+      <div id="method-M000239" class="method-detail">
+        <a name="M000239"></a>
 
         <div class="method-heading">
 
-          <a href="#M000228" class="method-signature">
+          <a href="#M000239" class="method-signature">
 
           <span class="method-name">getListUser</span><span class="method-args">(:user_id =&gt; 'user_id')</span>
 
@@ -623,11 +629,10 @@ specified, the currently logged in user (if any) is assumed.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user NSID passed was not a valid user NSID and the calling user was not
-logged in.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -690,8 +695,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000228-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000228-source">
+            onclick="toggleCode('M000239-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000239-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -706,12 +711,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000229" class="method-detail">
-        <a name="M000229"></a>
+      <div id="method-M000240" class="method-detail">
+        <a name="M000240"></a>
 
         <div class="method-heading">
 
-          <a href="#M000229" class="method-signature">
+          <a href="#M000240" class="method-signature">
 
           <span class="method-name">getListUserPopular</span><span class="method-args">(:user_id =&gt; 'user_id',:count =&gt; 'count')</span>
 
@@ -746,11 +751,10 @@ present.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user NSID passed was not a valid user NSID and the calling user was not
-logged in.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -813,8 +817,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000229-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000229-source">
+            onclick="toggleCode('M000240-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000240-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -829,12 +833,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000230" class="method-detail">
-        <a name="M000230"></a>
+      <div id="method-M000241" class="method-detail">
+        <a name="M000241"></a>
 
         <div class="method-heading">
 
-          <a href="#M000230" class="method-signature">
+          <a href="#M000241" class="method-signature">
 
           <span class="method-name">getListUserRaw</span><span class="method-args">(:tag =&gt; 'tag')</span>
 
@@ -865,10 +869,10 @@ logged-in user.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The calling user was not logged in.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -931,8 +935,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000230-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000230-source">
+            onclick="toggleCode('M000241-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000241-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -947,12 +951,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000231" class="method-detail">
-        <a name="M000231"></a>
+      <div id="method-M000242" class="method-detail">
+        <a name="M000242"></a>
 
         <div class="method-heading">
 
-          <a href="#M000231" class="method-signature">
+          <a href="#M000242" class="method-signature">
 
           <span class="method-name">getRelated</span><span class="method-args">(:tag =&gt; 'tag')</span>
 
@@ -983,10 +987,10 @@ clustered usage analysis.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Tag not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The tag argument was missing.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -1047,8 +1051,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000231-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000231-source">
+            onclick="toggleCode('M000242-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000242-source">
 <pre>
 
 # Generated automatically from flickr api

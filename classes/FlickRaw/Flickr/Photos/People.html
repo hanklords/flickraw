@@ -95,15 +95,15 @@
 
       <div class="name-list">
 
-        <a href="#M000165">add</a>&nbsp;&nbsp;
+        <a href="#M000172">add</a>&nbsp;&nbsp;
 
-        <a href="#M000166">delete</a>&nbsp;&nbsp;
+        <a href="#M000173">delete</a>&nbsp;&nbsp;
 
-        <a href="#M000167">deleteCoords</a>&nbsp;&nbsp;
+        <a href="#M000174">deleteCoords</a>&nbsp;&nbsp;
 
-        <a href="#M000168">editCoords</a>&nbsp;&nbsp;
+        <a href="#M000175">editCoords</a>&nbsp;&nbsp;
 
-        <a href="#M000169">getList</a>&nbsp;&nbsp;
+        <a href="#M000176">getList</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -124,12 +124,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000165" class="method-detail">
-        <a name="M000165"></a>
+      <div id="method-M000172" class="method-detail">
+        <a name="M000172"></a>
 
         <div class="method-heading">
 
-          <a href="#M000165" class="method-signature">
+          <a href="#M000172" class="method-signature">
 
           <span class="method-name">add</span><span class="method-args">(:photo_id =&gt; 'photo_id',:user_id =&gt; 'user_id',:person_x =&gt; 'person_x',:person_y =&gt; 'person_y',:person_w =&gt; 'person_w',:person_h =&gt; 'person_h')</span>
 
@@ -176,56 +176,10 @@ photo pages.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Person not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The NSID passed was not a valid user id.
-</p>
-</li>
-<li>2: <em>Photo not found</em>
-
-<p>
-The photo id passed was not a valid photo id.
-</p>
-</li>
-<li>3: <em>User cannot add this person to photos</em>
-
-<p>
-The person being added to the photo does not allow the calling user to add
-them.
-</p>
-</li>
-<li>4: <em>User cannot add people to that photo</em>
-
-<p>
-The owner of the photo doesn&#8217;t allow the calling user to add people
-to their photos.
-</p>
-</li>
-<li>5: <em>Person can&#8217;t be tagged in that photo</em>
-
-<p>
-The person being added to the photo does not want to be identified in this
-photo.
-</p>
-</li>
-<li>6: <em>Some co-ordinate paramters were blank</em>
-
-<p>
-Not all of the co-ordinate parameters (person_x, person_y, person_w,
-person_h) were passed with valid values.
-</p>
-</li>
-<li>7: <em>Can&#8217;t add that person to a non-public photo</em>
-
-<p>
-You can only add yourself to another member&#8217;s non-public photos.
-</p>
-</li>
-<li>8: <em>Too many people in that photo</em>
-
-<p>
-The maximum number of people has already been added to the photo.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -299,8 +253,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000165-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000165-source">
+            onclick="toggleCode('M000172-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000172-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -315,14 +269,14 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000166" class="method-detail">
-        <a name="M000166"></a>
+      <div id="method-M000173" class="method-detail">
+        <a name="M000173"></a>
 
         <div class="method-heading">
 
-          <a href="#M000166" class="method-signature">
+          <a href="#M000173" class="method-signature">
 
-          <span class="method-name">delete</span><span class="method-args">(:photo_id =&gt; 'photo_id',:user_id =&gt; 'user_id')</span>
+          <span class="method-name">delete</span><span class="method-args">(:photo_id =&gt; 'photo_id',:user_id =&gt; 'user_id',:email =&gt; 'email')</span>
 
           </a>
 
@@ -348,28 +302,18 @@ Remove a person from a photo.
 <dt>user_id <em>(required)</em> </dt><dd>The NSID of the person to remove from the photo.
 
 </dd>
+<dt>email </dt><dd>An email address for an invited user.
+
+</dd>
 </dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Person not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The NSID passed was not a valid user id.
-</p>
-</li>
-<li>2: <em>Photo not found</em>
-
-<p>
-The photo id passed was not a valid photo id.
-</p>
-</li>
-<li>3: <em>User cannot remove that person</em>
-
-<p>
-The calling user did not have permission to remove this person from this
-photo.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -443,8 +387,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000166-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000166-source">
+            onclick="toggleCode('M000173-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000173-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -459,12 +403,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000167" class="method-detail">
-        <a name="M000167"></a>
+      <div id="method-M000174" class="method-detail">
+        <a name="M000174"></a>
 
         <div class="method-heading">
 
-          <a href="#M000167" class="method-signature">
+          <a href="#M000174" class="method-signature">
 
           <span class="method-name">deleteCoords</span><span class="method-args">(:photo_id =&gt; 'photo_id',:user_id =&gt; 'user_id')</span>
 
@@ -497,23 +441,10 @@ Remove the bounding box from a person in a photo
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Person not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The NSID passed was not a valid user id.
-</p>
-</li>
-<li>2: <em>Photo not found</em>
-
-<p>
-The photo id passed was not a valid photo id.
-</p>
-</li>
-<li>3: <em>User cannot edit that person in that photo</em>
-
-<p>
-The calling user is neither the person depicted in the photo nor the person
-who added the bounding box.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -587,8 +518,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000167-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000167-source">
+            onclick="toggleCode('M000174-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000174-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -603,14 +534,14 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000168" class="method-detail">
-        <a name="M000168"></a>
+      <div id="method-M000175" class="method-detail">
+        <a name="M000175"></a>
 
         <div class="method-heading">
 
-          <a href="#M000168" class="method-signature">
+          <a href="#M000175" class="method-signature">
 
-          <span class="method-name">editCoords</span><span class="method-args">(:photo_id =&gt; 'photo_id',:user_id =&gt; 'user_id',:person_x =&gt; 'person_x',:person_y =&gt; 'person_y',:person_w =&gt; 'person_w',:person_h =&gt; 'person_h')</span>
+          <span class="method-name">editCoords</span><span class="method-args">(:photo_id =&gt; 'photo_id',:user_id =&gt; 'user_id',:person_x =&gt; 'person_x',:person_y =&gt; 'person_y',:person_w =&gt; 'person_w',:person_h =&gt; 'person_h',:email =&gt; 'email')</span>
 
           </a>
 
@@ -648,41 +579,18 @@ Edit the bounding box of an existing person on a photo.
 <dt>person_h <em>(required)</em> </dt><dd>The height (in pixels) of the box around the person.
 
 </dd>
+<dt>email </dt><dd>An email address for an &#8216;invited&#8217; person in a photo
+
+</dd>
 </dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Person not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The NSID passed was not a valid user id.
-</p>
-</li>
-<li>2: <em>Photo not found</em>
-
-<p>
-The photo id passed was not a valid photo id.
-</p>
-</li>
-<li>3: <em>User cannot edit that person in that photo</em>
-
-<p>
-The calling user did not originally add this person to the photo, and is
-not the person in question.
-</p>
-</li>
-<li>4: <em>Some co-ordinate paramters were blank</em>
-
-<p>
-Not all of the co-ordinate parameters (person_x, person_y, person_w,
-person_h) were passed with valid values.
-</p>
-</li>
-<li>5: <em>No co-ordinates given</em>
-
-<p>
-None of the co-ordinate parameters were valid.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -756,8 +664,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000168-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000168-source">
+            onclick="toggleCode('M000175-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000175-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -772,12 +680,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000169" class="method-detail">
-        <a name="M000169"></a>
+      <div id="method-M000176" class="method-detail">
+        <a name="M000176"></a>
 
         <div class="method-heading">
 
-          <a href="#M000169" class="method-signature">
+          <a href="#M000176" class="method-signature">
 
           <span class="method-name">getList</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
 
@@ -807,10 +715,10 @@ Get a list of people in a given photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -869,8 +777,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000169-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000169-source">
+            onclick="toggleCode('M000176-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000176-source">
 <pre>
 
 # Generated automatically from flickr api

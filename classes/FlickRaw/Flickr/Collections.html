@@ -95,9 +95,9 @@
 
       <div class="name-list">
 
-        <a href="#M000073">getInfo</a>&nbsp;&nbsp;
+        <a href="#M000074">getInfo</a>&nbsp;&nbsp;
 
-        <a href="#M000074">getTree</a>&nbsp;&nbsp;
+        <a href="#M000075">getTree</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -118,12 +118,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000073" class="method-detail">
-        <a name="M000073"></a>
+      <div id="method-M000074" class="method-detail">
+        <a name="M000074"></a>
 
         <div class="method-heading">
 
-          <a href="#M000073" class="method-signature">
+          <a href="#M000074" class="method-signature">
 
           <span class="method-name">getInfo</span><span class="method-args">(:collection_id =&gt; 'collection_id')</span>
 
@@ -154,11 +154,10 @@ by the collection owner, this may change.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Collection not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The requested collection could not be found or is not visible to the
-calling user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -247,8 +246,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000073-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000073-source">
+            onclick="toggleCode('M000074-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000074-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -263,12 +262,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000074" class="method-detail">
-        <a name="M000074"></a>
+      <div id="method-M000075" class="method-detail">
+        <a name="M000075"></a>
 
         <div class="method-heading">
 
-          <a href="#M000074" class="method-signature">
+          <a href="#M000075" class="method-signature">
 
           <span class="method-name">getTree</span><span class="method-args">(:collection_id =&gt; 'collection_id',:user_id =&gt; 'user_id')</span>
 
@@ -303,16 +302,10 @@ calling user.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The specified user could not be found.
-</p>
-</li>
-<li>2: <em>Collection not found</em>
-
-<p>
-The specified collection does not exist.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -373,8 +366,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000074-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000074-source">
+            onclick="toggleCode('M000075-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000075-source">
 <pre>
 
 # Generated automatically from flickr api

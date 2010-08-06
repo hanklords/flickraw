@@ -95,15 +95,15 @@
 
       <div class="name-list">
 
-        <a href="#M000146">addComment</a>&nbsp;&nbsp;
+        <a href="#M000153">addComment</a>&nbsp;&nbsp;
 
-        <a href="#M000147">deleteComment</a>&nbsp;&nbsp;
+        <a href="#M000154">deleteComment</a>&nbsp;&nbsp;
 
-        <a href="#M000148">editComment</a>&nbsp;&nbsp;
+        <a href="#M000155">editComment</a>&nbsp;&nbsp;
 
-        <a href="#M000149">getList</a>&nbsp;&nbsp;
+        <a href="#M000156">getList</a>&nbsp;&nbsp;
 
-        <a href="#M000150">getRecentForContacts</a>&nbsp;&nbsp;
+        <a href="#M000157">getRecentForContacts</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -124,12 +124,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000146" class="method-detail">
-        <a name="M000146"></a>
+      <div id="method-M000153" class="method-detail">
+        <a name="M000153"></a>
 
         <div class="method-heading">
 
-          <a href="#M000146" class="method-signature">
+          <a href="#M000153" class="method-signature">
 
           <span class="method-name">addComment</span><span class="method-args">(:photo_id =&gt; 'photo_id',:comment_text =&gt; 'comment_text')</span>
 
@@ -162,23 +162,10 @@ Add comment to a photo as the currently authenticated user.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id
-</p>
-</li>
-<li>8: <em>Blank comment.</em>
-
-<p>
-Comment text can not be blank
-</p>
-</li>
-<li>9: <em>User is posting comments too fast.</em>
-
-<p>
-The user has reached the limit for number of comments posted during a
-specific time period. Wait a bit and try again.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -258,8 +245,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000146-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000146-source">
+            onclick="toggleCode('M000153-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000153-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -274,12 +261,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000147" class="method-detail">
-        <a name="M000147"></a>
+      <div id="method-M000154" class="method-detail">
+        <a name="M000154"></a>
 
         <div class="method-heading">
 
-          <a href="#M000147" class="method-signature">
+          <a href="#M000154" class="method-signature">
 
           <span class="method-name">deleteComment</span><span class="method-args">(:comment_id =&gt; 'comment_id')</span>
 
@@ -309,16 +296,10 @@ Delete a comment as the currently authenticated user.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The requested comment is against a photo which no longer exists.
-</p>
-</li>
-<li>2: <em>Comment not found.</em>
-
-<p>
-The comment id passed was not a valid comment id
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -392,8 +373,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000147-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000147-source">
+            onclick="toggleCode('M000154-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000154-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -408,12 +389,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000148" class="method-detail">
-        <a name="M000148"></a>
+      <div id="method-M000155" class="method-detail">
+        <a name="M000155"></a>
 
         <div class="method-heading">
 
-          <a href="#M000148" class="method-signature">
+          <a href="#M000155" class="method-signature">
 
           <span class="method-name">editComment</span><span class="method-args">(:comment_id =&gt; 'comment_id',:comment_text =&gt; 'comment_text')</span>
 
@@ -446,22 +427,10 @@ Edit the text of a comment as the currently authenticated user.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The requested comment is against a photo which no longer exists.
-</p>
-</li>
-<li>2: <em>Comment not found.</em>
-
-<p>
-The comment id passed was not a valid comment id
-</p>
-</li>
-<li>8: <em>Blank comment.</em>
-
-<p>
-Comment text can not be blank
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -535,8 +504,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000148-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000148-source">
+            onclick="toggleCode('M000155-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000155-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -551,12 +520,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000149" class="method-detail">
-        <a name="M000149"></a>
+      <div id="method-M000156" class="method-detail">
+        <a name="M000156"></a>
 
         <div class="method-heading">
 
-          <a href="#M000149" class="method-signature">
+          <a href="#M000156" class="method-signature">
 
           <span class="method-name">getList</span><span class="method-args">(:photo_id =&gt; 'photo_id',:min_comment_date =&gt; 'min_comment_date',:max_comment_date =&gt; 'max_comment_date')</span>
 
@@ -594,11 +563,10 @@ unix timestamp.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was either invalid or was for a photo not viewable by the
-calling user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -658,8 +626,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000149-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000149-source">
+            onclick="toggleCode('M000156-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000156-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -674,12 +642,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000150" class="method-detail">
-        <a name="M000150"></a>
+      <div id="method-M000157" class="method-detail">
+        <a name="M000157"></a>
 
         <div class="method-heading">
 
-          <a href="#M000150" class="method-signature">
+          <a href="#M000157" class="method-signature">
 
           <span class="method-name">getRecentForContacts</span><span class="method-args">(:date_lastcomment =&gt; 'date_lastcomment',:contacts_filter =&gt; 'contacts_filter',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -737,6 +705,12 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -808,8 +782,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000150-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000150-source">
+            onclick="toggleCode('M000157-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000157-source">
 <pre>
 
 # Generated automatically from flickr api

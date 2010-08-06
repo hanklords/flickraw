@@ -95,13 +95,13 @@
 
       <div class="name-list">
 
-        <a href="#M000184">addComment</a>&nbsp;&nbsp;
+        <a href="#M000194">addComment</a>&nbsp;&nbsp;
 
-        <a href="#M000185">deleteComment</a>&nbsp;&nbsp;
+        <a href="#M000195">deleteComment</a>&nbsp;&nbsp;
 
-        <a href="#M000186">editComment</a>&nbsp;&nbsp;
+        <a href="#M000196">editComment</a>&nbsp;&nbsp;
 
-        <a href="#M000187">getList</a>&nbsp;&nbsp;
+        <a href="#M000197">getList</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -122,12 +122,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000184" class="method-detail">
-        <a name="M000184"></a>
+      <div id="method-M000194" class="method-detail">
+        <a name="M000194"></a>
 
         <div class="method-heading">
 
-          <a href="#M000184" class="method-signature">
+          <a href="#M000194" class="method-signature">
 
           <span class="method-name">addComment</span><span class="method-args">(:photoset_id =&gt; 'photoset_id',:comment_text =&gt; 'comment_text')</span>
 
@@ -160,17 +160,10 @@ Add a comment to a photoset.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photoset not found</em>
-
-</li>
-<li>8: <em>Blank comment</em>
-
-</li>
-<li>9: <em>User is posting comments too fast.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user has reached the limit for number of comments posted during a
-specific time period. Wait a bit and try again.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -250,8 +243,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000184-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000184-source">
+            onclick="toggleCode('M000194-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000194-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -266,12 +259,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000185" class="method-detail">
-        <a name="M000185"></a>
+      <div id="method-M000195" class="method-detail">
+        <a name="M000195"></a>
 
         <div class="method-heading">
 
-          <a href="#M000185" class="method-signature">
+          <a href="#M000195" class="method-signature">
 
           <span class="method-name">deleteComment</span><span class="method-args">(:comment_id =&gt; 'comment_id')</span>
 
@@ -301,10 +294,10 @@ Delete a photoset comment as the currently authenticated user.
 <b>Error codes</b>
 </p>
 <ul>
-<li>2: <em>Comment not found.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The comment id passed was not a valid comment id
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -378,8 +371,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000185-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000185-source">
+            onclick="toggleCode('M000195-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000195-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -394,12 +387,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000186" class="method-detail">
-        <a name="M000186"></a>
+      <div id="method-M000196" class="method-detail">
+        <a name="M000196"></a>
 
         <div class="method-heading">
 
-          <a href="#M000186" class="method-signature">
+          <a href="#M000196" class="method-signature">
 
           <span class="method-name">editComment</span><span class="method-args">(:comment_id =&gt; 'comment_id',:comment_text =&gt; 'comment_text')</span>
 
@@ -432,16 +425,10 @@ Edit the text of a comment as the currently authenticated user.
 <b>Error codes</b>
 </p>
 <ul>
-<li>2: <em>Comment not found.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The comment id passed was not a valid comment id.
-</p>
-</li>
-<li>8: <em>Blank comment.</em>
-
-<p>
-Comment text can&#8217;t be blank.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -515,8 +502,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000186-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000186-source">
+            onclick="toggleCode('M000196-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000196-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -531,12 +518,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000187" class="method-detail">
-        <a name="M000187"></a>
+      <div id="method-M000197" class="method-detail">
+        <a name="M000197"></a>
 
         <div class="method-heading">
 
-          <a href="#M000187" class="method-signature">
+          <a href="#M000197" class="method-signature">
 
           <span class="method-name">getList</span><span class="method-args">(:photoset_id =&gt; 'photoset_id')</span>
 
@@ -566,10 +553,10 @@ Returns the comments for a photoset.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photoset not found.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photoset id was invalid.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -629,8 +616,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000187-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000187-source">
+            onclick="toggleCode('M000197-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000197-source">
 <pre>
 
 # Generated automatically from flickr api

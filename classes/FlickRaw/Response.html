@@ -91,13 +91,13 @@
 
       <div class="name-list">
 
-        <a href="#M000024">[]</a>&nbsp;&nbsp;
+        <a href="#M000025">[]</a>&nbsp;&nbsp;
 
-        <a href="#M000026">inspect</a>&nbsp;&nbsp;
+        <a href="#M000027">inspect</a>&nbsp;&nbsp;
 
-        <a href="#M000027">to_hash</a>&nbsp;&nbsp;
+        <a href="#M000028">to_hash</a>&nbsp;&nbsp;
 
-        <a href="#M000025">to_s</a>&nbsp;&nbsp;
+        <a href="#M000026">to_s</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -136,12 +136,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000024" class="method-detail">
-        <a name="M000024"></a>
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
 
         <div class="method-heading">
 
-          <a href="#M000024" class="method-signature">
+          <a href="#M000025" class="method-signature">
 
           <span class="method-name">[]</span><span class="method-args">(k)</span>
 
@@ -152,39 +152,11 @@
         <div class="method-description">
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000024-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000024-source">
+            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000025-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 74</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 73</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">k</span>); <span class="ruby-ivar">@h</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword kw">end</span>
-</pre>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div id="method-M000026" class="method-detail">
-        <a name="M000026"></a>
-
-        <div class="method-heading">
-
-          <a href="#M000026" class="method-signature">
-
-          <span class="method-name">inspect</span><span class="method-args">()</span>
-
-          </a>
-
-        </div>
-
-        <div class="method-description">
-
-          <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000026-source">
-<pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 76</span>
-    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>; <span class="ruby-ivar">@h</span>.<span class="ruby-identifier">inspect</span> <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
 
@@ -199,7 +171,7 @@
 
           <a href="#M000027" class="method-signature">
 
-          <span class="method-name">to_hash</span><span class="method-args">()</span>
+          <span class="method-name">inspect</span><span class="method-args">()</span>
 
           </a>
 
@@ -211,7 +183,35 @@
             onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
           <div class="method-source-code" id="M000027-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 77</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 75</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">inspect</span>; <span class="ruby-ivar">@h</span>.<span class="ruby-identifier">inspect</span> <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+
+          <a href="#M000028" class="method-signature">
+
+          <span class="method-name">to_hash</span><span class="method-args">()</span>
+
+          </a>
+
+        </div>
+
+        <div class="method-description">
+
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
+<pre>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 76</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_hash</span>; <span class="ruby-ivar">@h</span> <span class="ruby-keyword kw">end</span>
 </pre>
           </div>
@@ -220,12 +220,12 @@
       </div>
 
 
-      <div id="method-M000025" class="method-detail">
-        <a name="M000025"></a>
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
 
         <div class="method-heading">
 
-          <a href="#M000025" class="method-signature">
+          <a href="#M000026" class="method-signature">
 
           <span class="method-name">to_s</span><span class="method-args">()</span>
 
@@ -236,10 +236,10 @@
         <div class="method-description">
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000025-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000025-source">
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
 <pre>
-<span class="ruby-comment cmt"># File lib/flickraw.rb, line 75</span>
+<span class="ruby-comment cmt"># File lib/flickraw.rb, line 74</span>
     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_s</span>; <span class="ruby-ivar">@h</span>[<span class="ruby-value str">&quot;_content&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword kw">super</span> <span class="ruby-keyword kw">end</span>
 </pre>
           </div>

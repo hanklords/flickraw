@@ -95,15 +95,15 @@
 
       <div class="name-list">
 
-        <a href="#M000092">add</a>&nbsp;&nbsp;
+        <a href="#M000099">add</a>&nbsp;&nbsp;
 
-        <a href="#M000093">getContext</a>&nbsp;&nbsp;
+        <a href="#M000100">getContext</a>&nbsp;&nbsp;
 
-        <a href="#M000094">getGroups</a>&nbsp;&nbsp;
+        <a href="#M000101">getGroups</a>&nbsp;&nbsp;
 
-        <a href="#M000095">getPhotos</a>&nbsp;&nbsp;
+        <a href="#M000102">getPhotos</a>&nbsp;&nbsp;
 
-        <a href="#M000096">remove</a>&nbsp;&nbsp;
+        <a href="#M000103">remove</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -124,12 +124,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000092" class="method-detail">
-        <a name="M000092"></a>
+      <div id="method-M000099" class="method-detail">
+        <a name="M000099"></a>
 
         <div class="method-heading">
 
-          <a href="#M000092" class="method-signature">
+          <a href="#M000099" class="method-signature">
 
           <span class="method-name">add</span><span class="method-args">(:photo_id =&gt; 'photo_id',:group_id =&gt; 'group_id')</span>
 
@@ -163,50 +163,10 @@ calling user.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not the id of a photo owned by the caling user.
-</p>
-</li>
-<li>2: <em>Group not found</em>
-
-<p>
-The group id passed was not a valid id for a group the user is a member of.
-</p>
-</li>
-<li>3: <em>Photo already in pool</em>
-
-<p>
-The specified photo is already in the pool for the specified group.
-</p>
-</li>
-<li>4: <em>Photo in maximum number of pools</em>
-
-<p>
-The photo has already been added to the maximum allowed number of pools.
-</p>
-</li>
-<li>5: <em>Photo limit reached</em>
-
-<p>
-The user has already added the maximum amount of allowed photos to the
-pool.
-</p>
-</li>
-<li>6: <em>Your Photo has been added to the Pending Queue for this Pool</em>
-
-<p>
-The pool is moderated, and the photo has been added to the Pending Queue.
-If it is approved by a group administrator, it will be added to the pool.
-</p>
-</li>
-<li>7: <em>Your Photo has already been added to the Pending Queue for this
-Pool</em>
-
-<p>
-The pool is moderated, and the photo has already been added to the Pending
-Queue.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -280,8 +240,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000092-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000092-source">
+            onclick="toggleCode('M000099-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000099-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -296,14 +256,14 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000093" class="method-detail">
-        <a name="M000093"></a>
+      <div id="method-M000100" class="method-detail">
+        <a name="M000100"></a>
 
         <div class="method-heading">
 
-          <a href="#M000093" class="method-signature">
+          <a href="#M000100" class="method-signature">
 
-          <span class="method-name">getContext</span><span class="method-args">(:photo_id =&gt; 'photo_id',:group_id =&gt; 'group_id')</span>
+          <span class="method-name">getContext</span><span class="method-args">(:photo_id =&gt; 'photo_id',:group_id =&gt; 'group_id',:num_prev =&gt; 'num_prev',:num_next =&gt; 'num_next')</span>
 
           </a>
 
@@ -332,27 +292,16 @@ for.
 </dd>
 </dl>
 <p>
+[num_prev ] [num_next ]
+</p>
+<p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id, or was the id of a photo that
-the calling user does not have permission to view.
-</p>
-</li>
-<li>2: <em>Photo not in pool</em>
-
-<p>
-The specified photo is not in the specified group&#8217;s pool.
-</p>
-</li>
-<li>3: <em>Group not found</em>
-
-<p>
-The specified group nsid was not a valid group or the caller does not have
-permission to view the group&#8217;s pool.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -410,8 +359,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000093-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000093-source">
+            onclick="toggleCode('M000100-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000100-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -426,12 +375,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000094" class="method-detail">
-        <a name="M000094"></a>
+      <div id="method-M000101" class="method-detail">
+        <a name="M000101"></a>
 
         <div class="method-heading">
 
-          <a href="#M000094" class="method-signature">
+          <a href="#M000101" class="method-signature">
 
           <span class="method-name">getGroups</span><span class="method-args">(:page =&gt; 'page',:per_page =&gt; 'per_page')</span>
 
@@ -466,6 +415,12 @@ defaults to 400. The maximum allowed value is 400.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -550,8 +505,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000094-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000094-source">
+            onclick="toggleCode('M000101-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000101-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -566,14 +521,14 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000095" class="method-detail">
-        <a name="M000095"></a>
+      <div id="method-M000102" class="method-detail">
+        <a name="M000102"></a>
 
         <div class="method-heading">
 
-          <a href="#M000095" class="method-signature">
+          <a href="#M000102" class="method-signature">
 
-          <span class="method-name">getPhotos</span><span class="method-args">(:group_id =&gt; 'group_id',:tags =&gt; 'tags',:user_id =&gt; 'user_id',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          <span class="method-name">getPhotos</span><span class="method-args">(:group_id =&gt; 'group_id',:tags =&gt; 'tags',:user_id =&gt; 'user_id',:jump_to =&gt; 'jump_to',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
           </a>
 
@@ -605,6 +560,11 @@ supported.
 those photos that the user has contributed to the group pool.
 
 </dd>
+</dl>
+<p>
+[jump_to ]
+</p>
+<dl>
 <dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: <tt>description</tt>,
 <tt>license</tt>, <tt>date_upload</tt>, <tt>date_taken</tt>,
@@ -628,23 +588,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Group not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The group id passed was not a valid group id.
-</p>
-</li>
-<li>2: <em>You don&#8217;t have permission to view this pool</em>
-
-<p>
-The logged in user (if any) does not have permission to view the pool for
-this group.
-</p>
-</li>
-<li>3: <em>Unknown user</em>
-
-<p>
-The user specified by user_id does not exist.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -704,8 +651,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000095-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000095-source">
+            onclick="toggleCode('M000102-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000102-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -720,12 +667,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000096" class="method-detail">
-        <a name="M000096"></a>
+      <div id="method-M000103" class="method-detail">
+        <a name="M000103"></a>
 
         <div class="method-heading">
 
-          <a href="#M000096" class="method-signature">
+          <a href="#M000103" class="method-signature">
 
           <span class="method-name">remove</span><span class="method-args">(:photo_id =&gt; 'photo_id',:group_id =&gt; 'group_id')</span>
 
@@ -760,23 +707,10 @@ the group.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Group not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The group_id passed did not refer to a valid group.
-</p>
-</li>
-<li>2: <em>Photo not in pool</em>
-
-<p>
-The photo_id passed was not a valid id of a photo in the group pool.
-</p>
-</li>
-<li>3: <em>Insufficient permission to remove photo</em>
-
-<p>
-The calling user doesn&#8217;t own the photo and is not an administrator of
-the group, so may not remove the photo from the pool.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -850,8 +784,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000096-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000096-source">
+            onclick="toggleCode('M000103-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000103-source">
 <pre>
 
 # Generated automatically from flickr api

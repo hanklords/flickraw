@@ -95,15 +95,15 @@
 
       <div class="name-list">
 
-        <a href="#M000088">browse</a>&nbsp;&nbsp;
+        <a href="#M000095">browse</a>&nbsp;&nbsp;
 
-        <a href="#M000089">getInfo</a>&nbsp;&nbsp;
+        <a href="#M000096">getInfo</a>&nbsp;&nbsp;
 
-        <a href="#M000086">members</a>&nbsp;&nbsp;
+        <a href="#M000093">members</a>&nbsp;&nbsp;
 
-        <a href="#M000087">pools</a>&nbsp;&nbsp;
+        <a href="#M000094">pools</a>&nbsp;&nbsp;
 
-        <a href="#M000090">search</a>&nbsp;&nbsp;
+        <a href="#M000097">search</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -132,12 +132,12 @@ Class <a href="Groups/Pools.html" class="link">FlickRaw::Flickr::Groups::Pools</
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000088" class="method-detail">
-        <a name="M000088"></a>
+      <div id="method-M000095" class="method-detail">
+        <a name="M000095"></a>
 
         <div class="method-heading">
 
-          <a href="#M000088" class="method-signature">
+          <a href="#M000095" class="method-signature">
 
           <span class="method-name">browse</span><span class="method-args">(:cat_id =&gt; 'cat_id')</span>
 
@@ -168,10 +168,10 @@ specified, it defaults to zero, the root of the category tree.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Category not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The value passed for cat_id was not a valid category id.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -258,8 +258,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000088-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000088-source">
+            onclick="toggleCode('M000095-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000095-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -274,12 +274,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000089" class="method-detail">
-        <a name="M000089"></a>
+      <div id="method-M000096" class="method-detail">
+        <a name="M000096"></a>
 
         <div class="method-heading">
 
-          <a href="#M000089" class="method-signature">
+          <a href="#M000096" class="method-signature">
 
           <span class="method-name">getInfo</span><span class="method-args">(:group_id =&gt; 'group_id',:lang =&gt; 'lang')</span>
 
@@ -317,12 +317,10 @@ feeds</a>.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Group not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The group NSID passed did not refer to a group that the calling user can
-see - either an invalid group is or a group that can&#8217;t be seen by the
-calling user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -383,8 +381,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000089-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000089-source">
+            onclick="toggleCode('M000096-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000096-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -399,8 +397,8 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000086" class="method-detail">
-        <a name="M000086"></a>
+      <div id="method-M000093" class="method-detail">
+        <a name="M000093"></a>
 
         <div class="method-heading">
 
@@ -418,8 +416,8 @@ Returns a <a href="Groups/Members.html">Members</a> object.
       </div>
 
 
-      <div id="method-M000087" class="method-detail">
-        <a name="M000087"></a>
+      <div id="method-M000094" class="method-detail">
+        <a name="M000094"></a>
 
         <div class="method-heading">
 
@@ -437,12 +435,12 @@ Returns a <a href="Groups/Pools.html">Pools</a> object.
       </div>
 
 
-      <div id="method-M000090" class="method-detail">
-        <a name="M000090"></a>
+      <div id="method-M000097" class="method-detail">
+        <a name="M000097"></a>
 
         <div class="method-heading">
 
-          <a href="#M000090" class="method-signature">
+          <a href="#M000097" class="method-signature">
 
           <span class="method-name">search</span><span class="method-args">(:text =&gt; 'text',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -481,10 +479,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>No text passed</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The required text argument was ommited.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -550,8 +548,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000090-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000090-source">
+            onclick="toggleCode('M000097-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000097-source">
 <pre>
 
 # Generated automatically from flickr api

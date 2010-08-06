@@ -95,71 +95,71 @@
 
       <div class="name-list">
 
-        <a href="#M000120">addTags</a>&nbsp;&nbsp;
+        <a href="#M000127">addTags</a>&nbsp;&nbsp;
 
-        <a href="#M000113">comments</a>&nbsp;&nbsp;
+        <a href="#M000120">comments</a>&nbsp;&nbsp;
 
-        <a href="#M000121">delete</a>&nbsp;&nbsp;
+        <a href="#M000128">delete</a>&nbsp;&nbsp;
 
-        <a href="#M000114">geo</a>&nbsp;&nbsp;
+        <a href="#M000121">geo</a>&nbsp;&nbsp;
 
-        <a href="#M000122">getAllContexts</a>&nbsp;&nbsp;
+        <a href="#M000129">getAllContexts</a>&nbsp;&nbsp;
 
-        <a href="#M000123">getContactsPhotos</a>&nbsp;&nbsp;
+        <a href="#M000130">getContactsPhotos</a>&nbsp;&nbsp;
 
-        <a href="#M000124">getContactsPublicPhotos</a>&nbsp;&nbsp;
+        <a href="#M000131">getContactsPublicPhotos</a>&nbsp;&nbsp;
 
-        <a href="#M000125">getContext</a>&nbsp;&nbsp;
+        <a href="#M000132">getContext</a>&nbsp;&nbsp;
 
-        <a href="#M000126">getCounts</a>&nbsp;&nbsp;
+        <a href="#M000133">getCounts</a>&nbsp;&nbsp;
 
-        <a href="#M000127">getExif</a>&nbsp;&nbsp;
+        <a href="#M000134">getExif</a>&nbsp;&nbsp;
 
-        <a href="#M000128">getFavorites</a>&nbsp;&nbsp;
+        <a href="#M000135">getFavorites</a>&nbsp;&nbsp;
 
-        <a href="#M000129">getInfo</a>&nbsp;&nbsp;
+        <a href="#M000136">getInfo</a>&nbsp;&nbsp;
 
-        <a href="#M000130">getNotInSet</a>&nbsp;&nbsp;
+        <a href="#M000137">getNotInSet</a>&nbsp;&nbsp;
 
-        <a href="#M000131">getPerms</a>&nbsp;&nbsp;
+        <a href="#M000138">getPerms</a>&nbsp;&nbsp;
 
-        <a href="#M000132">getRecent</a>&nbsp;&nbsp;
+        <a href="#M000139">getRecent</a>&nbsp;&nbsp;
 
-        <a href="#M000133">getSizes</a>&nbsp;&nbsp;
+        <a href="#M000140">getSizes</a>&nbsp;&nbsp;
 
-        <a href="#M000134">getUntagged</a>&nbsp;&nbsp;
+        <a href="#M000141">getUntagged</a>&nbsp;&nbsp;
 
-        <a href="#M000135">getWithGeoData</a>&nbsp;&nbsp;
+        <a href="#M000142">getWithGeoData</a>&nbsp;&nbsp;
 
-        <a href="#M000136">getWithoutGeoData</a>&nbsp;&nbsp;
+        <a href="#M000143">getWithoutGeoData</a>&nbsp;&nbsp;
 
-        <a href="#M000115">licenses</a>&nbsp;&nbsp;
+        <a href="#M000122">licenses</a>&nbsp;&nbsp;
 
-        <a href="#M000116">notes</a>&nbsp;&nbsp;
+        <a href="#M000123">notes</a>&nbsp;&nbsp;
 
-        <a href="#M000117">people</a>&nbsp;&nbsp;
+        <a href="#M000124">people</a>&nbsp;&nbsp;
 
-        <a href="#M000137">recentlyUpdated</a>&nbsp;&nbsp;
+        <a href="#M000144">recentlyUpdated</a>&nbsp;&nbsp;
 
-        <a href="#M000138">removeTag</a>&nbsp;&nbsp;
+        <a href="#M000145">removeTag</a>&nbsp;&nbsp;
 
-        <a href="#M000139">search</a>&nbsp;&nbsp;
+        <a href="#M000146">search</a>&nbsp;&nbsp;
 
-        <a href="#M000140">setContentType</a>&nbsp;&nbsp;
+        <a href="#M000147">setContentType</a>&nbsp;&nbsp;
 
-        <a href="#M000141">setDates</a>&nbsp;&nbsp;
+        <a href="#M000148">setDates</a>&nbsp;&nbsp;
 
-        <a href="#M000142">setMeta</a>&nbsp;&nbsp;
+        <a href="#M000149">setMeta</a>&nbsp;&nbsp;
 
-        <a href="#M000143">setPerms</a>&nbsp;&nbsp;
+        <a href="#M000150">setPerms</a>&nbsp;&nbsp;
 
-        <a href="#M000144">setSafetyLevel</a>&nbsp;&nbsp;
+        <a href="#M000151">setSafetyLevel</a>&nbsp;&nbsp;
 
-        <a href="#M000145">setTags</a>&nbsp;&nbsp;
+        <a href="#M000152">setTags</a>&nbsp;&nbsp;
 
-        <a href="#M000118">transform</a>&nbsp;&nbsp;
+        <a href="#M000125">transform</a>&nbsp;&nbsp;
 
-        <a href="#M000119">upload</a>&nbsp;&nbsp;
+        <a href="#M000126">upload</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -193,12 +193,12 @@ Class <a href="Photos/Upload.html" class="link">FlickRaw::Flickr::Photos::Upload
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000120" class="method-detail">
-        <a name="M000120"></a>
+      <div id="method-M000127" class="method-detail">
+        <a name="M000127"></a>
 
         <div class="method-heading">
 
-          <a href="#M000120" class="method-signature">
+          <a href="#M000127" class="method-signature">
 
           <span class="method-name">addTags</span><span class="method-args">(:photo_id =&gt; 'photo_id',:tags =&gt; 'tags')</span>
 
@@ -231,22 +231,10 @@ Add tags to a photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not the id of a photo that the calling user can add
-tags to. It could be an invalid id, or the user may not have permission to
-add tags to it.
-</p>
-</li>
-<li>2: <em>Maximum number of tags reached</em>
-
-<p>
-The maximum number of tags for the photo has been reached - no more tags
-can be added. If the current count is less than the maximum, but adding all
-of the tags for this request would go over the limit, the whole request is
-ignored. I.E. when you get this message, none of the requested tags have
-been added.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -320,8 +308,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000120-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000120-source">
+            onclick="toggleCode('M000127-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000127-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -336,8 +324,8 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000113" class="method-detail">
-        <a name="M000113"></a>
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
 
         <div class="method-heading">
 
@@ -355,12 +343,12 @@ Returns a <a href="Photos/Comments.html">Comments</a> object.
       </div>
 
 
-      <div id="method-M000121" class="method-detail">
-        <a name="M000121"></a>
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
 
         <div class="method-heading">
 
-          <a href="#M000121" class="method-signature">
+          <a href="#M000128" class="method-signature">
 
           <span class="method-name">delete</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
 
@@ -390,10 +378,10 @@ Delete a photo from flickr.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was not the id of a photo belonging to the calling user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -467,8 +455,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000121-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000121-source">
+            onclick="toggleCode('M000128-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000128-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -483,8 +471,8 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000114" class="method-detail">
-        <a name="M000114"></a>
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
 
         <div class="method-heading">
 
@@ -502,12 +490,12 @@ Returns a <a href="Photos/Geo.html">Geo</a> object.
       </div>
 
 
-      <div id="method-M000122" class="method-detail">
-        <a name="M000122"></a>
+      <div id="method-M000129" class="method-detail">
+        <a name="M000129"></a>
 
         <div class="method-heading">
 
-          <a href="#M000122" class="method-signature">
+          <a href="#M000129" class="method-signature">
 
           <span class="method-name">getAllContexts</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
 
@@ -537,10 +525,10 @@ Returns all visible sets and pools the photo belongs to.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not the id of a valid photo.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -596,8 +584,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000122-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000122-source">
+            onclick="toggleCode('M000129-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000129-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -612,12 +600,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000123" class="method-detail">
-        <a name="M000123"></a>
+      <div id="method-M000130" class="method-detail">
+        <a name="M000130"></a>
 
         <div class="method-heading">
 
-          <a href="#M000123" class="method-signature">
+          <a href="#M000130" class="method-signature">
 
           <span class="method-name">getContactsPhotos</span><span class="method-args">(:count =&gt; 'count',:just_friends =&gt; 'just_friends',:single_photo =&gt; 'single_photo',:include_self =&gt; 'include_self',:extras =&gt; 'extras')</span>
 
@@ -655,8 +643,10 @@ chronological order.
 
 </dd>
 <dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
-record. Currently supported fields are: license, date_upload, date_taken,
-owner_name, icon_server, original_format, last_update.
+record. Currently supported fields include: license, date_upload,
+date_taken, owner_name, icon_server, original_format, last_update. For more
+information see extras under <a
+href=&#8220;/services/api/flickr.photos.search.html&#8220;>flickr.photos.search</a>.
 
 </dd>
 </dl>
@@ -664,6 +654,12 @@ owner_name, icon_server, original_format, last_update.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -751,8 +747,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000123-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000123-source">
+            onclick="toggleCode('M000130-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000130-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -767,12 +763,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000124" class="method-detail">
-        <a name="M000124"></a>
+      <div id="method-M000131" class="method-detail">
+        <a name="M000131"></a>
 
         <div class="method-heading">
 
-          <a href="#M000124" class="method-signature">
+          <a href="#M000131" class="method-signature">
 
           <span class="method-name">getContactsPublicPhotos</span><span class="method-args">(:user_id =&gt; 'user_id',:count =&gt; 'count',:just_friends =&gt; 'just_friends',:single_photo =&gt; 'single_photo',:include_self =&gt; 'include_self',:extras =&gt; 'extras')</span>
 
@@ -822,10 +818,10 @@ owner_name, icon_server, original_format, last_update.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user NSID passed was not a valid user NSID.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -890,8 +886,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000124-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000124-source">
+            onclick="toggleCode('M000131-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000131-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -906,14 +902,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000125" class="method-detail">
-        <a name="M000125"></a>
+      <div id="method-M000132" class="method-detail">
+        <a name="M000132"></a>
 
         <div class="method-heading">
 
-          <a href="#M000125" class="method-signature">
+          <a href="#M000132" class="method-signature">
 
-          <span class="method-name">getContext</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
+          <span class="method-name">getContext</span><span class="method-args">(:photo_id =&gt; 'photo_id',:num_prev =&gt; 'num_prev',:num_next =&gt; 'num_next',:extras =&gt; 'extras',:order_by =&gt; 'order_by')</span>
 
           </a>
 
@@ -938,14 +934,29 @@ Returns next and previous photos for a photo in a photostream.
 </dd>
 </dl>
 <p>
+[num_prev ] [num_next ]
+</p>
+<dl>
+<dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
+record. Currently supported fields are: <tt>description, license,
+date_upload, date_taken, owner_name, icon_server, original_format,
+last_update, geo, tags, machine_tags, o_dims, views, media, path_alias,
+url_sq, url_t, url_s, url_m, url_z, url_l, url_o</tt>
+
+</dd>
+<dt>order_by </dt><dd>Accepts <tt>datetaken</tt> or <tt>dateposted</tt> and returns results in
+the proper order.
+
+</dd>
+</dl>
+<p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id, or was the id of a photo that
-the calling user does not have permission to view.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -1003,8 +1014,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000125-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000125-source">
+            onclick="toggleCode('M000132-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000132-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1019,12 +1030,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000126" class="method-detail">
-        <a name="M000126"></a>
+      <div id="method-M000133" class="method-detail">
+        <a name="M000133"></a>
 
         <div class="method-heading">
 
-          <a href="#M000126" class="method-signature">
+          <a href="#M000133" class="method-signature">
 
           <span class="method-name">getCounts</span><span class="method-args">(:dates =&gt; 'dates',:taken_dates =&gt; 'taken_dates')</span>
 
@@ -1059,10 +1070,10 @@ counts for. They should be specified <b>smallest first</b>.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>No dates specified</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-Neither dates nor taken_dates were specified.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1150,8 +1161,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000126-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000126-source">
+            onclick="toggleCode('M000133-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000133-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1166,12 +1177,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000127" class="method-detail">
-        <a name="M000127"></a>
+      <div id="method-M000134" class="method-detail">
+        <a name="M000134"></a>
 
         <div class="method-heading">
 
-          <a href="#M000127" class="method-signature">
+          <a href="#M000134" class="method-signature">
 
           <span class="method-name">getExif</span><span class="method-args">(:photo_id =&gt; 'photo_id',:secret =&gt; 'secret')</span>
 
@@ -1207,17 +1218,10 @@ photos by passing around the id and secret.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was either invalid or was for a photo not viewable by the
-calling user.
-</p>
-</li>
-<li>2: <em>Permission denied</em>
-
-<p>
-The owner of the photo does not want to share EXIF data.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -1284,8 +1288,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000127-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000127-source">
+            onclick="toggleCode('M000134-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000134-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1300,12 +1304,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000128" class="method-detail">
-        <a name="M000128"></a>
+      <div id="method-M000135" class="method-detail">
+        <a name="M000135"></a>
 
         <div class="method-heading">
 
-          <a href="#M000128" class="method-signature">
+          <a href="#M000135" class="method-signature">
 
           <span class="method-name">getFavorites</span><span class="method-args">(:photo_id =&gt; 'photo_id',:page =&gt; 'page',:per_page =&gt; 'per_page')</span>
 
@@ -1343,11 +1347,10 @@ defaults to 10. The maximum allowed value is 50.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The specified photo does not exist, or the calling user does not have
-permission to view it.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -1414,8 +1417,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000128-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000128-source">
+            onclick="toggleCode('M000135-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000135-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1430,14 +1433,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000129" class="method-detail">
-        <a name="M000129"></a>
+      <div id="method-M000136" class="method-detail">
+        <a name="M000136"></a>
 
         <div class="method-heading">
 
-          <a href="#M000129" class="method-signature">
+          <a href="#M000136" class="method-signature">
 
-          <span class="method-name">getInfo</span><span class="method-args">(:photo_id =&gt; 'photo_id',:secret =&gt; 'secret')</span>
+          <span class="method-name">getInfo</span><span class="method-args">(:photo_id =&gt; 'photo_id',:secret =&gt; 'secret',:humandates =&gt; 'humandates',:privacy_filter =&gt; 'privacy_filter',:get_contexts =&gt; 'get_contexts')</span>
 
           </a>
 
@@ -1468,14 +1471,16 @@ photos by passing around the id and secret.
 </dd>
 </dl>
 <p>
+[humandates ] [privacy_filter ] [get_contexts ]
+</p>
+<p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was either invalid or was for a photo not viewable by the
-calling user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -1555,8 +1560,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000129-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000129-source">
+            onclick="toggleCode('M000136-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000136-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1571,14 +1576,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000130" class="method-detail">
-        <a name="M000130"></a>
+      <div id="method-M000137" class="method-detail">
+        <a name="M000137"></a>
 
         <div class="method-heading">
 
-          <a href="#M000130" class="method-signature">
+          <a href="#M000137" class="method-signature">
 
-          <span class="method-name">getNotInSet</span><span class="method-args">(:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:privacy_filter =&gt; 'privacy_filter',:media =&gt; 'media',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          <span class="method-name">getNotInSet</span><span class="method-args">(:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:privacy_filter =&gt; 'privacy_filter',:media =&gt; 'media',:min_upload_date =&gt; 'min_upload_date',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
           </a>
 
@@ -1598,24 +1603,19 @@ Returns a list of your photos that are not part of any sets.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
-greater than or equal to this value will be returned. The date should be in
-the form of a unix timestamp.
-
-</dd>
 <dt>max_upload_date </dt><dd>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
-less than or equal to this value will be returned. The date should be in
-the form of a unix timestamp.
+less than or equal to this value will be returned. The date can be in the
+form of a unix timestamp or mysql datetime.
 
 </dd>
 <dt>min_taken_date </dt><dd>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
-greater than or equal to this value will be returned. The date should be in
-the form of a mysql datetime.
+greater than or equal to this value will be returned. The date can be in
+the form of a mysql datetime or unix timestamp.
 
 </dd>
 <dt>max_taken_date </dt><dd>Maximum taken date. <a href="Photos.html">Photos</a> with an taken date
-less than or equal to this value will be returned. The date should be in
-the form of a mysql datetime.
+less than or equal to this value will be returned. The date can be in the
+form of a mysql datetime or unix timestamp.
 
 </dd>
 <dt>privacy_filter </dt><dd>Return photos only matching a certain privacy level. Valid values are:
@@ -1630,6 +1630,11 @@ friends &amp; family</li> <li>5 completely private photos</li> </ul>
 <dl>
 <dt>media </dt><dd>Filter results by media type. Possible values are <tt>all</tt> (default),
 <tt>photos</tt> or <tt>videos</tt>
+
+</dd>
+<dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
+greater than or equal to this value will be returned. The date can be in
+the form of a unix timestamp or mysql datetime.
 
 </dd>
 <dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
@@ -1655,6 +1660,12 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -1726,8 +1737,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000130-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000130-source">
+            onclick="toggleCode('M000137-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000137-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1742,12 +1753,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000131" class="method-detail">
-        <a name="M000131"></a>
+      <div id="method-M000138" class="method-detail">
+        <a name="M000138"></a>
 
         <div class="method-heading">
 
-          <a href="#M000131" class="method-signature">
+          <a href="#M000138" class="method-signature">
 
           <span class="method-name">getPerms</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
 
@@ -1777,11 +1788,10 @@ Get permissions for a photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id of a photo belonging to the
-calling user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1861,8 +1871,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000131-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000131-source">
+            onclick="toggleCode('M000138-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000138-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1877,14 +1887,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000132" class="method-detail">
-        <a name="M000132"></a>
+      <div id="method-M000139" class="method-detail">
+        <a name="M000139"></a>
 
         <div class="method-heading">
 
-          <a href="#M000132" class="method-signature">
+          <a href="#M000139" class="method-signature">
 
-          <span class="method-name">getRecent</span><span class="method-args">(:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          <span class="method-name">getRecent</span><span class="method-args">(:jump_to =&gt; 'jump_to',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
           </a>
 
@@ -1901,7 +1911,7 @@ request.
 Returns a list of the latest public photos uploaded to flickr.
 </p>
 <p>
-<b>Arguments</b>
+<b>Arguments</b> [jump_to ]
 </p>
 <dl>
 <dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
@@ -1927,8 +1937,11 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>bad value for jump_to, must be valid photo id.</em>
+<li>1: <em>Not a valid date.</em>
 
+<p>
+The date argument passed was incorrect.
+</p>
 </li>
 <li>100: <em>Invalid API Key</em>
 
@@ -1976,8 +1989,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000132-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000132-source">
+            onclick="toggleCode('M000139-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000139-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1992,12 +2005,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000133" class="method-detail">
-        <a name="M000133"></a>
+      <div id="method-M000140" class="method-detail">
+        <a name="M000140"></a>
 
         <div class="method-heading">
 
-          <a href="#M000133" class="method-signature">
+          <a href="#M000140" class="method-signature">
 
           <span class="method-name">getSizes</span><span class="method-args">(:photo_id =&gt; 'photo_id')</span>
 
@@ -2028,16 +2041,10 @@ permission to view the photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id.
-</p>
-</li>
-<li>2: <em>Permission denied</em>
-
-<p>
-The calling user does not have permission to view the photo.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -2108,8 +2115,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000133-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000133-source">
+            onclick="toggleCode('M000140-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000140-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2124,12 +2131,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000134" class="method-detail">
-        <a name="M000134"></a>
+      <div id="method-M000141" class="method-detail">
+        <a name="M000141"></a>
 
         <div class="method-heading">
 
-          <a href="#M000134" class="method-signature">
+          <a href="#M000141" class="method-signature">
 
           <span class="method-name">getUntagged</span><span class="method-args">(:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:privacy_filter =&gt; 'privacy_filter',:media =&gt; 'media',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -2152,23 +2159,23 @@ Returns a list of your photos with no tags.
 </p>
 <dl>
 <dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
-greater than or equal to this value will be returned. The date should be in
-the form of a unix timestamp.
+greater than or equal to this value will be returned. The date can be in
+the form of a unix timestamp or mysql datetime.
 
 </dd>
 <dt>max_upload_date </dt><dd>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
-less than or equal to this value will be returned. The date should be in
-the form of a unix timestamp.
+less than or equal to this value will be returned. The date can be in the
+form of a unix timestamp or mysql datetime.
 
 </dd>
 <dt>min_taken_date </dt><dd>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
 greater than or equal to this value will be returned. The date should be in
-the form of a mysql datetime.
+the form of a mysql datetime or unix timestamp.
 
 </dd>
 <dt>max_taken_date </dt><dd>Maximum taken date. <a href="Photos.html">Photos</a> with an taken date
-less than or equal to this value will be returned. The date should be in
-the form of a mysql datetime.
+less than or equal to this value will be returned. The date can be in the
+form of a mysql datetime or unix timestamp.
 
 </dd>
 <dt>privacy_filter </dt><dd>Return photos only matching a certain privacy level. Valid values are:
@@ -2208,6 +2215,12 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -2279,8 +2292,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000134-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000134-source">
+            onclick="toggleCode('M000141-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000141-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2295,12 +2308,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000135" class="method-detail">
-        <a name="M000135"></a>
+      <div id="method-M000142" class="method-detail">
+        <a name="M000142"></a>
 
         <div class="method-heading">
 
-          <a href="#M000135" class="method-signature">
+          <a href="#M000142" class="method-signature">
 
           <span class="method-name">getWithGeoData</span><span class="method-args">(:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:privacy_filter =&gt; 'privacy_filter',:sort =&gt; 'sort',:media =&gt; 'media',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -2384,6 +2397,12 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -2455,8 +2474,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000135-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000135-source">
+            onclick="toggleCode('M000142-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000142-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2471,14 +2490,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000136" class="method-detail">
-        <a name="M000136"></a>
+      <div id="method-M000143" class="method-detail">
+        <a name="M000143"></a>
 
         <div class="method-heading">
 
-          <a href="#M000136" class="method-signature">
+          <a href="#M000143" class="method-signature">
 
-          <span class="method-name">getWithoutGeoData</span><span class="method-args">(:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:privacy_filter =&gt; 'privacy_filter',:sort =&gt; 'sort',:media =&gt; 'media',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          <span class="method-name">getWithoutGeoData</span><span class="method-args">(:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:privacy_filter =&gt; 'privacy_filter',:sort =&gt; 'sort',:media =&gt; 'media',:min_upload_date =&gt; 'min_upload_date',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
           </a>
 
@@ -2498,24 +2517,19 @@ Returns a list of your photos which haven&#8217;t been geo-tagged.
 <b>Arguments</b>
 </p>
 <dl>
-<dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
-greater than or equal to this value will be returned. The date should be in
-the form of a unix timestamp.
-
-</dd>
 <dt>max_upload_date </dt><dd>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
 less than or equal to this value will be returned. The date should be in
 the form of a unix timestamp.
 
 </dd>
 <dt>min_taken_date </dt><dd>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
-greater than or equal to this value will be returned. The date should be in
-the form of a mysql datetime.
+greater than or equal to this value will be returned. The date can be in
+the form of a mysql datetime or unix timestamp.
 
 </dd>
 <dt>max_taken_date </dt><dd>Maximum taken date. <a href="Photos.html">Photos</a> with an taken date
-less than or equal to this value will be returned. The date should be in
-the form of a mysql datetime.
+less than or equal to this value will be returned. The date can be in the
+form of a mysql datetime or unix timestamp.
 
 </dd>
 <dt>privacy_filter </dt><dd>Return photos only matching a certain privacy level. Valid values are:
@@ -2535,6 +2549,11 @@ date-taken-desc, interestingness-desc, and interestingness-asc.
 </dd>
 <dt>media </dt><dd>Filter results by media type. Possible values are <tt>all</tt> (default),
 <tt>photos</tt> or <tt>videos</tt>
+
+</dd>
+<dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
+greater than or equal to this value will be returned. The date can be in
+the form of a unix timestamp or mysql datetime.
 
 </dd>
 <dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
@@ -2560,6 +2579,12 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -2631,8 +2656,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000136-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000136-source">
+            onclick="toggleCode('M000143-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000143-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2647,8 +2672,8 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000115" class="method-detail">
-        <a name="M000115"></a>
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
 
         <div class="method-heading">
 
@@ -2666,8 +2691,8 @@ Returns a <a href="Photos/Licenses.html">Licenses</a> object.
       </div>
 
 
-      <div id="method-M000116" class="method-detail">
-        <a name="M000116"></a>
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
 
         <div class="method-heading">
 
@@ -2685,8 +2710,8 @@ Returns a <a href="Photos/Notes.html">Notes</a> object.
       </div>
 
 
-      <div id="method-M000117" class="method-detail">
-        <a name="M000117"></a>
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
 
         <div class="method-heading">
 
@@ -2704,12 +2729,12 @@ Returns a <a href="Photos/People.html">People</a> object.
       </div>
 
 
-      <div id="method-M000137" class="method-detail">
-        <a name="M000137"></a>
+      <div id="method-M000144" class="method-detail">
+        <a name="M000144"></a>
 
         <div class="method-heading">
 
-          <a href="#M000137" class="method-signature">
+          <a href="#M000144" class="method-signature">
 
           <span class="method-name">recentlyUpdated</span><span class="method-args">(:min_date =&gt; 'min_date',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -2737,8 +2762,8 @@ just modified somehow :-)</p>
 <b>Arguments</b>
 </p>
 <dl>
-<dt>min_date <em>(required)</em> </dt><dd>A Unix timestamp indicating the date from which modifications should be
-compared.
+<dt>min_date <em>(required)</em> </dt><dd>A Unix timestamp or any English textual datetime description indicating the
+date from which modifications should be compared.
 
 </dd>
 <dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
@@ -2764,16 +2789,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required argument missing.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-Some or all of the required arguments were not supplied.
-</p>
-</li>
-<li>2: <em>Not a valid date</em>
-
-<p>
-The date argument did not pass validation.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -2861,8 +2880,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000137-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000137-source">
+            onclick="toggleCode('M000144-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000144-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2877,12 +2896,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000138" class="method-detail">
-        <a name="M000138"></a>
+      <div id="method-M000145" class="method-detail">
+        <a name="M000145"></a>
 
         <div class="method-heading">
 
-          <a href="#M000138" class="method-signature">
+          <a href="#M000145" class="method-signature">
 
           <span class="method-name">removeTag</span><span class="method-args">(:tag_id =&gt; 'tag_id')</span>
 
@@ -2914,11 +2933,10 @@ href=&#8220;/services/api/flickr.photos.getInfo.html&#8220;>flickr.photos.getInf
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Tag not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The calling user doesn&#8217;t have permission to delete the specified tag.
-This could mean it belongs to someone else, or doesn&#8217;t exist.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -2992,8 +3010,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000138-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000138-source">
+            onclick="toggleCode('M000145-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000145-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3008,14 +3026,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000139" class="method-detail">
-        <a name="M000139"></a>
+      <div id="method-M000146" class="method-detail">
+        <a name="M000146"></a>
 
         <div class="method-heading">
 
-          <a href="#M000139" class="method-signature">
+          <a href="#M000146" class="method-signature">
 
-          <span class="method-name">search</span><span class="method-args">(:user_id =&gt; 'user_id',:tags =&gt; 'tags',:tag_mode =&gt; 'tag_mode',:text =&gt; 'text',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:license =&gt; 'license',:sort =&gt; 'sort',:privacy_filter =&gt; 'privacy_filter',:bbox =&gt; 'bbox',:accuracy =&gt; 'accuracy',:safe_search =&gt; 'safe_search',:content_type =&gt; 'content_type',:machine_tags =&gt; 'machine_tags',:machine_tag_mode =&gt; 'machine_tag_mode',:group_id =&gt; 'group_id',:contacts =&gt; 'contacts',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:media =&gt; 'media',:has_geo =&gt; 'has_geo',:geo_context =&gt; 'geo_context',:lat =&gt; 'lat',:lon =&gt; 'lon',:radius =&gt; 'radius',:radius_units =&gt; 'radius_units',:is_commons =&gt; 'is_commons',:in_gallery =&gt; 'in_gallery',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          <span class="method-name">search</span><span class="method-args">(:user_id =&gt; 'user_id',:tags =&gt; 'tags',:tag_mode =&gt; 'tag_mode',:text =&gt; 'text',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:license =&gt; 'license',:sort =&gt; 'sort',:privacy_filter =&gt; 'privacy_filter',:bbox =&gt; 'bbox',:accuracy =&gt; 'accuracy',:safe_search =&gt; 'safe_search',:content_type =&gt; 'content_type',:machine_tags =&gt; 'machine_tags',:machine_tag_mode =&gt; 'machine_tag_mode',:group_id =&gt; 'group_id',:faves =&gt; 'faves',:camera =&gt; 'camera',:jump_to =&gt; 'jump_to',:contacts =&gt; 'contacts',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:media =&gt; 'media',:has_geo =&gt; 'has_geo',:geo_context =&gt; 'geo_context',:lat =&gt; 'lat',:lon =&gt; 'lon',:radius =&gt; 'radius',:radius_units =&gt; 'radius_units',:is_commons =&gt; 'is_commons',:in_gallery =&gt; 'in_gallery',:person_id =&gt; 'person_id',:is_getty =&gt; 'is_getty',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
           </a>
 
@@ -3046,7 +3064,8 @@ photos for authenticated calls.
 
 </dd>
 <dt>tags </dt><dd>A comma-delimited list of tags. <a href="Photos.html">Photos</a> with one
-or more of the tags listed will be returned.
+or more of the tags listed will be returned. You can exclude results that
+match a term by prepending it with a - character.
 
 </dd>
 <dt>tag_mode </dt><dd>Either &#8216;any&#8217; for an OR combination of tags, or
@@ -3055,27 +3074,28 @@ not specified.
 
 </dd>
 <dt>text </dt><dd>A free text search. <a href="Photos.html">Photos</a> who&#8217;s title,
-description or tags contain the text will be returned.
+description or tags contain the text will be returned. You can exclude
+results that match a term by prepending it with a - character.
 
 </dd>
 <dt>min_upload_date </dt><dd>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
-greater than or equal to this value will be returned. The date should be in
-the form of a unix timestamp.
+greater than or equal to this value will be returned. The date can be in
+the form of a unix timestamp or mysql datetime.
 
 </dd>
 <dt>max_upload_date </dt><dd>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
-less than or equal to this value will be returned. The date should be in
-the form of a unix timestamp.
+less than or equal to this value will be returned. The date can be in the
+form of a unix timestamp or mysql datetime.
 
 </dd>
 <dt>min_taken_date </dt><dd>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
-greater than or equal to this value will be returned. The date should be in
-the form of a mysql datetime.
+greater than or equal to this value will be returned. The date can be in
+the form of a mysql datetime or unix timestamp.
 
 </dd>
 <dt>max_taken_date </dt><dd>Maximum taken date. <a href="Photos.html">Photos</a> with an taken date
-less than or equal to this value will be returned. The date should be in
-the form of a mysql datetime.
+less than or equal to this value will be returned. The date can be in the
+form of a mysql datetime or unix timestamp.
 
 </dd>
 <dt>license </dt><dd>The license id for photos (for possible values see the
@@ -3198,6 +3218,20 @@ not specified.
 </dd>
 <dt>group_id </dt><dd>The id of a group who&#8217;s pool to search. If specified, only matching
 photos posted to the group&#8217;s pool will be returned.
+
+</dd>
+<dt>faves </dt><dd>boolean. Pass faves=1 along with your user_id to search within your
+favorites
+
+</dd>
+<dt>camera </dt><dd>Limit results by camera. Camera names must be in the <a href=&#8220;<a
+href="http://www.flickr.com/cameras">Camera">www.flickr.com/cameras">Camera</a>
+Finder</a> normalized form. <a href=&#8220;<a
+href="http://flickr.com/services/api/flickr.cameras.getList">flickr.cameras.getList()</a">flickr.com/services/api/flickr.cameras.getList">flickr.cameras.getList()</a</a>>
+returns a list of searchable cameras.
+
+</dd>
+<dt>jump_to </dt><dd>Jump, jump!
 
 </dd>
 <dt>contacts </dt><dd>Search your contacts. Either &#8216;all&#8217; or &#8216;ff&#8217; for just
@@ -3328,6 +3362,15 @@ href="http://www.flickr.com/help/galleries/">gallery</a">www.flickr.com/help/gal
 Default is false, search all photos.
 
 </dd>
+<dt>person_id </dt><dd>The id of a user. Will return photos where the user has been people tagged.
+A call signed as the person_id in question will return <b>all</b> photos
+the user in, otherwise returns public photos.
+
+</dd>
+<dt>is_getty </dt><dd>Limit the scope of the search to only photos that are for sale on Getty.
+Default is false.
+
+</dd>
 <dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: <tt>description</tt>,
 <tt>license</tt>, <tt>date_upload</tt>, <tt>date_taken</tt>,
@@ -3351,51 +3394,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Too many tags in ALL query</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-When performing an &#8216;all tags&#8217; search, you may not specify more
-than 20 tags to join together.
-</p>
-</li>
-<li>2: <em>Unknown user</em>
-
-<p>
-A user_id was passed which did not match a valid flickr user.
-</p>
-</li>
-<li>3: <em>Parameterless searches have been disabled</em>
-
-<p>
-To perform a search with no parameters (to get the latest public photos,
-please use flickr.photos.getRecent instead).
-</p>
-</li>
-<li>4: <em>You don&#8217;t have permission to view this pool</em>
-
-<p>
-The logged in user (if any) does not have permission to view the pool for
-this group.
-</p>
-</li>
-<li>10: <em>Sorry, the <a href="../Flickr.html">Flickr</a> search API is not
-currently available.</em>
-
-<p>
-The <a href="../Flickr.html">Flickr</a> API search databases are
-temporarily unavailable
-</p>
-</li>
-<li>11: <em>No valid machine tags</em>
-
-<p>
-The query styntax for the machine_tags argument did not validate.
-</p>
-</li>
-<li>12: <em>Exceeded maximum allowable machine tags</em>
-
-<p>
-The maximum number of machine tags in a single query was exceeded.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -3444,8 +3446,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000139-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000139-source">
+            onclick="toggleCode('M000146-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000146-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3460,12 +3462,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000140" class="method-detail">
-        <a name="M000140"></a>
+      <div id="method-M000147" class="method-detail">
+        <a name="M000147"></a>
 
         <div class="method-heading">
 
-          <a href="#M000140" class="method-signature">
+          <a href="#M000147" class="method-signature">
 
           <span class="method-name">setContentType</span><span class="method-args">(:photo_id =&gt; 'photo_id',:content_type =&gt; 'content_type')</span>
 
@@ -3499,23 +3501,10 @@ Screenshot, and 3 for Other.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id of a photo belonging to the
-calling user.
-</p>
-</li>
-<li>2: <em>Required arguments missing</em>
-
-<p>
-Some or all of the required arguments were not supplied.
-</p>
-</li>
-<li>3: <em>Change not allowed</em>
-
-<p>
-Changing the content type of this photo is not allowed.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -3597,8 +3586,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000140-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000140-source">
+            onclick="toggleCode('M000147-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000147-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3613,12 +3602,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000141" class="method-detail">
-        <a name="M000141"></a>
+      <div id="method-M000148" class="method-detail">
+        <a name="M000148"></a>
 
         <div class="method-heading">
 
-          <a href="#M000141" class="method-signature">
+          <a href="#M000148" class="method-signature">
 
           <span class="method-name">setDates</span><span class="method-args">(:photo_id =&gt; 'photo_id',:date_posted =&gt; 'date_posted',:date_taken =&gt; 'date_taken',:date_taken_granularity =&gt; 'date_taken_granularity')</span>
 
@@ -3660,23 +3649,10 @@ href=&#8220;/services/api/misc.dates.html&#8220;>dates documentation</a>)
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id was not the id of a valid photo belonging to the calling user.
-</p>
-</li>
-<li>2: <em>Not enough arguments</em>
-
-<p>
-No dates were specified to be changed.
-</p>
-</li>
-<li>3: <em>Invalid granularity</em>
-
-<p>
-The value passed for &#8216;granularity&#8217; was not a valid flickr date
-granularity.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -3750,8 +3726,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000141-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000141-source">
+            onclick="toggleCode('M000148-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000148-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3766,12 +3742,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000142" class="method-detail">
-        <a name="M000142"></a>
+      <div id="method-M000149" class="method-detail">
+        <a name="M000149"></a>
 
         <div class="method-heading">
 
-          <a href="#M000142" class="method-signature">
+          <a href="#M000149" class="method-signature">
 
           <span class="method-name">setMeta</span><span class="method-args">(:photo_id =&gt; 'photo_id',:title =&gt; 'title',:description =&gt; 'description')</span>
 
@@ -3807,12 +3783,10 @@ Set the meta information for a photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not the id of a photo belonging to the calling
-user. It might be an invalid id, or the photo might be owned by another
-user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -3886,8 +3860,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000142-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000142-source">
+            onclick="toggleCode('M000149-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000149-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -3902,12 +3876,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000143" class="method-detail">
-        <a name="M000143"></a>
+      <div id="method-M000150" class="method-detail">
+        <a name="M000150"></a>
 
         <div class="method-heading">
 
-          <a href="#M000143" class="method-signature">
+          <a href="#M000150" class="method-signature">
 
           <span class="method-name">setPerms</span><span class="method-args">(:photo_id =&gt; 'photo_id',:is_public =&gt; 'is_public',:is_friend =&gt; 'is_friend',:is_family =&gt; 'is_family',:perm_comment =&gt; 'perm_comment',:perm_addmeta =&gt; 'perm_addmeta')</span>
 
@@ -3962,17 +3936,10 @@ family<br /> <tt>2</tt>: contacts<br /> <tt>3</tt>: everybody
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id of a photo belonging to the
-calling user.
-</p>
-</li>
-<li>2: <em>Required arguments missing</em>
-
-<p>
-Some or all of the required arguments were not supplied.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -4052,8 +4019,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000143-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000143-source">
+            onclick="toggleCode('M000150-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000150-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -4068,12 +4035,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000144" class="method-detail">
-        <a name="M000144"></a>
+      <div id="method-M000151" class="method-detail">
+        <a name="M000151"></a>
 
         <div class="method-heading">
 
-          <a href="#M000144" class="method-signature">
+          <a href="#M000151" class="method-signature">
 
           <span class="method-name">setSafetyLevel</span><span class="method-args">(:photo_id =&gt; 'photo_id',:safety_level =&gt; 'safety_level',:hidden =&gt; 'hidden')</span>
 
@@ -4115,23 +4082,10 @@ either 1 for Yes or 0 for No.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not a valid photo id of a photo belonging to the
-calling user.
-</p>
-</li>
-<li>2: <em>Invalid or missing arguments</em>
-
-<p>
-Neither a valid safety level nor a hidden value were passed.
-</p>
-</li>
-<li>3: <em>Change not allowed</em>
-
-<p>
-Changing the safety level of this photo is not allowed.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -4213,8 +4167,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000144-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000144-source">
+            onclick="toggleCode('M000151-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000151-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -4229,12 +4183,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000145" class="method-detail">
-        <a name="M000145"></a>
+      <div id="method-M000152" class="method-detail">
+        <a name="M000152"></a>
 
         <div class="method-heading">
 
-          <a href="#M000145" class="method-signature">
+          <a href="#M000152" class="method-signature">
 
           <span class="method-name">setTags</span><span class="method-args">(:photo_id =&gt; 'photo_id',:tags =&gt; 'tags')</span>
 
@@ -4267,19 +4221,10 @@ Set the tags for a photo.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The photo id passed was not the id of a photo belonging to the calling
-user. It might be an invalid id, or the photo might be owned by another
-user.
-</p>
-</li>
-<li>2: <em>Maximum number of tags reached</em>
-
-<p>
-The number of tags specified exceeds the limit for the photo. No tags were
-modified.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -4353,8 +4298,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000145-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000145-source">
+            onclick="toggleCode('M000152-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000152-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -4369,8 +4314,8 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000118" class="method-detail">
-        <a name="M000118"></a>
+      <div id="method-M000125" class="method-detail">
+        <a name="M000125"></a>
 
         <div class="method-heading">
 
@@ -4388,8 +4333,8 @@ Returns a <a href="Photos/Transform.html">Transform</a> object.
       </div>
 
 
-      <div id="method-M000119" class="method-detail">
-        <a name="M000119"></a>
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
 
         <div class="method-heading">
 

@@ -95,9 +95,9 @@
 
       <div class="name-list">
 
-        <a href="#M000160">getInfo</a>&nbsp;&nbsp;
+        <a href="#M000167">getInfo</a>&nbsp;&nbsp;
 
-        <a href="#M000161">setLicense</a>&nbsp;&nbsp;
+        <a href="#M000168">setLicense</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -118,12 +118,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000160" class="method-detail">
-        <a name="M000160"></a>
+      <div id="method-M000167" class="method-detail">
+        <a name="M000167"></a>
 
         <div class="method-heading">
 
-          <a href="#M000160" class="method-signature">
+          <a href="#M000167" class="method-signature">
 
           <span class="method-name">getInfo</span><span class="method-args">()</span>
 
@@ -149,6 +149,12 @@ href="../../Flickr.html">Flickr</a>.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>100: <em>Invalid API Key</em>
 
 <p>
@@ -216,8 +222,8 @@ href="../../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000160-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000160-source">
+            onclick="toggleCode('M000167-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000167-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -232,12 +238,12 @@ href="../../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000161" class="method-detail">
-        <a name="M000161"></a>
+      <div id="method-M000168" class="method-detail">
+        <a name="M000168"></a>
 
         <div class="method-heading">
 
-          <a href="#M000161" class="method-signature">
+          <a href="#M000168" class="method-signature">
 
           <span class="method-name">setLicense</span><span class="method-args">(:photo_id =&gt; 'photo_id',:license_id =&gt; 'license_id')</span>
 
@@ -272,16 +278,10 @@ of this writing the &#8220;no known copyright restrictions&#8221; license
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Photo not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The specified id was not the id of a valif photo owner by the calling user.
-</p>
-</li>
-<li>2: <em>License not found</em>
-
-<p>
-The license id was not valid.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -355,8 +355,8 @@ href="../../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000161-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000161-source">
+            onclick="toggleCode('M000168-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000168-source">
 <pre>
 
 # Generated automatically from flickr api

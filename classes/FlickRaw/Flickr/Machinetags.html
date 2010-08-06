@@ -95,15 +95,15 @@
 
       <div class="name-list">
 
-        <a href="#M000098">getNamespaces</a>&nbsp;&nbsp;
+        <a href="#M000105">getNamespaces</a>&nbsp;&nbsp;
 
-        <a href="#M000099">getPairs</a>&nbsp;&nbsp;
+        <a href="#M000106">getPairs</a>&nbsp;&nbsp;
 
-        <a href="#M000100">getPredicates</a>&nbsp;&nbsp;
+        <a href="#M000107">getPredicates</a>&nbsp;&nbsp;
 
-        <a href="#M000101">getRecentValues</a>&nbsp;&nbsp;
+        <a href="#M000108">getRecentValues</a>&nbsp;&nbsp;
 
-        <a href="#M000102">getValues</a>&nbsp;&nbsp;
+        <a href="#M000109">getValues</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -124,12 +124,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000098" class="method-detail">
-        <a name="M000098"></a>
+      <div id="method-M000105" class="method-detail">
+        <a name="M000105"></a>
 
         <div class="method-heading">
 
-          <a href="#M000098" class="method-signature">
+          <a href="#M000105" class="method-signature">
 
           <span class="method-name">getNamespaces</span><span class="method-args">(:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -169,10 +169,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Not a valid predicate.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-Missing or invalid predicate argument.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -233,8 +233,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000098-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000098-source">
+            onclick="toggleCode('M000105-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000105-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -249,12 +249,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000099" class="method-detail">
-        <a name="M000099"></a>
+      <div id="method-M000106" class="method-detail">
+        <a name="M000106"></a>
 
         <div class="method-heading">
 
-          <a href="#M000099" class="method-signature">
+          <a href="#M000106" class="method-signature">
 
           <span class="method-name">getPairs</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -298,16 +298,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Not a valid namespace</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-Missing or invalid namespace argument.
-</p>
-</li>
-<li>2: <em>Not a valid predicate</em>
-
-<p>
-Missing or invalid predicate argument.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -367,8 +361,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000099-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000099-source">
+            onclick="toggleCode('M000106-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000106-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -383,12 +377,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000100" class="method-detail">
-        <a name="M000100"></a>
+      <div id="method-M000107" class="method-detail">
+        <a name="M000107"></a>
 
         <div class="method-heading">
 
-          <a href="#M000100" class="method-signature">
+          <a href="#M000107" class="method-signature">
 
           <span class="method-name">getPredicates</span><span class="method-args">(:namespace =&gt; 'namespace',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -428,10 +422,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Not a valid namespace</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-Missing or invalid namespace argument.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -490,8 +484,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000100-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000100-source">
+            onclick="toggleCode('M000107-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000107-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -506,12 +500,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000101" class="method-detail">
-        <a name="M000101"></a>
+      <div id="method-M000108" class="method-detail">
+        <a name="M000108"></a>
 
         <div class="method-heading">
 
-          <a href="#M000101" class="method-signature">
+          <a href="#M000108" class="method-signature">
 
           <span class="method-name">getRecentValues</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:added_since =&gt; 'added_since')</span>
 
@@ -548,6 +542,12 @@ in epoch seconds.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>100: <em>Invalid API Key</em>
 
 <p>
@@ -605,8 +605,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000101-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000101-source">
+            onclick="toggleCode('M000108-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000108-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -621,14 +621,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000102" class="method-detail">
-        <a name="M000102"></a>
+      <div id="method-M000109" class="method-detail">
+        <a name="M000109"></a>
 
         <div class="method-heading">
 
-          <a href="#M000102" class="method-signature">
+          <a href="#M000109" class="method-signature">
 
-          <span class="method-name">getValues</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          <span class="method-name">getValues</span><span class="method-args">(:namespace =&gt; 'namespace',:predicate =&gt; 'predicate',:per_page =&gt; 'per_page',:page =&gt; 'page',:usage =&gt; 'usage')</span>
 
           </a>
 
@@ -662,21 +662,18 @@ defaults to 100. The maximum allowed value is 500.
 1.
 
 </dd>
+<dt>usage </dt><dd>Minimum usage count.
+
+</dd>
 </dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Not a valid namespace</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-Missing or invalid namespace argument.
-</p>
-</li>
-<li>2: <em>Not a valid predicate</em>
-
-<p>
-Missing or invalid predicate argument.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -735,8 +732,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000102-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000102-source">
+            onclick="toggleCode('M000109-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000109-source">
 <pre>
 
 # Generated automatically from flickr api

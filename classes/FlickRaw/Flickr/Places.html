@@ -95,35 +95,35 @@
 
       <div class="name-list">
 
-        <a href="#M000188">find</a>&nbsp;&nbsp;
+        <a href="#M000198">find</a>&nbsp;&nbsp;
 
-        <a href="#M000189">findByLatLon</a>&nbsp;&nbsp;
+        <a href="#M000199">findByLatLon</a>&nbsp;&nbsp;
 
-        <a href="#M000190">getChildrenWithPhotosPublic</a>&nbsp;&nbsp;
+        <a href="#M000200">getChildrenWithPhotosPublic</a>&nbsp;&nbsp;
 
-        <a href="#M000191">getInfo</a>&nbsp;&nbsp;
+        <a href="#M000201">getInfo</a>&nbsp;&nbsp;
 
-        <a href="#M000192">getInfoByUrl</a>&nbsp;&nbsp;
+        <a href="#M000202">getInfoByUrl</a>&nbsp;&nbsp;
 
-        <a href="#M000193">getPlaceTypes</a>&nbsp;&nbsp;
+        <a href="#M000203">getPlaceTypes</a>&nbsp;&nbsp;
 
-        <a href="#M000194">getShapeHistory</a>&nbsp;&nbsp;
+        <a href="#M000204">getShapeHistory</a>&nbsp;&nbsp;
 
-        <a href="#M000195">getTopPlacesList</a>&nbsp;&nbsp;
+        <a href="#M000205">getTopPlacesList</a>&nbsp;&nbsp;
 
-        <a href="#M000196">placesForBoundingBox</a>&nbsp;&nbsp;
+        <a href="#M000206">placesForBoundingBox</a>&nbsp;&nbsp;
 
-        <a href="#M000197">placesForContacts</a>&nbsp;&nbsp;
+        <a href="#M000207">placesForContacts</a>&nbsp;&nbsp;
 
-        <a href="#M000198">placesForTags</a>&nbsp;&nbsp;
+        <a href="#M000208">placesForTags</a>&nbsp;&nbsp;
 
-        <a href="#M000199">placesForUser</a>&nbsp;&nbsp;
+        <a href="#M000209">placesForUser</a>&nbsp;&nbsp;
 
-        <a href="#M000200">resolvePlaceId</a>&nbsp;&nbsp;
+        <a href="#M000210">resolvePlaceId</a>&nbsp;&nbsp;
 
-        <a href="#M000201">resolvePlaceURL</a>&nbsp;&nbsp;
+        <a href="#M000211">resolvePlaceURL</a>&nbsp;&nbsp;
 
-        <a href="#M000202">tagsForPlace</a>&nbsp;&nbsp;
+        <a href="#M000212">tagsForPlace</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -144,12 +144,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000188" class="method-detail">
-        <a name="M000188"></a>
+      <div id="method-M000198" class="method-detail">
+        <a name="M000198"></a>
 
         <div class="method-heading">
 
-          <a href="#M000188" class="method-signature">
+          <a href="#M000198" class="method-signature">
 
           <span class="method-name">find</span><span class="method-args">(:query =&gt; 'query')</span>
 
@@ -183,10 +183,10 @@ address rather than the street, or building, itself.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required parameter missing</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-One or more required parameters was not included with the API call.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -254,8 +254,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000188-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000188-source">
+            onclick="toggleCode('M000198-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000198-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -270,12 +270,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000189" class="method-detail">
-        <a name="M000189"></a>
+      <div id="method-M000199" class="method-detail">
+        <a name="M000199"></a>
 
         <div class="method-heading">
 
-          <a href="#M000189" class="method-signature">
+          <a href="#M000199" class="method-signature">
 
           <span class="method-name">findByLatLon</span><span class="method-args">(:lat =&gt; 'lat',:lon =&gt; 'lon',:accuracy =&gt; 'accuracy')</span>
 
@@ -322,28 +322,10 @@ default is 16.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required arguments missing</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-One or more required parameters was not included with the API request.
-</p>
-</li>
-<li>2: <em>Not a valid latitude</em>
-
-<p>
-The latitude argument failed validation.
-</p>
-</li>
-<li>3: <em>Not a valid longitude</em>
-
-<p>
-The longitude argument failed validation.
-</p>
-</li>
-<li>4: <em>Not a valid accuracy</em>
-
-<p>
-The accuracy argument failed validation.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -405,8 +387,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000189-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000189-source">
+            onclick="toggleCode('M000199-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000199-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -421,12 +403,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000190" class="method-detail">
-        <a name="M000190"></a>
+      <div id="method-M000200" class="method-detail">
+        <a name="M000200"></a>
 
         <div class="method-heading">
 
-          <a href="#M000190" class="method-signature">
+          <a href="#M000200" class="method-signature">
 
           <span class="method-name">getChildrenWithPhotosPublic</span><span class="method-args">(:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
 
@@ -463,24 +445,10 @@ href="Places.html">Places</a> ID or a WOE ID.)
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required parameter missing</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-One or more required parameter is missing from the API call.
-</p>
-</li>
-<li>2: <em>Not a valid <a href="Places.html">Places</a> ID</em>
-
-<p>
-An invalid <a href="Places.html">Places</a> (or WOE) ID was passed with the
-API call.
-</p>
-</li>
-<li>3: <em>Place not found</em>
-
-<p>
-No place could be found for the <a href="Places.html">Places</a> (or WOE)
-ID passed to the API call.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -551,8 +519,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000190-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000190-source">
+            onclick="toggleCode('M000200-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000200-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -567,12 +535,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000191" class="method-detail">
-        <a name="M000191"></a>
+      <div id="method-M000201" class="method-detail">
+        <a name="M000201"></a>
 
         <div class="method-heading">
 
-          <a href="#M000191" class="method-signature">
+          <a href="#M000201" class="method-signature">
 
           <span class="method-name">getInfo</span><span class="method-args">(:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
 
@@ -609,24 +577,10 @@ either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required parameter missing</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-One or more required parameter is missing from the API call.
-</p>
-</li>
-<li>2: <em>Not a valid <a href="Places.html">Places</a> ID</em>
-
-<p>
-An invalid <a href="Places.html">Places</a> (or WOE) ID was passed with the
-API call.
-</p>
-</li>
-<li>3: <em>Place not found</em>
-
-<p>
-No place could be found for the <a href="Places.html">Places</a> (or WOE)
-ID passed to the API call.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -711,8 +665,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000191-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000191-source">
+            onclick="toggleCode('M000201-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000201-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -727,12 +681,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000192" class="method-detail">
-        <a name="M000192"></a>
+      <div id="method-M000202" class="method-detail">
+        <a name="M000202"></a>
 
         <div class="method-heading">
 
-          <a href="#M000192" class="method-signature">
+          <a href="#M000202" class="method-signature">
 
           <span class="method-name">getInfoByUrl</span><span class="method-args">(:url =&gt; 'url')</span>
 
@@ -763,16 +717,10 @@ Lookup information about a place, by its flickr.com/places URL.
 <b>Error codes</b>
 </p>
 <ul>
-<li>2: <em>Place URL required.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The flickr.com/places URL was not passed with the API method.
-</p>
-</li>
-<li>3: <em>Place not found.</em>
-
-<p>
-Unable to find a valid place for the places URL.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -851,8 +799,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000192-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000192-source">
+            onclick="toggleCode('M000202-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000202-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -867,12 +815,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000193" class="method-detail">
-        <a name="M000193"></a>
+      <div id="method-M000203" class="method-detail">
+        <a name="M000203"></a>
 
         <div class="method-heading">
 
-          <a href="#M000193" class="method-signature">
+          <a href="#M000203" class="method-signature">
 
           <span class="method-name">getPlaceTypes</span><span class="method-args">()</span>
 
@@ -898,6 +846,12 @@ href="../Flickr.html">Flickr</a>.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>100: <em>Invalid API Key</em>
 
 <p>
@@ -957,8 +911,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000193-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000193-source">
+            onclick="toggleCode('M000203-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000203-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -973,12 +927,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000194" class="method-detail">
-        <a name="M000194"></a>
+      <div id="method-M000204" class="method-detail">
+        <a name="M000204"></a>
 
         <div class="method-heading">
 
-          <a href="#M000194" class="method-signature">
+          <a href="#M000204" class="method-signature">
 
           <span class="method-name">getShapeHistory</span><span class="method-args">(:place_id =&gt; 'place_id',:woe_id =&gt; 'woe_id')</span>
 
@@ -1016,24 +970,10 @@ either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</span>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required parameter missing</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-One or more required parameter is missing from the API call.
-</p>
-</li>
-<li>2: <em>Not a valid <a href="Places.html">Places</a> ID</em>
-
-<p>
-An invalid <a href="Places.html">Places</a> (or WOE) ID was passed with the
-API call.
-</p>
-</li>
-<li>3: <em>Place not found</em>
-
-<p>
-No place could be found for the <a href="Places.html">Places</a> (or WOE)
-ID passed to the API call.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -1103,8 +1043,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000194-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000194-source">
+            onclick="toggleCode('M000204-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000204-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1119,12 +1059,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000195" class="method-detail">
-        <a name="M000195"></a>
+      <div id="method-M000205" class="method-detail">
+        <a name="M000205"></a>
 
         <div class="method-heading">
 
-          <a href="#M000195" class="method-signature">
+          <a href="#M000205" class="method-signature">
 
           <span class="method-name">getTopPlacesList</span><span class="method-args">(:place_type_id =&gt; 'place_type_id',:date =&gt; 'date',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id')</span>
 
@@ -1176,29 +1116,10 @@ identifier.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required parameter missing</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-One or more required parameters with missing from your request.
-</p>
-</li>
-<li>2: <em>Not a valid place type.</em>
-
-<p>
-An unknown or unsupported place type ID was passed with your request.
-</p>
-</li>
-<li>3: <em>Not a valid date.</em>
-
-<p>
-The date argument passed with your request is invalid.
-</p>
-</li>
-<li>4: <em>Not a valid Place ID</em>
-
-<p>
-An invalid <a href="Places.html">Places</a> (or WOE) identifier was
-included with your request.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -1259,8 +1180,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000195-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000195-source">
+            onclick="toggleCode('M000205-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000205-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1275,14 +1196,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000196" class="method-detail">
-        <a name="M000196"></a>
+      <div id="method-M000206" class="method-detail">
+        <a name="M000206"></a>
 
         <div class="method-heading">
 
-          <a href="#M000196" class="method-signature">
+          <a href="#M000206" class="method-signature">
 
-          <span class="method-name">placesForBoundingBox</span><span class="method-args">(:bbox =&gt; 'bbox',:place_type =&gt; 'place_type',:place_type_id =&gt; 'place_type_id')</span>
+          <span class="method-name">placesForBoundingBox</span><span class="method-args">(:bbox =&gt; 'bbox',:place_type =&gt; 'place_type',:place_type_id =&gt; 'place_type_id',:recursive =&gt; 'recursive')</span>
 
           </a>
 
@@ -1352,33 +1273,26 @@ country</li> <li><strong>29</strong>: continent</li> </ul> <br /><span
 style=&#8220;font-style:italic;&#8221;>(While optional, you must pass
 either a valid place type or place type ID.)</span>
 </p>
+<dl>
+<dt>recursive </dt><dd>Perform a recursive place type search. For example, if you search for
+neighbourhoods in a given bounding box but there are no results the method
+will also query for localities and so on until one or more valid places are
+found.<br /<br />
+
+</dd>
+</dl>
+<p>
+Recursive searches do not change the bounding box size restrictions for the
+initial place type passed to the method.
+</p>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required parameters missing</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-One or more required parameter is missing from the API call.
-</p>
-</li>
-<li>2: <em>Not a valid bbox</em>
-
-<p>
-The bbox argument was incomplete or incorrectly formatted
-</p>
-</li>
-<li>3: <em>Not a valid place type</em>
-
-<p>
-An invalid place type was included with your request.
-</p>
-</li>
-<li>4: <em>Bounding box exceeds maximum allowable size for place type</em>
-
-<p>
-The bounding box passed along with your request was too large for the
-request place type.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -1455,8 +1369,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000196-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000196-source">
+            onclick="toggleCode('M000206-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000206-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1471,12 +1385,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000197" class="method-detail">
-        <a name="M000197"></a>
+      <div id="method-M000207" class="method-detail">
+        <a name="M000207"></a>
 
         <div class="method-heading">
 
-          <a href="#M000197" class="method-signature">
+          <a href="#M000207" class="method-signature">
 
           <span class="method-name">placesForContacts</span><span class="method-args">(:place_type =&gt; 'place_type',:place_type_id =&gt; 'place_type_id',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:threshold =&gt; 'threshold',:contacts =&gt; 'contacts',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
 
@@ -1602,44 +1516,10 @@ the form of a mysql datetime.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em><a href="Places.html">Places</a> for contacts are not available at
-this time</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-<a href="Places.html">Places</a> for contacts have been disabled or are
-otherwise not available.
-</p>
-</li>
-<li>2: <em>Required parameter missing</em>
-
-<p>
-One or more of the required parameters was not included with your request.
-</p>
-</li>
-<li>3: <em>Not a valid place type.</em>
-
-<p>
-An invalid place type was included with your request.
-</p>
-</li>
-<li>4: <em>Not a valid Place ID</em>
-
-<p>
-An invalid <a href="Places.html">Places</a> (or WOE) identifier was
-included with your request.
-</p>
-</li>
-<li>5: <em>Not a valid threshold</em>
-
-<p>
-The threshold passed was invalid.
-</p>
-</li>
-<li>6: <em>Not a valid contacts type</em>
-
-<p>
-<a href="Contacts.html">Contacts</a> must be either &#8220;all&#8221; or
-&#8220;ff&#8221; (friends and family).
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -1725,8 +1605,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000197-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000197-source">
+            onclick="toggleCode('M000207-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000207-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1741,12 +1621,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000198" class="method-detail">
-        <a name="M000198"></a>
+      <div id="method-M000208" class="method-detail">
+        <a name="M000208"></a>
 
         <div class="method-heading">
 
-          <a href="#M000198" class="method-signature">
+          <a href="#M000208" class="method-signature">
 
           <span class="method-name">placesForTags</span><span class="method-args">(:place_type_id =&gt; 'place_type_id',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:threshold =&gt; 'threshold',:tags =&gt; 'tags',:tag_mode =&gt; 'tag_mode',:machine_tags =&gt; 'machine_tags',:machine_tag_mode =&gt; 'machine_tag_mode',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
 
@@ -1892,6 +1772,12 @@ the form of a mysql datetime.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>100: <em>Invalid API Key</em>
 
 <p>
@@ -1950,8 +1836,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000198-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000198-source">
+            onclick="toggleCode('M000208-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000208-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1966,12 +1852,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000199" class="method-detail">
-        <a name="M000199"></a>
+      <div id="method-M000209" class="method-detail">
+        <a name="M000209"></a>
 
         <div class="method-heading">
 
-          <a href="#M000199" class="method-signature">
+          <a href="#M000209" class="method-signature">
 
           <span class="method-name">placesForUser</span><span class="method-args">(:place_type_id =&gt; 'place_type_id',:place_type =&gt; 'place_type',:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:threshold =&gt; 'threshold',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
 
@@ -2091,37 +1977,10 @@ the form of a mysql datetime.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em><a href="Places.html">Places</a> for user are not available at this
-time</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-<a href="Places.html">Places</a> for user have been disabled or are
-otherwise not available.
-</p>
-</li>
-<li>2: <em>Required parameter missing</em>
-
-<p>
-One or more of the required parameters was not included with your request.
-</p>
-</li>
-<li>3: <em>Not a valid place type</em>
-
-<p>
-An invalid place type was included with your request.
-</p>
-</li>
-<li>4: <em>Not a valid Place ID</em>
-
-<p>
-An invalid <a href="Places.html">Places</a> (or WOE) identifier was
-included with your request.
-</p>
-</li>
-<li>5: <em>Not a valid threshold</em>
-
-<p>
-The threshold passed was invalid.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -2207,8 +2066,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000199-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000199-source">
+            onclick="toggleCode('M000209-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000209-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2223,12 +2082,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000200" class="method-detail">
-        <a name="M000200"></a>
+      <div id="method-M000210" class="method-detail">
+        <a name="M000210"></a>
 
         <div class="method-heading">
 
-          <a href="#M000200" class="method-signature">
+          <a href="#M000210" class="method-signature">
 
           <span class="method-name">resolvePlaceId</span><span class="method-args">(:place_id =&gt; 'place_id')</span>
 
@@ -2262,11 +2121,11 @@ instead.
 <b>Error codes</b>
 </p>
 <ul>
-<li>2: <em>Place ID required.</em>
+<li>1: <em>Not a valid date.</em>
 
-</li>
-<li>3: <em>Place not found.</em>
-
+<p>
+The date argument passed was incorrect.
+</p>
 </li>
 <li>100: <em>Invalid API Key</em>
 
@@ -2336,8 +2195,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000200-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000200-source">
+            onclick="toggleCode('M000210-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000210-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2352,12 +2211,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000201" class="method-detail">
-        <a name="M000201"></a>
+      <div id="method-M000211" class="method-detail">
+        <a name="M000211"></a>
 
         <div class="method-heading">
 
-          <a href="#M000201" class="method-signature">
+          <a href="#M000211" class="method-signature">
 
           <span class="method-name">resolvePlaceURL</span><span class="method-args">(:url =&gt; 'url')</span>
 
@@ -2395,11 +2254,11 @@ instead.
 <b>Error codes</b>
 </p>
 <ul>
-<li>2: <em>Place URL required.</em>
+<li>1: <em>Not a valid date.</em>
 
-</li>
-<li>3: <em>Place not found.</em>
-
+<p>
+The date argument passed was incorrect.
+</p>
 </li>
 <li>100: <em>Invalid API Key</em>
 
@@ -2469,8 +2328,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000201-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000201-source">
+            onclick="toggleCode('M000211-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000211-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -2485,12 +2344,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000202" class="method-detail">
-        <a name="M000202"></a>
+      <div id="method-M000212" class="method-detail">
+        <a name="M000212"></a>
 
         <div class="method-heading">
 
-          <a href="#M000202" class="method-signature">
+          <a href="#M000212" class="method-signature">
 
           <span class="method-name">tagsForPlace</span><span class="method-args">(:woe_id =&gt; 'woe_id',:place_id =&gt; 'place_id',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date')</span>
 
@@ -2558,24 +2417,10 @@ the form of a mysql datetime.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required parameter missing</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-One or more parameters was not included with the API request
-</p>
-</li>
-<li>2: <em>Not a valid <a href="Places.html">Places</a> ID</em>
-
-<p>
-An invalid <a href="Places.html">Places</a> (or WOE) identifier was
-included with your request.
-</p>
-</li>
-<li>3: <em>Place not found</em>
-
-<p>
-An invalid <a href="Places.html">Places</a> (or WOE) identifier was
-included with your request.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -2644,8 +2489,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000202-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000202-source">
+            onclick="toggleCode('M000212-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000212-source">
 <pre>
 
 # Generated automatically from flickr api

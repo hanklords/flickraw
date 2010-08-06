@@ -95,7 +95,7 @@
 
       <div class="name-list">
 
-        <a href="#M000097">getList</a>&nbsp;&nbsp;
+        <a href="#M000104">getList</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -116,14 +116,14 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000097" class="method-detail">
-        <a name="M000097"></a>
+      <div id="method-M000104" class="method-detail">
+        <a name="M000104"></a>
 
         <div class="method-heading">
 
-          <a href="#M000097" class="method-signature">
+          <a href="#M000104" class="method-signature">
 
-          <span class="method-name">getList</span><span class="method-args">(:date =&gt; 'date',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
+          <span class="method-name">getList</span><span class="method-args">(:date =&gt; 'date',:use_panda =&gt; 'use_panda',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
           </a>
 
@@ -145,6 +145,10 @@ user-specified date.
 </p>
 <dl>
 <dt>date </dt><dd>A specific date, formatted as YYYY-MM-DD, to return interesting photos for.
+
+</dd>
+<dt>use_panda </dt><dd>Always ask the pandas for interesting photos. This is a temporary argument
+to allow developers to update their code.
 
 </dd>
 <dt>extras </dt><dd>A comma-delimited list of extra information to fetch for each returned
@@ -170,11 +174,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Not a valid date string.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The date string passed did not validate. All dates must be formatted :
-YYYY-MM-DD
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -223,8 +226,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000097-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000097-source">
+            onclick="toggleCode('M000104-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000104-source">
 <pre>
 
 # Generated automatically from flickr api

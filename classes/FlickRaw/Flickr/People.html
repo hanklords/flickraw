@@ -95,21 +95,21 @@
 
       <div class="name-list">
 
-        <a href="#M000105">findByEmail</a>&nbsp;&nbsp;
+        <a href="#M000112">findByEmail</a>&nbsp;&nbsp;
 
-        <a href="#M000106">findByUsername</a>&nbsp;&nbsp;
+        <a href="#M000113">findByUsername</a>&nbsp;&nbsp;
 
-        <a href="#M000107">getInfo</a>&nbsp;&nbsp;
+        <a href="#M000114">getInfo</a>&nbsp;&nbsp;
 
-        <a href="#M000108">getPhotos</a>&nbsp;&nbsp;
+        <a href="#M000115">getPhotos</a>&nbsp;&nbsp;
 
-        <a href="#M000109">getPhotosOf</a>&nbsp;&nbsp;
+        <a href="#M000116">getPhotosOf</a>&nbsp;&nbsp;
 
-        <a href="#M000110">getPublicGroups</a>&nbsp;&nbsp;
+        <a href="#M000117">getPublicGroups</a>&nbsp;&nbsp;
 
-        <a href="#M000111">getPublicPhotos</a>&nbsp;&nbsp;
+        <a href="#M000118">getPublicPhotos</a>&nbsp;&nbsp;
 
-        <a href="#M000112">getUploadStatus</a>&nbsp;&nbsp;
+        <a href="#M000119">getUploadStatus</a>&nbsp;&nbsp;
 
       </div>
     </div>
@@ -130,12 +130,12 @@
       <h3 class="section-bar">Public Instance methods</h3>
 
 
-      <div id="method-M000105" class="method-detail">
-        <a name="M000105"></a>
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
 
         <div class="method-heading">
 
-          <a href="#M000105" class="method-signature">
+          <a href="#M000112" class="method-signature">
 
           <span class="method-name">findByEmail</span><span class="method-args">(:find_email =&gt; 'find_email')</span>
 
@@ -165,10 +165,10 @@ Return a user&#8217;s NSID, given their email address
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-No user with the supplied email address was found.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -225,8 +225,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000105-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000105-source">
+            onclick="toggleCode('M000112-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000112-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -241,12 +241,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000106" class="method-detail">
-        <a name="M000106"></a>
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
 
         <div class="method-heading">
 
-          <a href="#M000106" class="method-signature">
+          <a href="#M000113" class="method-signature">
 
           <span class="method-name">findByUsername</span><span class="method-args">(:username =&gt; 'username')</span>
 
@@ -276,10 +276,10 @@ Return a user&#8217;s NSID, given their username.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-No user with the supplied username was found.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -336,8 +336,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000106-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000106-source">
+            onclick="toggleCode('M000113-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000113-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -352,14 +352,14 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000107" class="method-detail">
-        <a name="M000107"></a>
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
 
         <div class="method-heading">
 
-          <a href="#M000107" class="method-signature">
+          <a href="#M000114" class="method-signature">
 
-          <span class="method-name">getInfo</span><span class="method-args">(:user_id =&gt; 'user_id')</span>
+          <span class="method-name">getInfo</span><span class="method-args">(:user_id =&gt; 'user_id',:url =&gt; 'url')</span>
 
           </a>
 
@@ -382,16 +382,19 @@ Get information about a user.
 <dt>user_id <em>(required)</em> </dt><dd>The NSID of the user to fetch information about.
 
 </dd>
+<dt>url <em>(required)</em> </dt><dd>As an alternative to user_id, load a member based on URL, either photos or
+people URL.
+
+</dd>
 </dl>
 <p>
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user id passed did not match a <a href="../Flickr.html">Flickr</a>
-user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -458,8 +461,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000107-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000107-source">
+            onclick="toggleCode('M000114-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000114-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -474,12 +477,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000108" class="method-detail">
-        <a name="M000108"></a>
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
 
         <div class="method-heading">
 
-          <a href="#M000108" class="method-signature">
+          <a href="#M000115" class="method-signature">
 
           <span class="method-name">getPhotos</span><span class="method-args">(:user_id =&gt; 'user_id',:safe_search =&gt; 'safe_search',:min_upload_date =&gt; 'min_upload_date',:max_upload_date =&gt; 'max_upload_date',:min_taken_date =&gt; 'min_taken_date',:max_taken_date =&gt; 'max_taken_date',:content_type =&gt; 'content_type',:privacy_filter =&gt; 'privacy_filter',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -586,13 +589,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>Required arguments missing</em>
-
-</li>
-<li>2: <em>Unknown user</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-A user_id was passed which did not match a valid flickr user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>96: <em>Invalid signature</em>
@@ -666,8 +666,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000108-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000108-source">
+            onclick="toggleCode('M000115-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000115-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -682,12 +682,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000109" class="method-detail">
-        <a name="M000109"></a>
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
 
         <div class="method-heading">
 
-          <a href="#M000109" class="method-signature">
+          <a href="#M000116" class="method-signature">
 
           <span class="method-name">getPhotosOf</span><span class="method-args">(:user_id =&gt; 'user_id',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -738,10 +738,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found.</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-A user_id was passed which did not match a valid flickr user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -809,8 +809,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000109-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000109-source">
+            onclick="toggleCode('M000116-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000116-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -825,12 +825,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000110" class="method-detail">
-        <a name="M000110"></a>
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
 
         <div class="method-heading">
 
-          <a href="#M000110" class="method-signature">
+          <a href="#M000117" class="method-signature">
 
           <span class="method-name">getPublicGroups</span><span class="method-args">(:user_id =&gt; 'user_id')</span>
 
@@ -860,11 +860,10 @@ Returns the list of public groups a user is a member of.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user id passed did not match a <a href="../Flickr.html">Flickr</a>
-user.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -926,8 +925,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000110-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000110-source">
+            onclick="toggleCode('M000117-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000117-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -942,12 +941,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000111" class="method-detail">
-        <a name="M000111"></a>
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
 
         <div class="method-heading">
 
-          <a href="#M000111" class="method-signature">
+          <a href="#M000118" class="method-signature">
 
           <span class="method-name">getPublicPhotos</span><span class="method-args">(:user_id =&gt; 'user_id',:safe_search =&gt; 'safe_search',:extras =&gt; 'extras',:per_page =&gt; 'per_page',:page =&gt; 'page')</span>
 
@@ -1007,10 +1006,10 @@ defaults to 100. The maximum allowed value is 500.
 <b>Error codes</b>
 </p>
 <ul>
-<li>1: <em>User not found</em>
+<li>1: <em>Not a valid date.</em>
 
 <p>
-The user NSID passed was not a valid user NSID.
+The date argument passed was incorrect.
 </p>
 </li>
 <li>100: <em>Invalid API Key</em>
@@ -1059,8 +1058,8 @@ href="../Flickr.html">Flickr</a>.
 </ul>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000111-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000111-source">
+            onclick="toggleCode('M000118-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000118-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1075,12 +1074,12 @@ href="../Flickr.html">Flickr</a>.
       </div>
 
 
-      <div id="method-M000112" class="method-detail">
-        <a name="M000112"></a>
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
 
         <div class="method-heading">
 
-          <a href="#M000112" class="method-signature">
+          <a href="#M000119" class="method-signature">
 
           <span class="method-name">getUploadStatus</span><span class="method-args">()</span>
 
@@ -1105,6 +1104,12 @@ Returns information for the calling user related to photo uploads.
 <b>Error codes</b>
 </p>
 <ul>
+<li>1: <em>Not a valid date.</em>
+
+<p>
+The date argument passed was incorrect.
+</p>
+</li>
 <li>96: <em>Invalid signature</em>
 
 <p>
@@ -1200,8 +1205,8 @@ href="../Flickr.html">Flickr</a>.
 </pre>
 
           <p><a class="source-toggle" href="#"
-            onclick="toggleCode('M000112-source');return false;">[Source]</a></p>
-          <div class="method-source-code" id="M000112-source">
+            onclick="toggleCode('M000119-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000119-source">
 <pre>
 
 # Generated automatically from flickr api
