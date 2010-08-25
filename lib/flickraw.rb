@@ -163,14 +163,7 @@ module FlickRaw
         request.set_form_data(build_args(args, req))
         http.request(request)
       end
-
-      json = JSON.load(http_response.body.empty? ? "{}" : http_response.body)
-      raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
-      type, json = json.to_a.first if json.size == 1 and json.all? {|k,v| v.is_a? Hash}
-
-      res = Response.build json, type
-      @token = res.token if res.respond_to? :flickr_type and res.flickr_type == "auth"
-      res
+      process_response(req, http_response)
     end
 
     # Use this to upload the photo in _file_.
@@ -198,6 +191,16 @@ module FlickRaw
       }
       full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
       full_args
+    end
+
+    def process_response(req, http_response)
+      json = JSON.load(http_response.body.empty? ? "{}" : http_response.body)
+      raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
+      type, json = json.to_a.first if json.size == 1 and json.all? {|k,v| v.is_a? Hash}
+
+      res = Response.build json, type
+      @token = res.token if res.respond_to? :flickr_type and res.flickr_type == "auth"
+      res
     end
 
     def open_flickr
