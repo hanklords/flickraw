@@ -124,9 +124,10 @@ module FlickRaw
         klass.build_request method_nesting.join('.')
       else
         req = method_nesting.first
-        define_method(req) { |*args|
-          class_req = self.class.request_name
-          @flickr.call class_req + '.' + req, *args
+        module_eval %{
+          def #{req}(*args, &block)
+            @flickr.call("#{request_name}.#{req}", *args, &block)
+          end
         }
         flickr_methods << req
       end
@@ -155,7 +156,7 @@ module FlickRaw
     # This is the central method. It does the actual request to the flickr server.
     #
     # Raises FailedResponse if the response status is _failed_.
-    def call(req, args={})
+    def call(req, args={}, &block)
       @token = nil if req == "flickr.auth.getFrob"
       http_response = open_flickr do |http|
         request = Net::HTTP::Post.new(REST_PATH, 'User-Agent' => "Flickraw/#{VERSION}")
