@@ -47,7 +47,9 @@ module FlickRaw
 
   class Response
     def self.build(h, type) # :nodoc:
-      if type =~ /s$/ and (a = h[$`]).is_a? Array
+      if h.is_a? Response
+        h
+      elsif type =~ /s$/ and (a = h[$`]).is_a? Array
         ResponseList.new(h, type, a.collect {|e| Response.build(e, $`)})
       elsif h.keys == ["_content"]
         h["_content"]
@@ -74,6 +76,8 @@ module FlickRaw
     def to_s; @h["_content"] || super end
     def inspect; @h.inspect end
     def to_hash; @h end
+    def marshal_dump; [@h, @flickr_type] end
+    def marshal_load(data); initialize(*data) end
   end
 
   class ResponseList < Response
@@ -84,6 +88,7 @@ module FlickRaw
     def to_a; @a end
     def inspect; @a.inspect end
     def size; @a.size end
+    def marshal_dump; [@h, @flickr_type, @a] end
   end
 
   class FailedResponse < StandardError
