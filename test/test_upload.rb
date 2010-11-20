@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 require 'test/unit'
-require 'lib/flickraw'
+require 'flickraw'
 
 # FlickRaw.shared_secret = # Shared secret
 # flickr.auth.checkToken :auth_token => # Auth token

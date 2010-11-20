@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 require 'test/unit'
-require 'lib/flickraw'
+require 'flickraw'
 
 class Basic < Test::Unit::TestCase
   def test_request
