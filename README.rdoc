@@ -33,6 +33,9 @@ This will recreate the documentation by fetching the methods descriptions from f
 
  require 'flickraw'
 
+ FlickRaw.api_key="... Your API key ..."
+ FlickRaw.shared_secret="... Your shared secret ..."
+
  list   = flickr.photos.getRecent
 
  id     = list[0].id
