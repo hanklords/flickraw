@@ -6,7 +6,7 @@ require 'rake/testtask'
 
 FlickRawOptions = {'lazyload' => true}
 require './lib/flickraw'
-#require './flickraw_rdoc' if RUBY_VERSION >= "1.9"
+require './flickraw_rdoc' if RUBY_VERSION >= "1.9"
 
 PKG_FILES = FileList["lib/flickraw.rb", "flickraw_rdoc.rb", "LICENSE", "README.rdoc", "rakefile", "examples/*.rb", "test/*.rb"].to_a
 
@@ -32,7 +32,6 @@ CLOBBER.add "flickraw.gemspec"
 
 Rake::RDocTask.new do |rd|
   rd.rdoc_files.include "README.rdoc", "lib/flickraw.rb"
-  rd.options << "--inline-source"
 end
 
 Rake::TestTask.new

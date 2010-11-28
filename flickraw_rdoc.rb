@@ -1,3 +1,4 @@
+require "rdoc"
 require "rdoc/parser/ruby"
 require "cgi"
 
