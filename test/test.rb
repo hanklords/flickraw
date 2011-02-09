@@ -316,8 +316,8 @@ class Basic < Test::Unit::TestCase
     assert_equal "Canon DIGITAL IXUS 55", info.exif.find {|f| f.tag == "Model"}.raw
     assert_equal "1/60", info.exif.find {|f| f.tag == "ExposureTime"}.raw
     assert_equal "4.9", info.exif.find {|f| f.tag == "FNumber"}.raw
-    assert_equal "1600", info.exif.find {|f| f.tag == "ImageWidth"}.raw
-    assert_equal "1200", info.exif.find {|f| f.tag == "ImageHeight"}.raw
+    assert_equal "1600", info.exif.find {|f| f.tag == "RelatedImageWidth"}.raw
+    assert_equal "1200", info.exif.find {|f| f.tag == "RelatedImageHeight"}.raw
   end
   
   def test_photos_getSizes
