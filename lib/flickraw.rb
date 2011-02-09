@@ -210,7 +210,7 @@ module FlickRaw
 
     def open_flickr
       Net::HTTP::Proxy(FlickRawOptions['proxy_host'], FlickRawOptions['proxy_port'], FlickRawOptions['proxy_user'], FlickRawOptions['proxy_password']).start(FLICKR_HOST) {|http|
-        http.read_timeout = FlickRawOptions['timeout'] if FlickRawOptions['timeout']
+        http.read_timeout = FlickRawOptions['timeout'] if FlickRawOptions.key?('timeout')
         yield http
       }
     end
