@@ -142,7 +142,7 @@ There are some helpers to build flickr urls :
   info = flickr.photos.getInfo(:photo_id => "3839885270")
   FlickRaw.url_photosets(info) # => "http://www.flickr.com/photos/41650587@N02/sets/"
 
-=== url_short
+=== url_short, url_short_m, url_short_s, url_short_t
 
   info = flickr.photos.getInfo(:photo_id => "3839885270")
   FlickRaw.url_short(info) # => "http://flic.kr/p/6Rjq7s"
@@ -150,7 +150,7 @@ There are some helpers to build flickr urls :
 === url_photostream
 
   info = flickr.photos.getInfo(:photo_id => "3839885270")
-  FlickRaw.url_photostream(info) # => "http://flic.kr/p/6Rjq7s"
+  FlickRaw.url_photostream(info) # => "http://www.flickr.com/photos/41650587@N02/"
 
 
 See the _examples_ directory to find more examples.
