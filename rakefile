@@ -31,6 +31,7 @@ task :gem => ["flickraw.gemspec"]
 CLOBBER.add "flickraw.gemspec"
 
 Rake::RDocTask.new do |rd|
+  rd.main = "README.rdoc"
   rd.rdoc_files.include "README.rdoc", "lib/flickraw.rb"
 end
 
