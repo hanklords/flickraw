@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: FlickRaw::Request</title>
+
+	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Object.html">Object</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-c-flickr_methods">::flickr_methods</a></li>
+					
+					<li><a href="#method-c-flickr_objects">::flickr_objects</a></li>
+					
+					<li><a href="#method-c-request_name">::request_name</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../FlickRaw.html">FlickRaw</a></li>
+				
+					<li><a href="../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+				
+					<li><a href="../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+				
+					<li><a href="../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+				
+					<li><a href="../FlickRaw/Request.html">FlickRaw::Request</a></li>
+				
+					<li><a href="../FlickRaw/Response.html">FlickRaw::Response</a></li>
+				
+					<li><a href="../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+				
+					<li><a href="../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">FlickRaw::Request</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-class-method-details" class="method-section section">
+			<h3 class="section-header">Public Class Methods</h3>
+
+		
+			<div id="flickr-methods-method" class="method-detail ">
+				<a name="method-c-flickr_methods"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">flickr_methods</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+List of the flickr methods of this object
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="flickr-methods-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 145</span>
+145:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">flickr_methods</span>; <span class="ruby-ivar">@flickr_methods</span> <span class="ruby-operator">||=</span> [] <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="flickr-objects-method" class="method-detail ">
+				<a name="method-c-flickr_objects"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">flickr_objects</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+List of the flickr subobjects of this object
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="flickr-objects-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 142</span>
+142:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">flickr_objects</span>; <span class="ruby-ivar">@flickr_objects</span> <span class="ruby-operator">||=</span> [] <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="request-name-method" class="method-detail ">
+				<a name="method-c-request_name"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">request_name</span><span
+						class="method-args">()</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+Returns the prefix of the request corresponding to this class.
+</p>
+					
+
+					
+					<div class="method-source-code"
+						id="request-name-source">
+<pre>
+     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 148</span>
+148:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">request_name</span>; <span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/::/</span>, <span class="ruby-value str">'.'</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/[^\.]+\./</span>, <span class="ruby-value str">''</span>) <span class="ruby-keyword kw">end</span></pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

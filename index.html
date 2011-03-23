@@ -1,21 +1,870 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
-"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 
-    RDoc Documentation
-
-  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-  <title>RDoc Documentation</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>RDoc Documentation</title>
+
+	<link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+	<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
 </head>
-<frameset rows="20%, 80%">
-    <frameset cols="25%,35%,45%">
-        <frame src="fr_file_index.html"   title="Files" name="Files" />
-        <frame src="fr_class_index.html"  name="Classes" />
-        <frame src="fr_method_index.html" name="Methods" />
-    </frameset>
-    <frame src="files/README_rdoc.html" name="docwin" />
-</frameset>
+<body class="indexpage">
+
+	
+	<h1>RDoc Documentation</h1>
+
+	
+	<div id="main">
+		
+<p>
+Flickraw is a library to access <a href="http://flickr.com">flickr</a> api
+in a simple way. It maps exactly the methods described in <a
+href="http://www.flickr.com/services/api">the official api
+documentation</a>. It also tries to present the data returned in a simple
+and intuitive way. The methods are fetched from flickr when loading the
+library by using introspection capabilities. So it is always up-to-date
+with regards to new methods added by flickr.
+</p>
+<p>
+The github repository: <a
+href="http://github.com/hanklords/flickraw">github.com/hanklords/flickraw</a>
+</p>
+<h1>Installation</h1>
+<p>
+Type this in a console (you might need to be superuser)
+</p>
+<pre>
+ gem install flickraw
+</pre>
+<p>
+This will recreate the documentation by fetching the methods descriptions
+from flickr and then virtually plugging them in standard rdoc
+documentation.
+</p>
+<pre>
+ rake rdoc
+</pre>
+<h1>Features</h1>
+<ul>
+<li><p>
+Small single file: flickraw.rb is less than 300 lines
+</p>
+</li>
+<li><p>
+Complete support of flickr API. This doesn&#8217;t require an update of the
+library
+</p>
+</li>
+<li><p>
+Ruby syntax similar to the flickr api
+</p>
+</li>
+<li><p>
+Flickr authentication
+</p>
+</li>
+<li><p>
+Photo upload
+</p>
+</li>
+<li><p>
+Proxy support
+</p>
+</li>
+<li><p>
+Delayed library loading (for rails users)
+</p>
+</li>
+<li><p>
+Flickr URLs helpers
+</p>
+</li>
+</ul>
+<h1>Usage</h1>
+<h2>Simple</h2>
+<pre>
+ require 'flickraw'
+
+ FlickRaw.api_key=&quot;... Your API key ...&quot;
+ FlickRaw.shared_secret=&quot;... Your shared secret ...&quot;
+
+ list   = flickr.photos.getRecent
+
+ id     = list[0].id
+ secret = list[0].secret
+ info = flickr.photos.getInfo :photo_id =&gt; id, :secret =&gt; secret
+
+ info.title           # =&gt; &quot;PICT986&quot;
+ info.dates.taken     # =&gt; &quot;2006-07-06 15:16:18&quot;
+
+ sizes = flickr.photos.getSizes :photo_id =&gt; id
+
+ original = sizes.find {|s| s.label == 'Original' }
+ original.width       # =&gt; &quot;800&quot;
+</pre>
+<h2>Authentication</h2>
+<pre>
+  require 'flickraw'
+
+  FlickRaw.api_key=&quot;... Your API key ...&quot;
+  FlickRaw.shared_secret=&quot;... Your shared secret ...&quot;
+
+  frob = flickr.auth.getFrob
+  auth_url = FlickRaw.auth_url :frob =&gt; frob, :perms =&gt; 'read'
+
+  puts &quot;Open this url in your process to complete the authication process : #{auth_url}&quot;
+  puts &quot;Press Enter when you are finished.&quot;
+  STDIN.getc
+
+  begin
+    auth = flickr.auth.getToken :frob =&gt; frob
+    login = flickr.test.login
+    puts &quot;You are now authenticated as #{login.username} with token #{auth.token}&quot;
+  rescue FlickRaw::FailedResponse =&gt; e
+    puts &quot;Authentication failed : #{e.msg}&quot;
+  end
+</pre>
+<p>
+You don&#8217;t need to do that each time, you can reuse your token:
+</p>
+<pre>
+  require 'flickraw'
+
+  FlickRaw.api_key=&quot;... Your API key ...&quot;
+  FlickRaw.shared_secret=&quot;... Your shared secret ...&quot;
+
+  auth = flickr.auth.checkToken :auth_token =&gt; &quot;... Your saved token ...&quot;
+
+  # From here you are logged:
+  puts auth.user.username
+</pre>
+<h2>Upload</h2>
+<pre>
+  require 'flickraw'
+
+  FlickRaw.api_key=&quot;... Your API key ...&quot;
+  FlickRaw.shared_secret=&quot;... Your shared secret ...&quot;
+
+  PHOTO_PATH='photo.jpg'
+
+  # You need to be authentified to do that, see the previous examples.
+  flickr.upload_photo PHOTO_PATH, :title =&gt; &quot;Title&quot;, :description =&gt; &quot;This is the description&quot;
+</pre>
+<h2>Flickraw Options</h2>
+<p>
+You can pass some options to modify flickraw behavior:
+</p>
+<pre>
+  FlickRawOptions = {
+    &quot;api_key&quot; =&gt; &quot;... Your API key ...&quot;,
+    &quot;shared_secret&quot; =&gt; &quot;... Your shared secret ...&quot;,
+    &quot;auth_token&quot; =&gt; &quot;... Your saved token...&quot;  # if you set this you will be automatically loggued
+    &quot;lazyload&quot; =&gt; true,     # This delay the loading of the library until the first call
+
+    # Proxy support. alternatively, you can use the http_proxy environment variable
+    &quot;proxy_host&quot; =&gt; &quot;proxy_host&quot;,
+    &quot;proxy_port&quot; =&gt; &quot;proxy_port&quot;,
+    &quot;proxy_user&quot; =&gt; &quot;proxy_user&quot;,
+    &quot;proxy_password&quot; =&gt; &quot;proxy_password&quot;,
+
+    &quot;timeout&quot; =&gt; 5                # Set the request timeout
+  }
+
+  require 'flickraw'
+</pre>
+<h2>Flickr URL Helpers</h2>
+<p>
+There are some helpers to build flickr urls :
+</p>
+<h3>url, url_m, url_s, url_t, url_b, url_z, url_o</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_b(info) # =&gt; &quot;http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg&quot;
+</pre>
+<h3>url_profile</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_profile(info) # =&gt; &quot;http://www.flickr.com/people/41650587@N02/&quot;
+</pre>
+<h3>url_photopage</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_photopage(info) # =&gt; &quot;http://www.flickr.com/photos/41650587@N02/3839885270&quot;
+</pre>
+<h3>url_photoset, url_photosets</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_photosets(info) # =&gt; &quot;http://www.flickr.com/photos/41650587@N02/sets/&quot;
+</pre>
+<h3>url_short, url_short_m, url_short_s, url_short_t</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_short(info) # =&gt; &quot;http://flic.kr/p/6Rjq7s&quot;
+</pre>
+<h3>url_photostream</h3>
+<pre>
+  info = flickr.photos.getInfo(:photo_id =&gt; &quot;3839885270&quot;)
+  FlickRaw.url_photostream(info) # =&gt; &quot;http://www.flickr.com/photos/41650587@N02/&quot;
+</pre>
+<p>
+See the <em>examples</em> directory to find more examples.
+</p>
+<h2>Cached version</h2>
+<p>
+You can use
+</p>
+<pre>
+  require 'flickraw-cached'
+</pre>
+<p>
+instead of
+</p>
+<pre>
+   require 'flickraw'
+</pre>
+<p>
+This way it it doesn&#8217;t fetch available flickr methods each time it is
+loaded. The flickraw-cached gem is on rubygems.org and should be up-to-date
+with regard to flickr api most of the time.
+</p>
+<h1>Notes</h1>
+<p>
+If you want to use the api authenticated with several user at the same
+time, you must pass the authentication token explicitely each time. This is
+because it is keeping the authentication token internally. As an
+alternative, you can create new Flickr objects besides Kernel.flickr which
+is created for you. Use Flickr.new to this effect.
+</p>
+
+	</div>
+	
+
+	
+	
+	<h2>Files</h2>
+	<ul>
+		
+			<li class="file"><a href="README_rdoc.html">README.rdoc</a></li>
+		
+	</ul>
+	
+
+	<h2 id="classes">Classes/Modules</h2>
+	<ul>
+		
+		<li class="module"><a href="FlickRaw.html">FlickRaw</a></li>
+		
+		<li class="class"><a href="FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+		
+		<li class="class"><a href="FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+		
+		<li class="class"><a href="FlickRaw/Request.html">FlickRaw::Request</a></li>
+		
+		<li class="class"><a href="FlickRaw/Response.html">FlickRaw::Response</a></li>
+		
+		<li class="class"><a href="FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+		
+		<li class="class"><a href="Object.html">Object</a></li>
+		
+	</ul>
+
+	<h2 id="methods">Methods</h2>
+	<ul>
+		
+			<li><a href="FlickRaw.html#method-c-api_key">::api_key &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-api_key%3D">::api_key= &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-api_sig">::api_sig &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-auth_url">::auth_url &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-base58">::base58 &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-c-build">::build &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Request.html#method-c-flickr_methods">::flickr_methods &mdash; FlickRaw::Request</a></li>
+		
+			<li><a href="FlickRaw/Request.html#method-c-flickr_objects">::flickr_objects &mdash; FlickRaw::Request</a></li>
+		
+			<li><a href="FlickRaw/ResponseList.html#method-c-new">::new &mdash; FlickRaw::ResponseList</a></li>
+		
+			<li><a href="FlickRaw/FailedResponse.html#method-c-new">::new &mdash; FlickRaw::FailedResponse</a></li>
+		
+			<li><a href="FlickRaw/Request.html#method-c-request_name">::request_name &mdash; FlickRaw::Request</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-shared_secret">::shared_secret &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-shared_secret%3D">::shared_secret= &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url">::url &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_b">::url_b &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_m">::url_m &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_o">::url_o &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_photopage">::url_photopage &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_photoset">::url_photoset &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_photosets">::url_photosets &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_photostream">::url_photostream &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_profile">::url_profile &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_s">::url_s &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_short">::url_short &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_short_m">::url_short_m &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_short_s">::url_short_s &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_short_t">::url_short_t &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_t">::url_t &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw.html#method-c-url_z">::url_z &mdash; FlickRaw</a></li>
+		
+			<li><a href="FlickRaw/ResponseList.html#method-i-%5B%5D">#[] &mdash; FlickRaw::ResponseList</a></li>
+		
+			<li><a href="FlickRaw/Response.html#method-i-%5B%5D">#[] &mdash; FlickRaw::Response</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-activity">#activity &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Notes.html#method-i-add">#add &mdash; FlickRaw::Flickr::Photos::Notes</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/People.html#method-i-add">#add &mdash; FlickRaw::Flickr::Photos::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups/Pools.html#method-i-add">#add &mdash; FlickRaw::Flickr::Groups::Pools</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Favorites.html#method-i-add">#add &mdash; FlickRaw::Flickr::Favorites</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Comments.html#method-i-addComment">#addComment &mdash; FlickRaw::Flickr::Photos::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets/Comments.html#method-i-addComment">#addComment &mdash; FlickRaw::Flickr::Photosets::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-addPhoto">#addPhoto &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-addPhoto">#addPhoto &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-addTags">#addTags &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-auth">#auth &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-batchCorrectLocation">#batchCorrectLocation &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-blogs">#blogs &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups.html#method-i-browse">#browse &mdash; FlickRaw::Flickr::Groups</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-build_args">#build_args &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-call">#call &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Upload.html#method-i-checkTickets">#checkTickets &mdash; FlickRaw::Flickr::Photos::Upload</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Auth.html#method-i-checkToken">#checkToken &mdash; FlickRaw::Flickr::Auth</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-collections">#collections &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-comments">#comments &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-comments">#comments &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-commons">#commons &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-contacts">#contacts &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-correctLocation">#correctLocation &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-create">#create &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-create">#create &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/People.html#method-i-delete">#delete &mdash; FlickRaw::Flickr::Photos::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-delete">#delete &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-delete">#delete &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Notes.html#method-i-delete">#delete &mdash; FlickRaw::Flickr::Photos::Notes</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets/Comments.html#method-i-deleteComment">#deleteComment &mdash; FlickRaw::Flickr::Photosets::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Comments.html#method-i-deleteComment">#deleteComment &mdash; FlickRaw::Flickr::Photos::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/People.html#method-i-deleteCoords">#deleteCoords &mdash; FlickRaw::Flickr::Photos::People</a></li>
+		
+			<li><a href="FlickRaw/ResponseList.html#method-i-each">#each &mdash; FlickRaw::ResponseList</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Test.html#method-i-echo">#echo &mdash; FlickRaw::Flickr::Test</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Notes.html#method-i-edit">#edit &mdash; FlickRaw::Flickr::Photos::Notes</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets/Comments.html#method-i-editComment">#editComment &mdash; FlickRaw::Flickr::Photosets::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Comments.html#method-i-editComment">#editComment &mdash; FlickRaw::Flickr::Photos::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/People.html#method-i-editCoords">#editCoords &mdash; FlickRaw::Flickr::Photos::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-editMeta">#editMeta &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-editMeta">#editMeta &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-editPhoto">#editPhoto &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-editPhotos">#editPhotos &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-editPhotos">#editPhotos &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-favorites">#favorites &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-find">#find &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/People.html#method-i-findByEmail">#findByEmail &mdash; FlickRaw::Flickr::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-findByLatLon">#findByLatLon &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/People.html#method-i-findByUsername">#findByUsername &mdash; FlickRaw::Flickr::People</a></li>
+		
+			<li><a href="Object.html#method-i-flickr">#flickr &mdash; Object</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-galleries">#galleries &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-geo">#geo &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getAllContexts">#getAllContexts &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getCSVFiles">#getCSVFiles &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-getChildrenWithPhotosPublic">#getChildrenWithPhotosPublic &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Tags.html#method-i-getClusterPhotos">#getClusterPhotos &mdash; FlickRaw::Flickr::Tags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Tags.html#method-i-getClusters">#getClusters &mdash; FlickRaw::Flickr::Tags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getCollectionDomains">#getCollectionDomains &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getCollectionReferrers">#getCollectionReferrers &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getCollectionStats">#getCollectionStats &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getContactsPhotos">#getContactsPhotos &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getContactsPublicPhotos">#getContactsPublicPhotos &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Prefs.html#method-i-getContentType">#getContentType &mdash; FlickRaw::Flickr::Prefs</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-getContext">#getContext &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups/Pools.html#method-i-getContext">#getContext &mdash; FlickRaw::Flickr::Groups::Pools</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getContext">#getContext &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getCounts">#getCounts &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getExif">#getExif &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getFavorites">#getFavorites &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Auth.html#method-i-getFrob">#getFrob &mdash; FlickRaw::Flickr::Auth</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Auth.html#method-i-getFullToken">#getFullToken &mdash; FlickRaw::Flickr::Auth</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Prefs.html#method-i-getGeoPerms">#getGeoPerms &mdash; FlickRaw::Flickr::Prefs</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Urls.html#method-i-getGroup">#getGroup &mdash; FlickRaw::Flickr::Urls</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups/Pools.html#method-i-getGroups">#getGroups &mdash; FlickRaw::Flickr::Groups::Pools</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Prefs.html#method-i-getHidden">#getHidden &mdash; FlickRaw::Flickr::Prefs</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Tags.html#method-i-getHotList">#getHotList &mdash; FlickRaw::Flickr::Tags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Licenses.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Photos::Licenses</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Groups</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Collections.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Collections</a></li>
+		
+			<li><a href="FlickRaw/Flickr/People.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-getInfoByUrl">#getInfoByUrl &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Commons.html#method-i-getInstitutions">#getInstitutions &mdash; FlickRaw::Flickr::Commons</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups/Members.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Groups::Members</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Panda.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Panda</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Contacts.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Contacts</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets/Comments.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Photosets::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Comments.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Photos::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Interestingness.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Interestingness</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/People.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Photos::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Favorites.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Favorites</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Blogs.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Blogs</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-getListForPhoto">#getListForPhoto &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Tags.html#method-i-getListPhoto">#getListPhoto &mdash; FlickRaw::Flickr::Tags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Contacts.html#method-i-getListRecentlyUploaded">#getListRecentlyUploaded &mdash; FlickRaw::Flickr::Contacts</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Tags.html#method-i-getListUser">#getListUser &mdash; FlickRaw::Flickr::Tags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Tags.html#method-i-getListUserPopular">#getListUserPopular &mdash; FlickRaw::Flickr::Tags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Tags.html#method-i-getListUserRaw">#getListUserRaw &mdash; FlickRaw::Flickr::Tags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-getLocation">#getLocation &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Reflection.html#method-i-getMethodInfo">#getMethodInfo &mdash; FlickRaw::Flickr::Reflection</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Reflection.html#method-i-getMethods">#getMethods &mdash; FlickRaw::Flickr::Reflection</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Machinetags.html#method-i-getNamespaces">#getNamespaces &mdash; FlickRaw::Flickr::Machinetags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getNotInSet">#getNotInSet &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Machinetags.html#method-i-getPairs">#getPairs &mdash; FlickRaw::Flickr::Machinetags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getPerms">#getPerms &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-getPerms">#getPerms &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotoDomains">#getPhotoDomains &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotoReferrers">#getPhotoReferrers &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotoStats">#getPhotoStats &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups/Pools.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::Groups::Pools</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Panda.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::Panda</a></li>
+		
+			<li><a href="FlickRaw/Flickr/People.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/People.html#method-i-getPhotosOf">#getPhotosOf &mdash; FlickRaw::Flickr::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotosetDomains">#getPhotosetDomains &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotosetReferrers">#getPhotosetReferrers &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotosetStats">#getPhotosetStats &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotostreamDomains">#getPhotostreamDomains &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotostreamReferrers">#getPhotostreamReferrers &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotostreamStats">#getPhotostreamStats &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-getPlaceTypes">#getPlaceTypes &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPopularPhotos">#getPopularPhotos &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Machinetags.html#method-i-getPredicates">#getPredicates &mdash; FlickRaw::Flickr::Machinetags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Prefs.html#method-i-getPrivacy">#getPrivacy &mdash; FlickRaw::Flickr::Prefs</a></li>
+		
+			<li><a href="FlickRaw/Flickr/People.html#method-i-getPublicGroups">#getPublicGroups &mdash; FlickRaw::Flickr::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Contacts.html#method-i-getPublicList">#getPublicList &mdash; FlickRaw::Flickr::Contacts</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Favorites.html#method-i-getPublicList">#getPublicList &mdash; FlickRaw::Flickr::Favorites</a></li>
+		
+			<li><a href="FlickRaw/Flickr/People.html#method-i-getPublicPhotos">#getPublicPhotos &mdash; FlickRaw::Flickr::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getRecent">#getRecent &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Comments.html#method-i-getRecentForContacts">#getRecentForContacts &mdash; FlickRaw::Flickr::Photos::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Machinetags.html#method-i-getRecentValues">#getRecentValues &mdash; FlickRaw::Flickr::Machinetags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Tags.html#method-i-getRelated">#getRelated &mdash; FlickRaw::Flickr::Tags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Prefs.html#method-i-getSafetyLevel">#getSafetyLevel &mdash; FlickRaw::Flickr::Prefs</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Blogs.html#method-i-getServices">#getServices &mdash; FlickRaw::Flickr::Blogs</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-getShapeHistory">#getShapeHistory &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getSizes">#getSizes &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Auth.html#method-i-getToken">#getToken &mdash; FlickRaw::Flickr::Auth</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-getTopPlacesList">#getTopPlacesList &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getTotalViews">#getTotalViews &mdash; FlickRaw::Flickr::Stats</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Collections.html#method-i-getTree">#getTree &mdash; FlickRaw::Flickr::Collections</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getUntagged">#getUntagged &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/People.html#method-i-getUploadStatus">#getUploadStatus &mdash; FlickRaw::Flickr::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Urls.html#method-i-getUserPhotos">#getUserPhotos &mdash; FlickRaw::Flickr::Urls</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Urls.html#method-i-getUserProfile">#getUserProfile &mdash; FlickRaw::Flickr::Urls</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Machinetags.html#method-i-getValues">#getValues &mdash; FlickRaw::Flickr::Machinetags</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getWithGeoData">#getWithGeoData &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getWithoutGeoData">#getWithoutGeoData &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-groups">#groups &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Response.html#method-i-inspect">#inspect &mdash; FlickRaw::Response</a></li>
+		
+			<li><a href="FlickRaw/ResponseList.html#method-i-inspect">#inspect &mdash; FlickRaw::ResponseList</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-interestingness">#interestingness &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-licenses">#licenses &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Test.html#method-i-login">#login &mdash; FlickRaw::Flickr::Test</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Urls.html#method-i-lookupGallery">#lookupGallery &mdash; FlickRaw::Flickr::Urls</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Urls.html#method-i-lookupGroup">#lookupGroup &mdash; FlickRaw::Flickr::Urls</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Urls.html#method-i-lookupUser">#lookupUser &mdash; FlickRaw::Flickr::Urls</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-machinetags">#machinetags &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/ResponseList.html#method-i-marshal_dump">#marshal_dump &mdash; FlickRaw::ResponseList</a></li>
+		
+			<li><a href="FlickRaw/Response.html#method-i-marshal_dump">#marshal_dump &mdash; FlickRaw::Response</a></li>
+		
+			<li><a href="FlickRaw/Response.html#method-i-marshal_load">#marshal_load &mdash; FlickRaw::Response</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups.html#method-i-members">#members &mdash; FlickRaw::Flickr::Groups</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-notes">#notes &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Test.html#method-i-null">#null &mdash; FlickRaw::Flickr::Test</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-open_flickr">#open_flickr &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-orderSets">#orderSets &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-panda">#panda &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-people">#people &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-people">#people &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-photos">#photos &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-photosForLocation">#photosForLocation &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-photosets">#photosets &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-places">#places &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-placesForBoundingBox">#placesForBoundingBox &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-placesForContacts">#placesForContacts &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-placesForTags">#placesForTags &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-placesForUser">#placesForUser &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups.html#method-i-pools">#pools &mdash; FlickRaw::Flickr::Groups</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Blogs.html#method-i-postPhoto">#postPhoto &mdash; FlickRaw::Flickr::Blogs</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-prefs">#prefs &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-process_response">#process_response &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-recentlyUpdated">#recentlyUpdated &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-reflection">#reflection &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups/Pools.html#method-i-remove">#remove &mdash; FlickRaw::Flickr::Groups::Pools</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Favorites.html#method-i-remove">#remove &mdash; FlickRaw::Flickr::Favorites</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-removeLocation">#removeLocation &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-removePhoto">#removePhoto &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-removePhotos">#removePhotos &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-removeTag">#removeTag &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-reorderPhotos">#reorderPhotos &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-replace_photo">#replace_photo &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-resolvePlaceId">#resolvePlaceId &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-resolvePlaceURL">#resolvePlaceURL &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Transform.html#method-i-rotate">#rotate &mdash; FlickRaw::Flickr::Photos::Transform</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-search">#search &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Groups.html#method-i-search">#search &mdash; FlickRaw::Flickr::Groups</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-setContentType">#setContentType &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-setContext">#setContext &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-setDates">#setDates &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Licenses.html#method-i-setLicense">#setLicense &mdash; FlickRaw::Flickr::Photos::Licenses</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-setLocation">#setLocation &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-setMeta">#setMeta &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-setPerms">#setPerms &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-setPerms">#setPerms &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-setPrimaryPhoto">#setPrimaryPhoto &mdash; FlickRaw::Flickr::Photosets</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-setSafetyLevel">#setSafetyLevel &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-setTags">#setTags &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/ResponseList.html#method-i-size">#size &mdash; FlickRaw::ResponseList</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-stats">#stats &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-tags">#tags &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Places.html#method-i-tagsForPlace">#tagsForPlace &mdash; FlickRaw::Flickr::Places</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-test">#test &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/ResponseList.html#method-i-to_a">#to_a &mdash; FlickRaw::ResponseList</a></li>
+		
+			<li><a href="FlickRaw/Response.html#method-i-to_hash">#to_hash &mdash; FlickRaw::Response</a></li>
+		
+			<li><a href="FlickRaw/Response.html#method-i-to_s">#to_s &mdash; FlickRaw::Response</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-transform">#transform &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-upload">#upload &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-upload_flickr">#upload_flickr &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-upload_photo">#upload_photo &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr.html#method-i-urls">#urls &mdash; FlickRaw::Flickr</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Activity.html#method-i-userComments">#userComments &mdash; FlickRaw::Flickr::Activity</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Activity.html#method-i-userPhotos">#userPhotos &mdash; FlickRaw::Flickr::Activity</a></li>
+		
+	</ul>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+</body>
 </html>

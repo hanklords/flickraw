@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: FlickRaw::Flickr::Panda</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Request.html">FlickRaw::Request</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-getList">#getList</a></li>
+					
+					<li><a href="#method-i-getPhotos">#getPhotos</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../FlickRaw.html">FlickRaw</a></li>
+				
+					<li><a href="../../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+				
+					<li><a href="../../FlickRaw/Request.html">FlickRaw::Request</a></li>
+				
+					<li><a href="../../FlickRaw/Response.html">FlickRaw::Response</a></li>
+				
+					<li><a href="../../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+				
+					<li><a href="../../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">FlickRaw::Flickr::Panda</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="get-ist-method" class="method-detail ">
+				<a name="method-i-getList"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getList</span><span
+						class="method-args"></span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.panda.getList.html">flickr.panda.getList</a>
+request.
+</p>
+<p>
+Return a list of <a href=&#8220;<a
+href="http://www.flickr.com/explore/panda">Flickr">www.flickr.com/explore/panda">Flickr</a>
+pandas</a>, from whom you can request photos using the <a
+href=&#8220;/services/api/flickr.panda.getPhotos.htm&#8220;>flickr.panda.getPhotos</a>
+API method. <br/><br/> More information about the pandas can be found on
+the <a href=&#8220;<a
+href="http://code.flickr.com/blog/2009/03/03/panda-tuesday-the-history-of-the-panda-new-apis-explore-and-you/">dev">code.flickr.com/blog/2009/03/03/panda-tuesday-the-history-of-the-panda-new-apis-explore-and-you/">dev</a>
+blog</a>.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;pandas&gt;
+    &lt;panda&gt;ling ling&lt;/panda&gt;
+    &lt;panda&gt;hsing hsing&lt;/panda&gt;
+    &lt;panda&gt;wang wang&lt;/panda&gt;
+ &lt;/pandas&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-ist-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getList(*args)
+    @flickr.call 'flickr.panda.getList', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-hotos-method" class="method-detail ">
+				<a name="method-i-getPhotos"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getPhotos</span><span
+						class="method-args">(:panda_name => 'panda_name',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.panda.getPhotos.html">flickr.panda.getPhotos</a>
+request.
+</p>
+<p>
+Ask the <a href=&#8220;<a
+href="http://www.flickr.com/explore/panda">Flickr">www.flickr.com/explore/panda">Flickr</a>
+Pandas</a> for a list of recent public (and &#8220;safe&#8221;) photos.
+<br/><br/> More information about the pandas can be found on the <a
+href=&#8220;<a
+href="http://code.flickr.com/blog/2009/03/03/panda-tuesday-the-history-of-the-panda-new-apis-explore-and-you/">dev">code.flickr.com/blog/2009/03/03/panda-tuesday-the-history-of-the-panda-new-apis-explore-and-you/">dev</a>
+blog</a>.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>panda_name <em>(required)</em> </dt><dd><p>
+The name of the panda to ask for photos from. There are currently three
+pandas named:<br /><br />
+</p>
+</dd>
+</dl>
+<p>
+<ul> <li><strong><a href=&#8220;<a
+href="http://flickr.com/photos/ucumari/126073203/">ling">flickr.com/photos/ucumari/126073203/">ling</a>
+ling</a></strong></li> <li><strong><a href=&#8220;<a
+href="http://flickr.com/photos/lynnehicks/136407353">hsing">flickr.com/photos/lynnehicks/136407353">hsing</a>
+hsing</a></strong></li> <li><strong><a href=&#8220;<a
+href="http://flickr.com/photos/perfectpandas/1597067182/">wang">flickr.com/photos/perfectpandas/1597067182/">wang</a>
+wang</a></strong></li> </ul>
+</p>
+<p>
+<br />You can fetch a list of all the current pandas using the <a
+href=&#8220;/services/api/flickr.panda.getList.html&#8220;>flickr.panda.getList</a>
+API method.
+</p>
+<dl>
+<dt>extras </dt><dd><p>
+A comma-delimited list of extra information to fetch for each returned
+record. Currently supported fields are: <tt>description</tt>,
+<tt>license</tt>, <tt>date_upload</tt>, <tt>date_taken</tt>,
+<tt>owner_name</tt>, <tt>icon_server</tt>, <tt>original_format</tt>,
+<tt>last_update</tt>, <tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>,
+<tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>, <tt>path_alias</tt>,
+<tt>url_sq</tt>, <tt>url_t</tt>, <tt>url_s</tt>, <tt>url_m</tt>,
+<tt>url_z</tt>, <tt>url_l</tt>, <tt>url_o</tt>
+</p>
+</dd>
+<dt>per_page </dt><dd><p>
+Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+</p>
+</dd>
+<dt>page </dt><dd><p>
+The page of results to return. If this argument is omitted, it defaults to
+1.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Required parameter missing.</em>
+</p>
+<p>
+One or more required parameters was not included with your request.
+</p>
+</li>
+<li><p>
+2: <em>Unknown panda</em>
+</p>
+<p>
+You requested a panda we haven&#8217;t met yet.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;photos interval=&quot;60000&quot; lastupdate=&quot;1235765058272&quot; total=&quot;120&quot; panda=&quot;ling ling&quot;&gt;
+     &lt;photo title=&quot;Shorebirds at Pillar Point&quot; id=&quot;3313428913&quot; secret=&quot;2cd3cb44cb&quot;
+         server=&quot;3609&quot; farm=&quot;4&quot; owner=&quot;72442527@N00&quot; ownername=&quot;Pat Ulrich&quot;/&gt;
+     &lt;photo title=&quot;Battle of the sky&quot; id=&quot;3313713993&quot; secret=&quot;3f7f51500f&quot;
+         server=&quot;3382&quot; farm=&quot;4&quot; owner=&quot;10459691@N05&quot; ownername=&quot;Sven Ericsson&quot;/&gt;
+     &lt;!-- and so on --&gt;
+ &lt;/photos&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-hotos-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getPhotos(*args)
+    @flickr.call 'flickr.panda.getPhotos', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: FlickRaw::Flickr::Tags</title>
+
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Request.html">FlickRaw::Request</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-getClusterPhotos">#getClusterPhotos</a></li>
+					
+					<li><a href="#method-i-getClusters">#getClusters</a></li>
+					
+					<li><a href="#method-i-getHotList">#getHotList</a></li>
+					
+					<li><a href="#method-i-getListPhoto">#getListPhoto</a></li>
+					
+					<li><a href="#method-i-getListUser">#getListUser</a></li>
+					
+					<li><a href="#method-i-getListUserPopular">#getListUserPopular</a></li>
+					
+					<li><a href="#method-i-getListUserRaw">#getListUserRaw</a></li>
+					
+					<li><a href="#method-i-getRelated">#getRelated</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../FlickRaw.html">FlickRaw</a></li>
+				
+					<li><a href="../../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+				
+					<li><a href="../../FlickRaw/Request.html">FlickRaw::Request</a></li>
+				
+					<li><a href="../../FlickRaw/Response.html">FlickRaw::Response</a></li>
+				
+					<li><a href="../../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+				
+					<li><a href="../../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">FlickRaw::Flickr::Tags</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="get-luster-hotos-method" class="method-detail ">
+				<a name="method-i-getClusterPhotos"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getClusterPhotos</span><span
+						class="method-args">(:tag => 'tag',:cluster_id => 'cluster_id')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.tags.getClusterPhotos.html">flickr.tags.getClusterPhotos</a>
+request.
+</p>
+<p>
+Returns the first 24 photos for a given tag cluster
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>tag <em>(required)</em> </dt><dd><p>
+The tag that this cluster belongs to.
+</p>
+</dd>
+<dt>cluster_id <em>(required)</em> </dt><dd><p>
+The top three tags for the cluster, separated by dashes (just like the
+url).
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="get-luster-hotos-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getClusterPhotos(*args)
+    @flickr.call 'flickr.tags.getClusterPhotos', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-lusters-method" class="method-detail ">
+				<a name="method-i-getClusters"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getClusters</span><span
+						class="method-args">(:tag => 'tag')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.tags.getClusters.html">flickr.tags.getClusters</a>
+request.
+</p>
+<p>
+Gives you a list of tag clusters for the given tag.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>tag <em>(required)</em> </dt><dd><p>
+The tag to fetch clusters for.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Tag cluster not found</em>
+</p>
+<p>
+The tag was invalid or no cluster exists for that tag.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;clusters source=&quot;cows&quot; total=&quot;2&quot;&gt;
+        &lt;cluster total=&quot;3&quot;&gt;
+                &lt;tag&gt;farm&lt;/tag&gt;
+                &lt;tag&gt;animals&lt;/tag&gt;
+                &lt;tag&gt;cattle&lt;/tag&gt;
+        &lt;/cluster&gt;
+        &lt;cluster total=&quot;3&quot;&gt;
+                &lt;tag&gt;green&lt;/tag&gt;
+                &lt;tag&gt;landscape&lt;/tag&gt;
+                &lt;tag&gt;countryside&lt;/tag&gt;
+        &lt;/cluster&gt;
+ &lt;/clusters&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-lusters-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getClusters(*args)
+    @flickr.call 'flickr.tags.getClusters', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-ot-ist-method" class="method-detail ">
+				<a name="method-i-getHotList"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getHotList</span><span
+						class="method-args">(:period => 'period',:count => 'count')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.tags.getHotList.html">flickr.tags.getHotList</a>
+request.
+</p>
+<p>
+Returns a list of hot tags for the given period.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>period </dt><dd><p>
+The period for which to fetch hot tags. Valid values are <tt>day</tt> and
+<tt>week</tt> (defaults to <tt>day</tt>).
+</p>
+</dd>
+<dt>count </dt><dd><p>
+The number of tags to return. Defaults to 20. Maximum allowed value is 200.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Invalid period</em>
+</p>
+<p>
+The specified period was not understood.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;hottags period=&quot;day&quot; count=&quot;6&quot;&gt;
+        &lt;tag score=&quot;20&quot;&gt;northerncalifornia&lt;/tag&gt;
+        &lt;tag score=&quot;18&quot;&gt;top20&lt;/tag&gt;
+        &lt;tag score=&quot;15&quot;&gt;keychain&lt;/tag&gt;
+        &lt;tag score=&quot;10&quot;&gt;zb&lt;/tag&gt;
+        &lt;tag score=&quot;9&quot;&gt;selfportraittuesday&lt;/tag&gt;
+        &lt;tag score=&quot;4&quot;&gt;jan06&lt;/tag&gt;
+ &lt;/hottags&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-ot-ist-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getHotList(*args)
+    @flickr.call 'flickr.tags.getHotList', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-ist-hoto-method" class="method-detail ">
+				<a name="method-i-getListPhoto"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getListPhoto</span><span
+						class="method-args">(:photo_id => 'photo_id')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.tags.getListPhoto.html">flickr.tags.getListPhoto</a>
+request.
+</p>
+<p>
+Get the tag list for a given photo.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd><p>
+The id of the photo to return tags for.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Photo not found</em>
+</p>
+<p>
+The photo id passed was not a valid photo id.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;photo id=&quot;2619&quot;&gt;
+        &lt;tags&gt;
+                &lt;tag id=&quot;156&quot; author=&quot;12037949754@N01&quot;
+                        authorname=&quot;Bees&quot; raw=&quot;tag 1&quot;&gt;tag1&lt;/tag&gt; 
+                &lt;tag id=&quot;157&quot; author=&quot;12037949754@N01&quot;
+                        authorname=&quot;Bees&quot; raw=&quot;tag 2&quot;&gt;tag2&lt;/tag&gt; 
+        &lt;/tags&gt;
+ &lt;/photo&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-ist-hoto-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getListPhoto(*args)
+    @flickr.call 'flickr.tags.getListPhoto', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-ist-ser-method" class="method-detail ">
+				<a name="method-i-getListUser"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getListUser</span><span
+						class="method-args">(:user_id => 'user_id')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.tags.getListUser.html">flickr.tags.getListUser</a>
+request.
+</p>
+<p>
+Get the tag list for a given user (or the currently logged in user).
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>user_id </dt><dd><p>
+The NSID of the user to fetch the tag list for. If this argument is not
+specified, the currently logged in user (if any) is assumed.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>User not found</em>
+</p>
+<p>
+The user NSID passed was not a valid user NSID and the calling user was not
+logged in.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;who id=&quot;12037949754@N01&quot;&gt;
+        &lt;tags&gt;
+                &lt;tag&gt;gull&lt;/tag&gt; 
+                &lt;tag&gt;tag1&lt;/tag&gt; 
+                &lt;tag&gt;tag2&lt;/tag&gt; 
+                &lt;tag&gt;tags&lt;/tag&gt; 
+                &lt;tag&gt;test&lt;/tag&gt; 
+        &lt;/tags&gt;
+ &lt;/who&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-ist-ser-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getListUser(*args)
+    @flickr.call 'flickr.tags.getListUser', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-ist-ser-opular-method" class="method-detail ">
+				<a name="method-i-getListUserPopular"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getListUserPopular</span><span
+						class="method-args">(:user_id => 'user_id',:count => 'count')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.tags.getListUserPopular.html">flickr.tags.getListUserPopular</a>
+request.
+</p>
+<p>
+Get the popular tags for a given user (or the currently logged in user).
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>user_id </dt><dd><p>
+The NSID of the user to fetch the tag list for. If this argument is not
+specified, the currently logged in user (if any) is assumed.
+</p>
+</dd>
+<dt>count </dt><dd><p>
+Number of popular tags to return. defaults to 10 when this argument is not
+present.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>User not found</em>
+</p>
+<p>
+The user NSID passed was not a valid user NSID and the calling user was not
+logged in.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;who id=&quot;12037949754@N01&quot;&gt;
+        &lt;tags&gt;
+                &lt;tag count=&quot;10&quot;&gt;bar&lt;/tag&gt; 
+                &lt;tag count=&quot;11&quot;&gt;foo&lt;/tag&gt; 
+                &lt;tag count=&quot;147&quot;&gt;gull&lt;/tag&gt; 
+                &lt;tag count=&quot;3&quot;&gt;tags&lt;/tag&gt; 
+                &lt;tag count=&quot;3&quot;&gt;test&lt;/tag&gt; 
+        &lt;/tags&gt;
+ &lt;/who&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-ist-ser-opular-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getListUserPopular(*args)
+    @flickr.call 'flickr.tags.getListUserPopular', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-ist-ser-aw-method" class="method-detail ">
+				<a name="method-i-getListUserRaw"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getListUserRaw</span><span
+						class="method-args">(:tag => 'tag')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.tags.getListUserRaw.html">flickr.tags.getListUserRaw</a>
+request.
+</p>
+<p>
+Get the raw versions of a given tag (or all tags) for the currently
+logged-in user.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>tag </dt><dd><p>
+The tag you want to retrieve all raw versions for.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>User not found</em>
+</p>
+<p>
+The calling user was not logged in.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;who id=&quot;12037949754@N01&quot;&gt;
+     &lt;tags&gt;
+         &lt;tag clean=&quot;foo&quot;&gt;
+             &lt;raw&gt;foo&lt;/raw&gt;
+             &lt;raw&gt;Foo&lt;/raw&gt;
+             &lt;raw&gt;f:oo&lt;/raw&gt;
+         &lt;/tag&gt;
+     &lt;/tags&gt;
+ &lt;/who&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-ist-ser-aw-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getListUserRaw(*args)
+    @flickr.call 'flickr.tags.getListUserRaw', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-elated-method" class="method-detail ">
+				<a name="method-i-getRelated"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getRelated</span><span
+						class="method-args">(:tag => 'tag')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.tags.getRelated.html">flickr.tags.getRelated</a>
+request.
+</p>
+<p>
+Returns a list of tags &#8216;related&#8217; to the given tag, based on
+clustered usage analysis.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>tag <em>(required)</em> </dt><dd><p>
+The tag to fetch related tags for.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Tag not found</em>
+</p>
+<p>
+The tag argument was missing.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;tags source=&quot;london&quot;&gt;
+        &lt;tag&gt;england&lt;/tag&gt;
+        &lt;tag&gt;thames&lt;/tag&gt;
+        &lt;tag&gt;tube&lt;/tag&gt;
+        &lt;tag&gt;bigben&lt;/tag&gt;
+        &lt;tag&gt;uk&lt;/tag&gt;
+ &lt;/tags&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-elated-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getRelated(*args)
+    @flickr.call 'flickr.tags.getRelated', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

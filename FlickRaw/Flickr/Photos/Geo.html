@@ -1,0 +1,1849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: FlickRaw::Flickr::Photos::Geo</title>
+
+	<link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../../Request.html">FlickRaw::Request</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-batchCorrectLocation">#batchCorrectLocation</a></li>
+					
+					<li><a href="#method-i-correctLocation">#correctLocation</a></li>
+					
+					<li><a href="#method-i-getLocation">#getLocation</a></li>
+					
+					<li><a href="#method-i-getPerms">#getPerms</a></li>
+					
+					<li><a href="#method-i-photosForLocation">#photosForLocation</a></li>
+					
+					<li><a href="#method-i-removeLocation">#removeLocation</a></li>
+					
+					<li><a href="#method-i-setContext">#setContext</a></li>
+					
+					<li><a href="#method-i-setLocation">#setLocation</a></li>
+					
+					<li><a href="#method-i-setPerms">#setPerms</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../../FlickRaw.html">FlickRaw</a></li>
+				
+					<li><a href="../../../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+				
+					<li><a href="../../../FlickRaw/Request.html">FlickRaw::Request</a></li>
+				
+					<li><a href="../../../FlickRaw/Response.html">FlickRaw::Response</a></li>
+				
+					<li><a href="../../../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+				
+					<li><a href="../../../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">FlickRaw::Flickr::Photos::Geo</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="batch-orrect-ocation-method" class="method-detail ">
+				<a name="method-i-batchCorrectLocation"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">batchCorrectLocation</span><span
+						class="method-args">(:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy',:place_id => 'place_id',:woe_id => 'woe_id')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.geo.batchCorrectLocation.html">flickr.photos.geo.batchCorrectLocation</a>
+request.
+</p>
+<p>
+Correct the places hierarchy for all the photos for a user at a given
+latitude, longitude and accuracy.<br /><br />
+</p>
+<p>
+Batch corrections are processed in a delayed queue so it may take a few
+minutes before the changes are reflected in a user&#8217;s photos.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>lat <em>(required)</em> </dt><dd><p>
+The latitude of the photos to be update whose valid range is -90 to 90.
+Anything more than 6 decimal places will be truncated.
+</p>
+</dd>
+<dt>lon <em>(required)</em> </dt><dd><p>
+The longitude of the photos to be updated whose valid range is -180 to 180.
+Anything more than 6 decimal places will be truncated.
+</p>
+</dd>
+<dt>accuracy <em>(required)</em> </dt><dd><p>
+Recorded accuracy level of the photos to be updated. World level is 1,
+Country is ~3, Region ~6, City ~11, Street ~16. Current range is 1-16.
+Defaults to 16 if not specified.
+</p>
+</dd>
+<dt>place_id </dt><dd><p>
+A <a href="../../Flickr.html">Flickr</a> <a
+href="../Places.html">Places</a> ID. (While optional, you must pass either
+a valid <a href="../Places.html">Places</a> ID or a WOE ID.)
+</p>
+</dd>
+<dt>woe_id </dt><dd><p>
+A Where On Earth (WOE) ID. (While optional, you must pass either a valid <a
+href="../Places.html">Places</a> ID or a WOE ID.)
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Required arguments missing</em>
+</p>
+<p>
+Some or all of the required arguments were not supplied.
+</p>
+</li>
+<li><p>
+2: <em>Not a valid latitude</em>
+</p>
+<p>
+The latitude argument failed validation.
+</p>
+</li>
+<li><p>
+3: <em>Not a valid longitude</em>
+</p>
+<p>
+The longitude argument failed validation.
+</p>
+</li>
+<li><p>
+4: <em>Not a valid accuracy</em>
+</p>
+<p>
+The accuracy argument failed validation.
+</p>
+</li>
+<li><p>
+5: <em>Not a valid <a href="../Places.html">Places</a> ID</em>
+</p>
+<p>
+An invalid <a href="../Places.html">Places</a> (or WOE) ID was passed with
+the API call.
+</p>
+</li>
+<li><p>
+6: <em>No photos geotagged at that location</em>
+</p>
+<p>
+There were no geotagged photos found for the authed user at the supplied
+latitude, longitude and accuracy.
+</p>
+</li>
+<li><p>
+96: <em>Invalid signature</em>
+</p>
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li><p>
+97: <em>Missing signature</em>
+</p>
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li><p>
+98: <em>Login failed / Invalid auth token</em>
+</p>
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li><p>
+99: <em>User not logged in / Insufficient permissions</em>
+</p>
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="batch-orrect-ocation-source">
+<pre>
+
+# Generated automatically from flickr api
+  def batchCorrectLocation(*args)
+    @flickr.call 'flickr.photos.geo.batchCorrectLocation', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="correct-ocation-method" class="method-detail ">
+				<a name="method-i-correctLocation"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">correctLocation</span><span
+						class="method-args">(:photo_id => 'photo_id',:place_id => 'place_id',:woe_id => 'woe_id')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.geo.correctLocation.html">flickr.photos.geo.correctLocation</a>
+request.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd><p>
+The ID of the photo whose WOE location is being corrected.
+</p>
+</dd>
+<dt>place_id </dt><dd><p>
+A <a href="../../Flickr.html">Flickr</a> <a
+href="../Places.html">Places</a> ID. (While optional, you must pass either
+a valid <a href="../Places.html">Places</a> ID or a WOE ID.)
+</p>
+</dd>
+<dt>woe_id </dt><dd><p>
+A Where On Earth (WOE) ID. (While optional, you must pass either a valid <a
+href="../Places.html">Places</a> ID or a WOE ID.)
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>User has not configured default viewing settings for location
+data.</em>
+</p>
+<p>
+Before users may assign location data to a photo they must define who, by
+default, may view that information. Users can edit this preference at <a
+href=&#8220;<a
+href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>>
+</p>
+</li>
+<li><p>
+2: <em>Missing place ID</em>
+</p>
+<p>
+No place ID was passed to the method
+</p>
+</li>
+<li><p>
+3: <em>Not a valid place ID</em>
+</p>
+<p>
+The place ID passed to the method could not be identified
+</p>
+</li>
+<li><p>
+4: <em>Server error correcting location.</em>
+</p>
+<p>
+There was an error trying to correct the location.
+</p>
+</li>
+<li><p>
+96: <em>Invalid signature</em>
+</p>
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li><p>
+97: <em>Missing signature</em>
+</p>
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li><p>
+98: <em>Login failed / Invalid auth token</em>
+</p>
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li><p>
+99: <em>User not logged in / Insufficient permissions</em>
+</p>
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="correct-ocation-source">
+<pre>
+
+# Generated automatically from flickr api
+  def correctLocation(*args)
+    @flickr.call 'flickr.photos.geo.correctLocation', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-ocation-method" class="method-detail ">
+				<a name="method-i-getLocation"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getLocation</span><span
+						class="method-args">(:photo_id => 'photo_id')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.geo.getLocation.html">flickr.photos.geo.getLocation</a>
+request.
+</p>
+<p>
+Get the geo data (latitude and longitude and the accuracy level) for a
+photo.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd><p>
+The id of the photo you want to retrieve location data for.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Photo not found.</em>
+</p>
+<p>
+The photo id was either invalid or was for a photo not viewable by the
+calling user.
+</p>
+</li>
+<li><p>
+2: <em>Photo has no location information.</em>
+</p>
+<p>
+The photo requested has no location data or is not viewable by the calling
+user.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;photo id=&quot;123&quot;&gt;
+         &lt;location latitude=&quot;-17.685895&quot; longitude=&quot;-63.36914&quot; accuracy=&quot;6&quot; /&gt;
+ &lt;/photo&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-ocation-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getLocation(*args)
+    @flickr.call 'flickr.photos.geo.getLocation', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="get-erms-method" class="method-detail ">
+				<a name="method-i-getPerms"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">getPerms</span><span
+						class="method-args">(:photo_id => 'photo_id')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.geo.getPerms.html">flickr.photos.geo.getPerms</a>
+request.
+</p>
+<p>
+Get permissions for who may view geo data for a photo.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd><p>
+The id of the photo to get permissions for.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Photo not found</em>
+</p>
+<p>
+The photo id was either invalid or was for a photo not viewable by the
+calling user.
+</p>
+</li>
+<li><p>
+2: <em>Photo has no location information</em>
+</p>
+<p>
+The photo requested has no location data or is not viewable by the calling
+user.
+</p>
+</li>
+<li><p>
+96: <em>Invalid signature</em>
+</p>
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li><p>
+97: <em>Missing signature</em>
+</p>
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li><p>
+98: <em>Login failed / Invalid auth token</em>
+</p>
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li><p>
+99: <em>User not logged in / Insufficient permissions</em>
+</p>
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;perms id=&quot;10592&quot; ispublic=&quot;0&quot; iscontact=&quot;0&quot; isfriend=&quot;0&quot; isfamily=&quot;1&quot; /&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="get-erms-source">
+<pre>
+
+# Generated automatically from flickr api
+  def getPerms(*args)
+    @flickr.call 'flickr.photos.geo.getPerms', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="photos-or-ocation-method" class="method-detail ">
+				<a name="method-i-photosForLocation"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">photosForLocation</span><span
+						class="method-args">(:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.geo.photosForLocation.html">flickr.photos.geo.photosForLocation</a>
+request.
+</p>
+<p>
+Return a list of photos for a user at a specific latitude, longitude and
+accuracy
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>lat <em>(required)</em> </dt><dd><p>
+The latitude whose valid range is -90 to 90. Anything more than 6 decimal
+places will be truncated.
+</p>
+</dd>
+<dt>lon <em>(required)</em> </dt><dd><p>
+The longitude whose valid range is -180 to 180. Anything more than 6
+decimal places will be truncated.
+</p>
+</dd>
+<dt>accuracy </dt><dd><p>
+Recorded accuracy level of the location information. World level is 1,
+Country is ~3, Region ~6, City ~11, Street ~16. Current range is 1-16.
+Defaults to 16 if not specified.
+</p>
+</dd>
+<dt>extras </dt><dd><p>
+A comma-delimited list of extra information to fetch for each returned
+record. Currently supported fields are: <tt>description</tt>,
+<tt>license</tt>, <tt>date_upload</tt>, <tt>date_taken</tt>,
+<tt>owner_name</tt>, <tt>icon_server</tt>, <tt>original_format</tt>,
+<tt>last_update</tt>, <tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>,
+<tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>, <tt>path_alias</tt>,
+<tt>url_sq</tt>, <tt>url_t</tt>, <tt>url_s</tt>, <tt>url_m</tt>,
+<tt>url_z</tt>, <tt>url_l</tt>, <tt>url_o</tt>
+</p>
+</dd>
+<dt>per_page </dt><dd><p>
+Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+</p>
+</dd>
+<dt>page </dt><dd><p>
+The page of results to return. If this argument is omitted, it defaults to
+1.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Required arguments missing</em>
+</p>
+<p>
+One or more required arguments was missing from the method call.
+</p>
+</li>
+<li><p>
+2: <em>Not a valid latitude</em>
+</p>
+<p>
+The latitude argument failed validation.
+</p>
+</li>
+<li><p>
+3: <em>Not a valid longitude</em>
+</p>
+<p>
+The longitude argument failed validation.
+</p>
+</li>
+<li><p>
+4: <em>Not a valid accuracy</em>
+</p>
+<p>
+The accuracy argument failed validation.
+</p>
+</li>
+<li><p>
+96: <em>Invalid signature</em>
+</p>
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li><p>
+97: <em>Missing signature</em>
+</p>
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li><p>
+98: <em>Login failed / Invalid auth token</em>
+</p>
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li><p>
+99: <em>User not logged in / Insufficient permissions</em>
+</p>
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="photos-or-ocation-source">
+<pre>
+
+# Generated automatically from flickr api
+  def photosForLocation(*args)
+    @flickr.call 'flickr.photos.geo.photosForLocation', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="remove-ocation-method" class="method-detail ">
+				<a name="method-i-removeLocation"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">removeLocation</span><span
+						class="method-args">(:photo_id => 'photo_id')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.geo.removeLocation.html">flickr.photos.geo.removeLocation</a>
+request.
+</p>
+<p>
+Removes the geo data associated with a photo.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd><p>
+The id of the photo you want to remove location data from.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Photo not found</em>
+</p>
+<p>
+The photo id was either invalid or was for a photo not viewable by the
+calling user.
+</p>
+</li>
+<li><p>
+2: <em>Photo has no location information</em>
+</p>
+<p>
+The specified photo has not been geotagged - there is nothing to remove.
+</p>
+</li>
+<li><p>
+96: <em>Invalid signature</em>
+</p>
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li><p>
+97: <em>Missing signature</em>
+</p>
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li><p>
+98: <em>Login failed / Invalid auth token</em>
+</p>
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li><p>
+99: <em>User not logged in / Insufficient permissions</em>
+</p>
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="remove-ocation-source">
+<pre>
+
+# Generated automatically from flickr api
+  def removeLocation(*args)
+    @flickr.call 'flickr.photos.geo.removeLocation', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="set-ontext-method" class="method-detail ">
+				<a name="method-i-setContext"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">setContext</span><span
+						class="method-args">(:photo_id => 'photo_id',:context => 'context')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.geo.setContext.html">flickr.photos.geo.setContext</a>
+request.
+</p>
+<p>
+Indicate the state of a photo&#8217;s geotagginess beyond latitude and
+longitude.<br /><br /> Note : photos passed to this method must already be
+geotagged (using the <q>flickr.photos.geo.setLocation</q> method).
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd><p>
+The id of the photo to set context data for.
+</p>
+</dd>
+<dt>context <em>(required)</em> </dt><dd><p>
+Context is a numeric value representing the photo&#8217;s geotagginess
+beyond latitude and longitude. For example, you may wish to indicate that a
+photo was taken &#8220;indoors&#8221; or &#8220;outdoors&#8221;. <br /><br
+/>
+</p>
+</dd>
+</dl>
+<p>
+The current list of context IDs is :<br /><br/> <ul>
+<li><strong>0</strong>, not defined.</li> <li><strong>1</strong>,
+indoors.</li> <li><strong>2</strong>, outdoors.</li> </ul>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Photo not found</em>
+</p>
+<p>
+The photo id was either invalid or was for a photo not viewable by the
+calling user.
+</p>
+</li>
+<li><p>
+2: <em>Not a valid context</em>
+</p>
+<p>
+The context ID passed to the method is invalid.
+</p>
+</li>
+<li><p>
+96: <em>Invalid signature</em>
+</p>
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li><p>
+97: <em>Missing signature</em>
+</p>
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li><p>
+98: <em>Login failed / Invalid auth token</em>
+</p>
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li><p>
+99: <em>User not logged in / Insufficient permissions</em>
+</p>
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="set-ontext-source">
+<pre>
+
+# Generated automatically from flickr api
+  def setContext(*args)
+    @flickr.call 'flickr.photos.geo.setContext', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="set-ocation-method" class="method-detail ">
+				<a name="method-i-setLocation"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">setLocation</span><span
+						class="method-args">(:photo_id => 'photo_id',:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy',:context => 'context',:bookmark_id => 'bookmark_id')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.geo.setLocation.html">flickr.photos.geo.setLocation</a>
+request.
+</p>
+<p>
+Sets the geo data (latitude and longitude and, optionally, the accuracy
+level) for a photo.
+</p>
+<p>
+Before users may assign location data to a photo they must define who, by
+default, may view that information. Users can edit this preference at <a
+href=&#8220;<a
+href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>>.
+If a user has not set this preference, the API method will return an error.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>photo_id <em>(required)</em> </dt><dd><p>
+The id of the photo to set location data for.
+</p>
+</dd>
+<dt>lat <em>(required)</em> </dt><dd><p>
+The latitude whose valid range is -90 to 90. Anything more than 6 decimal
+places will be truncated.
+</p>
+</dd>
+<dt>lon <em>(required)</em> </dt><dd><p>
+The longitude whose valid range is -180 to 180. Anything more than 6
+decimal places will be truncated.
+</p>
+</dd>
+<dt>accuracy </dt><dd><p>
+Recorded accuracy level of the location information. World level is 1,
+Country is ~3, Region ~6, City ~11, Street ~16. Current range is 1-16.
+Defaults to 16 if not specified.
+</p>
+</dd>
+<dt>context </dt><dd><p>
+Context is a numeric value representing the photo&#8217;s geotagginess
+beyond latitude and longitude. For example, you may wish to indicate that a
+photo was taken &#8220;indoors&#8221; or &#8220;outdoors&#8221;. <br /><br
+/>
+</p>
+</dd>
+</dl>
+<p>
+The current list of context IDs is :<br /><br/> <ul>
+<li><strong>0</strong>, not defined.</li> <li><strong>1</strong>,
+indoors.</li> <li><strong>2</strong>, outdoors.</li> </ul><br /> The
+default context for geotagged photos is 0, or &#8220;not defined&#8221;
+</p>
+<dl>
+<dt>bookmark_id </dt><dd><p>
+Associate a geo bookmark with this photo.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Photo not found</em>
+</p>
+<p>
+The photo id was either invalid or was for a photo not viewable by the
+calling user.
+</p>
+</li>
+<li><p>
+2: <em>Required arguments missing.</em>
+</p>
+<p>
+Some or all of the required arguments were not supplied.
+</p>
+</li>
+<li><p>
+3: <em>Not a valid latitude.</em>
+</p>
+<p>
+The latitude argument failed validation.
+</p>
+</li>
+<li><p>
+4: <em>Not a valid longitude.</em>
+</p>
+<p>
+The longitude argument failed validation.
+</p>
+</li>
+<li><p>
+5: <em>Not a valid accuracy.</em>
+</p>
+<p>
+The accuracy argument failed validation.
+</p>
+</li>
+<li><p>
+6: <em>Server error.</em>
+</p>
+<p>
+There was an unexpected problem setting location information to the photo.
+</p>
+</li>
+<li><p>
+7: <em>User has not configured default viewing settings for location
+data.</em>
+</p>
+<p>
+Before users may assign location data to a photo they must define who, by
+default, may view that information. Users can edit this preference at <a
+href=&#8220;<a
+href="http://www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a">www.flickr.com/account/geo/privacy/">http://www.flickr.com/account/geo/privacy/</a</a>>
+</p>
+</li>
+<li><p>
+96: <em>Invalid signature</em>
+</p>
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li><p>
+97: <em>Missing signature</em>
+</p>
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li><p>
+98: <em>Login failed / Invalid auth token</em>
+</p>
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li><p>
+99: <em>User not logged in / Insufficient permissions</em>
+</p>
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="set-ocation-source">
+<pre>
+
+# Generated automatically from flickr api
+  def setLocation(*args)
+    @flickr.call 'flickr.photos.geo.setLocation', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+			<div id="set-erms-method" class="method-detail ">
+				<a name="method-i-setPerms"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">setPerms</span><span
+						class="method-args">(:is_public => 'is_public',:is_contact => 'is_contact',:is_friend => 'is_friend',:is_family => 'is_family',:photo_id => 'photo_id')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.geo.setPerms.html">flickr.photos.geo.setPerms</a>
+request.
+</p>
+<p>
+Set the permission for who may view the geo data associated with a photo.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>is_public <em>(required)</em> </dt><dd><p>
+1 to set viewing permissions for the photo&#8217;s location data to public,
+0 to set it to private.
+</p>
+</dd>
+<dt>is_contact <em>(required)</em> </dt><dd><p>
+1 to set viewing permissions for the photo&#8217;s location data to
+contacts, 0 to set it to private.
+</p>
+</dd>
+<dt>is_friend <em>(required)</em> </dt><dd><p>
+1 to set viewing permissions for the photo&#8217;s location data to
+friends, 0 to set it to private.
+</p>
+</dd>
+<dt>is_family <em>(required)</em> </dt><dd><p>
+1 to set viewing permissions for the photo&#8217;s location data to family,
+0 to set it to private.
+</p>
+</dd>
+<dt>photo_id <em>(required)</em> </dt><dd><p>
+The id of the photo to get permissions for.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Photo not found</em>
+</p>
+<p>
+The photo id was either invalid or was for a photo not viewable by the
+calling user.
+</p>
+</li>
+<li><p>
+2: <em>Photo has no location information</em>
+</p>
+<p>
+The photo requested has no location data or is not viewable by the calling
+user.
+</p>
+</li>
+<li><p>
+3: <em>Required arguments missing.</em>
+</p>
+<p>
+Some or all of the required arguments were not supplied.
+</p>
+</li>
+<li><p>
+96: <em>Invalid signature</em>
+</p>
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li><p>
+97: <em>Missing signature</em>
+</p>
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li><p>
+98: <em>Login failed / Invalid auth token</em>
+</p>
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li><p>
+99: <em>User not logged in / Insufficient permissions</em>
+</p>
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+					
+
+					
+					<div class="method-source-code"
+						id="set-erms-source">
+<pre>
+
+# Generated automatically from flickr api
+  def setPerms(*args)
+    @flickr.call 'flickr.photos.geo.setPerms', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+

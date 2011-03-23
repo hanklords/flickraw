@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	<title>Class: FlickRaw::Flickr::Photos::Upload</title>
+
+	<link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+
+	<script src="../../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
+
+</head>
+<body class="class">
+
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+			</div>
+		</div>
+
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
+
+			
+		</div>
+
+		<div id="class-metadata">
+
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../../Request.html">FlickRaw::Request</a></p>
+				
+			</div>
+			
+
+			<!-- Namespace Contents -->
+			
+
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-checkTickets">#checkTickets</a></li>
+					
+				</ul>
+			</div>
+			
+
+			<!-- Included Modules -->
+			
+		</div>
+
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
+
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
+
+				<ul class="link-list">
+				
+					<li><a href="../../../FlickRaw.html">FlickRaw</a></li>
+				
+					<li><a href="../../../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+				
+					<li><a href="../../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+				
+					<li><a href="../../../FlickRaw/Request.html">FlickRaw::Request</a></li>
+				
+					<li><a href="../../../FlickRaw/Response.html">FlickRaw::Response</a></li>
+				
+					<li><a href="../../../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+				
+					<li><a href="../../../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<div id="documentation">
+		<h1 class="class">FlickRaw::Flickr::Photos::Upload</h1>
+
+		<div id="description">
+			
+		</div>
+
+		<!-- Constants -->
+		
+
+		<!-- Attributes -->
+		
+
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
+
+		
+			<div id="check-ickets-method" class="method-detail ">
+				<a name="method-i-checkTickets"></a>
+
+				<div class="method-heading">
+				
+					<span class="method-name">checkTickets</span><span
+						class="method-args">(:tickets => 'tickets')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
+
+				<div class="method-description">
+					
+					<p>
+<a
+href="http://www.flickr.com/services/api/flickr.photos.upload.checkTickets.html">flickr.photos.upload.checkTickets</a>
+request.
+</p>
+<p>
+Checks the status of one or more asynchronous photo upload tickets.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>tickets <em>(required)</em> </dt><dd><p>
+A comma-delimited list of ticket ids
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+ &lt;uploader&gt;
+        &lt;ticket id=&quot;128&quot; complete=&quot;1&quot; photoid=&quot;2995&quot; /&gt;
+        &lt;ticket id=&quot;129&quot; complete=&quot;0&quot; /&gt;
+        &lt;ticket id=&quot;130&quot; complete=&quot;2&quot; /&gt;
+        &lt;ticket id=&quot;131&quot; invalid=&quot;1&quot; /&gt;
+ &lt;/uploader&gt;</pre>
+					
+
+					
+					<div class="method-source-code"
+						id="check-ickets-source">
+<pre>
+
+# Generated automatically from flickr api
+  def checkTickets(*args)
+    @flickr.call 'flickr.photos.upload.checkTickets', *args
+  end
+</pre>
+					</div>
+					
+				</div>
+
+				
+
+				
+			</div>
+
+		
+		</div>
+	
+
+	</div>
+
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
+
+</body>
+</html>
+
