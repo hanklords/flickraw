@@ -38,13 +38,13 @@ This will recreate the documentation by fetching the methods descriptions from f
 
  id     = list[0].id
  secret = list[0].secret
- info = flickr.photos.getInfo :photo_id => id, :secret => secret
+ info = flickr.photos.getInfo photo_id: id, secret: secret
 
  info.title           # => "PICT986"
  info.dates.taken     # => "2006-07-06 15:16:18"
 
 
- sizes = flickr.photos.getSizes :photo_id => id
+ sizes = flickr.photos.getSizes photo_id: id
 
  original = sizes.find {|s| s.label == 'Original' }
  original.width       # => "800"
@@ -57,14 +57,14 @@ This will recreate the documentation by fetching the methods descriptions from f
   FlickRaw.shared_secret="... Your shared secret ..."
 
   frob = flickr.auth.getFrob
-  auth_url = FlickRaw.auth_url :frob => frob, :perms => 'read'
+  auth_url = FlickRaw.auth_url frob: frob, perms: 'read'
 
   puts "Open this url in your process to complete the authication process : #{auth_url}"
   puts "Press Enter when you are finished."
   STDIN.getc
 
   begin
-    auth = flickr.auth.getToken :frob => frob
+    auth = flickr.auth.getToken frob: frob
     login = flickr.test.login
     puts "You are now authenticated as #{login.username} with token #{auth.token}"
   rescue FlickRaw::FailedResponse => e
@@ -78,7 +78,7 @@ You don't need to do that each time, you can reuse your token:
   FlickRaw.api_key="... Your API key ..."
   FlickRaw.shared_secret="... Your shared secret ..."
 
-  auth = flickr.auth.checkToken :auth_token => "... Your saved token ..."
+  auth = flickr.auth.checkToken auth_token: "... Your saved token ..."
 
   # From here you are logged:
   puts auth.user.username
@@ -93,7 +93,7 @@ You don't need to do that each time, you can reuse your token:
   PHOTO_PATH='photo.jpg'
 
   # You need to be authentified to do that, see the previous examples.
-  flickr.upload_photo PHOTO_PATH, :title => "Title", :description => "This is the description"
+  flickr.upload_photo PHOTO_PATH, title: "Title", description: "This is the description"
 
 == Flickraw Options
 
@@ -122,32 +122,32 @@ There are some helpers to build flickr urls :
 
 === url, url_m, url_s, url_t, url_b, url_z, url_o
 
-  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  info = flickr.photos.getInfo(photo_id: "3839885270")
   FlickRaw.url_b(info) # => "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg"
 
 === url_profile
 
-  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  info = flickr.photos.getInfo(photo_id: "3839885270")
   FlickRaw.url_profile(info) # => "http://www.flickr.com/people/41650587@N02/"
 
 === url_photopage
 
-  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  info = flickr.photos.getInfo(photo_id: "3839885270")
   FlickRaw.url_photopage(info) # => "http://www.flickr.com/photos/41650587@N02/3839885270"
 
 === url_photoset, url_photosets
 
-  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  info = flickr.photos.getInfo(photo_id: "3839885270")
   FlickRaw.url_photosets(info) # => "http://www.flickr.com/photos/41650587@N02/sets/"
 
 === url_short, url_short_m, url_short_s, url_short_t
 
-  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  info = flickr.photos.getInfo(photo_id: "3839885270")
   FlickRaw.url_short(info) # => "http://flic.kr/p/6Rjq7s"
 
 === url_photostream
 
-  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  info = flickr.photos.getInfo(photo_id: "3839885270")
   FlickRaw.url_photostream(info) # => "http://www.flickr.com/photos/41650587@N02/"
 
 
