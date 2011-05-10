@@ -12,7 +12,8 @@ Type this in a console (you might need to be superuser)
  gem install flickraw
 
 This will recreate the documentation by fetching the methods descriptions from flickr and then virtually plugging them in standard rdoc documentation.
- rake rdoc
+ $ cd flickraw
+ $ rake rdoc
 
 = Features
 
