@@ -323,7 +323,11 @@ end
 #
 #  recent_photos = flickr.photos.getRecent
 #  puts recent_photos[0].title
-def flickr; $flickraw ||= FlickRaw::Flickr.new end
+def flickr
+  raise 'must set FlickRaw.api_key before calling flickr methods' unless FlickRaw.api_key
+  raise 'must set FlickRaw.shared_secret before calling flickr methods' unless FlickRaw.shared_secret
+  $flickraw ||= FlickRaw::Flickr.new 
+end
 
 # Load the methods if the option lazyload is not specified
 begin
