@@ -89,6 +89,7 @@ module FlickRaw
     def inspect; @a.inspect end
     def size; @a.size end
     def marshal_dump; [@h, @flickr_type, @a] end
+    alias length size
   end
 
   class FailedResponse < StandardError
