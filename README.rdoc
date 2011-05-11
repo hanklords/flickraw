@@ -12,7 +12,8 @@ Type this in a console (you might need to be superuser)
  gem install flickraw
 
 This will recreate the documentation by fetching the methods descriptions from flickr and then virtually plugging them in standard rdoc documentation.
- rake rdoc
+ $ cd flickraw
+ $ rake rdoc
 
 = Features
 
@@ -29,6 +30,7 @@ This will recreate the documentation by fetching the methods descriptions from f
 
 == Simple
 
+ require 'rubygems'
  require 'flickraw'
 
  FlickRaw.api_key="... Your API key ..."
@@ -40,14 +42,14 @@ This will recreate the documentation by fetching the methods descriptions from f
  secret = list[0].secret
  info = flickr.photos.getInfo :photo_id => id, :secret => secret
 
- info.title           # => "PICT986"
- info.dates.taken     # => "2006-07-06 15:16:18"
+ puts info.title           # => "PICT986"
+ puts info.dates.taken     # => "2006-07-06 15:16:18"
 
 
  sizes = flickr.photos.getSizes :photo_id => id
 
  original = sizes.find {|s| s.label == 'Original' }
- original.width       # => "800"
+ puts original.width       # => "800" -- may fail if they have no original marked image
 
 == Authentication
 
@@ -167,6 +169,7 @@ This way it it doesn't fetch available flickr methods each time it is loaded.
 The flickraw-cached gem is on rubygems.org and should be up-to-date with regard to flickr api most of the time.
 
 = Notes
+
 If you want to use the api authenticated with several user at the same time, you must pass the authentication token explicitely each time.
 This is because it is keeping the authentication token internally.
 As an alternative, you can create new Flickr objects besides Kernel.flickr which is created for you. Use Flickr.new to this effect.
