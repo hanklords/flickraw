@@ -30,7 +30,6 @@ This will recreate the documentation by fetching the methods descriptions from f
 
 == Simple
 
- require 'rubygems'
  require 'flickraw'
 
  FlickRaw.api_key="... Your API key ..."
