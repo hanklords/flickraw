@@ -8,18 +8,17 @@ SHARED_SECRET=''
 FlickRaw.api_key=API_KEY
 FlickRaw.shared_secret=SHARED_SECRET
 
-frob = flickr.auth.getFrob
-auth_url = FlickRaw.auth_url :frob => frob, :perms => 'read'
+token = flickr.get_request_token(:perms => 'delete')
+auth_url = token['oauth_authorize_url']
 
 puts "Open this url in your process to complete the authication process : #{auth_url}"
-puts "Press Enter when you are finished."
-STDIN.getc
+puts "Copy here the number given when you complete the process."
+verify = gets.strip
 
 begin
-  flickr.auth.getToken :frob => frob
+  flickr.get_access_token(token['oauth_token'], token['oauth_token_secret'], verify)
   login = flickr.test.login
   puts "You are now authenticated as #{login.username}"
 rescue FlickRaw::FailedResponse => e
   puts "Authentication failed : #{e.msg}"
 end
-
