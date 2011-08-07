@@ -83,34 +83,33 @@ module FlickRaw
         :oauth_timestamp => gen_timestamp }
     end
     
-    def request_token(url, params = {})
-      r = post(url, token_secret, params)
+    def request_token(url, oauth_params = {})
+      r = post(url, token_secret, {:oauth_callback => "oob"}.merge(oauth_params))
       OAuth.parse_response(r.body)
     end
     
-    def authorize_url(url, params = {})
-      params_norm = params.map {|k,v| OAuth.escape(k) + "=" + OAuth.escape(v)}.sort.join("&")
+    def authorize_url(url, oauth_params = {})
+      params_norm = oauth_params.map {|k,v| OAuth.escape(k) + "=" + OAuth.escape(v)}.sort.join("&")
       url =  URI.parse(url)
       url.query = url.query ? url.query + "&" + params_norm : params_norm
       url
     end
     
-    def access_token(url, token_secret, params = {})
-      r = post(url, token_secret, params)
+    def access_token(url, token_secret, oauth_params = {})
+      r = post(url, token_secret, oauth_params)
       OAuth.parse_response(r.body)
     end
-    
-    def post(url, token_secret, params = {}); http_request(:post, url, token_secret, gen_default_params.merge(params)) end
-    
-    private
-    def http_request(method, url, token_secret, params)
-      signed_params = params.merge(:oauth_signature => sign(method, url, params, token_secret))
+        
+    def post(url, token_secret, oauth_params = {}, params = {})
+      oauth_params = gen_default_params.merge(oauth_params)
+      oauth_params[:oauth_signature] = sign(:post, url, params.merge(oauth_params), token_secret)
       url = URI.parse(url)
       Net::HTTP.start(url.host, url.port, @proxy_host, @proxy_port, @proxy_user, @proxy_password) { |http| 
         request = Net::HTTP::Post.new(url.path)
-        request.form_data = params.select{|k,v| k !~ /^oauth_/}
+        request['Content-Length'] = 0
         request['User-Agent'] = @user_agent if @user_agent
-        request['Authorization'] = authorization_header(url, signed_params)
+        request['Authorization'] = authorization_header(url, oauth_params)
+        request.form_data = params
         http.request(request)
       }
     end
