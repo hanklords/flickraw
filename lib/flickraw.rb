@@ -46,6 +46,13 @@ module FlickRaw
   URL_SHORT='http://flic.kr/p/'.freeze
   
   class OAuth
+    class FailedResponse < StandardError
+      def initialize(str)
+        @response = OAuth.parse_response(str)
+        super(@response['oauth_problem'])
+      end
+    end
+  
     class << self
       def escape(v); URI.escape(v.to_s, /[^a-zA-Z0-9\-\.\_\~]/) end
       def parse_response(text); Hash[text.split("&").map {|s| s.split("=")}] end
@@ -84,7 +91,7 @@ module FlickRaw
     end
     
     def request_token(url, oauth_params = {})
-      r = post(url, token_secret, {:oauth_callback => "oob"}.merge(oauth_params))
+      r = post_form(url, token_secret, {:oauth_callback => "oob"}.merge(oauth_params))
       OAuth.parse_response(r.body)
     end
     
@@ -96,23 +103,61 @@ module FlickRaw
     end
     
     def access_token(url, token_secret, oauth_params = {})
-      r = post(url, token_secret, oauth_params)
+      r = post_form(url, token_secret, oauth_params)
       OAuth.parse_response(r.body)
     end
         
-    def post(url, token_secret, oauth_params = {}, params = {})
+    def post_form(url, token_secret, oauth_params = {}, params = {})
       oauth_params = gen_default_params.merge(oauth_params)
       oauth_params[:oauth_signature] = sign(:post, url, params.merge(oauth_params), token_secret)
       url = URI.parse(url)
-      Net::HTTP.start(url.host, url.port, @proxy_host, @proxy_port, @proxy_user, @proxy_password) { |http| 
+      r = Net::HTTP.start(url.host, url.port, @proxy_host, @proxy_port, @proxy_user, @proxy_password) { |http| 
         request = Net::HTTP::Post.new(url.path)
-        request['Content-Length'] = 0
         request['User-Agent'] = @user_agent if @user_agent
         request['Authorization'] = authorization_header(url, oauth_params)
         request.form_data = params
         http.request(request)
       }
+      
+      raise FailedResponse.new(r.body) if r.is_a? Net::HTTPClientError
+      r
     end
+    
+    def post_multipart(url, token_secret, oauth_params = {}, params = {})
+      oauth_params = gen_default_params.merge(oauth_params)
+      params_signed = params.reject {|k,v| v.is_a? File}.merge(oauth_params)
+      oauth_params[:oauth_signature] = sign(:post, url, params_signed, token_secret)
+      url = URI.parse(url)
+      r = Net::HTTP.start(url.host, url.port, @proxy_host, @proxy_port, @proxy_user, @proxy_password) { |http| 
+        boundary = "FlickRaw#{gen_nonce}"
+        request = Net::HTTP::Post.new(url.path)
+        request['User-Agent'] = @user_agent if @user_agent
+        request['Content-type'] = "multipart/form-data, boundary=#{boundary}"
+        request['Authorization'] = authorization_header(url, oauth_params)
+
+        request.body = ''
+        params.each { |k, v|
+          if v.is_a? File
+            filename = File.basename(v.path).to_s.encode("utf-8").force_encoding("ascii-8bit")
+            request.body << "--#{boundary}\r\n" <<
+              "Content-Disposition: form-data; name=\"#{k}\"; filename=\"#{filename}\"\r\n" <<
+              "Content-Transfer-Encoding: binary\r\n" <<
+              "Content-Type: image/jpeg\r\n\r\n" <<
+              v.read << "\r\n"
+          else
+            request.body << "--#{boundary}\r\n" <<
+              "Content-Disposition: form-data; name=\"#{k}\"\r\n\r\n" <<
+              "#{v}\r\n"
+          end
+        }
+        
+        request.body << "--#{boundary}--"
+        http.request(request)
+      }
+      
+      raise FailedResponse.new(r.body) if r.is_a? Net::HTTPClientError
+      r      
+    end    
   end
 
   class Response
