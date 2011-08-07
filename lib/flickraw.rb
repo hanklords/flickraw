@@ -25,21 +25,18 @@ require 'net/http'
 require 'digest/md5'
 require 'json'
 
-FlickRawOptions = {} if not Object.const_defined? :FlickRawOptions # :nodoc:
-if ENV['http_proxy'] and not FlickRawOptions['proxy_host']
-  proxy = URI.parse ENV['http_proxy']
-  FlickRawOptions.update('proxy_host' => proxy.host, 'proxy_port' => proxy.port, 'proxy_user' => proxy.user, 'proxy_password' => proxy.password)
-end
-
 module FlickRaw
   VERSION='0.8.4'
+  USER _AGENT = "Flickraw/#{VERSION}"
 
-  FLICKR_HOST='api.flickr.com'.freeze
-  REST_PATH='/services/rest/?'.freeze
-  UPLOAD_PATH='/services/upload/'.freeze
-  REPLACE_PATH='/services/replace/'.freeze
+  FLICKR_OAUTH_REQUEST_TOKEN='http://www.flickr.com/services/oauth/request_token'.freeze
+  FLICKR_OAUTH_AUTHORIZE='http://www.flickr.com/services/oauth/authorize'.freeze
+  FLICKR_OAUTH_ACCESS_TOKEN='http://www.flickr.com/services/oauth/access_token'.freeze
 
-  AUTH_PATH='http://flickr.com/services/auth/?'.freeze
+  REST_PATH='http://api.flickr.com/services/rest/'.freeze
+  UPLOAD_PATH='http://api.flickr.com/services/upload/'.freeze
+  REPLACE_PATH='http://api.flickr.com/services/replace/'.freeze
+
   PHOTO_SOURCE_URL='http://farm%s.static.flickr.com/%s/%s_%s%s.%s'.freeze
   URL_PROFILE='http://www.flickr.com/people/'.freeze
   URL_PHOTOSTREAM='http://www.flickr.com/photos/'.freeze
@@ -266,25 +263,37 @@ module FlickRaw
 
   # Root class of the flickr api hierarchy.
   class Flickr < Request
+    attr_accessor :access_token, :access_secret
+    
     def self.build(methods); methods.each { |m| build_request m } end
 
-    def initialize(token = FlickRawOptions['auth_token']) # :nodoc:
+    def initialize # :nodoc:
+      raise "No API key or secret defined !" if FlickRaw.api_key.nil? or FlickRaw.shared_secret.nil?
+      @oauth_consumer = OAuth.new(FlickRaw.api_key, FlickRaw.shared_secret)
+      @oauth_consumer.proxy = FlickRaw.proxy
+      @oauth_consumer.user_agent = USER _AGENT
+      
       Flickr.build(call('flickr.reflection.getMethods')) if Flickr.flickr_objects.empty?
       super self
-      @token = token
     end
-
+    
     # This is the central method. It does the actual request to the flickr server.
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={}, &block)
-      @token = nil if req == "flickr.auth.getFrob"
-      http_response = open_flickr do |http|
-        request = Net::HTTP::Post.new(REST_PATH, 'User-Agent' => "Flickraw/#{VERSION}")
-        request.set_form_data(build_args(args, req))
-        http.request(request)
-      end
-      process_response(req, http_response)
+      http_response = @oauth_consumer.post_form(REST_PATH, @access_secret, {:oauth_token => @access_token}, build_args(args, req))
+      process_response(req, http_response.body)
+    end
+
+    def get_request_token(args = {})
+      request_token = @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN, args)
+      authorize_url = @oauth_consumer.authorize_url(FLICKR_OAUTH_AUTHORIZE, args.merge(:oauth_token => request_token['oauth_token']))
+      {:token => request_token['oauth_token'], :secret => request_token['oauth_token_secret'], :authorize_url => authorize_url}
+    end
+
+    def get_access_token(token, secret, verify)
+      access_token = @oauth_consumer.access_token(FLICKR_OAUTH_ACCESS_TOKEN, secret, :oauth_token => token, :oauth_verifier => verify)
+      @access_token, @access_secret = access_token['oauth_token'], access_token['oauth_token_secret']
     end
 
     # Use this to upload the photo in _file_.
@@ -302,97 +311,58 @@ module FlickRaw
     def replace_photo(file, args={}); upload_flickr(REPLACE_PATH, file, args) end
 
     private
-    def build_args(args={}, req = nil)
-      full_args = {:api_key => FlickRaw.api_key, :format => 'json', :nojsoncallback => "1"}
-      full_args[:method] = req if req
-      full_args[:auth_token] = @token if @token
+    def build_args(args={}, method = nil)
+      full_args = {'format' => 'json', :nojsoncallback => "1"}
+      full_args['method'] = method if method
       args.each {|k, v|
         v = v.to_s.encode("utf-8").force_encoding("ascii-8bit") if RUBY_VERSION >= "1.9"
-        full_args[k.to_sym] = v.to_s
+        full_args[k.to_s] = v
       }
-      full_args[:api_sig] = FlickRaw.api_sig(full_args) if FlickRaw.shared_secret
       full_args
     end
 
-    def process_response(req, http_response)
-      json = JSON.load(http_response.body.empty? ? "{}" : http_response.body)
-      raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
-      type, json = json.to_a.first if json.size == 1 and json.all? {|k,v| v.is_a? Hash}
+    def process_response(req, response)
+      if response =~ /^<\?xml / # upload_photo returns xml data whatever we ask
+        if response[/stat="(\w+)"/, 1] == 'fail'
+          msg = response[/msg="([^"]+)"/, 1]
+          code = response[/code="([^"]+)"/, 1]
+          raise FailedResponse.new(msg, code, req)
+        end
+        
+        type = response[/<(\w+)/, 1]
+        h = {
+          "secret" => response[/secret="([^"]+)"/, 1],
+          "originalsecret" => response[/originalsecret="([^"]+)"/, 1],
+          "_content" => response[/>([^<]+)<\//, 1]
+        }.delete_if {|k,v| v.nil? }
+        
+        Response.build h, type
+      else
+        json = JSON.load(response.empty? ? "{}" : response)
+        raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
+        type, json = json.to_a.first if json.size == 1 and json.all? {|k,v| v.is_a? Hash}
 
-      res = Response.build json, type
-      @token = res.token if res.respond_to? :flickr_type and res.flickr_type == "auth"
-      res
-    end
-
-    def open_flickr
-      Net::HTTP::Proxy(FlickRawOptions['proxy_host'], FlickRawOptions['proxy_port'], FlickRawOptions['proxy_user'], FlickRawOptions['proxy_password']).start(FLICKR_HOST) {|http|
-        http.read_timeout = FlickRawOptions['timeout'] if FlickRawOptions.key?('timeout')
-        yield http
-      }
+        Response.build json, type
+      end
     end
 
     def upload_flickr(method, file, args={})
-      photo = open(file, 'rb') { |f| f.read }
-      boundary = Digest::MD5.hexdigest(photo)
-
-      header = {'Content-type' => "multipart/form-data, boundary=#{boundary} ", 'User-Agent' => "Flickraw/#{VERSION}"}
-      query = ''
-
-      file = file.to_s.encode("utf-8").force_encoding("ascii-8bit") if RUBY_VERSION >= "1.9"
-      build_args(args).each { |a, v|
-        query <<
-          "--#{boundary}\r\n" <<
-          "Content-Disposition: form-data; name=\"#{a}\"\r\n\r\n" <<
-          "#{v}\r\n"
-      }
-      query <<
-        "--#{boundary}\r\n" <<
-        "Content-Disposition: form-data; name=\"photo\"; filename=\"#{file}\"\r\n" <<
-        "Content-Transfer-Encoding: binary\r\n" <<
-        "Content-Type: image/jpeg\r\n\r\n" <<
-        photo <<
-        "\r\n" <<
-        "--#{boundary}--"
-
-      http_response = open_flickr {|http| http.post(method, query, header) }
-      xml = http_response.body
-      if xml[/stat="(\w+)"/, 1] == 'fail'
-        msg = xml[/msg="([^"]+)"/, 1]
-        code = xml[/code="([^"]+)"/, 1]
-        raise FailedResponse.new(msg, code, 'flickr.upload')
-      end
-      type = xml[/<(\w+)/, 1]
-      h = {
-        "secret" => xml[/secret="([^"]+)"/, 1],
-        "originalsecret" => xml[/originalsecret="([^"]+)"/, 1],
-        "_content" => xml[/>([^<]+)<\//, 1]
-      }.delete_if {|k,v| v.nil? }
-      Response.build(h, type)
+      args = build_args(args)
+      args['photo'] = open(file, 'rb')
+      http_response = @oauth_consumer.post_multipart(method, @access_secret, {:oauth_token => @access_token}, args)
+      process_response(method, http_response.body)
     end
   end
 
   class << self
     # Your flickr API key, see http://www.flickr.com/services/api/keys for more information
-    def api_key; FlickRawOptions['api_key'] end
-    def api_key=(key); FlickRawOptions['api_key'] = key end
-
+    attr_accessor :api_key
+    
     # The shared secret of _api_key_, see http://www.flickr.com/services/api/keys for more information
-    def shared_secret; FlickRawOptions['shared_secret'] end
-    def shared_secret=(key); FlickRawOptions['shared_secret'] = key end
-
-    # Returns the flickr auth URL.
-    def auth_url(args={})
-      full_args = {:api_key => api_key, :perms => 'read'}
-      args.each {|k, v| full_args[k.to_sym] = v }
-      full_args[:api_sig] = api_sig(full_args) if shared_secret
-
-      AUTH_PATH + full_args.collect { |a, v| "#{a}=#{v}" }.join('&')
-    end
-
-    # Returns the signature of hsh. This is meant to be passed in the _api_sig_ parameter.
-    def api_sig(hsh)
-      Digest::MD5.hexdigest(FlickRaw.shared_secret + hsh.sort{|a, b| a[0].to_s <=> b[0].to_s }.flatten.join)
-    end
+    attr_accessor :shared_secret
+    
+    # Use a proxy
+    attr_accessor :proxy
 
     BASE58_ALPHABET="123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ".freeze
     def base58(id)
@@ -440,9 +410,3 @@ end
 #  recent_photos = flickr.photos.getRecent
 #  puts recent_photos[0].title
 def flickr; $flickraw ||= FlickRaw::Flickr.new end
-
-# Load the methods if the option lazyload is not specified
-begin
-flickr
-rescue
-end if not FlickRawOptions['lazyload']
