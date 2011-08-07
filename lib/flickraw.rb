@@ -44,6 +44,77 @@ module FlickRaw
   URL_PROFILE='http://www.flickr.com/people/'.freeze
   URL_PHOTOSTREAM='http://www.flickr.com/photos/'.freeze
   URL_SHORT='http://flic.kr/p/'.freeze
+  
+  class OAuth
+    class << self
+      def escape(v); URI.escape(v.to_s, /[^a-zA-Z0-9\-\.\_\~]/) end
+      def parse_response(text); Hash[text.split("&").map {|s| s.split("=")}] end
+    end
+    
+    attr_accessor :user_agent
+    attr_reader :proxy
+    def proxy=(url)
+      return if url.nil?
+      @proxy = URI.parse(url)
+      @proxy_host, @proxy_port, @proxy_user, @proxy_password = @proxy.host, @proxy.port, @proxy.user, @proxy.password
+      @proxy
+    end
+    
+    def initialize(consumer_key, consumer_secret); @consumer_key, @consumer_secret = consumer_key, consumer_secret end
+
+    def sign(method, url, params, token_secret = nil, consumer_secret = @consumer_secret)
+      params_norm = params.map {|k,v| OAuth.escape(k) + "=" + OAuth.escape(v) }.sort.join("&")
+      text = method.to_s.upcase + "&" + OAuth.escape(url) + "&" + OAuth.escape(params_norm)
+      key = consumer_secret.to_s + "&" + token_secret.to_s
+      digest = OpenSSL::Digest::Digest.new("sha1")
+      [OpenSSL::HMAC.digest(digest, key, text)].pack('m0')
+    end
+    
+    def authorization_header(url, params)
+      params_norm = params.map {|k,v| OAuth.escape(k) + "=\"" + OAuth.escape(v) + "\""}.sort.join(", ")
+      "OAuth realm=\"" + url.to_s + "\", " + params_norm
+    end
+    
+    def gen_timestamp; Time.now.to_i end
+    def gen_nonce; [OpenSSL::Random.random_bytes(32)].pack('m0') end
+    def gen_default_params
+      { :oauth_version => "1.0", :oauth_signature_method => "HMAC-SHA1",
+        :oauth_consumer_key => @consumer_key, :oauth_nonce => gen_nonce,
+        :oauth_timestamp => gen_timestamp }
+    end
+    
+    def request_token(url, params = {})
+      r = post(url, token_secret, params)
+      OAuth.parse_response(r.body)
+    end
+    
+    def authorize_url(url, params = {})
+      params_norm = params.map {|k,v| OAuth.escape(k) + "=" + OAuth.escape(v)}.sort.join("&")
+      url =  URI.parse(url)
+      url.query = url.query ? url.query + "&" + params_norm : params_norm
+      url
+    end
+    
+    def access_token(url, token_secret, params = {})
+      r = post(url, token_secret, params)
+      OAuth.parse_response(r.body)
+    end
+    
+    def post(url, token_secret, params = {}); http_request(:post, url, token_secret, gen_default_params.merge(params)) end
+    
+    private
+    def http_request(method, url, token_secret, params)
+      signed_params = params.merge(:oauth_signature => sign(method, url, params, token_secret))
+      url = URI.parse(url)
+      Net::HTTP.start(url.host, url.port, @proxy_host, @proxy_port, @proxy_user, @proxy_password) { |http| 
+        request = Net::HTTP::Post.new(url.path)
+        request.form_data = params.select{|k,v| k !~ /^oauth_/}
+        request['User-Agent'] = @user_agent if @user_agent
+        request['Authorization'] = authorization_header(url, signed_params)
+        http.request(request)
+      }
+    end
+  end
 
   class Response
     def self.build(h, type) # :nodoc:
