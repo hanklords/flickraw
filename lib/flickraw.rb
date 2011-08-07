@@ -22,7 +22,6 @@
 
 
 require 'net/http'
-require 'digest/md5'
 require 'json'
 
 module FlickRaw
