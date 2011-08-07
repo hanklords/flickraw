@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
 
+lib = File.expand_path('../../lib/', __FILE__)
+$:.unshift lib unless $:.include?(lib)
+
 require 'test/unit'
 require 'flickraw'
 
+# FlickRaw.api_key = # API key
 # FlickRaw.shared_secret = # Shared secret
-# flickr.auth.checkToken :auth_token => # Auth token
+# flickr.access_token = # Auth token
+# flickr.access_secret = # Auth token secret
 
 class Upload < Test::Unit::TestCase
   def test_upload

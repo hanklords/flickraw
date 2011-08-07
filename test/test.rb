@@ -1,13 +1,19 @@
 # -*- coding: utf-8 -*-
 
+lib = File.expand_path('../../lib/', __FILE__)
+$:.unshift lib unless $:.include?(lib)
+
 require 'test/unit'
 require 'flickraw'
+
+# FlickRaw.shared_secret = # Shared secret
+# flickr.auth.checkToken :auth_token => # Auth token
 
 class Basic < Test::Unit::TestCase
   def test_request
     flickr_objects = %w{activity auth blogs collections commons contacts
        favorites galleries groups interestingness machinetags panda
-       people photos photosets places prefs reflection stats tags
+       people photos photosets places prefs push reflection stats tags
        test urls
     }
     assert_equal FlickRaw::Flickr.flickr_objects, flickr_objects
@@ -25,6 +31,7 @@ class Basic < Test::Unit::TestCase
       flickr.auth.getFrob
       flickr.auth.getFullToken
       flickr.auth.getToken
+      flickr.auth.oauth.getAccessToken
       flickr.blogs.getList
       flickr.blogs.getServices
       flickr.blogs.postPhoto
@@ -35,6 +42,7 @@ class Basic < Test::Unit::TestCase
       flickr.contacts.getListRecentlyUploaded
       flickr.contacts.getPublicList
       flickr.favorites.add
+      flickr.favorites.getContext
       flickr.favorites.getList
       flickr.favorites.getPublicList
       flickr.favorites.remove
@@ -162,6 +170,10 @@ class Basic < Test::Unit::TestCase
       flickr.prefs.getHidden
       flickr.prefs.getPrivacy
       flickr.prefs.getSafetyLevel
+      flickr.push.getSubscriptions
+      flickr.push.getTopics
+      flickr.push.subscribe
+      flickr.push.unsubscribe
       flickr.reflection.getMethodInfo
       flickr.reflection.getMethods
       flickr.stats.getCollectionDomains
@@ -199,7 +211,7 @@ class Basic < Test::Unit::TestCase
     }
     found_methods = flickr.reflection.getMethods
     assert_instance_of FlickRaw::ResponseList, found_methods
-    assert_equal known_methods, found_methods.to_a
+    assert_equal known_methods.sort, found_methods.to_a.sort
   end
   
   def test_list
