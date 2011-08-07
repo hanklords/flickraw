@@ -288,12 +288,13 @@ module FlickRaw
     def get_request_token(args = {})
       request_token = @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN, args)
       authorize_url = @oauth_consumer.authorize_url(FLICKR_OAUTH_AUTHORIZE, args.merge(:oauth_token => request_token['oauth_token']))
-      {:token => request_token['oauth_token'], :secret => request_token['oauth_token_secret'], :authorize_url => authorize_url}
+      request_token.merge('oauth_authorize_url' => authorize_url)
     end
 
     def get_access_token(token, secret, verify)
       access_token = @oauth_consumer.access_token(FLICKR_OAUTH_ACCESS_TOKEN, secret, :oauth_token => token, :oauth_verifier => verify)
       @access_token, @access_secret = access_token['oauth_token'], access_token['oauth_token_secret']
+      access_token
     end
 
     # Use this to upload the photo in _file_.
