@@ -26,7 +26,7 @@ require 'json'
 
 module FlickRaw
   VERSION='0.8.4'
-  USER _AGENT = "Flickraw/#{VERSION}"
+  USER_AGENT = "Flickraw/#{VERSION}"
 
   FLICKR_OAUTH_REQUEST_TOKEN='http://www.flickr.com/services/oauth/request_token'.freeze
   FLICKR_OAUTH_AUTHORIZE='http://www.flickr.com/services/oauth/authorize'.freeze
@@ -270,7 +270,7 @@ module FlickRaw
       raise "No API key or secret defined !" if FlickRaw.api_key.nil? or FlickRaw.shared_secret.nil?
       @oauth_consumer = OAuth.new(FlickRaw.api_key, FlickRaw.shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
-      @oauth_consumer.user_agent = USER _AGENT
+      @oauth_consumer.user_agent = USER_AGENT
       
       Flickr.build(call('flickr.reflection.getMethods')) if Flickr.flickr_objects.empty?
       super self
