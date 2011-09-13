@@ -87,7 +87,7 @@ module FlickRaw
     end
     
     def request_token(url, oauth_params = {})
-      r = post_form(url, token_secret, {:oauth_callback => "oob"}.merge(oauth_params))
+      r = post_form(url, nil, {:oauth_callback => "oob"}.merge(oauth_params))
       OAuth.parse_response(r.body)
     end
     
@@ -285,7 +285,7 @@ module FlickRaw
     end
 
     def get_request_token(args = {})
-      request_token = @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN, args)
+      request_token = @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN)
       authorize_url = @oauth_consumer.authorize_url(FLICKR_OAUTH_AUTHORIZE, args.merge(:oauth_token => request_token['oauth_token']))
       request_token.merge('oauth_authorize_url' => authorize_url)
     end
