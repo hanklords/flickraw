@@ -20,7 +20,6 @@
 # TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 # SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
 require 'net/http'
 require 'json'
 
@@ -70,7 +69,7 @@ module FlickRaw
       text = method.to_s.upcase + "&" + OAuth.escape(url) + "&" + OAuth.escape(params_norm)
       key = consumer_secret.to_s + "&" + token_secret.to_s
       digest = OpenSSL::Digest::Digest.new("sha1")
-      [OpenSSL::HMAC.digest(digest, key, text)].pack('m0')
+      [OpenSSL::HMAC.digest(digest, key, text)].pack('m0').gsub(/\n$/,'')
     end
     
     def authorization_header(url, params)
@@ -79,7 +78,7 @@ module FlickRaw
     end
     
     def gen_timestamp; Time.now.to_i end
-    def gen_nonce; [OpenSSL::Random.random_bytes(32)].pack('m0') end
+    def gen_nonce; [OpenSSL::Random.random_bytes(32)].pack('m0').gsub(/\n$/,'') end
     def gen_default_params
       { :oauth_version => "1.0", :oauth_signature_method => "HMAC-SHA1",
         :oauth_consumer_key => @consumer_key, :oauth_nonce => gen_nonce,
@@ -134,7 +133,9 @@ module FlickRaw
         request.body = ''
         params.each { |k, v|
           if v.is_a? File
-            filename = File.basename(v.path).to_s.encode("utf-8").force_encoding("ascii-8bit")
+            basename = File.basename(v.path).to_s
+            basename = basename.encode("utf-8").force_encoding("ascii-8bit") if RUBY_VERSION >= "1.9"
+            filename = basename
             request.body << "--#{boundary}\r\n" <<
               "Content-Disposition: form-data; name=\"#{k}\"; filename=\"#{filename}\"\r\n" <<
               "Content-Transfer-Encoding: binary\r\n" <<
