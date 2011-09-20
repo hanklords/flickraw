@@ -92,7 +92,7 @@ module FlickRaw
       params_norm = oauth_params.map {|k,v| OAuth.escape(k) + "=" + OAuth.escape(v)}.sort.join("&")
       url =  URI.parse(url)
       url.query = url.query ? url.query + "&" + params_norm : params_norm
-      url
+      url.to_s
     end
     
     def access_token(url, token_secret, oauth_params = {})
@@ -284,9 +284,11 @@ module FlickRaw
     end
 
     def get_request_token(args = {})
-      request_token = @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN)
-      authorize_url = @oauth_consumer.authorize_url(FLICKR_OAUTH_AUTHORIZE, args.merge(:oauth_token => request_token['oauth_token']))
-      request_token.merge('oauth_authorize_url' => authorize_url)
+      request_token = @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN, args)
+    end
+    
+    def get_authorize_url(token, args = {})
+      @oauth_consumer.authorize_url(FLICKR_OAUTH_AUTHORIZE, args.merge(:oauth_token => token))
     end
 
     def get_access_token(token, secret, verify)

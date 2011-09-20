@@ -9,7 +9,7 @@ FlickRaw.api_key=API_KEY
 FlickRaw.shared_secret=SHARED_SECRET
 
 token = flickr.get_request_token(:perms => 'delete')
-auth_url = token['oauth_authorize_url']
+auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
 
 puts "Open this url in your process to complete the authication process : #{auth_url}"
 puts "Copy here the number given when you complete the process."
