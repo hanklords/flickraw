@@ -1,5 +1,6 @@
 require "rdoc"
 require "rdoc/parser/ruby"
+require "nokogiri"
 require "cgi"
 
 FLICKR_API_URL='http://www.flickr.com/services/api'
@@ -66,11 +67,7 @@ module RDoc
     end
 
     def flickr_method_comment(info)
-      description = CGI.unescapeHTML(info.method.description.to_s)
-#       description.gsub!( /<\/?(\w+)>/ ) {|b|
-#         return b if ['em', 'b', 'tt'].include? $1
-#         return ''
-#       }
+      description = Nokogiri::HTML(info.method.description.to_s).text
 
       if info.respond_to? :arguments
         args = info.arguments.select { |arg| arg.name != 'api_key' }
