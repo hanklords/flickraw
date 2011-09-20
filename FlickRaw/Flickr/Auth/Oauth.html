@@ -5,7 +5,7 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-  <title>Class: FlickRaw::Flickr::Photos::Upload</title>
+  <title>Class: FlickRaw::Flickr::Auth::Oauth</title>
 
   <link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
 
@@ -65,7 +65,7 @@
         <h3 class="section-header">Methods</h3>
         <ul class="link-list">
           
-          <li><a href="#method-i-checkTickets">#checkTickets</a></li>
+          <li><a href="#method-i-getAccessToken">#getAccessToken</a></li>
           
         </ul>
       </div>
@@ -195,7 +195,7 @@
   </div>
 
   <div id="documentation">
-    <h1 class="class">FlickRaw::Flickr::Photos::Upload</h1>
+    <h1 class="class">FlickRaw::Flickr::Auth::Oauth</h1>
 
     <div id="description" class="description">
       
@@ -219,13 +219,13 @@
         <h3 class="section-header">Public Instance Methods</h3>
 
       
-        <div id="checkTickets-method" class="method-detail ">
-          <a name="method-i-checkTickets"></a>
+        <div id="getAccessToken-method" class="method-detail ">
+          <a name="method-i-getAccessToken"></a>
 
           
           <div class="method-heading">
-            <span class="method-name">checkTickets</span><span
-              class="method-args">(:tickets => 'tickets')</span>
+            <span class="method-name">getAccessToken</span><span
+              class="method-args"></span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
           
@@ -233,19 +233,25 @@
           <div class="method-description">
             
             <p><a
-href="http://www.flickr.com/services/api/flickr.photos.upload.checkTickets.html">flickr.photos.upload.checkTickets</a>
+href="http://www.flickr.com/services/api/flickr.auth.oauth.getAccessToken.html">flickr.auth.oauth.getAccessToken</a>
 request.</p>
 
-<p>Checks the status of one or more asynchronous photo upload tickets.</p>
+<p>Exchange an auth token from the old Authentication API, to an <a
+href="../../OAuth.html">OAuth</a> access token. Calling this method will
+delete the auth token used to make the request.</p>
 
 <p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>tickets <em>(required)</em> </dt>
-<dd>
-<p>A comma-delimited list of ticket ids</p>
-</dd></dl>
 
 <p><b>Error codes</b></p>
 <ul><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
 <p>100: <em>Invalid API Key</em></p>
 
 <p>The API key passed was not valid or has expired.</p>
@@ -278,32 +284,28 @@ href="../../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
-&lt;uploader&gt;
-       &lt;ticket id=&quot;128&quot; complete=&quot;1&quot; photoid=&quot;2995&quot; /&gt;
-       &lt;ticket id=&quot;129&quot; complete=&quot;0&quot; /&gt;
-       &lt;ticket id=&quot;130&quot; complete=&quot;2&quot; /&gt;
-       &lt;ticket id=&quot;131&quot; invalid=&quot;1&quot; /&gt;
-&lt;/uploader&gt;</pre>
+<pre>&lt;auth&gt; 
+       &lt;access_token oauth_token=&quot;72157607082540144-8d5d7ea7696629bf&quot; oauth_token_secret=&quot;f38bf58b2d95bc8b&quot; /&gt; 
+&lt;/auth&gt;</pre>
             
 
             
-            <div class="method-source-code" id="checkTickets-source">
+            <div class="method-source-code" id="getAccessToken-source">
 <pre>
 
 # Generated automatically from flickr api
-  def checkTickets(*args)
-    @flickr.call 'flickr.photos.upload.checkTickets', *args
+  def getAccessToken(*args)
+    @flickr.call 'flickr.auth.oauth.getAccessToken', *args
   end
 </pre>
-            </div><!-- checkTickets-source -->
+            </div><!-- getAccessToken-source -->
             
           </div>
 
           
 
           
-        </div><!-- checkTickets-method -->
+        </div><!-- getAccessToken-method -->
 
       
       </div><!-- public-instance-method-details -->

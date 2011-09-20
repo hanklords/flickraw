@@ -1,1126 +1,961 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-	<title>Module: FlickRaw</title>
+  <title>Module: FlickRaw</title>
 
-	<link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
 
-	<script src="./js/jquery.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="./js/thickbox-compressed.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="./js/quicksearch.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="./js/darkfish.js" type="text/javascript"
-		charset="utf-8"></script>
+  <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
-<body class="module">
+<body id="top" class="module">
 
-	<div id="metadata">
-		<div id="home-metadata">
-			<div id="home-section" class="section">
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
         <h3 class="section-header">
           <a href="./index.html">Home</a>
           <a href="./index.html#classes">Classes</a>
           <a href="./index.html#methods">Methods</a>
         </h3>
-			</div>
-		</div>
+      </div>
+    </div>
 
-		<div id="file-metadata">
-			<div id="file-list-section" class="section">
-				<h3 class="section-header">In Files</h3>
-				<div class="section-body">
-					<ul>
-					
-						<li><a href="./lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-					
-					</ul>
-				</div>
-			</div>
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="./lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
 
-			
-		</div>
+      
+    </div>
 
-		<div id="class-metadata">
+    <div id="class-metadata">
+      
 
-			<!-- Parent Class -->
-			
+      
 
-			<!-- Namespace Contents -->
-			
-			<div id="namespace-list-section" class="section">
-				<h3 class="section-header">Namespace</h3>
-				<ul class="link-list">
-					
-					<li><span class="type">CLASS</span> <a href="FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="FlickRaw/Request.html">FlickRaw::Request</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="FlickRaw/Response.html">FlickRaw::Response</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
-					
-				</ul>
-			</div>
-			
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FlickRaw/OAuth.html">FlickRaw::OAuth</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FlickRaw/Request.html">FlickRaw::Request</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FlickRaw/Response.html">FlickRaw::Response</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+          
+        </ul>
+      </div>
+      
 
-			<!-- Method Quickref -->
-			
-			<div id="method-list-section" class="section">
-				<h3 class="section-header">Methods</h3>
-				<ul class="link-list">
-					
-					<li><a href="#method-c-api_key">::api_key</a></li>
-					
-					<li><a href="#method-c-api_key%3D">::api_key=</a></li>
-					
-					<li><a href="#method-c-api_sig">::api_sig</a></li>
-					
-					<li><a href="#method-c-auth_url">::auth_url</a></li>
-					
-					<li><a href="#method-c-base58">::base58</a></li>
-					
-					<li><a href="#method-c-shared_secret">::shared_secret</a></li>
-					
-					<li><a href="#method-c-shared_secret%3D">::shared_secret=</a></li>
-					
-					<li><a href="#method-c-url">::url</a></li>
-					
-					<li><a href="#method-c-url_b">::url_b</a></li>
-					
-					<li><a href="#method-c-url_m">::url_m</a></li>
-					
-					<li><a href="#method-c-url_o">::url_o</a></li>
-					
-					<li><a href="#method-c-url_photopage">::url_photopage</a></li>
-					
-					<li><a href="#method-c-url_photoset">::url_photoset</a></li>
-					
-					<li><a href="#method-c-url_photosets">::url_photosets</a></li>
-					
-					<li><a href="#method-c-url_photostream">::url_photostream</a></li>
-					
-					<li><a href="#method-c-url_profile">::url_profile</a></li>
-					
-					<li><a href="#method-c-url_s">::url_s</a></li>
-					
-					<li><a href="#method-c-url_short">::url_short</a></li>
-					
-					<li><a href="#method-c-url_short_m">::url_short_m</a></li>
-					
-					<li><a href="#method-c-url_short_s">::url_short_s</a></li>
-					
-					<li><a href="#method-c-url_short_t">::url_short_t</a></li>
-					
-					<li><a href="#method-c-url_t">::url_t</a></li>
-					
-					<li><a href="#method-c-url_z">::url_z</a></li>
-					
-				</ul>
-			</div>
-			
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-base58">::base58</a></li>
+          
+          <li><a href="#method-c-url">::url</a></li>
+          
+          <li><a href="#method-c-url_b">::url_b</a></li>
+          
+          <li><a href="#method-c-url_m">::url_m</a></li>
+          
+          <li><a href="#method-c-url_o">::url_o</a></li>
+          
+          <li><a href="#method-c-url_photopage">::url_photopage</a></li>
+          
+          <li><a href="#method-c-url_photoset">::url_photoset</a></li>
+          
+          <li><a href="#method-c-url_photosets">::url_photosets</a></li>
+          
+          <li><a href="#method-c-url_photostream">::url_photostream</a></li>
+          
+          <li><a href="#method-c-url_profile">::url_profile</a></li>
+          
+          <li><a href="#method-c-url_s">::url_s</a></li>
+          
+          <li><a href="#method-c-url_short">::url_short</a></li>
+          
+          <li><a href="#method-c-url_short_m">::url_short_m</a></li>
+          
+          <li><a href="#method-c-url_short_s">::url_short_s</a></li>
+          
+          <li><a href="#method-c-url_short_t">::url_short_t</a></li>
+          
+          <li><a href="#method-c-url_t">::url_t</a></li>
+          
+          <li><a href="#method-c-url_z">::url_z</a></li>
+          
+        </ul>
+      </div>
+      
 
-			<!-- Included Modules -->
-			
-		</div>
+      
+    </div>
 
-		<div id="project-metadata">
-			
-			
-			<div id="fileindex-section" class="section project-section">
-				<h3 class="section-header">Files</h3>
-				<ul>
-				
-					<li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
-				
-				</ul>
-			</div>
-			
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
 
-			<div id="classindex-section" class="section project-section">
-				<h3 class="section-header">Class Index
-					<span class="search-toggle"><img src="./images/find.png"
-						height="16" width="16" alt="[+]"
-						title="show/hide quicksearch" /></span></h3>
-				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-				<fieldset>
-					<legend>Quicksearch</legend>
-					<input type="text" name="quicksearch" value=""
-						class="quicksearch-field" />
-				</fieldset>
-				</form>
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
 
-				<ul class="link-list">
-				
-					<li><a href="./FlickRaw.html">FlickRaw</a></li>
-				
-					<li><a href="./FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
-				
-					<li><a href="./FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-				
-					<li><a href="./FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-				
-					<li><a href="./FlickRaw/Request.html">FlickRaw::Request</a></li>
-				
-					<li><a href="./FlickRaw/Response.html">FlickRaw::Response</a></li>
-				
-					<li><a href="./FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
-				
-					<li><a href="./Object.html">Object</a></li>
-				
-				</ul>
-				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
-			</div>
+        <ul class="link-list">
+        
+          <li><a href="./FlickRaw.html">FlickRaw</a></li>
+        
+          <li><a href="./FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+        
+          <li><a href="./FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+        
+          <li><a href="./FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+        
+          <li><a href="./FlickRaw/OAuth.html">FlickRaw::OAuth</a></li>
+        
+          <li><a href="./FlickRaw/Request.html">FlickRaw::Request</a></li>
+        
+          <li><a href="./FlickRaw/Response.html">FlickRaw::Response</a></li>
+        
+          <li><a href="./FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+        
+          <li><a href="./Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
 
-			
-		</div>
-	</div>
+      
+    </div>
+  </div>
 
-	<div id="documentation">
-		<h1 class="module">FlickRaw</h1>
+  <div id="documentation">
+    <h1 class="module">FlickRaw</h1>
 
-		<div id="description">
-			
-		</div>
+    <div id="description" class="description">
+      
+    </div><!-- description -->
 
-		<!-- Constants -->
-		
-		<div id="constants-list" class="section">
-			<h3 class="section-header">Constants</h3>
-			<dl>
-			
-				<dt><a name="VERSION">VERSION</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-				<dt><a name="FLICKR_HOST">FLICKR_HOST</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-				<dt><a name="REST_PATH">REST_PATH</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-				<dt><a name="UPLOAD_PATH">UPLOAD_PATH</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-				<dt><a name="REPLACE_PATH">REPLACE_PATH</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-				<dt><a name="AUTH_PATH">AUTH_PATH</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-				<dt><a name="PHOTO_SOURCE_URL">PHOTO_SOURCE_URL</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-				<dt><a name="URL_PROFILE">URL_PROFILE</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-				<dt><a name="URL_PHOTOSTREAM">URL_PHOTOSTREAM</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-				<dt><a name="URL_SHORT">URL_SHORT</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-				<dt><a name="BASE58_ALPHABET">BASE58_ALPHABET</a></dt>
-				
-				<dd class="description"></dd>
-				
-			
-			</dl>
-		</div>
-		
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
 
-		<!-- Attributes -->
-		
+      
 
-		<!-- Methods -->
-		
-		<div id="public-class-method-details" class="method-section section">
-			<h3 class="section-header">Public Class Methods</h3>
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="BASE58_ALPHABET">BASE58_ALPHABET</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="FLICKR_OAUTH_ACCESS_TOKEN">FLICKR_OAUTH_ACCESS_TOKEN</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="FLICKR_OAUTH_AUTHORIZE">FLICKR_OAUTH_AUTHORIZE</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="FLICKR_OAUTH_REQUEST_TOKEN">FLICKR_OAUTH_REQUEST_TOKEN</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="PHOTO_SOURCE_URL">PHOTO_SOURCE_URL</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="REPLACE_PATH">REPLACE_PATH</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="REST_PATH">REST_PATH</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="UPLOAD_PATH">UPLOAD_PATH</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="URL_PHOTOSTREAM">URL_PHOTOSTREAM</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="URL_PROFILE">URL_PROFILE</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="URL_SHORT">URL_SHORT</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="USER_AGENT">USER_AGENT</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="VERSION">VERSION</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
 
-		
-			<div id="api-key-method" class="method-detail ">
-				<a name="method-c-api_key"></a>
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
 
-				<div class="method-heading">
-				
-					<span class="method-name">api_key</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+        
+        <div id="api_key-attribute-method" class="method-detail">
+          <a name="api_key"></a>
+          
+          <a name="api_key="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">api_key</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
 
-				<div class="method-description">
-					
-					<p>
-Your flickr API key, see <a
+          <div class="method-description">
+          
+          <p>Your flickr API key, see <a
 href="http://www.flickr.com/services/api/keys">www.flickr.com/services/api/keys</a>
-for more information
-</p>
-					
+for more information</p>
+          
+          </div>
+        </div>
+        
+        <div id="proxy-attribute-method" class="method-detail">
+          <a name="proxy"></a>
+          
+          <a name="proxy="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">proxy</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
 
-					
-					<div class="method-source-code"
-						id="api-key-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 260</span>
-260:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">api_key</span>; <span class="ruby-constant">FlickRawOptions</span>[<span class="ruby-value str">'api_key'</span>] <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+          <div class="method-description">
+          
+          <p>Use a proxy</p>
+          
+          </div>
+        </div>
+        
+        <div id="shared_secret-attribute-method" class="method-detail">
+          <a name="shared_secret"></a>
+          
+          <a name="shared_secret="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">shared_secret</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
 
-				
-
-				
-			</div>
-
-		
-			<div id="api-key--method" class="method-detail ">
-				<a name="method-c-api_key%3D"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">api_key=</span><span
-						class="method-args">(key)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="api-key--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 261</span>
-261:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">api_key=</span>(<span class="ruby-identifier">key</span>); <span class="ruby-constant">FlickRawOptions</span>[<span class="ruby-value str">'api_key'</span>] = <span class="ruby-identifier">key</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="api-sig-method" class="method-detail ">
-				<a name="method-c-api_sig"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">api_sig</span><span
-						class="method-args">(hsh)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns the signature of hsh. This is meant to be passed in the <em><a
-href="FlickRaw.html#method-c-api_sig">api_sig</a></em> parameter.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="api-sig-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 277</span>
-277:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">api_sig</span>(<span class="ruby-identifier">hsh</span>)
-278:       <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-constant">FlickRaw</span>.<span class="ruby-identifier">shared_secret</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">hsh</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">join</span>)
-279:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="auth-url-method" class="method-detail ">
-				<a name="method-c-auth_url"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">auth_url</span><span
-						class="method-args">(args={})</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns the flickr auth URL.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="auth-url-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 268</span>
-268:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">auth_url</span>(<span class="ruby-identifier">args</span>={})
-269:       <span class="ruby-identifier">full_args</span> = {<span class="ruby-value">:api_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">api_key</span>, <span class="ruby-value">:perms</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'read'</span>}
-270:       <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">full_args</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span> }
-271:       <span class="ruby-identifier">full_args</span>[<span class="ruby-value">:api_sig</span>] = <span class="ruby-identifier">api_sig</span>(<span class="ruby-identifier">full_args</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">shared_secret</span>
-272: 
-273:       <span class="ruby-constant">AUTH_PATH</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">full_args</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{a}=#{v}&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'&amp;'</span>)
-274:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="base--method" class="method-detail ">
-				<a name="method-c-base58"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">base58</span><span
-						class="method-args">(id)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="base--source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 282</span>
-282:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">id</span>)
-283:       <span class="ruby-identifier">id</span> = <span class="ruby-identifier">id</span>.<span class="ruby-identifier">to_i</span>
-284:       <span class="ruby-identifier">alphabet</span> = <span class="ruby-constant">BASE58_ALPHABET</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">//</span>)
-285:       <span class="ruby-identifier">base</span> = <span class="ruby-identifier">alphabet</span>.<span class="ruby-identifier">length</span>
-286:       <span class="ruby-keyword kw">begin</span>
-287:         <span class="ruby-identifier">id</span>, <span class="ruby-identifier">m</span> = <span class="ruby-identifier">id</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-identifier">base</span>)
-288:         <span class="ruby-identifier">r</span> = <span class="ruby-identifier">alphabet</span>[<span class="ruby-identifier">m</span>] <span class="ruby-operator">+</span> (<span class="ruby-identifier">r</span> <span class="ruby-operator">||</span> <span class="ruby-value str">''</span>)
-289:       <span class="ruby-keyword kw">end</span> <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">id</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
-290:       <span class="ruby-identifier">r</span>
-291:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="shared-secret-method" class="method-detail ">
-				<a name="method-c-shared_secret"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">shared_secret</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-The shared secret of <em><a
-href="FlickRaw.html#method-c-api_key">api_key</a></em>, see <a
+          <div class="method-description">
+          
+          <p>The shared secret of <em><a
+href="FlickRaw.html#attribute-c-api_key">api_key</a></em>, see <a
 href="http://www.flickr.com/services/api/keys">www.flickr.com/services/api/keys</a>
-for more information
-</p>
-					
+for more information</p>
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
 
-					
-					<div class="method-source-code"
-						id="shared-secret-source">
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="base58-method" class="method-detail ">
+          <a name="method-c-base58"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">base58</span><span
+              class="method-args">(id)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="base58-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 264</span>
-264:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shared_secret</span>; <span class="ruby-constant">FlickRawOptions</span>[<span class="ruby-value str">'shared_secret'</span>] <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 381</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">id</span> = <span class="ruby-identifier">id</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">alphabet</span> = <span class="ruby-constant">BASE58_ALPHABET</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">//</span>)
+  <span class="ruby-identifier">base</span> = <span class="ruby-identifier">alphabet</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">id</span>, <span class="ruby-identifier">m</span> = <span class="ruby-identifier">id</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-identifier">base</span>)
+    <span class="ruby-identifier">r</span> = <span class="ruby-identifier">alphabet</span>[<span class="ruby-identifier">m</span>] <span class="ruby-operator">+</span> (<span class="ruby-identifier">r</span> <span class="ruby-operator">||</span> <span class="ruby-string">''</span>)
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">while</span> <span class="ruby-identifier">id</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">r</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- base58-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- base58-method -->
 
-		
-			<div id="shared-secret--method" class="method-detail ">
-				<a name="method-c-shared_secret%3D"></a>
+      
+        <div id="url-method" class="method-detail ">
+          <a name="method-c-url"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">shared_secret=</span><span
-						class="method-args">(key)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="shared-secret--source">
+            
+            <div class="method-source-code" id="url-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 265</span>
-265:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">shared_secret=</span>(<span class="ruby-identifier">key</span>); <span class="ruby-constant">FlickRawOptions</span>[<span class="ruby-value str">'shared_secret'</span>] = <span class="ruby-identifier">key</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 392</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url</span>(<span class="ruby-identifier">r</span>);   <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-string">&quot;&quot;</span>,   <span class="ruby-string">&quot;jpg&quot;</span>]   <span class="ruby-keyword">end</span></pre>
+            </div><!-- url-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url-method -->
 
-		
-			<div id="url-method" class="method-detail ">
-				<a name="method-c-url"></a>
+      
+        <div id="url_b-method" class="method-detail ">
+          <a name="method-c-url_b"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_b</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-source">
+            
+            <div class="method-source-code" id="url_b-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 293</span>
-293:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url</span>(<span class="ruby-identifier">r</span>);   <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-value str">&quot;&quot;</span>,   <span class="ruby-value str">&quot;jpg&quot;</span>]   <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 396</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_b</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-string">&quot;_b&quot;</span>, <span class="ruby-string">&quot;jpg&quot;</span>] <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_b-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_b-method -->
 
-		
-			<div id="url-b-method" class="method-detail ">
-				<a name="method-c-url_b"></a>
+      
+        <div id="url_m-method" class="method-detail ">
+          <a name="method-c-url_m"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_b</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_m</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-b-source">
+            
+            <div class="method-source-code" id="url_m-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 297</span>
-297:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_b</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-value str">&quot;_b&quot;</span>, <span class="ruby-value str">&quot;jpg&quot;</span>] <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 393</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_m</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-string">&quot;_m&quot;</span>, <span class="ruby-string">&quot;jpg&quot;</span>] <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_m-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_m-method -->
 
-		
-			<div id="url-m-method" class="method-detail ">
-				<a name="method-c-url_m"></a>
+      
+        <div id="url_o-method" class="method-detail ">
+          <a name="method-c-url_o"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_m</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_o</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-m-source">
+            
+            <div class="method-source-code" id="url_o-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 294</span>
-294:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_m</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-value str">&quot;_m&quot;</span>, <span class="ruby-value str">&quot;jpg&quot;</span>] <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 398</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_o</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">originalsecret</span>, <span class="ruby-string">&quot;_o&quot;</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">originalformat</span>] <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_o-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_o-method -->
 
-		
-			<div id="url-o-method" class="method-detail ">
-				<a name="method-c-url_o"></a>
+      
+        <div id="url_photopage-method" class="method-detail ">
+          <a name="method-c-url_photopage"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_o</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_photopage</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-o-source">
+            
+            <div class="method-source-code" id="url_photopage-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 299</span>
-299:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_o</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">originalsecret</span>, <span class="ruby-value str">&quot;_o&quot;</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">originalformat</span>] <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 400</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_photopage</span>(<span class="ruby-identifier">r</span>); <span class="ruby-identifier">url_photostream</span>(<span class="ruby-identifier">r</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_photopage-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_photopage-method -->
 
-		
-			<div id="url-photopage-method" class="method-detail ">
-				<a name="method-c-url_photopage"></a>
+      
+        <div id="url_photoset-method" class="method-detail ">
+          <a name="method-c-url_photoset"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_photopage</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_photoset</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-photopage-source">
+            
+            <div class="method-source-code" id="url_photoset-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 301</span>
-301:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_photopage</span>(<span class="ruby-identifier">r</span>); <span class="ruby-identifier">url_photostream</span>(<span class="ruby-identifier">r</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 402</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_photoset</span>(<span class="ruby-identifier">r</span>); <span class="ruby-identifier">url_photosets</span>(<span class="ruby-identifier">r</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_photoset-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_photoset-method -->
 
-		
-			<div id="url-photoset-method" class="method-detail ">
-				<a name="method-c-url_photoset"></a>
+      
+        <div id="url_photosets-method" class="method-detail ">
+          <a name="method-c-url_photosets"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_photoset</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_photosets</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-photoset-source">
+            
+            <div class="method-source-code" id="url_photosets-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 303</span>
-303:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_photoset</span>(<span class="ruby-identifier">r</span>); <span class="ruby-identifier">url_photosets</span>(<span class="ruby-identifier">r</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 401</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_photosets</span>(<span class="ruby-identifier">r</span>); <span class="ruby-identifier">url_photostream</span>(<span class="ruby-identifier">r</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;sets/&quot;</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_photosets-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_photosets-method -->
 
-		
-			<div id="url-photosets-method" class="method-detail ">
-				<a name="method-c-url_photosets"></a>
+      
+        <div id="url_photostream-method" class="method-detail ">
+          <a name="method-c-url_photostream"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_photosets</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_photostream</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-photosets-source">
+            
+            <div class="method-source-code" id="url_photostream-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 302</span>
-302:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_photosets</span>(<span class="ruby-identifier">r</span>); <span class="ruby-identifier">url_photostream</span>(<span class="ruby-identifier">r</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;sets/&quot;</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 407</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_photostream</span>(<span class="ruby-identifier">r</span>)
+  <span class="ruby-constant">URL_PHOTOSTREAM</span> <span class="ruby-operator">+</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:pathalias</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">pathalias</span>
+      <span class="ruby-identifier">r</span>.<span class="ruby-identifier">pathalias</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:nsid</span>)
+      <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>.<span class="ruby-identifier">nsid</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;/&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- url_photostream-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_photostream-method -->
 
-		
-			<div id="url-photostream-method" class="method-detail ">
-				<a name="method-c-url_photostream"></a>
+      
+        <div id="url_profile-method" class="method-detail ">
+          <a name="method-c-url_profile"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_photostream</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_profile</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-photostream-source">
+            
+            <div class="method-source-code" id="url_profile-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 308</span>
-308:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_photostream</span>(<span class="ruby-identifier">r</span>)
-309:       <span class="ruby-constant">URL_PHOTOSTREAM</span> <span class="ruby-operator">+</span>
-310:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:pathalias</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">pathalias</span>
-311:           <span class="ruby-identifier">r</span>.<span class="ruby-identifier">pathalias</span>
-312:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:nsid</span>)
-313:           <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>.<span class="ruby-identifier">nsid</span>
-314:         <span class="ruby-keyword kw">else</span>
-315:           <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>
-316:         <span class="ruby-keyword kw">end</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;/&quot;</span>
-317:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 399</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_profile</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_PROFILE</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:nsid</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>.<span class="ruby-identifier">nsid</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;/&quot;</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_profile-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_profile-method -->
 
-		
-			<div id="url-profile-method" class="method-detail ">
-				<a name="method-c-url_profile"></a>
+      
+        <div id="url_s-method" class="method-detail ">
+          <a name="method-c-url_s"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_profile</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_s</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-profile-source">
+            
+            <div class="method-source-code" id="url_s-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 300</span>
-300:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_profile</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_PROFILE</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:nsid</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>.<span class="ruby-identifier">nsid</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">owner</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;/&quot;</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 394</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_s</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-string">&quot;_s&quot;</span>, <span class="ruby-string">&quot;jpg&quot;</span>] <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_s-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_s-method -->
 
-		
-			<div id="url-s-method" class="method-detail ">
-				<a name="method-c-url_s"></a>
+      
+        <div id="url_short-method" class="method-detail ">
+          <a name="method-c-url_short"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_s</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_short</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-s-source">
+            
+            <div class="method-source-code" id="url_short-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 295</span>
-295:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_s</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-value str">&quot;_s&quot;</span>, <span class="ruby-value str">&quot;jpg&quot;</span>] <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_short</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_short-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_short-method -->
 
-		
-			<div id="url-short-method" class="method-detail ">
-				<a name="method-c-url_short"></a>
+      
+        <div id="url_short_m-method" class="method-detail ">
+          <a name="method-c-url_short_m"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_short</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_short_m</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-short-source">
+            
+            <div class="method-source-code" id="url_short_m-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 304</span>
-304:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_short</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_short_m</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;img/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;_m.jpg&quot;</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_short_m-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_short_m-method -->
 
-		
-			<div id="url-short-m-method" class="method-detail ">
-				<a name="method-c-url_short_m"></a>
+      
+        <div id="url_short_s-method" class="method-detail ">
+          <a name="method-c-url_short_s"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_short_m</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_short_s</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-short-m-source">
+            
+            <div class="method-source-code" id="url_short_s-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 305</span>
-305:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_short_m</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;img/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;_m.jpg&quot;</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 405</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_short_s</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;img/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;.jpg&quot;</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_short_s-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_short_s-method -->
 
-		
-			<div id="url-short-s-method" class="method-detail ">
-				<a name="method-c-url_short_s"></a>
+      
+        <div id="url_short_t-method" class="method-detail ">
+          <a name="method-c-url_short_t"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_short_s</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_short_t</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-short-s-source">
+            
+            <div class="method-source-code" id="url_short_t-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 306</span>
-306:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_short_s</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;img/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;.jpg&quot;</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 406</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_short_t</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;img/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;_t.jpg&quot;</span> <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_short_t-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_short_t-method -->
 
-		
-			<div id="url-short-t-method" class="method-detail ">
-				<a name="method-c-url_short_t"></a>
+      
+        <div id="url_t-method" class="method-detail ">
+          <a name="method-c-url_t"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_short_t</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_t</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-short-t-source">
+            
+            <div class="method-source-code" id="url_t-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 307</span>
-307:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_short_t</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">URL_SHORT</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;img/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">base58</span>(<span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>) <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;_t.jpg&quot;</span> <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 395</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_t</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-string">&quot;_t&quot;</span>, <span class="ruby-string">&quot;jpg&quot;</span>] <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_t-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_t-method -->
 
-		
-			<div id="url-t-method" class="method-detail ">
-				<a name="method-c-url_t"></a>
+      
+        <div id="url_z-method" class="method-detail ">
+          <a name="method-c-url_z"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_t</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">url_z</span><span
+              class="method-args">(r)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+            
+            
+            
 
-					
-					<div class="method-source-code"
-						id="url-t-source">
+            
+            <div class="method-source-code" id="url_z-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 296</span>
-296:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_t</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-value str">&quot;_t&quot;</span>, <span class="ruby-value str">&quot;jpg&quot;</span>] <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 397</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_z</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-string">&quot;_z&quot;</span>, <span class="ruby-string">&quot;jpg&quot;</span>] <span class="ruby-keyword">end</span></pre>
+            </div><!-- url_z-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- url_z-method -->
 
-		
-			<div id="url-z-method" class="method-detail ">
-				<a name="method-c-url_z"></a>
+      
+      </div><!-- public-class-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
 
-				<div class="method-heading">
-				
-					<span class="method-name">url_z</span><span
-						class="method-args">(r)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+  </div><!-- documentation -->
 
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="url-z-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 298</span>
-298:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">url_z</span>(<span class="ruby-identifier">r</span>); <span class="ruby-constant">PHOTO_SOURCE_URL</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">r</span>.<span class="ruby-identifier">farm</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">server</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">secret</span>, <span class="ruby-value str">&quot;_z&quot;</span>, <span class="ruby-value str">&quot;jpg&quot;</span>] <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-		</div>
-	
-
-	</div>
-
-
-	<div id="rdoc-debugging-section-dump" class="debugging-section">
-	
-		<p>Disabled; run with --debug to generate this.</p>
-	
-	</div>
-
-	<div id="validator-badges">
-		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-			Rdoc Generator</a> 1.1.6</small>.</p>
-	</div>
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
 
 </body>
 </html>

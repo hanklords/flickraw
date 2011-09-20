@@ -5,7 +5,7 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-  <title>Class: FlickRaw::Request</title>
+  <title>Class: FlickRaw::OAuth</title>
 
   <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
 
@@ -58,21 +58,17 @@
       
 
       
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
         <ul class="link-list">
           
-          <li><a href="#method-c-flickr_methods">::flickr_methods</a></li>
-          
-          <li><a href="#method-c-flickr_objects">::flickr_objects</a></li>
-          
-          <li><a href="#method-c-request_name">::request_name</a></li>
+          <li><span class="type">CLASS</span> <a href="OAuth/FailedResponse.html">FlickRaw::OAuth::FailedResponse</a></li>
           
         </ul>
       </div>
+      
+
       
 
       
@@ -199,7 +195,7 @@
   </div>
 
   <div id="documentation">
-    <h1 class="class">FlickRaw::Request</h1>
+    <h1 class="class">FlickRaw::OAuth</h1>
 
     <div id="description" class="description">
       
@@ -219,105 +215,6 @@
 
       <!-- Methods -->
       
-      <div id="public-class-method-details" class="method-section section">
-        <h3 class="section-header">Public Class Methods</h3>
-
-      
-        <div id="flickr_methods-method" class="method-detail ">
-          <a name="method-c-flickr_methods"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">flickr_methods</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>List of the flickr methods of this object</p>
-            
-
-            
-            <div class="method-source-code" id="flickr_methods-source">
-<pre>
-<span class="ruby-comment"># File lib/flickraw.rb, line 255</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">flickr_methods</span>; <span class="ruby-ivar">@flickr_methods</span> <span class="ruby-operator">||=</span> [] <span class="ruby-keyword">end</span></pre>
-            </div><!-- flickr_methods-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- flickr_methods-method -->
-
-      
-        <div id="flickr_objects-method" class="method-detail ">
-          <a name="method-c-flickr_objects"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">flickr_objects</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>List of the flickr subobjects of this object</p>
-            
-
-            
-            <div class="method-source-code" id="flickr_objects-source">
-<pre>
-<span class="ruby-comment"># File lib/flickraw.rb, line 252</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">flickr_objects</span>; <span class="ruby-ivar">@flickr_objects</span> <span class="ruby-operator">||=</span> [] <span class="ruby-keyword">end</span></pre>
-            </div><!-- flickr_objects-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- flickr_objects-method -->
-
-      
-        <div id="request_name-method" class="method-detail ">
-          <a name="method-c-request_name"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">request_name</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>Returns the prefix of the request corresponding to this class.</p>
-            
-
-            
-            <div class="method-source-code" id="request_name-source">
-<pre>
-<span class="ruby-comment"># File lib/flickraw.rb, line 258</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">request_name</span>; <span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/::/</span>, <span class="ruby-string">'.'</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/[^\.]+\./</span>, <span class="ruby-string">''</span>) <span class="ruby-keyword">end</span></pre>
-            </div><!-- request_name-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- request_name-method -->
-
-      
-      </div><!-- public-class-method-details -->
-    
     </div><!-- 5Buntitled-5D -->
   
 

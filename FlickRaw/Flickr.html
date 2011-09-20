@@ -1,1304 +1,1223 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-	<title>Class: FlickRaw::Flickr</title>
+  <title>Class: FlickRaw::Flickr</title>
 
-	<link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
 
-	<script src="../js/jquery.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../js/thickbox-compressed.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../js/quicksearch.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../js/darkfish.js" type="text/javascript"
-		charset="utf-8"></script>
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
 
 </head>
-<body class="class">
+<body id="top" class="class">
 
-	<div id="metadata">
-		<div id="home-metadata">
-			<div id="home-section" class="section">
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
         <h3 class="section-header">
           <a href="../index.html">Home</a>
           <a href="../index.html#classes">Classes</a>
           <a href="../index.html#methods">Methods</a>
         </h3>
-			</div>
-		</div>
+      </div>
+    </div>
 
-		<div id="file-metadata">
-			<div id="file-list-section" class="section">
-				<h3 class="section-header">In Files</h3>
-				<div class="section-body">
-					<ul>
-					
-						<li><a href="../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-					
-					</ul>
-				</div>
-			</div>
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
 
-			
-		</div>
+      
+    </div>
 
-		<div id="class-metadata">
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link"><a href="Request.html">FlickRaw::Request</a></p>
+        
+      </div>
+      
 
-			<!-- Parent Class -->
-			
-			<div id="parent-class-section" class="section">
-				<h3 class="section-header">Parent</h3>
-				
-				<p class="link"><a href="Request.html">FlickRaw::Request</a></p>
-				
-			</div>
-			
+      
 
-			<!-- Namespace Contents -->
-			
-			<div id="namespace-list-section" class="section">
-				<h3 class="section-header">Namespace</h3>
-				<ul class="link-list">
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/People.html">FlickRaw::Flickr::People</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-					
-					<li><span class="type">CLASS</span> <a href="Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-					
-				</ul>
-			</div>
-			
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/People.html">FlickRaw::Flickr::People</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+          
+          <li><span class="type">CLASS</span> <a href="Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+          
+        </ul>
+      </div>
+      
 
-			<!-- Method Quickref -->
-			
-			<div id="method-list-section" class="section">
-				<h3 class="section-header">Methods</h3>
-				<ul class="link-list">
-					
-					<li><a href="#method-c-build">::build</a></li>
-					
-					<li><a href="#method-i-activity">#activity</a></li>
-					
-					<li><a href="#method-i-auth">#auth</a></li>
-					
-					<li><a href="#method-i-blogs">#blogs</a></li>
-					
-					<li><a href="#method-i-build_args">#build_args</a></li>
-					
-					<li><a href="#method-i-call">#call</a></li>
-					
-					<li><a href="#method-i-collections">#collections</a></li>
-					
-					<li><a href="#method-i-commons">#commons</a></li>
-					
-					<li><a href="#method-i-contacts">#contacts</a></li>
-					
-					<li><a href="#method-i-favorites">#favorites</a></li>
-					
-					<li><a href="#method-i-galleries">#galleries</a></li>
-					
-					<li><a href="#method-i-groups">#groups</a></li>
-					
-					<li><a href="#method-i-interestingness">#interestingness</a></li>
-					
-					<li><a href="#method-i-machinetags">#machinetags</a></li>
-					
-					<li><a href="#method-i-open_flickr">#open_flickr</a></li>
-					
-					<li><a href="#method-i-panda">#panda</a></li>
-					
-					<li><a href="#method-i-people">#people</a></li>
-					
-					<li><a href="#method-i-photos">#photos</a></li>
-					
-					<li><a href="#method-i-photosets">#photosets</a></li>
-					
-					<li><a href="#method-i-places">#places</a></li>
-					
-					<li><a href="#method-i-prefs">#prefs</a></li>
-					
-					<li><a href="#method-i-process_response">#process_response</a></li>
-					
-					<li><a href="#method-i-reflection">#reflection</a></li>
-					
-					<li><a href="#method-i-replace_photo">#replace_photo</a></li>
-					
-					<li><a href="#method-i-stats">#stats</a></li>
-					
-					<li><a href="#method-i-tags">#tags</a></li>
-					
-					<li><a href="#method-i-test">#test</a></li>
-					
-					<li><a href="#method-i-upload_flickr">#upload_flickr</a></li>
-					
-					<li><a href="#method-i-upload_photo">#upload_photo</a></li>
-					
-					<li><a href="#method-i-urls">#urls</a></li>
-					
-				</ul>
-			</div>
-			
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-build">::build</a></li>
+          
+          <li><a href="#method-i-activity">#activity</a></li>
+          
+          <li><a href="#method-i-auth">#auth</a></li>
+          
+          <li><a href="#method-i-blogs">#blogs</a></li>
+          
+          <li><a href="#method-i-call">#call</a></li>
+          
+          <li><a href="#method-i-collections">#collections</a></li>
+          
+          <li><a href="#method-i-commons">#commons</a></li>
+          
+          <li><a href="#method-i-contacts">#contacts</a></li>
+          
+          <li><a href="#method-i-favorites">#favorites</a></li>
+          
+          <li><a href="#method-i-galleries">#galleries</a></li>
+          
+          <li><a href="#method-i-get_access_token">#get_access_token</a></li>
+          
+          <li><a href="#method-i-get_authorize_url">#get_authorize_url</a></li>
+          
+          <li><a href="#method-i-get_request_token">#get_request_token</a></li>
+          
+          <li><a href="#method-i-groups">#groups</a></li>
+          
+          <li><a href="#method-i-interestingness">#interestingness</a></li>
+          
+          <li><a href="#method-i-machinetags">#machinetags</a></li>
+          
+          <li><a href="#method-i-panda">#panda</a></li>
+          
+          <li><a href="#method-i-people">#people</a></li>
+          
+          <li><a href="#method-i-photos">#photos</a></li>
+          
+          <li><a href="#method-i-photosets">#photosets</a></li>
+          
+          <li><a href="#method-i-places">#places</a></li>
+          
+          <li><a href="#method-i-prefs">#prefs</a></li>
+          
+          <li><a href="#method-i-push">#push</a></li>
+          
+          <li><a href="#method-i-reflection">#reflection</a></li>
+          
+          <li><a href="#method-i-replace_photo">#replace_photo</a></li>
+          
+          <li><a href="#method-i-stats">#stats</a></li>
+          
+          <li><a href="#method-i-tags">#tags</a></li>
+          
+          <li><a href="#method-i-test">#test</a></li>
+          
+          <li><a href="#method-i-upload_photo">#upload_photo</a></li>
+          
+          <li><a href="#method-i-urls">#urls</a></li>
+          
+        </ul>
+      </div>
+      
 
-			<!-- Included Modules -->
-			
-		</div>
+      
+    </div>
 
-		<div id="project-metadata">
-			
-			
-			<div id="fileindex-section" class="section project-section">
-				<h3 class="section-header">Files</h3>
-				<ul>
-				
-					<li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
-				
-				</ul>
-			</div>
-			
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
 
-			<div id="classindex-section" class="section project-section">
-				<h3 class="section-header">Class Index
-					<span class="search-toggle"><img src="../images/find.png"
-						height="16" width="16" alt="[+]"
-						title="show/hide quicksearch" /></span></h3>
-				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-				<fieldset>
-					<legend>Quicksearch</legend>
-					<input type="text" name="quicksearch" value=""
-						class="quicksearch-field" />
-				</fieldset>
-				</form>
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
 
-				<ul class="link-list">
-				
-					<li><a href="../FlickRaw.html">FlickRaw</a></li>
-				
-					<li><a href="../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
-				
-					<li><a href="../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-				
-					<li><a href="../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-				
-					<li><a href="../FlickRaw/Request.html">FlickRaw::Request</a></li>
-				
-					<li><a href="../FlickRaw/Response.html">FlickRaw::Response</a></li>
-				
-					<li><a href="../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
-				
-					<li><a href="../Object.html">Object</a></li>
-				
-				</ul>
-				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
-			</div>
+        <ul class="link-list">
+        
+          <li><a href="../FlickRaw.html">FlickRaw</a></li>
+        
+          <li><a href="../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+        
+          <li><a href="../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+        
+          <li><a href="../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+        
+          <li><a href="../FlickRaw/OAuth.html">FlickRaw::OAuth</a></li>
+        
+          <li><a href="../FlickRaw/Request.html">FlickRaw::Request</a></li>
+        
+          <li><a href="../FlickRaw/Response.html">FlickRaw::Response</a></li>
+        
+          <li><a href="../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+        
+          <li><a href="../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
 
-			
-		</div>
-	</div>
+      
+    </div>
+  </div>
 
-	<div id="documentation">
-		<h1 class="class">FlickRaw::Flickr</h1>
+  <div id="documentation">
+    <h1 class="class">FlickRaw::Flickr</h1>
 
-		<div id="description">
-			<p>
-Root class of the flickr api hierarchy.
-</p>
+    <div id="description" class="description">
+      
+<p>Root class of the flickr api hierarchy.</p>
 
-		</div>
+    </div><!-- description -->
 
-		<!-- Constants -->
-		
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
 
-		<!-- Attributes -->
-		
+      
 
-		<!-- Methods -->
-		
-		<div id="public-class-method-details" class="method-section section">
-			<h3 class="section-header">Public Class Methods</h3>
+      
 
-		
-			<div id="build-method" class="method-detail ">
-				<a name="method-c-build"></a>
+      
+      <!-- Attributes -->
+      <div id="attribute-method-details" class="method-section section">
+        <h3 class="section-header">Attributes</h3>
 
-				<div class="method-heading">
-				
-					<span class="method-name">build</span><span
-						class="method-args">(methods)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+        
+        <div id="access_secret-attribute-method" class="method-detail">
+          <a name="access_secret"></a>
+          
+          <a name="access_secret="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">access_secret</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
 
-				<div class="method-description">
-					
-					
-					
+          <div class="method-description">
+          
+          <p>Authenticated access token secret</p>
+          
+          </div>
+        </div>
+        
+        <div id="access_token-attribute-method" class="method-detail">
+          <a name="access_token"></a>
+          
+          <a name="access_token="></a>
+          
+          <div class="method-heading attribute-method-heading">
+            <span class="method-name">access_token</span><span
+              class="attribute-access-type">[RW]</span>
+          </div>
 
-					
-					<div class="method-source-code"
-						id="build-source">
+          <div class="method-description">
+          
+          <p>Authenticated access token</p>
+          
+          </div>
+        </div>
+        
+      </div><!-- attribute-method-details -->
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="build-method" class="method-detail ">
+          <a name="method-c-build"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">build</span><span
+              class="method-args">(methods)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="build-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 153</span>
-153:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">methods</span>); <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">build_request</span> <span class="ruby-identifier">m</span> } <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 269</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">methods</span>); <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">build_request</span> <span class="ruby-identifier">m</span> } <span class="ruby-keyword">end</span></pre>
+            </div><!-- build-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- build-method -->
 
-		
-		</div>
-	
-		<div id="public-instance-method-details" class="method-section section">
-			<h3 class="section-header">Public Instance Methods</h3>
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
 
-		
-			<div id="activity-method" class="method-detail ">
-				<a name="method-i-activity"></a>
+      
+        <div id="activity-method" class="method-detail ">
+          <a name="method-i-activity"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">activity</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">activity</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Activity.html">Activity</a> object.
-</p>
-					
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Activity.html">Activity</a> object.</p>
+            
 
-					
-				</div>
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- activity-method -->
 
-		
-			<div id="auth-method" class="method-detail ">
-				<a name="method-i-auth"></a>
+      
+        <div id="auth-method" class="method-detail ">
+          <a name="method-i-auth"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">auth</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">auth</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Auth.html">Auth</a> object.
-</p>
-					
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Auth.html">Auth</a> object.</p>
+            
 
-					
-				</div>
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- auth-method -->
 
-		
-			<div id="blogs-method" class="method-detail ">
-				<a name="method-i-blogs"></a>
+      
+        <div id="blogs-method" class="method-detail ">
+          <a name="method-i-blogs"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">blogs</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">blogs</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Blogs.html">Blogs</a> object.
-</p>
-					
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Blogs.html">Blogs</a> object.</p>
+            
 
-					
-				</div>
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- blogs-method -->
 
-		
-			<div id="call-method" class="method-detail ">
-				<a name="method-i-call"></a>
+      
+        <div id="call-method" class="method-detail ">
+          <a name="method-i-call"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">call</span><span
-						class="method-args">(req, args={}, &block)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">call</span><span
+              class="method-args">(req, args={}, &block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					<p>
-This is the central method. It does the actual request to the flickr
-server.
-</p>
-<p>
-Raises <a href="FailedResponse.html">FailedResponse</a> if the response
-status is <em>failed</em>.
-</p>
-					
+          <div class="method-description">
+            
+            <p>This is the central method. It does the actual request to the flickr
+server.</p>
 
-					
-					<div class="method-source-code"
-						id="call-source">
+<p>Raises <a href="FailedResponse.html">FailedResponse</a> if the response
+status is <em>failed</em>.</p>
+            
+
+            
+            <div class="method-source-code" id="call-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 164</span>
-164:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">args</span>={}, &amp;<span class="ruby-identifier">block</span>)
-165:       <span class="ruby-ivar">@token</span> = <span class="ruby-keyword kw">nil</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">req</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;flickr.auth.getFrob&quot;</span>
-166:       <span class="ruby-identifier">http_response</span> = <span class="ruby-identifier">open_flickr</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span>
-167:         <span class="ruby-identifier">request</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Post</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">REST_PATH</span>, <span class="ruby-value str">'User-Agent'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Flickraw/#{VERSION}&quot;</span>)
-168:         <span class="ruby-identifier">request</span>.<span class="ruby-identifier">set_form_data</span>(<span class="ruby-identifier">build_args</span>(<span class="ruby-identifier">args</span>, <span class="ruby-identifier">req</span>))
-169:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">request</span>(<span class="ruby-identifier">request</span>)
-170:       <span class="ruby-keyword kw">end</span>
-171:       <span class="ruby-identifier">process_response</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">http_response</span>)
-172:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="collections-method" class="method-detail ">
-				<a name="method-i-collections"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">collections</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Collections.html">Collections</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="commons-method" class="method-detail ">
-				<a name="method-i-commons"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">commons</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Commons.html">Commons</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="contacts-method" class="method-detail ">
-				<a name="method-i-contacts"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">contacts</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Contacts.html">Contacts</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="favorites-method" class="method-detail ">
-				<a name="method-i-favorites"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">favorites</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Favorites.html">Favorites</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="galleries-method" class="method-detail ">
-				<a name="method-i-galleries"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">galleries</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Galleries.html">Galleries</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="groups-method" class="method-detail ">
-				<a name="method-i-groups"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">groups</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Groups.html">Groups</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="interestingness-method" class="method-detail ">
-				<a name="method-i-interestingness"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">interestingness</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Interestingness.html">Interestingness</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="machinetags-method" class="method-detail ">
-				<a name="method-i-machinetags"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">machinetags</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Machinetags.html">Machinetags</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="panda-method" class="method-detail ">
-				<a name="method-i-panda"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">panda</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Panda.html">Panda</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="people-method" class="method-detail ">
-				<a name="method-i-people"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">people</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/People.html">People</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="photos-method" class="method-detail ">
-				<a name="method-i-photos"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">photos</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Photos.html">Photos</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="photosets-method" class="method-detail ">
-				<a name="method-i-photosets"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">photosets</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Photosets.html">Photosets</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="places-method" class="method-detail ">
-				<a name="method-i-places"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">places</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Places.html">Places</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="prefs-method" class="method-detail ">
-				<a name="method-i-prefs"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">prefs</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Prefs.html">Prefs</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="reflection-method" class="method-detail ">
-				<a name="method-i-reflection"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">reflection</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Reflection.html">Reflection</a> object.
-</p>
-					
-
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="replace-photo-method" class="method-detail ">
-				<a name="method-i-replace_photo"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">replace_photo</span><span
-						class="method-args">(file, args={})</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Use this to replace the photo with :photo_id with the photo in
-<em>file</em>.
-</p>
+<span class="ruby-comment"># File lib/flickraw.rb, line 284</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">args</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">http_response</span> = <span class="ruby-ivar">@oauth_consumer</span>.<span class="ruby-identifier">post_form</span>(<span class="ruby-constant">REST_PATH</span>, <span class="ruby-ivar">@access_secret</span>, {<span class="ruby-value">:oauth_token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@access_token</span>}, <span class="ruby-identifier">build_args</span>(<span class="ruby-identifier">args</span>, <span class="ruby-identifier">req</span>))
+  <span class="ruby-identifier">process_response</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">http_response</span>.<span class="ruby-identifier">body</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- call-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- call-method -->
+
+      
+        <div id="collections-method" class="method-detail ">
+          <a name="method-i-collections"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">collections</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Collections.html">Collections</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- collections-method -->
+
+      
+        <div id="commons-method" class="method-detail ">
+          <a name="method-i-commons"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">commons</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Commons.html">Commons</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- commons-method -->
+
+      
+        <div id="contacts-method" class="method-detail ">
+          <a name="method-i-contacts"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">contacts</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Contacts.html">Contacts</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- contacts-method -->
+
+      
+        <div id="favorites-method" class="method-detail ">
+          <a name="method-i-favorites"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">favorites</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Favorites.html">Favorites</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- favorites-method -->
+
+      
+        <div id="galleries-method" class="method-detail ">
+          <a name="method-i-galleries"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">galleries</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Galleries.html">Galleries</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- galleries-method -->
+
+      
+        <div id="get_access_token-method" class="method-detail ">
+          <a name="method-i-get_access_token"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_access_token</span><span
+              class="method-args">(token, secret, verify)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get an oauth access token.</p>
+
+<pre>flickr.get_access_token(token['oauth_token'], token['oauth_token_secret'], oauth_verifier)</pre>
+            
+
+            
+            <div class="method-source-code" id="get_access_token-source">
 <pre>
- flickr.replace_photo '/path/to/the/photo', :photo_id =&gt; id
-</pre>
-<p>
-See <a
+<span class="ruby-comment"># File lib/flickraw.rb, line 306</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_access_token</span>(<span class="ruby-identifier">token</span>, <span class="ruby-identifier">secret</span>, <span class="ruby-identifier">verify</span>)
+  <span class="ruby-identifier">access_token</span> = <span class="ruby-ivar">@oauth_consumer</span>.<span class="ruby-identifier">access_token</span>(<span class="ruby-constant">FLICKR_OAUTH_ACCESS_TOKEN</span>, <span class="ruby-identifier">secret</span>, <span class="ruby-value">:oauth_token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">token</span>, <span class="ruby-value">:oauth_verifier</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verify</span>)
+  <span class="ruby-ivar">@access_token</span>, <span class="ruby-ivar">@access_secret</span> = <span class="ruby-identifier">access_token</span>[<span class="ruby-string">'oauth_token'</span>], <span class="ruby-identifier">access_token</span>[<span class="ruby-string">'oauth_token_secret'</span>]
+  <span class="ruby-identifier">access_token</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_access_token-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_access_token-method -->
+
+      
+        <div id="get_authorize_url-method" class="method-detail ">
+          <a name="method-i-get_authorize_url"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_authorize_url</span><span
+              class="method-args">(token, args = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get the oauth authorize url.</p>
+
+<pre>auth_url = flickr.get_authorize_url(token['oauth_token'], :perms =&gt; 'delete')</pre>
+            
+
+            
+            <div class="method-source-code" id="get_authorize_url-source">
+<pre>
+<span class="ruby-comment"># File lib/flickraw.rb, line 299</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_authorize_url</span>(<span class="ruby-identifier">token</span>, <span class="ruby-identifier">args</span> = {})
+  <span class="ruby-ivar">@oauth_consumer</span>.<span class="ruby-identifier">authorize_url</span>(<span class="ruby-constant">FLICKR_OAUTH_AUTHORIZE</span>, <span class="ruby-identifier">args</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:oauth_token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">token</span>))
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_authorize_url-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_authorize_url-method -->
+
+      
+        <div id="get_request_token-method" class="method-detail ">
+          <a name="method-i-get_request_token"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">get_request_token</span><span
+              class="method-args">(args = {})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Get an oauth request token.</p>
+
+<pre>token = flickr.get_request_token(:oauth_callback =&gt; &quot;http://example.com&quot;)</pre>
+            
+
+            
+            <div class="method-source-code" id="get_request_token-source">
+<pre>
+<span class="ruby-comment"># File lib/flickraw.rb, line 292</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_request_token</span>(<span class="ruby-identifier">args</span> = {})
+  <span class="ruby-identifier">request_token</span> = <span class="ruby-ivar">@oauth_consumer</span>.<span class="ruby-identifier">request_token</span>(<span class="ruby-constant">FLICKR_OAUTH_REQUEST_TOKEN</span>, <span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- get_request_token-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- get_request_token-method -->
+
+      
+        <div id="groups-method" class="method-detail ">
+          <a name="method-i-groups"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">groups</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Groups.html">Groups</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- groups-method -->
+
+      
+        <div id="interestingness-method" class="method-detail ">
+          <a name="method-i-interestingness"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">interestingness</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Interestingness.html">Interestingness</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- interestingness-method -->
+
+      
+        <div id="machinetags-method" class="method-detail ">
+          <a name="method-i-machinetags"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">machinetags</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Machinetags.html">Machinetags</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- machinetags-method -->
+
+      
+        <div id="panda-method" class="method-detail ">
+          <a name="method-i-panda"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">panda</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Panda.html">Panda</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- panda-method -->
+
+      
+        <div id="people-method" class="method-detail ">
+          <a name="method-i-people"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">people</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/People.html">People</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- people-method -->
+
+      
+        <div id="photos-method" class="method-detail ">
+          <a name="method-i-photos"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">photos</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Photos.html">Photos</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- photos-method -->
+
+      
+        <div id="photosets-method" class="method-detail ">
+          <a name="method-i-photosets"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">photosets</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Photosets.html">Photosets</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- photosets-method -->
+
+      
+        <div id="places-method" class="method-detail ">
+          <a name="method-i-places"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">places</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Places.html">Places</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- places-method -->
+
+      
+        <div id="prefs-method" class="method-detail ">
+          <a name="method-i-prefs"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">prefs</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Prefs.html">Prefs</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- prefs-method -->
+
+      
+        <div id="push-method" class="method-detail ">
+          <a name="method-i-push"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">push</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Push.html">Push</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- push-method -->
+
+      
+        <div id="reflection-method" class="method-detail ">
+          <a name="method-i-reflection"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">reflection</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Reflection.html">Reflection</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- reflection-method -->
+
+      
+        <div id="replace_photo-method" class="method-detail ">
+          <a name="method-i-replace_photo"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">replace_photo</span><span
+              class="method-args">(file, args={})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Use this to replace the photo with :photo_id with the photo in
+<em>file</em>.</p>
+
+<pre>flickr.replace_photo '/path/to/the/photo', :photo_id =&gt; id</pre>
+
+<p>See <a
 href="http://www.flickr.com/services/api/replace.api.html">www.flickr.com/services/api/replace.api.html</a>
-for more information on the arguments.
-</p>
-					
+for more information on the arguments.</p>
+            
 
-					
-					<div class="method-source-code"
-						id="replace-photo-source">
+            
+            <div class="method-source-code" id="replace_photo-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 186</span>
-186:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">replace_photo</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>={}); <span class="ruby-identifier">upload_flickr</span>(<span class="ruby-constant">REPLACE_PATH</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>) <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 324</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">replace_photo</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>={}); <span class="ruby-identifier">upload_flickr</span>(<span class="ruby-constant">REPLACE_PATH</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>) <span class="ruby-keyword">end</span></pre>
+            </div><!-- replace_photo-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- replace_photo-method -->
 
-		
-			<div id="stats-method" class="method-detail ">
-				<a name="method-i-stats"></a>
+      
+        <div id="stats-method" class="method-detail ">
+          <a name="method-i-stats"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">stats</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">stats</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Stats.html">Stats</a> object.
-</p>
-					
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Stats.html">Stats</a> object.</p>
+            
 
-					
-				</div>
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- stats-method -->
 
-		
-			<div id="tags-method" class="method-detail ">
-				<a name="method-i-tags"></a>
+      
+        <div id="tags-method" class="method-detail ">
+          <a name="method-i-tags"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">tags</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">tags</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Tags.html">Tags</a> object.
-</p>
-					
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Tags.html">Tags</a> object.</p>
+            
 
-					
-				</div>
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- tags-method -->
 
-		
-			<div id="test-method" class="method-detail ">
-				<a name="method-i-test"></a>
+      
+        <div id="test-method" class="method-detail ">
+          <a name="method-i-test"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">test</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">test</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Test.html">Test</a> object.
-</p>
-					
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Test.html">Test</a> object.</p>
+            
 
-					
-				</div>
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- test-method -->
 
-		
-			<div id="upload-photo-method" class="method-detail ">
-				<a name="method-i-upload_photo"></a>
+      
+        <div id="upload_photo-method" class="method-detail ">
+          <a name="method-i-upload_photo"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">upload_photo</span><span
-						class="method-args">(file, args={})</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">upload_photo</span><span
+              class="method-args">(file, args={})</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					<p>
-Use this to upload the photo in <em>file</em>.
-</p>
-<pre>
- flickr.upload_photo '/path/to/the/photo', :title =&gt; 'Title', :description =&gt; 'This is the description'
-</pre>
-<p>
-See <a
+          <div class="method-description">
+            
+            <p>Use this to upload the photo in <em>file</em>.</p>
+
+<pre>flickr.upload_photo '/path/to/the/photo', :title =&gt; 'Title', :description =&gt; 'This is the description'</pre>
+
+<p>See <a
 href="http://www.flickr.com/services/api/upload.api.html">www.flickr.com/services/api/upload.api.html</a>
-for more information on the arguments.
-</p>
-					
+for more information on the arguments.</p>
+            
 
-					
-					<div class="method-source-code"
-						id="upload-photo-source">
+            
+            <div class="method-source-code" id="upload_photo-source">
 <pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 179</span>
-179:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">upload_photo</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>={}); <span class="ruby-identifier">upload_flickr</span>(<span class="ruby-constant">UPLOAD_PATH</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>) <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
+<span class="ruby-comment"># File lib/flickraw.rb, line 317</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">upload_photo</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>={}); <span class="ruby-identifier">upload_flickr</span>(<span class="ruby-constant">UPLOAD_PATH</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>) <span class="ruby-keyword">end</span></pre>
+            </div><!-- upload_photo-source -->
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- upload_photo-method -->
 
-		
-			<div id="urls-method" class="method-detail ">
-				<a name="method-i-urls"></a>
+      
+        <div id="urls-method" class="method-detail ">
+          <a name="method-i-urls"></a>
 
-				<div class="method-heading">
-				
-					<span class="method-name">urls</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+          
+          <div class="method-heading">
+            <span class="method-name">urls</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
 
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Flickr/Urls.html">Urls</a> object.
-</p>
-					
+          <div class="method-description">
+            
+            <p>Returns a <a href="Flickr/Urls.html">Urls</a> object.</p>
+            
 
-					
-				</div>
+            
+          </div>
 
-				
+          
 
-				
-			</div>
+          
+        </div><!-- urls-method -->
 
-		
-		</div>
-	
-		<div id="private-instance-method-details" class="method-section section">
-			<h3 class="section-header">Private Instance Methods</h3>
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
 
-		
-			<div id="build-args-method" class="method-detail ">
-				<a name="method-i-build_args"></a>
+  </div><!-- documentation -->
 
-				<div class="method-heading">
-				
-					<span class="method-name">build_args</span><span
-						class="method-args">(args={}, req = nil)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="build-args-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 189</span>
-189:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_args</span>(<span class="ruby-identifier">args</span>={}, <span class="ruby-identifier">req</span> = <span class="ruby-keyword kw">nil</span>)
-190:       <span class="ruby-identifier">full_args</span> = {<span class="ruby-value">:api_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">FlickRaw</span>.<span class="ruby-identifier">api_key</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'json'</span>, <span class="ruby-value">:nojsoncallback</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;1&quot;</span>}
-191:       <span class="ruby-identifier">full_args</span>[<span class="ruby-value">:method</span>] = <span class="ruby-identifier">req</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">req</span>
-192:       <span class="ruby-identifier">full_args</span>[<span class="ruby-value">:auth_token</span>] = <span class="ruby-ivar">@token</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@token</span>
-193:       <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
-194:         <span class="ruby-identifier">v</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-value str">&quot;utf-8&quot;</span>).<span class="ruby-identifier">force_encoding</span>(<span class="ruby-value str">&quot;ascii-8bit&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value str">&quot;1.9&quot;</span>
-195:         <span class="ruby-identifier">full_args</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>
-196:       }
-197:       <span class="ruby-identifier">full_args</span>[<span class="ruby-value">:api_sig</span>] = <span class="ruby-constant">FlickRaw</span>.<span class="ruby-identifier">api_sig</span>(<span class="ruby-identifier">full_args</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">FlickRaw</span>.<span class="ruby-identifier">shared_secret</span>
-198:       <span class="ruby-identifier">full_args</span>
-199:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="open-flickr-method" class="method-detail ">
-				<a name="method-i-open_flickr"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">open_flickr</span><span
-						class="method-args">()</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="open-flickr-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 211</span>
-211:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">open_flickr</span>
-212:       <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Proxy</span>(<span class="ruby-constant">FlickRawOptions</span>[<span class="ruby-value str">'proxy_host'</span>], <span class="ruby-constant">FlickRawOptions</span>[<span class="ruby-value str">'proxy_port'</span>], <span class="ruby-constant">FlickRawOptions</span>[<span class="ruby-value str">'proxy_user'</span>], <span class="ruby-constant">FlickRawOptions</span>[<span class="ruby-value str">'proxy_password'</span>]).<span class="ruby-identifier">start</span>(<span class="ruby-constant">FLICKR_HOST</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span>
-213:         <span class="ruby-identifier">http</span>.<span class="ruby-identifier">read_timeout</span> = <span class="ruby-constant">FlickRawOptions</span>[<span class="ruby-value str">'timeout'</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-constant">FlickRawOptions</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value str">'timeout'</span>)
-214:         <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">http</span>
-215:       }
-216:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="process-response-method" class="method-detail ">
-				<a name="method-i-process_response"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">process_response</span><span
-						class="method-args">(req, http_response)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="process-response-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 201</span>
-201:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process_response</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">http_response</span>)
-202:       <span class="ruby-identifier">json</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">http_response</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-value str">&quot;{}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">http_response</span>.<span class="ruby-identifier">body</span>)
-203:       <span class="ruby-identifier">raise</span> <span class="ruby-constant">FailedResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">json</span>[<span class="ruby-value str">'message'</span>], <span class="ruby-identifier">json</span>[<span class="ruby-value str">'code'</span>], <span class="ruby-identifier">req</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">json</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value str">'stat'</span>) <span class="ruby-operator">==</span> <span class="ruby-value str">'fail'</span>
-204:       <span class="ruby-identifier">type</span>, <span class="ruby-identifier">json</span> = <span class="ruby-identifier">json</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">json</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">json</span>.<span class="ruby-identifier">all?</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span>}
-205: 
-206:       <span class="ruby-identifier">res</span> = <span class="ruby-constant">Response</span>.<span class="ruby-identifier">build</span> <span class="ruby-identifier">json</span>, <span class="ruby-identifier">type</span>
-207:       <span class="ruby-ivar">@token</span> = <span class="ruby-identifier">res</span>.<span class="ruby-identifier">token</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">res</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:flickr_type</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">res</span>.<span class="ruby-identifier">flickr_type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;auth&quot;</span>
-208:       <span class="ruby-identifier">res</span>
-209:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="upload-flickr-method" class="method-detail ">
-				<a name="method-i-upload_flickr"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">upload_flickr</span><span
-						class="method-args">(method, file, args={})</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="upload-flickr-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 218</span>
-218:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">upload_flickr</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>={})
-219:       <span class="ruby-identifier">photo</span> = <span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value str">'rb'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span> }
-220:       <span class="ruby-identifier">boundary</span> = <span class="ruby-constant">Digest</span><span class="ruby-operator">::</span><span class="ruby-constant">MD5</span>.<span class="ruby-identifier">hexdigest</span>(<span class="ruby-identifier">photo</span>)
-221: 
-222:       <span class="ruby-identifier">header</span> = {<span class="ruby-value str">'Content-type'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;multipart/form-data, boundary=#{boundary} &quot;</span>, <span class="ruby-value str">'User-Agent'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Flickraw/#{VERSION}&quot;</span>}
-223:       <span class="ruby-identifier">query</span> = <span class="ruby-value str">''</span>
-224: 
-225:       <span class="ruby-identifier">file</span> = <span class="ruby-identifier">file</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-value str">&quot;utf-8&quot;</span>).<span class="ruby-identifier">force_encoding</span>(<span class="ruby-value str">&quot;ascii-8bit&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value str">&quot;1.9&quot;</span>
-226:       <span class="ruby-identifier">build_args</span>(<span class="ruby-identifier">args</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
-227:         <span class="ruby-identifier">query</span> <span class="ruby-operator">&lt;&lt;</span>
-228:           <span class="ruby-node">&quot;--#{boundary}\r\n&quot;</span> <span class="ruby-operator">&lt;&lt;</span>
-229:           <span class="ruby-node">&quot;Content-Disposition: form-data; name=\&quot;#{a}\&quot;\r\n\r\n&quot;</span> <span class="ruby-operator">&lt;&lt;</span>
-230:           <span class="ruby-node">&quot;#{v}\r\n&quot;</span>
-231:       }
-232:       <span class="ruby-identifier">query</span> <span class="ruby-operator">&lt;&lt;</span>
-233:         <span class="ruby-node">&quot;--#{boundary}\r\n&quot;</span> <span class="ruby-operator">&lt;&lt;</span>
-234:         <span class="ruby-node">&quot;Content-Disposition: form-data; name=\&quot;photo\&quot;; filename=\&quot;#{file}\&quot;\r\n&quot;</span> <span class="ruby-operator">&lt;&lt;</span>
-235:         <span class="ruby-value str">&quot;Content-Transfer-Encoding: binary\r\n&quot;</span> <span class="ruby-operator">&lt;&lt;</span>
-236:         <span class="ruby-value str">&quot;Content-Type: image/jpeg\r\n\r\n&quot;</span> <span class="ruby-operator">&lt;&lt;</span>
-237:         <span class="ruby-identifier">photo</span> <span class="ruby-operator">&lt;&lt;</span>
-238:         <span class="ruby-value str">&quot;\r\n&quot;</span> <span class="ruby-operator">&lt;&lt;</span>
-239:         <span class="ruby-node">&quot;--#{boundary}--&quot;</span>
-240: 
-241:       <span class="ruby-identifier">http_response</span> = <span class="ruby-identifier">open_flickr</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span> <span class="ruby-identifier">http</span>.<span class="ruby-identifier">post</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">query</span>, <span class="ruby-identifier">header</span>) }
-242:       <span class="ruby-identifier">xml</span> = <span class="ruby-identifier">http_response</span>.<span class="ruby-identifier">body</span>
-243:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">xml</span>[<span class="ruby-regexp re">/stat=&quot;(\w+)&quot;/</span>, <span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'fail'</span>
-244:         <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">xml</span>[<span class="ruby-regexp re">/msg=&quot;([^&quot;]+)&quot;/</span>, <span class="ruby-value">1</span>]
-245:         <span class="ruby-identifier">code</span> = <span class="ruby-identifier">xml</span>[<span class="ruby-regexp re">/code=&quot;([^&quot;]+)&quot;/</span>, <span class="ruby-value">1</span>]
-246:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">FailedResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-identifier">code</span>, <span class="ruby-value str">'flickr.upload'</span>)
-247:       <span class="ruby-keyword kw">end</span>
-248:       <span class="ruby-identifier">type</span> = <span class="ruby-identifier">xml</span>[<span class="ruby-regexp re">/&lt;(\w+)/</span>, <span class="ruby-value">1</span>]
-249:       <span class="ruby-identifier">h</span> = {
-250:         <span class="ruby-value str">&quot;secret&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">xml</span>[<span class="ruby-regexp re">/secret=&quot;([^&quot;]+)&quot;/</span>, <span class="ruby-value">1</span>],
-251:         <span class="ruby-value str">&quot;originalsecret&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">xml</span>[<span class="ruby-regexp re">/originalsecret=&quot;([^&quot;]+)&quot;/</span>, <span class="ruby-value">1</span>],
-252:         <span class="ruby-value str">&quot;_content&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">xml</span>[<span class="ruby-regexp re">/&gt;([^&lt;]+)&lt;\//</span>, <span class="ruby-value">1</span>]
-253:       }.<span class="ruby-identifier">delete_if</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">nil?</span> }
-254:       <span class="ruby-constant">Response</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">type</span>)
-255:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-		</div>
-	
-
-	</div>
-
-
-	<div id="rdoc-debugging-section-dump" class="debugging-section">
-	
-		<p>Disabled; run with --debug to generate this.</p>
-	
-	</div>
-
-	<div id="validator-badges">
-		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-			Rdoc Generator</a> 1.1.6</small>.</p>
-	</div>
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
 
 </body>
 </html>
