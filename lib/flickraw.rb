@@ -40,7 +40,7 @@ module FlickRaw
   URL_PHOTOSTREAM='http://www.flickr.com/photos/'.freeze
   URL_SHORT='http://flic.kr/p/'.freeze
   
-  class OAuth
+  class OAuth # :nodoc: all
     class FailedResponse < StandardError
       def initialize(str)
         @response = OAuth.parse_response(str)
@@ -261,7 +261,11 @@ module FlickRaw
 
   # Root class of the flickr api hierarchy.
   class Flickr < Request
-    attr_accessor :access_token, :access_secret
+    # Authenticated access token
+    attr_accessor :access_token
+    
+    # Authenticated access token secret
+    attr_accessor :access_secret
     
     def self.build(methods); methods.each { |m| build_request m } end
 
@@ -283,14 +287,23 @@ module FlickRaw
       process_response(req, http_response.body)
     end
 
+    # Get an oauth request token.
+    #
+    #    token = flickr.get_request_token(:oauth_callback => "http://example.com")
     def get_request_token(args = {})
       request_token = @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN, args)
     end
     
+    # Get the oauth authorize url.
+    #
+    #  auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
     def get_authorize_url(token, args = {})
       @oauth_consumer.authorize_url(FLICKR_OAUTH_AUTHORIZE, args.merge(:oauth_token => token))
     end
 
+    # Get an oauth access token.
+    #
+    #  flickr.get_access_token(token['oauth_token'], token['oauth_token_secret'], oauth_verifier)
     def get_access_token(token, secret, verify)
       access_token = @oauth_consumer.access_token(FLICKR_OAUTH_ACCESS_TOKEN, secret, :oauth_token => token, :oauth_verifier => verify)
       @access_token, @access_secret = access_token['oauth_token'], access_token['oauth_token_secret']
