@@ -24,7 +24,7 @@ require 'net/http'
 require 'json'
 
 module FlickRaw
-  VERSION='0.8.4'
+  VERSION='0.9'
   USER_AGENT = "Flickraw/#{VERSION}"
 
   FLICKR_OAUTH_REQUEST_TOKEN='http://www.flickr.com/services/oauth/request_token'.freeze
