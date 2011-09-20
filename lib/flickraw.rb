@@ -55,14 +55,12 @@ module FlickRaw
     
     attr_accessor :user_agent
     attr_reader :proxy
-    def proxy=(url)
-      return if url.nil?
-      @proxy = URI.parse(url)
-      @proxy_host, @proxy_port, @proxy_user, @proxy_password = @proxy.host, @proxy.port, @proxy.user, @proxy.password
-      @proxy
-    end
+    def proxy=(url); @proxy = URI.parse(url || '') end
     
-    def initialize(consumer_key, consumer_secret); @consumer_key, @consumer_secret = consumer_key, consumer_secret end
+    def initialize(consumer_key, consumer_secret)
+      @consumer_key, @consumer_secret = consumer_key, consumer_secret
+      self.proxy = nil
+    end
 
     def sign(method, url, params, token_secret = nil, consumer_secret = @consumer_secret)
       params_norm = params.map {|k,v| OAuth.escape(k) + "=" + OAuth.escape(v) }.sort.join("&")
@@ -106,7 +104,7 @@ module FlickRaw
       oauth_params = gen_default_params.merge(oauth_params)
       oauth_params[:oauth_signature] = sign(:post, url, params.merge(oauth_params), token_secret)
       url = URI.parse(url)
-      r = Net::HTTP.start(url.host, url.port, @proxy_host, @proxy_port, @proxy_user, @proxy_password) { |http| 
+      r = Net::HTTP.start(url.host, url.port, @proxy.host, @proxy.port, @proxy.user, @proxy.password) { |http| 
         request = Net::HTTP::Post.new(url.path)
         request['User-Agent'] = @user_agent if @user_agent
         request['Authorization'] = authorization_header(url, oauth_params)
@@ -123,7 +121,7 @@ module FlickRaw
       params_signed = params.reject {|k,v| v.is_a? File}.merge(oauth_params)
       oauth_params[:oauth_signature] = sign(:post, url, params_signed, token_secret)
       url = URI.parse(url)
-      r = Net::HTTP.start(url.host, url.port, @proxy_host, @proxy_port, @proxy_user, @proxy_password) { |http| 
+      r = Net::HTTP.start(url.host, url.port, @proxy.host, @proxy.port, @proxy.user, @proxy.password) { |http| 
         boundary = "FlickRaw#{gen_nonce}"
         request = Net::HTTP::Post.new(url.path)
         request['User-Agent'] = @user_agent if @user_agent
