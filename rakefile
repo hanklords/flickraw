@@ -2,9 +2,11 @@ require 'rake/clean'
 require 'rake/rdoctask'
 require 'rake/testtask'
 
-FlickRawOptions = {'lazyload' => true}
-require './lib/flickraw'
-require './flickraw_rdoc' if RUBY_VERSION >= "1.9"
+lib = File.dirname(__FILE__)
+$:.unshift lib unless $:.include?(lib)
+
+require 'lib/flickraw'
+require 'flickraw_rdoc' if RUBY_VERSION >= "1.9"
 
 Rake::RDocTask.new do |rd|
   rd.main = "README.rdoc"
