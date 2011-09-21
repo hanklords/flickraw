@@ -230,7 +230,7 @@ puts original.width       # =&gt; &quot;800&quot; -- may fail if they have no or
 FlickRaw.api_key=&quot;... Your API key ...&quot;
 FlickRaw.shared_secret=&quot;... Your shared secret ...&quot;
 
-token = flickr.get_request_token(:perms =&gt; 'delete')
+token = flickr.get_request_token
 auth_url = flickr.get_authorize_url(token['oauth_token'], :perms =&gt; 'delete')
 
 puts &quot;Open this url in your process to complete the authication process : #{auth_url}&quot;
