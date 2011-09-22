@@ -291,7 +291,7 @@ module FlickRaw
     #
     #    token = flickr.get_request_token(:oauth_callback => "http://example.com")
     def get_request_token(args = {})
-      request_token = @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN, args)
+      @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN, args)
     end
     
     # Get the oauth authorize url.
