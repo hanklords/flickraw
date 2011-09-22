@@ -314,20 +314,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;places query=&quot;Alabama&quot; total=&quot;3&quot;&gt;
-   &lt;place place_id=&quot;VrrjuESbApjeFS4.&quot; woeid=&quot;2347559&quot;
-               latitude=&quot;32.614&quot; longitude=&quot;-86.680&quot;
-               place_url=&quot;/United+States/Alabama&quot;
-               place_type=&quot;region&quot;&gt;Alabama, Alabama, United States&lt;/place&gt;
-   &lt;place place_id=&quot;cGHuc0mbApmzEHoP&quot; woeid=&quot;2352520&quot;
-               latitude=&quot;43.096&quot; longitude=&quot;-78.389&quot;
-               place_url=&quot;/United+States/New+York/Alabama&quot;
-               place_type=&quot;locality&quot;&gt;Alabama, New York, United States&lt;/place&gt;
-   &lt;place place_id=&quot;o4yVPEqYBJvFMP8Q&quot; woeid=&quot;1579389&quot;
-               latitude=&quot;-26.866&quot; longitude=&quot;26.583&quot;
-               place_url=&quot;/South+Africa/North+West/Alabama&quot;
-               place_type=&quot;locality&quot;&gt;Alabama, North West, South Africa&lt;/place&gt;
-&lt;/places&gt;</pre>
+<pre>Alabama, Alabama, United StatesAlabama, New York, United StatesAlabama, North West, South Africa</pre>
             
 
             
@@ -440,15 +427,6 @@ href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
 <p><b>Returns</b></p>
-
-<pre>&lt;places latitude=&quot;37.76513627957266&quot; longitude=&quot;-122.42020770907402&quot; accuracy=&quot;16&quot; total=&quot;1&quot;&gt;
-   &lt;place place_id=&quot;Y12JWsKbApmnSQpbQg&quot; woeid=&quot;23512048&quot;
-      latitude=&quot;37.765&quot; longitude=&quot;-122.424&quot; 
-      place_url=&quot;/United+States/California/San+Francisco/Mission+Dolores&quot;
-      place_type=&quot;neighbourhood&quot; place_type_id=&quot;22&quot; 
-      timezone=&quot;America/Los_Angeles&quot;
-      name=&quot;Mission Dolores, San Francisco, CA, US, United States&quot;/&gt;
-&lt;/places&gt;</pre>
             
 
             
@@ -550,23 +528,8 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;places total=&quot;79&quot;&gt;
-   &lt;place place_id=&quot;HznQfdKbB58biy8sdA&quot; woeid=&quot;26332794&quot;
-      latitude=&quot;45.498&quot; longitude=&quot;-73.575&quot;
-      place_url=&quot;/Canada/Quebec/Montreal  /Montreal+Golden+Square+Mile&quot;
-      place_type=&quot;neighbourhood&quot; photo_count=&quot;2717&quot;&gt;
-      Montreal Golden Square Mile, Montreal, QC, CA, Canada
-   &lt;/place&gt;
-   &lt;place place_id=&quot;K1rYWmGbB59rwn7lOA&quot; woeid=&quot;26332799&quot;
-      latitude=&quot;45.502&quot; longitude=&quot;-73.578&quot;
-      place_url=&quot;/Canada/Quebec/Montreal/Downtown+Montr%C3%A9al&quot;
-      place_type=&quot;neighbourhood&quot; photo_count=&quot;2317&quot;&gt;
-      Downtown Montréal, Montreal, QC, CA, Canada
-  &lt;/place&gt;
-
-   &lt;!-- and so on... --&gt;
-
-&lt;/places&gt;</pre>
+<pre>Montreal Golden Square Mile, Montreal, QC, CA, Canada
+Downtown Montréal, Montreal, QC, CA, Canada</pre>
             
 
             
@@ -611,14 +574,12 @@ request.</p>
 <dl class="rdoc-list"><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> ID.
-&lt;span style=“font-style:italic;”&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;</p>
+(While optional, you must pass either a valid <a
+href="Places.html">Places</a> ID or a WOE ID.)</p>
 </dd><dt>woe_id </dt>
 <dd>
-<p>A Where On Earth (WOE) ID. &lt;span style=“font-style:italic;”&gt;(While
-optional, you must pass either a valid <a href="Places.html">Places</a> ID
-or a WOE ID.)&lt;/span&gt;</p>
+<p>A Where On Earth (WOE) ID. (While optional, you must pass either a valid <a
+href="Places.html">Places</a> ID or a WOE ID.)</p>
 </dd></dl>
 
 <p><b>Error codes</b></p>
@@ -669,37 +630,10 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;place place_id=&quot;4hLQygSaBJ92&quot; woeid=&quot;3534&quot;
-   latitude=&quot;45.512&quot; longitude=&quot;-73.554&quot;
-   place_url=&quot;/Canada/Quebec/Montreal&quot; place_type=&quot;locality&quot;
-   has_shapedata=&quot;1&quot; timezone=&quot;America/Toronto&quot;&gt;
-   &lt;locality place_id=&quot;4hLQygSaBJ92&quot; woeid=&quot;3534&quot;
-      latitude=&quot;45.512&quot; longitude=&quot;-73.554&quot;
-      place_url=&quot;/Canada/Quebec/Montreal&quot;&gt;Montreal&lt;/locality&gt;
-   &lt;county place_id=&quot;cFBi9x6bCJ8D5rba1g&quot; woeid=&quot;29375198&quot;
-      latitude=&quot;45.551&quot; longitude=&quot;-73.600&quot; 
-      place_url=&quot;/cFBi9x6bCJ8D5rba1g&quot;&gt;Montréal&lt;/county&gt;
-   &lt;region place_id=&quot;CrZUvXebApjI0.72&quot; woeid=&quot;2344924&quot; 
-      latitude=&quot;53.890&quot; longitude=&quot;-68.429&quot;
-      place_url=&quot;/Canada/Quebec&quot;&gt;Quebec&lt;/region&gt;
-   &lt;country place_id=&quot;EESRy8qbApgaeIkbsA&quot; woeid=&quot;23424775&quot;
-      latitude=&quot;62.358&quot; longitude=&quot;-96.582&quot; 
-      place_url=&quot;/Canada&quot;&gt;Canada&lt;/country&gt;
-   &lt;shapedata created=&quot;1223513357&quot; alpha=&quot;0.012359619140625&quot;
-      count_points=&quot;34778&quot; count_edges=&quot;52&quot;
-      has_donuthole=&quot;1&quot; is_donuthole=&quot;1&quot;&gt;
-      &lt;polylines&gt;
-         &lt;polyline&gt;
+<pre>MontrealMontréalQuebecCanada
             45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...
-         &lt;/polyline&gt;
-      &lt;/polylines&gt;
-      &lt;urls&gt;
-         &lt;shapefile&gt;
-         http://farm4.static.flickr.com/3228/shapefiles/3534_20081111_0a8afe03c5.tar.gz
-         &lt;/shapefile&gt;
-      &lt;/urls&gt;
-   &lt;/shapedata&gt;
-&lt;/place&gt;</pre>
+
+         http://farm4.static.flickr.com/3228/shapefiles/3534_20081111_0a8afe03c5.tar.gz</pre>
             
 
             
@@ -789,31 +723,8 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;place place_id=&quot;4hLQygSaBJ92&quot; woeid=&quot;3534&quot;
-   latitude=&quot;45.512&quot; longitude=&quot;-73.554&quot;
-   place_url=&quot;/Canada/Quebec/Montreal&quot; place_type=&quot;locality&quot;
-   has_shapedata=&quot;1&quot;&gt;
-   &lt;locality place_id=&quot;4hLQygSaBJ92&quot; woeid=&quot;3534&quot;
-      latitude=&quot;45.512&quot; longitude=&quot;-73.554&quot;
-      place_url=&quot;/Canada/Quebec/Montreal&quot;&gt;Montreal&lt;/locality&gt;
-   &lt;county place_id=&quot;cFBi9x6bCJ8D5rba1g&quot; woeid=&quot;29375198&quot;
-      latitude=&quot;45.551&quot; longitude=&quot;-73.600&quot; 
-      place_url=&quot;/cFBi9x6bCJ8D5rba1g&quot;&gt;Montréal&lt;/county&gt;
-   &lt;region place_id=&quot;CrZUvXebApjI0.72&quot; woeid=&quot;2344924&quot; 
-      latitude=&quot;53.890&quot; longitude=&quot;-68.429&quot;
-      place_url=&quot;/Canada/Quebec&quot;&gt;Quebec&lt;/region&gt;
-   &lt;country place_id=&quot;EESRy8qbApgaeIkbsA&quot; woeid=&quot;23424775&quot;
-      latitude=&quot;62.358&quot; longitude=&quot;-96.582&quot; 
-      place_url=&quot;/Canada&quot;&gt;Canada&lt;/country&gt;
-   &lt;shapedata created=&quot;1223513357&quot; alpha=&quot;0.012359619140625&quot;
-      count_points=&quot;34778&quot; count_edges=&quot;52&quot;&gt;
-      &lt;polylines&gt;
-         &lt;polyline&gt;
-            45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...
-         &lt;/polyline&gt;
-      &lt;/polylines&gt;
-   &lt;/shapedata&gt;
-&lt;/place&gt;</pre>
+<pre>MontrealMontréalQuebecCanada
+            45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...</pre>
             
 
             
@@ -891,14 +802,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;place_types&gt;
-   &lt;place_type place_type_id=&quot;22&quot;&gt;neighbourhood&lt;/place_type&gt;
-   &lt;place_type place_type_id=&quot;7&quot;&gt;locality&lt;/place_type&gt;
-   &lt;place_type place_type_id=&quot;9&quot;&gt;county&lt;/place_type&gt;
-   &lt;place_type place_type_id=&quot;8&quot;&gt;region&lt;/place_type&gt;
-   &lt;place_type place_type_id=&quot;12&quot;&gt;country&lt;/place_type&gt;
-   &lt;place_type place_type_id=&quot;29&quot;&gt;continent&lt;/place_type&gt;
-&lt;/place_types&gt;</pre>
+<pre>neighbourhoodlocalitycountyregioncountrycontinent</pre>
             
 
             
@@ -944,14 +848,12 @@ href="Places.html">Places</a> or Where on Earth (WOE) ID.</p>
 <dl class="rdoc-list"><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> ID.
-&lt;span style="font-style:italic;"&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;</p>
+(While optional, you must pass either a valid <a
+href="Places.html">Places</a> ID or a WOE ID.)</p>
 </dd><dt>woe_id </dt>
 <dd>
-<p>A Where On Earth (WOE) ID. &lt;span style="font-style:italic;"&gt;(While
-optional, you must pass either a valid <a href="Places.html">Places</a> ID
-or a WOE ID.)&lt;/span&gt;</p>
+<p>A Where On Earth (WOE) ID. (While optional, you must pass either a valid <a
+href="Places.html">Places</a> ID or a WOE ID.)</p>
 </dd></dl>
 
 <p><b>Error codes</b></p>
@@ -1002,22 +904,8 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;shapes total=&quot;2&quot; woe_id=&quot;3534&quot; place_id=&quot;4hLQygSaBJ92&quot; place_type=&quot;locality&quot; place_type_id=&quot;7&quot;&gt;
-   &lt;shapedata created=&quot;1223513357&quot; alpha=&quot;0.012359619140625&quot;
-      count_points=&quot;34778&quot; count_edges=&quot;52&quot; is_donuthole=&quot;0&quot;&gt;
-      &lt;polylines&gt;
-         &lt;polyline&gt;
-            45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...
-         &lt;/polyline&gt;
-      &lt;/polylines&gt;
-      &lt;urls&gt;
-         &lt;shapefile&gt;
-         http://farm4.static.flickr.com/3228/shapefiles/3534_20081111_0a8afe03c5.tar.gz
-         &lt;/shapefile&gt;
-      &lt;/urls&gt;
-   &lt;/shapedata&gt;
-   &lt;!-- and so on... --&gt;
-&lt;/shapes&gt;</pre>
+<pre>   45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...
+http://farm4.static.flickr.com/3228/shapefiles/3534_20081111_0a8afe03c5.tar.gz</pre>
             
 
             
@@ -1061,18 +949,12 @@ request.</p>
 <p><b>Arguments</b></p>
 <dl class="rdoc-list"><dt>place_type_id <em>(required)</em> </dt>
 <dd>
-<p>The numeric ID for a specific place type to cluster photos by. &lt;br
-/&gt;&lt;br /&gt;</p>
+<p>The numeric ID for a specific place type to cluster photos by.</p>
 </dd></dl>
 
 <p>Valid place type IDs are :</p>
 
-<p>&lt;ul&gt; &lt;li&gt;&lt;strong&gt;22&lt;/strong&gt;:
-neighbourhood&lt;/li&gt; &lt;li&gt;&lt;strong&gt;7&lt;/strong&gt;:
-locality&lt;/li&gt; &lt;li&gt;&lt;strong&gt;8&lt;/strong&gt;:
-region&lt;/li&gt; &lt;li&gt;&lt;strong&gt;12&lt;/strong&gt;:
-country&lt;/li&gt; &lt;li&gt;&lt;strong&gt;29&lt;/strong&gt;:
-continent&lt;/li&gt; &lt;/ul&gt;</p>
+<p>22: neighbourhood 7: locality 8: region 12: country 29: continent</p>
 <dl class="rdoc-list"><dt>date </dt>
 <dd>
 <p>A valid date in YYYY-MM-DD format. The default is yesterday.</p>
@@ -1138,13 +1020,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;places total=&quot;100&quot; date_start=&quot;1246320000&quot; date_stop=&quot;1246406399&quot;&gt;
-   &lt;place place_id=&quot;4KO02SibApitvSBieQ&quot; woeid=&quot;23424977&quot;
-       latitude=&quot;48.890&quot; longitude=&quot;-116.982&quot; 
-       place_url=&quot;/United+States&quot; place_type=&quot;country&quot; 
-       place_type_id=&quot;12&quot; photo_count=&quot;23371&quot;&gt;United States&lt;/place&gt;
-   &lt;!-- and so on... --&gt;
-&lt;/places&gt;</pre>
+<pre>United States</pre>
             
 
             
@@ -1205,38 +1081,26 @@ maximum_longitude, maximum_latitude.</p>
 in a bounding box. Valid placetypes are:</p>
 </dd></dl>
 
-<p>&lt;ul&gt; &lt;li&gt;neighbourhood&lt;/li&gt; &lt;li&gt;locality&lt;/li&gt;
-&lt;li&gt;county&lt;/li&gt; &lt;li&gt;region&lt;/li&gt;
-&lt;li&gt;country&lt;/li&gt; &lt;li&gt;continent&lt;/li&gt; &lt;/ul&gt;
-&lt;br /&gt; &lt;span style="font-style:italic;"&gt;The "place_type"
+<p>neighbourhood locality county region country continent The "place_type"
 argument has been deprecated in favor of the "place_type_id" argument. It
 won't go away but it will not be added to new methods. A complete list of
-place type IDs is available using the &lt;a href="<a
-href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a">www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a</a>&gt;
-method. (While optional, you must pass either a valid place type or place
-type ID.)&lt;/span&gt;</p>
+place type IDs is available using the flickr.places.getPlaceTypes method.
+(While optional, you must pass either a valid place type or place type ID.)</p>
 <dl class="rdoc-list"><dt>place_type_id </dt>
 <dd>
-<p>The numeric ID for a specific place type to cluster photos by. &lt;br
-/&gt;&lt;br /&gt;</p>
+<p>The numeric ID for a specific place type to cluster photos by.</p>
 </dd></dl>
 
 <p>Valid place type IDs are :</p>
 
-<p>&lt;ul&gt; &lt;li&gt;&lt;strong&gt;22&lt;/strong&gt;:
-neighbourhood&lt;/li&gt; &lt;li&gt;&lt;strong&gt;7&lt;/strong&gt;:
-locality&lt;/li&gt; &lt;li&gt;&lt;strong&gt;8&lt;/strong&gt;:
-region&lt;/li&gt; &lt;li&gt;&lt;strong&gt;12&lt;/strong&gt;:
-country&lt;/li&gt; &lt;li&gt;&lt;strong&gt;29&lt;/strong&gt;:
-continent&lt;/li&gt; &lt;/ul&gt; &lt;br /&gt;&lt;span
-style="font-style:italic;"&gt;(While optional, you must pass either a valid
-place type or place type ID.)&lt;/span&gt;</p>
+<p>22: neighbourhood 7: locality 8: region 12: country 29: continent (While
+optional, you must pass either a valid place type or place type ID.)</p>
 <dl class="rdoc-list"><dt>recursive </dt>
 <dd>
 <p>Perform a recursive place type search. For example, if you search for
 neighbourhoods in a given bounding box but there are no results the method
 will also query for localities and so on until one or more valid places are
-found.&lt;br /&lt;br /&gt;</p>
+found.</p>
 </dd></dl>
 
 <p>Recursive searches do not change the bounding box size restrictions for the
@@ -1293,29 +1157,9 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;places place_type=&quot;neighbourhood&quot; total=&quot;21&quot;
-   pages=&quot;1&quot; page=&quot;1&quot; 
-   bbox=&quot;-122.42307100000001,37.773779,-122.381071,37.815779&quot;&gt;
-   &lt;place place_id=&quot;.aaSwYSbApnq6seyGw&quot; woeid=&quot;23512025&quot;
-      latitude=&quot;37.788&quot; longitude=&quot;-122.412&quot; 
-      place_url=&quot;/United+States/California/San+Francisco/Downtown&quot;
-      place_type=&quot;neighbourhood&quot;&gt;
-      Downtown, San Francisco, CA, US, United States
-   &lt;/place&gt;
-   &lt;place place_id=&quot;3KymK1GbCZ41eBVBxg&quot; woeid=&quot;28288707&quot;
-      latitude=&quot;37.776&quot; longitude=&quot;-122.417&quot; 
-      place_url=&quot;/United+States/California/San+Francisco/Civic+Center&quot;
-      place_type=&quot;neighbourhood&quot;&gt;
-      Civic Center, San Francisco, CA, US, United States
-   &lt;/place&gt;
-   &lt;place place_id=&quot;9xdhxY.bAptvBjHo&quot; woeid=&quot;2379855&quot;   
-      latitude=&quot;37.796&quot; longitude=&quot;-122.407&quot; 
-      place_url=&quot;/United+States/California/San+Francisco/Chinatown&quot;
-      place_type=&quot;neighbourhood&quot;&gt;
-      Chinatown, San Francisco, CA, US, United States
-   &lt;/place&gt;
-   &lt;!-- and so on ---&gt;
-&lt;/places&gt;</pre>
+<pre>Downtown, San Francisco, CA, US, United States
+Civic Center, San Francisco, CA, US, United States
+Chinatown, San Francisco, CA, US, United States</pre>
             
 
             
@@ -1360,72 +1204,50 @@ for a user's contacts.</p>
 <p><b>Arguments</b></p>
 <dl class="rdoc-list"><dt>place_type </dt>
 <dd>
-<p>A specific place type to cluster photos by. &lt;br /&gt;&lt;br /&gt;</p>
+<p>A specific place type to cluster photos by.</p>
 </dd></dl>
 
 <p>Valid place types are :</p>
 
-<p>&lt;ul&gt; &lt;li&gt;&lt;strong&gt;neighbourhood&lt;/strong&gt; (and
-neighborhood)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;locality&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;region&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;country&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;continent&lt;/strong&gt;&lt;/li&gt; &lt;/ul&gt;
-&lt;br /&gt; &lt;span style="font-style:italic;"&gt;The "place_type"
-argument has been deprecated in favor of the "place_type_id" argument. It
-won't go away but it will not be added to new methods. A complete list of
-place type IDs is available using the &lt;a href="<a
-href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a">www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a</a>&gt;
-method. (While optional, you must pass either a valid place type or place
-type ID.)&lt;/span&gt;</p>
+<p>neighbourhood (and neighborhood) locality region country continent The
+"place_type" argument has been deprecated in favor of the "place_type_id"
+argument. It won't go away but it will not be added to new methods. A
+complete list of place type IDs is available using the
+flickr.places.getPlaceTypes method. (While optional, you must pass either a
+valid place type or place type ID.)</p>
 <dl class="rdoc-list"><dt>place_type_id </dt>
 <dd>
-<p>The numeric ID for a specific place type to cluster photos by. &lt;br
-/&gt;&lt;br /&gt;</p>
+<p>The numeric ID for a specific place type to cluster photos by.</p>
 </dd></dl>
 
 <p>Valid place type IDs are :</p>
 
-<p>&lt;ul&gt; &lt;li&gt;&lt;strong&gt;22&lt;/strong&gt;:
-neighbourhood&lt;/li&gt; &lt;li&gt;&lt;strong&gt;7&lt;/strong&gt;:
-locality&lt;/li&gt; &lt;li&gt;&lt;strong&gt;8&lt;/strong&gt;:
-region&lt;/li&gt; &lt;li&gt;&lt;strong&gt;12&lt;/strong&gt;:
-country&lt;/li&gt; &lt;li&gt;&lt;strong&gt;29&lt;/strong&gt;:
-continent&lt;/li&gt; &lt;/ul&gt; &lt;br /&gt;&lt;span
-style="font-style:italic;"&gt;(While optional, you must pass either a valid
-place type or place type ID.)&lt;/span&gt;</p>
+<p>22: neighbourhood 7: locality 8: region 12: country 29: continent (While
+optional, you must pass either a valid place type or place type ID.)</p>
 <dl class="rdoc-list"><dt>woe_id </dt>
 <dd>
 <p>A Where on Earth identifier to use to filter photo clusters. For example
-all the photos clustered by &lt;strong&gt;locality&lt;/strong&gt; in the
-United States (WOE ID &lt;strong&gt;23424977&lt;/strong&gt;).&lt;br
-/&gt;&lt;br /&gt;</p>
-</dd></dl>
-
-<p>&lt;span style="font-style:italic;"&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;</p>
-<dl class="rdoc-list"><dt>place_id </dt>
+all the photos clustered by locality in the United States (WOE ID
+23424977).(While optional, you must pass either a valid <a
+href="Places.html">Places</a> ID or a WOE ID.)</p>
+</dd><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier to use to filter photo clusters. For example all the photos
-clustered by &lt;strong&gt;locality&lt;/strong&gt; in the United States
-(Place ID &lt;strong&gt;4KO02SibApitvSBieQ&lt;/strong&gt;).</p>
+clustered by locality in the United States (Place ID 4KO02SibApitvSBieQ).</p>
 </dd></dl>
 
-<p>&lt;br /&gt;&lt;br /&gt; &lt;span style="font-style:italic;"&gt;(While
-optional, you must pass either a valid <a href="Places.html">Places</a> ID
-or a WOE ID.)&lt;/span&gt;</p>
+<p>(While optional, you must pass either a valid <a
+href="Places.html">Places</a> ID or a WOE ID.)</p>
 <dl class="rdoc-list"><dt>threshold </dt>
 <dd>
 <p>The minimum number of photos that a place type must have to be included. If
 the number of photos is lowered then the parent place type for that place
-will be used.&lt;br /&gt;&lt;br /&gt;</p>
+will be used.</p>
 </dd></dl>
 
-<p>For example if your contacts only have &lt;strong&gt;3&lt;/strong&gt;
-photos taken in the locality of Montreal&lt;/strong&gt; (WOE ID 3534) but
-your threshold is set to &lt;strong&gt;5&lt;/strong&gt; then those photos
+<p>For example if your contacts only have 3 photos taken in the locality of
+Montreal (WOE ID 3534) but your threshold is set to 5 then those photos
 will be "rolled up" and included instead with a place record for the region
 of Quebec (WOE ID 2344924).</p>
 <dl class="rdoc-list"><dt>contacts </dt>
@@ -1533,13 +1355,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;places total=&quot;1&quot;&gt;
-   &lt;place place_id=&quot;kH8dLOubBZRvX_YZ&quot; woeid=&quot;2487956&quot;
-               latitude=&quot;37.779&quot; longitude=&quot;-122.420&quot;
-               place_url=&quot;/United+States/California/San+Francisco&quot;
-               place_type=&quot;locality&quot;
-               photo_count=&quot;156&quot;&gt;San Francisco, California&lt;/place&gt;
-&lt;/place&gt;</pre>
+<pre>San Francisco, California</pre>
             
 
             
@@ -1584,51 +1400,41 @@ for set of tags or machine tags.</p>
 <p><b>Arguments</b></p>
 <dl class="rdoc-list"><dt>place_type_id <em>(required)</em> </dt>
 <dd>
-<p>The numeric ID for a specific place type to cluster photos by. &lt;br
-/&gt;&lt;br /&gt;</p>
+<p>The numeric ID for a specific place type to cluster photos by.</p>
 </dd></dl>
 
 <p>Valid place type IDs are :</p>
 
-<p>&lt;ul&gt; &lt;li&gt;&lt;strong&gt;22&lt;/strong&gt;:
-neighbourhood&lt;/li&gt; &lt;li&gt;&lt;strong&gt;7&lt;/strong&gt;:
-locality&lt;/li&gt; &lt;li&gt;&lt;strong&gt;8&lt;/strong&gt;:
-region&lt;/li&gt; &lt;li&gt;&lt;strong&gt;12&lt;/strong&gt;:
-country&lt;/li&gt; &lt;li&gt;&lt;strong&gt;29&lt;/strong&gt;:
-continent&lt;/li&gt; &lt;/ul&gt;</p>
+<p>22: neighbourhood 7: locality 8: region 12: country 29: continent</p>
 <dl class="rdoc-list"><dt>woe_id </dt>
 <dd>
 <p>A Where on Earth identifier to use to filter photo clusters. For example
-all the photos clustered by &lt;strong&gt;locality&lt;/strong&gt; in the
-United States (WOE ID &lt;strong&gt;23424977&lt;/strong&gt;).</p>
+all the photos clustered by locality in the United States (WOE ID
+23424977).</p>
 </dd></dl>
 
-<p>&lt;br /&gt;&lt;br /&gt; &lt;span style="font-style:italic;"&gt;(While
-optional, you must pass either a valid <a href="Places.html">Places</a> ID
-or a WOE ID.)&lt;/span&gt;</p>
+<p>(While optional, you must pass either a valid <a
+href="Places.html">Places</a> ID or a WOE ID.)</p>
 <dl class="rdoc-list"><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier to use to filter photo clusters. For example all the photos
-clustered by &lt;strong&gt;locality&lt;/strong&gt; in the United States
-(Place ID &lt;strong&gt;4KO02SibApitvSBieQ&lt;/strong&gt;).</p>
+clustered by locality in the United States (Place ID 4KO02SibApitvSBieQ).</p>
 </dd></dl>
 
-<p>&lt;br /&gt;&lt;br /&gt; &lt;span style="font-style:italic;"&gt;(While
-optional, you must pass either a valid <a href="Places.html">Places</a> ID
-or a WOE ID.)&lt;/span&gt;</p>
+<p>(While optional, you must pass either a valid <a
+href="Places.html">Places</a> ID or a WOE ID.)</p>
 <dl class="rdoc-list"><dt>threshold </dt>
 <dd>
 <p>The minimum number of photos that a place type must have to be included. If
 the number of photos is lowered then the parent place type for that place
-will be used.&lt;br /&gt;&lt;br /&gt;</p>
+will be used.</p>
 </dd></dl>
 
-<p>For example if you only have &lt;strong&gt;3&lt;/strong&gt; photos taken in
-the locality of Montreal&lt;/strong&gt; (WOE ID 3534) but your threshold is
-set to &lt;strong&gt;5&lt;/strong&gt; then those photos will be "rolled up"
-and included instead with a place record for the region of Quebec (WOE ID
-2344924).</p>
+<p>For example if you only have 3 photos taken in the locality of Montreal
+(WOE ID 3534) but your threshold is set to 5 then those photos will be
+"rolled up" and included instead with a place record for the region of
+Quebec (WOE ID 2344924).</p>
 <dl class="rdoc-list"><dt>tags </dt>
 <dd>
 <p>A comma-delimited list of tags. <a href="Photos.html">Photos</a> with one
@@ -1643,23 +1449,14 @@ combination. Defaults to 'any' if not specified.</p>
 for searching on specific properties :</p>
 </dd></dl>
 
-<p>&lt;ul&gt;</p>
+<p>Find photos using the 'dc' namespace :    "machine_tags" =&gt; "dc:"</p>
 
-<pre> &lt;li&gt;Find photos using the 'dc' namespace :    &lt;code&gt;&quot;machine_tags&quot; =&gt; &quot;dc:&quot;&lt;/code&gt;&lt;/li&gt;
-
- &lt;li&gt; Find photos with a title in the 'dc' namespace : &lt;code&gt;&quot;machine_tags&quot; =&gt; &quot;dc:title=&quot;&lt;/code&gt;&lt;/li&gt;
-
- &lt;li&gt;Find photos titled &quot;mr. camera&quot; in the 'dc' namespace : &lt;code&gt;&quot;machine_tags&quot; =&gt; &quot;dc:title=\&quot;mr. camera\&quot;&lt;/code&gt;&lt;/li&gt;
-
- &lt;li&gt;Find photos whose value is &quot;mr. camera&quot; : &lt;code&gt;&quot;machine_tags&quot; =&gt; &quot;*:*=\&quot;mr. camera\&quot;&quot;&lt;/code&gt;&lt;/li&gt;
-
- &lt;li&gt;Find photos that have a title, in any namespace : &lt;code&gt;&quot;machine_tags&quot; =&gt; &quot;*:title=&quot;&lt;/code&gt;&lt;/li&gt;
-
- &lt;li&gt;Find photos that have a title, in any namespace, whose value is &quot;mr. camera&quot; : &lt;code&gt;&quot;machine_tags&quot; =&gt; &quot;*:title=\&quot;mr. camera\&quot;&quot;&lt;/code&gt;&lt;/li&gt;
-
- &lt;li&gt;Find photos, in the 'dc' namespace whose value is &quot;mr. camera&quot; : &lt;code&gt;&quot;machine_tags&quot; =&gt; &quot;dc:*=\&quot;mr. camera\&quot;&quot;&lt;/code&gt;&lt;/li&gt;
-
-&lt;/ul&gt;</pre>
+<pre> Find photos with a title in the 'dc' namespace : &quot;machine_tags&quot; =&gt; &quot;dc:title=&quot;
+Find photos titled &quot;mr. camera&quot; in the 'dc' namespace : &quot;machine_tags&quot; =&gt; &quot;dc:title=\&quot;mr. camera\&quot;
+Find photos whose value is &quot;mr. camera&quot; : &quot;machine_tags&quot; =&gt; &quot;*:*=\&quot;mr. camera\&quot;&quot;
+Find photos that have a title, in any namespace : &quot;machine_tags&quot; =&gt; &quot;*:title=&quot;
+Find photos that have a title, in any namespace, whose value is &quot;mr. camera&quot; : &quot;machine_tags&quot; =&gt; &quot;*:title=\&quot;mr. camera\&quot;&quot;
+Find photos, in the 'dc' namespace whose value is &quot;mr. camera&quot; : &quot;machine_tags&quot; =&gt; &quot;dc:*=\&quot;mr. camera\&quot;&quot;</pre>
 
 <p>Multiple machine tags may be queried by passing a comma-separated list. The
 number of machine tags you can pass in a single query depends on the tag
@@ -1725,13 +1522,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;places total=&quot;1&quot;&gt;
-   &lt;place place_id=&quot;kH8dLOubBZRvX_YZ&quot; woeid=&quot;2487956&quot;
-               latitude=&quot;37.779&quot; longitude=&quot;-122.420&quot;
-               place_url=&quot;/United+States/California/San+Francisco&quot;
-               place_type=&quot;locality&quot;
-               photo_count=&quot;156&quot;&gt;San Francisco, California&lt;/place&gt;
-&lt;/place&gt;</pre>
+<pre>San Francisco, California</pre>
             
 
             
@@ -1776,75 +1567,50 @@ for a user.</p>
 <p><b>Arguments</b></p>
 <dl class="rdoc-list"><dt>place_type_id </dt>
 <dd>
-<p>The numeric ID for a specific place type to cluster photos by. &lt;br
-/&gt;&lt;br /&gt;</p>
+<p>The numeric ID for a specific place type to cluster photos by.</p>
 </dd></dl>
 
 <p>Valid place type IDs are :</p>
 
-<p>&lt;ul&gt; &lt;li&gt;&lt;strong&gt;22&lt;/strong&gt;:
-neighbourhood&lt;/li&gt; &lt;li&gt;&lt;strong&gt;7&lt;/strong&gt;:
-locality&lt;/li&gt; &lt;li&gt;&lt;strong&gt;8&lt;/strong&gt;:
-region&lt;/li&gt; &lt;li&gt;&lt;strong&gt;12&lt;/strong&gt;:
-country&lt;/li&gt; &lt;li&gt;&lt;strong&gt;29&lt;/strong&gt;:
-continent&lt;/li&gt; &lt;/ul&gt; &lt;br /&gt; &lt;span
-style="font-style:italic;"&gt;The "place_type" argument has been deprecated
-in favor of the "place_type_id" argument. It won't go away but it will not
-be added to new methods. A complete list of place type IDs is available
-using the &lt;a href="<a
-href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a">www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a</a>&gt;
-method. (While optional, you must pass either a valid place type or place
-type ID.)&lt;/span&gt;</p>
+<p>22: neighbourhood 7: locality 8: region 12: country 29: continent The
+"place_type" argument has been deprecated in favor of the "place_type_id"
+argument. It won't go away but it will not be added to new methods. A
+complete list of place type IDs is available using the
+flickr.places.getPlaceTypes method. (While optional, you must pass either a
+valid place type or place type ID.)</p>
 <dl class="rdoc-list"><dt>place_type </dt>
 <dd>
-<p>A specific place type to cluster photos by. &lt;br /&gt;&lt;br /&gt;</p>
+<p>A specific place type to cluster photos by.</p>
 </dd></dl>
 
 <p>Valid place types are :</p>
 
-<p>&lt;ul&gt; &lt;li&gt;&lt;strong&gt;neighbourhood&lt;/strong&gt; (and
-neighborhood)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;locality&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;region&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;country&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;continent&lt;/strong&gt;&lt;/li&gt; &lt;/ul&gt;
-&lt;br /&gt;&lt;span style="font-style:italic;"&gt;(While optional, you
-must pass either a valid place type or place type ID.)&lt;/span&gt;</p>
+<p>neighbourhood (and neighborhood) locality region country continent (While
+optional, you must pass either a valid place type or place type ID.)</p>
 <dl class="rdoc-list"><dt>woe_id </dt>
 <dd>
 <p>A Where on Earth identifier to use to filter photo clusters. For example
-all the photos clustered by &lt;strong&gt;locality&lt;/strong&gt; in the
-United States (WOE ID &lt;strong&gt;23424977&lt;/strong&gt;).&lt;br
-/&gt;&lt;br /&gt;</p>
-</dd></dl>
-
-<p>&lt;span style="font-style:italic;"&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;</p>
-<dl class="rdoc-list"><dt>place_id </dt>
+all the photos clustered by locality in the United States (WOE ID
+23424977).(While optional, you must pass either a valid <a
+href="Places.html">Places</a> ID or a WOE ID.)</p>
+</dd><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier to use to filter photo clusters. For example all the photos
-clustered by &lt;strong&gt;locality&lt;/strong&gt; in the United States
-(Place ID &lt;strong&gt;4KO02SibApitvSBieQ&lt;/strong&gt;).&lt;br
-/&gt;&lt;br /&gt;</p>
-</dd></dl>
-
-<p>&lt;span style="font-style:italic;"&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;</p>
-<dl class="rdoc-list"><dt>threshold </dt>
+clustered by locality in the United States (Place ID
+4KO02SibApitvSBieQ).(While optional, you must pass either a valid <a
+href="Places.html">Places</a> ID or a WOE ID.)</p>
+</dd><dt>threshold </dt>
 <dd>
 <p>The minimum number of photos that a place type must have to be included. If
 the number of photos is lowered then the parent place type for that place
-will be used.&lt;br /&gt;&lt;br /&gt;</p>
+will be used.</p>
 </dd></dl>
 
-<p>For example if you only have &lt;strong&gt;3&lt;/strong&gt; photos taken in
-the locality of Montreal&lt;/strong&gt; (WOE ID 3534) but your threshold is
-set to &lt;strong&gt;5&lt;/strong&gt; then those photos will be "rolled up"
-and included instead with a place record for the region of Quebec (WOE ID
-2344924).</p>
+<p>For example if you only have 3 photos taken in the locality of Montreal
+(WOE ID 3534) but your threshold is set to 5 then those photos will be
+"rolled up" and included instead with a place record for the region of
+Quebec (WOE ID 2344924).</p>
 <dl class="rdoc-list"><dt>min_upload_date </dt>
 <dd>
 <p>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
@@ -1941,13 +1707,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;places total=&quot;1&quot;&gt;
-   &lt;place place_id=&quot;kH8dLOubBZRvX_YZ&quot; woeid=&quot;2487956&quot;
-               latitude=&quot;37.779&quot; longitude=&quot;-122.420&quot;
-               place_url=&quot;/United+States/California/San+Francisco&quot;
-               place_type=&quot;locality&quot;
-               photo_count=&quot;156&quot;&gt;San Francisco, California&lt;/place&gt;
-&lt;/place&gt;</pre>
+<pre>San Francisco, California</pre>
             
 
             
@@ -2034,23 +1794,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;location place_id=&quot;kH8dLOubBZRvX_YZ&quot; woeid=&quot;2487956&quot; 
-                latitude=&quot;37.779&quot; longitude=&quot;-122.420&quot;
-                place_url=&quot;/United+States/California/San+Francisco&quot;
-                place_type=&quot;locality&quot;&gt;
-   &lt;locality place_id=&quot;kH8dLOubBZRvX_YZ&quot; woeid=&quot;2487956&quot;
-                 latitude=&quot;37.779&quot; longitude=&quot;-122.420&quot; 
-                 place_url=&quot;/United+States/California/San+Francisco&quot;&gt;San Francisco&lt;/locality&gt;
-   &lt;county place_id=&quot;hCca8XSYA5nn0X1Sfw&quot; woeid=&quot;12587707&quot;
-                 latitude=&quot;37.759&quot; longitude=&quot;-122.435&quot; 
-                 place_url=&quot;/hCca8XSYA5nn0X1Sfw&quot;&gt;San Francisco&lt;/county&gt;
-   &lt;region place_id=&quot;SVrAMtCbAphCLAtP&quot; woeid=&quot;2347563&quot; 
-                latitude=&quot;37.271&quot; longitude=&quot;-119.270&quot; 
-                place_url=&quot;/United+States/California&quot;&gt;California&lt;/region&gt;
-   &lt;country place_id=&quot;4KO02SibApitvSBieQ&quot; woeid=&quot;23424977&quot;
-                  latitude=&quot;48.890&quot; longitude=&quot;-116.982&quot; 
-                  place_url=&quot;/United+States&quot;&gt;United States&lt;/country&gt;
-&lt;/location&gt;</pre>
+<pre>San FranciscoSan FranciscoCaliforniaUnited States</pre>
             
 
             
@@ -2099,8 +1843,8 @@ removed but you should use flickr.places.getInfoByUrl instead.</p>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> URL.</p>
 </dd></dl>
 
-<p>&lt;br /&gt;&lt;br /&gt; <a href="../Flickr.html">Flickr</a> Place URLs are
-of the form /country/region/city</p>
+<p><a href="../Flickr.html">Flickr</a> Place URLs are of the form
+/country/region/city</p>
 
 <p><b>Error codes</b></p>
 <ul><li>
@@ -2140,23 +1884,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;location place_id=&quot;kH8dLOubBZRvX_YZ&quot; woeid=&quot;2487956&quot; 
-                latitude=&quot;37.779&quot; longitude=&quot;-122.420&quot;
-                place_url=&quot;/United+States/California/San+Francisco&quot;
-                place_type=&quot;locality&quot;&gt;
-   &lt;locality place_id=&quot;kH8dLOubBZRvX_YZ&quot; woeid=&quot;2487956&quot;
-                 latitude=&quot;37.779&quot; longitude=&quot;-122.420&quot; 
-                 place_url=&quot;/United+States/California/San+Francisco&quot;&gt;San Francisco&lt;/locality&gt;
-   &lt;county place_id=&quot;hCca8XSYA5nn0X1Sfw&quot; woeid=&quot;12587707&quot;
-                 latitude=&quot;37.759&quot; longitude=&quot;-122.435&quot; 
-                 place_url=&quot;/hCca8XSYA5nn0X1Sfw&quot;&gt;San Francisco&lt;/county&gt;
-   &lt;region place_id=&quot;SVrAMtCbAphCLAtP&quot; woeid=&quot;2347563&quot; 
-                latitude=&quot;37.271&quot; longitude=&quot;-119.270&quot; 
-                place_url=&quot;/United+States/California&quot;&gt;California&lt;/region&gt;
-   &lt;country place_id=&quot;4KO02SibApitvSBieQ&quot; woeid=&quot;23424977&quot;
-                  latitude=&quot;48.890&quot; longitude=&quot;-116.982&quot; 
-                  place_url=&quot;/United+States&quot;&gt;United States&lt;/country&gt;
-&lt;/location&gt;</pre>
+<pre>San FranciscoSan FranciscoCaliforniaUnited States</pre>
             
 
             
@@ -2202,23 +1930,15 @@ on Earth (WOE) ID</p>
 <p><b>Arguments</b></p>
 <dl class="rdoc-list"><dt>woe_id </dt>
 <dd>
-<p>A Where on Earth identifier to use to filter photo clusters.&lt;br
-/&gt;&lt;br /&gt;</p>
-</dd></dl>
-
-<p>&lt;span style="font-style:italic;"&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;</p>
-<dl class="rdoc-list"><dt>place_id </dt>
+<p>A Where on Earth identifier to use to filter photo clusters.(While
+optional, you must pass either a valid <a href="Places.html">Places</a> ID
+or a WOE ID.)</p>
+</dd><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
-identifier to use to filter photo clusters.&lt;br /&gt;&lt;br /&gt;</p>
-</dd></dl>
-
-<p>&lt;span style="font-style:italic;"&gt;(While optional, you must pass
-either a valid <a href="Places.html">Places</a> ID or a WOE
-ID.)&lt;/span&gt;</p>
-<dl class="rdoc-list"><dt>min_upload_date </dt>
+identifier to use to filter photo clusters.(While optional, you must pass
+either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</p>
+</dd><dt>min_upload_date </dt>
 <dd>
 <p>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
 greater than or equal to this value will be returned. The date should be in
@@ -2288,21 +2008,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;tags total=&quot;100&quot;&gt;
-   &lt;tag count=&quot;31775&quot;&gt;montreal&lt;/tag&gt;
-   &lt;tag count=&quot;20585&quot;&gt;canada&lt;/tag&gt;
-   &lt;tag count=&quot;12319&quot;&gt;montréal&lt;/tag&gt;
-   &lt;tag count=&quot;12154&quot;&gt;quebec&lt;/tag&gt;
-   &lt;tag count=&quot;6471&quot;&gt;québec&lt;/tag&gt;
-   &lt;tag count=&quot;2173&quot;&gt;sylvainmichaud&lt;/tag&gt;
-   &lt;tag count=&quot;2091&quot;&gt;nikon&lt;/tag&gt;
-   &lt;tag count=&quot;1541&quot;&gt;lucbus&lt;/tag&gt;
-   &lt;tag count=&quot;1539&quot;&gt;music&lt;/tag&gt;
-   &lt;tag count=&quot;1479&quot;&gt;urban&lt;/tag&gt;
-   &lt;tag count=&quot;1425&quot;&gt;lucbussieres&lt;/tag&gt;
-   &lt;tag count=&quot;1419&quot;&gt;festival&lt;/tag&gt;
-   &lt;!-- and so on --&gt;
-&lt;/tags&gt;</pre>
+<pre>montrealcanadamontréalquebecquébecsylvainmichaudnikonlucbusmusicurbanlucbussieresfestival</pre>
             
 
             

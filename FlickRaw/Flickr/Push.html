@@ -301,13 +301,6 @@ href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
 <p><b>Returns</b></p>
-
-<pre>&lt;rsp stat=&quot;ok&quot;&gt;
-  &lt;subscriptions&gt;
-    &lt;subscription topic=&quot;contacts_photos&quot; callback=&quot;http://example.com/contacts_photos_endpoint?user=12345&quot; pending=&quot;0&quot; date_create=&quot;1309293755&quot; lease_seconds=&quot;0&quot; expiry=&quot;1309380155&quot; verify_attempts=&quot;0&quot; /&gt;
-    &lt;subscription topic=&quot;contacts_faves&quot; callback=&quot;http://example.com/contacts_faves_endpoint?user=12345&quot; pending=&quot;0&quot; date_create=&quot;1309293785&quot; lease_seconds=&quot;0&quot; expiry=&quot;1309380185&quot; verify_attempts=&quot;0&quot; /&gt;
-  &lt;/subscriptions&gt;
-&lt;/rsp&gt;</pre>
             
 
             
@@ -384,13 +377,6 @@ href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
 <p><b>Returns</b></p>
-
-<pre>&lt;rsp stat=&quot;ok&quot;&gt;
-  &lt;topics&gt;
-    &lt;topic name=&quot;contacts_photos&quot; /&gt;
-    &lt;topic name=&quot;contacts_faves&quot; /&gt;
-  &lt;/topics&gt;
-&lt;/rsp&gt;</pre>
             
 
             
@@ -435,8 +421,7 @@ change)</p>
 <p><b>Arguments</b></p>
 <dl class="rdoc-list"><dt>topic <em>(required)</em> </dt>
 <dd>
-<p>The type of subscription. See &lt;a href="<a
-href="http://www.flickr.com/services/api/flickr.push.getTopics.htm">flickr.push.getTopics</a">www.flickr.com/services/api/flickr.push.getTopics.htm">flickr.push.getTopics</a</a>&gt;.</p>
+<p>The type of subscription. See flickr.push.getTopics.</p>
 </dd><dt>callback <em>(required)</em> </dt>
 <dd>
 <p>The url for the subscription endpoint. Limited to 255 bytes, and must be
@@ -444,16 +429,13 @@ unique for this user, i.e. no two subscriptions for a given user may use
 the same callback url.</p>
 </dd><dt>verify <em>(required)</em> </dt>
 <dd>
-<p>The verification mode, either <tt>sync</tt> or <tt>async</tt>. See the
-&lt;a href="<a
-href="http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html#subscribingl">Google">pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html#subscribingl">Google</a>
-PubSubHubbub spec&lt;/a&gt; for details.</p>
+<p>The verification mode, either sync or async. See the Google PubSubHubbub
+spec for details.</p>
 </dd><dt>verify_token </dt>
 <dd>
 <p>The verification token to be echoed back to the subscriber during the
-verification callback, as per the &lt;a href="<a
-href="http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html#subscribing">Google">pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html#subscribing">Google</a>
-PubSubHubbub spec&lt;/a&gt;. Limited to 200 bytes.</p>
+verification callback, as per the Google PubSubHubbub spec. Limited to 200
+bytes.</p>
 </dd><dt>lease_seconds </dt>
 <dd>
 <p>Number of seconds for which the subscription will be valid. Legal values
@@ -461,101 +443,85 @@ are 60 to 86400 (1 minute to 1 day). If not present, the subscription will
 be auto-renewing.</p>
 </dd><dt>woe_ids </dt>
 <dd>
-<p>A 32-bit integer for a &lt;a href="<a
-href="http://developer.yahoo.com/geo/geoplanet/">Where">developer.yahoo.com/geo/geoplanet/">Where</a>
-on Earth ID&lt;/a&gt;. Only valid if <tt>topic</tt> is <tt>geo</tt>.</p>
+<p>A 32-bit integer for a Where on Earth ID. Only valid if topic is geo.</p>
 </dd></dl>
 
-<p>&lt;br/&gt;&lt;br/&gt; The order of precedence for geo subscriptions is :
-woe ids, place ids, radial i.e. the <tt>lat, lon</tt> parameters will be
-ignored if <tt>place_ids</tt> is present, which will be ignored if
-<tt>woe_ids</tt> is present.</p>
+<p>The order of precedence for geo subscriptions is : woe ids, place ids,
+radial i.e. the lat, lon parameters will be ignored if place_ids is
+present, which will be ignored if woe_ids is present.</p>
 <dl class="rdoc-list"><dt>place_ids </dt>
 <dd>
 <p>A comma-separated list of <a href="../Flickr.html">Flickr</a> place IDs.
-Only valid if <tt>topic</tt> is <tt>geo</tt>.</p>
+Only valid if topic is geo.</p>
 </dd></dl>
 
-<p>&lt;br/&gt;&lt;br/&gt; The order of precedence for geo subscriptions is :
-woe ids, place ids, radial i.e. the <tt>lat, lon</tt> parameters will be
-ignored if <tt>place_ids</tt> is present, which will be ignored if
-<tt>woe_ids</tt> is present.</p>
+<p>The order of precedence for geo subscriptions is : woe ids, place ids,
+radial i.e. the lat, lon parameters will be ignored if place_ids is
+present, which will be ignored if woe_ids is present.</p>
 <dl class="rdoc-list"><dt>lat </dt>
 <dd>
-<p>A latitude value, in decimal format. Only valid if <tt>topic</tt> is
-<tt>geo</tt>. Defines the latitude for a radial query centered around (lat,
-lon).</p>
+<p>A latitude value, in decimal format. Only valid if topic is geo. Defines
+the latitude for a radial query centered around (lat, lon).</p>
 </dd></dl>
 
-<p>&lt;br/&gt;&lt;br/&gt; The order of precedence for geo subscriptions is :
-woe ids, place ids, radial i.e. the <tt>lat, lon</tt> parameters will be
-ignored if <tt>place_ids</tt> is present, which will be ignored if
-<tt>woe_ids</tt> is present.</p>
+<p>The order of precedence for geo subscriptions is : woe ids, place ids,
+radial i.e. the lat, lon parameters will be ignored if place_ids is
+present, which will be ignored if woe_ids is present.</p>
 <dl class="rdoc-list"><dt>lon </dt>
 <dd>
-<p>A longitude value, in decimal format. Only valid if <tt>topic</tt> is
-<tt>geo</tt>. Defines the longitude for a radial query centered around
-(lat, lon).</p>
+<p>A longitude value, in decimal format. Only valid if topic is geo. Defines
+the longitude for a radial query centered around (lat, lon).</p>
 </dd></dl>
 
-<p>&lt;br/&gt;&lt;br/&gt; The order of precedence for geo subscriptions is :
-woe ids, place ids, radial i.e. the <tt>lat, lon</tt> parameters will be
-ignored if <tt>place_ids</tt> is present, which will be ignored if
-<tt>woe_ids</tt> is present.</p>
+<p>The order of precedence for geo subscriptions is : woe ids, place ids,
+radial i.e. the lat, lon parameters will be ignored if place_ids is
+present, which will be ignored if woe_ids is present.</p>
 <dl class="rdoc-list"><dt>radius </dt>
 <dd>
-<p>A radius value, in the units defined by radius_units. Only valid if
-<tt>topic</tt> is <tt>geo</tt>. Defines the radius of a circle for a radial
-query centered around (lat, lon). Default is 5 km.</p>
+<p>A radius value, in the units defined by radius_units. Only valid if topic
+is geo. Defines the radius of a circle for a radial query centered around
+(lat, lon). Default is 5 km.</p>
 </dd></dl>
 
-<p>&lt;br/&gt;&lt;br/&gt; The order of precedence for geo subscriptions is :
-woe ids, place ids, radial i.e. the <tt>lat, lon</tt> parameters will be
-ignored if <tt>place_ids</tt> is present, which will be ignored if
-<tt>woe_ids</tt> is present.</p>
+<p>The order of precedence for geo subscriptions is : woe ids, place ids,
+radial i.e. the lat, lon parameters will be ignored if place_ids is
+present, which will be ignored if woe_ids is present.</p>
 <dl class="rdoc-list"><dt>radius_units </dt>
 <dd>
-<p>Defines the units for the radius parameter. Only valid if <tt>topic</tt> is
-<tt>geo</tt>. Options are <tt>mi</tt> and <tt>km</tt>. Default is
-<tt>km</tt>.</p>
+<p>Defines the units for the radius parameter. Only valid if topic is geo.
+Options are mi and km. Default is km.</p>
 </dd></dl>
 
-<p>&lt;br/&gt;&lt;br/&gt; The order of precedence for geo subscriptions is :
-woe ids, place ids, radial i.e. the <tt>lat, lon</tt> parameters will be
-ignored if <tt>place_ids</tt> is present, which will be ignored if
-<tt>woe_ids</tt> is present.</p>
+<p>The order of precedence for geo subscriptions is : woe ids, place ids,
+radial i.e. the lat, lon parameters will be ignored if place_ids is
+present, which will be ignored if woe_ids is present.</p>
 <dl class="rdoc-list"><dt>accuracy </dt>
 <dd>
 <p>Defines the minimum accuracy required for photos to be included in a
-subscription. Only valid if <tt>topic</tt> is <tt>geo</tt> Legal values are
-1-16, default is 1 (i.e. any accuracy level).</p>
+subscription. Only valid if topic is geo Legal values are 1-16, default is
+1 (i.e. any accuracy level).</p>
 </dd></dl>
 
-<p>&lt;ul&gt; &lt;li&gt;World level is 1&lt;/li&gt; &lt;li&gt;Country is
-~3&lt;/li&gt; &lt;li&gt;Region is ~6&lt;/li&gt; &lt;li&gt;City is
-~11&lt;/li&gt; &lt;li&gt;Street is ~16&lt;/li&gt; &lt;/ul&gt;</p>
+<p>World level is 1 Country is ~3 Region is ~6 City is ~11 Street is ~16</p>
 <dl class="rdoc-list"><dt>nsids </dt>
 <dd>
 <p>A comma-separated list of nsids representing <a
 href="../Flickr.html">Flickr</a> <a href="Commons.html">Commons</a>
-institutions (see &lt;a href="<a
-href="http://www.flickr.com/services/api/flickr.commons.getInstitutions.html">flickr.commons.getInstitutions</a">www.flickr.com/services/api/flickr.commons.getInstitutions.html">flickr.commons.getInstitutions</a</a>&gt;).
-Only valid if <tt>topic</tt> is <tt>commons</tt>. If not present this
-argument defaults to all <a href="../Flickr.html">Flickr</a> <a
-href="Commons.html">Commons</a> institutions.</p>
+institutions (see flickr.commons.getInstitutions). Only valid if topic is
+commons. If not present this argument defaults to all <a
+href="../Flickr.html">Flickr</a> <a href="Commons.html">Commons</a>
+institutions.</p>
 </dd><dt>tags </dt>
 <dd>
 <p>A comma-separated list of strings to be used for tag subscriptions. <a
 href="Photos.html">Photos</a> with one or more of the tags listed will be
-included in the subscription. Only valid if the <tt>topic</tt> is
-<tt>tags</tt>.</p>
+included in the subscription. Only valid if the topic is tags.</p>
 </dd><dt>machine_tags </dt>
 <dd>
 <p>A comma-separated list of strings to be used for machine tag subscriptions.
 <a href="Photos.html">Photos</a> with one or more of the machine tags
 listed will be included in the subscription. Currently the format must be
-<tt>namespace:tag_name=value</tt> Only valid if the <tt>topic</tt> is
-<tt>tags</tt>.</p>
+namespace:tag_name=value Only valid if the topic is tags.</p>
 </dd></dl>
 
 <p><b>Error codes</b></p>
@@ -677,23 +643,20 @@ request.</p>
 <p><b>Arguments</b></p>
 <dl class="rdoc-list"><dt>topic <em>(required)</em> </dt>
 <dd>
-<p>The type of subscription. See &lt;a href="<a
-href="http://www.flickr.com/services/api/flickr.push.getTopics.htm">flickr.push.getTopics</a">www.flickr.com/services/api/flickr.push.getTopics.htm">flickr.push.getTopics</a</a>&gt;.</p>
+<p>The type of subscription. See flickr.push.getTopics.</p>
 </dd><dt>callback <em>(required)</em> </dt>
 <dd>
 <p>The url for the subscription endpoint (must be the same url as was used
 when creating the subscription).</p>
 </dd><dt>verify <em>(required)</em> </dt>
 <dd>
-<p>The verification mode, either 'sync' or 'async'. See the &lt;a href="<a
-href="http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html#subscribingl">Google">pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html#subscribingl">Google</a>
-PubSubHubbub spec&lt;/a&gt; for details.</p>
+<p>The verification mode, either 'sync' or 'async'. See the Google
+PubSubHubbub spec for details.</p>
 </dd><dt>verify_token </dt>
 <dd>
 <p>The verification token to be echoed back to the subscriber during the
-verification callback, as per the &lt;a href="<a
-href="http://pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html#subscribing">Google">pubsubhubbub.googlecode.com/svn/trunk/pubsubhubbub-core-0.3.html#subscribing">Google</a>
-PubSubHubbub spec&lt;/a&gt;. Limited to 200 bytes.</p>
+verification callback, as per the Google PubSubHubbub spec. Limited to 200
+bytes.</p>
 </dd></dl>
 
 <p><b>Error codes</b></p>

@@ -258,10 +258,8 @@ request.</p>
 <dl class="rdoc-list"><dt>gallery_id <em>(required)</em> </dt>
 <dd>
 <p>The ID of the gallery to add a photo to.  Note: this is the compound ID
-returned in methods like &lt;a
-href="/services/api/flickr.galleries.getList.html"&gt;flickr.galleries.getList&lt;/a&gt;,
-and &lt;a
-href="/services/api/flickr.galleries.getListForPhoto.html"&gt;flickr.galleries.getListForPhoto&lt;/a&gt;.</p>
+returned in methods like flickr.galleries.getList, and
+flickr.galleries.getListForPhoto.</p>
 </dd><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The photo ID to add to the gallery</p>
@@ -452,8 +450,6 @@ href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
 <p><b>Returns</b></p>
-
-<pre>&lt;gallery id=&quot;50736-72157623680420409&quot; url=&quot;http://www.flickr.com/photos/kellan/galleries/72157623680420409&quot; /&gt;</pre>
             
 
             
@@ -851,13 +847,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;gallery id=&quot;6065-72157617483228192&quot; url=&quot;http://www.flickr.com/photos/straup/galleries/72157617483228192&quot; 
-owner=&quot;35034348999@N01&quot; 
-         primary_photo_id=&quot;292882708&quot; date_create=&quot;1241028772&quot; date_update=&quot;1270111667&quot; count_photos=&quot;17&quot;
- count_videos=&quot;0&quot; primary_photo_server=&quot;112&quot; primary_photo_farm=&quot;1&quot; primary_photo_secret=&quot;7f29861bc4&quot;&gt;
-       &lt;title&gt;Cat Pictures I've Sent To Kevin Collins&lt;/title&gt;
-       &lt;description /&gt;
-&lt;/gallery&gt;</pre>
+<pre>Cat Pictures I've Sent To Kevin Collins</pre>
             
 
             
@@ -948,26 +938,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;galleries total=&quot;9&quot; page=&quot;1&quot; pages=&quot;1&quot; per_page=&quot;100&quot; user_id=&quot;34427469121@N01&quot;&gt;
-   &lt;gallery id=&quot;5704-72157622637971865&quot; 
-             url=&quot;http://www.flickr.com/photos/george/galleries/72157622637971865&quot; 
-             owner=&quot;34427469121@N01&quot; date_create=&quot;1257711422&quot; date_update=&quot;1260360756&quot;
-             primary_photo_id=&quot;107391222&quot;  primary_photo_server=&quot;39&quot; 
-             primary_photo_farm=&quot;1&quot; primary_photo_secret=&quot;ffa&quot;
-             count_photos=&quot;16&quot; count_videos=&quot;2&quot; &gt;
-       &lt;title&gt;I like me some black &amp; white&lt;/title&gt;
-       &lt;description&gt;black and whites&lt;/description&gt;
-   &lt;/gallery&gt;
-   &lt;gallery id=&quot;5704-72157622566655097&quot; 
-            url=&quot;http://www.flickr.com/photos/george/galleries/72157622566655097&quot; 
-            owner=&quot;34427469121@N01&quot; date_create=&quot;1256852229&quot; date_update=&quot;1260462343&quot; 
-            primary_photo_id=&quot;497374910&quot; primary_photo_server=&quot;231&quot; 
-            primary_photo_farm=&quot;1&quot; primary_photo_secret=&quot;9ae0f&quot;
-            count_photos=&quot;18&quot; count_videos=&quot;0&quot; &gt;
-       &lt;title&gt;People Sleeping in Libraries&lt;/title&gt;
-       &lt;description /&gt;
-   &lt;/gallery&gt;
-&lt;/galleries&gt;</pre>
+<pre>I like me some black &amp; whiteblack and whitesPeople Sleeping in Libraries</pre>
             
 
             
@@ -1058,26 +1029,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;galleries total=&quot;7&quot; page=&quot;1&quot; pages=&quot;1&quot; per_page=&quot;100&quot;&gt;
-    &lt;gallery id=&quot;9634-72157621980433950&quot; 
-             url=&quot;http://www.flickr.com/photos/revdancatt/galleries/72157621980433950&quot; 
-             owner=&quot;35468159852@N01&quot; date_create=&quot;1249748647&quot; date_update=&quot;1260486168&quot; 
-            primary_photo_id=&quot;2080242123&quot; primary_photo_server=&quot;2209&quot; 
-            primary_photo_farm=&quot;3&quot; primary_photo_secret=&quot;55c9&quot;
-             count_photos=&quot;18&quot; count_videos=&quot;0&quot;&gt;
-        &lt;title&gt;Vivitar Ultra Wide &amp; Slim Selection&lt;/title&gt;
-        &lt;description&gt;The cheap and cheerful camera that isn't quite as cheap as it used to be.&lt;/description&gt;
-    &lt;/gallery&gt;
-   &lt;gallery id=&quot;22342631-72157622254010831&quot; 
-             url=&quot;http://www.flickr.com/photos/22365685@N03/galleries/72157622254010831&quot; 
-             owner=&quot;22365685@N03&quot; date_create=&quot;1253035020&quot; date_update=&quot;1260431618&quot; 
-             primary_photo_id=&quot;3182914049&quot; primary_photo_server=&quot;3319&quot; 
-             primary_photo_farm=&quot;4&quot; primary_photo_secret=&quot;b94fb&quot;
-             count_photos=&quot;13&quot; count_videos=&quot;0&quot;&gt;
-        &lt;title&gt;Awesome Pics&lt;/title&gt;
-        &lt;description /&gt;
-    &lt;gallery&gt;
-&lt;/galleries&gt;</pre>
+<pre>Vivitar Ultra Wide &amp; Slim SelectionThe cheap and cheerful camera that isn't quite as cheap as it used to be.Awesome Pics</pre>
             
 
             
@@ -1125,13 +1077,10 @@ request.</p>
 </dd><dt>extras </dt>
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned
-record. Currently supported fields are: <tt>description</tt>,
-<tt>license</tt>, <tt>date_upload</tt>, <tt>date_taken</tt>,
-<tt>owner_name</tt>, <tt>icon_server</tt>, <tt>original_format</tt>,
-<tt>last_update</tt>, <tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>,
-<tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>, <tt>path_alias</tt>,
-<tt>url_sq</tt>, <tt>url_t</tt>, <tt>url_s</tt>, <tt>url_m</tt>,
-<tt>url_z</tt>, <tt>url_l</tt>, <tt>url_o</tt></p>
+record. Currently supported fields are: description, license, date_upload,
+date_taken, owner_name, icon_server, original_format, last_update, geo,
+tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
+url_m, url_z, url_l, url_o</p>
 </dd><dt>per_page </dt>
 <dd>
 <p>Number of photos to return per page. If this argument is omitted, it
@@ -1176,14 +1125,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;photos page=&quot;1&quot; pages=&quot;1&quot; perpage=&quot;500&quot; total=&quot;2&quot;&gt;
-       &lt;photo id=&quot;2822546461&quot; owner=&quot;78398753@N00&quot; secret=&quot;2dbcdb589f&quot; server=&quot;1&quot; farm=&quot;1&quot; title=&quot;FOO&quot; 
-     ispublic=&quot;1&quot; isfriend=&quot;0&quot; isfamily=&quot;0&quot; is_primary=&quot;1&quot; has_comment=&quot;1&quot;&gt;
-               &lt;comment&gt;best cat picture ever!&lt;/comment&gt;
-       &lt;/photo&gt;
-       &lt;photo id=&quot;2822544806&quot; owner=&quot;78398753@N00&quot; secret=&quot;bd93cbe917&quot; server=&quot;1&quot; farm=&quot;1&quot; title=&quot;OOK&quot; 
-     ispublic=&quot;1&quot; isfriend=&quot;0&quot; isfamily=&quot;0&quot; is_primary=&quot;0&quot; has_comment=&quot;0&quot; /&gt;
-&lt;/photos&gt;</pre>
+<pre>best cat picture ever!</pre>
             
 
             

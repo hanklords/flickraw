@@ -492,8 +492,6 @@ href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
 <p><b>Returns</b></p>
-
-<pre>&lt;photoset id=&quot;1234&quot; url=&quot;http://www.flickr.com/photos/bees/sets/1234/&quot; /&gt;</pre>
             
 
             
@@ -755,10 +753,10 @@ also be passed along in photo_ids list argument.</p>
 </dd><dt>photo_ids <em>(required)</em> </dt>
 <dd>
 <p>A comma-delimited list of photo ids to include in the set. They will appear
-in the set in the order sent. This list <b>must</b> contain the primary
-photo id. All photos must belong to the owner of the set. This list of
-photos replaces the existing list. Call flickr.photosets.addPhoto to append
-a photo to a set.</p>
+in the set in the order sent. This list must contain the primary photo id.
+All photos must belong to the owner of the set. This list of photos
+replaces the existing list. Call flickr.photosets.addPhoto to append a
+photo to a set.</p>
 </dd></dl>
 
 <p><b>Error codes</b></p>
@@ -932,11 +930,6 @@ href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
 <p><b>Returns</b></p>
-
-<pre>&lt;prevphoto id=&quot;2980&quot; secret=&quot;973da1e709&quot;
-       title=&quot;boo!&quot; url=&quot;/photos/bees/2980/&quot; /&gt; 
-&lt;nextphoto id=&quot;2985&quot; secret=&quot;059b664012&quot;
-       title=&quot;Amsterdam Amstel&quot; url=&quot;/photos/bees/2985/&quot; /&gt;</pre>
             
 
             
@@ -1021,10 +1014,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;photoset id=&quot;72157624618609504&quot; owner=&quot;34427469121@N01&quot; primary=&quot;4847770787&quot; secret=&quot;6abd09a292&quot; server=&quot;4153&quot; farm=&quot;5&quot; photos=&quot;55&quot; count_views=&quot;523&quot; count_comments=&quot;1&quot; count_photos=&quot;43&quot; count_videos=&quot;12&quot; can_comment=&quot;1&quot; date_create=&quot;1280530593&quot; date_update=&quot;1308091378&quot;&gt;
-    &lt;title&gt;Mah Kittehs&lt;/title&gt;
-    &lt;description&gt;Sixty and Niner. Born on the 3rd of May, 2010, or thereabouts. Came to my place on Thursday, July 29, 2010.&lt;/description&gt;
-&lt;/photoset&gt;</pre>
+<pre>Mah KittehsSixty and Niner. Born on the 3rd of May, 2010, or thereabouts. Came to my place on Thursday, July 29, 2010.</pre>
             
 
             
@@ -1119,16 +1109,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;photosets page=&quot;1&quot; pages=&quot;1&quot; perpage=&quot;30&quot; total=&quot;2&quot; cancreate=&quot;1&quot;&gt;
-    &lt;photoset id=&quot;72157626216528324&quot; primary=&quot;5504567858&quot; secret=&quot;017804c585&quot; server=&quot;5174&quot; farm=&quot;6&quot; photos=&quot;22&quot; videos=&quot;0&quot; count_views=&quot;137&quot; count_comments=&quot;0&quot; can_comment=&quot;1&quot; date_create=&quot;1299514498&quot; date_update=&quot;1300335009&quot;&gt;
-      &lt;title&gt;Avis Blanche&lt;/title&gt;
-      &lt;description&gt;My Grandma's Recipe File.&lt;/description&gt;
-    &lt;/photoset&gt;
-    &lt;photoset id=&quot;72157624618609504&quot; primary=&quot;4847770787&quot; secret=&quot;6abd09a292&quot; server=&quot;4153&quot; farm=&quot;5&quot; photos=&quot;43&quot; videos=&quot;12&quot; count_views=&quot;523&quot; count_comments=&quot;1&quot; can_comment=&quot;1&quot; date_create=&quot;1280530593&quot; date_update=&quot;1308091378&quot;&gt;
-      &lt;title&gt;Mah Kittehs&lt;/title&gt;
-      &lt;description&gt;Sixty and Niner. Born on the 3rd of May, 2010, or thereabouts. Came to my place on Thursday, July 29, 2010.&lt;/description&gt;
-    &lt;/photoset&gt;
-&lt;/photosets&gt;</pre>
+<pre>Avis BlancheMy Grandma's Recipe File.Mah KittehsSixty and Niner. Born on the 3rd of May, 2010, or thereabouts. Came to my place on Thursday, July 29, 2010.</pre>
             
 
             
@@ -1186,11 +1167,9 @@ url_m, url_o</p>
 making an authenticated call to view a photoset you own. Valid values are:</p>
 </dd></dl>
 
-<p>&lt;ul&gt; &lt;li&gt;1 public photos&lt;/li&gt; &lt;li&gt;2 private photos
-visible to friends&lt;/li&gt; &lt;li&gt;3 private photos visible to
-family&lt;/li&gt; &lt;li&gt;4 private photos visible to friends &amp;
-family&lt;/li&gt; &lt;li&gt;5 completely private photos&lt;/li&gt;
-&lt;/ul&gt;</p>
+<p>1 public photos 2 private photos visible to friends 3 private photos
+visible to family 4 private photos visible to friends &amp; family 5
+completely private photos</p>
 <dl class="rdoc-list"><dt>per_page </dt>
 <dd>
 <p>Number of photos to return per page. If this argument is omitted, it
@@ -1201,8 +1180,8 @@ defaults to 500. The maximum allowed value is 500.</p>
 1.</p>
 </dd><dt>media </dt>
 <dd>
-<p>Filter results by media type. Possible values are <tt>all</tt> (default),
-<tt>photos</tt> or <tt>videos</tt></p>
+<p>Filter results by media type. Possible values are all (default), photos or
+videos</p>
 </dd></dl>
 
 <p><b>Error codes</b></p>
@@ -1242,13 +1221,6 @@ href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
 <p><b>Returns</b></p>
-
-<pre>&lt;photoset id=&quot;4&quot; primary=&quot;2483&quot; page=&quot;1&quot; perpage=&quot;500&quot; pages=&quot;1&quot; total=&quot;2&quot;&gt;
-       &lt;photo id=&quot;2484&quot; secret=&quot;123456&quot; server=&quot;1&quot;
-               title=&quot;my photo&quot; isprimary=&quot;0&quot; /&gt; 
-       &lt;photo id=&quot;2483&quot; secret=&quot;123456&quot; server=&quot;1&quot;
-               title=&quot;flickr rocks&quot; isprimary=&quot;1&quot; /&gt; 
-&lt;/photoset&gt;</pre>
             
 
             

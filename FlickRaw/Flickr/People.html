@@ -296,9 +296,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;user nsid=&quot;12037949632@N01&quot;&gt;
-       &lt;username&gt;Stewart&lt;/username&gt; 
-&lt;/user&gt;</pre>
+<pre>Stewart</pre>
             
 
             
@@ -383,9 +381,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;user nsid=&quot;12037949632@N01&quot;&gt;
-       &lt;username&gt;Stewart&lt;/username&gt; 
-&lt;/user&gt;</pre>
+<pre>Stewart</pre>
             
 
             
@@ -475,19 +471,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;person nsid=&quot;12037949754@N01&quot; ispro=&quot;0&quot; iconserver=&quot;122&quot; iconfarm=&quot;1&quot;&gt;
-       &lt;username&gt;bees&lt;/username&gt;
-       &lt;realname&gt;Cal Henderson&lt;/realname&gt;
-        &lt;mbox_sha1sum&gt;eea6cd28e3d0003ab51b0058a684d94980b727ac&lt;/mbox_sha1sum&gt;
-       &lt;location&gt;Vancouver, Canada&lt;/location&gt;
-       &lt;photosurl&gt;http://www.flickr.com/photos/bees/&lt;/photosurl&gt; 
-       &lt;profileurl&gt;http://www.flickr.com/people/bees/&lt;/profileurl&gt; 
-       &lt;photos&gt;
-               &lt;firstdate&gt;1071510391&lt;/firstdate&gt;
-               &lt;firstdatetaken&gt;1900-09-02 09:11:24&lt;/firstdatetaken&gt;
-               &lt;count&gt;449&lt;/count&gt;
-       &lt;/photos&gt;
-&lt;/person&gt;</pre>
+<pre>beesCal Hendersoneea6cd28e3d0003ab51b0058a684d94980b727acVancouver, Canadahttp://www.flickr.com/photos/bees/http://www.flickr.com/people/bees/10715103911900-09-02 09:11:24449</pre>
             
 
             
@@ -540,8 +524,7 @@ the calling user's photos.</p>
 <p>Safe search setting:</p>
 </dd></dl>
 
-<p>&lt;ul&gt; &lt;li&gt;1 for safe.&lt;/li&gt; &lt;li&gt;2 for
-moderate.&lt;/li&gt; &lt;li&gt;3 for restricted.&lt;/li&gt; &lt;/ul&gt;</p>
+<p>1 for safe. 2 for moderate. 3 for restricted.</p>
 
 <p>(Please note: Un-authed calls can only see Safe content.)</p>
 <dl class="rdoc-list"><dt>min_upload_date </dt>
@@ -569,33 +552,25 @@ the form of a mysql datetime.</p>
 <p>Content Type setting:</p>
 </dd></dl>
 
-<p>&lt;ul&gt; &lt;li&gt;1 for photos only.&lt;/li&gt; &lt;li&gt;2 for
-screenshots only.&lt;/li&gt; &lt;li&gt;3 for 'other' only.&lt;/li&gt;
-&lt;li&gt;4 for photos and screenshots.&lt;/li&gt; &lt;li&gt;5 for
-screenshots and 'other'.&lt;/li&gt; &lt;li&gt;6 for photos and
-'other'.&lt;/li&gt; &lt;li&gt;7 for photos, screenshots, and 'other'
-(all).&lt;/li&gt; &lt;/ul&gt;</p>
+<p>1 for photos only. 2 for screenshots only. 3 for 'other' only. 4 for photos
+and screenshots. 5 for screenshots and 'other'. 6 for photos and 'other'. 7
+for photos, screenshots, and 'other' (all).</p>
 <dl class="rdoc-list"><dt>privacy_filter </dt>
 <dd>
 <p>Return photos only matching a certain privacy level. This only applies when
 making an authenticated call to view photos you own. Valid values are:</p>
 </dd></dl>
 
-<p>&lt;ul&gt; &lt;li&gt;1 public photos&lt;/li&gt; &lt;li&gt;2 private photos
-visible to friends&lt;/li&gt; &lt;li&gt;3 private photos visible to
-family&lt;/li&gt; &lt;li&gt;4 private photos visible to friends &amp;
-family&lt;/li&gt; &lt;li&gt;5 completely private photos&lt;/li&gt;
-&lt;/ul&gt;</p>
+<p>1 public photos 2 private photos visible to friends 3 private photos
+visible to family 4 private photos visible to friends &amp; family 5
+completely private photos</p>
 <dl class="rdoc-list"><dt>extras </dt>
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned
-record. Currently supported fields are: <tt>description</tt>,
-<tt>license</tt>, <tt>date_upload</tt>, <tt>date_taken</tt>,
-<tt>owner_name</tt>, <tt>icon_server</tt>, <tt>original_format</tt>,
-<tt>last_update</tt>, <tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>,
-<tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>, <tt>path_alias</tt>,
-<tt>url_sq</tt>, <tt>url_t</tt>, <tt>url_s</tt>, <tt>url_m</tt>,
-<tt>url_z</tt>, <tt>url_l</tt>, <tt>url_o</tt></p>
+record. Currently supported fields are: description, license, date_upload,
+date_taken, owner_name, icon_server, original_format, last_update, geo,
+tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
+url_m, url_z, url_l, url_o</p>
 </dd><dt>per_page </dt>
 <dd>
 <p>Number of photos to return per page. If this argument is omitted, it
@@ -713,14 +688,10 @@ the list of photos to those taken by that member.</p>
 </dd><dt>extras </dt>
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned
-record. Currently supported fields are: <tt>description</tt>,
-<tt>license</tt>, <tt>date_upload</tt>, <tt>date_taken</tt>,
-<tt>date_person_added</tt>, <tt>owner_name</tt>, <tt>icon_server</tt>,
-<tt>original_format</tt>, <tt>last_update</tt>, <tt>geo</tt>,
-<tt>tags</tt>, <tt>machine_tags</tt>, <tt>o_dims</tt>, <tt>views</tt>,
-<tt>media</tt>, <tt>path_alias</tt>, <tt>url_sq</tt>, <tt>url_t</tt>,
-<tt>url_s</tt>, <tt>url_m</tt>, <tt>url_z</tt>, <tt>url_l</tt>,
-<tt>url_o</tt></p>
+record. Currently supported fields are: description, license, date_upload,
+date_taken, date_person_added, owner_name, icon_server, original_format,
+last_update, geo, tags, machine_tags, o_dims, views, media, path_alias,
+url_sq, url_t, url_s, url_m, url_z, url_l, url_o</p>
 </dd><dt>per_page </dt>
 <dd>
 <p>Number of photos to return per page. If this argument is omitted, it
@@ -768,21 +739,6 @@ href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
 <p><b>Returns</b></p>
-
-<pre>&lt;photos page=&quot;2&quot; has_next_page=&quot;1&quot; perpage=&quot;10&quot;&gt;
-       &lt;photo id=&quot;2636&quot; owner=&quot;47058503995@N01&quot; 
-               secret=&quot;a123456&quot; server=&quot;2&quot; title=&quot;test_04&quot;
-               ispublic=&quot;1&quot; isfriend=&quot;0&quot; isfamily=&quot;0&quot; /&gt;
-       &lt;photo id=&quot;2635&quot; owner=&quot;47058503995@N01&quot;
-               secret=&quot;b123456&quot; server=&quot;2&quot; title=&quot;test_03&quot;
-               ispublic=&quot;0&quot; isfriend=&quot;1&quot; isfamily=&quot;1&quot; /&gt;
-       &lt;photo id=&quot;2633&quot; owner=&quot;47058503995@N01&quot;
-               secret=&quot;c123456&quot; server=&quot;2&quot; title=&quot;test_01&quot;
-               ispublic=&quot;1&quot; isfriend=&quot;0&quot; isfamily=&quot;0&quot; /&gt;
-       &lt;photo id=&quot;2610&quot; owner=&quot;12037949754@N01&quot;
-               secret=&quot;d123456&quot; server=&quot;2&quot; title=&quot;00_tall&quot;
-               ispublic=&quot;1&quot; isfriend=&quot;0&quot; isfamily=&quot;0&quot; /&gt;
-&lt;/photos&gt;</pre>
             
 
             
@@ -829,9 +785,8 @@ request.</p>
 <p>The NSID of the user to fetch groups for.</p>
 </dd><dt>invitation_only </dt>
 <dd>
-<p>Include public groups that require &lt;a href="<a
-href="http://www.flickr.com/help/groups/#10">an">www.flickr.com/help/groups/#10">an</a>
-invitation&lt;/a&gt; or administrator approval to join.</p>
+<p>Include public groups that require an invitation or administrator approval
+to join.</p>
 </dd></dl>
 
 <p><b>Error codes</b></p>
@@ -872,15 +827,6 @@ href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
 <p><b>Returns</b></p>
-
-<pre>&lt;groups&gt;
-       &lt;group nsid=&quot;34427469792@N01&quot; name=&quot;FlickrCentral&quot;
-               admin=&quot;0&quot; eighteenplus=&quot;0&quot; invitation_only=&quot;0&quot; /&gt; 
-       &lt;group nsid=&quot;37114057624@N01&quot; name=&quot;Cal's Test Group&quot;
-               admin=&quot;1&quot; eighteenplus=&quot;0&quot; invitation_only=&quot;1&quot; /&gt; 
-       &lt;group nsid=&quot;34955637532@N01&quot; name=&quot;18+ Group&quot;
-               admin=&quot;1&quot; eighteenplus=&quot;1&quot; invitation_only=&quot;0&quot; /&gt; 
-&lt;/groups&gt;</pre>
             
 
             
@@ -930,20 +876,16 @@ request.</p>
 <p>Safe search setting:</p>
 </dd></dl>
 
-<p>&lt;ul&gt; &lt;li&gt;1 for safe.&lt;/li&gt; &lt;li&gt;2 for
-moderate.&lt;/li&gt; &lt;li&gt;3 for restricted.&lt;/li&gt; &lt;/ul&gt;</p>
+<p>1 for safe. 2 for moderate. 3 for restricted.</p>
 
 <p>(Please note: Un-authed calls can only see Safe content.)</p>
 <dl class="rdoc-list"><dt>extras </dt>
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned
-record. Currently supported fields are: <tt>description</tt>,
-<tt>license</tt>, <tt>date_upload</tt>, <tt>date_taken</tt>,
-<tt>owner_name</tt>, <tt>icon_server</tt>, <tt>original_format</tt>,
-<tt>last_update</tt>, <tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>,
-<tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>, <tt>path_alias</tt>,
-<tt>url_sq</tt>, <tt>url_t</tt>, <tt>url_s</tt>, <tt>url_m</tt>,
-<tt>url_z</tt>, <tt>url_l</tt>, <tt>url_o</tt></p>
+record. Currently supported fields are: description, license, date_upload,
+date_taken, owner_name, icon_server, original_format, last_update, geo,
+tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
+url_m, url_z, url_l, url_o</p>
 </dd><dt>per_page </dt>
 <dd>
 <p>Number of photos to return per page. If this argument is omitted, it
@@ -1082,25 +1024,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;user id=&quot;12037949754@N01&quot; ispro=&quot;1&quot;&gt;
-       &lt;username&gt;Bees&lt;/username&gt; 
-       &lt;bandwidth
-               maxbytes=&quot;2147483648&quot; maxkb=&quot;2097152&quot;
-               usedbytes=&quot;383724&quot; usedkb=&quot;374&quot;
-               remainingbytes=&quot;2147099924&quot; remainingkb=&quot;2096777&quot;
-        /&gt; 
-       &lt;filesize
-               maxbytes=&quot;10485760&quot; maxkb=&quot;10240&quot;
-       /&gt; 
-       &lt;sets
-               created=&quot;27&quot;
-               remaining=&quot;lots&quot;
-       /&gt;
-       &lt;videos
-               uploaded=&quot;5&quot;
-               remaining=&quot;lots&quot;
-       /&gt;
-&lt;/user&gt;</pre>
+<pre>Bees</pre>
             
 
             

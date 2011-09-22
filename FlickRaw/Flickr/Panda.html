@@ -279,11 +279,7 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><b>Returns</b></p>
 
-<pre>&lt;pandas&gt;
-   &lt;panda&gt;ling ling&lt;/panda&gt;
-   &lt;panda&gt;hsing hsing&lt;/panda&gt;
-   &lt;panda&gt;wang wang&lt;/panda&gt;
-&lt;/pandas&gt;</pre>
+<pre>ling linghsing hsingwang wang</pre>
             
 
             
@@ -331,32 +327,18 @@ public (and "safe") photos.</p>
 <dl class="rdoc-list"><dt>panda_name <em>(required)</em> </dt>
 <dd>
 <p>The name of the panda to ask for photos from. There are currently three
-pandas named:&lt;br /&gt;&lt;br /&gt;</p>
+pandas named:ling ling</p>
 </dd></dl>
 
-<p>&lt;ul&gt; &lt;li&gt;&lt;strong&gt;&lt;a href="<a
-href="http://flickr.com/photos/ucumari/126073203/">ling">flickr.com/photos/ucumari/126073203/">ling</a>
-ling&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;&lt;a
-href="<a
-href="http://flickr.com/photos/lynnehicks/136407353">hsing">flickr.com/photos/lynnehicks/136407353">hsing</a>
-hsing&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;&lt;a
-href="<a
-href="http://flickr.com/photos/perfectpandas/1597067182/">wang">flickr.com/photos/perfectpandas/1597067182/">wang</a>
-wang&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;/ul&gt;</p>
-
-<p>&lt;br /&gt;You can fetch a list of all the current pandas using the &lt;a
-href="/services/api/flickr.panda.getList.html"&gt;flickr.panda.getList&lt;/a&gt;
-API method.</p>
+<p>hsing hsing wang wang You can fetch a list of all the current pandas using
+the flickr.panda.getList API method.</p>
 <dl class="rdoc-list"><dt>extras </dt>
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned
-record. Currently supported fields are: <tt>description</tt>,
-<tt>license</tt>, <tt>date_upload</tt>, <tt>date_taken</tt>,
-<tt>owner_name</tt>, <tt>icon_server</tt>, <tt>original_format</tt>,
-<tt>last_update</tt>, <tt>geo</tt>, <tt>tags</tt>, <tt>machine_tags</tt>,
-<tt>o_dims</tt>, <tt>views</tt>, <tt>media</tt>, <tt>path_alias</tt>,
-<tt>url_sq</tt>, <tt>url_t</tt>, <tt>url_s</tt>, <tt>url_m</tt>,
-<tt>url_z</tt>, <tt>url_l</tt>, <tt>url_o</tt></p>
+record. Currently supported fields are: description, license, date_upload,
+date_taken, owner_name, icon_server, original_format, last_update, geo,
+tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
+url_m, url_z, url_l, url_o</p>
 </dd><dt>per_page </dt>
 <dd>
 <p>Number of photos to return per page. If this argument is omitted, it
@@ -408,14 +390,6 @@ href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
 <p><b>Returns</b></p>
-
-<pre>&lt;photos interval=&quot;60000&quot; lastupdate=&quot;1235765058272&quot; total=&quot;120&quot; panda=&quot;ling ling&quot;&gt;
-    &lt;photo title=&quot;Shorebirds at Pillar Point&quot; id=&quot;3313428913&quot; secret=&quot;2cd3cb44cb&quot;
-        server=&quot;3609&quot; farm=&quot;4&quot; owner=&quot;72442527@N00&quot; ownername=&quot;Pat Ulrich&quot;/&gt;
-    &lt;photo title=&quot;Battle of the sky&quot; id=&quot;3313713993&quot; secret=&quot;3f7f51500f&quot;
-        server=&quot;3382&quot; farm=&quot;4&quot; owner=&quot;10459691@N05&quot; ownername=&quot;Sven Ericsson&quot;/&gt;
-    &lt;!-- and so on --&gt;
-&lt;/photos&gt;</pre>
             
 
             
