@@ -1,0 +1,1 @@
+exclude: [master, gen_rdoc.sh, created.rid]
