@@ -1,0 +1,161 @@
+= Flickraw
+
+Flickraw is a library to access flickr[http://flickr.com] api in a simple way.
+It maps exactly the methods described in {the official api documentation}[http://www.flickr.com/services/api].
+It also tries to present the data returned in a simple and intuitive way.
+The methods are fetched from flickr when loading the library by using introspection capabilities. So it is always up-to-date with regards to new methods added by flickr.
+
+The github repository: http://github.com/hanklords/flickraw
+
+= Installation
+Type this in a console (you might need to be superuser)
+ gem install flickraw
+
+This will recreate the documentation by fetching the methods descriptions from flickr and then virtually plugging them in standard rdoc documentation.
+ $ cd flickraw
+ $ rake rdoc
+
+= Features
+
+* Small single file: flickraw.rb is less than 400 lines
+* Minimal dependencies
+* Complete support of flickr API. This doesn't require an update of the library
+* Ruby syntax similar to the flickr api
+* Flickr authentication
+* Photo upload
+* Proxy support
+* Flickr URLs helpers
+
+= Usage
+
+== Simple
+
+ require 'flickraw'
+
+ FlickRaw.api_key="... Your API key ..."
+ FlickRaw.shared_secret="... Your shared secret ..."
+
+ list   = flickr.photos.getRecent
+
+ id     = list[0].id
+ secret = list[0].secret
+ info = flickr.photos.getInfo :photo_id => id, :secret => secret
+
+ puts info.title           # => "PICT986"
+ puts info.dates.taken     # => "2006-07-06 15:16:18"
+
+
+ sizes = flickr.photos.getSizes :photo_id => id
+
+ original = sizes.find {|s| s.label == 'Original' }
+ puts original.width       # => "800" -- may fail if they have no original marked image
+
+== Authentication
+
+  require 'flickraw'
+
+  FlickRaw.api_key="... Your API key ..."
+  FlickRaw.shared_secret="... Your shared secret ..."
+
+  token = flickr.get_request_token
+  auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
+
+  puts "Open this url in your process to complete the authication process : #{auth_url}"
+  puts "Copy here the number given when you complete the process."
+  verify = gets.strip
+
+  begin
+    flickr.get_access_token(token['oauth_token'], token['oauth_token_secret'], verify)
+    login = flickr.test.login
+    puts "You are now authenticated as #{login.username} with token #{flickr.access_token} and secret #{flickr.access_secret}"
+  rescue FlickRaw::FailedResponse => e
+    puts "Authentication failed : #{e.msg}"
+  end
+
+If the user has already been authenticated, you can reuse the access token and access secret:
+
+  require 'flickraw'
+
+  FlickRaw.api_key="... Your API key ..."
+  FlickRaw.shared_secret="... Your shared secret ..."
+
+  flickr.access_token = "... Your access token ..."
+  flickr.access_secret = "... Your access secret ..."
+
+  # From here you are logged:
+  login = flickr.test.login
+  puts "You are now authenticated as #{login.username}"
+
+== Upload
+
+  require 'flickraw'
+
+  FlickRaw.api_key="... Your API key ..."
+  FlickRaw.shared_secret="... Your shared secret ..."
+
+  PHOTO_PATH='photo.jpg'
+
+  # You need to be authentified to do that, see the previous examples.
+  flickr.upload_photo PHOTO_PATH, :title => "Title", :description => "This is the description"
+
+== Proxy
+
+  require 'flickraw'
+  FlickRaw.proxy = "http://user:pass@proxy.example.com:3129/"
+
+== Flickr URL Helpers
+
+There are some helpers to build flickr urls :
+
+=== url, url_m, url_s, url_t, url_b, url_z, url_o
+
+  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  FlickRaw.url_b(info) # => "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg"
+
+=== url_profile
+
+  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  FlickRaw.url_profile(info) # => "http://www.flickr.com/people/41650587@N02/"
+
+=== url_photopage
+
+  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  FlickRaw.url_photopage(info) # => "http://www.flickr.com/photos/41650587@N02/3839885270"
+
+=== url_photoset, url_photosets
+
+  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  FlickRaw.url_photosets(info) # => "http://www.flickr.com/photos/41650587@N02/sets/"
+
+=== url_short, url_short_m, url_short_s, url_short_t
+
+  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  FlickRaw.url_short(info) # => "http://flic.kr/p/6Rjq7s"
+
+=== url_photostream
+
+  info = flickr.photos.getInfo(:photo_id => "3839885270")
+  FlickRaw.url_photostream(info) # => "http://www.flickr.com/photos/41650587@N02/"
+
+
+See the _examples_ directory to find more examples.
+
+== Cached version
+
+You can use
+
+  require 'flickraw-cached'
+
+instead of
+
+   require 'flickraw'
+
+This way it it doesn't fetch available flickr methods each time it is loaded.
+The flickraw-cached gem is on rubygems.org and should be up-to-date with regard to flickr api most of the time.
+
+= Notes
+
+If you want to use the api authenticated with several user at the same time, you must pass the authentication token explicitely each time.
+This is because it is keeping the authentication token internally.
+As an alternative, you can create new Flickr objects besides Kernel.flickr which is created for you. Use Flickr.new to this effect.
+
