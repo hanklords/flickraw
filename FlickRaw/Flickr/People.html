@@ -1,306 +1,337 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-  <title>Class: FlickRaw::Flickr::People</title>
+	<title>Class: FlickRaw::Flickr::People</title>
 
-  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
 
-  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
 
 </head>
-<body id="top" class="class">
+<body class="class">
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
         <h3 class="section-header">
           <a href="../../index.html">Home</a>
           <a href="../../index.html#classes">Classes</a>
           <a href="../../index.html#methods">Methods</a>
         </h3>
-      </div>
-    </div>
+			</div>
+		</div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
 
-      
-    </div>
+			
+		</div>
 
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link"><a href="../Request.html">FlickRaw::Request</a></p>
-        
-      </div>
-      
+		<div id="class-metadata">
 
-      
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Request.html">FlickRaw::Request</a></p>
+				
+			</div>
+			
 
-      
+			<!-- Namespace Contents -->
+			
 
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-findByEmail">#findByEmail</a></li>
-          
-          <li><a href="#method-i-findByUsername">#findByUsername</a></li>
-          
-          <li><a href="#method-i-getInfo">#getInfo</a></li>
-          
-          <li><a href="#method-i-getPhotos">#getPhotos</a></li>
-          
-          <li><a href="#method-i-getPhotosOf">#getPhotosOf</a></li>
-          
-          <li><a href="#method-i-getPublicGroups">#getPublicGroups</a></li>
-          
-          <li><a href="#method-i-getPublicPhotos">#getPublicPhotos</a></li>
-          
-          <li><a href="#method-i-getUploadStatus">#getUploadStatus</a></li>
-          
-        </ul>
-      </div>
-      
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-findByEmail">#findByEmail</a></li>
+					
+					<li><a href="#method-i-findByUsername">#findByUsername</a></li>
+					
+					<li><a href="#method-i-getInfo">#getInfo</a></li>
+					
+					<li><a href="#method-i-getPhotos">#getPhotos</a></li>
+					
+					<li><a href="#method-i-getPhotosOf">#getPhotosOf</a></li>
+					
+					<li><a href="#method-i-getPublicGroups">#getPublicGroups</a></li>
+					
+					<li><a href="#method-i-getPublicPhotos">#getPublicPhotos</a></li>
+					
+					<li><a href="#method-i-getUploadStatus">#getUploadStatus</a></li>
+					
+				</ul>
+			</div>
+			
 
-      
-    </div>
+			<!-- Included Modules -->
+			
+		</div>
 
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
-        
-        </ul>
-      </div>
-      
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
 
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
 
-        <ul class="link-list">
-        
-          <li><a href="../../FlickRaw.html">FlickRaw</a></li>
-        
-          <li><a href="../../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-        
-          <li><a href="../../FlickRaw/OAuth.html">FlickRaw::OAuth</a></li>
-        
-          <li><a href="../../FlickRaw/Request.html">FlickRaw::Request</a></li>
-        
-          <li><a href="../../FlickRaw/Response.html">FlickRaw::Response</a></li>
-        
-          <li><a href="../../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
-        
-          <li><a href="../../Object.html">Object</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
+				<ul class="link-list">
+				
+					<li><a href="../../FlickRaw.html">FlickRaw</a></li>
+				
+					<li><a href="../../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+				
+					<li><a href="../../FlickRaw/Request.html">FlickRaw::Request</a></li>
+				
+					<li><a href="../../FlickRaw/Response.html">FlickRaw::Response</a></li>
+				
+					<li><a href="../../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+				
+					<li><a href="../../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
 
-      
-    </div>
-  </div>
+			
+		</div>
+	</div>
 
-  <div id="documentation">
-    <h1 class="class">FlickRaw::Flickr::People</h1>
+	<div id="documentation">
+		<h1 class="class">FlickRaw::Flickr::People</h1>
 
-    <div id="description" class="description">
-      
-    </div><!-- description -->
+		<div id="description">
+			
+		</div>
 
-    
-    
-    
-    <div id="5Buntitled-5D" class="documentation-section">
-      
+		<!-- Constants -->
+		
 
-      
+		<!-- Attributes -->
+		
 
-      
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
 
-      
+		
+			<div id="find-y-mail-method" class="method-detail ">
+				<a name="method-i-findByEmail"></a>
 
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+				<div class="method-heading">
+				
+					<span class="method-name">findByEmail</span><span
+						class="method-args">(:find_email => 'find_email')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
 
-      
-        <div id="findByEmail-method" class="method-detail ">
-          <a name="method-i-findByEmail"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">findByEmail</span><span
-              class="method-args">(:find_email => 'find_email')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+				<div class="method-description">
+					
+					<p>
+<a
 href="http://www.flickr.com/services/api/flickr.people.findByEmail.html">flickr.people.findByEmail</a>
-request.</p>
+request.
+</p>
+<p>
+Return a user&#8217;s NSID, given their email address
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>find_email <em>(required)</em> </dt><dd><p>
+The email address of the user to find  (may be primary or secondary).
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>User not found</em>
+</p>
+<p>
+No user with the supplied email address was found.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ Stewart</pre>
+					
 
-<p>Return a user's NSID, given their email address</p>
-
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>find_email <em>(required)</em> </dt>
-<dd>
-<p>The email address of the user to find  (may be primary or secondary).</p>
-</dd></dl>
-
-<p><b>Error codes</b></p>
-<ul><li>
-<p>1: <em>User not found</em></p>
-
-<p>No user with the supplied email address was found.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><b>Returns</b></p>
-
-<pre>Stewart</pre>
-            
-
-            
-            <div class="method-source-code" id="findByEmail-source">
+					
+					<div class="method-source-code"
+						id="find-y-mail-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -308,84 +339,118 @@ href="../Flickr.html">Flickr</a>.</p>
     @flickr.call 'flickr.people.findByEmail', *args
   end
 </pre>
-            </div><!-- findByEmail-source -->
-            
-          </div>
+					</div>
+					
+				</div>
 
-          
+				
 
-          
-        </div><!-- findByEmail-method -->
+				
+			</div>
 
-      
-        <div id="findByUsername-method" class="method-detail ">
-          <a name="method-i-findByUsername"></a>
+		
+			<div id="find-y-sername-method" class="method-detail ">
+				<a name="method-i-findByUsername"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">findByUsername</span><span
-              class="method-args">(:username => 'username')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+				<div class="method-heading">
+				
+					<span class="method-name">findByUsername</span><span
+						class="method-args">(:username => 'username')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
 
-          <div class="method-description">
-            
-            <p><a
+				<div class="method-description">
+					
+					<p>
+<a
 href="http://www.flickr.com/services/api/flickr.people.findByUsername.html">flickr.people.findByUsername</a>
-request.</p>
+request.
+</p>
+<p>
+Return a user&#8217;s NSID, given their username.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>username <em>(required)</em> </dt><dd><p>
+The username of the user to lookup.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>User not found</em>
+</p>
+<p>
+No user with the supplied username was found.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ Stewart</pre>
+					
 
-<p>Return a user's NSID, given their username.</p>
-
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>username <em>(required)</em> </dt>
-<dd>
-<p>The username of the user to lookup.</p>
-</dd></dl>
-
-<p><b>Error codes</b></p>
-<ul><li>
-<p>1: <em>User not found</em></p>
-
-<p>No user with the supplied username was found.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><b>Returns</b></p>
-
-<pre>Stewart</pre>
-            
-
-            
-            <div class="method-source-code" id="findByUsername-source">
+					
+					<div class="method-source-code"
+						id="find-y-sername-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -393,89 +458,124 @@ href="../Flickr.html">Flickr</a>.</p>
     @flickr.call 'flickr.people.findByUsername', *args
   end
 </pre>
-            </div><!-- findByUsername-source -->
-            
-          </div>
+					</div>
+					
+				</div>
 
-          
+				
 
-          
-        </div><!-- findByUsername-method -->
+				
+			</div>
 
-      
-        <div id="getInfo-method" class="method-detail ">
-          <a name="method-i-getInfo"></a>
+		
+			<div id="get-nfo-method" class="method-detail ">
+				<a name="method-i-getInfo"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">getInfo</span><span
-              class="method-args">(:user_id => 'user_id',:url => 'url')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+				<div class="method-heading">
+				
+					<span class="method-name">getInfo</span><span
+						class="method-args">(:user_id => 'user_id',:url => 'url')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
 
-          <div class="method-description">
-            
-            <p><a
+				<div class="method-description">
+					
+					<p>
+<a
 href="http://www.flickr.com/services/api/flickr.people.getInfo.html">flickr.people.getInfo</a>
-request.</p>
+request.
+</p>
+<p>
+Get information about a user.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>user_id <em>(required)</em> </dt><dd><p>
+The NSID of the user to fetch information about.
+</p>
+</dd>
+<dt>url <em>(required)</em> </dt><dd><p>
+As an alternative to user_id, load a member based on URL, either photos or
+people URL.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>User not found</em>
+</p>
+<p>
+The user id passed did not match a <a href="../Flickr.html">Flickr</a>
+user.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ beesCal Hendersoneea6cd28e3d0003ab51b0058a684d94980b727acVancouver, Canadahttp://www.flickr.com/photos/bees/http://www.flickr.com/people/bees/10715103911900-09-02 09:11:24449</pre>
+					
 
-<p>Get information about a user.</p>
-
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>user_id <em>(required)</em> </dt>
-<dd>
-<p>The NSID of the user to fetch information about.</p>
-</dd><dt>url <em>(required)</em> </dt>
-<dd>
-<p>As an alternative to user_id, load a member based on URL, either photos or
-people URL.</p>
-</dd></dl>
-
-<p><b>Error codes</b></p>
-<ul><li>
-<p>1: <em>User not found</em></p>
-
-<p>The user id passed did not match a <a href="../Flickr.html">Flickr</a>
-user.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><b>Returns</b></p>
-
-<pre>beesCal Hendersoneea6cd28e3d0003ab51b0058a684d94980b727acVancouver, Canadahttp://www.flickr.com/photos/bees/http://www.flickr.com/people/bees/10715103911900-09-02 09:11:24449</pre>
-            
-
-            
-            <div class="method-source-code" id="getInfo-source">
+					
+					<div class="method-source-code"
+						id="get-nfo-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -483,162 +583,227 @@ href="../Flickr.html">Flickr</a>.</p>
     @flickr.call 'flickr.people.getInfo', *args
   end
 </pre>
-            </div><!-- getInfo-source -->
-            
-          </div>
+					</div>
+					
+				</div>
 
-          
+				
 
-          
-        </div><!-- getInfo-method -->
+				
+			</div>
 
-      
-        <div id="getPhotos-method" class="method-detail ">
-          <a name="method-i-getPhotos"></a>
+		
+			<div id="get-hotos-method" class="method-detail ">
+				<a name="method-i-getPhotos"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">getPhotos</span><span
-              class="method-args">(:user_id => 'user_id',:safe_search => 'safe_search',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date',:content_type => 'content_type',:privacy_filter => 'privacy_filter',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+				<div class="method-heading">
+				
+					<span class="method-name">getPhotos</span><span
+						class="method-args">(:user_id => 'user_id',:safe_search => 'safe_search',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date',:content_type => 'content_type',:privacy_filter => 'privacy_filter',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
 
-          <div class="method-description">
-            
-            <p><a
+				<div class="method-description">
+					
+					<p>
+<a
 href="http://www.flickr.com/services/api/flickr.people.getPhotos.html">flickr.people.getPhotos</a>
-request.</p>
-
-<p>Return photos from the given user's photostream. Only photos visible to the
-calling user will be returned. This method must be authenticated; to return
-public photos for a user, use flickr.people.getPublicPhotos.</p>
-
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>user_id <em>(required)</em> </dt>
-<dd>
-<p>The NSID of the user who's photos to return. A value of "me" will return
-the calling user's photos.</p>
-</dd><dt>safe_search </dt>
-<dd>
-<p>Safe search setting:</p>
-</dd></dl>
-
-<p>1 for safe. 2 for moderate. 3 for restricted.</p>
-
-<p>(Please note: Un-authed calls can only see Safe content.)</p>
-<dl class="rdoc-list"><dt>min_upload_date </dt>
-<dd>
-<p>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
+request.
+</p>
+<p>
+Return photos from the given user&#8217;s photostream. Only photos visible
+to the calling user will be returned. This method must be authenticated; to
+return public photos for a user, use flickr.people.getPublicPhotos.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>user_id <em>(required)</em> </dt><dd><p>
+The NSID of the user who&#8217;s photos to return. A value of
+&#8220;me&#8221; will return the calling user&#8217;s photos.
+</p>
+</dd>
+<dt>safe_search </dt><dd><p>
+Safe search setting:
+</p>
+</dd>
+</dl>
+<p>
+1 for safe. 2 for moderate. 3 for restricted.
+</p>
+<p>
+(Please note: Un-authed calls can only see Safe content.)
+</p>
+<dl>
+<dt>min_upload_date </dt><dd><p>
+Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
 greater than or equal to this value will be returned. The date should be in
-the form of a unix timestamp.</p>
-</dd><dt>max_upload_date </dt>
-<dd>
-<p>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
+the form of a unix timestamp.
+</p>
+</dd>
+<dt>max_upload_date </dt><dd><p>
+Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
 less than or equal to this value will be returned. The date should be in
-the form of a unix timestamp.</p>
-</dd><dt>min_taken_date </dt>
-<dd>
-<p>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
+the form of a unix timestamp.
+</p>
+</dd>
+<dt>min_taken_date </dt><dd><p>
+Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
 greater than or equal to this value will be returned. The date should be in
-the form of a mysql datetime.</p>
-</dd><dt>max_taken_date </dt>
-<dd>
-<p>Maximum taken date. <a href="Photos.html">Photos</a> with an taken date
+the form of a mysql datetime.
+</p>
+</dd>
+<dt>max_taken_date </dt><dd><p>
+Maximum taken date. <a href="Photos.html">Photos</a> with an taken date
 less than or equal to this value will be returned. The date should be in
-the form of a mysql datetime.</p>
-</dd><dt>content_type </dt>
-<dd>
-<p>Content Type setting:</p>
-</dd></dl>
-
-<p>1 for photos only. 2 for screenshots only. 3 for 'other' only. 4 for photos
-and screenshots. 5 for screenshots and 'other'. 6 for photos and 'other'. 7
-for photos, screenshots, and 'other' (all).</p>
-<dl class="rdoc-list"><dt>privacy_filter </dt>
-<dd>
-<p>Return photos only matching a certain privacy level. This only applies when
-making an authenticated call to view photos you own. Valid values are:</p>
-</dd></dl>
-
-<p>1 public photos 2 private photos visible to friends 3 private photos
-visible to family 4 private photos visible to friends &amp; family 5
-completely private photos</p>
-<dl class="rdoc-list"><dt>extras </dt>
-<dd>
-<p>A comma-delimited list of extra information to fetch for each returned
+the form of a mysql datetime.
+</p>
+</dd>
+<dt>content_type </dt><dd><p>
+Content Type setting:
+</p>
+</dd>
+</dl>
+<p>
+1 for photos only. 2 for screenshots only. 3 for &#8216;other&#8217;
+only. 4 for photos and screenshots. 5 for screenshots and
+&#8216;other&#8217;. 6 for photos and &#8216;other&#8217;. 7 for photos,
+screenshots, and &#8216;other&#8217; (all).
+</p>
+<dl>
+<dt>privacy_filter </dt><dd><p>
+Return photos only matching a certain privacy level. This only applies when
+making an authenticated call to view photos you own. Valid values are:
+</p>
+</dd>
+</dl>
+<p>
+1 public photos 2 private photos visible to friends 3 private photos
+visible to family 4 private photos visible to friends &amp; family 5
+completely private photos
+</p>
+<dl>
+<dt>extras </dt><dd><p>
+A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: description, license, date_upload,
 date_taken, owner_name, icon_server, original_format, last_update, geo,
 tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
-url_m, url_z, url_l, url_o</p>
-</dd><dt>per_page </dt>
-<dd>
-<p>Number of photos to return per page. If this argument is omitted, it
-defaults to 100. The maximum allowed value is 500.</p>
-</dd><dt>page </dt>
-<dd>
-<p>The page of results to return. If this argument is omitted, it defaults to
-1.</p>
-</dd></dl>
+url_m, url_z, url_l, url_o
+</p>
+</dd>
+<dt>per_page </dt><dd><p>
+Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+</p>
+</dd>
+<dt>page </dt><dd><p>
+The page of results to return. If this argument is omitted, it defaults to
+1.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Required arguments missing</em>
+</p>
+</li>
+<li><p>
+2: <em>Unknown user</em>
+</p>
+<p>
+A user_id was passed which did not match a valid flickr user.
+</p>
+</li>
+<li><p>
+96: <em>Invalid signature</em>
+</p>
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li><p>
+97: <em>Missing signature</em>
+</p>
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li><p>
+98: <em>Login failed / Invalid auth token</em>
+</p>
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li><p>
+99: <em>User not logged in / Insufficient permissions</em>
+</p>
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+					
 
-<p><b>Error codes</b></p>
-<ul><li>
-<p>1: <em>Required arguments missing</em></p>
-</li><li>
-<p>2: <em>Unknown user</em></p>
-
-<p>A user_id was passed which did not match a valid flickr user.</p>
-</li><li>
-<p>96: <em>Invalid signature</em></p>
-
-<p>The passed signature was invalid.</p>
-</li><li>
-<p>97: <em>Missing signature</em></p>
-
-<p>The call required signing but no signature was sent.</p>
-</li><li>
-<p>98: <em>Login failed / Invalid auth token</em></p>
-
-<p>The login details or auth token passed were invalid.</p>
-</li><li>
-<p>99: <em>User not logged in / Insufficient permissions</em></p>
-
-<p>The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.</p>
-</li></ul>
-            
-
-            
-            <div class="method-source-code" id="getPhotos-source">
+					
+					<div class="method-source-code"
+						id="get-hotos-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -646,103 +811,142 @@ href="../Flickr.html">Flickr</a>.</p>
     @flickr.call 'flickr.people.getPhotos', *args
   end
 </pre>
-            </div><!-- getPhotos-source -->
-            
-          </div>
+					</div>
+					
+				</div>
 
-          
+				
 
-          
-        </div><!-- getPhotos-method -->
+				
+			</div>
 
-      
-        <div id="getPhotosOf-method" class="method-detail ">
-          <a name="method-i-getPhotosOf"></a>
+		
+			<div id="get-hotos-f-method" class="method-detail ">
+				<a name="method-i-getPhotosOf"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">getPhotosOf</span><span
-              class="method-args">(:user_id => 'user_id',:owner_id => 'owner_id',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+				<div class="method-heading">
+				
+					<span class="method-name">getPhotosOf</span><span
+						class="method-args">(:user_id => 'user_id',:owner_id => 'owner_id',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
 
-          <div class="method-description">
-            
-            <p><a
+				<div class="method-description">
+					
+					<p>
+<a
 href="http://www.flickr.com/services/api/flickr.people.getPhotosOf.html">flickr.people.getPhotosOf</a>
-request.</p>
-
-<p>Returns a list of photos containing a particular <a
-href="../Flickr.html">Flickr</a> member.</p>
-
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>user_id <em>(required)</em> </dt>
-<dd>
-<p>The NSID of the user you want to find photos of. A value of "me" will
-search against photos of the calling user, for authenticated calls.</p>
-</dd><dt>owner_id </dt>
-<dd>
-<p>An NSID of a <a href="../Flickr.html">Flickr</a> member. This will restrict
-the list of photos to those taken by that member.</p>
-</dd><dt>extras </dt>
-<dd>
-<p>A comma-delimited list of extra information to fetch for each returned
+request.
+</p>
+<p>
+Returns a list of photos containing a particular <a
+href="../Flickr.html">Flickr</a> member.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>user_id <em>(required)</em> </dt><dd><p>
+The NSID of the user you want to find photos of. A value of
+&#8220;me&#8221; will search against photos of the calling user, for
+authenticated calls.
+</p>
+</dd>
+<dt>owner_id </dt><dd><p>
+An NSID of a <a href="../Flickr.html">Flickr</a> member. This will restrict
+the list of photos to those taken by that member.
+</p>
+</dd>
+<dt>extras </dt><dd><p>
+A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: description, license, date_upload,
 date_taken, date_person_added, owner_name, icon_server, original_format,
 last_update, geo, tags, machine_tags, o_dims, views, media, path_alias,
-url_sq, url_t, url_s, url_m, url_z, url_l, url_o</p>
-</dd><dt>per_page </dt>
-<dd>
-<p>Number of photos to return per page. If this argument is omitted, it
-defaults to 100. The maximum allowed value is 500.</p>
-</dd><dt>page </dt>
-<dd>
-<p>The page of results to return. If this argument is omitted, it defaults to
-1.</p>
-</dd></dl>
+url_sq, url_t, url_s, url_m, url_z, url_l, url_o
+</p>
+</dd>
+<dt>per_page </dt><dd><p>
+Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+</p>
+</dd>
+<dt>page </dt><dd><p>
+The page of results to return. If this argument is omitted, it defaults to
+1.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>User not found.</em>
+</p>
+<p>
+A user_id was passed which did not match a valid flickr user.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+					
 
-<p><b>Error codes</b></p>
-<ul><li>
-<p>1: <em>User not found.</em></p>
-
-<p>A user_id was passed which did not match a valid flickr user.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><b>Returns</b></p>
-            
-
-            
-            <div class="method-source-code" id="getPhotosOf-source">
+					
+					<div class="method-source-code"
+						id="get-hotos-f-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -750,87 +954,122 @@ href="../Flickr.html">Flickr</a>.</p>
     @flickr.call 'flickr.people.getPhotosOf', *args
   end
 </pre>
-            </div><!-- getPhotosOf-source -->
-            
-          </div>
+					</div>
+					
+				</div>
 
-          
+				
 
-          
-        </div><!-- getPhotosOf-method -->
+				
+			</div>
 
-      
-        <div id="getPublicGroups-method" class="method-detail ">
-          <a name="method-i-getPublicGroups"></a>
+		
+			<div id="get-ublic-roups-method" class="method-detail ">
+				<a name="method-i-getPublicGroups"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">getPublicGroups</span><span
-              class="method-args">(:user_id => 'user_id',:invitation_only => 'invitation_only')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+				<div class="method-heading">
+				
+					<span class="method-name">getPublicGroups</span><span
+						class="method-args">(:user_id => 'user_id',:invitation_only => 'invitation_only')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
 
-          <div class="method-description">
-            
-            <p><a
+				<div class="method-description">
+					
+					<p>
+<a
 href="http://www.flickr.com/services/api/flickr.people.getPublicGroups.html">flickr.people.getPublicGroups</a>
-request.</p>
+request.
+</p>
+<p>
+Returns the list of public groups a user is a member of.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>user_id <em>(required)</em> </dt><dd><p>
+The NSID of the user to fetch groups for.
+</p>
+</dd>
+<dt>invitation_only </dt><dd><p>
+Include public groups that require an invitation or administrator approval
+to join.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>User not found</em>
+</p>
+<p>
+The user id passed did not match a <a href="../Flickr.html">Flickr</a>
+user.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+					
 
-<p>Returns the list of public groups a user is a member of.</p>
-
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>user_id <em>(required)</em> </dt>
-<dd>
-<p>The NSID of the user to fetch groups for.</p>
-</dd><dt>invitation_only </dt>
-<dd>
-<p>Include public groups that require an invitation or administrator approval
-to join.</p>
-</dd></dl>
-
-<p><b>Error codes</b></p>
-<ul><li>
-<p>1: <em>User not found</em></p>
-
-<p>The user id passed did not match a <a href="../Flickr.html">Flickr</a>
-user.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><b>Returns</b></p>
-            
-
-            
-            <div class="method-source-code" id="getPublicGroups-source">
+					
+					<div class="method-source-code"
+						id="get-ublic-roups-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -838,103 +1077,143 @@ href="../Flickr.html">Flickr</a>.</p>
     @flickr.call 'flickr.people.getPublicGroups', *args
   end
 </pre>
-            </div><!-- getPublicGroups-source -->
-            
-          </div>
+					</div>
+					
+				</div>
 
-          
+				
 
-          
-        </div><!-- getPublicGroups-method -->
+				
+			</div>
 
-      
-        <div id="getPublicPhotos-method" class="method-detail ">
-          <a name="method-i-getPublicPhotos"></a>
+		
+			<div id="get-ublic-hotos-method" class="method-detail ">
+				<a name="method-i-getPublicPhotos"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">getPublicPhotos</span><span
-              class="method-args">(:user_id => 'user_id',:safe_search => 'safe_search',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+				<div class="method-heading">
+				
+					<span class="method-name">getPublicPhotos</span><span
+						class="method-args">(:user_id => 'user_id',:safe_search => 'safe_search',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
 
-          <div class="method-description">
-            
-            <p><a
+				<div class="method-description">
+					
+					<p>
+<a
 href="http://www.flickr.com/services/api/flickr.people.getPublicPhotos.html">flickr.people.getPublicPhotos</a>
-request.</p>
-
-<p>Get a list of public photos for the given user.</p>
-
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>user_id <em>(required)</em> </dt>
-<dd>
-<p>The NSID of the user who's photos to return.</p>
-</dd><dt>safe_search </dt>
-<dd>
-<p>Safe search setting:</p>
-</dd></dl>
-
-<p>1 for safe. 2 for moderate. 3 for restricted.</p>
-
-<p>(Please note: Un-authed calls can only see Safe content.)</p>
-<dl class="rdoc-list"><dt>extras </dt>
-<dd>
-<p>A comma-delimited list of extra information to fetch for each returned
+request.
+</p>
+<p>
+Get a list of public photos for the given user.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>user_id <em>(required)</em> </dt><dd><p>
+The NSID of the user who&#8217;s photos to return.
+</p>
+</dd>
+<dt>safe_search </dt><dd><p>
+Safe search setting:
+</p>
+</dd>
+</dl>
+<p>
+1 for safe. 2 for moderate. 3 for restricted.
+</p>
+<p>
+(Please note: Un-authed calls can only see Safe content.)
+</p>
+<dl>
+<dt>extras </dt><dd><p>
+A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: description, license, date_upload,
 date_taken, owner_name, icon_server, original_format, last_update, geo,
 tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
-url_m, url_z, url_l, url_o</p>
-</dd><dt>per_page </dt>
-<dd>
-<p>Number of photos to return per page. If this argument is omitted, it
-defaults to 100. The maximum allowed value is 500.</p>
-</dd><dt>page </dt>
-<dd>
-<p>The page of results to return. If this argument is omitted, it defaults to
-1.</p>
-</dd></dl>
+url_m, url_z, url_l, url_o
+</p>
+</dd>
+<dt>per_page </dt><dd><p>
+Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.
+</p>
+</dd>
+<dt>page </dt><dd><p>
+The page of results to return. If this argument is omitted, it defaults to
+1.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>User not found</em>
+</p>
+<p>
+The user NSID passed was not a valid user NSID.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+					
 
-<p><b>Error codes</b></p>
-<ul><li>
-<p>1: <em>User not found</em></p>
-
-<p>The user NSID passed was not a valid user NSID.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.</p>
-</li></ul>
-            
-
-            
-            <div class="method-source-code" id="getPublicPhotos-source">
+					
+					<div class="method-source-code"
+						id="get-ublic-hotos-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -942,93 +1221,134 @@ href="../Flickr.html">Flickr</a>.</p>
     @flickr.call 'flickr.people.getPublicPhotos', *args
   end
 </pre>
-            </div><!-- getPublicPhotos-source -->
-            
-          </div>
+					</div>
+					
+				</div>
 
-          
+				
 
-          
-        </div><!-- getPublicPhotos-method -->
+				
+			</div>
 
-      
-        <div id="getUploadStatus-method" class="method-detail ">
-          <a name="method-i-getUploadStatus"></a>
+		
+			<div id="get-pload-tatus-method" class="method-detail ">
+				<a name="method-i-getUploadStatus"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">getUploadStatus</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+				<div class="method-heading">
+				
+					<span class="method-name">getUploadStatus</span><span
+						class="method-args"></span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
 
-          <div class="method-description">
-            
-            <p><a
+				<div class="method-description">
+					
+					<p>
+<a
 href="http://www.flickr.com/services/api/flickr.people.getUploadStatus.html">flickr.people.getUploadStatus</a>
-request.</p>
+request.
+</p>
+<p>
+Returns information for the calling user related to photo uploads.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+96: <em>Invalid signature</em>
+</p>
+<p>
+The passed signature was invalid.
+</p>
+</li>
+<li><p>
+97: <em>Missing signature</em>
+</p>
+<p>
+The call required signing but no signature was sent.
+</p>
+</li>
+<li><p>
+98: <em>Login failed / Invalid auth token</em>
+</p>
+<p>
+The login details or auth token passed were invalid.
+</p>
+</li>
+<li><p>
+99: <em>User not logged in / Insufficient permissions</em>
+</p>
+<p>
+The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ Bees</pre>
+					
 
-<p>Returns information for the calling user related to photo uploads.</p>
-
-<p><b>Arguments</b></p>
-
-<p><b>Error codes</b></p>
-<ul><li>
-<p>96: <em>Invalid signature</em></p>
-
-<p>The passed signature was invalid.</p>
-</li><li>
-<p>97: <em>Missing signature</em></p>
-
-<p>The call required signing but no signature was sent.</p>
-</li><li>
-<p>98: <em>Login failed / Invalid auth token</em></p>
-
-<p>The login details or auth token passed were invalid.</p>
-</li><li>
-<p>99: <em>User not logged in / Insufficient permissions</em></p>
-
-<p>The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><b>Returns</b></p>
-
-<pre>Bees</pre>
-            
-
-            
-            <div class="method-source-code" id="getUploadStatus-source">
+					
+					<div class="method-source-code"
+						id="get-pload-tatus-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -1036,28 +1356,33 @@ href="../Flickr.html">Flickr</a>.</p>
     @flickr.call 'flickr.people.getUploadStatus', *args
   end
 </pre>
-            </div><!-- getUploadStatus-source -->
-            
-          </div>
+					</div>
+					
+				</div>
 
-          
+				
 
-          
-        </div><!-- getUploadStatus-method -->
+				
+			</div>
 
-      
-      </div><!-- public-instance-method-details -->
-    
-    </div><!-- 5Buntitled-5D -->
-  
+		
+		</div>
+	
 
-  </div><!-- documentation -->
+	</div>
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
 
 </body>
 </html>

@@ -1,298 +1,329 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
 
-  <title>Class: FlickRaw::Flickr::Reflection</title>
+	<title>Class: FlickRaw::Flickr::Reflection</title>
 
-  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
 
-  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/jquery.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/thickbox-compressed.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/quicksearch.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../../js/darkfish.js" type="text/javascript"
+		charset="utf-8"></script>
 
 </head>
-<body id="top" class="class">
+<body class="class">
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
+	<div id="metadata">
+		<div id="home-metadata">
+			<div id="home-section" class="section">
         <h3 class="section-header">
           <a href="../../index.html">Home</a>
           <a href="../../index.html#classes">Classes</a>
           <a href="../../index.html#methods">Methods</a>
         </h3>
-      </div>
-    </div>
+			</div>
+		</div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+		<div id="file-metadata">
+			<div id="file-list-section" class="section">
+				<h3 class="section-header">In Files</h3>
+				<div class="section-body">
+					<ul>
+					
+						<li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+					
+					</ul>
+				</div>
+			</div>
 
-      
-    </div>
+			
+		</div>
 
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link"><a href="../Request.html">FlickRaw::Request</a></p>
-        
-      </div>
-      
+		<div id="class-metadata">
 
-      
+			<!-- Parent Class -->
+			
+			<div id="parent-class-section" class="section">
+				<h3 class="section-header">Parent</h3>
+				
+				<p class="link"><a href="../Request.html">FlickRaw::Request</a></p>
+				
+			</div>
+			
 
-      
+			<!-- Namespace Contents -->
+			
 
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-getMethodInfo">#getMethodInfo</a></li>
-          
-          <li><a href="#method-i-getMethods">#getMethods</a></li>
-          
-        </ul>
-      </div>
-      
+			<!-- Method Quickref -->
+			
+			<div id="method-list-section" class="section">
+				<h3 class="section-header">Methods</h3>
+				<ul class="link-list">
+					
+					<li><a href="#method-i-getMethodInfo">#getMethodInfo</a></li>
+					
+					<li><a href="#method-i-getMethods">#getMethods</a></li>
+					
+				</ul>
+			</div>
+			
 
-      
-    </div>
+			<!-- Included Modules -->
+			
+		</div>
 
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
-        
-        </ul>
-      </div>
-      
+		<div id="project-metadata">
+			
+			
+			<div id="fileindex-section" class="section project-section">
+				<h3 class="section-header">Files</h3>
+				<ul>
+				
+					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+				
+				</ul>
+			</div>
+			
 
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
+			<div id="classindex-section" class="section project-section">
+				<h3 class="section-header">Class Index
+					<span class="search-toggle"><img src="../../images/find.png"
+						height="16" width="16" alt="[+]"
+						title="show/hide quicksearch" /></span></h3>
+				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+				<fieldset>
+					<legend>Quicksearch</legend>
+					<input type="text" name="quicksearch" value=""
+						class="quicksearch-field" />
+				</fieldset>
+				</form>
 
-        <ul class="link-list">
-        
-          <li><a href="../../FlickRaw.html">FlickRaw</a></li>
-        
-          <li><a href="../../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-        
-          <li><a href="../../FlickRaw/OAuth.html">FlickRaw::OAuth</a></li>
-        
-          <li><a href="../../FlickRaw/Request.html">FlickRaw::Request</a></li>
-        
-          <li><a href="../../FlickRaw/Response.html">FlickRaw::Response</a></li>
-        
-          <li><a href="../../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
-        
-          <li><a href="../../Object.html">Object</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
+				<ul class="link-list">
+				
+					<li><a href="../../FlickRaw.html">FlickRaw</a></li>
+				
+					<li><a href="../../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+				
+					<li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+				
+					<li><a href="../../FlickRaw/Request.html">FlickRaw::Request</a></li>
+				
+					<li><a href="../../FlickRaw/Response.html">FlickRaw::Response</a></li>
+				
+					<li><a href="../../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
+				
+					<li><a href="../../Object.html">Object</a></li>
+				
+				</ul>
+				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
+			</div>
 
-      
-    </div>
-  </div>
+			
+		</div>
+	</div>
 
-  <div id="documentation">
-    <h1 class="class">FlickRaw::Flickr::Reflection</h1>
+	<div id="documentation">
+		<h1 class="class">FlickRaw::Flickr::Reflection</h1>
 
-    <div id="description" class="description">
-      
-    </div><!-- description -->
+		<div id="description">
+			
+		</div>
 
-    
-    
-    
-    <div id="5Buntitled-5D" class="documentation-section">
-      
+		<!-- Constants -->
+		
 
-      
+		<!-- Attributes -->
+		
 
-      
+		<!-- Methods -->
+		
+		<div id="public-instance-method-details" class="method-section section">
+			<h3 class="section-header">Public Instance Methods</h3>
 
-      
+		
+			<div id="get-ethod-nfo-method" class="method-detail ">
+				<a name="method-i-getMethodInfo"></a>
 
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+				<div class="method-heading">
+				
+					<span class="method-name">getMethodInfo</span><span
+						class="method-args">(:method_name => 'method_name')</span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
 
-      
-        <div id="getMethodInfo-method" class="method-detail ">
-          <a name="method-i-getMethodInfo"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">getMethodInfo</span><span
-              class="method-args">(:method_name => 'method_name')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+				<div class="method-description">
+					
+					<p>
+<a
 href="http://www.flickr.com/services/api/flickr.reflection.getMethodInfo.html">flickr.reflection.getMethodInfo</a>
-request.</p>
+request.
+</p>
+<p>
+Returns information for a given flickr API method.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<dl>
+<dt>method_name <em>(required)</em> </dt><dd><p>
+The name of the method to fetch information for.
+</p>
+</dd>
+</dl>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+1: <em>Method not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ A fake methodxml-response-exampleexplanation of example response
+                        You API application key.
+                        Your favorite color.
+                        Full explanation...
+                        Full explanation...</pre>
+					
 
-<p>Returns information for a given flickr API method.</p>
-
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>method_name <em>(required)</em> </dt>
-<dd>
-<p>The name of the method to fetch information for.</p>
-</dd></dl>
-
-<p><b>Error codes</b></p>
-<ul><li>
-<p>1: <em>Method not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><b>Returns</b></p>
-
-<pre>A fake methodxml-response-exampleexplanation of example response
-                       You API application key.
-                       Your favorite color.
-                       Full explanation...
-                       Full explanation...</pre>
-            
-
-            
-            <div class="method-source-code" id="getMethodInfo-source">
+					
+					<div class="method-source-code"
+						id="get-ethod-nfo-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -300,76 +331,105 @@ href="../Flickr.html">Flickr</a>.</p>
     @flickr.call 'flickr.reflection.getMethodInfo', *args
   end
 </pre>
-            </div><!-- getMethodInfo-source -->
-            
-          </div>
+					</div>
+					
+				</div>
 
-          
+				
 
-          
-        </div><!-- getMethodInfo-method -->
+				
+			</div>
 
-      
-        <div id="getMethods-method" class="method-detail ">
-          <a name="method-i-getMethods"></a>
+		
+			<div id="get-ethods-method" class="method-detail ">
+				<a name="method-i-getMethods"></a>
 
-          
-          <div class="method-heading">
-            <span class="method-name">getMethods</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+				<div class="method-heading">
+				
+					<span class="method-name">getMethods</span><span
+						class="method-args"></span>
+					<span class="method-click-advice">click to toggle source</span>
+				
+				</div>
 
-          <div class="method-description">
-            
-            <p><a
+				<div class="method-description">
+					
+					<p>
+<a
 href="http://www.flickr.com/services/api/flickr.reflection.getMethods.html">flickr.reflection.getMethods</a>
-request.</p>
+request.
+</p>
+<p>
+Returns a list of available flickr API methods.
+</p>
+<p>
+<b>Arguments</b>
+</p>
+<p>
+<b>Error codes</b>
+</p>
+<ul>
+<li><p>
+100: <em>Invalid API Key</em>
+</p>
+<p>
+The API key passed was not valid or has expired.
+</p>
+</li>
+<li><p>
+105: <em>Service currently unavailable</em>
+</p>
+<p>
+The requested service is temporarily unavailable.
+</p>
+</li>
+<li><p>
+111: <em>Format &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested response format was not found.
+</p>
+</li>
+<li><p>
+112: <em>Method &#8220;xxx&#8221; not found</em>
+</p>
+<p>
+The requested method was not found.
+</p>
+</li>
+<li><p>
+114: <em>Invalid SOAP envelope</em>
+</p>
+<p>
+The SOAP envelope send in the request could not be parsed.
+</p>
+</li>
+<li><p>
+115: <em>Invalid XML-RPC Method Call</em>
+</p>
+<p>
+The XML-RPC request document could not be parsed.
+</p>
+</li>
+<li><p>
+116: <em>Bad URL found</em>
+</p>
+<p>
+One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.
+</p>
+</li>
+</ul>
+<p>
+<b>Returns</b>
+</p>
+<pre>
+ flickr.blogs.getListflickr.blogs.postPhotoflickr.contacts.getListflickr.contacts.getPublicList</pre>
+					
 
-<p>Returns a list of available flickr API methods.</p>
-
-<p><b>Arguments</b></p>
-
-<p><b>Error codes</b></p>
-<ul><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><b>Returns</b></p>
-
-<pre>flickr.blogs.getListflickr.blogs.postPhotoflickr.contacts.getListflickr.contacts.getPublicList</pre>
-            
-
-            
-            <div class="method-source-code" id="getMethods-source">
+					
+					<div class="method-source-code"
+						id="get-ethods-source">
 <pre>
 
 # Generated automatically from flickr api
@@ -377,28 +437,33 @@ href="../Flickr.html">Flickr</a>.</p>
     @flickr.call 'flickr.reflection.getMethods', *args
   end
 </pre>
-            </div><!-- getMethods-source -->
-            
-          </div>
+					</div>
+					
+				</div>
 
-          
+				
 
-          
-        </div><!-- getMethods-method -->
+				
+			</div>
 
-      
-      </div><!-- public-instance-method-details -->
-    
-    </div><!-- 5Buntitled-5D -->
-  
+		
+		</div>
+	
 
-  </div><!-- documentation -->
+	</div>
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
+
+	<div id="rdoc-debugging-section-dump" class="debugging-section">
+	
+		<p>Disabled; run with --debug to generate this.</p>
+	
+	</div>
+
+	<div id="validator-badges">
+		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+			Rdoc Generator</a> 1.1.6</small>.</p>
+	</div>
 
 </body>
 </html>
