@@ -31,9 +31,16 @@ module FlickRaw
   FLICKR_OAUTH_AUTHORIZE='http://www.flickr.com/services/oauth/authorize'.freeze
   FLICKR_OAUTH_ACCESS_TOKEN='http://www.flickr.com/services/oauth/access_token'.freeze
 
-  REST_PATH='http://api.flickr.com/services/rest/'.freeze
-  UPLOAD_PATH='http://api.flickr.com/services/upload/'.freeze
-  REPLACE_PATH='http://api.flickr.com/services/replace/'.freeze
+  END_POINT='http://api.flickr.com/services'.freeze
+  END_POINT_SECURE='https://secure.flickr.com/services'.freeze
+  
+  REST_PATH=(END_POINT + '/rest/').freeze
+  UPLOAD_PATH=(END_POINT + '/upload/').freeze
+  REPLACE_PATH=(END_POINT + '/replace/').freeze
+  
+  REST_PATH_SECURE=(END_POINT_SECURE + '/rest/').freeze
+  UPLOAD_PATH_SECURE=(END_POINT_SECURE + '/upload/').freeze
+  REPLACE_PATH_SECURE=(END_POINT_SECURE + '/replace/').freeze
 
   PHOTO_SOURCE_URL='http://farm%s.static.flickr.com/%s/%s_%s%s.%s'.freeze
   URL_PROFILE='http://www.flickr.com/people/'.freeze
@@ -282,6 +289,9 @@ module FlickRaw
     # Authenticated access token secret
     attr_accessor :access_secret
     
+    # Use ssl connection
+    attr_accessor :secure
+    
     def self.build(methods); methods.each { |m| build_request m } end
 
     def initialize # :nodoc:
@@ -298,7 +308,11 @@ module FlickRaw
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={}, &block)
-      http_response = @oauth_consumer.post_form(REST_PATH, @access_secret, {:oauth_token => @access_token}, build_args(args, req))
+      rest_path = @secure ? REST_PATH_SECURE :  REST_PATH
+      oauth_params = {:oauth_token => @access_token}
+      oauth_params[:oauth_signature_method] = "PLAINTEXT" if @secure
+      
+      http_response = @oauth_consumer.post_form(rest_path, @access_secret, oauth_params, build_args(args, req))
       process_response(req, http_response.body)
     end
 
@@ -330,14 +344,20 @@ module FlickRaw
     #  flickr.upload_photo '/path/to/the/photo', :title => 'Title', :description => 'This is the description'
     #
     # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
-    def upload_photo(file, args={}); upload_flickr(UPLOAD_PATH, file, args) end
+    def upload_photo(file, args={})
+      upload_path = @secure ? UPLOAD_PATH_SECURE : UPLOAD_PATH
+      upload_flickr(upload_path, file, args)
+    end
 
     # Use this to replace the photo with :photo_id with the photo in _file_.
     #
     #  flickr.replace_photo '/path/to/the/photo', :photo_id => id
     #
     # See http://www.flickr.com/services/api/replace.api.html for more information on the arguments.
-    def replace_photo(file, args={}); upload_flickr(REPLACE_PATH, file, args) end
+    def replace_photo(file, args={})
+      replace_path = @secure ? REPLACE_PATH_SECURE : REPLACE_PATH
+      upload_flickr(replace_path, file, args)
+    end
 
     private
     def build_args(args={}, method = nil)
@@ -378,7 +398,10 @@ module FlickRaw
     def upload_flickr(method, file, args={})
       args = build_args(args)
       args['photo'] = open(file, 'rb')
-      http_response = @oauth_consumer.post_multipart(method, @access_secret, {:oauth_token => @access_token}, args)
+      oauth_params = {:oauth_token => @access_token}
+      oauth_params[:oauth_signature_method] = "PLAINTEXT" if @secure
+      
+      http_response = @oauth_consumer.post_multipart(method, @access_secret, oauth_params, args)
       process_response(method, http_response.body)
     end
   end
