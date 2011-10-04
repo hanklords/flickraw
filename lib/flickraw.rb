@@ -25,7 +25,7 @@ require 'json'
 
 module FlickRaw
   VERSION='0.9'
-  USER_AGENT = "Flickraw/#{VERSION}"
+  USER_AGENT = "FlickRaw/#{VERSION}"
 
   FLICKR_OAUTH_REQUEST_TOKEN='http://www.flickr.com/services/oauth/request_token'.freeze
   FLICKR_OAUTH_AUTHORIZE='http://www.flickr.com/services/oauth/authorize'.freeze
@@ -289,9 +289,6 @@ module FlickRaw
     # Authenticated access token secret
     attr_accessor :access_secret
     
-    # Use ssl connection
-    attr_accessor :secure
-    
     def self.build(methods); methods.each { |m| build_request m } end
 
     def initialize # :nodoc:
@@ -308,9 +305,9 @@ module FlickRaw
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={}, &block)
-      rest_path = @secure ? REST_PATH_SECURE :  REST_PATH
+      rest_path = FlickRaw.secure ? REST_PATH_SECURE :  REST_PATH
       oauth_params = {:oauth_token => @access_token}
-      oauth_params[:oauth_signature_method] = "PLAINTEXT" if @secure
+      oauth_params[:oauth_signature_method] = "PLAINTEXT" if FlickRaw.secure
       
       http_response = @oauth_consumer.post_form(rest_path, @access_secret, oauth_params, build_args(args, req))
       process_response(req, http_response.body)
@@ -345,7 +342,7 @@ module FlickRaw
     #
     # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
     def upload_photo(file, args={})
-      upload_path = @secure ? UPLOAD_PATH_SECURE : UPLOAD_PATH
+      upload_path = FlickRaw.secure ? UPLOAD_PATH_SECURE : UPLOAD_PATH
       upload_flickr(upload_path, file, args)
     end
 
@@ -355,7 +352,7 @@ module FlickRaw
     #
     # See http://www.flickr.com/services/api/replace.api.html for more information on the arguments.
     def replace_photo(file, args={})
-      replace_path = @secure ? REPLACE_PATH_SECURE : REPLACE_PATH
+      replace_path = FlickRaw.secure ? REPLACE_PATH_SECURE : REPLACE_PATH
       upload_flickr(replace_path, file, args)
     end
 
@@ -399,7 +396,7 @@ module FlickRaw
       args = build_args(args)
       args['photo'] = open(file, 'rb')
       oauth_params = {:oauth_token => @access_token}
-      oauth_params[:oauth_signature_method] = "PLAINTEXT" if @secure
+      oauth_params[:oauth_signature_method] = "PLAINTEXT" if FlickRaw.secure
       
       http_response = @oauth_consumer.post_multipart(method, @access_secret, oauth_params, args)
       process_response(method, http_response.body)
@@ -415,7 +412,10 @@ module FlickRaw
     
     # Use a proxy
     attr_accessor :proxy
-
+    
+    # Use ssl connection
+    attr_accessor :secure
+    
     BASE58_ALPHABET="123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ".freeze
     def base58(id)
       id = id.to_i
