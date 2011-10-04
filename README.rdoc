@@ -103,6 +103,11 @@ If the user has already been authenticated, you can reuse the access token and a
   require 'flickraw'
   FlickRaw.proxy = "http://user:pass@proxy.example.com:3129/"
 
+== Secure endpoints
+
+  require 'flickraw'
+  FlickRaw.secure = true
+
 == Flickr URL Helpers
 
 There are some helpers to build flickr urls :
