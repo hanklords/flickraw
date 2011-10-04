@@ -41,6 +41,7 @@ module FlickRaw
   URL_SHORT='http://flic.kr/p/'.freeze
   
   class OAuth # :nodoc: all
+    class UnknownSignatureMethod < StandardError; end
     class FailedResponse < StandardError
       def initialize(str)
         @response = OAuth.parse_response(str)
@@ -62,12 +63,27 @@ module FlickRaw
       self.proxy = nil
     end
 
-    def sign(method, url, params, token_secret = nil, consumer_secret = @consumer_secret)
+    def sign_plaintext(method, url, params, token_secret, consumer_secret)
+      OAuth.escape(consumer_secret) + "&" + OAuth.escape(token_secret)
+    end
+    
+    def sign_hmac_sha1(method, url, params, token_secret, consumer_secret)
       params_norm = params.map {|k,v| OAuth.escape(k) + "=" + OAuth.escape(v) }.sort.join("&")
       text = method.to_s.upcase + "&" + OAuth.escape(url) + "&" + OAuth.escape(params_norm)
-      key = consumer_secret.to_s + "&" + token_secret.to_s
+      key = OAuth.escape(consumer_secret) + "&" + OAuth.escape(token_secret)
       digest = OpenSSL::Digest::Digest.new("sha1")
       [OpenSSL::HMAC.digest(digest, key, text)].pack('m0').gsub(/\n$/,'')
+    end
+    
+    def sign(method, url, params, token_secret = nil, consumer_secret = @consumer_secret)
+      case params[:oauth_signature_method]
+      when "HMAC-SHA1"
+        sign_hmac_sha1(method, url, params, token_secret, consumer_secret)
+      when "PLAINTEXT"
+        sign_plaintext(method, url, params, token_secret, consumer_secret)
+      else
+        raise UnknownSignatureMethod, params[:oauth_signature_method]
+      end
     end
     
     def authorization_header(url, params)
@@ -136,8 +152,11 @@ module FlickRaw
       oauth_params = gen_default_params.merge(oauth_params)
       params_signed = params.reject {|k,v| v.is_a? File}.merge(oauth_params)
       oauth_params[:oauth_signature] = sign(:post, url, params_signed, token_secret)
+
       url = URI.parse(url)
-      r = Net::HTTP.start(url.host, url.port, @proxy.host, @proxy.port, @proxy.user, @proxy.password) { |http| 
+      r = Net::HTTP.start(url.host, url.port,
+          @proxy.host, @proxy.port, @proxy.user, @proxy.password,
+          :use_ssl => url.scheme == 'https') { |http| 
         request = Net::HTTP::Post.new(url.path)
         request['User-Agent'] = @user_agent if @user_agent
         request['Authorization'] = authorization_header(url, oauth_params)
