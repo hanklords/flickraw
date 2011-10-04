@@ -99,34 +99,15 @@ module FlickRaw
       r = post_form(url, token_secret, oauth_params)
       OAuth.parse_response(r.body)
     end
-        
+
     def post_form(url, token_secret, oauth_params = {}, params = {})
-      oauth_params = gen_default_params.merge(oauth_params)
-      oauth_params[:oauth_signature] = sign(:post, url, params.merge(oauth_params), token_secret)
-      url = URI.parse(url)
-      r = Net::HTTP.start(url.host, url.port, @proxy.host, @proxy.port, @proxy.user, @proxy.password) { |http| 
-        request = Net::HTTP::Post.new(url.path)
-        request['User-Agent'] = @user_agent if @user_agent
-        request['Authorization'] = authorization_header(url, oauth_params)
-        request.form_data = params
-        http.request(request)
-      }
-      
-      raise FailedResponse.new(r.body) if r.is_a? Net::HTTPClientError
-      r
+      post(url, token_secret, oauth_params, params) {|request| request.form_data = params}
     end
     
     def post_multipart(url, token_secret, oauth_params = {}, params = {})
-      oauth_params = gen_default_params.merge(oauth_params)
-      params_signed = params.reject {|k,v| v.is_a? File}.merge(oauth_params)
-      oauth_params[:oauth_signature] = sign(:post, url, params_signed, token_secret)
-      url = URI.parse(url)
-      r = Net::HTTP.start(url.host, url.port, @proxy.host, @proxy.port, @proxy.user, @proxy.password) { |http| 
+      post(url, token_secret, oauth_params, params) {|request|
         boundary = "FlickRaw#{gen_nonce}"
-        request = Net::HTTP::Post.new(url.path)
-        request['User-Agent'] = @user_agent if @user_agent
         request['Content-type'] = "multipart/form-data, boundary=#{boundary}"
-        request['Authorization'] = authorization_header(url, oauth_params)
 
         request.body = ''
         params.each { |k, v|
@@ -147,12 +128,27 @@ module FlickRaw
         }
         
         request.body << "--#{boundary}--"
+      }
+    end
+
+    private
+    def post(url, token_secret, oauth_params, params)
+      oauth_params = gen_default_params.merge(oauth_params)
+      params_signed = params.reject {|k,v| v.is_a? File}.merge(oauth_params)
+      oauth_params[:oauth_signature] = sign(:post, url, params_signed, token_secret)
+      url = URI.parse(url)
+      r = Net::HTTP.start(url.host, url.port, @proxy.host, @proxy.port, @proxy.user, @proxy.password) { |http| 
+        request = Net::HTTP::Post.new(url.path)
+        request['User-Agent'] = @user_agent if @user_agent
+        request['Authorization'] = authorization_header(url, oauth_params)
+
+        yield request
         http.request(request)
       }
       
       raise FailedResponse.new(r.body) if r.is_a? Net::HTTPClientError
-      r      
-    end    
+      r
+    end
   end
 
   class Response
