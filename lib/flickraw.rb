@@ -27,13 +27,19 @@ module FlickRaw
   VERSION='0.9'
   USER_AGENT = "FlickRaw/#{VERSION}"
 
-  FLICKR_OAUTH_REQUEST_TOKEN='http://www.flickr.com/services/oauth/request_token'.freeze
-  FLICKR_OAUTH_AUTHORIZE='http://www.flickr.com/services/oauth/authorize'.freeze
-  FLICKR_OAUTH_ACCESS_TOKEN='http://www.flickr.com/services/oauth/access_token'.freeze
 
   END_POINT='http://api.flickr.com/services'.freeze
+  END_POINT2='http://www.flickr.com/services'.freeze
   END_POINT_SECURE='https://secure.flickr.com/services'.freeze
   
+  FLICKR_OAUTH_REQUEST_TOKEN=(END_POINT2 + '/oauth/request_token').freeze
+  FLICKR_OAUTH_AUTHORIZE=(END_POINT2 + '/oauth/authorize').freeze
+  FLICKR_OAUTH_ACCESS_TOKEN=(END_POINT2 + '/oauth/access_token').freeze
+  
+  FLICKR_OAUTH_REQUEST_TOKEN_SECURE=(END_POINT_SECURE + '/oauth/request_token').freeze
+  FLICKR_OAUTH_AUTHORIZE_SECURE=(END_POINT_SECURE + '/oauth/authorize').freeze
+  FLICKR_OAUTH_ACCESS_TOKEN_SECURE=(END_POINT_SECURE + '/oauth/access_token').freeze
+
   REST_PATH=(END_POINT + '/rest/').freeze
   UPLOAD_PATH=(END_POINT + '/upload/').freeze
   REPLACE_PATH=(END_POINT + '/replace/').freeze
@@ -156,11 +162,13 @@ module FlickRaw
 
     private
     def post(url, token_secret, oauth_params, params)
-      oauth_params = gen_default_params.merge(oauth_params)
+      url = URI.parse(url)
+      default_oauth_params = gen_default_params
+      default_oauth_params[:oauth_signature_method] = "PLAINTEXT" if url.scheme == 'https'
+      oauth_params = default_oauth_params.merge(oauth_params)
       params_signed = params.reject {|k,v| v.is_a? File}.merge(oauth_params)
       oauth_params[:oauth_signature] = sign(:post, url, params_signed, token_secret)
 
-      url = URI.parse(url)
       r = Net::HTTP.start(url.host, url.port,
           @proxy.host, @proxy.port, @proxy.user, @proxy.password,
           :use_ssl => url.scheme == 'https') { |http| 
@@ -306,10 +314,7 @@ module FlickRaw
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={}, &block)
       rest_path = FlickRaw.secure ? REST_PATH_SECURE :  REST_PATH
-      oauth_params = {:oauth_token => @access_token}
-      oauth_params[:oauth_signature_method] = "PLAINTEXT" if FlickRaw.secure
-      
-      http_response = @oauth_consumer.post_form(rest_path, @access_secret, oauth_params, build_args(args, req))
+      http_response = @oauth_consumer.post_form(rest_path, @access_secret, {:oauth_token => @access_token}, build_args(args, req))
       process_response(req, http_response.body)
     end
 
@@ -317,21 +322,24 @@ module FlickRaw
     #
     #    token = flickr.get_request_token(:oauth_callback => "http://example.com")
     def get_request_token(args = {})
-      @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN, args)
+      flickr_oauth_request_token = FlickRaw.secure ? FLICKR_OAUTH_REQUEST_TOKEN_SECURE : FLICKR_OAUTH_REQUEST_TOKEN
+      @oauth_consumer.request_token(flickr_oauth_request_token, args)
     end
     
     # Get the oauth authorize url.
     #
     #  auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
     def get_authorize_url(token, args = {})
-      @oauth_consumer.authorize_url(FLICKR_OAUTH_AUTHORIZE, args.merge(:oauth_token => token))
+      flickr_oauth_authorize = FlickRaw.secure ? FLICKR_OAUTH_AUTHORIZE_SECURE : FLICKR_OAUTH_AUTHORIZE
+      @oauth_consumer.authorize_url(flickr_oauth_authorize, args.merge(:oauth_token => token))
     end
 
     # Get an oauth access token.
     #
     #  flickr.get_access_token(token['oauth_token'], token['oauth_token_secret'], oauth_verifier)
     def get_access_token(token, secret, verify)
-      access_token = @oauth_consumer.access_token(FLICKR_OAUTH_ACCESS_TOKEN, secret, :oauth_token => token, :oauth_verifier => verify)
+      flickr_oauth_access_token = FlickRaw.secure ? FLICKR_OAUTH_ACCESS_TOKEN_SECURE : FLICKR_OAUTH_ACCESS_TOKEN
+      access_token = @oauth_consumer.access_token(flickr_oauth_access_token, secret, :oauth_token => token, :oauth_verifier => verify)
       @access_token, @access_secret = access_token['oauth_token'], access_token['oauth_token_secret']
       access_token
     end
@@ -395,10 +403,8 @@ module FlickRaw
     def upload_flickr(method, file, args={})
       args = build_args(args)
       args['photo'] = open(file, 'rb')
-      oauth_params = {:oauth_token => @access_token}
-      oauth_params[:oauth_signature_method] = "PLAINTEXT" if FlickRaw.secure
       
-      http_response = @oauth_consumer.post_multipart(method, @access_secret, oauth_params, args)
+      http_response = @oauth_consumer.post_multipart(method, @access_secret, {:oauth_token => @access_token}, args)
       process_response(method, http_response.body)
     end
   end
