@@ -62,8 +62,6 @@
 				
 					<li><a href="./FlickRaw.html">FlickRaw</a></li>
 				
-					<li><a href="./FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
-				
 					<li><a href="./FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
 				
 					<li><a href="./FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
@@ -134,12 +132,6 @@
 				
 					<li><a href="./FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
 				
-					<li><a href="./FlickRaw/Request.html">FlickRaw::Request</a></li>
-				
-					<li><a href="./FlickRaw/Response.html">FlickRaw::Response</a></li>
-				
-					<li><a href="./FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
-				
 					<li><a href="./Object.html">Object</a></li>
 				
 				</ul>
@@ -184,10 +176,6 @@ documentation.
 <h1>Features</h1>
 <ul>
 <li><p>
-Small single file: flickraw.rb is less than 400 lines
-</p>
-</li>
-<li><p>
 Minimal dependencies
 </p>
 </li>
@@ -202,6 +190,10 @@ Ruby syntax similar to the flickr api
 </li>
 <li><p>
 Flickr authentication
+</p>
+</li>
+<li><p>
+HTTPS Support
 </p>
 </li>
 <li><p>
@@ -278,6 +270,15 @@ and access secret:
   login = flickr.test.login
   puts &quot;You are now authenticated as #{login.username}&quot;
 </pre>
+<p>
+If you need to have several users authenticated at the same time in your
+application (ex: a public web application) you need to create separate <a
+href="FlickRaw.html">FlickRaw</a> objects since it keeps the authentication
+data internally.
+</p>
+<pre>
+  flickr = FlickRaw::Flickr.new
+</pre>
 <h2>Upload</h2>
 <pre>
   require 'flickraw'
@@ -294,6 +295,11 @@ and access secret:
 <pre>
   require 'flickraw'
   FlickRaw.proxy = &quot;http://user:pass@proxy.example.com:3129/&quot;
+</pre>
+<h2>Secure endpoints</h2>
+<pre>
+  require 'flickraw'
+  FlickRaw.secure = true
 </pre>
 <h2>Flickr URL Helpers</h2>
 <p>
@@ -349,14 +355,6 @@ instead of
 This way it it doesn&#8217;t fetch available flickr methods each time it is
 loaded. The flickraw-cached gem is on rubygems.org and should be up-to-date
 with regard to flickr api most of the time.
-</p>
-<h1>Notes</h1>
-<p>
-If you want to use the api authenticated with several user at the same
-time, you must pass the authentication token explicitely each time. This is
-because it is keeping the authentication token internally. As an
-alternative, you can create new Flickr objects besides Kernel.flickr which
-is created for you. Use Flickr.new to this effect.
 </p>
 
 	</div>

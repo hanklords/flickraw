@@ -55,7 +55,7 @@
 			<div id="parent-class-section" class="section">
 				<h3 class="section-header">Parent</h3>
 				
-				<p class="link"><a href="Request.html">FlickRaw::Request</a></p>
+				<p class="link">FlickRaw::Request</p>
 				
 			</div>
 			
@@ -122,17 +122,11 @@
 				<h3 class="section-header">Methods</h3>
 				<ul class="link-list">
 					
-					<li><a href="#method-c-build">::build</a></li>
-					
 					<li><a href="#method-i-activity">#activity</a></li>
 					
 					<li><a href="#method-i-auth">#auth</a></li>
 					
 					<li><a href="#method-i-blogs">#blogs</a></li>
-					
-					<li><a href="#method-i-build_args">#build_args</a></li>
-					
-					<li><a href="#method-i-call">#call</a></li>
 					
 					<li><a href="#method-i-collections">#collections</a></li>
 					
@@ -143,12 +137,6 @@
 					<li><a href="#method-i-favorites">#favorites</a></li>
 					
 					<li><a href="#method-i-galleries">#galleries</a></li>
-					
-					<li><a href="#method-i-get_access_token">#get_access_token</a></li>
-					
-					<li><a href="#method-i-get_authorize_url">#get_authorize_url</a></li>
-					
-					<li><a href="#method-i-get_request_token">#get_request_token</a></li>
 					
 					<li><a href="#method-i-groups">#groups</a></li>
 					
@@ -168,23 +156,15 @@
 					
 					<li><a href="#method-i-prefs">#prefs</a></li>
 					
-					<li><a href="#method-i-process_response">#process_response</a></li>
-					
 					<li><a href="#method-i-push">#push</a></li>
 					
 					<li><a href="#method-i-reflection">#reflection</a></li>
-					
-					<li><a href="#method-i-replace_photo">#replace_photo</a></li>
 					
 					<li><a href="#method-i-stats">#stats</a></li>
 					
 					<li><a href="#method-i-tags">#tags</a></li>
 					
 					<li><a href="#method-i-test">#test</a></li>
-					
-					<li><a href="#method-i-upload_flickr">#upload_flickr</a></li>
-					
-					<li><a href="#method-i-upload_photo">#upload_photo</a></li>
 					
 					<li><a href="#method-i-urls">#urls</a></li>
 					
@@ -225,8 +205,6 @@
 				<ul class="link-list">
 				
 					<li><a href="../FlickRaw.html">FlickRaw</a></li>
-				
-					<li><a href="../FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
 				
 					<li><a href="../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
 				
@@ -298,12 +276,6 @@
 				
 					<li><a href="../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
 				
-					<li><a href="../FlickRaw/Request.html">FlickRaw::Request</a></li>
-				
-					<li><a href="../FlickRaw/Response.html">FlickRaw::Response</a></li>
-				
-					<li><a href="../FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
-				
 					<li><a href="../Object.html">Object</a></li>
 				
 				</ul>
@@ -318,10 +290,7 @@
 		<h1 class="class">FlickRaw::Flickr</h1>
 
 		<div id="description">
-			<p>
-Root class of the flickr api hierarchy.
-</p>
-
+			
 		</div>
 
 		<!-- Constants -->
@@ -329,91 +298,9 @@ Root class of the flickr api hierarchy.
 
 		<!-- Attributes -->
 		
-		<div id="attribute-method-details" class="method-section section">
-			<h3 class="section-header">Attributes</h3>
-
-			
-			<div id="access-token-attribute-method" class="method-detail">
-				<a name="access_token"></a>
-				
-				<a name="access_token="></a>
-				
-				<div class="method-heading attribute-method-heading">
-					<span class="method-name">access_token</span><span
-						class="attribute-access-type">[RW]</span>
-				</div>
-
-				<div class="method-description">
-				
-				<p>
-Authenticated access token
-</p>
-				
-				</div>
-			</div>
-			
-			<div id="access-secret-attribute-method" class="method-detail">
-				<a name="access_secret"></a>
-				
-				<a name="access_secret="></a>
-				
-				<div class="method-heading attribute-method-heading">
-					<span class="method-name">access_secret</span><span
-						class="attribute-access-type">[RW]</span>
-				</div>
-
-				<div class="method-description">
-				
-				<p>
-Authenticated access token secret
-</p>
-				
-				</div>
-			</div>
-			
-		</div>
-		
 
 		<!-- Methods -->
 		
-		<div id="public-class-method-details" class="method-section section">
-			<h3 class="section-header">Public Class Methods</h3>
-
-		
-			<div id="build-method" class="method-detail ">
-				<a name="method-c-build"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">build</span><span
-						class="method-args">(methods)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="build-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 270</span>
-270:     <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">methods</span>); <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">build_request</span> <span class="ruby-identifier">m</span> } <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-		</div>
-	
 		<div id="public-instance-method-details" class="method-section section">
 			<h3 class="section-header">Public Instance Methods</h3>
 
@@ -490,48 +377,6 @@ Returns a <a href="Flickr/Blogs.html">Blogs</a> object.
 </p>
 					
 
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="call-method" class="method-detail ">
-				<a name="method-i-call"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">call</span><span
-						class="method-args">(req, args={}, &block)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-This is the central method. It does the actual request to the flickr
-server.
-</p>
-<p>
-Raises <a href="FailedResponse.html">FailedResponse</a> if the response
-status is <em>failed</em>.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="call-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 285</span>
-285:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">args</span>={}, &amp;<span class="ruby-identifier">block</span>)
-286:       <span class="ruby-identifier">http_response</span> = <span class="ruby-ivar">@oauth_consumer</span>.<span class="ruby-identifier">post_form</span>(<span class="ruby-constant">REST_PATH</span>, <span class="ruby-ivar">@access_secret</span>, {<span class="ruby-value">:oauth_token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@access_token</span>}, <span class="ruby-identifier">build_args</span>(<span class="ruby-identifier">args</span>, <span class="ruby-identifier">req</span>))
-287:       <span class="ruby-identifier">process_response</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">http_response</span>.<span class="ruby-identifier">body</span>)
-288:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
 					
 				</div>
 
@@ -667,122 +512,6 @@ Returns a <a href="Flickr/Galleries.html">Galleries</a> object.
 </p>
 					
 
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="get-access-token-method" class="method-detail ">
-				<a name="method-i-get_access_token"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">get_access_token</span><span
-						class="method-args">(token, secret, verify)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Get an oauth access token.
-</p>
-<pre>
- flickr.get_access_token(token['oauth_token'], token['oauth_token_secret'], oauth_verifier)</pre>
-					
-
-					
-					<div class="method-source-code"
-						id="get-access-token-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 307</span>
-307:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_access_token</span>(<span class="ruby-identifier">token</span>, <span class="ruby-identifier">secret</span>, <span class="ruby-identifier">verify</span>)
-308:       <span class="ruby-identifier">access_token</span> = <span class="ruby-ivar">@oauth_consumer</span>.<span class="ruby-identifier">access_token</span>(<span class="ruby-constant">FLICKR_OAUTH_ACCESS_TOKEN</span>, <span class="ruby-identifier">secret</span>, <span class="ruby-value">:oauth_token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">token</span>, <span class="ruby-value">:oauth_verifier</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verify</span>)
-309:       <span class="ruby-ivar">@access_token</span>, <span class="ruby-ivar">@access_secret</span> = <span class="ruby-identifier">access_token</span>[<span class="ruby-value str">'oauth_token'</span>], <span class="ruby-identifier">access_token</span>[<span class="ruby-value str">'oauth_token_secret'</span>]
-310:       <span class="ruby-identifier">access_token</span>
-311:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="get-authorize-url-method" class="method-detail ">
-				<a name="method-i-get_authorize_url"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">get_authorize_url</span><span
-						class="method-args">(token, args = {})</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Get the oauth authorize url.
-</p>
-<pre>
- auth_url = flickr.get_authorize_url(token['oauth_token'], :perms =&gt; 'delete')</pre>
-					
-
-					
-					<div class="method-source-code"
-						id="get-authorize-url-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 300</span>
-300:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_authorize_url</span>(<span class="ruby-identifier">token</span>, <span class="ruby-identifier">args</span> = {})
-301:       <span class="ruby-ivar">@oauth_consumer</span>.<span class="ruby-identifier">authorize_url</span>(<span class="ruby-constant">FLICKR_OAUTH_AUTHORIZE</span>, <span class="ruby-identifier">args</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:oauth_token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">token</span>))
-302:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="get-request-token-method" class="method-detail ">
-				<a name="method-i-get_request_token"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">get_request_token</span><span
-						class="method-args">(args = {})</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Get an oauth request token.
-</p>
-<pre>
-   token = flickr.get_request_token(:oauth_callback =&gt; &quot;http://example.com&quot;)</pre>
-					
-
-					
-					<div class="method-source-code"
-						id="get-request-token-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 293</span>
-293:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_request_token</span>(<span class="ruby-identifier">args</span> = {})
-294:       <span class="ruby-ivar">@oauth_consumer</span>.<span class="ruby-identifier">request_token</span>(<span class="ruby-constant">FLICKR_OAUTH_REQUEST_TOKEN</span>, <span class="ruby-identifier">args</span>)
-295:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
 					
 				</div>
 
@@ -1089,49 +818,6 @@ Returns a <a href="Flickr/Reflection.html">Reflection</a> object.
 			</div>
 
 		
-			<div id="replace-photo-method" class="method-detail ">
-				<a name="method-i-replace_photo"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">replace_photo</span><span
-						class="method-args">(file, args={})</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Use this to replace the photo with :photo_id with the photo in
-<em>file</em>.
-</p>
-<pre>
- flickr.replace_photo '/path/to/the/photo', :photo_id =&gt; id
-</pre>
-<p>
-See <a
-href="http://www.flickr.com/services/api/replace.api.html">www.flickr.com/services/api/replace.api.html</a>
-for more information on the arguments.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="replace-photo-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 325</span>
-325:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">replace_photo</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>={}); <span class="ruby-identifier">upload_flickr</span>(<span class="ruby-constant">REPLACE_PATH</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>) <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
 			<div id="stats-method" class="method-detail ">
 				<a name="method-i-stats"></a>
 
@@ -1213,48 +899,6 @@ Returns a <a href="Flickr/Test.html">Test</a> object.
 			</div>
 
 		
-			<div id="upload-photo-method" class="method-detail ">
-				<a name="method-i-upload_photo"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">upload_photo</span><span
-						class="method-args">(file, args={})</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-Use this to upload the photo in <em>file</em>.
-</p>
-<pre>
- flickr.upload_photo '/path/to/the/photo', :title =&gt; 'Title', :description =&gt; 'This is the description'
-</pre>
-<p>
-See <a
-href="http://www.flickr.com/services/api/upload.api.html">www.flickr.com/services/api/upload.api.html</a>
-for more information on the arguments.
-</p>
-					
-
-					
-					<div class="method-source-code"
-						id="upload-photo-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 318</span>
-318:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">upload_photo</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>={}); <span class="ruby-identifier">upload_flickr</span>(<span class="ruby-constant">UPLOAD_PATH</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>) <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
 			<div id="urls-method" class="method-detail ">
 				<a name="method-i-urls"></a>
 
@@ -1273,144 +917,6 @@ Returns a <a href="Flickr/Urls.html">Urls</a> object.
 </p>
 					
 
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-		</div>
-	
-		<div id="private-instance-method-details" class="method-section section">
-			<h3 class="section-header">Private Instance Methods</h3>
-
-		
-			<div id="build-args-method" class="method-detail ">
-				<a name="method-i-build_args"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">build_args</span><span
-						class="method-args">(args={}, method = nil)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="build-args-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 328</span>
-328:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_args</span>(<span class="ruby-identifier">args</span>={}, <span class="ruby-identifier">method</span> = <span class="ruby-keyword kw">nil</span>)
-329:       <span class="ruby-identifier">full_args</span> = {<span class="ruby-value str">'format'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'json'</span>, <span class="ruby-value">:nojsoncallback</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;1&quot;</span>}
-330:       <span class="ruby-identifier">full_args</span>[<span class="ruby-value str">'method'</span>] = <span class="ruby-identifier">method</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">method</span>
-331:       <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
-332:         <span class="ruby-identifier">v</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-value str">&quot;utf-8&quot;</span>).<span class="ruby-identifier">force_encoding</span>(<span class="ruby-value str">&quot;ascii-8bit&quot;</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value str">&quot;1.9&quot;</span>
-333:         <span class="ruby-identifier">full_args</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">v</span>
-334:       }
-335:       <span class="ruby-identifier">full_args</span>
-336:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="process-response-method" class="method-detail ">
-				<a name="method-i-process_response"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">process_response</span><span
-						class="method-args">(req, response)</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="process-response-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 338</span>
-338:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">process_response</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">response</span>)
-339:       <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">response</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^&lt;\?xml /</span> <span class="ruby-comment cmt"># upload_photo returns xml data whatever we ask</span>
-340:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">response</span>[<span class="ruby-regexp re">/stat=&quot;(\w+)&quot;/</span>, <span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'fail'</span>
-341:           <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">response</span>[<span class="ruby-regexp re">/msg=&quot;([^&quot;]+)&quot;/</span>, <span class="ruby-value">1</span>]
-342:           <span class="ruby-identifier">code</span> = <span class="ruby-identifier">response</span>[<span class="ruby-regexp re">/code=&quot;([^&quot;]+)&quot;/</span>, <span class="ruby-value">1</span>]
-343:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">FailedResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-identifier">code</span>, <span class="ruby-identifier">req</span>)
-344:         <span class="ruby-keyword kw">end</span>
-345:         
-346:         <span class="ruby-identifier">type</span> = <span class="ruby-identifier">response</span>[<span class="ruby-regexp re">/&lt;(\w+)/</span>, <span class="ruby-value">1</span>]
-347:         <span class="ruby-identifier">h</span> = {
-348:           <span class="ruby-value str">&quot;secret&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">response</span>[<span class="ruby-regexp re">/secret=&quot;([^&quot;]+)&quot;/</span>, <span class="ruby-value">1</span>],
-349:           <span class="ruby-value str">&quot;originalsecret&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">response</span>[<span class="ruby-regexp re">/originalsecret=&quot;([^&quot;]+)&quot;/</span>, <span class="ruby-value">1</span>],
-350:           <span class="ruby-value str">&quot;_content&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">response</span>[<span class="ruby-regexp re">/&gt;([^&lt;]+)&lt;\//</span>, <span class="ruby-value">1</span>]
-351:         }.<span class="ruby-identifier">delete_if</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">nil?</span> }
-352:         
-353:         <span class="ruby-constant">Response</span>.<span class="ruby-identifier">build</span> <span class="ruby-identifier">h</span>, <span class="ruby-identifier">type</span>
-354:       <span class="ruby-keyword kw">else</span>
-355:         <span class="ruby-identifier">json</span> = <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">response</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-value str">&quot;{}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">response</span>)
-356:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">FailedResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">json</span>[<span class="ruby-value str">'message'</span>], <span class="ruby-identifier">json</span>[<span class="ruby-value str">'code'</span>], <span class="ruby-identifier">req</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">json</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value str">'stat'</span>) <span class="ruby-operator">==</span> <span class="ruby-value str">'fail'</span>
-357:         <span class="ruby-identifier">type</span>, <span class="ruby-identifier">json</span> = <span class="ruby-identifier">json</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">json</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">json</span>.<span class="ruby-identifier">all?</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Hash</span>}
-358: 
-359:         <span class="ruby-constant">Response</span>.<span class="ruby-identifier">build</span> <span class="ruby-identifier">json</span>, <span class="ruby-identifier">type</span>
-360:       <span class="ruby-keyword kw">end</span>
-361:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
-					
-				</div>
-
-				
-
-				
-			</div>
-
-		
-			<div id="upload-flickr-method" class="method-detail ">
-				<a name="method-i-upload_flickr"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">upload_flickr</span><span
-						class="method-args">(method, file, args={})</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					
-					
-
-					
-					<div class="method-source-code"
-						id="upload-flickr-source">
-<pre>
-     <span class="ruby-comment cmt"># File lib/flickraw.rb, line 363</span>
-363:     <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">upload_flickr</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">args</span>={})
-364:       <span class="ruby-identifier">args</span> = <span class="ruby-identifier">build_args</span>(<span class="ruby-identifier">args</span>)
-365:       <span class="ruby-identifier">args</span>[<span class="ruby-value str">'photo'</span>] = <span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-value str">'rb'</span>)
-366:       <span class="ruby-identifier">http_response</span> = <span class="ruby-ivar">@oauth_consumer</span>.<span class="ruby-identifier">post_multipart</span>(<span class="ruby-identifier">method</span>, <span class="ruby-ivar">@access_secret</span>, {<span class="ruby-value">:oauth_token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@access_token</span>}, <span class="ruby-identifier">args</span>)
-367:       <span class="ruby-identifier">process_response</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">http_response</span>.<span class="ruby-identifier">body</span>)
-368:     <span class="ruby-keyword kw">end</span></pre>
-					</div>
 					
 				</div>
 

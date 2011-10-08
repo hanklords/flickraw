@@ -56,10 +56,6 @@ documentation.
 <h1>Features</h1>
 <ul>
 <li><p>
-Small single file: flickraw.rb is less than 400 lines
-</p>
-</li>
-<li><p>
 Minimal dependencies
 </p>
 </li>
@@ -74,6 +70,10 @@ Ruby syntax similar to the flickr api
 </li>
 <li><p>
 Flickr authentication
+</p>
+</li>
+<li><p>
+HTTPS Support
 </p>
 </li>
 <li><p>
@@ -150,6 +150,15 @@ and access secret:
   login = flickr.test.login
   puts &quot;You are now authenticated as #{login.username}&quot;
 </pre>
+<p>
+If you need to have several users authenticated at the same time in your
+application (ex: a public web application) you need to create separate <a
+href="FlickRaw.html">FlickRaw</a> objects since it keeps the authentication
+data internally.
+</p>
+<pre>
+  flickr = FlickRaw::Flickr.new
+</pre>
 <h2>Upload</h2>
 <pre>
   require 'flickraw'
@@ -166,6 +175,11 @@ and access secret:
 <pre>
   require 'flickraw'
   FlickRaw.proxy = &quot;http://user:pass@proxy.example.com:3129/&quot;
+</pre>
+<h2>Secure endpoints</h2>
+<pre>
+  require 'flickraw'
+  FlickRaw.secure = true
 </pre>
 <h2>Flickr URL Helpers</h2>
 <p>
@@ -222,14 +236,6 @@ This way it it doesn&#8217;t fetch available flickr methods each time it is
 loaded. The flickraw-cached gem is on rubygems.org and should be up-to-date
 with regard to flickr api most of the time.
 </p>
-<h1>Notes</h1>
-<p>
-If you want to use the api authenticated with several user at the same
-time, you must pass the authentication token explicitely each time. This is
-because it is keeping the authentication token internally. As an
-alternative, you can create new Flickr objects besides Kernel.flickr which
-is created for you. Use Flickr.new to this effect.
-</p>
 
 	</div>
 	
@@ -248,8 +254,6 @@ is created for you. Use Flickr.new to this effect.
 	<ul>
 		
 		<li class="module"><a href="FlickRaw.html">FlickRaw</a></li>
-		
-		<li class="class"><a href="FlickRaw/FailedResponse.html">FlickRaw::FailedResponse</a></li>
 		
 		<li class="class"><a href="FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
 		
@@ -321,12 +325,6 @@ is created for you. Use Flickr.new to this effect.
 		
 		<li class="class"><a href="FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
 		
-		<li class="class"><a href="FlickRaw/Request.html">FlickRaw::Request</a></li>
-		
-		<li class="class"><a href="FlickRaw/Response.html">FlickRaw::Response</a></li>
-		
-		<li class="class"><a href="FlickRaw/ResponseList.html">FlickRaw::ResponseList</a></li>
-		
 		<li class="class"><a href="Object.html">Object</a></li>
 		
 	</ul>
@@ -334,69 +332,19 @@ is created for you. Use Flickr.new to this effect.
 	<h2 id="methods">Methods</h2>
 	<ul>
 		
-			<li><a href="FlickRaw.html#method-c-base58">::base58 &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw/Flickr.html#method-c-build">::build &mdash; FlickRaw::Flickr</a></li>
-		
-			<li><a href="FlickRaw/Request.html#method-c-flickr_methods">::flickr_methods &mdash; FlickRaw::Request</a></li>
-		
-			<li><a href="FlickRaw/Request.html#method-c-flickr_objects">::flickr_objects &mdash; FlickRaw::Request</a></li>
-		
-			<li><a href="FlickRaw/FailedResponse.html#method-c-new">::new &mdash; FlickRaw::FailedResponse</a></li>
-		
-			<li><a href="FlickRaw/ResponseList.html#method-c-new">::new &mdash; FlickRaw::ResponseList</a></li>
-		
-			<li><a href="FlickRaw/Request.html#method-c-request_name">::request_name &mdash; FlickRaw::Request</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url">::url &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_b">::url_b &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_m">::url_m &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_o">::url_o &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_photopage">::url_photopage &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_photoset">::url_photoset &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_photosets">::url_photosets &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_photostream">::url_photostream &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_profile">::url_profile &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_s">::url_s &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_short">::url_short &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_short_m">::url_short_m &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_short_s">::url_short_s &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_short_t">::url_short_t &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_t">::url_t &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw.html#method-c-url_z">::url_z &mdash; FlickRaw</a></li>
-		
-			<li><a href="FlickRaw/ResponseList.html#method-i-%5B%5D">#[] &mdash; FlickRaw::ResponseList</a></li>
-		
-			<li><a href="FlickRaw/Response.html#method-i-%5B%5D">#[] &mdash; FlickRaw::Response</a></li>
-		
 			<li><a href="FlickRaw/Flickr.html#method-i-activity">#activity &mdash; FlickRaw::Flickr</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Favorites.html#method-i-add">#add &mdash; FlickRaw::Flickr::Favorites</a></li>
-		
-			<li><a href="FlickRaw/Flickr/Groups/Pools.html#method-i-add">#add &mdash; FlickRaw::Flickr::Groups::Pools</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos/People.html#method-i-add">#add &mdash; FlickRaw::Flickr::Photos::People</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos/Notes.html#method-i-add">#add &mdash; FlickRaw::Flickr::Photos::Notes</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photosets/Comments.html#method-i-addComment">#addComment &mdash; FlickRaw::Flickr::Photosets::Comments</a></li>
+			<li><a href="FlickRaw/Flickr/Groups/Pools.html#method-i-add">#add &mdash; FlickRaw::Flickr::Groups::Pools</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos/Comments.html#method-i-addComment">#addComment &mdash; FlickRaw::Flickr::Photos::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets/Comments.html#method-i-addComment">#addComment &mdash; FlickRaw::Flickr::Photosets::Comments</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-addPhoto">#addPhoto &mdash; FlickRaw::Flickr::Photosets</a></li>
 		
@@ -412,19 +360,15 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Groups.html#method-i-browse">#browse &mdash; FlickRaw::Flickr::Groups</a></li>
 		
-			<li><a href="FlickRaw/Flickr.html#method-i-build_args">#build_args &mdash; FlickRaw::Flickr</a></li>
-		
-			<li><a href="FlickRaw/Flickr.html#method-i-call">#call &mdash; FlickRaw::Flickr</a></li>
-		
 			<li><a href="FlickRaw/Flickr/Photos/Upload.html#method-i-checkTickets">#checkTickets &mdash; FlickRaw::Flickr::Photos::Upload</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Auth.html#method-i-checkToken">#checkToken &mdash; FlickRaw::Flickr::Auth</a></li>
 		
 			<li><a href="FlickRaw/Flickr.html#method-i-collections">#collections &mdash; FlickRaw::Flickr</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-comments">#comments &mdash; FlickRaw::Flickr::Photosets</a></li>
-		
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-comments">#comments &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-comments">#comments &mdash; FlickRaw::Flickr::Photosets</a></li>
 		
 			<li><a href="FlickRaw/Flickr.html#method-i-commons">#commons &mdash; FlickRaw::Flickr</a></li>
 		
@@ -432,13 +376,13 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-correctLocation">#correctLocation &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-create">#create &mdash; FlickRaw::Flickr::Galleries</a></li>
-		
 			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-create">#create &mdash; FlickRaw::Flickr::Photosets</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-delete">#delete &mdash; FlickRaw::Flickr::Photosets</a></li>
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-create">#create &mdash; FlickRaw::Flickr::Galleries</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos/People.html#method-i-delete">#delete &mdash; FlickRaw::Flickr::Photos::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-delete">#delete &mdash; FlickRaw::Flickr::Photosets</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-delete">#delete &mdash; FlickRaw::Flickr::Photos</a></li>
 		
@@ -450,15 +394,13 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Photos/People.html#method-i-deleteCoords">#deleteCoords &mdash; FlickRaw::Flickr::Photos::People</a></li>
 		
-			<li><a href="FlickRaw/ResponseList.html#method-i-each">#each &mdash; FlickRaw::ResponseList</a></li>
-		
 			<li><a href="FlickRaw/Flickr/Test.html#method-i-echo">#echo &mdash; FlickRaw::Flickr::Test</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos/Notes.html#method-i-edit">#edit &mdash; FlickRaw::Flickr::Photos::Notes</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photos/Comments.html#method-i-editComment">#editComment &mdash; FlickRaw::Flickr::Photos::Comments</a></li>
-		
 			<li><a href="FlickRaw/Flickr/Photosets/Comments.html#method-i-editComment">#editComment &mdash; FlickRaw::Flickr::Photosets::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Comments.html#method-i-editComment">#editComment &mdash; FlickRaw::Flickr::Photos::Comments</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos/People.html#method-i-editCoords">#editCoords &mdash; FlickRaw::Flickr::Photos::People</a></li>
 		
@@ -468,9 +410,9 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-editPhoto">#editPhoto &mdash; FlickRaw::Flickr::Galleries</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-editPhotos">#editPhotos &mdash; FlickRaw::Flickr::Photosets</a></li>
-		
 			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-editPhotos">#editPhotos &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-editPhotos">#editPhotos &mdash; FlickRaw::Flickr::Photosets</a></li>
 		
 			<li><a href="FlickRaw/Flickr.html#method-i-favorites">#favorites &mdash; FlickRaw::Flickr</a></li>
 		
@@ -512,13 +454,13 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Prefs.html#method-i-getContentType">#getContentType &mdash; FlickRaw::Flickr::Prefs</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Groups/Pools.html#method-i-getContext">#getContext &mdash; FlickRaw::Flickr::Groups::Pools</a></li>
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getContext">#getContext &mdash; FlickRaw::Flickr::Photos</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-getContext">#getContext &mdash; FlickRaw::Flickr::Photosets</a></li>
+			<li><a href="FlickRaw/Flickr/Groups/Pools.html#method-i-getContext">#getContext &mdash; FlickRaw::Flickr::Groups::Pools</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Favorites.html#method-i-getContext">#getContext &mdash; FlickRaw::Flickr::Favorites</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getContext">#getContext &mdash; FlickRaw::Flickr::Photos</a></li>
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-getContext">#getContext &mdash; FlickRaw::Flickr::Photosets</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getCounts">#getCounts &mdash; FlickRaw::Flickr::Photos</a></li>
 		
@@ -540,13 +482,11 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Tags.html#method-i-getHotList">#getHotList &mdash; FlickRaw::Flickr::Tags</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Groups.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Groups</a></li>
-		
 			<li><a href="FlickRaw/Flickr/People.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::People</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Collections.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Collections</a></li>
+			<li><a href="FlickRaw/Flickr/Groups.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Groups</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photos/Licenses.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Photos::Licenses</a></li>
+			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Photos</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Photosets</a></li>
 		
@@ -554,33 +494,35 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Places.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Places</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Photos</a></li>
+			<li><a href="FlickRaw/Flickr/Photos/Licenses.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Photos::Licenses</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Collections.html#method-i-getInfo">#getInfo &mdash; FlickRaw::Flickr::Collections</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Places.html#method-i-getInfoByUrl">#getInfoByUrl &mdash; FlickRaw::Flickr::Places</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Commons.html#method-i-getInstitutions">#getInstitutions &mdash; FlickRaw::Flickr::Commons</a></li>
 		
+			<li><a href="FlickRaw/Flickr/Groups/Members.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Groups::Members</a></li>
+		
 			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Photosets</a></li>
 		
+			<li><a href="FlickRaw/Flickr/Interestingness.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Interestingness</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Panda.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Panda</a></li>
+		
 			<li><a href="FlickRaw/Flickr/Photos/People.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Photos::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Galleries</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Comments.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Photos::Comments</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Blogs.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Blogs</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Favorites.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Favorites</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photosets/Comments.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Photosets::Comments</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Panda.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Panda</a></li>
-		
-			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Galleries</a></li>
-		
 			<li><a href="FlickRaw/Flickr/Contacts.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Contacts</a></li>
-		
-			<li><a href="FlickRaw/Flickr/Groups/Members.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Groups::Members</a></li>
-		
-			<li><a href="FlickRaw/Flickr/Interestingness.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Interestingness</a></li>
-		
-			<li><a href="FlickRaw/Flickr/Photos/Comments.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Photos::Comments</a></li>
-		
-			<li><a href="FlickRaw/Flickr/Blogs.html#method-i-getList">#getList &mdash; FlickRaw::Flickr::Blogs</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-getListForPhoto">#getListForPhoto &mdash; FlickRaw::Flickr::Galleries</a></li>
 		
@@ -606,9 +548,9 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Machinetags.html#method-i-getPairs">#getPairs &mdash; FlickRaw::Flickr::Machinetags</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-getPerms">#getPerms &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
-		
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getPerms">#getPerms &mdash; FlickRaw::Flickr::Photos</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photos/Geo.html#method-i-getPerms">#getPerms &mdash; FlickRaw::Flickr::Photos::Geo</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotoDomains">#getPhotoDomains &mdash; FlickRaw::Flickr::Stats</a></li>
 		
@@ -616,13 +558,13 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Stats.html#method-i-getPhotoStats">#getPhotoStats &mdash; FlickRaw::Flickr::Stats</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Panda.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::Panda</a></li>
-		
 			<li><a href="FlickRaw/Flickr/Groups/Pools.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::Groups::Pools</a></li>
 		
-			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::Photosets</a></li>
-		
 			<li><a href="FlickRaw/Flickr/People.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::People</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Panda.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::Panda</a></li>
+		
+			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::Photosets</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Galleries.html#method-i-getPhotos">#getPhotos &mdash; FlickRaw::Flickr::Galleries</a></li>
 		
@@ -698,21 +640,9 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-getWithoutGeoData">#getWithoutGeoData &mdash; FlickRaw::Flickr::Photos</a></li>
 		
-			<li><a href="FlickRaw/Flickr.html#method-i-get_access_token">#get_access_token &mdash; FlickRaw::Flickr</a></li>
-		
-			<li><a href="FlickRaw/Flickr.html#method-i-get_authorize_url">#get_authorize_url &mdash; FlickRaw::Flickr</a></li>
-		
-			<li><a href="FlickRaw/Flickr.html#method-i-get_request_token">#get_request_token &mdash; FlickRaw::Flickr</a></li>
-		
 			<li><a href="FlickRaw/Flickr.html#method-i-groups">#groups &mdash; FlickRaw::Flickr</a></li>
 		
-			<li><a href="FlickRaw/Response.html#method-i-inspect">#inspect &mdash; FlickRaw::Response</a></li>
-		
-			<li><a href="FlickRaw/ResponseList.html#method-i-inspect">#inspect &mdash; FlickRaw::ResponseList</a></li>
-		
 			<li><a href="FlickRaw/Flickr.html#method-i-interestingness">#interestingness &mdash; FlickRaw::Flickr</a></li>
-		
-			<li><a href="FlickRaw/ResponseList.html#method-i-length">#length &mdash; FlickRaw::ResponseList</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-licenses">#licenses &mdash; FlickRaw::Flickr::Photos</a></li>
 		
@@ -725,12 +655,6 @@ is created for you. Use Flickr.new to this effect.
 			<li><a href="FlickRaw/Flickr/Urls.html#method-i-lookupUser">#lookupUser &mdash; FlickRaw::Flickr::Urls</a></li>
 		
 			<li><a href="FlickRaw/Flickr.html#method-i-machinetags">#machinetags &mdash; FlickRaw::Flickr</a></li>
-		
-			<li><a href="FlickRaw/Response.html#method-i-marshal_dump">#marshal_dump &mdash; FlickRaw::Response</a></li>
-		
-			<li><a href="FlickRaw/ResponseList.html#method-i-marshal_dump">#marshal_dump &mdash; FlickRaw::ResponseList</a></li>
-		
-			<li><a href="FlickRaw/Response.html#method-i-marshal_load">#marshal_load &mdash; FlickRaw::Response</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Groups.html#method-i-members">#members &mdash; FlickRaw::Flickr::Groups</a></li>
 		
@@ -770,8 +694,6 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr.html#method-i-prefs">#prefs &mdash; FlickRaw::Flickr</a></li>
 		
-			<li><a href="FlickRaw/Flickr.html#method-i-process_response">#process_response &mdash; FlickRaw::Flickr</a></li>
-		
 			<li><a href="FlickRaw/Flickr.html#method-i-push">#push &mdash; FlickRaw::Flickr</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-recentlyUpdated">#recentlyUpdated &mdash; FlickRaw::Flickr::Photos</a></li>
@@ -791,8 +713,6 @@ is created for you. Use Flickr.new to this effect.
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-removeTag">#removeTag &mdash; FlickRaw::Flickr::Photos</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photosets.html#method-i-reorderPhotos">#reorderPhotos &mdash; FlickRaw::Flickr::Photosets</a></li>
-		
-			<li><a href="FlickRaw/Flickr.html#method-i-replace_photo">#replace_photo &mdash; FlickRaw::Flickr</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Places.html#method-i-resolvePlaceId">#resolvePlaceId &mdash; FlickRaw::Flickr::Places</a></li>
 		
@@ -826,8 +746,6 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-setTags">#setTags &mdash; FlickRaw::Flickr::Photos</a></li>
 		
-			<li><a href="FlickRaw/ResponseList.html#method-i-size">#size &mdash; FlickRaw::ResponseList</a></li>
-		
 			<li><a href="FlickRaw/Flickr.html#method-i-stats">#stats &mdash; FlickRaw::Flickr</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Push.html#method-i-subscribe">#subscribe &mdash; FlickRaw::Flickr::Push</a></li>
@@ -838,21 +756,11 @@ is created for you. Use Flickr.new to this effect.
 		
 			<li><a href="FlickRaw/Flickr.html#method-i-test">#test &mdash; FlickRaw::Flickr</a></li>
 		
-			<li><a href="FlickRaw/ResponseList.html#method-i-to_a">#to_a &mdash; FlickRaw::ResponseList</a></li>
-		
-			<li><a href="FlickRaw/Response.html#method-i-to_hash">#to_hash &mdash; FlickRaw::Response</a></li>
-		
-			<li><a href="FlickRaw/Response.html#method-i-to_s">#to_s &mdash; FlickRaw::Response</a></li>
-		
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-transform">#transform &mdash; FlickRaw::Flickr::Photos</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Push.html#method-i-unsubscribe">#unsubscribe &mdash; FlickRaw::Flickr::Push</a></li>
 		
 			<li><a href="FlickRaw/Flickr/Photos.html#method-i-upload">#upload &mdash; FlickRaw::Flickr::Photos</a></li>
-		
-			<li><a href="FlickRaw/Flickr.html#method-i-upload_flickr">#upload_flickr &mdash; FlickRaw::Flickr</a></li>
-		
-			<li><a href="FlickRaw/Flickr.html#method-i-upload_photo">#upload_photo &mdash; FlickRaw::Flickr</a></li>
 		
 			<li><a href="FlickRaw/Flickr.html#method-i-urls">#urls &mdash; FlickRaw::Flickr</a></li>
 		
