@@ -86,9 +86,7 @@ If the user has already been authenticated, you can reuse the access token and a
   login = flickr.test.login
   puts "You are now authenticated as #{login.username}"
 
-If you need to have several users authenticated at the same time in your application
- (ex: a public web application) you need to create separate FlickRaw objects since it
- keeps the authentication data internally.
+If you need to have several users authenticated at the same time in your application (ex: a public web application) you need to create separate FlickRaw objects since it keeps the authentication data internally.
 
   flickr = FlickRaw::Flickr.new
 
