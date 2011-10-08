@@ -86,6 +86,12 @@ If the user has already been authenticated, you can reuse the access token and a
   login = flickr.test.login
   puts "You are now authenticated as #{login.username}"
 
+If you need to have several users authenticated at the same time in your application
+ (ex: a public web application) you need to create separate FlickRaw objects since it
+ keeps the authentication data internally.
+
+  flickr = FlickRaw::Flickr.new
+
 == Upload
 
   require 'flickraw'
@@ -157,10 +163,3 @@ instead of
 
 This way it it doesn't fetch available flickr methods each time it is loaded.
 The flickraw-cached gem is on rubygems.org and should be up-to-date with regard to flickr api most of the time.
-
-= Notes
-
-If you want to use the api authenticated with several user at the same time, you must pass the authentication token explicitely each time.
-This is because it is keeping the authentication token internally.
-As an alternative, you can create new Flickr objects besides Kernel.flickr which is created for you. Use Flickr.new to this effect.
-
