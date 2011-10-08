@@ -2,11 +2,11 @@ require 'rake/clean'
 require 'rdoc/task'
 require 'rake/testtask'
 
-lib = File.dirname(__FILE__)
+lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require 'lib/flickraw'
-require 'flickraw_rdoc' if RUBY_VERSION >= "1.9"
+require 'flickraw'
+require './flickraw_rdoc' if RUBY_VERSION >= "1.9"
 
 FlickRaw.api_key = ENV['api_key']
 FlickRaw.shared_secret = ENV['shared_secret']
