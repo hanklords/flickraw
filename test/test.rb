@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 
-lib = File.expand_path('../../lib/', __FILE__)
+lib = File.dirname(__FILE__)
 $:.unshift lib unless $:.include?(lib)
 
 require 'test/unit'
-require 'flickraw'
-
-# FlickRaw.shared_secret = # Shared secret
-# flickr.auth.checkToken :auth_token => # Auth token
+require 'helper'
 
 class Basic < Test::Unit::TestCase
   def test_request
