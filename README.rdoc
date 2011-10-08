@@ -17,11 +17,11 @@ This will recreate the documentation by fetching the methods descriptions from f
 
 = Features
 
-* Small single file: flickraw.rb is less than 400 lines
 * Minimal dependencies
 * Complete support of flickr API. This doesn't require an update of the library
 * Ruby syntax similar to the flickr api
 * Flickr authentication
+* HTTPS Support
 * Photo upload
 * Proxy support
 * Flickr URLs helpers
