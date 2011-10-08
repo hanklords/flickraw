@@ -2,11 +2,11 @@ require 'openssl'
 require 'net/http'
 
 module FlickRaw
-  class OAuth
+  class OAuthClient
     class UnknownSignatureMethod < StandardError; end
     class FailedResponse < StandardError
       def initialize(str)
-        @response = OAuth.parse_response(str)
+        @response = OAuthClient.parse_response(str)
         super(@response['oauth_problem'])
       end
     end
@@ -15,13 +15,24 @@ module FlickRaw
       def escape(v); URI.escape(v.to_s, /[^a-zA-Z0-9\-\.\_\~]/) end
       def parse_response(text); Hash[text.split("&").map {|s| s.split("=")}] end
       
+      def signature_base_string(method, url, params)
+        params_norm = params.map {|k,v| escape(k) + "=" + escape(v)}.sort.join("&")
+        method.to_s.upcase + "&" + escape(url) + "&" + escape(params_norm)
+      end
+      
       def sign_plaintext(method, url, params, token_secret, consumer_secret)
         escape(consumer_secret) + "&" + escape(token_secret)
       end
         
+      def sign_rsa_sha1(method, url, params, token_secret, consumer_secret)
+        text = signature_base_string(method, url, params)
+        key = OpenSSL::PKey::RSA.new(consumer_secret)
+        digest = OpenSSL::Digest::Digest.new("sha1")
+        [key.sign(digest, text)].pack('m0').gsub(/\n$/,'')
+      end
+            
       def sign_hmac_sha1(method, url, params, token_secret, consumer_secret)
-        params_norm = params.map {|k,v| escape(k) + "=" + escape(v) }.sort.join("&")
-        text = method.to_s.upcase + "&" + escape(url) + "&" + escape(params_norm)
+        text = signature_base_string(method, url, params)
         key = escape(consumer_secret) + "&" + escape(token_secret)
         digest = OpenSSL::Digest::Digest.new("sha1")
         [OpenSSL::HMAC.digest(digest, key, text)].pack('m0').gsub(/\n$/,'')
@@ -50,12 +61,12 @@ module FlickRaw
     end
 
     def request_token(url, oauth_params = {})
-      r = post_form(url, nil, {:oauth_callback => "oob"}.merge(oauth_params))
-      OAuth.parse_response(r.body)
+      r = post(url, nil, {:oauth_callback => "oob"}.merge(oauth_params))
+      OAuthClient.parse_response(r.body)
     end
     
     def authorize_url(url, oauth_params = {})
-      params_norm = oauth_params.map {|k,v| OAuth.escape(k) + "=" + OAuth.escape(v)}.sort.join("&")
+      params_norm = oauth_params.map {|k,v| OAuthClient.escape(k) + "=" + OAuthClient.escape(v)}.sort.join("&")
       url =  URI.parse(url)
       url.query = url.query ? url.query + "&" + params_norm : params_norm
       url.to_s
@@ -63,7 +74,7 @@ module FlickRaw
     
     def access_token(url, token_secret, oauth_params = {})
       r = post_form(url, token_secret, oauth_params)
-      OAuth.parse_response(r.body)
+      OAuthClient.parse_response(r.body)
     end
 
     def post_form(url, token_secret, oauth_params = {}, params = {})
@@ -72,7 +83,7 @@ module FlickRaw
     
     def post_multipart(url, token_secret, oauth_params = {}, params = {})
       post(url, token_secret, oauth_params, params) {|request|
-        boundary = "FlickRaw#{gen_nonce}"
+        boundary = "FlickRaw#{OAuthClient.gen_nonce}"
         request['Content-type'] = "multipart/form-data, boundary=#{boundary}"
 
         request.body = ''
@@ -101,9 +112,11 @@ module FlickRaw
     def sign(method, url, params, token_secret = nil)
       case params[:oauth_signature_method]
       when "HMAC-SHA1"
-        OAuth.sign_hmac_sha1(method, url, params, token_secret, @consumer_secret)
+        OAuthClient.sign_hmac_sha1(method, url, params, token_secret, @consumer_secret)
+      when "RSA-SHA1"
+        OAuthClient.sign_rsa_sha1(method, url, params, token_secret, @consumer_secret)
       when "PLAINTEXT"
-        OAuth.sign_plaintext(method, url, params, token_secret, @consumer_secret)
+        OAuthClient.sign_plaintext(method, url, params, token_secret, @consumer_secret)
       else
         raise UnknownSignatureMethod, params[:oauth_signature_method]
       end
@@ -111,7 +124,7 @@ module FlickRaw
 
     def post(url, token_secret, oauth_params, params)
       url = URI.parse(url)
-      default_oauth_params = OAuth.gen_default_params
+      default_oauth_params = OAuthClient.gen_default_params
       default_oauth_params[:oauth_consumer_key] = @consumer_key
       default_oauth_params[:oauth_signature_method] = "PLAINTEXT" if url.scheme == 'https'
       oauth_params = default_oauth_params.merge(oauth_params)
@@ -123,7 +136,7 @@ module FlickRaw
           :use_ssl => url.scheme == 'https') { |http| 
         request = Net::HTTP::Post.new(url.path)
         request['User-Agent'] = @user_agent if @user_agent
-        request['Authorization'] = OAuth.authorization_header(url, oauth_params)
+        request['Authorization'] = OAuthClient.authorization_header(url, oauth_params)
 
         yield request
         http.request(request)

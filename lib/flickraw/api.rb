@@ -36,7 +36,7 @@ module FlickRaw
 
     def initialize # :nodoc:
       raise "No API key or secret defined !" if FlickRaw.api_key.nil? or FlickRaw.shared_secret.nil?
-      @oauth_consumer = OAuth.new(FlickRaw.api_key, FlickRaw.shared_secret)
+      @oauth_consumer = OAuthClient.new(FlickRaw.api_key, FlickRaw.shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
       @oauth_consumer.user_agent = USER_AGENT
       
