@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 
-lib = File.expand_path('../../lib/', __FILE__)
+lib = File.dirname(__FILE__)
 $:.unshift lib unless $:.include?(lib)
 
 require 'test/unit'
-require 'flickraw'
-
-# FlickRaw.shared_secret = # Shared secret
-# flickr.auth.checkToken :auth_token => # Auth token
+require 'helper'
 
 class Basic < Test::Unit::TestCase
   def test_request
@@ -335,7 +332,13 @@ class Basic < Test::Unit::TestCase
   def test_photos_getSizes
     info = flickr.photos.getSizes :photo_id => "3839885270"
     assert_equal "http://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find {|f| f.label == "Large"}.url
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg", info.find {|f| f.label == "Large"}.source
+    if FlickRaw.secure
+      source = "https://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg"
+    else
+      source = "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg"
+    end
+    
+    assert_equal source, info.find {|f| f.label == "Large"}.source
   end
   
   def test_photos_search

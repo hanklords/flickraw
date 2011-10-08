@@ -1,19 +1,13 @@
 # -*- coding: utf-8 -*-
 
-lib = File.expand_path('../../lib/', __FILE__)
+lib = File.dirname(__FILE__)
 $:.unshift lib unless $:.include?(lib)
 
 require 'test/unit'
-require 'flickraw'
-
-# FlickRaw.api_key = # API key
-# FlickRaw.shared_secret = # Shared secret
-# flickr.access_token = # Auth token
-# flickr.access_secret = # Auth token secret
+require 'helper'
 
 class Upload < Test::Unit::TestCase
   def test_upload
-
     path = File.dirname(__FILE__) + '/image testée.jpg'
     u = info = nil
     title = "Titre de l'image testée"
