@@ -61,7 +61,7 @@ module FlickRaw
     end
 
     def request_token(url, oauth_params = {})
-      r = post(url, nil, {:oauth_callback => "oob"}.merge(oauth_params))
+      r = post_form(url, nil, {:oauth_callback => "oob"}.merge(oauth_params))
       OAuthClient.parse_response(r.body)
     end
     
