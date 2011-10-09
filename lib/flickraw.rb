@@ -5,7 +5,7 @@ require 'flickraw/response'
 require 'flickraw/api'
 
 module FlickRaw
-  VERSION='0.9.1'
+  VERSION='0.9.2'
   USER_AGENT = "FlickRaw/#{VERSION}"
 end
 
