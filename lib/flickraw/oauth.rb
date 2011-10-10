@@ -1,6 +1,5 @@
 require 'openssl'
-require 'net/http'
-require 'net/https' if RUBY_VERSION < "1.9"
+require 'net/https'
 
 module FlickRaw
   class OAuthClient
