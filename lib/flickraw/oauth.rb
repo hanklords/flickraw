@@ -131,15 +131,15 @@ module FlickRaw
       params_signed = params.reject {|k,v| v.is_a? File}.merge(oauth_params)
       oauth_params[:oauth_signature] = sign(:post, url, params_signed, token_secret)
 
-      r = Net::HTTP.start(url.host, url.port,
-          @proxy.host, @proxy.port, @proxy.user, @proxy.password,
-          :use_ssl => url.scheme == 'https') { |http| 
+      http = Net::HTTP.new(url.host, url.port, @proxy.host, @proxy.port, @proxy.user, @proxy.password)
+      http.use_ssl = (url.scheme == 'https')
+      r = http.start {|agent|
         request = Net::HTTP::Post.new(url.path)
         request['User-Agent'] = @user_agent if @user_agent
         request['Authorization'] = OAuthClient.authorization_header(url, oauth_params)
 
         yield request
-        http.request(request)
+        agent.request(request)
       }
       
       raise FailedResponse.new(r.body) if r.is_a? Net::HTTPClientError
