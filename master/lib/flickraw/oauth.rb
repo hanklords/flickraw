@@ -1,5 +1,5 @@
 require 'openssl'
-require 'net/http'
+require 'net/https'
 
 module FlickRaw
   class OAuthClient
@@ -61,7 +61,7 @@ module FlickRaw
     end
 
     def request_token(url, oauth_params = {})
-      r = post(url, nil, {:oauth_callback => "oob"}.merge(oauth_params))
+      r = post_form(url, nil, {:oauth_callback => "oob"}.merge(oauth_params))
       OAuthClient.parse_response(r.body)
     end
     
@@ -88,12 +88,13 @@ module FlickRaw
 
         request.body = ''
         params.each { |k, v|
-          if v.is_a? File
-            basename = File.basename(v.path).to_s
+          if v.respond_to? :read
+            basename = File.basename(v.path).to_s if v.respond_to? :path
+            basename ||= File.basename(v.base_uri).to_s if v.respond_to? :base_uri
+            basename ||= "unknown"
             basename = basename.encode("utf-8").force_encoding("ascii-8bit") if RUBY_VERSION >= "1.9"
-            filename = basename
             request.body << "--#{boundary}\r\n" <<
-              "Content-Disposition: form-data; name=\"#{k}\"; filename=\"#{filename}\"\r\n" <<
+              "Content-Disposition: form-data; name=\"#{k}\"; filename=\"#{basename}\"\r\n" <<
               "Content-Transfer-Encoding: binary\r\n" <<
               "Content-Type: image/jpeg\r\n\r\n" <<
               v.read << "\r\n"
@@ -128,18 +129,18 @@ module FlickRaw
       default_oauth_params[:oauth_consumer_key] = @consumer_key
       default_oauth_params[:oauth_signature_method] = "PLAINTEXT" if url.scheme == 'https'
       oauth_params = default_oauth_params.merge(oauth_params)
-      params_signed = params.reject {|k,v| v.is_a? File}.merge(oauth_params)
+      params_signed = params.reject {|k,v| v.respond_to? :read}.merge(oauth_params)
       oauth_params[:oauth_signature] = sign(:post, url, params_signed, token_secret)
 
-      r = Net::HTTP.start(url.host, url.port,
-          @proxy.host, @proxy.port, @proxy.user, @proxy.password,
-          :use_ssl => url.scheme == 'https') { |http| 
+      http = Net::HTTP.new(url.host, url.port, @proxy.host, @proxy.port, @proxy.user, @proxy.password)
+      http.use_ssl = (url.scheme == 'https')
+      r = http.start {|agent|
         request = Net::HTTP::Post.new(url.path)
         request['User-Agent'] = @user_agent if @user_agent
         request['Authorization'] = OAuthClient.authorization_header(url, oauth_params)
 
         yield request
-        http.request(request)
+        agent.request(request)
       }
       
       raise FailedResponse.new(r.body) if r.is_a? Net::HTTPClientError

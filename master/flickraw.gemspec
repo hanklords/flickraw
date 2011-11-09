@@ -12,5 +12,5 @@ Gem::Specification.new do |s|
   s.email =  "maelclerambault@yahoo.fr"
   s.homepage = "http://hanklords.github.com/flickraw/"
   s.version = FlickRaw::VERSION
-  s.files = Dir["examples/*.rb"] + Dir["test/*.rb"] + %w{lib/flickraw.rb flickraw_rdoc.rb LICENSE README.rdoc rakefile}
+  s.files = Dir["examples/*.rb"] + Dir["test/*.rb"] + Dir["lib/**/*.rb"] + %w{flickraw_rdoc.rb LICENSE README.rdoc rakefile}
 end
