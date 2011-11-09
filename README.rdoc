@@ -9,6 +9,8 @@ The github repository: http://github.com/hanklords/flickraw
 
 = Installation
 Type this in a console (you might need to be superuser)
+
+ gem install json (This is only necessary on ruby 1.8)
  gem install flickraw
 
 This will recreate the documentation by fetching the methods descriptions from flickr and then virtually plugging them in standard rdoc documentation.
