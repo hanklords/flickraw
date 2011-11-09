@@ -1,771 +1,585 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-	<title>Class: FlickRaw::Flickr::Auth</title>
+<title>Class: FlickRaw::Flickr::Auth</title>
 
-	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
-	<script src="../../js/jquery.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../../js/thickbox-compressed.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../../js/quicksearch.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../../js/darkfish.js" type="text/javascript"
-		charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
 
-</head>
-<body class="class">
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
 
-	<div id="metadata">
-		<div id="home-metadata">
-			<div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../index.html">Home</a>
-          <a href="../../index.html#classes">Classes</a>
-          <a href="../../index.html#methods">Methods</a>
-        </h3>
-			</div>
-		</div>
 
-		<div id="file-metadata">
-			<div id="file-list-section" class="section">
-				<h3 class="section-header">In Files</h3>
-				<div class="section-body">
-					<ul>
-					
-						<li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-					
-					</ul>
-				</div>
-			</div>
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-			
-		</div>
 
-		<div id="class-metadata">
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-			<!-- Parent Class -->
-			
-			<div id="parent-class-section" class="section">
-				<h3 class="section-header">Parent</h3>
-				
-				<p class="link">FlickRaw::Request</p>
-				
-			</div>
-			
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-			<!-- Namespace Contents -->
-			
-			<div id="namespace-list-section" class="section">
-				<h3 class="section-header">Namespace</h3>
-				<ul class="link-list">
-					
-					<li><span class="type">CLASS</span> <a href="Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
-					
-				</ul>
-			</div>
-			
 
-			<!-- Method Quickref -->
-			
-			<div id="method-list-section" class="section">
-				<h3 class="section-header">Methods</h3>
-				<ul class="link-list">
-					
-					<li><a href="#method-i-checkToken">#checkToken</a></li>
-					
-					<li><a href="#method-i-getFrob">#getFrob</a></li>
-					
-					<li><a href="#method-i-getFullToken">#getFullToken</a></li>
-					
-					<li><a href="#method-i-getToken">#getToken</a></li>
-					
-					<li><a href="#method-i-oauth">#oauth</a></li>
-					
-				</ul>
-			</div>
-			
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/flickraw.rb
+  </ul>
+</nav>
 
-			<!-- Included Modules -->
-			
-		</div>
+    
+  </div>
 
-		<div id="project-metadata">
-			
-			
-			<div id="fileindex-section" class="section project-section">
-				<h3 class="section-header">Files</h3>
-				<ul>
-				
-					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
-				
-				</ul>
-			</div>
-			
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">FlickRaw::Request
+  
+</nav>
 
-			<div id="classindex-section" class="section project-section">
-				<h3 class="section-header">Class Index
-					<span class="search-toggle"><img src="../../images/find.png"
-						height="16" width="16" alt="[+]"
-						title="show/hide quicksearch" /></span></h3>
-				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-				<fieldset>
-					<legend>Quicksearch</legend>
-					<input type="text" name="quicksearch" value=""
-						class="quicksearch-field" />
-				</fieldset>
-				</form>
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
 
-				<ul class="link-list">
-				
-					<li><a href="../../FlickRaw.html">FlickRaw</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-				
-					<li><a href="../../Object.html">Object</a></li>
-				
-				</ul>
-				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
-			</div>
+  <ul class="link-list">
+    
+    <li><a href="#method-i-checkToken">#checkToken</a>
+    
+    <li><a href="#method-i-getFrob">#getFrob</a>
+    
+    <li><a href="#method-i-getFullToken">#getFullToken</a>
+    
+    <li><a href="#method-i-getToken">#getToken</a>
+    
+    <li><a href="#method-i-oauth">#oauth</a>
+    
+  </ul>
+</nav>
 
-			
-		</div>
-	</div>
+  </div>
 
-	<div id="documentation">
-		<h1 class="class">FlickRaw::Flickr::Auth</h1>
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
 
-		<div id="description">
-			
-		</div>
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
 
-		<!-- Constants -->
-		
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
 
-		<!-- Attributes -->
-		
+  <ul class="link-list">
+  
+    <li><a href="../../FlickRaw.html">FlickRaw</a>
+  
+    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
+  
+    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
 
-		<!-- Methods -->
-		
-		<div id="public-instance-method-details" class="method-section section">
-			<h3 class="section-header">Public Instance Methods</h3>
+  </div>
+</nav>
 
-		
-			<div id="check-oken-method" class="method-detail ">
-				<a name="method-i-checkToken"></a>
+<div id="documentation">
+  <h1 class="class">class FlickRaw::Flickr::Auth</h1>
 
-				<div class="method-heading">
-				
-					<span class="method-name">checkToken</span><span
-						class="method-args">(:auth_token => 'auth_token')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+  <div id="description" class="description">
+    
+  </div><!-- description -->
 
-				<div class="method-description">
-					
-					<p>
-<a
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-checkToken" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">checkToken</span><span
+            class="method-args">(:auth_token => 'auth_token')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.auth.checkToken.html">flickr.auth.checkToken</a>
-request.
-</p>
-<p>
-Returns the credentials attached to an authentication token. This call must
-be signed as specified in the authentication API spec.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>auth_token <em>(required)</em> </dt><dd><p>
-The authentication token to check.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-<pre>
- 976598454353455read</pre>
-					
+request.</p>
 
-					
-					<div class="method-source-code"
-						id="check-oken-source">
-<pre>
+<p>Returns the credentials attached to an authentication token. This call must
+be signed as specified in the authentication API spec.</p>
 
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>auth_token <em>(required)</em> 
+<dd>
+<p>The authentication token to check.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+
+<pre>976598454353455read</pre>
+          
+
+          
+          <div class="method-source-code" id="checkToken-source">
+            <pre>
 # Generated automatically from flickr api
   def checkToken(*args)
     @flickr.call 'flickr.auth.checkToken', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- checkToken-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- checkToken-method -->
 
-		
-			<div id="get-rob-method" class="method-detail ">
-				<a name="method-i-getFrob"></a>
+    
+      <div id="method-i-getFrob" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getFrob</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getFrob</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.auth.getFrob.html">flickr.auth.getFrob</a>
-request.
-</p>
-<p>
-Returns a frob to be used during authentication. This method call must be
-signed, and is deprecated in favour of OAuth.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-<pre>
- 746563215463214621</pre>
-					
+request.</p>
 
-					
-					<div class="method-source-code"
-						id="get-rob-source">
-<pre>
+<p>Returns a frob to be used during authentication. This method call must be
+signed, and is deprecated in favour of OAuth.</p>
 
+<p><strong>Arguments</strong></p>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+
+<pre>746563215463214621</pre>
+          
+
+          
+          <div class="method-source-code" id="getFrob-source">
+            <pre>
 # Generated automatically from flickr api
   def getFrob(*args)
     @flickr.call 'flickr.auth.getFrob', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getFrob-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getFrob-method -->
 
-		
-			<div id="get-ull-oken-method" class="method-detail ">
-				<a name="method-i-getFullToken"></a>
+    
+      <div id="method-i-getFullToken" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getFullToken</span><span
+            class="method-args">(:mini_token => 'mini_token')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getFullToken</span><span
-						class="method-args">(:mini_token => 'mini_token')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.auth.getFullToken.html">flickr.auth.getFullToken</a>
-request.
-</p>
-<p>
-Get the full authentication token for a mini-token. This method call must
-be signed.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>mini_token <em>(required)</em> </dt><dd><p>
-The mini-token typed in by a user. It should be 9 digits long. It may
-optionally contain dashes.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>Mini-token not found</em>
-</p>
-<p>
-The passed mini-token was not valid.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-<pre>
- 976598454353455write</pre>
-					
+request.</p>
 
-					
-					<div class="method-source-code"
-						id="get-ull-oken-source">
-<pre>
+<p>Get the full authentication token for a mini-token. This method call must
+be signed.</p>
 
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>mini_token <em>(required)</em> 
+<dd>
+<p>The mini-token typed in by a user. It should be 9 digits long. It may
+optionally contain dashes.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Mini-token not found</em></p>
+
+<p>The passed mini-token was not valid.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+
+<pre>976598454353455write</pre>
+          
+
+          
+          <div class="method-source-code" id="getFullToken-source">
+            <pre>
 # Generated automatically from flickr api
   def getFullToken(*args)
     @flickr.call 'flickr.auth.getFullToken', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getFullToken-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getFullToken-method -->
 
-		
-			<div id="get-oken-method" class="method-detail ">
-				<a name="method-i-getToken"></a>
+    
+      <div id="method-i-getToken" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getToken</span><span
+            class="method-args">(:frob => 'frob')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getToken</span><span
-						class="method-args">(:frob => 'frob')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.auth.getToken.html">flickr.auth.getToken</a>
-request.
-</p>
-<p>
-Returns the auth token for the given frob, if one has been attached. This
-method call must be signed, and is deprecated in favour of OAuth.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>frob <em>(required)</em> </dt><dd><p>
-The frob to check.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-108: <em>Invalid frob</em>
-</p>
-<p>
-The specified frob does not exist or has already been used.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-<pre>
- 976598454353455write</pre>
-					
+request.</p>
 
-					
-					<div class="method-source-code"
-						id="get-oken-source">
-<pre>
+<p>Returns the auth token for the given frob, if one has been attached. This
+method call must be signed, and is deprecated in favour of OAuth.</p>
 
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>frob <em>(required)</em> 
+<dd>
+<p>The frob to check.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>108: <em>Invalid frob</em></p>
+
+<p>The specified frob does not exist or has already been used.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+
+<pre>976598454353455write</pre>
+          
+
+          
+          <div class="method-source-code" id="getToken-source">
+            <pre>
 # Generated automatically from flickr api
   def getToken(*args)
     @flickr.call 'flickr.auth.getToken', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getToken-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getToken-method -->
 
-		
-			<div id="oauth-method" class="method-detail ">
-				<a name="method-i-oauth"></a>
+    
+      <div id="method-i-oauth" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">oauth</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">oauth</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+        <div class="method-description">
+          
+          <p>Returns a <a href="Auth/Oauth.html">Oauth</a> object.</p>
+          
 
-				<div class="method-description">
-					
-					<p>
-Returns a <a href="Auth/Oauth.html">Oauth</a> object.
-</p>
-					
+          
+        </div>
 
-					
-				</div>
+        
 
-				
+        
+      </div><!-- oauth-method -->
 
-				
-			</div>
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
 
-		
-		</div>
-	
-
-	</div>
+</div><!-- documentation -->
 
 
-	<div id="rdoc-debugging-section-dump" class="debugging-section">
-	
-		<p>Disabled; run with --debug to generate this.</p>
-	
-	</div>
-
-	<div id="validator-badges">
-		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-			Rdoc Generator</a> 1.1.6</small>.</p>
-	</div>
-
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.10.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 

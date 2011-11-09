@@ -1,1013 +1,743 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-	<title>Class: FlickRaw::Flickr::Photos::Comments</title>
+<title>Class: FlickRaw::Flickr::Photos::Comments</title>
 
-	<link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
 
-	<script src="../../../js/jquery.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../../../js/thickbox-compressed.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../../../js/quicksearch.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../../../js/darkfish.js" type="text/javascript"
-		charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
 
-</head>
-<body class="class">
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
 
-	<div id="metadata">
-		<div id="home-metadata">
-			<div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../../index.html">Home</a>
-          <a href="../../../index.html#classes">Classes</a>
-          <a href="../../../index.html#methods">Methods</a>
-        </h3>
-			</div>
-		</div>
 
-		<div id="file-metadata">
-			<div id="file-list-section" class="section">
-				<h3 class="section-header">In Files</h3>
-				<div class="section-body">
-					<ul>
-					
-						<li><a href="../../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-					
-					</ul>
-				</div>
-			</div>
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-			
-		</div>
 
-		<div id="class-metadata">
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-			<!-- Parent Class -->
-			
-			<div id="parent-class-section" class="section">
-				<h3 class="section-header">Parent</h3>
-				
-				<p class="link">FlickRaw::Request</p>
-				
-			</div>
-			
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-			<!-- Namespace Contents -->
-			
 
-			<!-- Method Quickref -->
-			
-			<div id="method-list-section" class="section">
-				<h3 class="section-header">Methods</h3>
-				<ul class="link-list">
-					
-					<li><a href="#method-i-addComment">#addComment</a></li>
-					
-					<li><a href="#method-i-deleteComment">#deleteComment</a></li>
-					
-					<li><a href="#method-i-editComment">#editComment</a></li>
-					
-					<li><a href="#method-i-getList">#getList</a></li>
-					
-					<li><a href="#method-i-getRecentForContacts">#getRecentForContacts</a></li>
-					
-				</ul>
-			</div>
-			
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/flickraw.rb
+  </ul>
+</nav>
 
-			<!-- Included Modules -->
-			
-		</div>
+    
+  </div>
 
-		<div id="project-metadata">
-			
-			
-			<div id="fileindex-section" class="section project-section">
-				<h3 class="section-header">Files</h3>
-				<ul>
-				
-					<li class="file"><a href="../../../README_rdoc.html">README.rdoc</a></li>
-				
-				</ul>
-			</div>
-			
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">FlickRaw::Request
+  
+</nav>
 
-			<div id="classindex-section" class="section project-section">
-				<h3 class="section-header">Class Index
-					<span class="search-toggle"><img src="../../../images/find.png"
-						height="16" width="16" alt="[+]"
-						title="show/hide quicksearch" /></span></h3>
-				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-				<fieldset>
-					<legend>Quicksearch</legend>
-					<input type="text" name="quicksearch" value=""
-						class="quicksearch-field" />
-				</fieldset>
-				</form>
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
 
-				<ul class="link-list">
-				
-					<li><a href="../../../FlickRaw.html">FlickRaw</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-				
-					<li><a href="../../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-				
-					<li><a href="../../../Object.html">Object</a></li>
-				
-				</ul>
-				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
-			</div>
+  <ul class="link-list">
+    
+    <li><a href="#method-i-addComment">#addComment</a>
+    
+    <li><a href="#method-i-deleteComment">#deleteComment</a>
+    
+    <li><a href="#method-i-editComment">#editComment</a>
+    
+    <li><a href="#method-i-getList">#getList</a>
+    
+    <li><a href="#method-i-getRecentForContacts">#getRecentForContacts</a>
+    
+  </ul>
+</nav>
 
-			
-		</div>
-	</div>
+  </div>
 
-	<div id="documentation">
-		<h1 class="class">FlickRaw::Flickr::Photos::Comments</h1>
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
 
-		<div id="description">
-			
-		</div>
+  <ul>
+  
+    <li class="file"><a href="../../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
 
-		<!-- Constants -->
-		
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
 
-		<!-- Attributes -->
-		
+  <ul class="link-list">
+  
+    <li><a href="../../../FlickRaw.html">FlickRaw</a>
+  
+    <li><a href="../../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
+  
+    <li><a href="../../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
+  
+    <li><a href="../../../Object.html">Object</a>
+  
+  </ul>
+</nav>
 
-		<!-- Methods -->
-		
-		<div id="public-instance-method-details" class="method-section section">
-			<h3 class="section-header">Public Instance Methods</h3>
+  </div>
+</nav>
 
-		
-			<div id="add-omment-method" class="method-detail ">
-				<a name="method-i-addComment"></a>
+<div id="documentation">
+  <h1 class="class">class FlickRaw::Flickr::Photos::Comments</h1>
 
-				<div class="method-heading">
-				
-					<span class="method-name">addComment</span><span
-						class="method-args">(:photo_id => 'photo_id',:comment_text => 'comment_text')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
+  <div id="description" class="description">
+    
+  </div><!-- description -->
 
-				<div class="method-description">
-					
-					<p>
-<a
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-addComment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">addComment</span><span
+            class="method-args">(:photo_id => 'photo_id',:comment_text => 'comment_text')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.photos.comments.addComment.html">flickr.photos.comments.addComment</a>
-request.
-</p>
-<p>
-Add comment to a photo as the currently authenticated user.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>photo_id <em>(required)</em> </dt><dd><p>
-The id of the photo to add a comment to.
-</p>
-</dd>
-<dt>comment_text <em>(required)</em> </dt><dd><p>
-Text of the comment
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>Photo not found.</em>
-</p>
-<p>
-The photo id passed was not a valid photo id
-</p>
-</li>
-<li><p>
-8: <em>Blank comment.</em>
-</p>
-<p>
-Comment text can not be blank
-</p>
-</li>
-<li><p>
-9: <em>User is posting comments too fast.</em>
-</p>
-<p>
-The user has reached the limit for number of comments posted during a
-specific time period.  Wait a bit and try again.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+request.</p>
 
-					
-					<div class="method-source-code"
-						id="add-omment-source">
-<pre>
+<p>Add comment to a photo as the currently authenticated user.</p>
 
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<dd>
+<p>The id of the photo to add a comment to.</p>
+</dd><dt>comment_text <em>(required)</em> 
+<dd>
+<p>Text of the comment</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Photo not found.</em></p>
+
+<p>The photo id passed was not a valid photo id</p>
+</li><li>
+<p>8: <em>Blank comment.</em></p>
+
+<p>Comment text can not be blank</p>
+</li><li>
+<p>9: <em>User is posting comments too fast.</em></p>
+
+<p>The user has reached the limit for number of comments posted during a
+specific time period.  Wait a bit and try again.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="addComment-source">
+            <pre>
 # Generated automatically from flickr api
   def addComment(*args)
     @flickr.call 'flickr.photos.comments.addComment', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- addComment-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- addComment-method -->
 
-		
-			<div id="delete-omment-method" class="method-detail ">
-				<a name="method-i-deleteComment"></a>
+    
+      <div id="method-i-deleteComment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deleteComment</span><span
+            class="method-args">(:comment_id => 'comment_id')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">deleteComment</span><span
-						class="method-args">(:comment_id => 'comment_id')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.photos.comments.deleteComment.html">flickr.photos.comments.deleteComment</a>
-request.
-</p>
-<p>
-Delete a comment as the currently authenticated user.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>comment_id <em>(required)</em> </dt><dd><p>
-The id of the comment to edit.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>Photo not found.</em>
-</p>
-<p>
-The requested comment is against a photo which no longer exists.
-</p>
-</li>
-<li><p>
-2: <em>Comment not found.</em>
-</p>
-<p>
-The comment id passed was not a valid comment id
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-					
+request.</p>
 
-					
-					<div class="method-source-code"
-						id="delete-omment-source">
-<pre>
+<p>Delete a comment as the currently authenticated user.</p>
 
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>comment_id <em>(required)</em> 
+<dd>
+<p>The id of the comment to edit.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Photo not found.</em></p>
+
+<p>The requested comment is against a photo which no longer exists.</p>
+</li><li>
+<p>2: <em>Comment not found.</em></p>
+
+<p>The comment id passed was not a valid comment id</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="deleteComment-source">
+            <pre>
 # Generated automatically from flickr api
   def deleteComment(*args)
     @flickr.call 'flickr.photos.comments.deleteComment', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- deleteComment-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- deleteComment-method -->
 
-		
-			<div id="edit-omment-method" class="method-detail ">
-				<a name="method-i-editComment"></a>
+    
+      <div id="method-i-editComment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">editComment</span><span
+            class="method-args">(:comment_id => 'comment_id',:comment_text => 'comment_text')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">editComment</span><span
-						class="method-args">(:comment_id => 'comment_id',:comment_text => 'comment_text')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.photos.comments.editComment.html">flickr.photos.comments.editComment</a>
-request.
-</p>
-<p>
-Edit the text of a comment as the currently authenticated user.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>comment_id <em>(required)</em> </dt><dd><p>
-The id of the comment to edit.
-</p>
-</dd>
-<dt>comment_text <em>(required)</em> </dt><dd><p>
-Update the comment to this text.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>Photo not found.</em>
-</p>
-<p>
-The requested comment is against a photo which no longer exists.
-</p>
-</li>
-<li><p>
-2: <em>Comment not found.</em>
-</p>
-<p>
-The comment id passed was not a valid comment id
-</p>
-</li>
-<li><p>
-8: <em>Blank comment.</em>
-</p>
-<p>
-Comment text can not be blank
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-					
+request.</p>
 
-					
-					<div class="method-source-code"
-						id="edit-omment-source">
-<pre>
+<p>Edit the text of a comment as the currently authenticated user.</p>
 
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>comment_id <em>(required)</em> 
+<dd>
+<p>The id of the comment to edit.</p>
+</dd><dt>comment_text <em>(required)</em> 
+<dd>
+<p>Update the comment to this text.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Photo not found.</em></p>
+
+<p>The requested comment is against a photo which no longer exists.</p>
+</li><li>
+<p>2: <em>Comment not found.</em></p>
+
+<p>The comment id passed was not a valid comment id</p>
+</li><li>
+<p>8: <em>Blank comment.</em></p>
+
+<p>Comment text can not be blank</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="editComment-source">
+            <pre>
 # Generated automatically from flickr api
   def editComment(*args)
     @flickr.call 'flickr.photos.comments.editComment', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- editComment-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- editComment-method -->
 
-		
-			<div id="get-ist-method" class="method-detail ">
-				<a name="method-i-getList"></a>
+    
+      <div id="method-i-getList" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getList</span><span
+            class="method-args">(:photo_id => 'photo_id',:min_comment_date => 'min_comment_date',:max_comment_date => 'max_comment_date',:page => 'page',:per_page => 'per_page',:include_faves => 'include_faves')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getList</span><span
-						class="method-args">(:photo_id => 'photo_id',:min_comment_date => 'min_comment_date',:max_comment_date => 'max_comment_date',:page => 'page',:per_page => 'per_page',:include_faves => 'include_faves')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.photos.comments.getList.html">flickr.photos.comments.getList</a>
-request.
-</p>
-<p>
-Returns the comments for a photo
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>photo_id <em>(required)</em> </dt><dd><p>
-The id of the photo to fetch comments for.
-</p>
-</dd>
-<dt>min_comment_date </dt><dd><p>
-Minimum date that a a comment was added. The date should be in the form of
-a unix timestamp.
-</p>
-</dd>
-<dt>max_comment_date </dt><dd><p>
-Maximum date that a comment was added. The date should be in the form of a
-unix timestamp.
-</p>
-</dd>
-<dt>page </dt><dd></dd>
-<dt>per_page </dt><dd></dd>
-<dt>include_faves </dt><dd></dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>Photo not found</em>
-</p>
-<p>
-The photo id was either invalid or was for a photo not viewable by the
-calling user.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-<pre>
- Umm, I'm not sure, can I get back to you on that one?</pre>
-					
+request.</p>
 
-					
-					<div class="method-source-code"
-						id="get-ist-source">
-<pre>
+<p>Returns the comments for a photo</p>
 
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<dd>
+<p>The id of the photo to fetch comments for.</p>
+</dd><dt>min_comment_date 
+<dd>
+<p>Minimum date that a a comment was added. The date should be in the form of
+a unix timestamp.</p>
+</dd><dt>max_comment_date 
+<dd>
+<p>Maximum date that a comment was added. The date should be in the form of a
+unix timestamp.</p>
+</dd><dt>page 
+<dd></dd><dt>per_page 
+<dd></dd><dt>include_faves 
+<dd>
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Photo not found</em></p>
+
+<p>The photo id was either invalid or was for a photo not viewable by the
+calling user.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+
+<pre>Umm, I'm not sure, can I get back to you on that one?</pre>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="getList-source">
+            <pre>
 # Generated automatically from flickr api
   def getList(*args)
     @flickr.call 'flickr.photos.comments.getList', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getList-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getList-method -->
 
-		
-			<div id="get-ecent-or-ontacts-method" class="method-detail ">
-				<a name="method-i-getRecentForContacts"></a>
+    
+      <div id="method-i-getRecentForContacts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getRecentForContacts</span><span
+            class="method-args">(:date_lastcomment => 'date_lastcomment',:contacts_filter => 'contacts_filter',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getRecentForContacts</span><span
-						class="method-args">(:date_lastcomment => 'date_lastcomment',:contacts_filter => 'contacts_filter',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.photos.comments.getRecentForContacts.html">flickr.photos.comments.getRecentForContacts</a>
-request.
-</p>
-<p>
-Return the list of photos belonging to your contacts that have been
-commented on recently.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date_lastcomment </dt><dd><p>
-Limits the resultset to photos that have been commented on since this date.
-The date should be in the form of a Unix timestamp.
-</p>
-</dd>
-</dl>
-<p>
-The default, and maximum, offset is (1) hour.
-</p>
-<dl>
-<dt>contacts_filter </dt><dd><p>
-A comma-separated list of contact NSIDs to limit the scope of the query to.
-</p>
-</dd>
-<dt>extras </dt><dd><p>
-A comma-delimited list of extra information to fetch for each returned
+request.</p>
+
+<p>Return the list of photos belonging to your contacts that have been
+commented on recently.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date_lastcomment 
+<dd>
+<p>Limits the resultset to photos that have been commented on since this date.
+The date should be in the form of a Unix timestamp.</p>
+</dd></dl>
+
+<p>The default, and maximum, offset is (1) hour.</p>
+<dl class="rdoc-list label-list"><dt>contacts_filter 
+<dd>
+<p>A comma-separated list of contact NSIDs to limit the scope of the query to.</p>
+</dd><dt>extras 
+<dd>
+<p>A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: description, license, date_upload,
 date_taken, owner_name, icon_server, original_format, last_update, geo,
 tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
-url_m, url_z, url_l, url_o
-</p>
-</dd>
-<dt>per_page </dt><dd><p>
-Number of photos to return per page. If this argument is omitted, it
-defaults to 100. The maximum allowed value is 500.
-</p>
-</dd>
-<dt>page </dt><dd><p>
-The page of results to return. If this argument is omitted, it defaults to
-1.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-					
+url_m, url_z, url_l, url_o</p>
+</dd><dt>per_page 
+<dd>
+<p>Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
 
-					
-					<div class="method-source-code"
-						id="get-ecent-or-ontacts-source">
-<pre>
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>96: <em>Invalid signature</em></p>
 
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="getRecentForContacts-source">
+            <pre>
 # Generated automatically from flickr api
   def getRecentForContacts(*args)
     @flickr.call 'flickr.photos.comments.getRecentForContacts', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getRecentForContacts-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getRecentForContacts-method -->
 
-		
-		</div>
-	
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
 
-	</div>
+</div><!-- documentation -->
 
 
-	<div id="rdoc-debugging-section-dump" class="debugging-section">
-	
-		<p>Disabled; run with --debug to generate this.</p>
-	
-	</div>
-
-	<div id="validator-badges">
-		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-			Rdoc Generator</a> 1.1.6</small>.</p>
-	</div>
-
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.10.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 

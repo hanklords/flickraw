@@ -1,3054 +1,2115 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-	<title>Class: FlickRaw::Flickr::Stats</title>
+<title>Class: FlickRaw::Flickr::Stats</title>
 
-	<link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
-	<script src="../../js/jquery.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../../js/thickbox-compressed.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../../js/quicksearch.js" type="text/javascript"
-		charset="utf-8"></script>
-	<script src="../../js/darkfish.js" type="text/javascript"
-		charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
 
-</head>
-<body class="class">
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
 
-	<div id="metadata">
-		<div id="home-metadata">
-			<div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../index.html">Home</a>
-          <a href="../../index.html#classes">Classes</a>
-          <a href="../../index.html#methods">Methods</a>
-        </h3>
-			</div>
-		</div>
 
-		<div id="file-metadata">
-			<div id="file-list-section" class="section">
-				<h3 class="section-header">In Files</h3>
-				<div class="section-body">
-					<ul>
-					
-						<li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-							class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-					
-					</ul>
-				</div>
-			</div>
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-			
-		</div>
 
-		<div id="class-metadata">
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-			<!-- Parent Class -->
-			
-			<div id="parent-class-section" class="section">
-				<h3 class="section-header">Parent</h3>
-				
-				<p class="link">FlickRaw::Request</p>
-				
-			</div>
-			
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-			<!-- Namespace Contents -->
-			
 
-			<!-- Method Quickref -->
-			
-			<div id="method-list-section" class="section">
-				<h3 class="section-header">Methods</h3>
-				<ul class="link-list">
-					
-					<li><a href="#method-i-getCSVFiles">#getCSVFiles</a></li>
-					
-					<li><a href="#method-i-getCollectionDomains">#getCollectionDomains</a></li>
-					
-					<li><a href="#method-i-getCollectionReferrers">#getCollectionReferrers</a></li>
-					
-					<li><a href="#method-i-getCollectionStats">#getCollectionStats</a></li>
-					
-					<li><a href="#method-i-getPhotoDomains">#getPhotoDomains</a></li>
-					
-					<li><a href="#method-i-getPhotoReferrers">#getPhotoReferrers</a></li>
-					
-					<li><a href="#method-i-getPhotoStats">#getPhotoStats</a></li>
-					
-					<li><a href="#method-i-getPhotosetDomains">#getPhotosetDomains</a></li>
-					
-					<li><a href="#method-i-getPhotosetReferrers">#getPhotosetReferrers</a></li>
-					
-					<li><a href="#method-i-getPhotosetStats">#getPhotosetStats</a></li>
-					
-					<li><a href="#method-i-getPhotostreamDomains">#getPhotostreamDomains</a></li>
-					
-					<li><a href="#method-i-getPhotostreamReferrers">#getPhotostreamReferrers</a></li>
-					
-					<li><a href="#method-i-getPhotostreamStats">#getPhotostreamStats</a></li>
-					
-					<li><a href="#method-i-getPopularPhotos">#getPopularPhotos</a></li>
-					
-					<li><a href="#method-i-getTotalViews">#getTotalViews</a></li>
-					
-				</ul>
-			</div>
-			
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/flickraw.rb
+  </ul>
+</nav>
 
-			<!-- Included Modules -->
-			
-		</div>
+    
+  </div>
 
-		<div id="project-metadata">
-			
-			
-			<div id="fileindex-section" class="section project-section">
-				<h3 class="section-header">Files</h3>
-				<ul>
-				
-					<li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
-				
-				</ul>
-			</div>
-			
-
-			<div id="classindex-section" class="section project-section">
-				<h3 class="section-header">Class Index
-					<span class="search-toggle"><img src="../../images/find.png"
-						height="16" width="16" alt="[+]"
-						title="show/hide quicksearch" /></span></h3>
-				<form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-				<fieldset>
-					<legend>Quicksearch</legend>
-					<input type="text" name="quicksearch" value=""
-						class="quicksearch-field" />
-				</fieldset>
-				</form>
-
-				<ul class="link-list">
-				
-					<li><a href="../../FlickRaw.html">FlickRaw</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-				
-					<li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-				
-					<li><a href="../../Object.html">Object</a></li>
-				
-				</ul>
-				<div id="no-class-search-results" style="display: none;">No matching classes.</div>
-			</div>
-
-			
-		</div>
-	</div>
-
-	<div id="documentation">
-		<h1 class="class">FlickRaw::Flickr::Stats</h1>
-
-		<div id="description">
-			
-		</div>
-
-		<!-- Constants -->
-		
-
-		<!-- Attributes -->
-		
-
-		<!-- Methods -->
-		
-		<div id="public-instance-method-details" class="method-section section">
-			<h3 class="section-header">Public Instance Methods</h3>
-
-		
-			<div id="get-iles-method" class="method-detail ">
-				<a name="method-i-getCSVFiles"></a>
-
-				<div class="method-heading">
-				
-					<span class="method-name">getCSVFiles</span><span
-						class="method-args"></span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
-href="http://www.flickr.com/services/api/flickr.stats.getCSVFiles.html">flickr.stats.getCSVFiles</a>
-request.
-</p>
-<p>
-Returns a list of URLs for text files containing all your stats data (from
-November 26th 2007 onwards) for the currently auth&#8217;d user.
-</p>
-<p>
-Please note, these files will only be available until June 1, 2010 Noon
-PDT.  For more information please check out this FAQ, or just go download
-your files.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-<pre>
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
   
-       ....
-     </pre>
-					
+  <p class="link">FlickRaw::Request
+  
+</nav>
 
-					
-					<div class="method-source-code"
-						id="get-iles-source">
-<pre>
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
 
+  <ul class="link-list">
+    
+    <li><a href="#method-i-getCSVFiles">#getCSVFiles</a>
+    
+    <li><a href="#method-i-getCollectionDomains">#getCollectionDomains</a>
+    
+    <li><a href="#method-i-getCollectionReferrers">#getCollectionReferrers</a>
+    
+    <li><a href="#method-i-getCollectionStats">#getCollectionStats</a>
+    
+    <li><a href="#method-i-getPhotoDomains">#getPhotoDomains</a>
+    
+    <li><a href="#method-i-getPhotoReferrers">#getPhotoReferrers</a>
+    
+    <li><a href="#method-i-getPhotoStats">#getPhotoStats</a>
+    
+    <li><a href="#method-i-getPhotosetDomains">#getPhotosetDomains</a>
+    
+    <li><a href="#method-i-getPhotosetReferrers">#getPhotosetReferrers</a>
+    
+    <li><a href="#method-i-getPhotosetStats">#getPhotosetStats</a>
+    
+    <li><a href="#method-i-getPhotostreamDomains">#getPhotostreamDomains</a>
+    
+    <li><a href="#method-i-getPhotostreamReferrers">#getPhotostreamReferrers</a>
+    
+    <li><a href="#method-i-getPhotostreamStats">#getPhotostreamStats</a>
+    
+    <li><a href="#method-i-getPopularPhotos">#getPopularPhotos</a>
+    
+    <li><a href="#method-i-getTotalViews">#getTotalViews</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../FlickRaw.html">FlickRaw</a>
+  
+    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
+  
+    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class FlickRaw::Flickr::Stats</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-getCSVFiles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getCSVFiles</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
+href="http://www.flickr.com/services/api/flickr.stats.getCSVFiles.html">flickr.stats.getCSVFiles</a>
+request.</p>
+
+<p>Returns a list of URLs for text files containing all your stats data (from
+November 26th 2007 onwards) for the currently auth'd user.</p>
+
+<p>Please note, these files will only be available until June 1, 2010 Noon
+PDT.  For more information please check out this FAQ, or just go download
+your files.</p>
+
+<p><strong>Arguments</strong></p>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+
+<pre>....</pre>
+          
+
+          
+          <div class="method-source-code" id="getCSVFiles-source">
+            <pre>
 # Generated automatically from flickr api
   def getCSVFiles(*args)
     @flickr.call 'flickr.stats.getCSVFiles', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getCSVFiles-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getCSVFiles-method -->
 
-		
-			<div id="get-ollection-omains-method" class="method-detail ">
-				<a name="method-i-getCollectionDomains"></a>
+    
+      <div id="method-i-getCollectionDomains" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getCollectionDomains</span><span
+            class="method-args">(:date => 'date',:collection_id => 'collection_id',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getCollectionDomains</span><span
-						class="method-args">(:date => 'date',:collection_id => 'collection_id',:per_page => 'per_page',:page => 'page')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getCollectionDomains.html">flickr.stats.getCollectionDomains</a>
-request.
-</p>
-<p>
-Get a list of referring domains for a collection
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format.
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get a list of referring domains for a collection</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>collection_id </dt><dd><p>
-The id of the collection to get stats for. If not provided, stats for all
-collections will be returned.
-</p>
-</dd>
-<dt>per_page </dt><dd><p>
-Number of domains to return per page. If this argument is omitted, it
-defaults to 25. The maximum allowed value is 100.
-</p>
-</dd>
-<dt>page </dt><dd><p>
-The page of results to return. If this argument is omitted, it defaults to
-1.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>collection_id 
+<dd>
+<p>The id of the collection to get stats for. If not provided, stats for all
+collections will be returned.</p>
+</dd><dt>per_page 
+<dd>
+<p>Number of domains to return per page. If this argument is omitted, it
+defaults to 25. The maximum allowed value is 100.</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-4: <em>Collection not found</em>
-</p>
-<p>
-The collection id was either invalid or was for a collection not owned by
-the calling user.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-ollection-omains-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>4: <em>Collection not found</em></p>
 
+<p>The collection id was either invalid or was for a collection not owned by
+the calling user.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getCollectionDomains-source">
+            <pre>
 # Generated automatically from flickr api
   def getCollectionDomains(*args)
     @flickr.call 'flickr.stats.getCollectionDomains', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getCollectionDomains-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getCollectionDomains-method -->
 
-		
-			<div id="get-ollection-eferrers-method" class="method-detail ">
-				<a name="method-i-getCollectionReferrers"></a>
+    
+      <div id="method-i-getCollectionReferrers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getCollectionReferrers</span><span
+            class="method-args">(:date => 'date',:domain => 'domain',:collection_id => 'collection_id',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getCollectionReferrers</span><span
-						class="method-args">(:date => 'date',:domain => 'domain',:collection_id => 'collection_id',:per_page => 'per_page',:page => 'page')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getCollectionReferrers.html">flickr.stats.getCollectionReferrers</a>
-request.
-</p>
-<p>
-Get a list of referrers from a given domain to a collection
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format. 
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get a list of referrers from a given domain to a collection</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>domain <em>(required)</em> </dt><dd><p>
-The domain to return referrers for. This should be a hostname (eg:
-&#8220;flickr.com&#8220;) with no protocol or pathname.
-</p>
-</dd>
-<dt>collection_id </dt><dd><p>
-The id of the collection to get stats for. If not provided, stats for all
-collections will be returned.
-</p>
-</dd>
-<dt>per_page </dt><dd><p>
-Number of referrers to return per page. If this argument is omitted, it
-defaults to 25. The maximum allowed value is 100.
-</p>
-</dd>
-<dt>page </dt><dd><p>
-The page of results to return. If this argument is omitted, it defaults to
-1.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>domain <em>(required)</em> 
+<dd>
+<p>The domain to return referrers for. This should be a hostname (eg:
+"flickr.com") with no protocol or pathname.</p>
+</dd><dt>collection_id 
+<dd>
+<p>The id of the collection to get stats for. If not provided, stats for all
+collections will be returned.</p>
+</dd><dt>per_page 
+<dd>
+<p>Number of referrers to return per page. If this argument is omitted, it
+defaults to 25. The maximum allowed value is 100.</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-4: <em>Collection not found</em>
-</p>
-<p>
-The collection id was either invalid or was for a collection not owned by
-the calling user.
-</p>
-</li>
-<li><p>
-5: <em>Invalid domain</em>
-</p>
-<p>
-The domain provided is not in the expected format.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-ollection-eferrers-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>4: <em>Collection not found</em></p>
 
+<p>The collection id was either invalid or was for a collection not owned by
+the calling user.</p>
+</li><li>
+<p>5: <em>Invalid domain</em></p>
+
+<p>The domain provided is not in the expected format.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getCollectionReferrers-source">
+            <pre>
 # Generated automatically from flickr api
   def getCollectionReferrers(*args)
     @flickr.call 'flickr.stats.getCollectionReferrers', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getCollectionReferrers-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getCollectionReferrers-method -->
 
-		
-			<div id="get-ollection-tats-method" class="method-detail ">
-				<a name="method-i-getCollectionStats"></a>
+    
+      <div id="method-i-getCollectionStats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getCollectionStats</span><span
+            class="method-args">(:date => 'date',:collection_id => 'collection_id')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getCollectionStats</span><span
-						class="method-args">(:date => 'date',:collection_id => 'collection_id')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getCollectionStats.html">flickr.stats.getCollectionStats</a>
-request.
-</p>
-<p>
-Get the number of views on a collection for a given date.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format.
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get the number of views on a collection for a given date.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>collection_id <em>(required)</em> </dt><dd><p>
-The id of the collection to get stats for.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>collection_id <em>(required)</em> 
+<dd>
+<p>The id of the collection to get stats for.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-4: <em>Collection not found</em>
-</p>
-<p>
-The collection id was either invalid or was for a collection not owned by
-the calling user.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-ollection-tats-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>4: <em>Collection not found</em></p>
 
+<p>The collection id was either invalid or was for a collection not owned by
+the calling user.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getCollectionStats-source">
+            <pre>
 # Generated automatically from flickr api
   def getCollectionStats(*args)
     @flickr.call 'flickr.stats.getCollectionStats', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getCollectionStats-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getCollectionStats-method -->
 
-		
-			<div id="get-hoto-omains-method" class="method-detail ">
-				<a name="method-i-getPhotoDomains"></a>
+    
+      <div id="method-i-getPhotoDomains" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPhotoDomains</span><span
+            class="method-args">(:date => 'date',:photo_id => 'photo_id',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getPhotoDomains</span><span
-						class="method-args">(:date => 'date',:photo_id => 'photo_id',:per_page => 'per_page',:page => 'page')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getPhotoDomains.html">flickr.stats.getPhotoDomains</a>
-request.
-</p>
-<p>
-Get a list of referring domains for a photo
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format.
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get a list of referring domains for a photo</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>photo_id </dt><dd><p>
-The id of the photo to get stats for. If not provided, stats for all photos
-will be returned.
-</p>
-</dd>
-<dt>per_page </dt><dd><p>
-Number of domains to return per page. If this argument is omitted, it
-defaults to 25. The maximum allowed value is 100.
-</p>
-</dd>
-<dt>page </dt><dd><p>
-The page of results to return. If this argument is omitted, it defaults to
-1.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>photo_id 
+<dd>
+<p>The id of the photo to get stats for. If not provided, stats for all photos
+will be returned.</p>
+</dd><dt>per_page 
+<dd>
+<p>Number of domains to return per page. If this argument is omitted, it
+defaults to 25. The maximum allowed value is 100.</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-4: <em>Photo not found</em>
-</p>
-<p>
-The photo id was either invalid or was for a photo not owned by the calling
-user.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-hoto-omains-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>4: <em>Photo not found</em></p>
 
+<p>The photo id was either invalid or was for a photo not owned by the calling
+user.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getPhotoDomains-source">
+            <pre>
 # Generated automatically from flickr api
   def getPhotoDomains(*args)
     @flickr.call 'flickr.stats.getPhotoDomains', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getPhotoDomains-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getPhotoDomains-method -->
 
-		
-			<div id="get-hoto-eferrers-method" class="method-detail ">
-				<a name="method-i-getPhotoReferrers"></a>
+    
+      <div id="method-i-getPhotoReferrers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPhotoReferrers</span><span
+            class="method-args">(:date => 'date',:domain => 'domain',:photo_id => 'photo_id',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getPhotoReferrers</span><span
-						class="method-args">(:date => 'date',:domain => 'domain',:photo_id => 'photo_id',:per_page => 'per_page',:page => 'page')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getPhotoReferrers.html">flickr.stats.getPhotoReferrers</a>
-request.
-</p>
-<p>
-Get a list of referrers from a given domain to a photo
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format.
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get a list of referrers from a given domain to a photo</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>domain <em>(required)</em> </dt><dd><p>
-The domain to return referrers for. This should be a hostname (eg:
-&#8220;flickr.com&#8220;) with no protocol or pathname.
-</p>
-</dd>
-<dt>photo_id </dt><dd><p>
-The id of the photo to get stats for. If not provided, stats for all photos
-will be returned.
-</p>
-</dd>
-<dt>per_page </dt><dd><p>
-Number of referrers to return per page. If this argument is omitted, it
-defaults to 25. The maximum allowed value is 100.
-</p>
-</dd>
-<dt>page </dt><dd><p>
-The page of results to return. If this argument is omitted, it defaults to
-1.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>domain <em>(required)</em> 
+<dd>
+<p>The domain to return referrers for. This should be a hostname (eg:
+"flickr.com") with no protocol or pathname.</p>
+</dd><dt>photo_id 
+<dd>
+<p>The id of the photo to get stats for. If not provided, stats for all photos
+will be returned.</p>
+</dd><dt>per_page 
+<dd>
+<p>Number of referrers to return per page. If this argument is omitted, it
+defaults to 25. The maximum allowed value is 100.</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-4: <em>Photo not found</em>
-</p>
-<p>
-The photo id was either invalid or was for a photo not owned by the calling
-user.
-</p>
-</li>
-<li><p>
-5: <em>Invalid domain</em>
-</p>
-<p>
-The domain provided is not in the expected format.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-hoto-eferrers-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>4: <em>Photo not found</em></p>
 
+<p>The photo id was either invalid or was for a photo not owned by the calling
+user.</p>
+</li><li>
+<p>5: <em>Invalid domain</em></p>
+
+<p>The domain provided is not in the expected format.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getPhotoReferrers-source">
+            <pre>
 # Generated automatically from flickr api
   def getPhotoReferrers(*args)
     @flickr.call 'flickr.stats.getPhotoReferrers', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getPhotoReferrers-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getPhotoReferrers-method -->
 
-		
-			<div id="get-hoto-tats-method" class="method-detail ">
-				<a name="method-i-getPhotoStats"></a>
+    
+      <div id="method-i-getPhotoStats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPhotoStats</span><span
+            class="method-args">(:date => 'date',:photo_id => 'photo_id')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getPhotoStats</span><span
-						class="method-args">(:date => 'date',:photo_id => 'photo_id')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getPhotoStats.html">flickr.stats.getPhotoStats</a>
-request.
-</p>
-<p>
-Get the number of views, comments and favorites on a photo for a given
-date.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format.
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get the number of views, comments and favorites on a photo for a given
+date.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>photo_id <em>(required)</em> </dt><dd><p>
-The id of the photo to get stats for.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<dd>
+<p>The id of the photo to get stats for.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-4: <em>Photo not found</em>
-</p>
-<p>
-The photo id was either invalid or was for a photo not owned by the calling
-user.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-hoto-tats-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>4: <em>Photo not found</em></p>
 
+<p>The photo id was either invalid or was for a photo not owned by the calling
+user.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getPhotoStats-source">
+            <pre>
 # Generated automatically from flickr api
   def getPhotoStats(*args)
     @flickr.call 'flickr.stats.getPhotoStats', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getPhotoStats-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getPhotoStats-method -->
 
-		
-			<div id="get-hotoset-omains-method" class="method-detail ">
-				<a name="method-i-getPhotosetDomains"></a>
+    
+      <div id="method-i-getPhotosetDomains" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPhotosetDomains</span><span
+            class="method-args">(:date => 'date',:photoset_id => 'photoset_id',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getPhotosetDomains</span><span
-						class="method-args">(:date => 'date',:photoset_id => 'photoset_id',:per_page => 'per_page',:page => 'page')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getPhotosetDomains.html">flickr.stats.getPhotosetDomains</a>
-request.
-</p>
-<p>
-Get a list of referring domains for a photoset
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format.
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get a list of referring domains for a photoset</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>photoset_id </dt><dd><p>
-The id of the photoset to get stats for. If not provided, stats for all
-sets will be returned.
-</p>
-</dd>
-<dt>per_page </dt><dd><p>
-Number of domains to return per page. If this argument is omitted, it
-defaults to 25. The maximum allowed value is 100.
-</p>
-</dd>
-<dt>page </dt><dd><p>
-The page of results to return. If this argument is omitted, it defaults to
-1.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>photoset_id 
+<dd>
+<p>The id of the photoset to get stats for. If not provided, stats for all
+sets will be returned.</p>
+</dd><dt>per_page 
+<dd>
+<p>Number of domains to return per page. If this argument is omitted, it
+defaults to 25. The maximum allowed value is 100.</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-4: <em>Photoset not found</em>
-</p>
-<p>
-The photoset id was either invalid or was for a set not owned by the
-calling user.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-hotoset-omains-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>4: <em>Photoset not found</em></p>
 
+<p>The photoset id was either invalid or was for a set not owned by the
+calling user.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getPhotosetDomains-source">
+            <pre>
 # Generated automatically from flickr api
   def getPhotosetDomains(*args)
     @flickr.call 'flickr.stats.getPhotosetDomains', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getPhotosetDomains-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getPhotosetDomains-method -->
 
-		
-			<div id="get-hotoset-eferrers-method" class="method-detail ">
-				<a name="method-i-getPhotosetReferrers"></a>
+    
+      <div id="method-i-getPhotosetReferrers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPhotosetReferrers</span><span
+            class="method-args">(:date => 'date',:domain => 'domain',:photoset_id => 'photoset_id',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getPhotosetReferrers</span><span
-						class="method-args">(:date => 'date',:domain => 'domain',:photoset_id => 'photoset_id',:per_page => 'per_page',:page => 'page')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getPhotosetReferrers.html">flickr.stats.getPhotosetReferrers</a>
-request.
-</p>
-<p>
-Get a list of referrers from a given domain to a photoset
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format. 
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get a list of referrers from a given domain to a photoset</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>domain <em>(required)</em> </dt><dd><p>
-The domain to return referrers for. This should be a hostname (eg:
-&#8220;flickr.com&#8220;) with no protocol or pathname.
-</p>
-</dd>
-<dt>photoset_id </dt><dd><p>
-The id of the photoset to get stats for. If not provided, stats for all
-sets will be returned.
-</p>
-</dd>
-<dt>per_page </dt><dd><p>
-Number of referrers to return per page. If this argument is omitted, it
-defaults to 25. The maximum allowed value is 100.
-</p>
-</dd>
-<dt>page </dt><dd><p>
-The page of results to return. If this argument is omitted, it defaults to
-1.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>domain <em>(required)</em> 
+<dd>
+<p>The domain to return referrers for. This should be a hostname (eg:
+"flickr.com") with no protocol or pathname.</p>
+</dd><dt>photoset_id 
+<dd>
+<p>The id of the photoset to get stats for. If not provided, stats for all
+sets will be returned.</p>
+</dd><dt>per_page 
+<dd>
+<p>Number of referrers to return per page. If this argument is omitted, it
+defaults to 25. The maximum allowed value is 100.</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-4: <em>Photoset not found</em>
-</p>
-<p>
-The photoset id was either invalid or was for a set not owned by the
-calling user.
-</p>
-</li>
-<li><p>
-5: <em>Invalid domain</em>
-</p>
-<p>
-The domain provided is not in the expected format.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-hotoset-eferrers-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>4: <em>Photoset not found</em></p>
 
+<p>The photoset id was either invalid or was for a set not owned by the
+calling user.</p>
+</li><li>
+<p>5: <em>Invalid domain</em></p>
+
+<p>The domain provided is not in the expected format.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getPhotosetReferrers-source">
+            <pre>
 # Generated automatically from flickr api
   def getPhotosetReferrers(*args)
     @flickr.call 'flickr.stats.getPhotosetReferrers', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getPhotosetReferrers-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getPhotosetReferrers-method -->
 
-		
-			<div id="get-hotoset-tats-method" class="method-detail ">
-				<a name="method-i-getPhotosetStats"></a>
+    
+      <div id="method-i-getPhotosetStats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPhotosetStats</span><span
+            class="method-args">(:date => 'date',:photoset_id => 'photoset_id')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getPhotosetStats</span><span
-						class="method-args">(:date => 'date',:photoset_id => 'photoset_id')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getPhotosetStats.html">flickr.stats.getPhotosetStats</a>
-request.
-</p>
-<p>
-Get the number of views on a photoset for a given date.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format.
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get the number of views on a photoset for a given date.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>photoset_id <em>(required)</em> </dt><dd><p>
-The id of the photoset to get stats for.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<dd>
+<p>The id of the photoset to get stats for.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-4: <em>Photoset not found</em>
-</p>
-<p>
-The photoset id was either invalid or was for a set not owned by the
-calling user.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-hotoset-tats-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>4: <em>Photoset not found</em></p>
 
+<p>The photoset id was either invalid or was for a set not owned by the
+calling user.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getPhotosetStats-source">
+            <pre>
 # Generated automatically from flickr api
   def getPhotosetStats(*args)
     @flickr.call 'flickr.stats.getPhotosetStats', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getPhotosetStats-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getPhotosetStats-method -->
 
-		
-			<div id="get-hotostream-omains-method" class="method-detail ">
-				<a name="method-i-getPhotostreamDomains"></a>
+    
+      <div id="method-i-getPhotostreamDomains" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPhotostreamDomains</span><span
+            class="method-args">(:date => 'date',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getPhotostreamDomains</span><span
-						class="method-args">(:date => 'date',:per_page => 'per_page',:page => 'page')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getPhotostreamDomains.html">flickr.stats.getPhotostreamDomains</a>
-request.
-</p>
-<p>
-Get a list of referring domains for a photostream
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format.
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get a list of referring domains for a photostream</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>per_page </dt><dd><p>
-Number of domains to return per page. If this argument is omitted, it
-defaults to 25. The maximum allowed value is 100
-</p>
-</dd>
-<dt>page </dt><dd><p>
-The page of results to return. If this argument is omitted, it defaults to
-1.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>per_page 
+<dd>
+<p>Number of domains to return per page. If this argument is omitted, it
+defaults to 25. The maximum allowed value is 100</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-hotostream-omains-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
 
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getPhotostreamDomains-source">
+            <pre>
 # Generated automatically from flickr api
   def getPhotostreamDomains(*args)
     @flickr.call 'flickr.stats.getPhotostreamDomains', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getPhotostreamDomains-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getPhotostreamDomains-method -->
 
-		
-			<div id="get-hotostream-eferrers-method" class="method-detail ">
-				<a name="method-i-getPhotostreamReferrers"></a>
+    
+      <div id="method-i-getPhotostreamReferrers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPhotostreamReferrers</span><span
+            class="method-args">(:date => 'date',:domain => 'domain',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getPhotostreamReferrers</span><span
-						class="method-args">(:date => 'date',:domain => 'domain',:per_page => 'per_page',:page => 'page')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getPhotostreamReferrers.html">flickr.stats.getPhotostreamReferrers</a>
-request.
-</p>
-<p>
-Get a list of referrers from a given domain to a user&#8217;s photostream
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format. 
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get a list of referrers from a given domain to a user's photostream</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<dl>
-<dt>domain <em>(required)</em> </dt><dd><p>
-The domain to return referrers for. This should be a hostname (eg:
-&#8220;flickr.com&#8220;) with no protocol or pathname.
-</p>
-</dd>
-<dt>per_page </dt><dd><p>
-Number of referrers to return per page. If this argument is omitted, it
-defaults to 25. The maximum allowed value is 100.
-</p>
-</dd>
-<dt>page </dt><dd><p>
-The page of results to return. If this argument is omitted, it defaults to
-1.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+<dl class="rdoc-list label-list"><dt>domain <em>(required)</em> 
+<dd>
+<p>The domain to return referrers for. This should be a hostname (eg:
+"flickr.com") with no protocol or pathname.</p>
+</dd><dt>per_page 
+<dd>
+<p>Number of referrers to return per page. If this argument is omitted, it
+defaults to 25. The maximum allowed value is 100.</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-5: <em>Invalid domain</em>
-</p>
-<p>
-The domain provided is not in the expected format.
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-hotostream-eferrers-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>5: <em>Invalid domain</em></p>
 
+<p>The domain provided is not in the expected format.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getPhotostreamReferrers-source">
+            <pre>
 # Generated automatically from flickr api
   def getPhotostreamReferrers(*args)
     @flickr.call 'flickr.stats.getPhotostreamReferrers', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getPhotostreamReferrers-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getPhotostreamReferrers-method -->
 
-		
-			<div id="get-hotostream-tats-method" class="method-detail ">
-				<a name="method-i-getPhotostreamStats"></a>
+    
+      <div id="method-i-getPhotostreamStats" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPhotostreamStats</span><span
+            class="method-args">(:date => 'date')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getPhotostreamStats</span><span
-						class="method-args">(:date => 'date')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getPhotostreamStats.html">flickr.stats.getPhotostreamStats</a>
-request.
-</p>
-<p>
-Get the number of views on a user&#8217;s photostream for a given date.
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date <em>(required)</em> </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format.
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get the number of views on a user's photostream for a given date.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date <em>(required)</em> 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-hotostream-tats-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
 
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getPhotostreamStats-source">
+            <pre>
 # Generated automatically from flickr api
   def getPhotostreamStats(*args)
     @flickr.call 'flickr.stats.getPhotostreamStats', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getPhotostreamStats-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getPhotostreamStats-method -->
 
-		
-			<div id="get-opular-hotos-method" class="method-detail ">
-				<a name="method-i-getPopularPhotos"></a>
+    
+      <div id="method-i-getPopularPhotos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPopularPhotos</span><span
+            class="method-args">(:date => 'date',:sort => 'sort',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getPopularPhotos</span><span
-						class="method-args">(:date => 'date',:sort => 'sort',:per_page => 'per_page',:page => 'page')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getPopularPhotos.html">flickr.stats.getPopularPhotos</a>
-request.
-</p>
-<p>
-List the photos with the most views, comments or favorites
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format. 
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>List the photos with the most views, comments or favorites</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<p>
-If no date is provided, all time view counts will be returned.
-</p>
-<dl>
-<dt>sort </dt><dd><p>
-The order in which to sort returned photos. Defaults to views. The possible
-values are views, comments and favorites. 
-</p>
-</dd>
-</dl>
-<p>
-Other sort options are available through flickr.photos.search.
-</p>
-<dl>
-<dt>per_page </dt><dd><p>
-Number of referrers to return per page. If this argument is omitted, it
-defaults to 25. The maximum allowed value is 100.
-</p>
-</dd>
-<dt>page </dt><dd><p>
-The page of results to return. If this argument is omitted, it defaults to
-1.
-</p>
-</dd>
-</dl>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+
+<p>If no date is provided, all time view counts will be returned.</p>
+<dl class="rdoc-list label-list"><dt>sort 
+<dd>
+<p>The order in which to sort returned photos. Defaults to views. The possible
+values are views, comments and favorites.</p>
+</dd></dl>
+
+<p>Other sort options are available through flickr.photos.search.</p>
+<dl class="rdoc-list label-list"><dt>per_page 
+<dd>
+<p>Number of referrers to return per page. If this argument is omitted, it
+defaults to 25. The maximum allowed value is 100.</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-5: <em>Invalid sort</em>
-</p>
-<p>
-The sort provided is not valid
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-opular-hotos-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>5: <em>Invalid sort</em></p>
 
+<p>The sort provided is not valid</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getPopularPhotos-source">
+            <pre>
 # Generated automatically from flickr api
   def getPopularPhotos(*args)
     @flickr.call 'flickr.stats.getPopularPhotos', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getPopularPhotos-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getPopularPhotos-method -->
 
-		
-			<div id="get-otal-iews-method" class="method-detail ">
-				<a name="method-i-getTotalViews"></a>
+    
+      <div id="method-i-getTotalViews" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getTotalViews</span><span
+            class="method-args">(:date => 'date')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
 
-				<div class="method-heading">
-				
-					<span class="method-name">getTotalViews</span><span
-						class="method-args">(:date => 'date')</span>
-					<span class="method-click-advice">click to toggle source</span>
-				
-				</div>
-
-				<div class="method-description">
-					
-					<p>
-<a
+        <div class="method-description">
+          
+          <p><a
 href="http://www.flickr.com/services/api/flickr.stats.getTotalViews.html">flickr.stats.getTotalViews</a>
-request.
-</p>
-<p>
-Get the overall view counts for an account
-</p>
-<p>
-<b>Arguments</b>
-</p>
-<dl>
-<dt>date </dt><dd><p>
-<a href="Stats.html">Stats</a> will be returned for this date. This should
-be in either be in YYYY-MM-DD or unix timestamp format.
-</p>
-</dd>
-</dl>
-<p>
-A day according to <a href="../Flickr.html">Flickr</a> <a
+request.</p>
+
+<p>Get the overall view counts for an account</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>date 
+<dd>
+<p><a href="Stats.html">Stats</a> will be returned for this date. This should
+be in either be in YYYY-MM-DD or unix timestamp format.</p>
+</dd></dl>
+
+<p>A day according to <a href="../Flickr.html">Flickr</a> <a
 href="Stats.html">Stats</a> starts at midnight GMT for all users, and
-timestamps will automatically be rounded down to the start of the day.
-</p>
-<p>
-If no date is provided, all time view counts will be returned.
-</p>
-<p>
-<b>Error codes</b>
-</p>
-<ul>
-<li><p>
-1: <em>User does not have stats</em>
-</p>
-<p>
-The user you have requested stats has not enabled stats on their account.
-</p>
-</li>
-<li><p>
-2: <em>No stats for that date</em>
-</p>
-<p>
-No stats are available for the date requested. <a
+timestamps will automatically be rounded down to the start of the day.</p>
+
+<p>If no date is provided, all time view counts will be returned.</p>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>User does not have stats</em></p>
+
+<p>The user you have requested stats has not enabled stats on their account.</p>
+</li><li>
+<p>2: <em>No stats for that date</em></p>
+
+<p>No stats are available for the date requested. <a
 href="../Flickr.html">Flickr</a> only keeps stats data for the last 28
-days.
-</p>
-</li>
-<li><p>
-3: <em>Invalid date</em>
-</p>
-<p>
-The date provided could not be parsed
-</p>
-</li>
-<li><p>
-96: <em>Invalid signature</em>
-</p>
-<p>
-The passed signature was invalid.
-</p>
-</li>
-<li><p>
-97: <em>Missing signature</em>
-</p>
-<p>
-The call required signing but no signature was sent.
-</p>
-</li>
-<li><p>
-98: <em>Login failed / Invalid auth token</em>
-</p>
-<p>
-The login details or auth token passed were invalid.
-</p>
-</li>
-<li><p>
-99: <em>User not logged in / Insufficient permissions</em>
-</p>
-<p>
-The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.
-</p>
-</li>
-<li><p>
-100: <em>Invalid API Key</em>
-</p>
-<p>
-The API key passed was not valid or has expired.
-</p>
-</li>
-<li><p>
-105: <em>Service currently unavailable</em>
-</p>
-<p>
-The requested service is temporarily unavailable.
-</p>
-</li>
-<li><p>
-111: <em>Format &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested response format was not found.
-</p>
-</li>
-<li><p>
-112: <em>Method &#8220;xxx&#8221; not found</em>
-</p>
-<p>
-The requested method was not found.
-</p>
-</li>
-<li><p>
-114: <em>Invalid SOAP envelope</em>
-</p>
-<p>
-The SOAP envelope send in the request could not be parsed.
-</p>
-</li>
-<li><p>
-115: <em>Invalid XML-RPC Method Call</em>
-</p>
-<p>
-The XML-RPC request document could not be parsed.
-</p>
-</li>
-<li><p>
-116: <em>Bad URL found</em>
-</p>
-<p>
-One or more arguments contained a URL that has been used for abuse on <a
-href="../Flickr.html">Flickr</a>.
-</p>
-</li>
-</ul>
-<p>
-<b>Returns</b>
-</p>
-					
+days.</p>
+</li><li>
+<p>3: <em>Invalid date</em></p>
 
-					
-					<div class="method-source-code"
-						id="get-otal-iews-source">
-<pre>
+<p>The date provided could not be parsed</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
 
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+          
+
+          
+          <div class="method-source-code" id="getTotalViews-source">
+            <pre>
 # Generated automatically from flickr api
   def getTotalViews(*args)
     @flickr.call 'flickr.stats.getTotalViews', *args
   end
 </pre>
-					</div>
-					
-				</div>
+          </div><!-- getTotalViews-source -->
+          
+        </div>
 
-				
+        
 
-				
-			</div>
+        
+      </div><!-- getTotalViews-method -->
 
-		
-		</div>
-	
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
 
-	</div>
+</div><!-- documentation -->
 
 
-	<div id="rdoc-debugging-section-dump" class="debugging-section">
-	
-		<p>Disabled; run with --debug to generate this.</p>
-	
-	</div>
-
-	<div id="validator-badges">
-		<p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-		<p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-			Rdoc Generator</a> 1.1.6</small>.</p>
-	</div>
-
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.10.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 
