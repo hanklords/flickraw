@@ -1,5 +1,7 @@
 require 'openssl'
 require 'net/https'
+require 'cgi'
+require 'uri'
 
 module FlickRaw
   class OAuthClient
@@ -12,7 +14,7 @@ module FlickRaw
     end
   
     class << self
-      def escape(v); URI.escape(v.to_s, /[^a-zA-Z0-9\-\.\_\~]/) end
+      def escape(v); CGI.escape(v.to_s, /[^a-zA-Z0-9\-\.\_\~]/) end
       def parse_response(text); Hash[text.split("&").map {|s| s.split("=")}] end
       
       def signature_base_string(method, url, params)
