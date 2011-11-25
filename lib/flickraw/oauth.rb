@@ -10,9 +10,11 @@ module FlickRaw
         super(@response['oauth_problem'])
       end
     end
+    
+    @@uri_parser = URI::Parser.new
   
     class << self
-      def escape(v); URI.escape(v.to_s, /[^a-zA-Z0-9\-\.\_\~]/) end
+      def escape(v); @@uri_parser.escape(v.to_s, /[^a-zA-Z0-9\-\.\_\~]/); end
       def parse_response(text); Hash[text.split("&").map {|s| s.split("=")}] end
       
       def signature_base_string(method, url, params)
