@@ -258,7 +258,7 @@ class Basic < Test::Unit::TestCase
     assert_equal ["ling ling", "hsing hsing", "wang wang"], pandas.to_a
   end
   
-  def test_panda_getList
+  def test_panda_getPhotos
     pandas = flickr.panda.getPhotos :panda_name => "wang wang"
     assert_equal "wang wang", pandas.panda
     assert_respond_to pandas[0], :title
@@ -333,9 +333,9 @@ class Basic < Test::Unit::TestCase
     info = flickr.photos.getSizes :photo_id => "3839885270"
     assert_equal "http://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find {|f| f.label == "Large"}.url
     if FlickRaw.secure
-      source = "https://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg"
+      source = "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
     else
-      source = "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg"
+      source = "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
     end
     
     assert_equal source, info.find {|f| f.label == "Large"}.source
