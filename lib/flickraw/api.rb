@@ -39,10 +39,7 @@ module FlickRaw
       @oauth_consumer = OAuthClient.new(FlickRaw.api_key, FlickRaw.shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
       @oauth_consumer.user_agent = USER_AGENT
-      
-      # Initialize the access token and access secret so that `call` doesn't complain about uninitialized variables.
-      @access_token = ""
-      @access_secret = ""
+      @access_token = @access_secret = nil
       
       Flickr.build(call('flickr.reflection.getMethods')) if Flickr.flickr_objects.empty?
       super self
