@@ -16,4 +16,6 @@ Rake::RDocTask.new do |rd|
   rd.rdoc_files.include "README.rdoc", "lib/flickraw.rb"
 end
 
-Rake::TestTask.new
+Rake::TestTask.new do |t|
+  t.warning = true
+end
