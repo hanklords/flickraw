@@ -13,7 +13,7 @@ module FlickRaw
 
     class << self
       def encode_value(v)
-        v.to_s.encode("utf-8").force_encoding("ascii-8bit") if RUBY_VERSION >= "1.9"
+        v = v.to_s.encode("utf-8").force_encoding("ascii-8bit") if RUBY_VERSION >= "1.9"
         v.to_s
       end
 
@@ -88,8 +88,8 @@ module FlickRaw
     end
 
     def post_form(url, token_secret, oauth_params = {}, params = {})
-      params = Hash[*params.map {|k,v| [OAuthClient.encode_value(k), OAuthClient.encode_value(v)]}.flatten]
-      post(url, token_secret, oauth_params, params) {|request| request.form_data = params}
+      encoded_params = Hash[*params.map {|k,v| [OAuthClient.encode_value(k), OAuthClient.encode_value(v)]}.flatten]
+      post(url, token_secret, oauth_params, params) {|request| request.form_data = encoded_params}
     end
     
     def post_multipart(url, token_secret, oauth_params = {}, params = {})
