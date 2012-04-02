@@ -19,7 +19,7 @@ module FlickRaw
   UPLOAD_PATH_SECURE=(END_POINT_SECURE + '/upload/').freeze
   REPLACE_PATH_SECURE=(END_POINT_SECURE + '/replace/').freeze
 
-  PHOTO_SOURCE_URL='http://farm%s.static.flickr.com/%s/%s_%s%s.%s'.freeze
+  PHOTO_SOURCE_URL='http://farm%s.staticflickr.com/%s/%s_%s%s.%s'.freeze
   URL_PROFILE='http://www.flickr.com/people/'.freeze
   URL_PHOTOSTREAM='http://www.flickr.com/photos/'.freeze
   URL_SHORT='http://flic.kr/p/'.freeze

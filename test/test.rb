@@ -414,11 +414,11 @@ class Basic < Test::Unit::TestCase
     id = "3839885270"
     info = flickr.photos.getInfo(:photo_id => id)
 
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06.jpg", FlickRaw.url(info)
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_m.jpg", FlickRaw.url_m(info)
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_s.jpg", FlickRaw.url_s(info)
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_t.jpg", FlickRaw.url_t(info)
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg", FlickRaw.url_b(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06.jpg", FlickRaw.url(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_m.jpg", FlickRaw.url_m(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_s.jpg", FlickRaw.url_s(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_t.jpg", FlickRaw.url_t(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg", FlickRaw.url_b(info)
 
     assert_equal "http://www.flickr.com/people/41650587@N02/", FlickRaw.url_profile(info)
     assert_equal "http://www.flickr.com/photos/41650587@N02/", FlickRaw.url_photostream(info)
