@@ -102,13 +102,8 @@ module FlickRaw
 
     private
     def build_args(args={}, method = nil)
-      full_args = {'format' => 'json', 'nojsoncallback' => '1'}
-      full_args['method'] = method if method
-      args.each {|k, v|
-        v = v.to_s.encode("utf-8").force_encoding("ascii-8bit") if RUBY_VERSION >= "1.9"
-        full_args[k.to_s] = v
-      }
-      full_args
+      args['method'] = method if method
+      args.merge('format' => 'json', 'nojsoncallback' => '1')
     end
 
     def process_response(req, response)
