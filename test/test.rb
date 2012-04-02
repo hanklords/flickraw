@@ -28,6 +28,7 @@ class Basic < Test::Unit::TestCase
       flickr.auth.getFrob
       flickr.auth.getFullToken
       flickr.auth.getToken
+      flickr.auth.oauth.checkToken
       flickr.auth.oauth.getAccessToken
       flickr.blogs.getList
       flickr.blogs.getServices
@@ -71,6 +72,7 @@ class Basic < Test::Unit::TestCase
       flickr.panda.getPhotos
       flickr.people.findByEmail
       flickr.people.findByUsername
+      flickr.people.getGroups
       flickr.people.getInfo
       flickr.people.getPhotos
       flickr.people.getPhotosOf
@@ -127,6 +129,11 @@ class Basic < Test::Unit::TestCase
       flickr.photos.setPerms
       flickr.photos.setSafetyLevel
       flickr.photos.setTags
+      flickr.photos.suggestions.approveSuggestion
+      flickr.photos.suggestions.getList
+      flickr.photos.suggestions.rejectSuggestion
+      flickr.photos.suggestions.removeSuggestion
+      flickr.photos.suggestions.suggestLocation
       flickr.photos.transform.rotate
       flickr.photos.upload.checkTickets
       flickr.photosets.addPhoto
@@ -173,16 +180,16 @@ class Basic < Test::Unit::TestCase
       flickr.push.unsubscribe
       flickr.reflection.getMethodInfo
       flickr.reflection.getMethods
+      flickr.stats.getCSVFiles
       flickr.stats.getCollectionDomains
       flickr.stats.getCollectionReferrers
       flickr.stats.getCollectionStats
-      flickr.stats.getCSVFiles
       flickr.stats.getPhotoDomains
       flickr.stats.getPhotoReferrers
+      flickr.stats.getPhotoStats
       flickr.stats.getPhotosetDomains
       flickr.stats.getPhotosetReferrers
       flickr.stats.getPhotosetStats
-      flickr.stats.getPhotoStats
       flickr.stats.getPhotostreamDomains
       flickr.stats.getPhotostreamReferrers
       flickr.stats.getPhotostreamStats
