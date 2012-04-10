@@ -19,7 +19,7 @@ module FlickRaw
 
       def escape(s)
         encode_value(s).gsub(/[^a-zA-Z0-9\-\.\_\~]/) {
-          sprintf("%%%02X", $&.unpack("C")[0])
+          $&.unpack("C*").map{|i| sprintf("%%%02X", i) }.join
         }
       end
 
