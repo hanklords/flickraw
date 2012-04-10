@@ -39,6 +39,7 @@ class Basic < Test::Unit::TestCase
       flickr.contacts.getList
       flickr.contacts.getListRecentlyUploaded
       flickr.contacts.getPublicList
+      flickr.contacts.getTaggingSuggestions
       flickr.favorites.add
       flickr.favorites.getContext
       flickr.favorites.getList
@@ -74,6 +75,7 @@ class Basic < Test::Unit::TestCase
       flickr.people.findByUsername
       flickr.people.getGroups
       flickr.people.getInfo
+      flickr.people.getLimits
       flickr.people.getPhotos
       flickr.people.getPhotosOf
       flickr.people.getPublicGroups
@@ -202,6 +204,7 @@ class Basic < Test::Unit::TestCase
       flickr.tags.getListUser
       flickr.tags.getListUserPopular
       flickr.tags.getListUserRaw
+      flickr.tags.getMostFrequentlyUsed
       flickr.tags.getRelated
       flickr.test.echo
       flickr.test.login
