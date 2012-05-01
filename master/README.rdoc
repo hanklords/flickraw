@@ -118,7 +118,7 @@ If you need to have several users authenticated at the same time in your applica
 
 There are some helpers to build flickr urls :
 
-=== url, url_m, url_s, url_t, url_b, url_z, url_o
+=== url, url_m, url_s, url_t, url_b, url_z, url_q, url_n, url_c, url_o
 
   info = flickr.photos.getInfo(:photo_id => "3839885270")
   FlickRaw.url_b(info) # => "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg"

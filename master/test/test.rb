@@ -28,6 +28,7 @@ class Basic < Test::Unit::TestCase
       flickr.auth.getFrob
       flickr.auth.getFullToken
       flickr.auth.getToken
+      flickr.auth.oauth.checkToken
       flickr.auth.oauth.getAccessToken
       flickr.blogs.getList
       flickr.blogs.getServices
@@ -38,6 +39,7 @@ class Basic < Test::Unit::TestCase
       flickr.contacts.getList
       flickr.contacts.getListRecentlyUploaded
       flickr.contacts.getPublicList
+      flickr.contacts.getTaggingSuggestions
       flickr.favorites.add
       flickr.favorites.getContext
       flickr.favorites.getList
@@ -71,7 +73,9 @@ class Basic < Test::Unit::TestCase
       flickr.panda.getPhotos
       flickr.people.findByEmail
       flickr.people.findByUsername
+      flickr.people.getGroups
       flickr.people.getInfo
+      flickr.people.getLimits
       flickr.people.getPhotos
       flickr.people.getPhotosOf
       flickr.people.getPublicGroups
@@ -127,6 +131,11 @@ class Basic < Test::Unit::TestCase
       flickr.photos.setPerms
       flickr.photos.setSafetyLevel
       flickr.photos.setTags
+      flickr.photos.suggestions.approveSuggestion
+      flickr.photos.suggestions.getList
+      flickr.photos.suggestions.rejectSuggestion
+      flickr.photos.suggestions.removeSuggestion
+      flickr.photos.suggestions.suggestLocation
       flickr.photos.transform.rotate
       flickr.photos.upload.checkTickets
       flickr.photosets.addPhoto
@@ -173,16 +182,16 @@ class Basic < Test::Unit::TestCase
       flickr.push.unsubscribe
       flickr.reflection.getMethodInfo
       flickr.reflection.getMethods
+      flickr.stats.getCSVFiles
       flickr.stats.getCollectionDomains
       flickr.stats.getCollectionReferrers
       flickr.stats.getCollectionStats
-      flickr.stats.getCSVFiles
       flickr.stats.getPhotoDomains
       flickr.stats.getPhotoReferrers
+      flickr.stats.getPhotoStats
       flickr.stats.getPhotosetDomains
       flickr.stats.getPhotosetReferrers
       flickr.stats.getPhotosetStats
-      flickr.stats.getPhotoStats
       flickr.stats.getPhotostreamDomains
       flickr.stats.getPhotostreamReferrers
       flickr.stats.getPhotostreamStats
@@ -195,6 +204,7 @@ class Basic < Test::Unit::TestCase
       flickr.tags.getListUser
       flickr.tags.getListUserPopular
       flickr.tags.getListUserRaw
+      flickr.tags.getMostFrequentlyUsed
       flickr.tags.getRelated
       flickr.test.echo
       flickr.test.login
@@ -407,11 +417,15 @@ class Basic < Test::Unit::TestCase
     id = "3839885270"
     info = flickr.photos.getInfo(:photo_id => id)
 
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06.jpg", FlickRaw.url(info)
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_m.jpg", FlickRaw.url_m(info)
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_s.jpg", FlickRaw.url_s(info)
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_t.jpg", FlickRaw.url_t(info)
-    assert_equal "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg", FlickRaw.url_b(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06.jpg", FlickRaw.url(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_m.jpg", FlickRaw.url_m(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_s.jpg", FlickRaw.url_s(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_t.jpg", FlickRaw.url_t(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg", FlickRaw.url_b(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_z.jpg", FlickRaw.url_z(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_q.jpg", FlickRaw.url_q(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_n.jpg", FlickRaw.url_n(info)
+    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_c.jpg", FlickRaw.url_c(info)
 
     assert_equal "http://www.flickr.com/people/41650587@N02/", FlickRaw.url_profile(info)
     assert_equal "http://www.flickr.com/photos/41650587@N02/", FlickRaw.url_photostream(info)
