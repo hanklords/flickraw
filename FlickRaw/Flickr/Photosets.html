@@ -1,258 +1,283 @@
-<!DOCTYPE html>
-
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-<title>Class: FlickRaw::Flickr::Photosets</title>
+  <title>Class: FlickRaw::Flickr::Photosets</title>
 
-<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "../../";
-</script>
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
 
-<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
-
-
+</head>
 <body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../../index.html">Home</a>
-    <a href="../../table_of_contents.html#classes">Classes</a>
-    <a href="../../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
 
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
 
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/flickraw.rb
-  </ul>
-</nav>
-
-    
-  </div>
-
-  <div id="class-metadata">
-    
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">FlickRaw::Request
-  
-</nav>
-
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
-    
-    <li><a href="#method-i-addPhoto">#addPhoto</a>
-    
-    <li><a href="#method-i-comments">#comments</a>
-    
-    <li><a href="#method-i-create">#create</a>
-    
-    <li><a href="#method-i-delete">#delete</a>
-    
-    <li><a href="#method-i-editMeta">#editMeta</a>
-    
-    <li><a href="#method-i-editPhotos">#editPhotos</a>
-    
-    <li><a href="#method-i-getContext">#getContext</a>
-    
-    <li><a href="#method-i-getInfo">#getInfo</a>
-    
-    <li><a href="#method-i-getList">#getList</a>
-    
-    <li><a href="#method-i-getPhotos">#getPhotos</a>
-    
-    <li><a href="#method-i-orderSets">#orderSets</a>
-    
-    <li><a href="#method-i-removePhoto">#removePhoto</a>
-    
-    <li><a href="#method-i-removePhotos">#removePhotos</a>
-    
-    <li><a href="#method-i-reorderPhotos">#reorderPhotos</a>
-    
-    <li><a href="#method-i-setPrimaryPhoto">#setPrimaryPhoto</a>
-    
-  </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../../README_rdoc.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../../FlickRaw.html">FlickRaw</a>
-  
-    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
-  
-    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
-  
-    <li><a href="../../Object.html">Object</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="class">class FlickRaw::Flickr::Photosets</h1>
-
-  <div id="description" class="description">
-    
-  </div><!-- description -->
-
-  
-  
-  
-  <section id="5Buntitled-5D" class="documentation-section">
-    
-
-    
-
-    
-
-    
-
-    <!-- Methods -->
-    
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-addPhoto" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">addPhoto</span><span
-            class="method-args">(:photoset_id => 'photoset_id',:photo_id => 'photo_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
           
-          <p><a
+            <li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">FlickRaw::Request</p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-addPhoto">#addPhoto</a></li>
+          
+          <li><a href="#method-i-comments">#comments</a></li>
+          
+          <li><a href="#method-i-create">#create</a></li>
+          
+          <li><a href="#method-i-delete">#delete</a></li>
+          
+          <li><a href="#method-i-editMeta">#editMeta</a></li>
+          
+          <li><a href="#method-i-editPhotos">#editPhotos</a></li>
+          
+          <li><a href="#method-i-getContext">#getContext</a></li>
+          
+          <li><a href="#method-i-getInfo">#getInfo</a></li>
+          
+          <li><a href="#method-i-getList">#getList</a></li>
+          
+          <li><a href="#method-i-getPhotos">#getPhotos</a></li>
+          
+          <li><a href="#method-i-orderSets">#orderSets</a></li>
+          
+          <li><a href="#method-i-removePhoto">#removePhoto</a></li>
+          
+          <li><a href="#method-i-removePhotos">#removePhotos</a></li>
+          
+          <li><a href="#method-i-reorderPhotos">#reorderPhotos</a></li>
+          
+          <li><a href="#method-i-setPrimaryPhoto">#setPrimaryPhoto</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../FlickRaw.html">FlickRaw</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+        
+          <li><a href="../../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">FlickRaw::Flickr::Photosets</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="addPhoto-method" class="method-detail ">
+          <a name="method-i-addPhoto"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">addPhoto</span><span
+              class="method-args">(:photoset_id => 'photoset_id',:photo_id => 'photo_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.addPhoto.html">flickr.photosets.addPhoto</a>
 request.</p>
 
 <p>Add a photo to the end of an existing photoset.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photoset to add a photo to.</p>
-</dd><dt>photo_id <em>(required)</em> 
+</dd><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to add to the set.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photoset not found</em></p>
 
@@ -318,80 +343,85 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="addPhoto-source">
-            <pre>
+            
+            <div class="method-source-code" id="addPhoto-source">
+<pre>
+
 # Generated automatically from flickr api
   def addPhoto(*args)
     @flickr.call 'flickr.photosets.addPhoto', *args
   end
 </pre>
-          </div><!-- addPhoto-source -->
-          
-        </div>
+            </div><!-- addPhoto-source -->
+            
+          </div>
 
-        
-
-        
-      </div><!-- addPhoto-method -->
-
-    
-      <div id="method-i-comments" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">comments</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Returns a <a href="Photosets/Comments.html">Comments</a> object.</p>
           
 
           
-        </div>
+        </div><!-- addPhoto-method -->
 
-        
+      
+        <div id="comments-method" class="method-detail ">
+          <a name="method-i-comments"></a>
 
-        
-      </div><!-- comments-method -->
-
-    
-      <div id="method-i-create" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">create</span><span
-            class="method-args">(:title => 'title',:description => 'description',:primary_photo_id => 'primary_photo_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+          <div class="method-heading">
+            <span class="method-name">comments</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p>Returns a <a href="Photosets/Comments.html">Comments</a> object.</p>
+            
+
+            
+          </div>
+
+          
+
+          
+        </div><!-- comments-method -->
+
+      
+        <div id="create-method" class="method-detail ">
+          <a name="method-i-create"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">create</span><span
+              class="method-args">(:title => 'title',:description => 'description',:primary_photo_id => 'primary_photo_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.create.html">flickr.photosets.create</a>
 request.</p>
 
 <p>Create a new photoset for the calling user.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>title <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>title <em>(required)</em> </dt>
 <dd>
 <p>A title for the photoset.</p>
-</dd><dt>description 
+</dd><dt>description </dt>
 <dd>
 <p>A description of the photoset. May contain limited html.</p>
-</dd><dt>primary_photo_id <em>(required)</em> 
+</dd><dt>primary_photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to represent this set. The photo must belong to the
 calling user.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>No title specified</em></p>
 
@@ -453,51 +483,54 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
-          
+<p><b>Returns</b></p>
+            
 
-          
-          <div class="method-source-code" id="create-source">
-            <pre>
+            
+            <div class="method-source-code" id="create-source">
+<pre>
+
 # Generated automatically from flickr api
   def create(*args)
     @flickr.call 'flickr.photosets.create', *args
   end
 </pre>
-          </div><!-- create-source -->
+            </div><!-- create-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- create-method -->
-
-    
-      <div id="method-i-delete" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">delete</span><span
-            class="method-args">(:photoset_id => 'photoset_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- create-method -->
+
+      
+        <div id="delete-method" class="method-detail ">
+          <a name="method-i-delete"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">delete</span><span
+              class="method-args">(:photoset_id => 'photoset_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.delete.html">flickr.photosets.delete</a>
 request.</p>
 
 <p>Delete a photoset.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photoset to delete. It must be owned by the calling user.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photoset not found</em></p>
 
@@ -550,56 +583,59 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="delete-source">
-            <pre>
+            
+            <div class="method-source-code" id="delete-source">
+<pre>
+
 # Generated automatically from flickr api
   def delete(*args)
     @flickr.call 'flickr.photosets.delete', *args
   end
 </pre>
-          </div><!-- delete-source -->
+            </div><!-- delete-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- delete-method -->
-
-    
-      <div id="method-i-editMeta" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">editMeta</span><span
-            class="method-args">(:photoset_id => 'photoset_id',:title => 'title',:description => 'description')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- delete-method -->
+
+      
+        <div id="editMeta-method" class="method-detail ">
+          <a name="method-i-editMeta"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">editMeta</span><span
+              class="method-args">(:photoset_id => 'photoset_id',:title => 'title',:description => 'description')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.editMeta.html">flickr.photosets.editMeta</a>
 request.</p>
 
 <p>Modify the meta-data for a photoset.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photoset to modify.</p>
-</dd><dt>title <em>(required)</em> 
+</dd><dt>title <em>(required)</em> </dt>
 <dd>
 <p>The new title for the photoset.</p>
-</dd><dt>description 
+</dd><dt>description </dt>
 <dd>
 <p>A description of the photoset. May contain limited html.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photoset not found</em></p>
 
@@ -656,54 +692,57 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="editMeta-source">
-            <pre>
+            
+            <div class="method-source-code" id="editMeta-source">
+<pre>
+
 # Generated automatically from flickr api
   def editMeta(*args)
     @flickr.call 'flickr.photosets.editMeta', *args
   end
 </pre>
-          </div><!-- editMeta-source -->
+            </div><!-- editMeta-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- editMeta-method -->
-
-    
-      <div id="method-i-editPhotos" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">editPhotos</span><span
-            class="method-args">(:photoset_id => 'photoset_id',:primary_photo_id => 'primary_photo_id',:photo_ids => 'photo_ids')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- editMeta-method -->
+
+      
+        <div id="editPhotos-method" class="method-detail ">
+          <a name="method-i-editPhotos"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">editPhotos</span><span
+              class="method-args">(:photoset_id => 'photoset_id',:primary_photo_id => 'primary_photo_id',:photo_ids => 'photo_ids')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.editPhotos.html">flickr.photosets.editPhotos</a>
 request.</p>
 
 <p>Modify the photos in a photoset. Use this method to add, remove and
 re-order photos.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photoset to modify. The photoset must belong to the calling
 user.</p>
-</dd><dt>primary_photo_id <em>(required)</em> 
+</dd><dt>primary_photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to use as the 'primary' photo for the set. This id must
 also be passed along in photo_ids list argument.</p>
-</dd><dt>photo_ids <em>(required)</em> 
+</dd><dt>photo_ids <em>(required)</em> </dt>
 <dd>
 <p>A comma-delimited list of photo ids to include in the set. They will appear
 in the set in the order sent. This list must contain the primary photo id.
@@ -712,7 +751,7 @@ replaces the existing list. Call flickr.photosets.addPhoto to append a
 photo to a set.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photoset not found</em></p>
 
@@ -783,53 +822,56 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="editPhotos-source">
-            <pre>
+            
+            <div class="method-source-code" id="editPhotos-source">
+<pre>
+
 # Generated automatically from flickr api
   def editPhotos(*args)
     @flickr.call 'flickr.photosets.editPhotos', *args
   end
 </pre>
-          </div><!-- editPhotos-source -->
+            </div><!-- editPhotos-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- editPhotos-method -->
-
-    
-      <div id="method-i-getContext" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getContext</span><span
-            class="method-args">(:photo_id => 'photo_id',:photoset_id => 'photoset_id',:num_prev => 'num_prev',:num_next => 'num_next',:extras => 'extras')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- editPhotos-method -->
+
+      
+        <div id="getContext-method" class="method-detail ">
+          <a name="method-i-getContext"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getContext</span><span
+              class="method-args">(:photo_id => 'photo_id',:photoset_id => 'photoset_id',:num_prev => 'num_prev',:num_next => 'num_next',:extras => 'extras')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.getContext.html">flickr.photosets.getContext</a>
 request.</p>
 
 <p>Returns next and previous photos for a photo in a set.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to fetch the context for.</p>
-</dd><dt>photoset_id <em>(required)</em> 
+</dd><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photoset for which to fetch the photo's context.</p>
-</dd><dt>num_prev 
-<dd></dd><dt>num_next 
-<dd></dd><dt>extras 
+</dd><dt>num_prev </dt>
+<dd></dd><dt>num_next </dt>
+<dd></dd><dt>extras </dt>
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: description, license, date_upload,
@@ -838,7 +880,7 @@ tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
 url_m, url_z, url_l, url_o</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photo not found</em></p>
 
@@ -879,51 +921,54 @@ the calling user does not have permission to view.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
-          
+<p><b>Returns</b></p>
+            
 
-          
-          <div class="method-source-code" id="getContext-source">
-            <pre>
+            
+            <div class="method-source-code" id="getContext-source">
+<pre>
+
 # Generated automatically from flickr api
   def getContext(*args)
     @flickr.call 'flickr.photosets.getContext', *args
   end
 </pre>
-          </div><!-- getContext-source -->
+            </div><!-- getContext-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getContext-method -->
-
-    
-      <div id="method-i-getInfo" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getInfo</span><span
-            class="method-args">(:photoset_id => 'photoset_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getContext-method -->
+
+      
+        <div id="getInfo-method" class="method-detail ">
+          <a name="method-i-getInfo"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getInfo</span><span
+              class="method-args">(:photoset_id => 'photoset_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.getInfo.html">flickr.photosets.getInfo</a>
 request.</p>
 
 <p>Gets information about a photoset.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The ID of the photoset to fetch information for.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photoset not found</em></p>
 
@@ -959,62 +1004,65 @@ request.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>Mah KittehsSixty and Niner. Born on the 3rd of May, 2010, or thereabouts. Came to my place on Thursday, July 29, 2010.</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="getInfo-source">
-            <pre>
+            
+            <div class="method-source-code" id="getInfo-source">
+<pre>
+
 # Generated automatically from flickr api
   def getInfo(*args)
     @flickr.call 'flickr.photosets.getInfo', *args
   end
 </pre>
-          </div><!-- getInfo-source -->
+            </div><!-- getInfo-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getInfo-method -->
-
-    
-      <div id="method-i-getList" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getList</span><span
-            class="method-args">(:user_id => 'user_id',:page => 'page',:per_page => 'per_page')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getInfo-method -->
+
+      
+        <div id="getList-method" class="method-detail ">
+          <a name="method-i-getList"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getList</span><span
+              class="method-args">(:user_id => 'user_id',:page => 'page',:per_page => 'per_page')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.getList.html">flickr.photosets.getList</a>
 request.</p>
 
 <p>Returns the photosets belonging to the specified user.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>user_id 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>user_id </dt>
 <dd>
 <p>The NSID of the user to get a photoset list for. If none is specified, the
 calling user is assumed.</p>
-</dd><dt>page 
+</dd><dt>page </dt>
 <dd>
 <p>The page of results to get. Currently, if this is not provided, all sets
 are returned, but this behaviour may change in future.</p>
-</dd><dt>per_page 
+</dd><dt>per_page </dt>
 <dd>
 <p>The number of sets to get per page. If paging is enabled, the maximum
 number of sets per page is 500.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>User not found</em></p>
 
@@ -1051,58 +1099,61 @@ logged in.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>Avis BlancheMy Grandma's Recipe File.Mah KittehsSixty and Niner. Born on the 3rd of May, 2010, or thereabouts. Came to my place on Thursday, July 29, 2010.</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="getList-source">
-            <pre>
+            
+            <div class="method-source-code" id="getList-source">
+<pre>
+
 # Generated automatically from flickr api
   def getList(*args)
     @flickr.call 'flickr.photosets.getList', *args
   end
 </pre>
-          </div><!-- getList-source -->
+            </div><!-- getList-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getList-method -->
-
-    
-      <div id="method-i-getPhotos" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getPhotos</span><span
-            class="method-args">(:photoset_id => 'photoset_id',:extras => 'extras',:privacy_filter => 'privacy_filter',:per_page => 'per_page',:page => 'page',:media => 'media')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getList-method -->
+
+      
+        <div id="getPhotos-method" class="method-detail ">
+          <a name="method-i-getPhotos"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getPhotos</span><span
+              class="method-args">(:photoset_id => 'photoset_id',:extras => 'extras',:privacy_filter => 'privacy_filter',:per_page => 'per_page',:page => 'page',:media => 'media')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.getPhotos.html">flickr.photosets.getPhotos</a>
 request.</p>
 
 <p>Get the list of photos in a set.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photoset to return the photos for.</p>
-</dd><dt>extras 
+</dd><dt>extras </dt>
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: license, date_upload, date_taken,
 owner_name, icon_server, original_format, last_update, geo, tags,
 machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
 url_m, url_o</p>
-</dd><dt>privacy_filter 
+</dd><dt>privacy_filter </dt>
 <dd>
 <p>Return photos only matching a certain privacy level. This only applies when
 making an authenticated call to view a photoset you own. Valid values are:</p>
@@ -1111,21 +1162,21 @@ making an authenticated call to view a photoset you own. Valid values are:</p>
 <p>1 public photos 2 private photos visible to friends 3 private photos
 visible to family 4 private photos visible to friends &amp; family 5
 completely private photos</p>
-<dl class="rdoc-list label-list"><dt>per_page 
+<dl class="rdoc-list"><dt>per_page </dt>
 <dd>
 <p>Number of photos to return per page. If this argument is omitted, it
 defaults to 500. The maximum allowed value is 500.</p>
-</dd><dt>page 
+</dd><dt>page </dt>
 <dd>
 <p>The page of results to return. If this argument is omitted, it defaults to
 1.</p>
-</dd><dt>media 
+</dd><dt>media </dt>
 <dd>
 <p>Filter results by media type. Possible values are all (default), photos or
 videos</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photoset not found</em></p>
 
@@ -1161,53 +1212,56 @@ videos</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
-          
+<p><b>Returns</b></p>
+            
 
-          
-          <div class="method-source-code" id="getPhotos-source">
-            <pre>
+            
+            <div class="method-source-code" id="getPhotos-source">
+<pre>
+
 # Generated automatically from flickr api
   def getPhotos(*args)
     @flickr.call 'flickr.photosets.getPhotos', *args
   end
 </pre>
-          </div><!-- getPhotos-source -->
+            </div><!-- getPhotos-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getPhotos-method -->
-
-    
-      <div id="method-i-orderSets" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">orderSets</span><span
-            class="method-args">(:photoset_ids => 'photoset_ids')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getPhotos-method -->
+
+      
+        <div id="orderSets-method" class="method-detail ">
+          <a name="method-i-orderSets"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">orderSets</span><span
+              class="method-args">(:photoset_ids => 'photoset_ids')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.orderSets.html">flickr.photosets.orderSets</a>
 request.</p>
 
 <p>Set the order of photosets for the calling user.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_ids <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_ids <em>(required)</em> </dt>
 <dd>
 <p>A comma delimited list of photoset IDs, ordered with the set to show first,
 first in the list. Any set IDs not given in the list will be set to appear
 at the end of the list, ordered by their IDs.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Set not found</em></p>
 
@@ -1260,53 +1314,56 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="orderSets-source">
-            <pre>
+            
+            <div class="method-source-code" id="orderSets-source">
+<pre>
+
 # Generated automatically from flickr api
   def orderSets(*args)
     @flickr.call 'flickr.photosets.orderSets', *args
   end
 </pre>
-          </div><!-- orderSets-source -->
+            </div><!-- orderSets-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- orderSets-method -->
-
-    
-      <div id="method-i-removePhoto" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">removePhoto</span><span
-            class="method-args">(:photoset_id => 'photoset_id',:photo_id => 'photo_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- orderSets-method -->
+
+      
+        <div id="removePhoto-method" class="method-detail ">
+          <a name="method-i-removePhoto"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">removePhoto</span><span
+              class="method-args">(:photoset_id => 'photoset_id',:photo_id => 'photo_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.removePhoto.html">flickr.photosets.removePhoto</a>
 request.</p>
 
 <p>Remove a photo from a photoset.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photoset to remove a photo from.</p>
-</dd><dt>photo_id <em>(required)</em> 
+</dd><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to remove from the set.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photoset not found</em></p>
 
@@ -1368,53 +1425,56 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="removePhoto-source">
-            <pre>
+            
+            <div class="method-source-code" id="removePhoto-source">
+<pre>
+
 # Generated automatically from flickr api
   def removePhoto(*args)
     @flickr.call 'flickr.photosets.removePhoto', *args
   end
 </pre>
-          </div><!-- removePhoto-source -->
+            </div><!-- removePhoto-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- removePhoto-method -->
-
-    
-      <div id="method-i-removePhotos" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">removePhotos</span><span
-            class="method-args">(:photoset_id => 'photoset_id',:photo_ids => 'photo_ids')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- removePhoto-method -->
+
+      
+        <div id="removePhotos-method" class="method-detail ">
+          <a name="method-i-removePhotos"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">removePhotos</span><span
+              class="method-args">(:photoset_id => 'photoset_id',:photo_ids => 'photo_ids')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.removePhotos.html">flickr.photosets.removePhotos</a>
 request.</p>
 
 <p>Remove multiple photos from a photoset.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photoset to remove photos from.</p>
-</dd><dt>photo_ids <em>(required)</em> 
+</dd><dt>photo_ids <em>(required)</em> </dt>
 <dd>
 <p>Comma-delimited list of photo ids to remove from the photoset.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photoset not found</em></p>
 
@@ -1472,54 +1532,57 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="removePhotos-source">
-            <pre>
+            
+            <div class="method-source-code" id="removePhotos-source">
+<pre>
+
 # Generated automatically from flickr api
   def removePhotos(*args)
     @flickr.call 'flickr.photosets.removePhotos', *args
   end
 </pre>
-          </div><!-- removePhotos-source -->
+            </div><!-- removePhotos-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- removePhotos-method -->
-
-    
-      <div id="method-i-reorderPhotos" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">reorderPhotos</span><span
-            class="method-args">(:photoset_id => 'photoset_id',:photo_ids => 'photo_ids')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- removePhotos-method -->
+
+      
+        <div id="reorderPhotos-method" class="method-detail ">
+          <a name="method-i-reorderPhotos"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">reorderPhotos</span><span
+              class="method-args">(:photoset_id => 'photoset_id',:photo_ids => 'photo_ids')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.reorderPhotos.html">flickr.photosets.reorderPhotos</a>
 request.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photoset to reorder. The photoset must belong to the calling
 user.</p>
-</dd><dt>photo_ids <em>(required)</em> 
+</dd><dt>photo_ids <em>(required)</em> </dt>
 <dd>
 <p>Ordered, comma-delimited list of photo ids. <a
 href="Photos.html">Photos</a> that are not in the list will keep their
 original order</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photoset not found</em></p>
 
@@ -1577,53 +1640,56 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="reorderPhotos-source">
-            <pre>
+            
+            <div class="method-source-code" id="reorderPhotos-source">
+<pre>
+
 # Generated automatically from flickr api
   def reorderPhotos(*args)
     @flickr.call 'flickr.photosets.reorderPhotos', *args
   end
 </pre>
-          </div><!-- reorderPhotos-source -->
+            </div><!-- reorderPhotos-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- reorderPhotos-method -->
-
-    
-      <div id="method-i-setPrimaryPhoto" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">setPrimaryPhoto</span><span
-            class="method-args">(:photoset_id => 'photoset_id',:photo_id => 'photo_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- reorderPhotos-method -->
+
+      
+        <div id="setPrimaryPhoto-method" class="method-detail ">
+          <a name="method-i-setPrimaryPhoto"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">setPrimaryPhoto</span><span
+              class="method-args">(:photoset_id => 'photoset_id',:photo_id => 'photo_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photosets.setPrimaryPhoto.html">flickr.photosets.setPrimaryPhoto</a>
 request.</p>
 
 <p>Set photoset primary photo</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photoset_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photoset_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photoset to set primary photo to.</p>
-</dd><dt>photo_id <em>(required)</em> 
+</dd><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to set as primary.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photoset not found</em></p>
 
@@ -1681,36 +1747,40 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="setPrimaryPhoto-source">
-            <pre>
+            
+            <div class="method-source-code" id="setPrimaryPhoto-source">
+<pre>
+
 # Generated automatically from flickr api
   def setPrimaryPhoto(*args)
     @flickr.call 'flickr.photosets.setPrimaryPhoto', *args
   end
 </pre>
-          </div><!-- setPrimaryPhoto-source -->
+            </div><!-- setPrimaryPhoto-source -->
+            
+          </div>
+
           
-        </div>
 
-        
+          
+        </div><!-- setPrimaryPhoto-method -->
 
-        
-      </div><!-- setPrimaryPhoto-method -->
-
+      
+      </div><!-- public-instance-method-details -->
     
-    </section><!-- public-instance-method-details -->
+    </div><!-- 5Buntitled-5D -->
   
-  </section><!-- 5Buntitled-5D -->
 
-</div><!-- documentation -->
+  </div><!-- documentation -->
 
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
+</body>
+</html>
 

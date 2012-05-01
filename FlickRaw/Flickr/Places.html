@@ -1,243 +1,258 @@
-<!DOCTYPE html>
-
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-<title>Class: FlickRaw::Flickr::Places</title>
+  <title>Class: FlickRaw::Flickr::Places</title>
 
-<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "../../";
-</script>
+  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
 
-<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
-
-
+</head>
 <body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../../index.html">Home</a>
-    <a href="../../table_of_contents.html#classes">Classes</a>
-    <a href="../../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
 
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../index.html">Home</a>
+          <a href="../../index.html#classes">Classes</a>
+          <a href="../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
 
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/flickraw.rb
-  </ul>
-</nav>
-
-    
-  </div>
-
-  <div id="class-metadata">
-    
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">FlickRaw::Request
-  
-</nav>
-
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
-    
-    <li><a href="#method-i-find">#find</a>
-    
-    <li><a href="#method-i-findByLatLon">#findByLatLon</a>
-    
-    <li><a href="#method-i-getChildrenWithPhotosPublic">#getChildrenWithPhotosPublic</a>
-    
-    <li><a href="#method-i-getInfo">#getInfo</a>
-    
-    <li><a href="#method-i-getInfoByUrl">#getInfoByUrl</a>
-    
-    <li><a href="#method-i-getPlaceTypes">#getPlaceTypes</a>
-    
-    <li><a href="#method-i-getShapeHistory">#getShapeHistory</a>
-    
-    <li><a href="#method-i-getTopPlacesList">#getTopPlacesList</a>
-    
-    <li><a href="#method-i-placesForBoundingBox">#placesForBoundingBox</a>
-    
-    <li><a href="#method-i-placesForContacts">#placesForContacts</a>
-    
-    <li><a href="#method-i-placesForTags">#placesForTags</a>
-    
-    <li><a href="#method-i-placesForUser">#placesForUser</a>
-    
-    <li><a href="#method-i-resolvePlaceId">#resolvePlaceId</a>
-    
-    <li><a href="#method-i-resolvePlaceURL">#resolvePlaceURL</a>
-    
-    <li><a href="#method-i-tagsForPlace">#tagsForPlace</a>
-    
-  </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../../README_rdoc.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../../FlickRaw.html">FlickRaw</a>
-  
-    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
-  
-    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
-  
-    <li><a href="../../Object.html">Object</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="class">class FlickRaw::Flickr::Places</h1>
-
-  <div id="description" class="description">
-    
-  </div><!-- description -->
-
-  
-  
-  
-  <section id="5Buntitled-5D" class="documentation-section">
-    
-
-    
-
-    
-
-    
-
-    <!-- Methods -->
-    
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-find" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">find</span><span
-            class="method-args">(:query => 'query')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
           
-          <p><a
+            <li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">FlickRaw::Request</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-find">#find</a></li>
+          
+          <li><a href="#method-i-findByLatLon">#findByLatLon</a></li>
+          
+          <li><a href="#method-i-getChildrenWithPhotosPublic">#getChildrenWithPhotosPublic</a></li>
+          
+          <li><a href="#method-i-getInfo">#getInfo</a></li>
+          
+          <li><a href="#method-i-getInfoByUrl">#getInfoByUrl</a></li>
+          
+          <li><a href="#method-i-getPlaceTypes">#getPlaceTypes</a></li>
+          
+          <li><a href="#method-i-getShapeHistory">#getShapeHistory</a></li>
+          
+          <li><a href="#method-i-getTopPlacesList">#getTopPlacesList</a></li>
+          
+          <li><a href="#method-i-placesForBoundingBox">#placesForBoundingBox</a></li>
+          
+          <li><a href="#method-i-placesForContacts">#placesForContacts</a></li>
+          
+          <li><a href="#method-i-placesForTags">#placesForTags</a></li>
+          
+          <li><a href="#method-i-placesForUser">#placesForUser</a></li>
+          
+          <li><a href="#method-i-resolvePlaceId">#resolvePlaceId</a></li>
+          
+          <li><a href="#method-i-resolvePlaceURL">#resolvePlaceURL</a></li>
+          
+          <li><a href="#method-i-tagsForPlace">#tagsForPlace</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../FlickRaw.html">FlickRaw</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+        
+          <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+        
+          <li><a href="../../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">FlickRaw::Flickr::Places</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="find-method" class="method-detail ">
+          <a name="method-i-find"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">find</span><span
+              class="method-args">(:query => 'query')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.find.html">flickr.places.find</a>
 request.</p>
 
@@ -247,13 +262,13 @@ which place IDs apply. For example, if you pass it a street level address
 it will return the city that contains the address rather than the street,
 or building, itself.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>query <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>query <em>(required)</em> </dt>
 <dd>
 <p>The query string to use for place ID lookups</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Required parameter missing</em></p>
 
@@ -289,41 +304,44 @@ or building, itself.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>Alabama, Alabama, United StatesAlabama, New York, United StatesAlabama, North West, South Africa</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="find-source">
-            <pre>
+            
+            <div class="method-source-code" id="find-source">
+<pre>
+
 # Generated automatically from flickr api
   def find(*args)
     @flickr.call 'flickr.places.find', *args
   end
 </pre>
-          </div><!-- find-source -->
+            </div><!-- find-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- find-method -->
-
-    
-      <div id="method-i-findByLatLon" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">findByLatLon</span><span
-            class="method-args">(:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- find-method -->
+
+      
+        <div id="findByLatLon-method" class="method-detail ">
+          <a name="method-i-findByLatLon"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">findByLatLon</span><span
+              class="method-args">(:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.findByLatLon.html">flickr.places.findByLatLon</a>
 request.</p>
 
@@ -336,23 +354,23 @@ will return the city that contains the point rather than the street, or
 building, itself. It will also truncate latitudes and longitudes to three
 decimal points.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>lat <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>lat <em>(required)</em> </dt>
 <dd>
 <p>The latitude whose valid range is -90 to 90. Anything more than 4 decimal
 places will be truncated.</p>
-</dd><dt>lon <em>(required)</em> 
+</dd><dt>lon <em>(required)</em> </dt>
 <dd>
 <p>The longitude whose valid range is -180 to 180. Anything more than 4
 decimal places will be truncated.</p>
-</dd><dt>accuracy 
+</dd><dt>accuracy </dt>
 <dd>
 <p>Recorded accuracy level of the location information. World level is 1,
 Country is ~3, Region ~6, City ~11, Street ~16. Current range is 1-16. The
 default is 16.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Required arguments missing</em></p>
 
@@ -400,58 +418,61 @@ default is 16.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
-          
+<p><b>Returns</b></p>
+            
 
-          
-          <div class="method-source-code" id="findByLatLon-source">
-            <pre>
+            
+            <div class="method-source-code" id="findByLatLon-source">
+<pre>
+
 # Generated automatically from flickr api
   def findByLatLon(*args)
     @flickr.call 'flickr.places.findByLatLon', *args
   end
 </pre>
-          </div><!-- findByLatLon-source -->
+            </div><!-- findByLatLon-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- findByLatLon-method -->
-
-    
-      <div id="method-i-getChildrenWithPhotosPublic" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getChildrenWithPhotosPublic</span><span
-            class="method-args">(:place_id => 'place_id',:woe_id => 'woe_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- findByLatLon-method -->
+
+      
+        <div id="getChildrenWithPhotosPublic-method" class="method-detail ">
+          <a name="method-i-getChildrenWithPhotosPublic"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getChildrenWithPhotosPublic</span><span
+              class="method-args">(:place_id => 'place_id',:woe_id => 'woe_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.getChildrenWithPhotosPublic.html">flickr.places.getChildrenWithPhotosPublic</a>
 request.</p>
 
 <p>Return a list of locations with public photos that are parented by a Where
 on Earth (WOE) or <a href="Places.html">Places</a> ID.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>place_id 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> ID.
 (While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
-</dd><dt>woe_id 
+</dd><dt>woe_id </dt>
 <dd>
 <p>A Where On Earth (WOE) ID. (While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Required parameter missing</em></p>
 
@@ -497,60 +518,63 @@ ID passed to the API call.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>Montreal Golden Square Mile, Montreal, QC, CA, Canada
 Downtown Montréal, Montreal, QC, CA, Canada</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="getChildrenWithPhotosPublic-source">
-            <pre>
+            
+            <div class="method-source-code" id="getChildrenWithPhotosPublic-source">
+<pre>
+
 # Generated automatically from flickr api
   def getChildrenWithPhotosPublic(*args)
     @flickr.call 'flickr.places.getChildrenWithPhotosPublic', *args
   end
 </pre>
-          </div><!-- getChildrenWithPhotosPublic-source -->
+            </div><!-- getChildrenWithPhotosPublic-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getChildrenWithPhotosPublic-method -->
-
-    
-      <div id="method-i-getInfo" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getInfo</span><span
-            class="method-args">(:place_id => 'place_id',:woe_id => 'woe_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getChildrenWithPhotosPublic-method -->
+
+      
+        <div id="getInfo-method" class="method-detail ">
+          <a name="method-i-getInfo"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getInfo</span><span
+              class="method-args">(:place_id => 'place_id',:woe_id => 'woe_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.getInfo.html">flickr.places.getInfo</a>
 request.</p>
 
 <p>Get informations about a place.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>place_id 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> ID.
 (While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
-</dd><dt>woe_id 
+</dd><dt>woe_id </dt>
 <dd>
 <p>A Where On Earth (WOE) ID. (While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Required parameter missing</em></p>
 
@@ -596,57 +620,60 @@ ID passed to the API call.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>MontrealMontréalQuebecCanada
             45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...
 
          http://farm4.static.flickr.com/3228/shapefiles/3534_20081111_0a8afe03c5.tar.gz</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="getInfo-source">
-            <pre>
+            
+            <div class="method-source-code" id="getInfo-source">
+<pre>
+
 # Generated automatically from flickr api
   def getInfo(*args)
     @flickr.call 'flickr.places.getInfo', *args
   end
 </pre>
-          </div><!-- getInfo-source -->
+            </div><!-- getInfo-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getInfo-method -->
-
-    
-      <div id="method-i-getInfoByUrl" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getInfoByUrl</span><span
-            class="method-args">(:url => 'url')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getInfo-method -->
+
+      
+        <div id="getInfoByUrl-method" class="method-detail ">
+          <a name="method-i-getInfoByUrl"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getInfoByUrl</span><span
+              class="method-args">(:url => 'url')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.getInfoByUrl.html">flickr.places.getInfoByUrl</a>
 request.</p>
 
 <p>Lookup information about a place, by its flickr.com/places URL.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>url <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>url <em>(required)</em> </dt>
 <dd>
 <p>A flickr.com/places URL in the form of /country/region/city. For example:
 /Canada/Quebec/Montreal</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>2: <em>Place URL required.</em></p>
 
@@ -686,51 +713,54 @@ request.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>MontrealMontréalQuebecCanada
             45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="getInfoByUrl-source">
-            <pre>
+            
+            <div class="method-source-code" id="getInfoByUrl-source">
+<pre>
+
 # Generated automatically from flickr api
   def getInfoByUrl(*args)
     @flickr.call 'flickr.places.getInfoByUrl', *args
   end
 </pre>
-          </div><!-- getInfoByUrl-source -->
+            </div><!-- getInfoByUrl-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getInfoByUrl-method -->
-
-    
-      <div id="method-i-getPlaceTypes" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getPlaceTypes</span><span
-            class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getInfoByUrl-method -->
+
+      
+        <div id="getPlaceTypes-method" class="method-detail ">
+          <a name="method-i-getPlaceTypes"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getPlaceTypes</span><span
+              class="method-args"></span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.getPlaceTypes.html">flickr.places.getPlaceTypes</a>
 request.</p>
 
 <p>Fetches a list of available place types for <a
 href="../Flickr.html">Flickr</a>.</p>
 
-<p><strong>Arguments</strong></p>
+<p><b>Arguments</b></p>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>100: <em>Invalid API Key</em></p>
 
@@ -762,60 +792,63 @@ href="../Flickr.html">Flickr</a>.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>neighbourhoodlocalitycountyregioncountrycontinent</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="getPlaceTypes-source">
-            <pre>
+            
+            <div class="method-source-code" id="getPlaceTypes-source">
+<pre>
+
 # Generated automatically from flickr api
   def getPlaceTypes(*args)
     @flickr.call 'flickr.places.getPlaceTypes', *args
   end
 </pre>
-          </div><!-- getPlaceTypes-source -->
+            </div><!-- getPlaceTypes-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getPlaceTypes-method -->
-
-    
-      <div id="method-i-getShapeHistory" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getShapeHistory</span><span
-            class="method-args">(:place_id => 'place_id',:woe_id => 'woe_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getPlaceTypes-method -->
+
+      
+        <div id="getShapeHistory-method" class="method-detail ">
+          <a name="method-i-getShapeHistory"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getShapeHistory</span><span
+              class="method-args">(:place_id => 'place_id',:woe_id => 'woe_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.getShapeHistory.html">flickr.places.getShapeHistory</a>
 request.</p>
 
 <p>Return an historical list of all the shape data generated for a <a
 href="Places.html">Places</a> or Where on Earth (WOE) ID.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>place_id 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> ID.
 (While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
-</dd><dt>woe_id 
+</dd><dt>woe_id </dt>
 <dd>
 <p>A Where On Earth (WOE) ID. (While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Required parameter missing</em></p>
 
@@ -861,49 +894,52 @@ ID passed to the API call.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>   45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...
 http://farm4.static.flickr.com/3228/shapefiles/3534_20081111_0a8afe03c5.tar.gz</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="getShapeHistory-source">
-            <pre>
+            
+            <div class="method-source-code" id="getShapeHistory-source">
+<pre>
+
 # Generated automatically from flickr api
   def getShapeHistory(*args)
     @flickr.call 'flickr.places.getShapeHistory', *args
   end
 </pre>
-          </div><!-- getShapeHistory-source -->
+            </div><!-- getShapeHistory-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getShapeHistory-method -->
-
-    
-      <div id="method-i-getTopPlacesList" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getTopPlacesList</span><span
-            class="method-args">(:place_type_id => 'place_type_id',:date => 'date',:woe_id => 'woe_id',:place_id => 'place_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getShapeHistory-method -->
+
+      
+        <div id="getTopPlacesList-method" class="method-detail ">
+          <a name="method-i-getTopPlacesList"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getTopPlacesList</span><span
+              class="method-args">(:place_type_id => 'place_type_id',:date => 'date',:woe_id => 'woe_id',:place_id => 'place_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.getTopPlacesList.html">flickr.places.getTopPlacesList</a>
 request.</p>
 
 <p>Return the top 100 most geotagged places for a day.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>place_type_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>place_type_id <em>(required)</em> </dt>
 <dd>
 <p>The numeric ID for a specific place type to cluster photos by.</p>
 </dd></dl>
@@ -911,21 +947,21 @@ request.</p>
 <p>Valid place type IDs are :</p>
 
 <p>22: neighbourhood 7: locality 8: region 12: country 29: continent</p>
-<dl class="rdoc-list label-list"><dt>date 
+<dl class="rdoc-list"><dt>date </dt>
 <dd>
 <p>A valid date in YYYY-MM-DD format. The default is yesterday.</p>
-</dd><dt>woe_id 
+</dd><dt>woe_id </dt>
 <dd>
 <p>Limit your query to only those top places belonging to a specific Where on
 Earth (WOE) identifier.</p>
-</dd><dt>place_id 
+</dd><dt>place_id </dt>
 <dd>
 <p>Limit your query to only those top places belonging to a specific <a
 href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Required parameter missing</em></p>
 
@@ -974,41 +1010,44 @@ included with your request.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>United States</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="getTopPlacesList-source">
-            <pre>
+            
+            <div class="method-source-code" id="getTopPlacesList-source">
+<pre>
+
 # Generated automatically from flickr api
   def getTopPlacesList(*args)
     @flickr.call 'flickr.places.getTopPlacesList', *args
   end
 </pre>
-          </div><!-- getTopPlacesList-source -->
+            </div><!-- getTopPlacesList-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getTopPlacesList-method -->
-
-    
-      <div id="method-i-placesForBoundingBox" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">placesForBoundingBox</span><span
-            class="method-args">(:bbox => 'bbox',:place_type => 'place_type',:place_type_id => 'place_type_id',:recursive => 'recursive')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getTopPlacesList-method -->
+
+      
+        <div id="placesForBoundingBox-method" class="method-detail ">
+          <a name="method-i-placesForBoundingBox"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">placesForBoundingBox</span><span
+              class="method-args">(:bbox => 'bbox',:place_type => 'place_type',:place_type_id => 'place_type_id',:recursive => 'recursive')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.placesForBoundingBox.html">flickr.places.placesForBoundingBox</a>
 request.</p>
 
@@ -1021,14 +1060,14 @@ sizes are as follows:</p>
 <p>neighbourhood: 3km (1.8mi) locality: 7km (4.3mi) county: 50km (31mi)
 region: 200km (124mi) country: 500km (310mi) continent: 1500km (932mi)</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>bbox <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>bbox <em>(required)</em> </dt>
 <dd>
 <p>A comma-delimited list of 4 values defining the Bounding Box of the area
 that will be searched. The 4 values represent the bottom-left corner of the
 box and the top-right corner, minimum_longitude, minimum_latitude,
 maximum_longitude, maximum_latitude.</p>
-</dd><dt>place_type 
+</dd><dt>place_type </dt>
 <dd>
 <p>The name of place type to using as the starting point to search for places
 in a bounding box. Valid placetypes are:</p>
@@ -1039,7 +1078,7 @@ argument has been deprecated in favor of the "place_type_id" argument. It
 won't go away but it will not be added to new methods. A complete list of
 place type IDs is available using the flickr.places.getPlaceTypes method.
 (While optional, you must pass either a valid place type or place type ID.)</p>
-<dl class="rdoc-list label-list"><dt>place_type_id 
+<dl class="rdoc-list"><dt>place_type_id </dt>
 <dd>
 <p>The numeric ID for a specific place type to cluster photos by.</p>
 </dd></dl>
@@ -1048,7 +1087,7 @@ place type IDs is available using the flickr.places.getPlaceTypes method.
 
 <p>22: neighbourhood 7: locality 8: region 12: country 29: continent (While
 optional, you must pass either a valid place type or place type ID.)</p>
-<dl class="rdoc-list label-list"><dt>recursive 
+<dl class="rdoc-list"><dt>recursive </dt>
 <dd>
 <p>Perform a recursive place type search. For example, if you search for
 neighbourhoods in a given bounding box but there are no results the method
@@ -1059,7 +1098,7 @@ found.</p>
 <p>Recursive searches do not change the bounding box size restrictions for the
 initial place type passed to the method.</p>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Required parameters missing</em></p>
 
@@ -1108,51 +1147,54 @@ request place type.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>Downtown, San Francisco, CA, US, United States
 Civic Center, San Francisco, CA, US, United States
 Chinatown, San Francisco, CA, US, United States</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="placesForBoundingBox-source">
-            <pre>
+            
+            <div class="method-source-code" id="placesForBoundingBox-source">
+<pre>
+
 # Generated automatically from flickr api
   def placesForBoundingBox(*args)
     @flickr.call 'flickr.places.placesForBoundingBox', *args
   end
 </pre>
-          </div><!-- placesForBoundingBox-source -->
+            </div><!-- placesForBoundingBox-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- placesForBoundingBox-method -->
-
-    
-      <div id="method-i-placesForContacts" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">placesForContacts</span><span
-            class="method-args">(:place_type => 'place_type',:place_type_id => 'place_type_id',:woe_id => 'woe_id',:place_id => 'place_id',:threshold => 'threshold',:contacts => 'contacts',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- placesForBoundingBox-method -->
+
+      
+        <div id="placesForContacts-method" class="method-detail ">
+          <a name="method-i-placesForContacts"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">placesForContacts</span><span
+              class="method-args">(:place_type => 'place_type',:place_type_id => 'place_type_id',:woe_id => 'woe_id',:place_id => 'place_id',:threshold => 'threshold',:contacts => 'contacts',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.placesForContacts.html">flickr.places.placesForContacts</a>
 request.</p>
 
 <p>Return a list of the top 100 unique places clustered by a given placetype
 for a user's contacts.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>place_type 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>place_type </dt>
 <dd>
 <p>A specific place type to cluster photos by.</p>
 </dd></dl>
@@ -1165,7 +1207,7 @@ argument. It won't go away but it will not be added to new methods. A
 complete list of place type IDs is available using the
 flickr.places.getPlaceTypes method. (While optional, you must pass either a
 valid place type or place type ID.)</p>
-<dl class="rdoc-list label-list"><dt>place_type_id 
+<dl class="rdoc-list"><dt>place_type_id </dt>
 <dd>
 <p>The numeric ID for a specific place type to cluster photos by.</p>
 </dd></dl>
@@ -1174,13 +1216,13 @@ valid place type or place type ID.)</p>
 
 <p>22: neighbourhood 7: locality 8: region 12: country 29: continent (While
 optional, you must pass either a valid place type or place type ID.)</p>
-<dl class="rdoc-list label-list"><dt>woe_id 
+<dl class="rdoc-list"><dt>woe_id </dt>
 <dd>
 <p>A Where on Earth identifier to use to filter photo clusters. For example
 all the photos clustered by locality in the United States (WOE ID
 23424977).(While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
-</dd><dt>place_id 
+</dd><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier to use to filter photo clusters. For example all the photos
@@ -1189,7 +1231,7 @@ clustered by locality in the United States (Place ID 4KO02SibApitvSBieQ).</p>
 
 <p>(While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
-<dl class="rdoc-list label-list"><dt>threshold 
+<dl class="rdoc-list"><dt>threshold </dt>
 <dd>
 <p>The minimum number of photos that a place type must have to be included. If
 the number of photos is lowered then the parent place type for that place
@@ -1200,33 +1242,33 @@ will be used.</p>
 Montreal (WOE ID 3534) but your threshold is set to 5 then those photos
 will be "rolled up" and included instead with a place record for the region
 of Quebec (WOE ID 2344924).</p>
-<dl class="rdoc-list label-list"><dt>contacts 
+<dl class="rdoc-list"><dt>contacts </dt>
 <dd>
 <p>Search your contacts. Either 'all' or 'ff' for just friends and family.
 (Default is all)</p>
-</dd><dt>min_upload_date 
+</dd><dt>min_upload_date </dt>
 <dd>
 <p>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
 greater than or equal to this value will be returned. The date should be in
 the form of a unix timestamp.</p>
-</dd><dt>max_upload_date 
+</dd><dt>max_upload_date </dt>
 <dd>
 <p>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
 less than or equal to this value will be returned. The date should be in
 the form of a unix timestamp.</p>
-</dd><dt>min_taken_date 
+</dd><dt>min_taken_date </dt>
 <dd>
 <p>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
 greater than or equal to this value will be returned. The date should be in
 the form of a mysql datetime.</p>
-</dd><dt>max_taken_date 
+</dd><dt>max_taken_date </dt>
 <dd>
 <p>Maximum taken date. <a href="Photos.html">Photos</a> with an taken date
 less than or equal to this value will be returned. The date should be in
 the form of a mysql datetime.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em><a href="Places.html">Places</a> for contacts are not available at
 this time</em></p>
@@ -1303,49 +1345,52 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>San Francisco, California</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="placesForContacts-source">
-            <pre>
+            
+            <div class="method-source-code" id="placesForContacts-source">
+<pre>
+
 # Generated automatically from flickr api
   def placesForContacts(*args)
     @flickr.call 'flickr.places.placesForContacts', *args
   end
 </pre>
-          </div><!-- placesForContacts-source -->
+            </div><!-- placesForContacts-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- placesForContacts-method -->
-
-    
-      <div id="method-i-placesForTags" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">placesForTags</span><span
-            class="method-args">(:place_type_id => 'place_type_id',:woe_id => 'woe_id',:place_id => 'place_id',:threshold => 'threshold',:tags => 'tags',:tag_mode => 'tag_mode',:machine_tags => 'machine_tags',:machine_tag_mode => 'machine_tag_mode',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- placesForContacts-method -->
+
+      
+        <div id="placesForTags-method" class="method-detail ">
+          <a name="method-i-placesForTags"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">placesForTags</span><span
+              class="method-args">(:place_type_id => 'place_type_id',:woe_id => 'woe_id',:place_id => 'place_id',:threshold => 'threshold',:tags => 'tags',:tag_mode => 'tag_mode',:machine_tags => 'machine_tags',:machine_tag_mode => 'machine_tag_mode',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.placesForTags.html">flickr.places.placesForTags</a>
 request.</p>
 
 <p>Return a list of the top 100 unique places clustered by a given placetype
 for set of tags or machine tags.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>place_type_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>place_type_id <em>(required)</em> </dt>
 <dd>
 <p>The numeric ID for a specific place type to cluster photos by.</p>
 </dd></dl>
@@ -1353,7 +1398,7 @@ for set of tags or machine tags.</p>
 <p>Valid place type IDs are :</p>
 
 <p>22: neighbourhood 7: locality 8: region 12: country 29: continent</p>
-<dl class="rdoc-list label-list"><dt>woe_id 
+<dl class="rdoc-list"><dt>woe_id </dt>
 <dd>
 <p>A Where on Earth identifier to use to filter photo clusters. For example
 all the photos clustered by locality in the United States (WOE ID
@@ -1362,7 +1407,7 @@ all the photos clustered by locality in the United States (WOE ID
 
 <p>(While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
-<dl class="rdoc-list label-list"><dt>place_id 
+<dl class="rdoc-list"><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier to use to filter photo clusters. For example all the photos
@@ -1371,7 +1416,7 @@ clustered by locality in the United States (Place ID 4KO02SibApitvSBieQ).</p>
 
 <p>(While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
-<dl class="rdoc-list label-list"><dt>threshold 
+<dl class="rdoc-list"><dt>threshold </dt>
 <dd>
 <p>The minimum number of photos that a place type must have to be included. If
 the number of photos is lowered then the parent place type for that place
@@ -1382,15 +1427,15 @@ will be used.</p>
 (WOE ID 3534) but your threshold is set to 5 then those photos will be
 "rolled up" and included instead with a place record for the region of
 Quebec (WOE ID 2344924).</p>
-<dl class="rdoc-list label-list"><dt>tags 
+<dl class="rdoc-list"><dt>tags </dt>
 <dd>
 <p>A comma-delimited list of tags. <a href="Photos.html">Photos</a> with one
 or more of the tags listed will be returned.</p>
-</dd><dt>tag_mode 
+</dd><dt>tag_mode </dt>
 <dd>
 <p>Either 'any' for an OR combination of tags, or 'all' for an AND
 combination. Defaults to 'any' if not specified.</p>
-</dd><dt>machine_tags 
+</dd><dt>machine_tags </dt>
 <dd>
 <p>Aside from passing in a fully formed machine tag, there is a special syntax
 for searching on specific properties :</p>
@@ -1398,45 +1443,44 @@ for searching on specific properties :</p>
 
 <p>Find photos using the 'dc' namespace :    "machine_tags" =&gt; "dc:"</p>
 
-<pre class="ruby"> <span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span> <span class="ruby-identifier">with</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">title</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-string">'dc'</span> <span class="ruby-identifier">namespace</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;dc:title=&quot;</span>
-<span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span> <span class="ruby-identifier">titled</span> <span class="ruby-string">&quot;mr. camera&quot;</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-string">'dc'</span> <span class="ruby-identifier">namespace</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;dc:title=\&quot;mr. camera\&quot;
-Find photos whose value is &quot;</span><span class="ruby-identifier">mr</span>. <span class="ruby-identifier">camera</span><span class="ruby-string">&quot; : &quot;</span><span class="ruby-identifier">machine_tags</span><span class="ruby-string">&quot; =&gt; &quot;</span>*:<span class="ruby-operator">*=</span>\<span class="ruby-string">&quot;mr. camera\&quot;&quot;</span>
-<span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">have</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">title</span>, <span class="ruby-keyword">in</span> <span class="ruby-identifier">any</span> <span class="ruby-identifier">namespace</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;*:title=&quot;</span>
-<span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">have</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">title</span>, <span class="ruby-keyword">in</span> <span class="ruby-identifier">any</span> <span class="ruby-identifier">namespace</span>, <span class="ruby-identifier">whose</span> <span class="ruby-identifier">value</span> <span class="ruby-identifier">is</span> <span class="ruby-string">&quot;mr. camera&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;*:title=\&quot;mr. camera\&quot;&quot;</span>
-<span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span>, <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-string">'dc'</span> <span class="ruby-identifier">namespace</span> <span class="ruby-identifier">whose</span> <span class="ruby-identifier">value</span> <span class="ruby-identifier">is</span> <span class="ruby-string">&quot;mr. camera&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;dc:*=\&quot;mr. camera\&quot;&quot;</span>
-</pre>
+<pre> Find photos with a title in the 'dc' namespace : &quot;machine_tags&quot; =&gt; &quot;dc:title=&quot;
+Find photos titled &quot;mr. camera&quot; in the 'dc' namespace : &quot;machine_tags&quot; =&gt; &quot;dc:title=\&quot;mr. camera\&quot;
+Find photos whose value is &quot;mr. camera&quot; : &quot;machine_tags&quot; =&gt; &quot;*:*=\&quot;mr. camera\&quot;&quot;
+Find photos that have a title, in any namespace : &quot;machine_tags&quot; =&gt; &quot;*:title=&quot;
+Find photos that have a title, in any namespace, whose value is &quot;mr. camera&quot; : &quot;machine_tags&quot; =&gt; &quot;*:title=\&quot;mr. camera\&quot;&quot;
+Find photos, in the 'dc' namespace whose value is &quot;mr. camera&quot; : &quot;machine_tags&quot; =&gt; &quot;dc:*=\&quot;mr. camera\&quot;&quot;</pre>
 
 <p>Multiple machine tags may be queried by passing a comma-separated list. The
 number of machine tags you can pass in a single query depends on the tag
 mode (AND or OR) that you are querying with. "AND" queries are limited to
 (16) machine tags. "OR" queries are limited to (8).</p>
-<dl class="rdoc-list label-list"><dt>machine_tag_mode 
+<dl class="rdoc-list"><dt>machine_tag_mode </dt>
 <dd>
 <p>Either 'any' for an OR combination of tags, or 'all' for an AND
 combination. Defaults to 'any' if not specified.</p>
-</dd><dt>min_upload_date 
+</dd><dt>min_upload_date </dt>
 <dd>
 <p>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
 greater than or equal to this value will be returned. The date should be in
 the form of a unix timestamp.</p>
-</dd><dt>max_upload_date 
+</dd><dt>max_upload_date </dt>
 <dd>
 <p>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
 less than or equal to this value will be returned. The date should be in
 the form of a unix timestamp.</p>
-</dd><dt>min_taken_date 
+</dd><dt>min_taken_date </dt>
 <dd>
 <p>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
 greater than or equal to this value will be returned. The date should be in
 the form of a mysql datetime.</p>
-</dd><dt>max_taken_date 
+</dd><dt>max_taken_date </dt>
 <dd>
 <p>Maximum taken date. <a href="Photos.html">Photos</a> with an taken date
 less than or equal to this value will be returned. The date should be in
 the form of a mysql datetime.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>100: <em>Invalid API Key</em></p>
 
@@ -1468,49 +1512,52 @@ the form of a mysql datetime.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>San Francisco, California</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="placesForTags-source">
-            <pre>
+            
+            <div class="method-source-code" id="placesForTags-source">
+<pre>
+
 # Generated automatically from flickr api
   def placesForTags(*args)
     @flickr.call 'flickr.places.placesForTags', *args
   end
 </pre>
-          </div><!-- placesForTags-source -->
+            </div><!-- placesForTags-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- placesForTags-method -->
-
-    
-      <div id="method-i-placesForUser" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">placesForUser</span><span
-            class="method-args">(:place_type_id => 'place_type_id',:place_type => 'place_type',:woe_id => 'woe_id',:place_id => 'place_id',:threshold => 'threshold',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- placesForTags-method -->
+
+      
+        <div id="placesForUser-method" class="method-detail ">
+          <a name="method-i-placesForUser"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">placesForUser</span><span
+              class="method-args">(:place_type_id => 'place_type_id',:place_type => 'place_type',:woe_id => 'woe_id',:place_id => 'place_id',:threshold => 'threshold',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.placesForUser.html">flickr.places.placesForUser</a>
 request.</p>
 
 <p>Return a list of the top 100 unique places clustered by a given placetype
 for a user.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>place_type_id 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>place_type_id </dt>
 <dd>
 <p>The numeric ID for a specific place type to cluster photos by.</p>
 </dd></dl>
@@ -1523,7 +1570,7 @@ argument. It won't go away but it will not be added to new methods. A
 complete list of place type IDs is available using the
 flickr.places.getPlaceTypes method. (While optional, you must pass either a
 valid place type or place type ID.)</p>
-<dl class="rdoc-list label-list"><dt>place_type 
+<dl class="rdoc-list"><dt>place_type </dt>
 <dd>
 <p>A specific place type to cluster photos by.</p>
 </dd></dl>
@@ -1532,20 +1579,20 @@ valid place type or place type ID.)</p>
 
 <p>neighbourhood (and neighborhood) locality region country continent (While
 optional, you must pass either a valid place type or place type ID.)</p>
-<dl class="rdoc-list label-list"><dt>woe_id 
+<dl class="rdoc-list"><dt>woe_id </dt>
 <dd>
 <p>A Where on Earth identifier to use to filter photo clusters. For example
 all the photos clustered by locality in the United States (WOE ID
 23424977).(While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
-</dd><dt>place_id 
+</dd><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier to use to filter photo clusters. For example all the photos
 clustered by locality in the United States (Place ID
 4KO02SibApitvSBieQ).(While optional, you must pass either a valid <a
 href="Places.html">Places</a> ID or a WOE ID.)</p>
-</dd><dt>threshold 
+</dd><dt>threshold </dt>
 <dd>
 <p>The minimum number of photos that a place type must have to be included. If
 the number of photos is lowered then the parent place type for that place
@@ -1556,29 +1603,29 @@ will be used.</p>
 (WOE ID 3534) but your threshold is set to 5 then those photos will be
 "rolled up" and included instead with a place record for the region of
 Quebec (WOE ID 2344924).</p>
-<dl class="rdoc-list label-list"><dt>min_upload_date 
+<dl class="rdoc-list"><dt>min_upload_date </dt>
 <dd>
 <p>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
 greater than or equal to this value will be returned. The date should be in
 the form of a unix timestamp.</p>
-</dd><dt>max_upload_date 
+</dd><dt>max_upload_date </dt>
 <dd>
 <p>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
 less than or equal to this value will be returned. The date should be in
 the form of a unix timestamp.</p>
-</dd><dt>min_taken_date 
+</dd><dt>min_taken_date </dt>
 <dd>
 <p>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
 greater than or equal to this value will be returned. The date should be in
 the form of a mysql datetime.</p>
-</dd><dt>max_taken_date 
+</dd><dt>max_taken_date </dt>
 <dd>
 <p>Maximum taken date. <a href="Photos.html">Photos</a> with an taken date
 less than or equal to this value will be returned. The date should be in
 the form of a mysql datetime.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em><a href="Places.html">Places</a> for user are not available at this
 time</em></p>
@@ -1650,41 +1697,44 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>San Francisco, California</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="placesForUser-source">
-            <pre>
+            
+            <div class="method-source-code" id="placesForUser-source">
+<pre>
+
 # Generated automatically from flickr api
   def placesForUser(*args)
     @flickr.call 'flickr.places.placesForUser', *args
   end
 </pre>
-          </div><!-- placesForUser-source -->
+            </div><!-- placesForUser-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- placesForUser-method -->
-
-    
-      <div id="method-i-resolvePlaceId" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">resolvePlaceId</span><span
-            class="method-args">(:place_id => 'place_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- placesForUser-method -->
+
+      
+        <div id="resolvePlaceId-method" class="method-detail ">
+          <a name="method-i-resolvePlaceId"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">resolvePlaceId</span><span
+              class="method-args">(:place_id => 'place_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.resolvePlaceId.html">flickr.places.resolvePlaceId</a>
 request.</p>
 
@@ -1692,13 +1742,13 @@ request.</p>
 information by Place ID. This method has been deprecated. It won't be
 removed but you should use flickr.places.getInfo instead.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>place_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>place_id <em>(required)</em> </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> ID</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>2: <em>Place ID required.</em></p>
 </li><li>
@@ -1734,41 +1784,44 @@ removed but you should use flickr.places.getInfo instead.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>San FranciscoSan FranciscoCaliforniaUnited States</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="resolvePlaceId-source">
-            <pre>
+            
+            <div class="method-source-code" id="resolvePlaceId-source">
+<pre>
+
 # Generated automatically from flickr api
   def resolvePlaceId(*args)
     @flickr.call 'flickr.places.resolvePlaceId', *args
   end
 </pre>
-          </div><!-- resolvePlaceId-source -->
+            </div><!-- resolvePlaceId-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- resolvePlaceId-method -->
-
-    
-      <div id="method-i-resolvePlaceURL" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">resolvePlaceURL</span><span
-            class="method-args">(:url => 'url')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- resolvePlaceId-method -->
+
+      
+        <div id="resolvePlaceURL-method" class="method-detail ">
+          <a name="method-i-resolvePlaceURL"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">resolvePlaceURL</span><span
+              class="method-args">(:url => 'url')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.resolvePlaceURL.html">flickr.places.resolvePlaceURL</a>
 request.</p>
 
@@ -1776,8 +1829,8 @@ request.</p>
 information by Place URL. This method has been deprecated. It won't be
 removed but you should use flickr.places.getInfoByUrl instead.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>url <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>url <em>(required)</em> </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> URL.</p>
 </dd></dl>
@@ -1785,7 +1838,7 @@ removed but you should use flickr.places.getInfoByUrl instead.</p>
 <p><a href="../Flickr.html">Flickr</a> Place URLs are of the form
 /country/region/city</p>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>2: <em>Place URL required.</em></p>
 </li><li>
@@ -1821,41 +1874,44 @@ removed but you should use flickr.places.getInfoByUrl instead.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>San FranciscoSan FranciscoCaliforniaUnited States</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="resolvePlaceURL-source">
-            <pre>
+            
+            <div class="method-source-code" id="resolvePlaceURL-source">
+<pre>
+
 # Generated automatically from flickr api
   def resolvePlaceURL(*args)
     @flickr.call 'flickr.places.resolvePlaceURL', *args
   end
 </pre>
-          </div><!-- resolvePlaceURL-source -->
+            </div><!-- resolvePlaceURL-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- resolvePlaceURL-method -->
-
-    
-      <div id="method-i-tagsForPlace" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">tagsForPlace</span><span
-            class="method-args">(:woe_id => 'woe_id',:place_id => 'place_id',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- resolvePlaceURL-method -->
+
+      
+        <div id="tagsForPlace-method" class="method-detail ">
+          <a name="method-i-tagsForPlace"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">tagsForPlace</span><span
+              class="method-args">(:woe_id => 'woe_id',:place_id => 'place_id',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.places.tagsForPlace.html">flickr.places.tagsForPlace</a>
 request.</p>
 
@@ -1863,40 +1919,40 @@ request.</p>
 href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a> or Where
 on Earth (WOE) ID</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>woe_id 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>woe_id </dt>
 <dd>
 <p>A Where on Earth identifier to use to filter photo clusters.(While
 optional, you must pass either a valid <a href="Places.html">Places</a> ID
 or a WOE ID.)</p>
-</dd><dt>place_id 
+</dd><dt>place_id </dt>
 <dd>
 <p>A <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
 identifier to use to filter photo clusters.(While optional, you must pass
 either a valid <a href="Places.html">Places</a> ID or a WOE ID.)</p>
-</dd><dt>min_upload_date 
+</dd><dt>min_upload_date </dt>
 <dd>
 <p>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
 greater than or equal to this value will be returned. The date should be in
 the form of a unix timestamp.</p>
-</dd><dt>max_upload_date 
+</dd><dt>max_upload_date </dt>
 <dd>
 <p>Maximum upload date. <a href="Photos.html">Photos</a> with an upload date
 less than or equal to this value will be returned. The date should be in
 the form of a unix timestamp.</p>
-</dd><dt>min_taken_date 
+</dd><dt>min_taken_date </dt>
 <dd>
 <p>Minimum taken date. <a href="Photos.html">Photos</a> with an taken date
 greater than or equal to this value will be returned. The date should be in
 the form of a mysql datetime.</p>
-</dd><dt>max_taken_date 
+</dd><dt>max_taken_date </dt>
 <dd>
 <p>Maximum taken date. <a href="Photos.html">Photos</a> with an taken date
 less than or equal to this value will be returned. The date should be in
 the form of a mysql datetime.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Required parameter missing</em></p>
 
@@ -1942,39 +1998,43 @@ included with your request.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
+<p><b>Returns</b></p>
 
 <pre>montrealcanadamontréalquebecquébecsylvainmichaudnikonlucbusmusicurbanlucbussieresfestival</pre>
-          
+            
 
-          
-          <div class="method-source-code" id="tagsForPlace-source">
-            <pre>
+            
+            <div class="method-source-code" id="tagsForPlace-source">
+<pre>
+
 # Generated automatically from flickr api
   def tagsForPlace(*args)
     @flickr.call 'flickr.places.tagsForPlace', *args
   end
 </pre>
-          </div><!-- tagsForPlace-source -->
+            </div><!-- tagsForPlace-source -->
+            
+          </div>
+
           
-        </div>
 
-        
+          
+        </div><!-- tagsForPlace-method -->
 
-        
-      </div><!-- tagsForPlace-method -->
-
+      
+      </div><!-- public-instance-method-details -->
     
-    </section><!-- public-instance-method-details -->
+    </div><!-- 5Buntitled-5D -->
   
-  </section><!-- 5Buntitled-5D -->
 
-</div><!-- documentation -->
+  </div><!-- documentation -->
 
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
+</body>
+</html>
 
