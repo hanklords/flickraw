@@ -1,223 +1,238 @@
-<!DOCTYPE html>
-
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-<title>Class: FlickRaw::Flickr::Photos::People</title>
+  <title>Class: FlickRaw::Flickr::Photos::People</title>
 
-<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "../../../";
-</script>
+  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
 
-<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
-
-
+</head>
 <body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../table_of_contents.html#classes">Classes</a>
-    <a href="../../../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
 
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
 
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/flickraw.rb
-  </ul>
-</nav>
-
-    
-  </div>
-
-  <div id="class-metadata">
-    
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">FlickRaw::Request
-  
-</nav>
-
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
-    
-    <li><a href="#method-i-add">#add</a>
-    
-    <li><a href="#method-i-delete">#delete</a>
-    
-    <li><a href="#method-i-deleteCoords">#deleteCoords</a>
-    
-    <li><a href="#method-i-editCoords">#editCoords</a>
-    
-    <li><a href="#method-i-getList">#getList</a>
-    
-  </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../../../README_rdoc.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../../../FlickRaw.html">FlickRaw</a>
-  
-    <li><a href="../../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
-  
-    <li><a href="../../../Object.html">Object</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="class">class FlickRaw::Flickr::Photos::People</h1>
-
-  <div id="description" class="description">
-    
-  </div><!-- description -->
-
-  
-  
-  
-  <section id="5Buntitled-5D" class="documentation-section">
-    
-
-    
-
-    
-
-    
-
-    <!-- Methods -->
-    
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-add" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">add</span><span
-            class="method-args">(:photo_id => 'photo_id',:user_id => 'user_id',:person_x => 'person_x',:person_y => 'person_y',:person_w => 'person_w',:person_h => 'person_h')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
           
-          <p><a
+            <li><a href="../../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">FlickRaw::Request</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-add">#add</a></li>
+          
+          <li><a href="#method-i-delete">#delete</a></li>
+          
+          <li><a href="#method-i-deleteCoords">#deleteCoords</a></li>
+          
+          <li><a href="#method-i-editCoords">#editCoords</a></li>
+          
+          <li><a href="#method-i-getList">#getList</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../../../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../../FlickRaw.html">FlickRaw</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+        
+          <li><a href="../../../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">FlickRaw::Flickr::Photos::People</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="add-method" class="method-detail ">
+          <a name="method-i-add"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">add</span><span
+              class="method-args">(:photo_id => 'photo_id',:user_id => 'user_id',:person_x => 'person_x',:person_y => 'person_y',:person_w => 'person_w',:person_h => 'person_h')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.people.add.html">flickr.photos.people.add</a>
 request.</p>
 
@@ -225,28 +240,28 @@ request.</p>
 are measured in pixels, based on the 500px image size shown on individual
 photo pages.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to add a person to.</p>
-</dd><dt>user_id <em>(required)</em> 
+</dd><dt>user_id <em>(required)</em> </dt>
 <dd>
 <p>The NSID of the user to add to the photo.</p>
-</dd><dt>person_x 
+</dd><dt>person_x </dt>
 <dd>
 <p>The left-most pixel co-ordinate of the box around the person.</p>
-</dd><dt>person_y 
+</dd><dt>person_y </dt>
 <dd>
 <p>The top-most pixel co-ordinate of the box around the person.</p>
-</dd><dt>person_w 
+</dd><dt>person_w </dt>
 <dd>
 <p>The width (in pixels) of the box around the person.</p>
-</dd><dt>person_h 
+</dd><dt>person_h </dt>
 <dd>
 <p>The height (in pixels) of the box around the person.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Person not found</em></p>
 
@@ -330,56 +345,59 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="add-source">
-            <pre>
+            
+            <div class="method-source-code" id="add-source">
+<pre>
+
 # Generated automatically from flickr api
   def add(*args)
     @flickr.call 'flickr.photos.people.add', *args
   end
 </pre>
-          </div><!-- add-source -->
+            </div><!-- add-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- add-method -->
-
-    
-      <div id="method-i-delete" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">delete</span><span
-            class="method-args">(:photo_id => 'photo_id',:user_id => 'user_id',:email => 'email')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- add-method -->
+
+      
+        <div id="delete-method" class="method-detail ">
+          <a name="method-i-delete"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">delete</span><span
+              class="method-args">(:photo_id => 'photo_id',:user_id => 'user_id',:email => 'email')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.people.delete.html">flickr.photos.people.delete</a>
 request.</p>
 
 <p>Remove a person from a photo.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to remove a person from.</p>
-</dd><dt>user_id <em>(required)</em> 
+</dd><dt>user_id <em>(required)</em> </dt>
 <dd>
 <p>The NSID of the person to remove from the photo.</p>
-</dd><dt>email 
+</dd><dt>email </dt>
 <dd>
 <p>An email address for an invited user.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Person not found</em></p>
 
@@ -440,53 +458,56 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="delete-source">
-            <pre>
+            
+            <div class="method-source-code" id="delete-source">
+<pre>
+
 # Generated automatically from flickr api
   def delete(*args)
     @flickr.call 'flickr.photos.people.delete', *args
   end
 </pre>
-          </div><!-- delete-source -->
+            </div><!-- delete-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- delete-method -->
-
-    
-      <div id="method-i-deleteCoords" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">deleteCoords</span><span
-            class="method-args">(:photo_id => 'photo_id',:user_id => 'user_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- delete-method -->
+
+      
+        <div id="deleteCoords-method" class="method-detail ">
+          <a name="method-i-deleteCoords"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">deleteCoords</span><span
+              class="method-args">(:photo_id => 'photo_id',:user_id => 'user_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.people.deleteCoords.html">flickr.photos.people.deleteCoords</a>
 request.</p>
 
 <p>Remove the bounding box from a person in a photo</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to edit a person in.</p>
-</dd><dt>user_id <em>(required)</em> 
+</dd><dt>user_id <em>(required)</em> </dt>
 <dd>
 <p>The NSID of the person whose bounding box you want to remove.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Person not found</em></p>
 
@@ -547,68 +568,71 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="deleteCoords-source">
-            <pre>
+            
+            <div class="method-source-code" id="deleteCoords-source">
+<pre>
+
 # Generated automatically from flickr api
   def deleteCoords(*args)
     @flickr.call 'flickr.photos.people.deleteCoords', *args
   end
 </pre>
-          </div><!-- deleteCoords-source -->
+            </div><!-- deleteCoords-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- deleteCoords-method -->
-
-    
-      <div id="method-i-editCoords" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">editCoords</span><span
-            class="method-args">(:photo_id => 'photo_id',:user_id => 'user_id',:person_x => 'person_x',:person_y => 'person_y',:person_w => 'person_w',:person_h => 'person_h',:email => 'email')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- deleteCoords-method -->
+
+      
+        <div id="editCoords-method" class="method-detail ">
+          <a name="method-i-editCoords"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">editCoords</span><span
+              class="method-args">(:photo_id => 'photo_id',:user_id => 'user_id',:person_x => 'person_x',:person_y => 'person_y',:person_w => 'person_w',:person_h => 'person_h',:email => 'email')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.people.editCoords.html">flickr.photos.people.editCoords</a>
 request.</p>
 
 <p>Edit the bounding box of an existing person on a photo.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to edit a person in.</p>
-</dd><dt>user_id <em>(required)</em> 
+</dd><dt>user_id <em>(required)</em> </dt>
 <dd>
 <p>The NSID of the person to edit in a photo.</p>
-</dd><dt>person_x <em>(required)</em> 
+</dd><dt>person_x <em>(required)</em> </dt>
 <dd>
 <p>The left-most pixel co-ordinate of the box around the person.</p>
-</dd><dt>person_y <em>(required)</em> 
+</dd><dt>person_y <em>(required)</em> </dt>
 <dd>
 <p>The top-most pixel co-ordinate of the box around the person.</p>
-</dd><dt>person_w <em>(required)</em> 
+</dd><dt>person_w <em>(required)</em> </dt>
 <dd>
 <p>The width (in pixels) of the box around the person.</p>
-</dd><dt>person_h <em>(required)</em> 
+</dd><dt>person_h <em>(required)</em> </dt>
 <dd>
 <p>The height (in pixels) of the box around the person.</p>
-</dd><dt>email 
+</dd><dt>email </dt>
 <dd>
 <p>An email address for an 'invited' person in a photo</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Person not found</em></p>
 
@@ -678,50 +702,53 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="editCoords-source">
-            <pre>
+            
+            <div class="method-source-code" id="editCoords-source">
+<pre>
+
 # Generated automatically from flickr api
   def editCoords(*args)
     @flickr.call 'flickr.photos.people.editCoords', *args
   end
 </pre>
-          </div><!-- editCoords-source -->
+            </div><!-- editCoords-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- editCoords-method -->
-
-    
-      <div id="method-i-getList" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getList</span><span
-            class="method-args">(:photo_id => 'photo_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- editCoords-method -->
+
+      
+        <div id="getList-method" class="method-detail ">
+          <a name="method-i-getList"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getList</span><span
+              class="method-args">(:photo_id => 'photo_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.people.getList.html">flickr.photos.people.getList</a>
 request.</p>
 
 <p>Get a list of people in a given photo.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to get a list of people for.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photo not found</em></p>
 
@@ -757,37 +784,41 @@ request.</p>
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
-          
+<p><b>Returns</b></p>
+            
 
-          
-          <div class="method-source-code" id="getList-source">
-            <pre>
+            
+            <div class="method-source-code" id="getList-source">
+<pre>
+
 # Generated automatically from flickr api
   def getList(*args)
     @flickr.call 'flickr.photos.people.getList', *args
   end
 </pre>
-          </div><!-- getList-source -->
+            </div><!-- getList-source -->
+            
+          </div>
+
           
-        </div>
 
-        
+          
+        </div><!-- getList-method -->
 
-        
-      </div><!-- getList-method -->
-
+      
+      </div><!-- public-instance-method-details -->
     
-    </section><!-- public-instance-method-details -->
+    </div><!-- 5Buntitled-5D -->
   
-  </section><!-- 5Buntitled-5D -->
 
-</div><!-- documentation -->
+  </div><!-- documentation -->
 
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
+</body>
+</html>
 

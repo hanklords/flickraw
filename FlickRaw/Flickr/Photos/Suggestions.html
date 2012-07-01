@@ -5,7 +5,7 @@
 <head>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-  <title>Class: FlickRaw::Flickr::Photos::Comments</title>
+  <title>Class: FlickRaw::Flickr::Photos::Suggestions</title>
 
   <link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
 
@@ -65,15 +65,15 @@
         <h3 class="section-header">Methods</h3>
         <ul class="link-list">
           
-          <li><a href="#method-i-addComment">#addComment</a></li>
-          
-          <li><a href="#method-i-deleteComment">#deleteComment</a></li>
-          
-          <li><a href="#method-i-editComment">#editComment</a></li>
+          <li><a href="#method-i-approveSuggestion">#approveSuggestion</a></li>
           
           <li><a href="#method-i-getList">#getList</a></li>
           
-          <li><a href="#method-i-getRecentForContacts">#getRecentForContacts</a></li>
+          <li><a href="#method-i-rejectSuggestion">#rejectSuggestion</a></li>
+          
+          <li><a href="#method-i-removeSuggestion">#removeSuggestion</a></li>
+          
+          <li><a href="#method-i-suggestLocation">#suggestLocation</a></li>
           
         </ul>
       </div>
@@ -195,7 +195,7 @@
   </div>
 
   <div id="documentation">
-    <h1 class="class">FlickRaw::Flickr::Photos::Comments</h1>
+    <h1 class="class">FlickRaw::Flickr::Photos::Suggestions</h1>
 
     <div id="description" class="description">
       
@@ -219,13 +219,13 @@
         <h3 class="section-header">Public Instance Methods</h3>
 
       
-        <div id="addComment-method" class="method-detail ">
-          <a name="method-i-addComment"></a>
+        <div id="approveSuggestion-method" class="method-detail ">
+          <a name="method-i-approveSuggestion"></a>
 
           
           <div class="method-heading">
-            <span class="method-name">addComment</span><span
-              class="method-args">(:photo_id => 'photo_id',:comment_text => 'comment_text')</span>
+            <span class="method-name">approveSuggestion</span><span
+              class="method-args">(:suggestion_id => 'suggestion_id')</span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
           
@@ -233,139 +233,19 @@
           <div class="method-description">
             
             <p><a
-href="http://www.flickr.com/services/api/flickr.photos.comments.addComment.html">flickr.photos.comments.addComment</a>
+href="http://www.flickr.com/services/api/flickr.photos.suggestions.approveSuggestion.html">flickr.photos.suggestions.approveSuggestion</a>
 request.</p>
 
-<p>Add comment to a photo as the currently authenticated user.</p>
+<p>Approve a suggestion for a photo.</p>
 
 <p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
+<dl class="rdoc-list"><dt>suggestion_id <em>(required)</em> </dt>
 <dd>
-<p>The id of the photo to add a comment to.</p>
-</dd><dt>comment_text <em>(required)</em> </dt>
-<dd>
-<p>Text of the comment</p>
+<p>The unique ID for the location suggestion to approve.</p>
 </dd></dl>
 
 <p><b>Error codes</b></p>
 <ul><li>
-<p>1: <em>Photo not found.</em></p>
-
-<p>The photo id passed was not a valid photo id</p>
-</li><li>
-<p>8: <em>Blank comment.</em></p>
-
-<p>Comment text can not be blank</p>
-</li><li>
-<p>9: <em>User is posting comments too fast.</em></p>
-
-<p>The user has reached the limit for number of comments posted during a
-specific time period.  Wait a bit and try again.</p>
-</li><li>
-<p>96: <em>Invalid signature</em></p>
-
-<p>The passed signature was invalid.</p>
-</li><li>
-<p>97: <em>Missing signature</em></p>
-
-<p>The call required signing but no signature was sent.</p>
-</li><li>
-<p>98: <em>Login failed / Invalid auth token</em></p>
-
-<p>The login details or auth token passed were invalid.</p>
-</li><li>
-<p>99: <em>User not logged in / Insufficient permissions</em></p>
-
-<p>The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><b>Returns</b></p>
-            
-
-            
-            <div class="method-source-code" id="addComment-source">
-<pre>
-
-# Generated automatically from flickr api
-  def addComment(*args)
-    @flickr.call 'flickr.photos.comments.addComment', *args
-  end
-</pre>
-            </div><!-- addComment-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- addComment-method -->
-
-      
-        <div id="deleteComment-method" class="method-detail ">
-          <a name="method-i-deleteComment"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">deleteComment</span><span
-              class="method-args">(:comment_id => 'comment_id')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
-href="http://www.flickr.com/services/api/flickr.photos.comments.deleteComment.html">flickr.photos.comments.deleteComment</a>
-request.</p>
-
-<p>Delete a comment as the currently authenticated user.</p>
-
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>comment_id <em>(required)</em> </dt>
-<dd>
-<p>The id of the comment to edit.</p>
-</dd></dl>
-
-<p><b>Error codes</b></p>
-<ul><li>
-<p>1: <em>Photo not found.</em></p>
-
-<p>The requested comment is against a photo which no longer exists.</p>
-</li><li>
-<p>2: <em>Comment not found.</em></p>
-
-<p>The comment id passed was not a valid comment id</p>
-</li><li>
 <p>96: <em>Invalid signature</em></p>
 
 <p>The passed signature was invalid.</p>
@@ -415,131 +295,22 @@ href="../../Flickr.html">Flickr</a>.</p>
             
 
             
-            <div class="method-source-code" id="deleteComment-source">
+            <div class="method-source-code" id="approveSuggestion-source">
 <pre>
 
 # Generated automatically from flickr api
-  def deleteComment(*args)
-    @flickr.call 'flickr.photos.comments.deleteComment', *args
+  def approveSuggestion(*args)
+    @flickr.call 'flickr.photos.suggestions.approveSuggestion', *args
   end
 </pre>
-            </div><!-- deleteComment-source -->
+            </div><!-- approveSuggestion-source -->
             
           </div>
 
           
 
           
-        </div><!-- deleteComment-method -->
-
-      
-        <div id="editComment-method" class="method-detail ">
-          <a name="method-i-editComment"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">editComment</span><span
-              class="method-args">(:comment_id => 'comment_id',:comment_text => 'comment_text')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
-href="http://www.flickr.com/services/api/flickr.photos.comments.editComment.html">flickr.photos.comments.editComment</a>
-request.</p>
-
-<p>Edit the text of a comment as the currently authenticated user.</p>
-
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>comment_id <em>(required)</em> </dt>
-<dd>
-<p>The id of the comment to edit.</p>
-</dd><dt>comment_text <em>(required)</em> </dt>
-<dd>
-<p>Update the comment to this text.</p>
-</dd></dl>
-
-<p><b>Error codes</b></p>
-<ul><li>
-<p>1: <em>Photo not found.</em></p>
-
-<p>The requested comment is against a photo which no longer exists.</p>
-</li><li>
-<p>2: <em>Comment not found.</em></p>
-
-<p>The comment id passed was not a valid comment id</p>
-</li><li>
-<p>8: <em>Blank comment.</em></p>
-
-<p>Comment text can not be blank</p>
-</li><li>
-<p>96: <em>Invalid signature</em></p>
-
-<p>The passed signature was invalid.</p>
-</li><li>
-<p>97: <em>Missing signature</em></p>
-
-<p>The call required signing but no signature was sent.</p>
-</li><li>
-<p>98: <em>Login failed / Invalid auth token</em></p>
-
-<p>The login details or auth token passed were invalid.</p>
-</li><li>
-<p>99: <em>User not logged in / Insufficient permissions</em></p>
-
-<p>The method requires user authentication but the user was not logged in, or
-the authenticated method call did not have the required permissions.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../../Flickr.html">Flickr</a>.</p>
-</li></ul>
-            
-
-            
-            <div class="method-source-code" id="editComment-source">
-<pre>
-
-# Generated automatically from flickr api
-  def editComment(*args)
-    @flickr.call 'flickr.photos.comments.editComment', *args
-  end
-</pre>
-            </div><!-- editComment-source -->
-            
-          </div>
-
-          
-
-          
-        </div><!-- editComment-method -->
+        </div><!-- approveSuggestion-method -->
 
       
         <div id="getList-method" class="method-detail ">
@@ -548,7 +319,7 @@ href="../../Flickr.html">Flickr</a>.</p>
           
           <div class="method-heading">
             <span class="method-name">getList</span><span
-              class="method-args">(:photo_id => 'photo_id',:min_comment_date => 'min_comment_date',:max_comment_date => 'max_comment_date',:page => 'page',:per_page => 'per_page',:include_faves => 'include_faves')</span>
+              class="method-args">(:photo_id => 'photo_id',:status_id => 'status_id')</span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
           
@@ -556,33 +327,42 @@ href="../../Flickr.html">Flickr</a>.</p>
           <div class="method-description">
             
             <p><a
-href="http://www.flickr.com/services/api/flickr.photos.comments.getList.html">flickr.photos.comments.getList</a>
+href="http://www.flickr.com/services/api/flickr.photos.suggestions.getList.html">flickr.photos.suggestions.getList</a>
 request.</p>
 
-<p>Returns the comments for a photo</p>
+<p>Return a list of suggestions for a user that are pending approval.</p>
 
 <p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
+<dl class="rdoc-list"><dt>photo_id </dt>
 <dd>
-<p>The id of the photo to fetch comments for.</p>
-</dd><dt>min_comment_date </dt>
+<p>Only show suggestions for a single photo.</p>
+</dd><dt>status_id </dt>
 <dd>
-<p>Minimum date that a a comment was added. The date should be in the form of
-a unix timestamp.</p>
-</dd><dt>max_comment_date </dt>
-<dd>
-<p>Maximum date that a comment was added. The date should be in the form of a
-unix timestamp.</p>
-</dd><dt>page </dt>
-<dd></dd><dt>per_page </dt>
-<dd></dd><dt>include_faves </dt>
-<dd>
+<p>Only show suggestions with a given status.</p>
+</dd></dl>
+
+<p>0, pending 1, approved 2, rejected</p>
+
+<p>The default is pending (or "0").</p>
+
 <p><b>Error codes</b></p>
 <ul><li>
-<p>1: <em>Photo not found</em></p>
+<p>96: <em>Invalid signature</em></p>
 
-<p>The photo id was either invalid or was for a photo not viewable by the
-calling user.</p>
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
 </li><li>
 <p>100: <em>Invalid API Key</em></p>
 
@@ -613,11 +393,6 @@ calling user.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-
-<p><b>Returns</b></p>
-
-<pre>Umm, I'm not sure, can I get back to you on that one?</pre>
-</dd></dl>
             
 
             
@@ -626,7 +401,7 @@ href="../../Flickr.html">Flickr</a>.</p>
 
 # Generated automatically from flickr api
   def getList(*args)
-    @flickr.call 'flickr.photos.comments.getList', *args
+    @flickr.call 'flickr.photos.suggestions.getList', *args
   end
 </pre>
             </div><!-- getList-source -->
@@ -639,13 +414,13 @@ href="../../Flickr.html">Flickr</a>.</p>
         </div><!-- getList-method -->
 
       
-        <div id="getRecentForContacts-method" class="method-detail ">
-          <a name="method-i-getRecentForContacts"></a>
+        <div id="rejectSuggestion-method" class="method-detail ">
+          <a name="method-i-rejectSuggestion"></a>
 
           
           <div class="method-heading">
-            <span class="method-name">getRecentForContacts</span><span
-              class="method-args">(:date_lastcomment => 'date_lastcomment',:contacts_filter => 'contacts_filter',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
+            <span class="method-name">rejectSuggestion</span><span
+              class="method-args">(:suggestion_id => 'suggestion_id')</span>
             <span class="method-click-advice">click to toggle source</span>
           </div>
           
@@ -653,38 +428,15 @@ href="../../Flickr.html">Flickr</a>.</p>
           <div class="method-description">
             
             <p><a
-href="http://www.flickr.com/services/api/flickr.photos.comments.getRecentForContacts.html">flickr.photos.comments.getRecentForContacts</a>
+href="http://www.flickr.com/services/api/flickr.photos.suggestions.rejectSuggestion.html">flickr.photos.suggestions.rejectSuggestion</a>
 request.</p>
 
-<p>Return the list of photos belonging to your contacts that have been
-commented on recently.</p>
+<p>Reject a suggestion for a photo.</p>
 
 <p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>date_lastcomment </dt>
+<dl class="rdoc-list"><dt>suggestion_id <em>(required)</em> </dt>
 <dd>
-<p>Limits the resultset to photos that have been commented on since this date.
-The date should be in the form of a Unix timestamp.</p>
-</dd></dl>
-
-<p>The default, and maximum, offset is (1) hour.</p>
-<dl class="rdoc-list"><dt>contacts_filter </dt>
-<dd>
-<p>A comma-separated list of contact NSIDs to limit the scope of the query to.</p>
-</dd><dt>extras </dt>
-<dd>
-<p>A comma-delimited list of extra information to fetch for each returned
-record. Currently supported fields are: description, license, date_upload,
-date_taken, owner_name, icon_server, original_format, last_update, geo,
-tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
-url_q, url_m, url_n, url_z, url_c, url_l, url_o</p>
-</dd><dt>per_page </dt>
-<dd>
-<p>Number of photos to return per page. If this argument is omitted, it
-defaults to 100. The maximum allowed value is 500.</p>
-</dd><dt>page </dt>
-<dd>
-<p>The page of results to return. If this argument is omitted, it defaults to
-1.</p>
+<p>The unique ID of the suggestion to reject.</p>
 </dd></dl>
 
 <p><b>Error codes</b></p>
@@ -738,22 +490,235 @@ href="../../Flickr.html">Flickr</a>.</p>
             
 
             
-            <div class="method-source-code" id="getRecentForContacts-source">
+            <div class="method-source-code" id="rejectSuggestion-source">
 <pre>
 
 # Generated automatically from flickr api
-  def getRecentForContacts(*args)
-    @flickr.call 'flickr.photos.comments.getRecentForContacts', *args
+  def rejectSuggestion(*args)
+    @flickr.call 'flickr.photos.suggestions.rejectSuggestion', *args
   end
 </pre>
-            </div><!-- getRecentForContacts-source -->
+            </div><!-- rejectSuggestion-source -->
             
           </div>
 
           
 
           
-        </div><!-- getRecentForContacts-method -->
+        </div><!-- rejectSuggestion-method -->
+
+      
+        <div id="removeSuggestion-method" class="method-detail ">
+          <a name="method-i-removeSuggestion"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">removeSuggestion</span><span
+              class="method-args">(:suggestion_id => 'suggestion_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
+href="http://www.flickr.com/services/api/flickr.photos.suggestions.removeSuggestion.html">flickr.photos.suggestions.removeSuggestion</a>
+request.</p>
+
+<p>Remove a suggestion, made by the calling user, from a photo.</p>
+
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>suggestion_id <em>(required)</em> </dt>
+<dd>
+<p>The unique ID for the location suggestion to approve.</p>
+</dd></dl>
+
+<p><b>Error codes</b></p>
+<ul><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="removeSuggestion-source">
+<pre>
+
+# Generated automatically from flickr api
+  def removeSuggestion(*args)
+    @flickr.call 'flickr.photos.suggestions.removeSuggestion', *args
+  end
+</pre>
+            </div><!-- removeSuggestion-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- removeSuggestion-method -->
+
+      
+        <div id="suggestLocation-method" class="method-detail ">
+          <a name="method-i-suggestLocation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">suggestLocation</span><span
+              class="method-args">(:photo_id => 'photo_id',:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy',:woe_id => 'woe_id',:place_id => 'place_id',:note => 'note')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
+href="http://www.flickr.com/services/api/flickr.photos.suggestions.suggestLocation.html">flickr.photos.suggestions.suggestLocation</a>
+request.</p>
+
+<p>Suggest a geotagged location for a photo.</p>
+
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
+<dd>
+<p>The photo whose location you are suggesting.</p>
+</dd><dt>lat <em>(required)</em> </dt>
+<dd>
+<p>The latitude whose valid range is -90 to 90. Anything more than 6 decimal
+places will be truncated.</p>
+</dd><dt>lon <em>(required)</em> </dt>
+<dd>
+<p>The longitude whose valid range is -180 to 180. Anything more than 6
+decimal places will be truncated.</p>
+</dd><dt>accuracy </dt>
+<dd>
+<p>Recorded accuracy level of the location information. World level is 1,
+Country is ~3, Region ~6, City ~11, Street ~16. Current range is 1-16.
+Defaults to 16 if not specified.</p>
+</dd><dt>woe_id </dt>
+<dd>
+<p>The WOE ID of the location used to build the location hierarchy for the
+photo.</p>
+</dd><dt>place_id </dt>
+<dd>
+<p>The <a href="../../Flickr.html">Flickr</a> <a
+href="../Places.html">Places</a> ID of the location used to build the
+location hierarchy for the photo.</p>
+</dd><dt>note </dt>
+<dd>
+<p>A short note or history to include with the suggestion.</p>
+</dd></dl>
+
+<p><b>Error codes</b></p>
+<ul><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+            
+
+            
+            <div class="method-source-code" id="suggestLocation-source">
+<pre>
+
+# Generated automatically from flickr api
+  def suggestLocation(*args)
+    @flickr.call 'flickr.photos.suggestions.suggestLocation', *args
+  end
+</pre>
+            </div><!-- suggestLocation-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- suggestLocation-method -->
 
       
       </div><!-- public-instance-method-details -->

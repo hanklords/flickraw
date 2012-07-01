@@ -1,231 +1,246 @@
-<!DOCTYPE html>
-
-<html>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
 
-<title>Class: FlickRaw::Flickr::Photos::Geo</title>
+  <title>Class: FlickRaw::Flickr::Photos::Geo</title>
 
-<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+  <link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
 
-<script type="text/javascript">
-  var rdoc_rel_prefix = "../../../";
-</script>
+  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
 
-<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
-
-
+</head>
 <body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../../../index.html">Home</a>
-    <a href="../../../table_of_contents.html#classes">Classes</a>
-    <a href="../../../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
 
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
 
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/flickraw.rb
-  </ul>
-</nav>
-
-    
-  </div>
-
-  <div id="class-metadata">
-    
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
-  
-  <p class="link">FlickRaw::Request
-  
-</nav>
-
-    
-    <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
-
-  <ul class="link-list">
-    
-    <li><a href="#method-i-batchCorrectLocation">#batchCorrectLocation</a>
-    
-    <li><a href="#method-i-correctLocation">#correctLocation</a>
-    
-    <li><a href="#method-i-getLocation">#getLocation</a>
-    
-    <li><a href="#method-i-getPerms">#getPerms</a>
-    
-    <li><a href="#method-i-photosForLocation">#photosForLocation</a>
-    
-    <li><a href="#method-i-removeLocation">#removeLocation</a>
-    
-    <li><a href="#method-i-setContext">#setContext</a>
-    
-    <li><a href="#method-i-setLocation">#setLocation</a>
-    
-    <li><a href="#method-i-setPerms">#setPerms</a>
-    
-  </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../../../README_rdoc.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../../../FlickRaw.html">FlickRaw</a>
-  
-    <li><a href="../../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
-  
-    <li><a href="../../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
-  
-    <li><a href="../../../Object.html">Object</a>
-  
-  </ul>
-</nav>
-
-  </div>
-</nav>
-
-<div id="documentation">
-  <h1 class="class">class FlickRaw::Flickr::Photos::Geo</h1>
-
-  <div id="description" class="description">
-    
-  </div><!-- description -->
-
-  
-  
-  
-  <section id="5Buntitled-5D" class="documentation-section">
-    
-
-    
-
-    
-
-    
-
-    <!-- Methods -->
-    
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
-
-    
-      <div id="method-i-batchCorrectLocation" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">batchCorrectLocation</span><span
-            class="method-args">(:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy',:place_id => 'place_id',:woe_id => 'woe_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
           
-          <p><a
+            <li><a href="../../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">FlickRaw::Request</p>
+        
+      </div>
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-batchCorrectLocation">#batchCorrectLocation</a></li>
+          
+          <li><a href="#method-i-correctLocation">#correctLocation</a></li>
+          
+          <li><a href="#method-i-getLocation">#getLocation</a></li>
+          
+          <li><a href="#method-i-getPerms">#getPerms</a></li>
+          
+          <li><a href="#method-i-photosForLocation">#photosForLocation</a></li>
+          
+          <li><a href="#method-i-removeLocation">#removeLocation</a></li>
+          
+          <li><a href="#method-i-setContext">#setContext</a></li>
+          
+          <li><a href="#method-i-setLocation">#setLocation</a></li>
+          
+          <li><a href="#method-i-setPerms">#setPerms</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../../../README_rdoc.html">README.rdoc</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../../FlickRaw.html">FlickRaw</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
+        
+          <li><a href="../../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
+        
+          <li><a href="../../../Object.html">Object</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">FlickRaw::Flickr::Photos::Geo</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="batchCorrectLocation-method" class="method-detail ">
+          <a name="method-i-batchCorrectLocation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">batchCorrectLocation</span><span
+              class="method-args">(:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy',:place_id => 'place_id',:woe_id => 'woe_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.geo.batchCorrectLocation.html">flickr.photos.geo.batchCorrectLocation</a>
 request.</p>
 
@@ -235,32 +250,32 @@ latitude, longitude and accuracy.</p>
 <p>Batch corrections are processed in a delayed queue so it may take a few
 minutes before the changes are reflected in a user's photos.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>lat <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>lat <em>(required)</em> </dt>
 <dd>
 <p>The latitude of the photos to be update whose valid range is -90 to 90.
 Anything more than 6 decimal places will be truncated.</p>
-</dd><dt>lon <em>(required)</em> 
+</dd><dt>lon <em>(required)</em> </dt>
 <dd>
 <p>The longitude of the photos to be updated whose valid range is -180 to 180.
 Anything more than 6 decimal places will be truncated.</p>
-</dd><dt>accuracy <em>(required)</em> 
+</dd><dt>accuracy <em>(required)</em> </dt>
 <dd>
 <p>Recorded accuracy level of the photos to be updated. World level is 1,
 Country is ~3, Region ~6, City ~11, Street ~16. Current range is 1-16.
 Defaults to 16 if not specified.</p>
-</dd><dt>place_id 
+</dd><dt>place_id </dt>
 <dd>
 <p>A <a href="../../Flickr.html">Flickr</a> <a
 href="../Places.html">Places</a> ID. (While optional, you must pass either
 a valid <a href="../Places.html">Places</a> ID or a WOE ID.)</p>
-</dd><dt>woe_id 
+</dd><dt>woe_id </dt>
 <dd>
 <p>A Where On Earth (WOE) ID. (While optional, you must pass either a valid <a
 href="../Places.html">Places</a> ID or a WOE ID.)</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Required arguments missing</em></p>
 
@@ -334,57 +349,60 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="batchCorrectLocation-source">
-            <pre>
+            
+            <div class="method-source-code" id="batchCorrectLocation-source">
+<pre>
+
 # Generated automatically from flickr api
   def batchCorrectLocation(*args)
     @flickr.call 'flickr.photos.geo.batchCorrectLocation', *args
   end
 </pre>
-          </div><!-- batchCorrectLocation-source -->
+            </div><!-- batchCorrectLocation-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- batchCorrectLocation-method -->
-
-    
-      <div id="method-i-correctLocation" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">correctLocation</span><span
-            class="method-args">(:photo_id => 'photo_id',:place_id => 'place_id',:woe_id => 'woe_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- batchCorrectLocation-method -->
+
+      
+        <div id="correctLocation-method" class="method-detail ">
+          <a name="method-i-correctLocation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">correctLocation</span><span
+              class="method-args">(:photo_id => 'photo_id',:place_id => 'place_id',:woe_id => 'woe_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.geo.correctLocation.html">flickr.photos.geo.correctLocation</a>
 request.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The ID of the photo whose WOE location is being corrected.</p>
-</dd><dt>place_id 
+</dd><dt>place_id </dt>
 <dd>
 <p>A <a href="../../Flickr.html">Flickr</a> <a
 href="../Places.html">Places</a> ID. (While optional, you must pass either
 a valid <a href="../Places.html">Places</a> ID or a WOE ID.)</p>
-</dd><dt>woe_id 
+</dd><dt>woe_id </dt>
 <dd>
 <p>A Where On Earth (WOE) ID. (While optional, you must pass either a valid <a
 href="../Places.html">Places</a> ID or a WOE ID.)</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>User has not configured default viewing settings for location
 data.</em></p>
@@ -451,51 +469,54 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="correctLocation-source">
-            <pre>
+            
+            <div class="method-source-code" id="correctLocation-source">
+<pre>
+
 # Generated automatically from flickr api
   def correctLocation(*args)
     @flickr.call 'flickr.photos.geo.correctLocation', *args
   end
 </pre>
-          </div><!-- correctLocation-source -->
+            </div><!-- correctLocation-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- correctLocation-method -->
-
-    
-      <div id="method-i-getLocation" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getLocation</span><span
-            class="method-args">(:photo_id => 'photo_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- correctLocation-method -->
+
+      
+        <div id="getLocation-method" class="method-detail ">
+          <a name="method-i-getLocation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getLocation</span><span
+              class="method-args">(:photo_id => 'photo_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.geo.getLocation.html">flickr.photos.geo.getLocation</a>
 request.</p>
 
 <p>Get the geo data (latitude and longitude and the accuracy level) for a
 photo.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo you want to retrieve location data for.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photo not found.</em></p>
 
@@ -537,51 +558,54 @@ user.</p>
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
-          
+<p><b>Returns</b></p>
+            
 
-          
-          <div class="method-source-code" id="getLocation-source">
-            <pre>
+            
+            <div class="method-source-code" id="getLocation-source">
+<pre>
+
 # Generated automatically from flickr api
   def getLocation(*args)
     @flickr.call 'flickr.photos.geo.getLocation', *args
   end
 </pre>
-          </div><!-- getLocation-source -->
+            </div><!-- getLocation-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getLocation-method -->
-
-    
-      <div id="method-i-getPerms" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getPerms</span><span
-            class="method-args">(:photo_id => 'photo_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getLocation-method -->
+
+      
+        <div id="getPerms-method" class="method-detail ">
+          <a name="method-i-getPerms"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">getPerms</span><span
+              class="method-args">(:photo_id => 'photo_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.geo.getPerms.html">flickr.photos.geo.getPerms</a>
 request.</p>
 
 <p>Get permissions for who may view geo data for a photo.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to get permissions for.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photo not found</em></p>
 
@@ -640,77 +664,80 @@ the authenticated method call did not have the required permissions.</p>
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><strong>Returns</strong></p>
-          
+<p><b>Returns</b></p>
+            
 
-          
-          <div class="method-source-code" id="getPerms-source">
-            <pre>
+            
+            <div class="method-source-code" id="getPerms-source">
+<pre>
+
 # Generated automatically from flickr api
   def getPerms(*args)
     @flickr.call 'flickr.photos.geo.getPerms', *args
   end
 </pre>
-          </div><!-- getPerms-source -->
+            </div><!-- getPerms-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- getPerms-method -->
-
-    
-      <div id="method-i-photosForLocation" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">photosForLocation</span><span
-            class="method-args">(:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- getPerms-method -->
+
+      
+        <div id="photosForLocation-method" class="method-detail ">
+          <a name="method-i-photosForLocation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">photosForLocation</span><span
+              class="method-args">(:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.geo.photosForLocation.html">flickr.photos.geo.photosForLocation</a>
 request.</p>
 
 <p>Return a list of photos for the calling user at a specific latitude,
 longitude and accuracy</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>lat <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>lat <em>(required)</em> </dt>
 <dd>
 <p>The latitude whose valid range is -90 to 90. Anything more than 6 decimal
 places will be truncated.</p>
-</dd><dt>lon <em>(required)</em> 
+</dd><dt>lon <em>(required)</em> </dt>
 <dd>
 <p>The longitude whose valid range is -180 to 180. Anything more than 6
 decimal places will be truncated.</p>
-</dd><dt>accuracy 
+</dd><dt>accuracy </dt>
 <dd>
 <p>Recorded accuracy level of the location information. World level is 1,
 Country is ~3, Region ~6, City ~11, Street ~16. Current range is 1-16.
 Defaults to 16 if not specified.</p>
-</dd><dt>extras 
+</dd><dt>extras </dt>
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: description, license, date_upload,
 date_taken, owner_name, icon_server, original_format, last_update, geo,
 tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
-url_m, url_z, url_l, url_o</p>
-</dd><dt>per_page 
+url_q, url_m, url_n, url_z, url_c, url_l, url_o</p>
+</dd><dt>per_page </dt>
 <dd>
 <p>Number of photos to return per page. If this argument is omitted, it
 defaults to 100. The maximum allowed value is 500.</p>
-</dd><dt>page 
+</dd><dt>page </dt>
 <dd>
 <p>The page of results to return. If this argument is omitted, it defaults to
 1.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Required arguments missing</em></p>
 
@@ -774,50 +801,53 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="photosForLocation-source">
-            <pre>
+            
+            <div class="method-source-code" id="photosForLocation-source">
+<pre>
+
 # Generated automatically from flickr api
   def photosForLocation(*args)
     @flickr.call 'flickr.photos.geo.photosForLocation', *args
   end
 </pre>
-          </div><!-- photosForLocation-source -->
+            </div><!-- photosForLocation-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- photosForLocation-method -->
-
-    
-      <div id="method-i-removeLocation" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">removeLocation</span><span
-            class="method-args">(:photo_id => 'photo_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- photosForLocation-method -->
+
+      
+        <div id="removeLocation-method" class="method-detail ">
+          <a name="method-i-removeLocation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">removeLocation</span><span
+              class="method-args">(:photo_id => 'photo_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.geo.removeLocation.html">flickr.photos.geo.removeLocation</a>
 request.</p>
 
 <p>Removes the geo data associated with a photo.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo you want to remove location data from.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photo not found</em></p>
 
@@ -874,38 +904,41 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="removeLocation-source">
-            <pre>
+            
+            <div class="method-source-code" id="removeLocation-source">
+<pre>
+
 # Generated automatically from flickr api
   def removeLocation(*args)
     @flickr.call 'flickr.photos.geo.removeLocation', *args
   end
 </pre>
-          </div><!-- removeLocation-source -->
+            </div><!-- removeLocation-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- removeLocation-method -->
-
-    
-      <div id="method-i-setContext" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">setContext</span><span
-            class="method-args">(:photo_id => 'photo_id',:context => 'context')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- removeLocation-method -->
+
+      
+        <div id="setContext-method" class="method-detail ">
+          <a name="method-i-setContext"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">setContext</span><span
+              class="method-args">(:photo_id => 'photo_id',:context => 'context')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.geo.setContext.html">flickr.photos.geo.setContext</a>
 request.</p>
 
@@ -913,11 +946,11 @@ request.</p>
 Note : photos passed to this method must already be geotagged (using the
 flickr.photos.geo.setLocation method).</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to set context data for.</p>
-</dd><dt>context <em>(required)</em> 
+</dd><dt>context <em>(required)</em> </dt>
 <dd>
 <p>Context is a numeric value representing the photo's geotagginess beyond
 latitude and longitude. For example, you may wish to indicate that a photo
@@ -927,7 +960,7 @@ was taken "indoors" or "outdoors".</p>
 <p>The current list of context IDs is :0, not defined. 1, indoors. 2,
 outdoors.</p>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photo not found</em></p>
 
@@ -984,38 +1017,41 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="setContext-source">
-            <pre>
+            
+            <div class="method-source-code" id="setContext-source">
+<pre>
+
 # Generated automatically from flickr api
   def setContext(*args)
     @flickr.call 'flickr.photos.geo.setContext', *args
   end
 </pre>
-          </div><!-- setContext-source -->
+            </div><!-- setContext-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- setContext-method -->
-
-    
-      <div id="method-i-setLocation" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">setLocation</span><span
-            class="method-args">(:photo_id => 'photo_id',:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy',:context => 'context',:bookmark_id => 'bookmark_id',:is_public => 'is_public',:is_contact => 'is_contact',:is_friend => 'is_friend',:is_family => 'is_family')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- setContext-method -->
+
+      
+        <div id="setLocation-method" class="method-detail ">
+          <a name="method-i-setLocation"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">setLocation</span><span
+              class="method-args">(:photo_id => 'photo_id',:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy',:context => 'context',:bookmark_id => 'bookmark_id',:is_public => 'is_public',:is_contact => 'is_contact',:is_friend => 'is_friend',:is_family => 'is_family')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.geo.setLocation.html">flickr.photos.geo.setLocation</a>
 request.</p>
 
@@ -1027,24 +1063,24 @@ default, may view that information. Users can edit this preference at <a
 href="http://www.flickr.com/account/geo/privacy/.">www.flickr.com/account/geo/privacy/.</a>
 If a user has not set this preference, the API method will return an error.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>photo_id <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to set location data for.</p>
-</dd><dt>lat <em>(required)</em> 
+</dd><dt>lat <em>(required)</em> </dt>
 <dd>
 <p>The latitude whose valid range is -90 to 90. Anything more than 6 decimal
 places will be truncated.</p>
-</dd><dt>lon <em>(required)</em> 
+</dd><dt>lon <em>(required)</em> </dt>
 <dd>
 <p>The longitude whose valid range is -180 to 180. Anything more than 6
 decimal places will be truncated.</p>
-</dd><dt>accuracy 
+</dd><dt>accuracy </dt>
 <dd>
 <p>Recorded accuracy level of the location information. World level is 1,
 Country is ~3, Region ~6, City ~11, Street ~16. Current range is 1-16.
 Defaults to 16 if not specified.</p>
-</dd><dt>context 
+</dd><dt>context </dt>
 <dd>
 <p>Context is a numeric value representing the photo's geotagginess beyond
 latitude and longitude. For example, you may wish to indicate that a photo
@@ -1055,15 +1091,15 @@ was taken "indoors" or "outdoors".</p>
 outdoors.</p>
 
 <p>The default context for geotagged photos is 0, or "not defined"</p>
-<dl class="rdoc-list label-list"><dt>bookmark_id 
+<dl class="rdoc-list"><dt>bookmark_id </dt>
 <dd>
 <p>Associate a geo bookmark with this photo.</p>
-</dd><dt>is_public 
-<dd></dd><dt>is_contact 
-<dd></dd><dt>is_friend 
-<dd></dd><dt>is_family 
+</dd><dt>is_public </dt>
+<dd></dd><dt>is_contact </dt>
+<dd></dd><dt>is_friend </dt>
+<dd></dd><dt>is_family </dt>
 <dd>
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photo not found</em></p>
 
@@ -1144,66 +1180,69 @@ the authenticated method call did not have the required permissions.</p>
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
 </dd></dl>
-          
+            
 
-          
-          <div class="method-source-code" id="setLocation-source">
-            <pre>
+            
+            <div class="method-source-code" id="setLocation-source">
+<pre>
+
 # Generated automatically from flickr api
   def setLocation(*args)
     @flickr.call 'flickr.photos.geo.setLocation', *args
   end
 </pre>
-          </div><!-- setLocation-source -->
+            </div><!-- setLocation-source -->
+            
+          </div>
+
           
-        </div>
 
-        
-
-        
-      </div><!-- setLocation-method -->
-
-    
-      <div id="method-i-setPerms" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">setPerms</span><span
-            class="method-args">(:is_public => 'is_public',:is_contact => 'is_contact',:is_friend => 'is_friend',:is_family => 'is_family',:photo_id => 'photo_id')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
           
-          <p><a
+        </div><!-- setLocation-method -->
+
+      
+        <div id="setPerms-method" class="method-detail ">
+          <a name="method-i-setPerms"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">setPerms</span><span
+              class="method-args">(:is_public => 'is_public',:is_contact => 'is_contact',:is_friend => 'is_friend',:is_family => 'is_family',:photo_id => 'photo_id')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
 href="http://www.flickr.com/services/api/flickr.photos.geo.setPerms.html">flickr.photos.geo.setPerms</a>
 request.</p>
 
 <p>Set the permission for who may view the geo data associated with a photo.</p>
 
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>is_public <em>(required)</em> 
+<p><b>Arguments</b></p>
+<dl class="rdoc-list"><dt>is_public <em>(required)</em> </dt>
 <dd>
 <p>1 to set viewing permissions for the photo's location data to public, 0 to
 set it to private.</p>
-</dd><dt>is_contact <em>(required)</em> 
+</dd><dt>is_contact <em>(required)</em> </dt>
 <dd>
 <p>1 to set viewing permissions for the photo's location data to contacts, 0
 to set it to private.</p>
-</dd><dt>is_friend <em>(required)</em> 
+</dd><dt>is_friend <em>(required)</em> </dt>
 <dd>
 <p>1 to set viewing permissions for the photo's location data to friends, 0 to
 set it to private.</p>
-</dd><dt>is_family <em>(required)</em> 
+</dd><dt>is_family <em>(required)</em> </dt>
 <dd>
 <p>1 to set viewing permissions for the photo's location data to family, 0 to
 set it to private.</p>
-</dd><dt>photo_id <em>(required)</em> 
+</dd><dt>photo_id <em>(required)</em> </dt>
 <dd>
 <p>The id of the photo to get permissions for.</p>
 </dd></dl>
 
-<p><strong>Error codes</strong></p>
+<p><b>Error codes</b></p>
 <ul><li>
 <p>1: <em>Photo not found</em></p>
 
@@ -1265,36 +1304,40 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../../Flickr.html">Flickr</a>.</p>
 </li></ul>
-          
+            
 
-          
-          <div class="method-source-code" id="setPerms-source">
-            <pre>
+            
+            <div class="method-source-code" id="setPerms-source">
+<pre>
+
 # Generated automatically from flickr api
   def setPerms(*args)
     @flickr.call 'flickr.photos.geo.setPerms', *args
   end
 </pre>
-          </div><!-- setPerms-source -->
+            </div><!-- setPerms-source -->
+            
+          </div>
+
           
-        </div>
 
-        
+          
+        </div><!-- setPerms-method -->
 
-        
-      </div><!-- setPerms-method -->
-
+      
+      </div><!-- public-instance-method-details -->
     
-    </section><!-- public-instance-method-details -->
+    </div><!-- 5Buntitled-5D -->
   
-  </section><!-- 5Buntitled-5D -->
 
-</div><!-- documentation -->
+  </div><!-- documentation -->
 
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
 
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.11.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
-</footer>
+</body>
+</html>
 
