@@ -4,7 +4,7 @@
 <head>
 <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-<title>class FlickRaw::Flickr::Auth::Oauth - RDoc Documentation</title>
+<title>class FlickRaw::Flickr::Groups::Discuss - RDoc Documentation</title>
 
 <link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
 
@@ -70,9 +70,9 @@
 
   <ul class="link-list">
     
-    <li><a href="#method-i-checkToken">#checkToken</a>
+    <li><a href="#method-i-replies">#replies</a>
     
-    <li><a href="#method-i-getAccessToken">#getAccessToken</a>
+    <li><a href="#method-i-topics">#topics</a>
     
   </ul>
 </nav>
@@ -184,7 +184,7 @@
 </nav>
 
 <div id="documentation">
-  <h1 class="class">class FlickRaw::Flickr::Auth::Oauth</h1>
+  <h1 class="class">class FlickRaw::Flickr::Groups::Discuss</h1>
 
   <div id="description" class="description">
     
@@ -208,96 +208,10 @@
       <h3 class="section-header">Public Instance Methods</h3>
 
     
-      <div id="method-i-checkToken" class="method-detail ">
+      <div id="method-i-replies" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">checkToken</span><span
-            class="method-args">(:oauth_token => 'oauth_token')</span>
-          <span class="method-click-advice">click to toggle source</span>
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p><a
-href="http://www.flickr.com/services/api/flickr.auth.oauth.checkToken.html">flickr.auth.oauth.checkToken</a>
-request.</p>
-
-<p>Returns the credentials attached to an OAuth authentication token.</p>
-
-<p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>oauth_token <em>(required)</em> 
-<dd>
-<p>The OAuth authentication token to check.</p>
-</dd></dl>
-
-<p><strong>Error codes</strong></p>
-<ul><li>
-<p>96: <em>Invalid signature</em></p>
-
-<p>The passed signature was invalid.</p>
-</li><li>
-<p>97: <em>Missing signature</em></p>
-
-<p>The call required signing but no signature was sent.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><strong>Returns</strong></p>
-
-<pre>72157627611980735-09e87c3024f733dawrite</pre>
-          
-
-          
-          <div class="method-source-code" id="checkToken-source">
-            <pre>
-# Generated automatically from flickr api
-  def checkToken(*args)
-    @flickr.call 'flickr.auth.oauth.checkToken', *args
-  end
-</pre>
-          </div><!-- checkToken-source -->
-          
-        </div>
-
-        
-
-        
-      </div><!-- checkToken-method -->
-
-    
-      <div id="method-i-getAccessToken" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">getAccessToken</span><span
+          <span class="method-name">replies</span><span
             class="method-args">()</span>
           <span class="method-click-advice">click to toggle source</span>
         </div>
@@ -305,75 +219,39 @@ href="../../Flickr.html">Flickr</a>.</p>
 
         <div class="method-description">
           
-          <p><a
-href="http://www.flickr.com/services/api/flickr.auth.oauth.getAccessToken.html">flickr.auth.oauth.getAccessToken</a>
-request.</p>
-
-<p>Exchange an auth token from the old Authentication API, to an OAuth access
-token. Calling this method will delete the auth token used to make the
-request.</p>
-
-<p><strong>Arguments</strong></p>
-
-<p><strong>Error codes</strong></p>
-<ul><li>
-<p>96: <em>Invalid signature</em></p>
-
-<p>The passed signature was invalid.</p>
-</li><li>
-<p>97: <em>Missing signature</em></p>
-
-<p>The call required signing but no signature was sent.</p>
-</li><li>
-<p>100: <em>Invalid API Key</em></p>
-
-<p>The API key passed was not valid or has expired.</p>
-</li><li>
-<p>105: <em>Service currently unavailable</em></p>
-
-<p>The requested service is temporarily unavailable.</p>
-</li><li>
-<p>111: <em>Format "xxx" not found</em></p>
-
-<p>The requested response format was not found.</p>
-</li><li>
-<p>112: <em>Method "xxx" not found</em></p>
-
-<p>The requested method was not found.</p>
-</li><li>
-<p>114: <em>Invalid SOAP envelope</em></p>
-
-<p>The SOAP envelope send in the request could not be parsed.</p>
-</li><li>
-<p>115: <em>Invalid XML-RPC Method Call</em></p>
-
-<p>The XML-RPC request document could not be parsed.</p>
-</li><li>
-<p>116: <em>Bad URL found</em></p>
-
-<p>One or more arguments contained a URL that has been used for abuse on <a
-href="../../Flickr.html">Flickr</a>.</p>
-</li></ul>
-
-<p><strong>Returns</strong></p>
+          <p>Returns a <a href="Discuss/Replies.html">Replies</a> object.</p>
           
 
-          
-          <div class="method-source-code" id="getAccessToken-source">
-            <pre>
-# Generated automatically from flickr api
-  def getAccessToken(*args)
-    @flickr.call 'flickr.auth.oauth.getAccessToken', *args
-  end
-</pre>
-          </div><!-- getAccessToken-source -->
           
         </div>
 
         
 
         
-      </div><!-- getAccessToken-method -->
+      </div><!-- replies-method -->
+
+    
+      <div id="method-i-topics" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">topics</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a <a href="Discuss/Topics.html">Topics</a> object.</p>
+          
+
+          
+        </div>
+
+        
+
+        
+      </div><!-- topics-method -->
 
     
     </section><!-- public-instance-method-details -->

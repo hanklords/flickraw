@@ -1,252 +1,245 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Class: FlickRaw::Flickr::Urls</title>
+<title>class FlickRaw::Flickr::Urls - RDoc Documentation</title>
 
-  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
-  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
 <body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../index.html">Home</a>
-          <a href="../../index.html#classes">Classes</a>
-          <a href="../../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link">FlickRaw::Request</p>
-        
-      </div>
-      
 
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/flickraw.rb
+  </ul>
+</nav>
 
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-getGroup">#getGroup</a></li>
-          
-          <li><a href="#method-i-getUserPhotos">#getUserPhotos</a></li>
-          
-          <li><a href="#method-i-getUserProfile">#getUserProfile</a></li>
-          
-          <li><a href="#method-i-lookupGallery">#lookupGallery</a></li>
-          
-          <li><a href="#method-i-lookupGroup">#lookupGroup</a></li>
-          
-          <li><a href="#method-i-lookupUser">#lookupUser</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../../FlickRaw.html">FlickRaw</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-        
-          <li><a href="../../Object.html">Object</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="class">FlickRaw::Flickr::Urls</h1>
-
-    <div id="description" class="description">
-      
-    </div><!-- description -->
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">FlickRaw::Request
+  
+</nav>
 
     
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
     
+    <li><a href="#method-i-getGroup">#getGroup</a>
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
+    <li><a href="#method-i-getUserPhotos">#getUserPhotos</a>
+    
+    <li><a href="#method-i-getUserProfile">#getUserProfile</a>
+    
+    <li><a href="#method-i-lookupGallery">#lookupGallery</a>
+    
+    <li><a href="#method-i-lookupGroup">#lookupGroup</a>
+    
+    <li><a href="#method-i-lookupUser">#lookupUser</a>
+    
+  </ul>
+</nav>
 
-      
+  </div>
 
-      
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
 
-      
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
 
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
 
-      
-        <div id="getGroup-method" class="method-detail ">
-          <a name="method-i-getGroup"></a>
+  <ul class="link-list">
+  
+    <li><a href="../../FlickRaw.html">FlickRaw</a>
+  
+    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss.html">FlickRaw::Flickr::Groups::Discuss</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Replies.html">FlickRaw::Flickr::Groups::Discuss::Replies</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Topics.html">FlickRaw::Flickr::Groups::Discuss::Topics</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
+  
+    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
 
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class FlickRaw::Flickr::Urls</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-getGroup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGroup</span><span
+            class="method-args">(:group_id => 'group_id')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-          <div class="method-heading">
-            <span class="method-name">getGroup</span><span
-              class="method-args">(:group_id => 'group_id')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.urls.getGroup.html">flickr.urls.getGroup</a>
 request.</p>
 
 <p>Returns the url to a group's page.</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>group_id <em>(required)</em> </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>group_id <em>(required)</em> 
 <dd>
 <p>The NSID of the group to fetch the url for.</p>
 </dd></dl>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>1: <em>Group not found</em></p>
 
@@ -282,55 +275,52 @@ request.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="getGroup-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getGroup-source">
+            <pre>
 # Generated automatically from flickr api
   def getGroup(*args)
     @flickr.call 'flickr.urls.getGroup', *args
   end
 </pre>
-            </div><!-- getGroup-source -->
-            
-          </div>
-
+          </div><!-- getGroup-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- getGroup-method -->
+
+    
+      <div id="method-i-getUserPhotos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getUserPhotos</span><span
+            class="method-args">(:user_id => 'user_id')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- getGroup-method -->
-
-      
-        <div id="getUserPhotos-method" class="method-detail ">
-          <a name="method-i-getUserPhotos"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">getUserPhotos</span><span
-              class="method-args">(:user_id => 'user_id')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.urls.getUserPhotos.html">flickr.urls.getUserPhotos</a>
 request.</p>
 
 <p>Returns the url to a user's photos.</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>user_id </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>user_id 
 <dd>
 <p>The NSID of the user to fetch the url for. If omitted, the calling user is
 assumed.</p>
 </dd></dl>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>1: <em>User not found</em></p>
 
@@ -370,55 +360,52 @@ assumed.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="getUserPhotos-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getUserPhotos-source">
+            <pre>
 # Generated automatically from flickr api
   def getUserPhotos(*args)
     @flickr.call 'flickr.urls.getUserPhotos', *args
   end
 </pre>
-            </div><!-- getUserPhotos-source -->
-            
-          </div>
-
+          </div><!-- getUserPhotos-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- getUserPhotos-method -->
+
+    
+      <div id="method-i-getUserProfile" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getUserProfile</span><span
+            class="method-args">(:user_id => 'user_id')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- getUserPhotos-method -->
-
-      
-        <div id="getUserProfile-method" class="method-detail ">
-          <a name="method-i-getUserProfile"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">getUserProfile</span><span
-              class="method-args">(:user_id => 'user_id')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.urls.getUserProfile.html">flickr.urls.getUserProfile</a>
 request.</p>
 
 <p>Returns the url to a user's profile.</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>user_id </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>user_id 
 <dd>
 <p>The NSID of the user to fetch the url for. If omitted, the calling user is
 assumed.</p>
 </dd></dl>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>1: <em>User not found</em></p>
 
@@ -458,54 +445,51 @@ assumed.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="getUserProfile-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getUserProfile-source">
+            <pre>
 # Generated automatically from flickr api
   def getUserProfile(*args)
     @flickr.call 'flickr.urls.getUserProfile', *args
   end
 </pre>
-            </div><!-- getUserProfile-source -->
-            
-          </div>
-
+          </div><!-- getUserProfile-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- getUserProfile-method -->
+
+    
+      <div id="method-i-lookupGallery" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lookupGallery</span><span
+            class="method-args">(:url => 'url')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- getUserProfile-method -->
-
-      
-        <div id="lookupGallery-method" class="method-detail ">
-          <a name="method-i-lookupGallery"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">lookupGallery</span><span
-              class="method-args">(:url => 'url')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.urls.lookupGallery.html">flickr.urls.lookupGallery</a>
 request.</p>
 
 <p>Returns gallery info, by url.</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>url <em>(required)</em> </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>url <em>(required)</em> 
 <dd>
 <p>The gallery's URL.</p>
 </dd></dl>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>100: <em>Invalid API Key</em></p>
 
@@ -537,56 +521,53 @@ request.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
+<p><strong>Returns</strong></p>
 
 <pre>Cat Pictures I've Sent To Kevin Collins</pre>
-            
+          
 
-            
-            <div class="method-source-code" id="lookupGallery-source">
-<pre>
-
+          
+          <div class="method-source-code" id="lookupGallery-source">
+            <pre>
 # Generated automatically from flickr api
   def lookupGallery(*args)
     @flickr.call 'flickr.urls.lookupGallery', *args
   end
 </pre>
-            </div><!-- lookupGallery-source -->
-            
-          </div>
-
+          </div><!-- lookupGallery-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- lookupGallery-method -->
+
+    
+      <div id="method-i-lookupGroup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lookupGroup</span><span
+            class="method-args">(:url => 'url')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- lookupGallery-method -->
-
-      
-        <div id="lookupGroup-method" class="method-detail ">
-          <a name="method-i-lookupGroup"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">lookupGroup</span><span
-              class="method-args">(:url => 'url')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.urls.lookupGroup.html">flickr.urls.lookupGroup</a>
 request.</p>
 
 <p>Returns a group NSID, given the url to a group's page or photo pool.</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>url <em>(required)</em> </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>url <em>(required)</em> 
 <dd>
 <p>The url to the group's page or photo pool.</p>
 </dd></dl>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>1: <em>Group not found</em></p>
 
@@ -622,56 +603,53 @@ request.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
+<p><strong>Returns</strong></p>
 
 <pre>FlickrCentral</pre>
-            
+          
 
-            
-            <div class="method-source-code" id="lookupGroup-source">
-<pre>
-
+          
+          <div class="method-source-code" id="lookupGroup-source">
+            <pre>
 # Generated automatically from flickr api
   def lookupGroup(*args)
     @flickr.call 'flickr.urls.lookupGroup', *args
   end
 </pre>
-            </div><!-- lookupGroup-source -->
-            
-          </div>
-
+          </div><!-- lookupGroup-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- lookupGroup-method -->
+
+    
+      <div id="method-i-lookupUser" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lookupUser</span><span
+            class="method-args">(:url => 'url')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- lookupGroup-method -->
-
-      
-        <div id="lookupUser-method" class="method-detail ">
-          <a name="method-i-lookupUser"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">lookupUser</span><span
-              class="method-args">(:url => 'url')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.urls.lookupUser.html">flickr.urls.lookupUser</a>
 request.</p>
 
 <p>Returns a user NSID, given the url to a user's photos or profile.</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>url <em>(required)</em> </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>url <em>(required)</em> 
 <dd>
 <p>The url to the user's profile or photos page.</p>
 </dd></dl>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>1: <em>User not found</em></p>
 
@@ -707,43 +685,39 @@ request.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
+<p><strong>Returns</strong></p>
 
 <pre>Stewart</pre>
-            
+          
 
-            
-            <div class="method-source-code" id="lookupUser-source">
-<pre>
-
+          
+          <div class="method-source-code" id="lookupUser-source">
+            <pre>
 # Generated automatically from flickr api
   def lookupUser(*args)
     @flickr.call 'flickr.urls.lookupUser', *args
   end
 </pre>
-            </div><!-- lookupUser-source -->
-            
-          </div>
-
+          </div><!-- lookupUser-source -->
           
+        </div>
 
-          
-        </div><!-- lookupUser-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- lookupUser-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- public-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 

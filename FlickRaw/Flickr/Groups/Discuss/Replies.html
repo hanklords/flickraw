@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class FlickRaw::Flickr::Groups::Discuss::Replies - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../../index.html">Home</a>
+    <a href="../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/flickraw.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">FlickRaw::Request
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-add">#add</a>
+    
+    <li><a href="#method-i-delete">#delete</a>
+    
+    <li><a href="#method-i-edit">#edit</a>
+    
+    <li><a href="#method-i-getInfo">#getInfo</a>
+    
+    <li><a href="#method-i-getList">#getList</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../FlickRaw.html">FlickRaw</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Groups/Discuss.html">FlickRaw::Flickr::Groups::Discuss</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Groups/Discuss/Replies.html">FlickRaw::Flickr::Groups::Discuss::Replies</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Groups/Discuss/Topics.html">FlickRaw::Flickr::Groups::Discuss::Topics</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
+  
+    <li><a href="../../../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
+  
+    <li><a href="../../../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class FlickRaw::Flickr::Groups::Discuss::Replies</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add</span><span
+            class="method-args">(:topic_id => 'topic_id',:message => 'message')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
+href="http://www.flickr.com/services/api/flickr.groups.discuss.replies.add.html">flickr.groups.discuss.replies.add</a>
+request.</p>
+
+<p>Post a new reply to a group discussion topic.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>topic_id <em>(required)</em> 
+<dd>
+<p>The ID of the topic to post a comment to.</p>
+</dd><dt>message <em>(required)</em> 
+<dd>
+<p>The message to post to the topic.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Topic not found</em></p>
+
+<p>The topic_id is invalid.</p>
+</li><li>
+<p>2: <em>Cannot post to group</em></p>
+
+<p>Either this account is not a member of the group, or discussion in this
+group is disabled.</p>
+</li><li>
+<p>3: <em>Missing required arguments</em></p>
+
+<p>The topic_id and message are required.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="add-source">
+            <pre>
+# Generated automatically from flickr api
+  def add(*args)
+    @flickr.call 'flickr.groups.discuss.replies.add', *args
+  end
+</pre>
+          </div><!-- add-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add-method -->
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(:topic_id => 'topic_id',:reply_id => 'reply_id')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
+href="http://www.flickr.com/services/api/flickr.groups.discuss.replies.delete.html">flickr.groups.discuss.replies.delete</a>
+request.</p>
+
+<p>Delete a reply from a group topic.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>topic_id <em>(required)</em> 
+<dd>
+<p>The ID of the topic the post is in.</p>
+</dd><dt>reply_id <em>(required)</em> 
+<dd>
+<p>The ID of the reply to delete.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Topic not found</em></p>
+
+<p>The topic_id is invalid.</p>
+</li><li>
+<p>2: <em>Reply not found</em></p>
+
+<p>The reply_id is invalid.</p>
+</li><li>
+<p>3: <em>Cannot delete reply</em></p>
+
+<p><a href="Replies.html">Replies</a> can only be edited by their owner.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre>
+# Generated automatically from flickr api
+  def delete(*args)
+    @flickr.call 'flickr.groups.discuss.replies.delete', *args
+  end
+</pre>
+          </div><!-- delete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-method -->
+
+    
+      <div id="method-i-edit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">(:topic_id => 'topic_id',:reply_id => 'reply_id',:message => 'message')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
+href="http://www.flickr.com/services/api/flickr.groups.discuss.replies.edit.html">flickr.groups.discuss.replies.edit</a>
+request.</p>
+
+<p>Edit a topic reply.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>topic_id <em>(required)</em> 
+<dd>
+<p>The ID of the topic the post is in.</p>
+</dd><dt>reply_id <em>(required)</em> 
+<dd>
+<p>The ID of the reply post to edit.</p>
+</dd><dt>message <em>(required)</em> 
+<dd>
+<p>The message to edit the post with.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Topic not found</em></p>
+
+<p>The topic_id is invalid</p>
+</li><li>
+<p>2: <em>Reply not found</em></p>
+
+<p>The reply_id is invalid.</p>
+</li><li>
+<p>3: <em>Missing required arguments</em></p>
+
+<p>The topic_id and reply_id are required.</p>
+</li><li>
+<p>4: <em>Cannot edit reply</em></p>
+
+<p><a href="Replies.html">Replies</a> can only be edited by their owner.</p>
+</li><li>
+<p>5: <em>Cannot post to group</em></p>
+
+<p>Either this account is not a member of the group, or discussion in this
+group is disabled.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="edit-source">
+            <pre>
+# Generated automatically from flickr api
+  def edit(*args)
+    @flickr.call 'flickr.groups.discuss.replies.edit', *args
+  end
+</pre>
+          </div><!-- edit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edit-method -->
+
+    
+      <div id="method-i-getInfo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getInfo</span><span
+            class="method-args">(:topic_id => 'topic_id',:reply_id => 'reply_id')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
+href="http://www.flickr.com/services/api/flickr.groups.discuss.replies.getInfo.html">flickr.groups.discuss.replies.getInfo</a>
+request.</p>
+
+<p>Get information on a group topic reply.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>topic_id <em>(required)</em> 
+<dd>
+<p>The ID of the topic the post is in.</p>
+</dd><dt>reply_id <em>(required)</em> 
+<dd>
+<p>The ID of the reply to fetch.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Topic not found</em></p>
+
+<p>The topic_id is invalid</p>
+</li><li>
+<p>2: <em>Reply not found</em></p>
+
+<p>The reply_id is invalid</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+
+<pre>...well, too bad.</pre>
+          
+
+          
+          <div class="method-source-code" id="getInfo-source">
+            <pre>
+# Generated automatically from flickr api
+  def getInfo(*args)
+    @flickr.call 'flickr.groups.discuss.replies.getInfo', *args
+  end
+</pre>
+          </div><!-- getInfo-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getInfo-method -->
+
+    
+      <div id="method-i-getList" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getList</span><span
+            class="method-args">(:topic_id => 'topic_id',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
+href="http://www.flickr.com/services/api/flickr.groups.discuss.replies.getList.html">flickr.groups.discuss.replies.getList</a>
+request.</p>
+
+<p>Get a list of replies from a group discussion topic.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>topic_id <em>(required)</em> 
+<dd>
+<p>The ID of the topic to fetch replies for.</p>
+</dd><dt>per_page <em>(required)</em> 
+<dd>
+<p>Number of photos to return per page. If this argument is omitted, it
+defaults to 100. The maximum allowed value is 500.</p>
+</dd><dt>page 
+<dd>
+<p>The page of results to return. If this argument is omitted, it defaults to
+1.</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Topic not found</em></p>
+
+<p>The topic_id is invalid.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../../../Flickr.html">Flickr</a>.</p>
+</li></ul>
+
+<p><strong>Returns</strong></p>
+
+<pre>&lt;div&gt;&lt;span class=&quot;photo_container pc_m bbml_img&quot;&gt;&lt;a href=&quot;/photos/53930889@N04/5080874079/&quot; title=&quot;Star Wars 1 by Smallportfolio_jm08&quot;&gt;&lt;img class=&quot;notsowide&quot; src=&quot;http://farm5.staticflickr.com/4035/5080874079_684cf874e0_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Star Wars 1 by Smallportfolio_jm08&quot;  class=&quot;pc_img&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span class=&quot;photo_container pc_m bbml_img&quot;&gt;&lt;a href=&quot;/photos/53930889@N04/5081467846/&quot; title=&quot;Star Wars 2 by Smallportfolio_jm08&quot;&gt;&lt;img class=&quot;notsowide&quot; src=&quot;http://farm5.staticflickr.com/4071/5081467846_2eec86176d_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Star Wars 2 by Smallportfolio_jm08&quot;  class=&quot;pc_img&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span class=&quot;photo_container pc_m bbml_img&quot;&gt;&lt;a href=&quot;/photos/53930889@N04/5081467886/&quot; title=&quot;Star Wars 3 by Smallportfolio_jm08&quot;&gt;&lt;img class=&quot;notsowide&quot; src=&quot;http://farm5.staticflickr.com/4021/5081467886_d8cca6c8e8_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Star Wars 3 by Smallportfolio_jm08&quot;  class=&quot;pc_img&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span class=&quot;photo_container pc_m bbml_img&quot;&gt;&lt;a href=&quot;/photos/53930889@N04/5081467910/&quot; title=&quot;Star Wars 4 by Smallportfolio_jm08&quot;&gt;&lt;img class=&quot;notsowide&quot; src=&quot;http://farm5.staticflickr.com/4084/5081467910_274bb11fdc_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Star Wars 4 by Smallportfolio_jm08&quot;  class=&quot;pc_img&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;
+
+&lt;div&gt;&lt;span class=&quot;photo_container pc_m bbml_img&quot;&gt;&lt;a href=&quot;/photos/53930889@N04/5081467948/&quot; title=&quot;Star Wars 5 by Smallportfolio_jm08&quot;&gt;&lt;img class=&quot;notsowide&quot; src=&quot;http://farm5.staticflickr.com/4154/5081467948_1a5f200bc0_m.jpg&quot; width=&quot;240&quot; height=&quot;180&quot; alt=&quot;Star Wars 5 by Smallportfolio_jm08&quot;  class=&quot;pc_img&quot; border=&quot;0&quot; /&gt;&lt;/a&gt;&lt;/span&gt;&lt;/div&gt;*LOL* The universe is full of &lt;a href=&quot;http://www.flickr.com/groups/visualstory/discuss/72157622533160886/&quot;&gt;giant furry space monsters&lt;/a&gt; it seems! Love it.Great work. Good focus on different aspects of scene in each frame.  Funny ending-- even better that I didn't notice the cat right away!  Being a hopeless Trekkie, I was wondering why Han was doing the Vulcan death grip on one of his allies....On a scale of 1 to 10 of awesome. This is a 15
+</pre>
+          
+
+          
+          <div class="method-source-code" id="getList-source">
+            <pre>
+# Generated automatically from flickr api
+  def getList(*args)
+    @flickr.call 'flickr.groups.discuss.replies.getList', *args
+  end
+</pre>
+          </div><!-- getList-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- getList-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

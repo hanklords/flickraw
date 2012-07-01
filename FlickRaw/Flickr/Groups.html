@@ -1,263 +1,252 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Class: FlickRaw::Flickr::Groups</title>
+<title>class FlickRaw::Flickr::Groups - RDoc Documentation</title>
 
-  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
-  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
 <body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../index.html">Home</a>
-          <a href="../../index.html#classes">Classes</a>
-          <a href="../../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link">FlickRaw::Request</p>
-        
-      </div>
-      
 
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/flickraw.rb
+  </ul>
+</nav>
 
-      
-      <!-- Namespace Contents -->
-      <div id="namespace-list-section" class="section">
-        <h3 class="section-header">Namespace</h3>
-        <ul class="link-list">
-          
-          <li><span class="type">CLASS</span> <a href="Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-          
-          <li><span class="type">CLASS</span> <a href="Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-browse">#browse</a></li>
-          
-          <li><a href="#method-i-getInfo">#getInfo</a></li>
-          
-          <li><a href="#method-i-members">#members</a></li>
-          
-          <li><a href="#method-i-pools">#pools</a></li>
-          
-          <li><a href="#method-i-search">#search</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../../FlickRaw.html">FlickRaw</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-        
-          <li><a href="../../Object.html">Object</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="class">FlickRaw::Flickr::Groups</h1>
-
-    <div id="description" class="description">
-      
-    </div><!-- description -->
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">FlickRaw::Request
+  
+</nav>
 
     
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
     
+    <li><a href="#method-i-browse">#browse</a>
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
+    <li><a href="#method-i-discuss">#discuss</a>
+    
+    <li><a href="#method-i-getInfo">#getInfo</a>
+    
+    <li><a href="#method-i-join">#join</a>
+    
+    <li><a href="#method-i-joinRequest">#joinRequest</a>
+    
+    <li><a href="#method-i-leave">#leave</a>
+    
+    <li><a href="#method-i-members">#members</a>
+    
+    <li><a href="#method-i-pools">#pools</a>
+    
+    <li><a href="#method-i-search">#search</a>
+    
+  </ul>
+</nav>
 
-      
+  </div>
 
-      
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
 
-      
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
 
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
 
-      
-        <div id="browse-method" class="method-detail ">
-          <a name="method-i-browse"></a>
+  <ul class="link-list">
+  
+    <li><a href="../../FlickRaw.html">FlickRaw</a>
+  
+    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss.html">FlickRaw::Flickr::Groups::Discuss</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Replies.html">FlickRaw::Flickr::Groups::Discuss::Replies</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Topics.html">FlickRaw::Flickr::Groups::Discuss::Topics</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
+  
+    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
 
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class FlickRaw::Flickr::Groups</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-browse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">browse</span><span
+            class="method-args">(:cat_id => 'cat_id')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-          <div class="method-heading">
-            <span class="method-name">browse</span><span
-              class="method-args">(:cat_id => 'cat_id')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.groups.browse.html">flickr.groups.browse</a>
 request.</p>
 
 <p>Browse the group category tree, finding groups and sub-categories.</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>cat_id </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>cat_id 
 <dd>
 <p>The category id to fetch a list of groups and sub-categories for. If not
 specified, it defaults to zero, the root of the category tree.</p>
 </dd></dl>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>1: <em>Category not found</em></p>
 
@@ -310,52 +299,72 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="browse-source">
-<pre>
-
+          
+          <div class="method-source-code" id="browse-source">
+            <pre>
 # Generated automatically from flickr api
   def browse(*args)
     @flickr.call 'flickr.groups.browse', *args
   end
 </pre>
-            </div><!-- browse-source -->
-            
-          </div>
+          </div><!-- browse-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- browse-method -->
+
+    
+      <div id="method-i-discuss" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">discuss</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a <a href="Groups/Discuss.html">Discuss</a> object.</p>
           
 
           
-        </div><!-- browse-method -->
+        </div>
 
-      
-        <div id="getInfo-method" class="method-detail ">
-          <a name="method-i-getInfo"></a>
+        
 
+        
+      </div><!-- discuss-method -->
+
+    
+      <div id="method-i-getInfo" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getInfo</span><span
+            class="method-args">(:group_id => 'group_id',:lang => 'lang')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-          <div class="method-heading">
-            <span class="method-name">getInfo</span><span
-              class="method-args">(:group_id => 'group_id',:lang => 'lang')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.groups.getInfo.html">flickr.groups.getInfo</a>
 request.</p>
 
 <p>Get information about a group.</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>group_id <em>(required)</em> </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>group_id <em>(required)</em> 
 <dd>
 <p>The NSID of the group to fetch information for.</p>
-</dd><dt>lang </dt>
+</dd><dt>lang 
 <dd>
 <p>The language of the group name and description to fetch.  If the language
 is not found, the primary language of the group will be returned.</p>
@@ -363,7 +372,7 @@ is not found, the primary language of the group will be returned.</p>
 
 <p>Valid values are the same as in feeds.</p>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>1: <em>Group not found</em></p>
 
@@ -401,115 +410,476 @@ calling user.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
+<p><strong>Returns</strong></p>
 
 <pre>GNEverybodyThe group for GNE players693</pre>
-            
+          
 
-            
-            <div class="method-source-code" id="getInfo-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getInfo-source">
+            <pre>
 # Generated automatically from flickr api
   def getInfo(*args)
     @flickr.call 'flickr.groups.getInfo', *args
   end
 </pre>
-            </div><!-- getInfo-source -->
-            
-          </div>
+          </div><!-- getInfo-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- getInfo-method -->
+
+    
+      <div id="method-i-join" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">join</span><span
+            class="method-args">(:group_id => 'group_id',:accept_rules => 'accept_rules')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
+href="http://www.flickr.com/services/api/flickr.groups.join.html">flickr.groups.join</a>
+request.</p>
+
+<p>Join a public group as a member.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>group_id <em>(required)</em> 
+<dd>
+<p>The NSID of the Group in question</p>
+</dd><dt>accept_rules 
+<dd>
+<p>If the group has rules, they must be displayed to the user prior to
+joining. Passing a true value for this argument specifies that the
+application has displayed the group rules to the user, and that the user
+has agreed to them. (See flickr.groups.getInfo).</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Required arguments missing</em></p>
+
+<p>The group_id doesn't exist</p>
+</li><li>
+<p>2: <em>Group does not exist</em></p>
+
+<p>The Group does not exist</p>
+</li><li>
+<p>3: <em>Group not availabie to the account</em></p>
+
+<p>The authed account does not have permission to view/join the group.</p>
+</li><li>
+<p>4: <em>Account is already in that group</em></p>
+
+<p>The authed account has previously joined this group</p>
+</li><li>
+<p>5: <em>Membership in group is by invitation only.</em></p>
+
+<p>Use flickr.groups.joinRequest to contact the administrations for an
+invitation.</p>
+</li><li>
+<p>6: <em>User must accept the group rules before joining</em></p>
+
+<p>The user must read and accept the rules before joining. Please see the
+accept_rules argument for this method.</p>
+</li><li>
+<p>10: <em>Account in maximum number of groups</em></p>
+
+<p>The account is a member of the maximum number of groups.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
           
 
           
-        </div><!-- getInfo-method -->
+          <div class="method-source-code" id="join-source">
+            <pre>
+# Generated automatically from flickr api
+  def join(*args)
+    @flickr.call 'flickr.groups.join', *args
+  end
+</pre>
+          </div><!-- join-source -->
+          
+        </div>
 
-      
-        <div id="members-method" class="method-detail ">
-          <a name="method-i-members"></a>
+        
+
+        
+      </div><!-- join-method -->
+
+    
+      <div id="method-i-joinRequest" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">joinRequest</span><span
+            class="method-args">(:group_id => 'group_id',:message => 'message',:accept_rules => 'accept_rules')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
+href="http://www.flickr.com/services/api/flickr.groups.joinRequest.html">flickr.groups.joinRequest</a>
+request.</p>
+
+<p>Request to join a group that is invitation-only.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>group_id <em>(required)</em> 
+<dd>
+<p>The NSID of the group to request joining.</p>
+</dd><dt>message <em>(required)</em> 
+<dd>
+<p>Message to the administrators.</p>
+</dd><dt>accept_rules <em>(required)</em> 
+<dd>
+<p>If the group has rules, they must be displayed to the user prior to
+joining. Passing a true value for this argument specifies that the
+application has displayed the group rules to the user, and that the user
+has agreed to them. (See flickr.groups.getInfo).</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Required arguments missing</em></p>
+
+<p>The group_id or message argument are missing.</p>
+</li><li>
+<p>2: <em>Group does not exist</em></p>
+
+<p>The Group does not exist</p>
+</li><li>
+<p>3: <em>Group not available to the account</em></p>
+
+<p>The authed account does not have permission to view/join the group.</p>
+</li><li>
+<p>4: <em>Account is already in that group</em></p>
+
+<p>The authed account has previously joined this group</p>
+</li><li>
+<p>5: <em>Group is public and open</em></p>
+
+<p>The group does not require an invitation to join, please use
+flickr.groups.join.</p>
+</li><li>
+<p>6: <em>User must accept the group rules before joining</em></p>
+
+<p>The user must read and accept the rules before joining. Please see the
+accept_rules argument for this method.</p>
+</li><li>
+<p>7: <em>User has already requested to join that group</em></p>
+
+<p>A request has already been sent and is pending approval.</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
+          
 
           
-          <div class="method-heading">
-            <span class="method-name">members</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
+          <div class="method-source-code" id="joinRequest-source">
+            <pre>
+# Generated automatically from flickr api
+  def joinRequest(*args)
+    @flickr.call 'flickr.groups.joinRequest', *args
+  end
+</pre>
+          </div><!-- joinRequest-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- joinRequest-method -->
+
+    
+      <div id="method-i-leave" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">leave</span><span
+            class="method-args">(:group_id => 'group_id',:delete_photos => 'delete_photos')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a
+href="http://www.flickr.com/services/api/flickr.groups.leave.html">flickr.groups.leave</a>
+request.</p>
+
+<p>Leave a group.</p>
+
+<p>If the user is the only administrator left, and there are other members,
+the oldest member will be promoted to administrator.</p>
+
+<p>If the user is the last person in the group, the group will be deleted.</p>
+
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>group_id <em>(required)</em> 
+<dd>
+<p>The NSID of the Group to leave</p>
+</dd><dt>delete_photos 
+<dd>
+<p>Delete all photos by this user from the group</p>
+</dd></dl>
+
+<p><strong>Error codes</strong></p>
+<ul><li>
+<p>1: <em>Required arguments missing</em></p>
+
+<p>The group_id doesn't exist</p>
+</li><li>
+<p>2: <em>Group does not exist</em></p>
+
+<p>The group by that ID does not exist</p>
+</li><li>
+<p>3: <em>Account is not in that group</em></p>
+
+<p>The user is not a member of the group that was specified</p>
+</li><li>
+<p>96: <em>Invalid signature</em></p>
+
+<p>The passed signature was invalid.</p>
+</li><li>
+<p>97: <em>Missing signature</em></p>
+
+<p>The call required signing but no signature was sent.</p>
+</li><li>
+<p>98: <em>Login failed / Invalid auth token</em></p>
+
+<p>The login details or auth token passed were invalid.</p>
+</li><li>
+<p>99: <em>User not logged in / Insufficient permissions</em></p>
+
+<p>The method requires user authentication but the user was not logged in, or
+the authenticated method call did not have the required permissions.</p>
+</li><li>
+<p>100: <em>Invalid API Key</em></p>
+
+<p>The API key passed was not valid or has expired.</p>
+</li><li>
+<p>105: <em>Service currently unavailable</em></p>
+
+<p>The requested service is temporarily unavailable.</p>
+</li><li>
+<p>111: <em>Format "xxx" not found</em></p>
+
+<p>The requested response format was not found.</p>
+</li><li>
+<p>112: <em>Method "xxx" not found</em></p>
+
+<p>The requested method was not found.</p>
+</li><li>
+<p>114: <em>Invalid SOAP envelope</em></p>
+
+<p>The SOAP envelope send in the request could not be parsed.</p>
+</li><li>
+<p>115: <em>Invalid XML-RPC Method Call</em></p>
+
+<p>The XML-RPC request document could not be parsed.</p>
+</li><li>
+<p>116: <em>Bad URL found</em></p>
+
+<p>One or more arguments contained a URL that has been used for abuse on <a
+href="../Flickr.html">Flickr</a>.</p>
+</li></ul>
           
 
-          <div class="method-description">
-            
-            <p>Returns a <a href="Groups/Members.html">Members</a> object.</p>
-            
+          
+          <div class="method-source-code" id="leave-source">
+            <pre>
+# Generated automatically from flickr api
+  def leave(*args)
+    @flickr.call 'flickr.groups.leave', *args
+  end
+</pre>
+          </div><!-- leave-source -->
+          
+        </div>
 
-            
-          </div>
+        
 
+        
+      </div><!-- leave-method -->
+
+    
+      <div id="method-i-members" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">members</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a <a href="Groups/Members.html">Members</a> object.</p>
           
 
           
-        </div><!-- members-method -->
+        </div>
 
-      
-        <div id="pools-method" class="method-detail ">
-          <a name="method-i-pools"></a>
+        
 
+        
+      </div><!-- members-method -->
+
+    
+      <div id="method-i-pools" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pools</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-          <div class="method-heading">
-            <span class="method-name">pools</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p>Returns a <a href="Groups/Pools.html">Pools</a> object.</p>
-            
-
-            
-          </div>
-
+          <p>Returns a <a href="Groups/Pools.html">Pools</a> object.</p>
           
 
           
-        </div><!-- pools-method -->
+        </div>
 
-      
-        <div id="search-method" class="method-detail ">
-          <a name="method-i-search"></a>
+        
 
+        
+      </div><!-- pools-method -->
+
+    
+      <div id="method-i-search" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search</span><span
+            class="method-args">(:text => 'text',:per_page => 'per_page',:page => 'page')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-          <div class="method-heading">
-            <span class="method-name">search</span><span
-              class="method-args">(:text => 'text',:per_page => 'per_page',:page => 'page')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.groups.search.html">flickr.groups.search</a>
 request.</p>
 
 <p>Search for groups. 18+ groups will only be returned for authenticated calls
 where the authenticated user is over 18.</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>text <em>(required)</em> </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>text <em>(required)</em> 
 <dd>
 <p>The text to search for.</p>
-</dd><dt>per_page </dt>
+</dd><dt>per_page 
 <dd>
 <p>Number of groups to return per page. If this argument is ommited, it
 defaults to 100. The maximum allowed value is 500.</p>
-</dd><dt>page </dt>
+</dd><dt>page 
 <dd>
 <p>The page of results to return. If this argument is ommited, it defaults to
 1.</p>
 </dd></dl>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>1: <em>No text passed</em></p>
 
@@ -545,41 +915,37 @@ defaults to 100. The maximum allowed value is 500.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="search-source">
-<pre>
-
+          
+          <div class="method-source-code" id="search-source">
+            <pre>
 # Generated automatically from flickr api
   def search(*args)
     @flickr.call 'flickr.groups.search', *args
   end
 </pre>
-            </div><!-- search-source -->
-            
-          </div>
-
+          </div><!-- search-source -->
           
+        </div>
 
-          
-        </div><!-- search-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- search-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- public-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 

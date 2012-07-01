@@ -1,246 +1,239 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Class: FlickRaw::Flickr::Prefs</title>
+<title>class FlickRaw::Flickr::Prefs - RDoc Documentation</title>
 
-  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
-  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
 <body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../index.html">Home</a>
-          <a href="../../index.html#classes">Classes</a>
-          <a href="../../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link">FlickRaw::Request</p>
-        
-      </div>
-      
 
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/flickraw.rb
+  </ul>
+</nav>
 
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-getContentType">#getContentType</a></li>
-          
-          <li><a href="#method-i-getGeoPerms">#getGeoPerms</a></li>
-          
-          <li><a href="#method-i-getHidden">#getHidden</a></li>
-          
-          <li><a href="#method-i-getPrivacy">#getPrivacy</a></li>
-          
-          <li><a href="#method-i-getSafetyLevel">#getSafetyLevel</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../../FlickRaw.html">FlickRaw</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-        
-          <li><a href="../../Object.html">Object</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="class">FlickRaw::Flickr::Prefs</h1>
-
-    <div id="description" class="description">
-      
-    </div><!-- description -->
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">FlickRaw::Request
+  
+</nav>
 
     
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
     
+    <li><a href="#method-i-getContentType">#getContentType</a>
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
+    <li><a href="#method-i-getGeoPerms">#getGeoPerms</a>
+    
+    <li><a href="#method-i-getHidden">#getHidden</a>
+    
+    <li><a href="#method-i-getPrivacy">#getPrivacy</a>
+    
+    <li><a href="#method-i-getSafetyLevel">#getSafetyLevel</a>
+    
+  </ul>
+</nav>
 
-      
+  </div>
 
-      
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
 
-      
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
 
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
 
-      
-        <div id="getContentType-method" class="method-detail ">
-          <a name="method-i-getContentType"></a>
+  <ul class="link-list">
+  
+    <li><a href="../../FlickRaw.html">FlickRaw</a>
+  
+    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss.html">FlickRaw::Flickr::Groups::Discuss</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Replies.html">FlickRaw::Flickr::Groups::Discuss::Replies</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Topics.html">FlickRaw::Flickr::Groups::Discuss::Topics</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
+  
+    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
 
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class FlickRaw::Flickr::Prefs</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-getContentType" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getContentType</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-          <div class="method-heading">
-            <span class="method-name">getContentType</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.prefs.getContentType.html">flickr.prefs.getContentType</a>
 request.</p>
 
 <p>Returns the default content type preference for the user.</p>
 
-<p><b>Arguments</b></p>
+<p><strong>Arguments</strong></p>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>96: <em>Invalid signature</em></p>
 
@@ -289,42 +282,39 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="getContentType-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getContentType-source">
+            <pre>
 # Generated automatically from flickr api
   def getContentType(*args)
     @flickr.call 'flickr.prefs.getContentType', *args
   end
 </pre>
-            </div><!-- getContentType-source -->
-            
-          </div>
-
+          </div><!-- getContentType-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- getContentType-method -->
+
+    
+      <div id="method-i-getGeoPerms" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getGeoPerms</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- getContentType-method -->
-
-      
-        <div id="getGeoPerms-method" class="method-detail ">
-          <a name="method-i-getGeoPerms"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">getGeoPerms</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.prefs.getGeoPerms.html">flickr.prefs.getGeoPerms</a>
 request.</p>
 
@@ -349,9 +339,9 @@ information will be used to try and geotag photos on upload</p>
 <p>Users can edit this preference at <a
 href="http://www.flickr.com/account/geo/exif/?from=privacy">www.flickr.com/account/geo/exif/?from=privacy</a></p>
 
-<p><b>Arguments</b></p>
+<p><strong>Arguments</strong></p>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>96: <em>Invalid signature</em></p>
 
@@ -400,50 +390,47 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="getGeoPerms-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getGeoPerms-source">
+            <pre>
 # Generated automatically from flickr api
   def getGeoPerms(*args)
     @flickr.call 'flickr.prefs.getGeoPerms', *args
   end
 </pre>
-            </div><!-- getGeoPerms-source -->
-            
-          </div>
-
+          </div><!-- getGeoPerms-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- getGeoPerms-method -->
+
+    
+      <div id="method-i-getHidden" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getHidden</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- getGeoPerms-method -->
-
-      
-        <div id="getHidden-method" class="method-detail ">
-          <a name="method-i-getHidden"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">getHidden</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.prefs.getHidden.html">flickr.prefs.getHidden</a>
 request.</p>
 
 <p>Returns the default hidden preference for the user.</p>
 
-<p><b>Arguments</b></p>
+<p><strong>Arguments</strong></p>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>96: <em>Invalid signature</em></p>
 
@@ -492,42 +479,39 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="getHidden-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getHidden-source">
+            <pre>
 # Generated automatically from flickr api
   def getHidden(*args)
     @flickr.call 'flickr.prefs.getHidden', *args
   end
 </pre>
-            </div><!-- getHidden-source -->
-            
-          </div>
-
+          </div><!-- getHidden-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- getHidden-method -->
+
+    
+      <div id="method-i-getPrivacy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getPrivacy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- getHidden-method -->
-
-      
-        <div id="getPrivacy-method" class="method-detail ">
-          <a name="method-i-getPrivacy"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">getPrivacy</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.prefs.getPrivacy.html">flickr.prefs.getPrivacy</a>
 request.</p>
 
@@ -536,9 +520,9 @@ request.</p>
 <p>Possible values are: 1 : Public 2 : Friends only 3 : Family only 4 :
 Friends and Family 5 : Private</p>
 
-<p><b>Arguments</b></p>
+<p><strong>Arguments</strong></p>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>96: <em>Invalid signature</em></p>
 
@@ -587,50 +571,47 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="getPrivacy-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getPrivacy-source">
+            <pre>
 # Generated automatically from flickr api
   def getPrivacy(*args)
     @flickr.call 'flickr.prefs.getPrivacy', *args
   end
 </pre>
-            </div><!-- getPrivacy-source -->
-            
-          </div>
-
+          </div><!-- getPrivacy-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- getPrivacy-method -->
+
+    
+      <div id="method-i-getSafetyLevel" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSafetyLevel</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- getPrivacy-method -->
-
-      
-        <div id="getSafetyLevel-method" class="method-detail ">
-          <a name="method-i-getSafetyLevel"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">getSafetyLevel</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.prefs.getSafetyLevel.html">flickr.prefs.getSafetyLevel</a>
 request.</p>
 
 <p>Returns the default safety level preference for the user.</p>
 
-<p><b>Arguments</b></p>
+<p><strong>Arguments</strong></p>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>96: <em>Invalid signature</em></p>
 
@@ -679,41 +660,37 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="getSafetyLevel-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getSafetyLevel-source">
+            <pre>
 # Generated automatically from flickr api
   def getSafetyLevel(*args)
     @flickr.call 'flickr.prefs.getSafetyLevel', *args
   end
 </pre>
-            </div><!-- getSafetyLevel-source -->
-            
-          </div>
-
+          </div><!-- getSafetyLevel-source -->
           
+        </div>
 
-          
-        </div><!-- getSafetyLevel-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- getSafetyLevel-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- public-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 

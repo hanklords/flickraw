@@ -1,245 +1,238 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Class: FlickRaw::Flickr::Push</title>
+<title>class FlickRaw::Flickr::Push - RDoc Documentation</title>
 
-  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
-  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
 <body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../index.html">Home</a>
-          <a href="../../index.html#classes">Classes</a>
-          <a href="../../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../lib/flickraw_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/flickraw.rb">lib/flickraw.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link">FlickRaw::Request</p>
-        
-      </div>
-      
 
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/flickraw.rb
+  </ul>
+</nav>
 
-      
-
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-getSubscriptions">#getSubscriptions</a></li>
-          
-          <li><a href="#method-i-getTopics">#getTopics</a></li>
-          
-          <li><a href="#method-i-subscribe">#subscribe</a></li>
-          
-          <li><a href="#method-i-unsubscribe">#unsubscribe</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../README_rdoc.html">README.rdoc</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../../FlickRaw.html">FlickRaw</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a></li>
-        
-          <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a></li>
-        
-          <li><a href="../../Object.html">Object</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="class">FlickRaw::Flickr::Push</h1>
-
-    <div id="description" class="description">
-      
-    </div><!-- description -->
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">FlickRaw::Request
+  
+</nav>
 
     
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
     
+    <li><a href="#method-i-getSubscriptions">#getSubscriptions</a>
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
+    <li><a href="#method-i-getTopics">#getTopics</a>
+    
+    <li><a href="#method-i-subscribe">#subscribe</a>
+    
+    <li><a href="#method-i-unsubscribe">#unsubscribe</a>
+    
+  </ul>
+</nav>
 
-      
+  </div>
 
-      
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
 
-      
+  <ul>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
 
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
 
-      
-        <div id="getSubscriptions-method" class="method-detail ">
-          <a name="method-i-getSubscriptions"></a>
+  <ul class="link-list">
+  
+    <li><a href="../../FlickRaw.html">FlickRaw</a>
+  
+    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss.html">FlickRaw::Flickr::Groups::Discuss</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Replies.html">FlickRaw::Flickr::Groups::Discuss::Replies</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Topics.html">FlickRaw::Flickr::Groups::Discuss::Topics</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
+  
+    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
+  
+    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
 
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class FlickRaw::Flickr::Push</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-getSubscriptions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getSubscriptions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-          <div class="method-heading">
-            <span class="method-name">getSubscriptions</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.push.getSubscriptions.html">flickr.push.getSubscriptions</a>
 request.</p>
 
 <p>Returns a list of the subscriptions for the logged-in user. (this method is
 experimental and may change)</p>
 
-<p><b>Arguments</b></p>
+<p><strong>Arguments</strong></p>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>5: <em>Service currently available only to pro accounts</em></p>
 
@@ -292,51 +285,48 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="getSubscriptions-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getSubscriptions-source">
+            <pre>
 # Generated automatically from flickr api
   def getSubscriptions(*args)
     @flickr.call 'flickr.push.getSubscriptions', *args
   end
 </pre>
-            </div><!-- getSubscriptions-source -->
-            
-          </div>
-
+          </div><!-- getSubscriptions-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- getSubscriptions-method -->
+
+    
+      <div id="method-i-getTopics" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getTopics</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- getSubscriptions-method -->
-
-      
-        <div id="getTopics-method" class="method-detail ">
-          <a name="method-i-getTopics"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">getTopics</span><span
-              class="method-args"></span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.push.getTopics.html">flickr.push.getTopics</a>
 request.</p>
 
 <p>All the different flavours of anteater. (this method is experimental and
 may change)</p>
 
-<p><b>Arguments</b></p>
+<p><strong>Arguments</strong></p>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>100: <em>Invalid API Key</em></p>
 
@@ -368,72 +358,69 @@ may change)</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 
-<p><b>Returns</b></p>
-            
+<p><strong>Returns</strong></p>
+          
 
-            
-            <div class="method-source-code" id="getTopics-source">
-<pre>
-
+          
+          <div class="method-source-code" id="getTopics-source">
+            <pre>
 # Generated automatically from flickr api
   def getTopics(*args)
     @flickr.call 'flickr.push.getTopics', *args
   end
 </pre>
-            </div><!-- getTopics-source -->
-            
-          </div>
-
+          </div><!-- getTopics-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- getTopics-method -->
+
+    
+      <div id="method-i-subscribe" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subscribe</span><span
+            class="method-args">(:topic => 'topic',:callback => 'callback',:verify => 'verify',:verify_token => 'verify_token',:lease_seconds => 'lease_seconds',:woe_ids => 'woe_ids',:place_ids => 'place_ids',:lat => 'lat',:lon => 'lon',:radius => 'radius',:radius_units => 'radius_units',:accuracy => 'accuracy',:nsids => 'nsids',:tags => 'tags',:machine_tags => 'machine_tags',:update_type => 'update_type',:output_format => 'output_format',:mailto => 'mailto')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- getTopics-method -->
-
-      
-        <div id="subscribe-method" class="method-detail ">
-          <a name="method-i-subscribe"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">subscribe</span><span
-              class="method-args">(:topic => 'topic',:callback => 'callback',:verify => 'verify',:verify_token => 'verify_token',:lease_seconds => 'lease_seconds',:woe_ids => 'woe_ids',:place_ids => 'place_ids',:lat => 'lat',:lon => 'lon',:radius => 'radius',:radius_units => 'radius_units',:accuracy => 'accuracy',:nsids => 'nsids',:tags => 'tags',:machine_tags => 'machine_tags',:update_type => 'update_type',:output_format => 'output_format',:mailto => 'mailto')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.push.subscribe.html">flickr.push.subscribe</a>
 request.</p>
 
 <p>In ur pandas, tickling ur unicorn (this method is experimental and may
 change)</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>topic <em>(required)</em> </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>topic <em>(required)</em> 
 <dd>
 <p>The type of subscription. See flickr.push.getTopics.</p>
-</dd><dt>callback <em>(required)</em> </dt>
+</dd><dt>callback <em>(required)</em> 
 <dd>
 <p>The url for the subscription endpoint. Limited to 255 bytes, and must be
 unique for this user, i.e. no two subscriptions for a given user may use
 the same callback url.</p>
-</dd><dt>verify <em>(required)</em> </dt>
+</dd><dt>verify <em>(required)</em> 
 <dd>
 <p>The verification mode, either sync or async. See the Google PubSubHubbub
 spec for details.</p>
-</dd><dt>verify_token </dt>
+</dd><dt>verify_token 
 <dd>
 <p>The verification token to be echoed back to the subscriber during the
 verification callback, as per the Google PubSubHubbub spec. Limited to 200
 bytes.</p>
-</dd><dt>lease_seconds </dt>
+</dd><dt>lease_seconds 
 <dd>
 <p>Number of seconds for which the subscription will be valid. Legal values
 are 60 to 86400 (1 minute to 1 day). If not present, the subscription will
 be auto-renewing.</p>
-</dd><dt>woe_ids </dt>
+</dd><dt>woe_ids 
 <dd>
 <p>A 32-bit integer for a Where on Earth ID. Only valid if topic is geo.</p>
 </dd></dl>
@@ -441,7 +428,7 @@ be auto-renewing.</p>
 <p>The order of precedence for geo subscriptions is : woe ids, place ids,
 radial i.e. the lat, lon parameters will be ignored if place_ids is
 present, which will be ignored if woe_ids is present.</p>
-<dl class="rdoc-list"><dt>place_ids </dt>
+<dl class="rdoc-list label-list"><dt>place_ids 
 <dd>
 <p>A comma-separated list of <a href="../Flickr.html">Flickr</a> place IDs.
 Only valid if topic is geo.</p>
@@ -450,7 +437,7 @@ Only valid if topic is geo.</p>
 <p>The order of precedence for geo subscriptions is : woe ids, place ids,
 radial i.e. the lat, lon parameters will be ignored if place_ids is
 present, which will be ignored if woe_ids is present.</p>
-<dl class="rdoc-list"><dt>lat </dt>
+<dl class="rdoc-list label-list"><dt>lat 
 <dd>
 <p>A latitude value, in decimal format. Only valid if topic is geo. Defines
 the latitude for a radial query centered around (lat, lon).</p>
@@ -459,7 +446,7 @@ the latitude for a radial query centered around (lat, lon).</p>
 <p>The order of precedence for geo subscriptions is : woe ids, place ids,
 radial i.e. the lat, lon parameters will be ignored if place_ids is
 present, which will be ignored if woe_ids is present.</p>
-<dl class="rdoc-list"><dt>lon </dt>
+<dl class="rdoc-list label-list"><dt>lon 
 <dd>
 <p>A longitude value, in decimal format. Only valid if topic is geo. Defines
 the longitude for a radial query centered around (lat, lon).</p>
@@ -468,7 +455,7 @@ the longitude for a radial query centered around (lat, lon).</p>
 <p>The order of precedence for geo subscriptions is : woe ids, place ids,
 radial i.e. the lat, lon parameters will be ignored if place_ids is
 present, which will be ignored if woe_ids is present.</p>
-<dl class="rdoc-list"><dt>radius </dt>
+<dl class="rdoc-list label-list"><dt>radius 
 <dd>
 <p>A radius value, in the units defined by radius_units. Only valid if topic
 is geo. Defines the radius of a circle for a radial query centered around
@@ -478,7 +465,7 @@ is geo. Defines the radius of a circle for a radial query centered around
 <p>The order of precedence for geo subscriptions is : woe ids, place ids,
 radial i.e. the lat, lon parameters will be ignored if place_ids is
 present, which will be ignored if woe_ids is present.</p>
-<dl class="rdoc-list"><dt>radius_units </dt>
+<dl class="rdoc-list label-list"><dt>radius_units 
 <dd>
 <p>Defines the units for the radius parameter. Only valid if topic is geo.
 Options are mi and km. Default is km.</p>
@@ -487,7 +474,7 @@ Options are mi and km. Default is km.</p>
 <p>The order of precedence for geo subscriptions is : woe ids, place ids,
 radial i.e. the lat, lon parameters will be ignored if place_ids is
 present, which will be ignored if woe_ids is present.</p>
-<dl class="rdoc-list"><dt>accuracy </dt>
+<dl class="rdoc-list label-list"><dt>accuracy 
 <dd>
 <p>Defines the minimum accuracy required for photos to be included in a
 subscription. Only valid if topic is geo Legal values are 1-16, default is
@@ -495,7 +482,7 @@ subscription. Only valid if topic is geo Legal values are 1-16, default is
 </dd></dl>
 
 <p>World level is 1 Country is ~3 Region is ~6 City is ~11 Street is ~16</p>
-<dl class="rdoc-list"><dt>nsids </dt>
+<dl class="rdoc-list label-list"><dt>nsids 
 <dd>
 <p>A comma-separated list of nsids representing <a
 href="../Flickr.html">Flickr</a> <a href="Commons.html">Commons</a>
@@ -503,22 +490,22 @@ institutions (see flickr.commons.getInstitutions). Only valid if topic is
 commons. If not present this argument defaults to all <a
 href="../Flickr.html">Flickr</a> <a href="Commons.html">Commons</a>
 institutions.</p>
-</dd><dt>tags </dt>
+</dd><dt>tags 
 <dd>
 <p>A comma-separated list of strings to be used for tag subscriptions. <a
 href="Photos.html">Photos</a> with one or more of the tags listed will be
 included in the subscription. Only valid if the topic is tags.</p>
-</dd><dt>machine_tags </dt>
+</dd><dt>machine_tags 
 <dd>
 <p>A comma-separated list of strings to be used for machine tag subscriptions.
 <a href="Photos.html">Photos</a> with one or more of the machine tags
 listed will be included in the subscription. Currently the format must be
 namespace:tag_name=value Only valid if the topic is tags.</p>
-</dd><dt>update_type </dt>
-<dd></dd><dt>output_format </dt>
-<dd></dd><dt>mailto </dt>
+</dd><dt>update_type 
+<dd></dd><dt>output_format 
+<dd></dd><dt>mailto 
 <dd>
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>1: <em>Required parameter missing</em></p>
 
@@ -595,66 +582,63 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
 </dd></dl>
-            
+          
 
-            
-            <div class="method-source-code" id="subscribe-source">
-<pre>
-
+          
+          <div class="method-source-code" id="subscribe-source">
+            <pre>
 # Generated automatically from flickr api
   def subscribe(*args)
     @flickr.call 'flickr.push.subscribe', *args
   end
 </pre>
-            </div><!-- subscribe-source -->
-            
-          </div>
-
+          </div><!-- subscribe-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- subscribe-method -->
+
+    
+      <div id="method-i-unsubscribe" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unsubscribe</span><span
+            class="method-args">(:topic => 'topic',:callback => 'callback',:verify => 'verify',:verify_token => 'verify_token')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
           
-        </div><!-- subscribe-method -->
-
-      
-        <div id="unsubscribe-method" class="method-detail ">
-          <a name="method-i-unsubscribe"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">unsubscribe</span><span
-              class="method-args">(:topic => 'topic',:callback => 'callback',:verify => 'verify',:verify_token => 'verify_token')</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a
+          <p><a
 href="http://www.flickr.com/services/api/flickr.push.unsubscribe.html">flickr.push.unsubscribe</a>
 request.</p>
 
 <p>Why would you want to do this? (this method is experimental and may change)</p>
 
-<p><b>Arguments</b></p>
-<dl class="rdoc-list"><dt>topic <em>(required)</em> </dt>
+<p><strong>Arguments</strong></p>
+<dl class="rdoc-list label-list"><dt>topic <em>(required)</em> 
 <dd>
 <p>The type of subscription. See flickr.push.getTopics.</p>
-</dd><dt>callback <em>(required)</em> </dt>
+</dd><dt>callback <em>(required)</em> 
 <dd>
 <p>The url for the subscription endpoint (must be the same url as was used
 when creating the subscription).</p>
-</dd><dt>verify <em>(required)</em> </dt>
+</dd><dt>verify <em>(required)</em> 
 <dd>
 <p>The verification mode, either 'sync' or 'async'. See the Google
 PubSubHubbub spec for details.</p>
-</dd><dt>verify_token </dt>
+</dd><dt>verify_token 
 <dd>
 <p>The verification token to be echoed back to the subscriber during the
 verification callback, as per the Google PubSubHubbub spec. Limited to 200
 bytes.</p>
 </dd></dl>
 
-<p><b>Error codes</b></p>
+<p><strong>Error codes</strong></p>
 <ul><li>
 <p>1: <em>Required parameter missing</em></p>
 
@@ -726,40 +710,36 @@ the authenticated method call did not have the required permissions.</p>
 <p>One or more arguments contained a URL that has been used for abuse on <a
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
-            
+          
 
-            
-            <div class="method-source-code" id="unsubscribe-source">
-<pre>
-
+          
+          <div class="method-source-code" id="unsubscribe-source">
+            <pre>
 # Generated automatically from flickr api
   def unsubscribe(*args)
     @flickr.call 'flickr.push.unsubscribe', *args
   end
 </pre>
-            </div><!-- unsubscribe-source -->
-            
-          </div>
-
+          </div><!-- unsubscribe-source -->
           
+        </div>
 
-          
-        </div><!-- unsubscribe-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- unsubscribe-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- public-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 
