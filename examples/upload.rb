@@ -6,7 +6,7 @@ require 'flickraw'
 API_KEY=''
 SHARED_SECRET=''
 ACCESS_TOKEN=''
-ACCESS _SECRET=''
+ACCESS_SECRET=''
 PHOTO_PATH='photo.jpg'
 
 FlickRaw.api_key = API_KEY
