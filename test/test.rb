@@ -8,7 +8,7 @@ require 'helper'
 
 class Basic < Test::Unit::TestCase
   def test_request
-    flickr_objects = %w{activity auth blogs collections commons contacts
+    flickr_objects = %w{activity auth blogs cameras collections commons contacts
        favorites galleries groups interestingness machinetags panda
        people photos photosets places prefs push reflection stats tags
        test urls
@@ -33,6 +33,8 @@ class Basic < Test::Unit::TestCase
       flickr.blogs.getList
       flickr.blogs.getServices
       flickr.blogs.postPhoto
+      flickr.cameras.getBrandModels
+      flickr.cameras.getBrands
       flickr.collections.getInfo
       flickr.collections.getTree
       flickr.commons.getInstitutions
@@ -55,7 +57,18 @@ class Basic < Test::Unit::TestCase
       flickr.galleries.getListForPhoto
       flickr.galleries.getPhotos
       flickr.groups.browse
+      flickr.groups.discuss.replies.add
+      flickr.groups.discuss.replies.delete
+      flickr.groups.discuss.replies.edit
+      flickr.groups.discuss.replies.getInfo
+      flickr.groups.discuss.replies.getList
+      flickr.groups.discuss.topics.add
+      flickr.groups.discuss.topics.getInfo
+      flickr.groups.discuss.topics.getList
       flickr.groups.getInfo
+      flickr.groups.join
+      flickr.groups.joinRequest
+      flickr.groups.leave
       flickr.groups.members.getList
       flickr.groups.pools.add
       flickr.groups.pools.getContext
