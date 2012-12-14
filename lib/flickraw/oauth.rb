@@ -101,7 +101,7 @@ module FlickRaw
         params.each { |k, v|
           if v.respond_to? :read
             basename = File.basename(v.path).to_s if v.respond_to? :path
-            basename ||= File.basename(v.base_uri).to_s if v.respond_to? :base_uri
+            basename ||= File.basename(v.base_uri.to_s).to_s if v.respond_to? :base_uri
             basename ||= "unknown"
             request.body << "--#{boundary}\r\n" <<
               "Content-Disposition: form-data; name=\"#{OAuthClient.encode_value(k)}\"; filename=\"#{OAuthClient.encode_value(basename)}\"\r\n" <<
