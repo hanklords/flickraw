@@ -29,42 +29,42 @@ module FlickRaw
         params_norm = params.map {|k,v| escape(k) + "=" + escape(v)}.sort.join("&")
         method.to_s.upcase + "&" + escape(url) + "&" + escape(params_norm)
       end
-      
+
       def sign_plaintext(method, url, params, token_secret, consumer_secret)
         escape(consumer_secret) + "&" + escape(token_secret)
       end
-        
+
       def sign_rsa_sha1(method, url, params, token_secret, consumer_secret)
         text = signature_base_string(method, url, params)
         key = OpenSSL::PKey::RSA.new(consumer_secret)
         digest = OpenSSL::Digest::Digest.new("sha1")
         [key.sign(digest, text)].pack('m0').gsub(/\n$/,'')
       end
-            
+
       def sign_hmac_sha1(method, url, params, token_secret, consumer_secret)
         text = signature_base_string(method, url, params)
         key = escape(consumer_secret) + "&" + escape(token_secret)
         digest = OpenSSL::Digest::Digest.new("sha1")
         [OpenSSL::HMAC.digest(digest, key, text)].pack('m0').gsub(/\n$/,'')
       end
-    
+
       def gen_timestamp; Time.now.to_i end
       def gen_nonce; [OpenSSL::Random.random_bytes(32)].pack('m0').gsub(/\n$/,'') end
       def gen_default_params
         { :oauth_version => "1.0", :oauth_signature_method => "HMAC-SHA1",
           :oauth_nonce => gen_nonce, :oauth_timestamp => gen_timestamp }
       end
-    
+
       def authorization_header(url, params)
         params_norm = params.map {|k,v| %(#{escape(k)}="#{escape(v)}")}.sort.join(", ")
         %(OAuth realm="#{url.to_s}", #{params_norm})
       end
     end
-    
+
     attr_accessor :user_agent
     attr_reader :proxy
     def proxy=(url); @proxy = URI.parse(url || '') end
-    
+
     def initialize(consumer_key, consumer_secret)
       @consumer_key, @consumer_secret = consumer_key, consumer_secret
       self.proxy = nil
@@ -74,14 +74,14 @@ module FlickRaw
       r = post_form(url, nil, {:oauth_callback => "oob"}.merge(oauth_params))
       OAuthClient.parse_response(r.body)
     end
-    
+
     def authorize_url(url, oauth_params = {})
       params_norm = oauth_params.map {|k,v| OAuthClient.escape(k) + "=" + OAuthClient.escape(v)}.sort.join("&")
       url =  URI.parse(url)
       url.query = url.query ? url.query + "&" + params_norm : params_norm
       url.to_s
     end
-    
+
     def access_token(url, token_secret, oauth_params = {})
       r = post_form(url, token_secret, oauth_params)
       OAuthClient.parse_response(r.body)
@@ -91,7 +91,7 @@ module FlickRaw
       encoded_params = Hash[*params.map {|k,v| [OAuthClient.encode_value(k), OAuthClient.encode_value(v)]}.flatten]
       post(url, token_secret, oauth_params, params) {|request| request.form_data = encoded_params}
     end
-    
+
     def post_multipart(url, token_secret, oauth_params = {}, params = {})
       post(url, token_secret, oauth_params, params) {|request|
         boundary = "FlickRaw#{OAuthClient.gen_nonce}"
@@ -101,7 +101,7 @@ module FlickRaw
         params.each { |k, v|
           if v.respond_to? :read
             basename = File.basename(v.path).to_s if v.respond_to? :path
-            basename ||= File.basename(v.base_uri).to_s if v.respond_to? :base_uri
+            basename ||= File.basename(v.base_uri.to_s).to_s if v.respond_to? :base_uri
             basename ||= "unknown"
             request.body << "--#{boundary}\r\n" <<
               "Content-Disposition: form-data; name=\"#{OAuthClient.encode_value(k)}\"; filename=\"#{OAuthClient.encode_value(basename)}\"\r\n" <<
@@ -114,7 +114,7 @@ module FlickRaw
               "#{OAuthClient.encode_value(v)}\r\n"
           end
         }
-        
+
         request.body << "--#{boundary}--"
       }
     end
@@ -152,7 +152,7 @@ module FlickRaw
         yield request
         agent.request(request)
       }
-      
+
       raise FailedResponse.new(r.body) if r.is_a? Net::HTTPClientError
       r
     end
