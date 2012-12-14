@@ -1,4 +1,5 @@
 require 'json'
+require 'open-uri'
 require 'flickraw/oauth'
 require 'flickraw/request'
 require 'flickraw/response'
