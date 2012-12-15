@@ -133,7 +133,11 @@ module FlickRaw
 
     def upload_flickr(method, file, args={})
       args = build_args(args)
-      args['photo'] = open(file, 'rb')
+      if file.respond_to? :read
+        args['photo'] = file
+      else
+        args['photo'] = open(file, 'rb')
+      end
       
       http_response = @oauth_consumer.post_multipart(method, @access_secret, {:oauth_token => @access_token}, args)
       process_response(method, http_response.body)
