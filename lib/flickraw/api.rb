@@ -32,6 +32,9 @@ module FlickRaw
     # Authenticated access token secret
     attr_accessor :access_secret
     
+    # Difference between custom timestamp and Time.now.to_i
+    attr_accessor :time_diff
+
     def self.build(methods); methods.each { |m| build_request m } end
 
     def initialize # :nodoc:
@@ -39,7 +42,7 @@ module FlickRaw
       @oauth_consumer = OAuthClient.new(FlickRaw.api_key, FlickRaw.shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
       @oauth_consumer.user_agent = USER_AGENT
-      @access_token = @access_secret = nil
+      @access_token = @access_secret = @time_diff = nil
       
       Flickr.build(call('flickr.reflection.getMethods')) if Flickr.flickr_objects.empty?
       super self
@@ -139,7 +142,9 @@ module FlickRaw
         args['photo'] = open(file, 'rb')
       end
       
-      http_response = @oauth_consumer.post_multipart(method, @access_secret, {:oauth_token => @access_token}, args)
+      oauth_hash_ = {:oauth_token => @access_token}
+      oauth_hash[:oauth_timestamp] = Time.now.to_i + @time_diff unless @time_diff.nil?
+      http_response = @oauth_consumer.post_multipart(method, @access_secret, oauth_hash, args)
       process_response(method, http_response.body)
     end
   end
