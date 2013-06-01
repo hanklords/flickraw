@@ -142,7 +142,7 @@ module FlickRaw
         args['photo'] = open(file, 'rb')
       end
       
-      oauth_hash_ = {:oauth_token => @access_token}
+      oauth_hash = {:oauth_token => @access_token}
       oauth_hash[:oauth_timestamp] = Time.now.to_i + @time_diff unless @time_diff.nil?
       http_response = @oauth_consumer.post_multipart(method, @access_secret, oauth_hash, args)
       process_response(method, http_response.body)
