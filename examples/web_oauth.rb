@@ -30,7 +30,7 @@ end
 def callback
   flickr = FlickRaw::Flickr.new
 
-  token = # Retrieve from cache or session etc - see above
+  request_token = # Retrieve from cache or session etc - see above
   oauth_token = params[:oauth_token]
   oauth_verifier = params[:oauth_verifier]
 
