@@ -49,8 +49,9 @@ module FlickRaw
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={}, &block)
+      oauth_args = args.delete(:oauth) || {}
       rest_path = FlickRaw.secure ? REST_PATH_SECURE :  REST_PATH
-      http_response = @oauth_consumer.post_form(rest_path, @access_secret, {:oauth_token => @access_token}, build_args(args, req))
+      http_response = @oauth_consumer.post_form(rest_path, @access_secret, {:oauth_token => @access_token}.merge(oauth_args), build_args(args, req))
       process_response(req, http_response.body)
     end
 
@@ -132,6 +133,7 @@ module FlickRaw
     end
 
     def upload_flickr(method, file, args={})
+      oauth_args = args.delete(:oauth) || {}
       args = build_args(args)
       if file.respond_to? :read
         args['photo'] = file
@@ -140,7 +142,7 @@ module FlickRaw
         close_after = true
       end
       
-      http_response = @oauth_consumer.post_multipart(method, @access_secret, {:oauth_token => @access_token}, args)
+      http_response = @oauth_consumer.post_multipart(method, @access_secret, {:oauth_token => @access_token}.merge(oauth_args), args)
       args['photo'].close if close_after
       process_response(method, http_response.body)
     end
