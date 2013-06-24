@@ -137,9 +137,11 @@ module FlickRaw
         args['photo'] = file
       else
         args['photo'] = open(file, 'rb')
+        close_after = true
       end
       
       http_response = @oauth_consumer.post_multipart(method, @access_secret, {:oauth_token => @access_token}, args)
+      args['photo'].close if close_after
       process_response(method, http_response.body)
     end
   end
