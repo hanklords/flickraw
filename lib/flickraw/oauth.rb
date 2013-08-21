@@ -18,8 +18,8 @@ module FlickRaw
       end
 
       def escape(s)
-        encode_value(s).gsub(/[^a-zA-Z0-9\-\.\_\~]/) {
-          $&.unpack("C*").map{|i| sprintf("%%%02X", i) }.join
+        encode_value(s).gsub(/[^a-zA-Z0-9\-\.\_\~]/) { |special|
+          special.unpack("C*").map{|i| sprintf("%%%02X", i) }.join
         }
       end
 
