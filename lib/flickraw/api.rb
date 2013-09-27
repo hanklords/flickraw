@@ -52,7 +52,15 @@ module FlickRaw
       oauth_args = args.delete(:oauth) || {}
       rest_path = FlickRaw.secure ? REST_PATH_SECURE :  REST_PATH
       http_response = @oauth_consumer.post_form(rest_path, @access_secret, {:oauth_token => @access_token}.merge(oauth_args), build_args(args, req))
-      process_response(req, http_response.body)
+
+      content_encoding = http_response["content-encoding"]
+      if content_encoding == "gzip"
+        body = Zlib::GzipReader.new(StringIO.new(http_response.body)).read
+      else
+        body = http_response.body
+      end
+
+      process_response(req, body)
     end
 
     # Get an oauth request token.
