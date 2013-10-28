@@ -24,6 +24,8 @@ module FlickRaw
   URL_PHOTOSTREAM='http://www.flickr.com/photos/'.freeze
   URL_SHORT='http://flic.kr/p/'.freeze
 
+  class FlickrAppNotConfigured < Error; end
+
   # Root class of the flickr api hierarchy.
   class Flickr < Request
     # Authenticated access token
