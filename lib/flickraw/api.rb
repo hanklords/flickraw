@@ -24,6 +24,8 @@ module FlickRaw
   URL_PHOTOSTREAM='http://www.flickr.com/photos/'.freeze
   URL_SHORT='http://flic.kr/p/'.freeze
 
+  class FlickrAppNotConfigured < Error; end
+
   # Root class of the flickr api hierarchy.
   class Flickr < Request
     # Authenticated access token
@@ -35,7 +37,9 @@ module FlickRaw
     def self.build(methods); methods.each { |m| build_request m } end
 
     def initialize # :nodoc:
-      raise "No API key or secret defined !" if FlickRaw.api_key.nil? or FlickRaw.shared_secret.nil?
+      if FlickRaw.api_key.nil? or FlickRaw.shared_secret.nil?
+        raise FlickrAppNotConfigured.new("No API key or secret defined!")
+      end
       @oauth_consumer = OAuthClient.new(FlickRaw.api_key, FlickRaw.shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
       @oauth_consumer.user_agent = USER_AGENT

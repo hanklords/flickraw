@@ -46,7 +46,7 @@ class ResponseList < Response
   alias length size
 end
 
-class FailedResponse < StandardError
+class FailedResponse < Error
   attr_reader :code
   alias :msg :message
   def initialize(msg, code, req)

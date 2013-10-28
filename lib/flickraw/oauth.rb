@@ -3,8 +3,8 @@ require 'net/https'
 
 module FlickRaw
   class OAuthClient
-    class UnknownSignatureMethod < StandardError; end
-    class FailedResponse < StandardError
+    class UnknownSignatureMethod < Error; end
+    class FailedResponse < Error
       def initialize(str)
         @response = OAuthClient.parse_response(str)
         super(@response['oauth_problem'])
