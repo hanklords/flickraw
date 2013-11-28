@@ -275,18 +275,6 @@ class Basic < Test::Unit::TestCase
     assert list.any? {|g| g.nsid == "51035612836@N01"}
   end
   
-  # panda
-  def test_panda_getList
-    pandas = flickr.panda.getList
-    assert_equal ["ling ling", "hsing hsing", "wang wang"], pandas.to_a
-  end
-  
-  def test_panda_getPhotos
-    pandas = flickr.panda.getPhotos :panda_name => "wang wang"
-    assert_equal "wang wang", pandas.panda
-    assert_respond_to pandas[0], :title
-  end
-  
   # people
   def test_people_findByEmail
     user = flickr.people.findByEmail :find_email => "flickraw@yahoo.com"
