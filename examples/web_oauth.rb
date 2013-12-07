@@ -46,7 +46,6 @@ def callback
 
   # Attach the tokens to your flickr instance - you can now make authenticated calls with the flickr object
   flickr.access_token = oauth_token
-  flickr.access_secret =[oauth_token_secret
-
+  flickr.access_secret = oauth_token_secret
 end
 
