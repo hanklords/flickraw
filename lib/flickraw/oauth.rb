@@ -146,6 +146,7 @@ module FlickRaw
       http.use_ssl = (url.scheme == 'https')
       r = http.start {|agent|
         request = Net::HTTP::Post.new(url.path)
+        request['Accept-Encoding'] = "identity"
         request['User-Agent'] = @user_agent if @user_agent
         request['Authorization'] = OAuthClient.authorization_header(url, oauth_params)
 
