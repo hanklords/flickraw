@@ -37,14 +37,14 @@ module FlickRaw
       def sign_rsa_sha1(method, url, params, token_secret, consumer_secret)
         text = signature_base_string(method, url, params)
         key = OpenSSL::PKey::RSA.new(consumer_secret)
-        digest = OpenSSL::Digest::Digest.new("sha1")
+        digest = OpenSSL::Digest::SHA1.new
         [key.sign(digest, text)].pack('m0').gsub(/\n$/,'')
       end
             
       def sign_hmac_sha1(method, url, params, token_secret, consumer_secret)
         text = signature_base_string(method, url, params)
         key = escape(consumer_secret) + "&" + escape(token_secret)
-        digest = OpenSSL::Digest::Digest.new("sha1")
+        digest = OpenSSL::Digest::SHA1.new
         [OpenSSL::HMAC.digest(digest, key, text)].pack('m0').gsub(/\n$/,'')
       end
     
