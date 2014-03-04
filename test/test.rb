@@ -290,9 +290,9 @@ class Basic < Test::Unit::TestCase
     user = flickr.people.getInfo :user_id => "41650587@N02"
     people user
     assert_equal "Flickraw", user.realname
-    assert_equal "http://www.flickr.com/photos/41650587@N02/", user.photosurl
-    assert_equal "http://www.flickr.com/people/41650587@N02/", user.profileurl
-    assert_equal "http://m.flickr.com/photostream.gne?id=41630239", user.mobileurl
+    assert_equal "https://www.flickr.com/photos/41650587@N02/", user.photosurl
+    assert_equal "https://www.flickr.com/people/41650587@N02/", user.profileurl
+    assert_equal "https://m.flickr.com/photostream.gne?id=41630239", user.mobileurl
     assert_equal 0, user.ispro
   end
   
@@ -342,11 +342,11 @@ class Basic < Test::Unit::TestCase
   
   def test_photos_getSizes
     info = flickr.photos.getSizes :photo_id => "3839885270"
-    assert_equal "http://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find {|f| f.label == "Large"}.url
+    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find {|f| f.label == "Large"}.url
     if FlickRaw.secure
       source = "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
     else
-      source = "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
+      source = "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
     end
     
     assert_equal source, info.find {|f| f.label == "Large"}.source
@@ -365,7 +365,7 @@ class Basic < Test::Unit::TestCase
     assert_equal "41630239-3839885270-72157621986549875", comments[0].id
     assert_equal "41650587@N02", comments[0].author
     assert_equal "ruby_flickraw", comments[0].authorname
-    assert_equal "http://www.flickr.com/photos/41650587@N02/3839885270/#comment72157621986549875", comments[0].permalink
+    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/#comment72157621986549875", comments[0].permalink
     assert_equal "This is a cute cat !", comments[0].to_s
   end
   
@@ -387,29 +387,29 @@ class Basic < Test::Unit::TestCase
   def test_urls_getGroup
     info = flickr.urls.getGroup :group_id => "51035612836@N01"
     assert_equal "51035612836@N01", info.nsid
-    assert_equal "http://www.flickr.com/groups/api/", info.url
+    assert_equal "https://www.flickr.com/groups/api/", info.url
   end
   
   def test_urls_getUserPhotos
     info = flickr.urls.getUserPhotos :user_id => "41650587@N02"
     assert_equal "41650587@N02", info.nsid
-    assert_equal "http://www.flickr.com/photos/41650587@N02/", info.url
+    assert_equal "https://www.flickr.com/photos/41650587@N02/", info.url
   end
   
   def test_urls_getUserProfile
     info = flickr.urls.getUserProfile :user_id => "41650587@N02"
     assert_equal "41650587@N02", info.nsid
-    assert_equal "http://www.flickr.com/people/41650587@N02/", info.url
+    assert_equal "https://www.flickr.com/people/41650587@N02/", info.url
   end
   
   def test_urls_lookupGroup
-    info = flickr.urls.lookupGroup :url => "http://www.flickr.com/groups/api/"
+    info = flickr.urls.lookupGroup :url => "https://www.flickr.com/groups/api/"
     assert_equal "51035612836@N01", info.id
     assert_equal "Flickr API", info.groupname
   end
   
   def test_urls_lookupUser
-    info = flickr.urls.lookupUser :url => "http://www.flickr.com/photos/41650587@N02/"
+    info = flickr.urls.lookupUser :url => "https://www.flickr.com/photos/41650587@N02/"
     assert_equal "41650587@N02", info.id
     assert_equal "ruby_flickraw", info.username
   end
@@ -418,21 +418,21 @@ class Basic < Test::Unit::TestCase
     id = "3839885270"
     info = flickr.photos.getInfo(:photo_id => id)
 
-    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06.jpg", FlickRaw.url(info)
-    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_m.jpg", FlickRaw.url_m(info)
-    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_s.jpg", FlickRaw.url_s(info)
-    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_t.jpg", FlickRaw.url_t(info)
-    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg", FlickRaw.url_b(info)
-    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_z.jpg", FlickRaw.url_z(info)
-    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_q.jpg", FlickRaw.url_q(info)
-    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_n.jpg", FlickRaw.url_n(info)
-    assert_equal "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_c.jpg", FlickRaw.url_c(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06.jpg", FlickRaw.url(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_m.jpg", FlickRaw.url_m(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_s.jpg", FlickRaw.url_s(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_t.jpg", FlickRaw.url_t(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg", FlickRaw.url_b(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_z.jpg", FlickRaw.url_z(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_q.jpg", FlickRaw.url_q(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_n.jpg", FlickRaw.url_n(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_c.jpg", FlickRaw.url_c(info)
 
-    assert_equal "http://www.flickr.com/people/41650587@N02/", FlickRaw.url_profile(info)
-    assert_equal "http://www.flickr.com/photos/41650587@N02/", FlickRaw.url_photostream(info)
-    assert_equal "http://www.flickr.com/photos/41650587@N02/3839885270", FlickRaw.url_photopage(info)
-    assert_equal "http://www.flickr.com/photos/41650587@N02/sets/", FlickRaw.url_photosets(info)
-    assert_equal "http://flic.kr/p/6Rjq7s", FlickRaw.url_short(info)
+    assert_equal "https://www.flickr.com/people/41650587@N02/", FlickRaw.url_profile(info)
+    assert_equal "https://www.flickr.com/photos/41650587@N02/", FlickRaw.url_photostream(info)
+    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270", FlickRaw.url_photopage(info)
+    assert_equal "https://www.flickr.com/photos/41650587@N02/sets/", FlickRaw.url_photosets(info)
+    assert_equal "https://flic.kr/p/6Rjq7s", FlickRaw.url_short(info)
   end
 
   def test_url_escape

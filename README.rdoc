@@ -111,8 +111,10 @@ If you need to have several users authenticated at the same time in your applica
 
 == Secure endpoints
 
+https endpoints are used by default. If you want to use unencrypted endpoints :
+
   require 'flickraw'
-  FlickRaw.secure = true
+  FlickRaw.secure = false
 
 == Flickr URL Helpers
 
@@ -121,32 +123,32 @@ There are some helpers to build flickr urls :
 === url, url_m, url_s, url_t, url_b, url_z, url_q, url_n, url_c, url_o
 
   info = flickr.photos.getInfo(:photo_id => "3839885270")
-  FlickRaw.url_b(info) # => "http://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg"
+  FlickRaw.url_b(info) # => "https://farm3.static.flickr.com/2485/3839885270_6fb8b54e06_b.jpg"
 
 === url_profile
 
   info = flickr.photos.getInfo(:photo_id => "3839885270")
-  FlickRaw.url_profile(info) # => "http://www.flickr.com/people/41650587@N02/"
+  FlickRaw.url_profile(info) # => "https://www.flickr.com/people/41650587@N02/"
 
 === url_photopage
 
   info = flickr.photos.getInfo(:photo_id => "3839885270")
-  FlickRaw.url_photopage(info) # => "http://www.flickr.com/photos/41650587@N02/3839885270"
+  FlickRaw.url_photopage(info) # => "https://www.flickr.com/photos/41650587@N02/3839885270"
 
 === url_photoset, url_photosets
 
   info = flickr.photos.getInfo(:photo_id => "3839885270")
-  FlickRaw.url_photosets(info) # => "http://www.flickr.com/photos/41650587@N02/sets/"
+  FlickRaw.url_photosets(info) # => "https://www.flickr.com/photos/41650587@N02/sets/"
 
 === url_short, url_short_m, url_short_s, url_short_t
 
   info = flickr.photos.getInfo(:photo_id => "3839885270")
-  FlickRaw.url_short(info) # => "http://flic.kr/p/6Rjq7s"
+  FlickRaw.url_short(info) # => "https://flic.kr/p/6Rjq7s"
 
 === url_photostream
 
   info = flickr.photos.getInfo(:photo_id => "3839885270")
-  FlickRaw.url_photostream(info) # => "http://www.flickr.com/photos/41650587@N02/"
+  FlickRaw.url_photostream(info) # => "https://www.flickr.com/photos/41650587@N02/"
 
 
 See the _examples_ directory to find more examples.

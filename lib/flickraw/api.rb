@@ -1,7 +1,7 @@
 module FlickRaw
   END_POINT='http://api.flickr.com/services'.freeze
   END_POINT2='http://www.flickr.com/services'.freeze
-  END_POINT_SECURE='https://secure.flickr.com/services'.freeze
+  END_POINT_SECURE='https://api.flickr.com/services'.freeze
   
   FLICKR_OAUTH_REQUEST_TOKEN=(END_POINT2 + '/oauth/request_token').freeze
   FLICKR_OAUTH_AUTHORIZE=(END_POINT2 + '/oauth/authorize').freeze
@@ -19,10 +19,10 @@ module FlickRaw
   UPLOAD_PATH_SECURE=(END_POINT_SECURE + '/upload/').freeze
   REPLACE_PATH_SECURE=(END_POINT_SECURE + '/replace/').freeze
 
-  PHOTO_SOURCE_URL='http://farm%s.staticflickr.com/%s/%s_%s%s.%s'.freeze
-  URL_PROFILE='http://www.flickr.com/people/'.freeze
-  URL_PHOTOSTREAM='http://www.flickr.com/photos/'.freeze
-  URL_SHORT='http://flic.kr/p/'.freeze
+  PHOTO_SOURCE_URL='https://farm%s.staticflickr.com/%s/%s_%s%s.%s'.freeze
+  URL_PROFILE='https://www.flickr.com/people/'.freeze
+  URL_PHOTOSTREAM='https://www.flickr.com/photos/'.freeze
+  URL_SHORT='https://flic.kr/p/'.freeze
 
   class FlickrAppNotConfigured < Error; end
 
