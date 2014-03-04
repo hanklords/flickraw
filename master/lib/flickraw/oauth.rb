@@ -3,8 +3,8 @@ require 'net/https'
 
 module FlickRaw
   class OAuthClient
-    class UnknownSignatureMethod < StandardError; end
-    class FailedResponse < StandardError
+    class UnknownSignatureMethod < Error; end
+    class FailedResponse < Error
       def initialize(str)
         @response = OAuthClient.parse_response(str)
         super(@response['oauth_problem'])
@@ -18,8 +18,8 @@ module FlickRaw
       end
 
       def escape(s)
-        encode_value(s).gsub(/[^a-zA-Z0-9\-\.\_\~]/) {
-          $&.unpack("C*").map{|i| sprintf("%%%02X", i) }.join
+        encode_value(s).gsub(/[^a-zA-Z0-9\-\.\_\~]/) { |special|
+          special.unpack("C*").map{|i| sprintf("%%%02X", i) }.join
         }
       end
 
@@ -37,14 +37,14 @@ module FlickRaw
       def sign_rsa_sha1(method, url, params, token_secret, consumer_secret)
         text = signature_base_string(method, url, params)
         key = OpenSSL::PKey::RSA.new(consumer_secret)
-        digest = OpenSSL::Digest::Digest.new("sha1")
+        digest = OpenSSL::Digest::SHA1.new
         [key.sign(digest, text)].pack('m0').gsub(/\n$/,'')
       end
             
       def sign_hmac_sha1(method, url, params, token_secret, consumer_secret)
         text = signature_base_string(method, url, params)
         key = escape(consumer_secret) + "&" + escape(token_secret)
-        digest = OpenSSL::Digest::Digest.new("sha1")
+        digest = OpenSSL::Digest::SHA1.new
         [OpenSSL::HMAC.digest(digest, key, text)].pack('m0').gsub(/\n$/,'')
       end
     
@@ -100,8 +100,8 @@ module FlickRaw
         request.body = ''
         params.each { |k, v|
           if v.respond_to? :read
-            basename = File.basename(v.path).to_s if v.respond_to? :path
-            basename ||= File.basename(v.base_uri).to_s if v.respond_to? :base_uri
+            basename = File.basename(v.path.to_s) if v.respond_to? :path
+            basename ||= File.basename(v.base_uri.to_s) if v.respond_to? :base_uri
             basename ||= "unknown"
             request.body << "--#{boundary}\r\n" <<
               "Content-Disposition: form-data; name=\"#{OAuthClient.encode_value(k)}\"; filename=\"#{OAuthClient.encode_value(basename)}\"\r\n" <<

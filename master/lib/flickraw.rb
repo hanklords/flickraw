@@ -1,12 +1,15 @@
 require 'json'
+require 'flickraw/error'
 require 'flickraw/oauth'
 require 'flickraw/request'
 require 'flickraw/response'
 require 'flickraw/api'
 
 module FlickRaw
-  VERSION='0.9.6'
+  VERSION='0.9.7'
   USER_AGENT = "FlickRaw/#{VERSION}"
+  
+  self.secure = true
 end
 
 # Use this to access the flickr API easily. You can type directly the flickr requests as they are described on the flickr website.
