@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class FlickRaw::Flickr::Reflection - RDoc Documentation</title>
+<title>class FlickRaw::Flickr::Cameras - RDoc Documentation</title>
 
 <link href="../../fonts.css" rel="stylesheet">
 <link href="../../rdoc.css" rel="stylesheet">
@@ -73,9 +73,9 @@
 
   <ul class="link-list" role="directory">
     
-    <li ><a href="#method-i-getMethodInfo">#getMethodInfo</a>
+    <li ><a href="#method-i-getBrandModels">#getBrandModels</a>
     
-    <li ><a href="#method-i-getMethods">#getMethods</a>
+    <li ><a href="#method-i-getBrands">#getBrands</a>
     
   </ul>
 </div>
@@ -83,9 +83,9 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-FlickRaw::Flickr::Reflection">
-  <h1 id="class-FlickRaw::Flickr::Reflection" class="class">
-    class FlickRaw::Flickr::Reflection
+<main role="main" aria-labelledby="class-FlickRaw::Flickr::Cameras">
+  <h1 id="class-FlickRaw::Flickr::Cameras" class="class">
+    class FlickRaw::Flickr::Cameras
   </h1>
 
   <section class="description">
@@ -111,11 +111,11 @@
        </header>
 
     
-      <div id="method-i-getMethodInfo" class="method-detail ">
+      <div id="method-i-getBrandModels" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">getMethodInfo</span><span
-            class="method-args">(:method_name => 'method_name')</span>
+          <span class="method-name">getBrandModels</span><span
+            class="method-args">(:brand => 'brand')</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -125,22 +125,22 @@
         <div class="method-description">
           
           <p><a
-href="http://www.flickr.com/services/api/flickr.reflection.getMethodInfo.html">flickr.reflection.getMethodInfo</a>
+href="http://www.flickr.com/services/api/flickr.cameras.getBrandModels.html">flickr.cameras.getBrandModels</a>
 request.</p>
 
-<p>Returns information for a given flickr API method.</p>
+<p>Retrieve all the models for a given camera brand.</p>
 
 <p><strong>Arguments</strong></p>
-<dl class="rdoc-list label-list"><dt>method_name <em>(required)</em> 
+<dl class="rdoc-list label-list"><dt>brand <em>(required)</em> 
 <dd>
-<p>The name of the method to fetch information for.</p>
+<p>The ID of the requested brand (as returned from flickr.cameras.getBrands).</p>
 </dd></dl>
 
 <p><strong>Error codes</strong></p>
 <ul><li>
-<p>1: <em>Method not found</em></p>
+<p>1: <em>Brand not found</em></p>
 
-<p>The requested method was not found.</p>
+<p>Unable to find the given brand ID.</p>
 </li><li>
 <p>100: <em>Invalid API Key</em></p>
 
@@ -178,20 +178,17 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
 
-<pre>A fake methodxml-response-exampleexplanation of example response
-                       You API application key.
-                       Your favorite color.
-                       Full explanation...
-                       Full explanation...</pre>
+<pre>iPhone 900022.03.040.5Flashhttp://farm3.staticflickr.com/1234/cameras/123456_model_small_123456.jpg
+        http://farm3.staticflickr.com/1234/cameras/123456_model_large_123456.jpg</pre>
           
           
 
           
-          <div class="method-source-code" id="getMethodInfo-source">
+          <div class="method-source-code" id="getBrandModels-source">
             <pre>
 # Generated automatically from flickr api
-  def getMethodInfo(*args)
-    @flickr.call &#39;flickr.reflection.getMethodInfo&#39;, *args
+  def getBrandModels(*args)
+    @flickr.call &#39;flickr.cameras.getBrandModels&#39;, *args
   end
 </pre>
           </div>
@@ -204,10 +201,10 @@ href="../Flickr.html">Flickr</a>.</p>
       </div>
 
     
-      <div id="method-i-getMethods" class="method-detail ">
+      <div id="method-i-getBrands" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">getMethods</span><span
+          <span class="method-name">getBrands</span><span
             class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -218,10 +215,11 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-description">
           
           <p><a
-href="http://www.flickr.com/services/api/flickr.reflection.getMethods.html">flickr.reflection.getMethods</a>
+href="http://www.flickr.com/services/api/flickr.cameras.getBrands.html">flickr.cameras.getBrands</a>
 request.</p>
 
-<p>Returns a list of available flickr API methods.</p>
+<p>Returns all the brands of cameras that <a href="../Flickr.html">Flickr</a>
+knows about.</p>
 
 <p><strong>Arguments</strong></p>
 
@@ -263,16 +261,16 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
 
-<pre>flickr.blogs.getListflickr.blogs.postPhotoflickr.contacts.getListflickr.contacts.getPublicList</pre>
+<pre>CanonNikonApple</pre>
           
           
 
           
-          <div class="method-source-code" id="getMethods-source">
+          <div class="method-source-code" id="getBrands-source">
             <pre>
 # Generated automatically from flickr api
-  def getMethods(*args)
-    @flickr.call &#39;flickr.reflection.getMethods&#39;, *args
+  def getBrands(*args)
+    @flickr.call &#39;flickr.cameras.getBrands&#39;, *args
   end
 </pre>
           </div>

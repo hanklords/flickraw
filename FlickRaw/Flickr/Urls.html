@@ -2,201 +2,103 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
 <title>class FlickRaw::Flickr::Urls - RDoc Documentation</title>
 
-<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../../index.html">Home</a>
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
     <a href="../../table_of_contents.html#classes">Classes</a>
     <a href="../../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
-
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/flickraw.rb
-  </ul>
-</nav>
-
-    
   </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
   
   <p class="link">FlickRaw::Request
   
-</nav>
+</div>
 
+    
     
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
+  <ul class="link-list" role="directory">
     
-    <li><a href="#method-i-getGroup">#getGroup</a>
+    <li ><a href="#method-i-getGroup">#getGroup</a>
     
-    <li><a href="#method-i-getUserPhotos">#getUserPhotos</a>
+    <li ><a href="#method-i-getUserPhotos">#getUserPhotos</a>
     
-    <li><a href="#method-i-getUserProfile">#getUserProfile</a>
+    <li ><a href="#method-i-getUserProfile">#getUserProfile</a>
     
-    <li><a href="#method-i-lookupGallery">#lookupGallery</a>
+    <li ><a href="#method-i-lookupGallery">#lookupGallery</a>
     
-    <li><a href="#method-i-lookupGroup">#lookupGroup</a>
+    <li ><a href="#method-i-lookupGroup">#lookupGroup</a>
     
-    <li><a href="#method-i-lookupUser">#lookupUser</a>
+    <li ><a href="#method-i-lookupUser">#lookupUser</a>
     
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../../README_rdoc.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../../FlickRaw.html">FlickRaw</a>
-  
-    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Discuss.html">FlickRaw::Flickr::Groups::Discuss</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Replies.html">FlickRaw::Flickr::Groups::Discuss::Replies</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Topics.html">FlickRaw::Flickr::Groups::Discuss::Topics</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
-  
-    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
-  
-    <li><a href="../../Object.html">Object</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="class">class FlickRaw::Flickr::Urls</h1>
+<main role="main" aria-labelledby="class-FlickRaw::Flickr::Urls">
+  <h1 id="class-FlickRaw::Flickr::Urls" class="class">
+    class FlickRaw::Flickr::Urls
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
-  </div><!-- description -->
+  </section>
 
   
   
@@ -210,10 +112,11 @@
 
     
 
-    <!-- Methods -->
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-getGroup" class="method-detail ">
@@ -221,7 +124,9 @@
         <div class="method-heading">
           <span class="method-name">getGroup</span><span
             class="method-args">(:group_id => 'group_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -231,7 +136,7 @@
 href="http://www.flickr.com/services/api/flickr.urls.getGroup.html">flickr.urls.getGroup</a>
 request.</p>
 
-<p>Returns the url to a group's page.</p>
+<p>Returns the url to a group&#39;s page.</p>
 
 <p><strong>Arguments</strong></p>
 <dl class="rdoc-list label-list"><dt>group_id <em>(required)</em> 
@@ -253,11 +158,15 @@ request.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -277,23 +186,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
           
+          
 
           
           <div class="method-source-code" id="getGroup-source">
             <pre>
 # Generated automatically from flickr api
   def getGroup(*args)
-    @flickr.call 'flickr.urls.getGroup', *args
+    @flickr.call &#39;flickr.urls.getGroup&#39;, *args
   end
 </pre>
-          </div><!-- getGroup-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getGroup-method -->
+      </div>
 
     
       <div id="method-i-getUserPhotos" class="method-detail ">
@@ -301,7 +211,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">getUserPhotos</span><span
             class="method-args">(:user_id => 'user_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -311,7 +223,7 @@ href="../Flickr.html">Flickr</a>.</p>
 href="http://www.flickr.com/services/api/flickr.urls.getUserPhotos.html">flickr.urls.getUserPhotos</a>
 request.</p>
 
-<p>Returns the url to a user's photos.</p>
+<p>Returns the url to a user&#39;s photos.</p>
 
 <p><strong>Arguments</strong></p>
 <dl class="rdoc-list label-list"><dt>user_id 
@@ -338,11 +250,15 @@ assumed.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -362,23 +278,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
           
+          
 
           
           <div class="method-source-code" id="getUserPhotos-source">
             <pre>
 # Generated automatically from flickr api
   def getUserPhotos(*args)
-    @flickr.call 'flickr.urls.getUserPhotos', *args
+    @flickr.call &#39;flickr.urls.getUserPhotos&#39;, *args
   end
 </pre>
-          </div><!-- getUserPhotos-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getUserPhotos-method -->
+      </div>
 
     
       <div id="method-i-getUserProfile" class="method-detail ">
@@ -386,7 +303,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">getUserProfile</span><span
             class="method-args">(:user_id => 'user_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -396,7 +315,7 @@ href="../Flickr.html">Flickr</a>.</p>
 href="http://www.flickr.com/services/api/flickr.urls.getUserProfile.html">flickr.urls.getUserProfile</a>
 request.</p>
 
-<p>Returns the url to a user's profile.</p>
+<p>Returns the url to a user&#39;s profile.</p>
 
 <p><strong>Arguments</strong></p>
 <dl class="rdoc-list label-list"><dt>user_id 
@@ -423,11 +342,15 @@ assumed.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -447,23 +370,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
           
+          
 
           
           <div class="method-source-code" id="getUserProfile-source">
             <pre>
 # Generated automatically from flickr api
   def getUserProfile(*args)
-    @flickr.call 'flickr.urls.getUserProfile', *args
+    @flickr.call &#39;flickr.urls.getUserProfile&#39;, *args
   end
 </pre>
-          </div><!-- getUserProfile-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getUserProfile-method -->
+      </div>
 
     
       <div id="method-i-lookupGallery" class="method-detail ">
@@ -471,7 +395,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">lookupGallery</span><span
             class="method-args">(:url => 'url')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -486,7 +412,7 @@ request.</p>
 <p><strong>Arguments</strong></p>
 <dl class="rdoc-list label-list"><dt>url <em>(required)</em> 
 <dd>
-<p>The gallery's URL.</p>
+<p>The gallery&#39;s URL.</p>
 </dd></dl>
 
 <p><strong>Error codes</strong></p>
@@ -499,11 +425,15 @@ request.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -523,7 +453,8 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
 
-<pre>Cat Pictures I've Sent To Kevin Collins</pre>
+<pre>Cat Pictures I&#39;ve Sent To Kevin Collins</pre>
+          
           
 
           
@@ -531,17 +462,17 @@ href="../Flickr.html">Flickr</a>.</p>
             <pre>
 # Generated automatically from flickr api
   def lookupGallery(*args)
-    @flickr.call 'flickr.urls.lookupGallery', *args
+    @flickr.call &#39;flickr.urls.lookupGallery&#39;, *args
   end
 </pre>
-          </div><!-- lookupGallery-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- lookupGallery-method -->
+      </div>
 
     
       <div id="method-i-lookupGroup" class="method-detail ">
@@ -549,7 +480,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">lookupGroup</span><span
             class="method-args">(:url => 'url')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -559,12 +492,12 @@ href="../Flickr.html">Flickr</a>.</p>
 href="http://www.flickr.com/services/api/flickr.urls.lookupGroup.html">flickr.urls.lookupGroup</a>
 request.</p>
 
-<p>Returns a group NSID, given the url to a group's page or photo pool.</p>
+<p>Returns a group NSID, given the url to a group&#39;s page or photo pool.</p>
 
 <p><strong>Arguments</strong></p>
 <dl class="rdoc-list label-list"><dt>url <em>(required)</em> 
 <dd>
-<p>The url to the group's page or photo pool.</p>
+<p>The url to the group&#39;s page or photo pool.</p>
 </dd></dl>
 
 <p><strong>Error codes</strong></p>
@@ -581,11 +514,15 @@ request.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -607,23 +544,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>FlickrCentral</pre>
           
+          
 
           
           <div class="method-source-code" id="lookupGroup-source">
             <pre>
 # Generated automatically from flickr api
   def lookupGroup(*args)
-    @flickr.call 'flickr.urls.lookupGroup', *args
+    @flickr.call &#39;flickr.urls.lookupGroup&#39;, *args
   end
 </pre>
-          </div><!-- lookupGroup-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- lookupGroup-method -->
+      </div>
 
     
       <div id="method-i-lookupUser" class="method-detail ">
@@ -631,7 +569,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">lookupUser</span><span
             class="method-args">(:url => 'url')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -641,12 +581,12 @@ href="../Flickr.html">Flickr</a>.</p>
 href="http://www.flickr.com/services/api/flickr.urls.lookupUser.html">flickr.urls.lookupUser</a>
 request.</p>
 
-<p>Returns a user NSID, given the url to a user's photos or profile.</p>
+<p>Returns a user NSID, given the url to a user&#39;s photos or profile.</p>
 
 <p><strong>Arguments</strong></p>
 <dl class="rdoc-list label-list"><dt>url <em>(required)</em> 
 <dd>
-<p>The url to the user's profile or photos page.</p>
+<p>The url to the user&#39;s profile or photos page.</p>
 </dd></dl>
 
 <p><strong>Error codes</strong></p>
@@ -663,11 +603,15 @@ request.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -689,35 +633,35 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>Stewart</pre>
           
+          
 
           
           <div class="method-source-code" id="lookupUser-source">
             <pre>
 # Generated automatically from flickr api
   def lookupUser(*args)
-    @flickr.call 'flickr.urls.lookupUser', *args
+    @flickr.call &#39;flickr.urls.lookupUser&#39;, *args
   end
 </pre>
-          </div><!-- lookupUser-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- lookupUser-method -->
+      </div>
 
     
-    </section><!-- public-instance-method-details -->
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

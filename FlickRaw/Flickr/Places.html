@@ -2,219 +2,121 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
 <title>class FlickRaw::Flickr::Places - RDoc Documentation</title>
 
-<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../../index.html">Home</a>
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
     <a href="../../table_of_contents.html#classes">Classes</a>
     <a href="../../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
-
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/flickraw.rb
-  </ul>
-</nav>
-
-    
   </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
   
   <p class="link">FlickRaw::Request
   
-</nav>
+</div>
 
+    
     
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
+  <ul class="link-list" role="directory">
     
-    <li><a href="#method-i-find">#find</a>
+    <li ><a href="#method-i-find">#find</a>
     
-    <li><a href="#method-i-findByLatLon">#findByLatLon</a>
+    <li ><a href="#method-i-findByLatLon">#findByLatLon</a>
     
-    <li><a href="#method-i-getChildrenWithPhotosPublic">#getChildrenWithPhotosPublic</a>
+    <li ><a href="#method-i-getChildrenWithPhotosPublic">#getChildrenWithPhotosPublic</a>
     
-    <li><a href="#method-i-getInfo">#getInfo</a>
+    <li ><a href="#method-i-getInfo">#getInfo</a>
     
-    <li><a href="#method-i-getInfoByUrl">#getInfoByUrl</a>
+    <li ><a href="#method-i-getInfoByUrl">#getInfoByUrl</a>
     
-    <li><a href="#method-i-getPlaceTypes">#getPlaceTypes</a>
+    <li ><a href="#method-i-getPlaceTypes">#getPlaceTypes</a>
     
-    <li><a href="#method-i-getShapeHistory">#getShapeHistory</a>
+    <li ><a href="#method-i-getShapeHistory">#getShapeHistory</a>
     
-    <li><a href="#method-i-getTopPlacesList">#getTopPlacesList</a>
+    <li ><a href="#method-i-getTopPlacesList">#getTopPlacesList</a>
     
-    <li><a href="#method-i-placesForBoundingBox">#placesForBoundingBox</a>
+    <li ><a href="#method-i-placesForBoundingBox">#placesForBoundingBox</a>
     
-    <li><a href="#method-i-placesForContacts">#placesForContacts</a>
+    <li ><a href="#method-i-placesForContacts">#placesForContacts</a>
     
-    <li><a href="#method-i-placesForTags">#placesForTags</a>
+    <li ><a href="#method-i-placesForTags">#placesForTags</a>
     
-    <li><a href="#method-i-placesForUser">#placesForUser</a>
+    <li ><a href="#method-i-placesForUser">#placesForUser</a>
     
-    <li><a href="#method-i-resolvePlaceId">#resolvePlaceId</a>
+    <li ><a href="#method-i-resolvePlaceId">#resolvePlaceId</a>
     
-    <li><a href="#method-i-resolvePlaceURL">#resolvePlaceURL</a>
+    <li ><a href="#method-i-resolvePlaceURL">#resolvePlaceURL</a>
     
-    <li><a href="#method-i-tagsForPlace">#tagsForPlace</a>
+    <li ><a href="#method-i-tagsForPlace">#tagsForPlace</a>
     
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../../README_rdoc.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../../FlickRaw.html">FlickRaw</a>
-  
-    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Discuss.html">FlickRaw::Flickr::Groups::Discuss</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Replies.html">FlickRaw::Flickr::Groups::Discuss::Replies</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Topics.html">FlickRaw::Flickr::Groups::Discuss::Topics</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
-  
-    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
-  
-    <li><a href="../../Object.html">Object</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="class">class FlickRaw::Flickr::Places</h1>
+<main role="main" aria-labelledby="class-FlickRaw::Flickr::Places">
+  <h1 id="class-FlickRaw::Flickr::Places" class="class">
+    class FlickRaw::Flickr::Places
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
-  </div><!-- description -->
+  </section>
 
   
   
@@ -228,18 +130,21 @@
 
     
 
-    <!-- Methods -->
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-find" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">find</span><span
-            class="method-args">(:query => 'query')</span>
+            class="method-args">(:query => 'query',:bbox => 'bbox',:extras => 'extras',:safe => 'safe')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -259,6 +164,15 @@ or building, itself.</p>
 <dl class="rdoc-list label-list"><dt>query <em>(required)</em> 
 <dd>
 <p>The query string to use for place ID lookups</p>
+</dd><dt>bbox 
+<dd>
+<p>A bounding box for limiting the area to query.</p>
+</dd><dt>extras 
+<dd>
+<p>Secret sauce.</p>
+</dd><dt>safe 
+<dd>
+<p>Do we want sexy time words in our venue results?</p>
 </dd></dl>
 
 <p><strong>Error codes</strong></p>
@@ -275,11 +189,15 @@ or building, itself.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -301,23 +219,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>Alabama, Alabama, United StatesAlabama, New York, United StatesAlabama, North West, South Africa</pre>
           
+          
 
           
           <div class="method-source-code" id="find-source">
             <pre>
 # Generated automatically from flickr api
   def find(*args)
-    @flickr.call 'flickr.places.find', *args
+    @flickr.call &#39;flickr.places.find&#39;, *args
   end
 </pre>
-          </div><!-- find-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- find-method -->
+      </div>
 
     
       <div id="method-i-findByLatLon" class="method-detail ">
@@ -325,7 +244,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">findByLatLon</span><span
             class="method-args">(:lat => 'lat',:lon => 'lon',:accuracy => 'accuracy')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -338,7 +259,7 @@ request.</p>
 <p>Return a place ID for a latitude, longitude and accuracy triple. The
 flickr.places.findByLatLon method is not meant to be a (reverse) geocoder
 in the traditional sense. It is designed to allow users to find photos for
-"places" and will round up to the nearest place type to which corresponding
+“places” and will round up to the nearest place type to which corresponding
 place IDs apply. For example, if you pass it a street level coordinate it
 will return the city that contains the point rather than the street, or
 building, itself. It will also truncate latitudes and longitudes to three
@@ -386,11 +307,15 @@ default is 16.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -410,23 +335,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
           
+          
 
           
           <div class="method-source-code" id="findByLatLon-source">
             <pre>
 # Generated automatically from flickr api
   def findByLatLon(*args)
-    @flickr.call 'flickr.places.findByLatLon', *args
+    @flickr.call &#39;flickr.places.findByLatLon&#39;, *args
   end
 </pre>
-          </div><!-- findByLatLon-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- findByLatLon-method -->
+      </div>
 
     
       <div id="method-i-getChildrenWithPhotosPublic" class="method-detail ">
@@ -434,7 +360,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">getChildrenWithPhotosPublic</span><span
             class="method-args">(:place_id => 'place_id',:woe_id => 'woe_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -483,6 +411,10 @@ ID passed to the API call.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
 <p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
@@ -510,23 +442,24 @@ href="../Flickr.html">Flickr</a>.</p>
 <pre>Montreal Golden Square Mile, Montreal, QC, CA, Canada
 Downtown Montréal, Montreal, QC, CA, Canada</pre>
           
+          
 
           
           <div class="method-source-code" id="getChildrenWithPhotosPublic-source">
             <pre>
 # Generated automatically from flickr api
   def getChildrenWithPhotosPublic(*args)
-    @flickr.call 'flickr.places.getChildrenWithPhotosPublic', *args
+    @flickr.call &#39;flickr.places.getChildrenWithPhotosPublic&#39;, *args
   end
 </pre>
-          </div><!-- getChildrenWithPhotosPublic-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getChildrenWithPhotosPublic-method -->
+      </div>
 
     
       <div id="method-i-getInfo" class="method-detail ">
@@ -534,7 +467,9 @@ Downtown Montréal, Montreal, QC, CA, Canada</pre>
         <div class="method-heading">
           <span class="method-name">getInfo</span><span
             class="method-args">(:place_id => 'place_id',:woe_id => 'woe_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -582,6 +517,10 @@ ID passed to the API call.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
 <p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
@@ -611,23 +550,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
          http://farm4.static.flickr.com/3228/shapefiles/3534_20081111_0a8afe03c5.tar.gz</pre>
           
+          
 
           
           <div class="method-source-code" id="getInfo-source">
             <pre>
 # Generated automatically from flickr api
   def getInfo(*args)
-    @flickr.call 'flickr.places.getInfo', *args
+    @flickr.call &#39;flickr.places.getInfo&#39;, *args
   end
 </pre>
-          </div><!-- getInfo-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getInfo-method -->
+      </div>
 
     
       <div id="method-i-getInfoByUrl" class="method-detail ">
@@ -635,7 +575,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">getInfoByUrl</span><span
             class="method-args">(:url => 'url')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -672,6 +614,10 @@ request.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
 <p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
@@ -699,23 +645,24 @@ href="../Flickr.html">Flickr</a>.</p>
 <pre>MontrealMontréalQuebecCanada
             45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...</pre>
           
+          
 
           
           <div class="method-source-code" id="getInfoByUrl-source">
             <pre>
 # Generated automatically from flickr api
   def getInfoByUrl(*args)
-    @flickr.call 'flickr.places.getInfoByUrl', *args
+    @flickr.call &#39;flickr.places.getInfoByUrl&#39;, *args
   end
 </pre>
-          </div><!-- getInfoByUrl-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getInfoByUrl-method -->
+      </div>
 
     
       <div id="method-i-getPlaceTypes" class="method-detail ">
@@ -723,7 +670,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">getPlaceTypes</span><span
             class="method-args">()</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -748,11 +697,15 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -774,23 +727,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>neighbourhoodlocalitycountyregioncountrycontinent</pre>
           
+          
 
           
           <div class="method-source-code" id="getPlaceTypes-source">
             <pre>
 # Generated automatically from flickr api
   def getPlaceTypes(*args)
-    @flickr.call 'flickr.places.getPlaceTypes', *args
+    @flickr.call &#39;flickr.places.getPlaceTypes&#39;, *args
   end
 </pre>
-          </div><!-- getPlaceTypes-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getPlaceTypes-method -->
+      </div>
 
     
       <div id="method-i-getShapeHistory" class="method-detail ">
@@ -798,7 +752,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">getShapeHistory</span><span
             class="method-args">(:place_id => 'place_id',:woe_id => 'woe_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -847,11 +803,15 @@ ID passed to the API call.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -874,23 +834,24 @@ href="../Flickr.html">Flickr</a>.</p>
 <pre>   45.427627563477,-73.589645385742 45.428966522217,-73.587898254395, etc...
 http://farm4.static.flickr.com/3228/shapefiles/3534_20081111_0a8afe03c5.tar.gz</pre>
           
+          
 
           
           <div class="method-source-code" id="getShapeHistory-source">
             <pre>
 # Generated automatically from flickr api
   def getShapeHistory(*args)
-    @flickr.call 'flickr.places.getShapeHistory', *args
+    @flickr.call &#39;flickr.places.getShapeHistory&#39;, *args
   end
 </pre>
-          </div><!-- getShapeHistory-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getShapeHistory-method -->
+      </div>
 
     
       <div id="method-i-getTopPlacesList" class="method-detail ">
@@ -898,7 +859,9 @@ http://farm4.static.flickr.com/3228/shapefiles/3534_20081111_0a8afe03c5.tar.gz</
         <div class="method-heading">
           <span class="method-name">getTopPlacesList</span><span
             class="method-args">(:place_type_id => 'place_type_id',:date => 'date',:woe_id => 'woe_id',:place_id => 'place_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -960,11 +923,15 @@ included with your request.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -986,23 +953,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>United States</pre>
           
+          
 
           
           <div class="method-source-code" id="getTopPlacesList-source">
             <pre>
 # Generated automatically from flickr api
   def getTopPlacesList(*args)
-    @flickr.call 'flickr.places.getTopPlacesList', *args
+    @flickr.call &#39;flickr.places.getTopPlacesList&#39;, *args
   end
 </pre>
-          </div><!-- getTopPlacesList-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getTopPlacesList-method -->
+      </div>
 
     
       <div id="method-i-placesForBoundingBox" class="method-detail ">
@@ -1010,7 +978,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">placesForBoundingBox</span><span
             class="method-args">(:bbox => 'bbox',:place_type => 'place_type',:place_type_id => 'place_type_id',:recursive => 'recursive')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1042,11 +1012,12 @@ maximum_longitude, maximum_latitude.</p>
 in a bounding box. Valid placetypes are:</p>
 </dd></dl>
 
-<p>neighbourhood locality county region country continent The "place_type"
-argument has been deprecated in favor of the "place_type_id" argument. It
-won't go away but it will not be added to new methods. A complete list of
-place type IDs is available using the flickr.places.getPlaceTypes method.
-(While optional, you must pass either a valid place type or place type ID.)</p>
+<p>neighbourhood locality county region country continent The “place_type”
+argument has been deprecated in favor of the “place_type_id” argument. It
+won&#39;t go away but it will not be added to new methods. A complete list
+of place type IDs is available using the flickr.places.getPlaceTypes
+method. (While optional, you must pass either a valid place type or place
+type ID.)</p>
 <dl class="rdoc-list label-list"><dt>place_type_id 
 <dd>
 <p>The numeric ID for a specific place type to cluster photos by.</p>
@@ -1094,11 +1065,15 @@ request place type.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1122,23 +1097,24 @@ href="../Flickr.html">Flickr</a>.</p>
 Civic Center, San Francisco, CA, US, United States
 Chinatown, San Francisco, CA, US, United States</pre>
           
+          
 
           
           <div class="method-source-code" id="placesForBoundingBox-source">
             <pre>
 # Generated automatically from flickr api
   def placesForBoundingBox(*args)
-    @flickr.call 'flickr.places.placesForBoundingBox', *args
+    @flickr.call &#39;flickr.places.placesForBoundingBox&#39;, *args
   end
 </pre>
-          </div><!-- placesForBoundingBox-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- placesForBoundingBox-method -->
+      </div>
 
     
       <div id="method-i-placesForContacts" class="method-detail ">
@@ -1146,7 +1122,9 @@ Chinatown, San Francisco, CA, US, United States</pre>
         <div class="method-heading">
           <span class="method-name">placesForContacts</span><span
             class="method-args">(:place_type => 'place_type',:place_type_id => 'place_type_id',:woe_id => 'woe_id',:place_id => 'place_id',:threshold => 'threshold',:contacts => 'contacts',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1157,7 +1135,7 @@ href="http://www.flickr.com/services/api/flickr.places.placesForContacts.html">f
 request.</p>
 
 <p>Return a list of the top 100 unique places clustered by a given placetype
-for a user's contacts.</p>
+for a user&#39;s contacts.</p>
 
 <p><strong>Arguments</strong></p>
 <dl class="rdoc-list label-list"><dt>place_type 
@@ -1168,8 +1146,8 @@ for a user's contacts.</p>
 <p>Valid place types are :</p>
 
 <p>neighbourhood (and neighborhood) locality region country continent The
-"place_type" argument has been deprecated in favor of the "place_type_id"
-argument. It won't go away but it will not be added to new methods. A
+“place_type” argument has been deprecated in favor of the “place_type_id”
+argument. It won&#39;t go away but it will not be added to new methods. A
 complete list of place type IDs is available using the
 flickr.places.getPlaceTypes method. (While optional, you must pass either a
 valid place type or place type ID.)</p>
@@ -1206,12 +1184,12 @@ will be used.</p>
 
 <p>For example if your contacts only have 3 photos taken in the locality of
 Montreal (WOE ID 3534) but your threshold is set to 5 then those photos
-will be "rolled up" and included instead with a place record for the region
+will be “rolled up” and included instead with a place record for the region
 of Quebec (WOE ID 2344924).</p>
 <dl class="rdoc-list label-list"><dt>contacts 
 <dd>
-<p>Search your contacts. Either 'all' or 'ff' for just friends and family.
-(Default is all)</p>
+<p>Search your contacts. Either &#39;all&#39; or &#39;ff&#39; for just friends
+and family. (Default is all)</p>
 </dd><dt>min_upload_date 
 <dd>
 <p>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
@@ -1236,8 +1214,7 @@ the form of a mysql datetime.</p>
 
 <p><strong>Error codes</strong></p>
 <ul><li>
-<p>1: <em><a href="Places.html">Places</a> for contacts are not available at
-this time</em></p>
+<p>1: <em>Places for contacts are not available at this time</em></p>
 
 <p><a href="Places.html">Places</a> for contacts have been disabled or are
 otherwise not available.</p>
@@ -1261,7 +1238,7 @@ included with your request.</p>
 </li><li>
 <p>6: <em>Not a valid contacts type</em></p>
 
-<p><a href="Contacts.html">Contacts</a> must be either "all" or "ff" (friends
+<p><a href="Contacts.html">Contacts</a> must be either “all” or “ff” (friends
 and family).</p>
 </li><li>
 <p>96: <em>Invalid signature</em></p>
@@ -1289,11 +1266,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1315,23 +1296,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>San Francisco, California</pre>
           
+          
 
           
           <div class="method-source-code" id="placesForContacts-source">
             <pre>
 # Generated automatically from flickr api
   def placesForContacts(*args)
-    @flickr.call 'flickr.places.placesForContacts', *args
+    @flickr.call &#39;flickr.places.placesForContacts&#39;, *args
   end
 </pre>
-          </div><!-- placesForContacts-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- placesForContacts-method -->
+      </div>
 
     
       <div id="method-i-placesForTags" class="method-detail ">
@@ -1339,7 +1321,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">placesForTags</span><span
             class="method-args">(:place_type_id => 'place_type_id',:woe_id => 'woe_id',:place_id => 'place_id',:threshold => 'threshold',:tags => 'tags',:tag_mode => 'tag_mode',:machine_tags => 'machine_tags',:machine_tag_mode => 'machine_tag_mode',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1388,7 +1372,7 @@ will be used.</p>
 
 <p>For example if you only have 3 photos taken in the locality of Montreal
 (WOE ID 3534) but your threshold is set to 5 then those photos will be
-"rolled up" and included instead with a place record for the region of
+“rolled up” and included instead with a place record for the region of
 Quebec (WOE ID 2344924).</p>
 <dl class="rdoc-list label-list"><dt>tags 
 <dd>
@@ -1396,32 +1380,33 @@ Quebec (WOE ID 2344924).</p>
 or more of the tags listed will be returned.</p>
 </dd><dt>tag_mode 
 <dd>
-<p>Either 'any' for an OR combination of tags, or 'all' for an AND
-combination. Defaults to 'any' if not specified.</p>
+<p>Either &#39;any&#39; for an OR combination of tags, or &#39;all&#39; for an
+AND combination. Defaults to &#39;any&#39; if not specified.</p>
 </dd><dt>machine_tags 
 <dd>
 <p>Aside from passing in a fully formed machine tag, there is a special syntax
 for searching on specific properties :</p>
 </dd></dl>
 
-<p>Find photos using the 'dc' namespace :    "machine_tags" =&gt; "dc:"</p>
+<p>Find photos using the &#39;dc&#39; namespace :    “machine_tags” =&gt;
+“dc:”</p>
 
-<pre class="ruby"> <span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span> <span class="ruby-identifier">with</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">title</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-string">'dc'</span> <span class="ruby-identifier">namespace</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;dc:title=&quot;</span>
-<span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span> <span class="ruby-identifier">titled</span> <span class="ruby-string">&quot;mr. camera&quot;</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-string">'dc'</span> <span class="ruby-identifier">namespace</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;dc:title=\&quot;mr. camera\&quot;
-Find photos whose value is &quot;</span><span class="ruby-identifier">mr</span>. <span class="ruby-identifier">camera</span><span class="ruby-string">&quot; : &quot;</span><span class="ruby-identifier">machine_tags</span><span class="ruby-string">&quot; =&gt; &quot;</span>*:<span class="ruby-operator">*=</span>\<span class="ruby-string">&quot;mr. camera\&quot;&quot;</span>
+<pre class="ruby"> <span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span> <span class="ruby-identifier">with</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">title</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-string">&#39;dc&#39;</span> <span class="ruby-identifier">namespace</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;dc:title=&quot;</span>
+<span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span> <span class="ruby-identifier">titled</span> <span class="ruby-string">&quot;mr. camera&quot;</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-string">&#39;dc&#39;</span> <span class="ruby-identifier">namespace</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;dc:title=\&quot;mr. camera\&quot;
+Find photos whose value is &quot;</span><span class="ruby-identifier">mr</span>. <span class="ruby-identifier">camera</span><span class="ruby-string">&quot; : &quot;</span><span class="ruby-identifier">machine_tags</span><span class="ruby-string">&quot; =&gt; &quot;</span><span class="ruby-operator">*</span>:<span class="ruby-operator">*=</span>\<span class="ruby-string">&quot;mr. camera\&quot;&quot;</span>
 <span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">have</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">title</span>, <span class="ruby-keyword">in</span> <span class="ruby-identifier">any</span> <span class="ruby-identifier">namespace</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;*:title=&quot;</span>
 <span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">have</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">title</span>, <span class="ruby-keyword">in</span> <span class="ruby-identifier">any</span> <span class="ruby-identifier">namespace</span>, <span class="ruby-identifier">whose</span> <span class="ruby-identifier">value</span> <span class="ruby-identifier">is</span> <span class="ruby-string">&quot;mr. camera&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;*:title=\&quot;mr. camera\&quot;&quot;</span>
-<span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span>, <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-string">'dc'</span> <span class="ruby-identifier">namespace</span> <span class="ruby-identifier">whose</span> <span class="ruby-identifier">value</span> <span class="ruby-identifier">is</span> <span class="ruby-string">&quot;mr. camera&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;dc:*=\&quot;mr. camera\&quot;&quot;</span>
+<span class="ruby-constant">Find</span> <span class="ruby-identifier">photos</span>, <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-string">&#39;dc&#39;</span> <span class="ruby-identifier">namespace</span> <span class="ruby-identifier">whose</span> <span class="ruby-identifier">value</span> <span class="ruby-identifier">is</span> <span class="ruby-string">&quot;mr. camera&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;machine_tags&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;dc:*=\&quot;mr. camera\&quot;&quot;</span>
 </pre>
 
 <p>Multiple machine tags may be queried by passing a comma-separated list. The
 number of machine tags you can pass in a single query depends on the tag
-mode (AND or OR) that you are querying with. "AND" queries are limited to
-(16) machine tags. "OR" queries are limited to (8).</p>
+mode (AND or OR) that you are querying with. “AND” queries are limited to
+(16) machine tags. “OR” queries are limited to (8).</p>
 <dl class="rdoc-list label-list"><dt>machine_tag_mode 
 <dd>
-<p>Either 'any' for an OR combination of tags, or 'all' for an AND
-combination. Defaults to 'any' if not specified.</p>
+<p>Either &#39;any&#39; for an OR combination of tags, or &#39;all&#39; for an
+AND combination. Defaults to &#39;any&#39; if not specified.</p>
 </dd><dt>min_upload_date 
 <dd>
 <p>Minimum upload date. <a href="Photos.html">Photos</a> with an upload date
@@ -1454,11 +1439,15 @@ the form of a mysql datetime.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1480,23 +1469,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>San Francisco, California</pre>
           
+          
 
           
           <div class="method-source-code" id="placesForTags-source">
             <pre>
 # Generated automatically from flickr api
   def placesForTags(*args)
-    @flickr.call 'flickr.places.placesForTags', *args
+    @flickr.call &#39;flickr.places.placesForTags&#39;, *args
   end
 </pre>
-          </div><!-- placesForTags-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- placesForTags-method -->
+      </div>
 
     
       <div id="method-i-placesForUser" class="method-detail ">
@@ -1504,7 +1494,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">placesForUser</span><span
             class="method-args">(:place_type_id => 'place_type_id',:place_type => 'place_type',:woe_id => 'woe_id',:place_id => 'place_id',:threshold => 'threshold',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1526,8 +1518,8 @@ for a user.</p>
 <p>Valid place type IDs are :</p>
 
 <p>22: neighbourhood 7: locality 8: region 12: country 29: continent The
-"place_type" argument has been deprecated in favor of the "place_type_id"
-argument. It won't go away but it will not be added to new methods. A
+“place_type” argument has been deprecated in favor of the “place_type_id”
+argument. It won&#39;t go away but it will not be added to new methods. A
 complete list of place type IDs is available using the
 flickr.places.getPlaceTypes method. (While optional, you must pass either a
 valid place type or place type ID.)</p>
@@ -1562,7 +1554,7 @@ will be used.</p>
 
 <p>For example if you only have 3 photos taken in the locality of Montreal
 (WOE ID 3534) but your threshold is set to 5 then those photos will be
-"rolled up" and included instead with a place record for the region of
+“rolled up” and included instead with a place record for the region of
 Quebec (WOE ID 2344924).</p>
 <dl class="rdoc-list label-list"><dt>min_upload_date 
 <dd>
@@ -1588,8 +1580,7 @@ the form of a mysql datetime.</p>
 
 <p><strong>Error codes</strong></p>
 <ul><li>
-<p>1: <em><a href="Places.html">Places</a> for user are not available at this
-time</em></p>
+<p>1: <em>Places for user are not available at this time</em></p>
 
 <p><a href="Places.html">Places</a> for user have been disabled or are
 otherwise not available.</p>
@@ -1636,11 +1627,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1662,23 +1657,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>San Francisco, California</pre>
           
+          
 
           
           <div class="method-source-code" id="placesForUser-source">
             <pre>
 # Generated automatically from flickr api
   def placesForUser(*args)
-    @flickr.call 'flickr.places.placesForUser', *args
+    @flickr.call &#39;flickr.places.placesForUser&#39;, *args
   end
 </pre>
-          </div><!-- placesForUser-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- placesForUser-method -->
+      </div>
 
     
       <div id="method-i-resolvePlaceId" class="method-detail ">
@@ -1686,7 +1682,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">resolvePlaceId</span><span
             class="method-args">(:place_id => 'place_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1697,7 +1695,7 @@ href="http://www.flickr.com/services/api/flickr.places.resolvePlaceId.html">flic
 request.</p>
 
 <p>Find <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
-information by Place ID. This method has been deprecated. It won't be
+information by Place ID. This method has been deprecated. It won&#39;t be
 removed but you should use flickr.places.getInfo instead.</p>
 
 <p><strong>Arguments</strong></p>
@@ -1720,11 +1718,15 @@ removed but you should use flickr.places.getInfo instead.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1746,23 +1748,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>San FranciscoSan FranciscoCaliforniaUnited States</pre>
           
+          
 
           
           <div class="method-source-code" id="resolvePlaceId-source">
             <pre>
 # Generated automatically from flickr api
   def resolvePlaceId(*args)
-    @flickr.call 'flickr.places.resolvePlaceId', *args
+    @flickr.call &#39;flickr.places.resolvePlaceId&#39;, *args
   end
 </pre>
-          </div><!-- resolvePlaceId-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- resolvePlaceId-method -->
+      </div>
 
     
       <div id="method-i-resolvePlaceURL" class="method-detail ">
@@ -1770,7 +1773,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">resolvePlaceURL</span><span
             class="method-args">(:url => 'url')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1781,7 +1786,7 @@ href="http://www.flickr.com/services/api/flickr.places.resolvePlaceURL.html">fli
 request.</p>
 
 <p>Find <a href="../Flickr.html">Flickr</a> <a href="Places.html">Places</a>
-information by Place URL. This method has been deprecated. It won't be
+information by Place URL. This method has been deprecated. It won&#39;t be
 removed but you should use flickr.places.getInfoByUrl instead.</p>
 
 <p><strong>Arguments</strong></p>
@@ -1807,11 +1812,15 @@ removed but you should use flickr.places.getInfoByUrl instead.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1833,23 +1842,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>San FranciscoSan FranciscoCaliforniaUnited States</pre>
           
+          
 
           
           <div class="method-source-code" id="resolvePlaceURL-source">
             <pre>
 # Generated automatically from flickr api
   def resolvePlaceURL(*args)
-    @flickr.call 'flickr.places.resolvePlaceURL', *args
+    @flickr.call &#39;flickr.places.resolvePlaceURL&#39;, *args
   end
 </pre>
-          </div><!-- resolvePlaceURL-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- resolvePlaceURL-method -->
+      </div>
 
     
       <div id="method-i-tagsForPlace" class="method-detail ">
@@ -1857,7 +1867,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">tagsForPlace</span><span
             class="method-args">(:woe_id => 'woe_id',:place_id => 'place_id',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1928,6 +1940,10 @@ included with your request.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
 <p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
@@ -1954,35 +1970,35 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>montrealcanadamontréalquebecquébecsylvainmichaudnikonlucbusmusicurbanlucbussieresfestival</pre>
           
+          
 
           
           <div class="method-source-code" id="tagsForPlace-source">
             <pre>
 # Generated automatically from flickr api
   def tagsForPlace(*args)
-    @flickr.call 'flickr.places.tagsForPlace', *args
+    @flickr.call &#39;flickr.places.tagsForPlace&#39;, *args
   end
 </pre>
-          </div><!-- tagsForPlace-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- tagsForPlace-method -->
+      </div>
 
     
-    </section><!-- public-instance-method-details -->
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

@@ -2,219 +2,121 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
 <title>class FlickRaw::Flickr::Photosets - RDoc Documentation</title>
 
-<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+<link href="../../fonts.css" rel="stylesheet">
+<link href="../../rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../../";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+<script src="../../js/jquery.js"></script>
+<script src="../../js/navigation.js"></script>
+<script src="../../js/search_index.js"></script>
+<script src="../../js/search.js"></script>
+<script src="../../js/searcher.js"></script>
+<script src="../../js/darkfish.js"></script>
 
 
-<body id="top" class="class">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../../index.html">Home</a>
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
     <a href="../../table_of_contents.html#classes">Classes</a>
     <a href="../../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
-
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
-  <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
-             title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
-  </form>
-
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/flickraw.rb
-  </ul>
-</nav>
-
-    
   </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
 
   <div id="class-metadata">
     
-    <nav id="parent-class-section" class="section">
-  <h3 class="section-header">Parent</h3>
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
   
   <p class="link">FlickRaw::Request
   
-</nav>
+</div>
 
+    
     
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
+  <ul class="link-list" role="directory">
     
-    <li><a href="#method-i-addPhoto">#addPhoto</a>
+    <li ><a href="#method-i-addPhoto">#addPhoto</a>
     
-    <li><a href="#method-i-comments">#comments</a>
+    <li ><a href="#method-i-comments">#comments</a>
     
-    <li><a href="#method-i-create">#create</a>
+    <li ><a href="#method-i-create">#create</a>
     
-    <li><a href="#method-i-delete">#delete</a>
+    <li ><a href="#method-i-delete">#delete</a>
     
-    <li><a href="#method-i-editMeta">#editMeta</a>
+    <li ><a href="#method-i-editMeta">#editMeta</a>
     
-    <li><a href="#method-i-editPhotos">#editPhotos</a>
+    <li ><a href="#method-i-editPhotos">#editPhotos</a>
     
-    <li><a href="#method-i-getContext">#getContext</a>
+    <li ><a href="#method-i-getContext">#getContext</a>
     
-    <li><a href="#method-i-getInfo">#getInfo</a>
+    <li ><a href="#method-i-getInfo">#getInfo</a>
     
-    <li><a href="#method-i-getList">#getList</a>
+    <li ><a href="#method-i-getList">#getList</a>
     
-    <li><a href="#method-i-getPhotos">#getPhotos</a>
+    <li ><a href="#method-i-getPhotos">#getPhotos</a>
     
-    <li><a href="#method-i-orderSets">#orderSets</a>
+    <li ><a href="#method-i-orderSets">#orderSets</a>
     
-    <li><a href="#method-i-removePhoto">#removePhoto</a>
+    <li ><a href="#method-i-removePhoto">#removePhoto</a>
     
-    <li><a href="#method-i-removePhotos">#removePhotos</a>
+    <li ><a href="#method-i-removePhotos">#removePhotos</a>
     
-    <li><a href="#method-i-reorderPhotos">#reorderPhotos</a>
+    <li ><a href="#method-i-reorderPhotos">#reorderPhotos</a>
     
-    <li><a href="#method-i-setPrimaryPhoto">#setPrimaryPhoto</a>
+    <li ><a href="#method-i-setPrimaryPhoto">#setPrimaryPhoto</a>
     
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../../README_rdoc.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../../FlickRaw.html">FlickRaw</a>
-  
-    <li><a href="../../FlickRaw/Flickr.html">FlickRaw::Flickr</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Activity.html">FlickRaw::Flickr::Activity</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Auth.html">FlickRaw::Flickr::Auth</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Auth/Oauth.html">FlickRaw::Flickr::Auth::Oauth</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Blogs.html">FlickRaw::Flickr::Blogs</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Collections.html">FlickRaw::Flickr::Collections</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Commons.html">FlickRaw::Flickr::Commons</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Contacts.html">FlickRaw::Flickr::Contacts</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Favorites.html">FlickRaw::Flickr::Favorites</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Galleries.html">FlickRaw::Flickr::Galleries</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups.html">FlickRaw::Flickr::Groups</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Discuss.html">FlickRaw::Flickr::Groups::Discuss</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Replies.html">FlickRaw::Flickr::Groups::Discuss::Replies</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Discuss/Topics.html">FlickRaw::Flickr::Groups::Discuss::Topics</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Members.html">FlickRaw::Flickr::Groups::Members</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Groups/Pools.html">FlickRaw::Flickr::Groups::Pools</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Interestingness.html">FlickRaw::Flickr::Interestingness</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Machinetags.html">FlickRaw::Flickr::Machinetags</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Panda.html">FlickRaw::Flickr::Panda</a>
-  
-    <li><a href="../../FlickRaw/Flickr/People.html">FlickRaw::Flickr::People</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos.html">FlickRaw::Flickr::Photos</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Comments.html">FlickRaw::Flickr::Photos::Comments</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Geo.html">FlickRaw::Flickr::Photos::Geo</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Licenses.html">FlickRaw::Flickr::Photos::Licenses</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Notes.html">FlickRaw::Flickr::Photos::Notes</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/People.html">FlickRaw::Flickr::Photos::People</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Suggestions.html">FlickRaw::Flickr::Photos::Suggestions</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Transform.html">FlickRaw::Flickr::Photos::Transform</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photos/Upload.html">FlickRaw::Flickr::Photos::Upload</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photosets.html">FlickRaw::Flickr::Photosets</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Photosets/Comments.html">FlickRaw::Flickr::Photosets::Comments</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Places.html">FlickRaw::Flickr::Places</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Prefs.html">FlickRaw::Flickr::Prefs</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Push.html">FlickRaw::Flickr::Push</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Reflection.html">FlickRaw::Flickr::Reflection</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Stats.html">FlickRaw::Flickr::Stats</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Tags.html">FlickRaw::Flickr::Tags</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Test.html">FlickRaw::Flickr::Test</a>
-  
-    <li><a href="../../FlickRaw/Flickr/Urls.html">FlickRaw::Flickr::Urls</a>
-  
-    <li><a href="../../Object.html">Object</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="class">class FlickRaw::Flickr::Photosets</h1>
+<main role="main" aria-labelledby="class-FlickRaw::Flickr::Photosets">
+  <h1 id="class-FlickRaw::Flickr::Photosets" class="class">
+    class FlickRaw::Flickr::Photosets
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
-  </div><!-- description -->
+  </section>
 
   
   
@@ -228,10 +130,11 @@
 
     
 
-    <!-- Methods -->
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-addPhoto" class="method-detail ">
@@ -239,7 +142,9 @@
         <div class="method-heading">
           <span class="method-name">addPhoto</span><span
             class="method-args">(:photoset_id => 'photoset_id',:photo_id => 'photo_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -305,11 +210,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -327,23 +236,24 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
           
+          
 
           
           <div class="method-source-code" id="addPhoto-source">
             <pre>
 # Generated automatically from flickr api
   def addPhoto(*args)
-    @flickr.call 'flickr.photosets.addPhoto', *args
+    @flickr.call &#39;flickr.photosets.addPhoto&#39;, *args
   end
 </pre>
-          </div><!-- addPhoto-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- addPhoto-method -->
+      </div>
 
     
       <div id="method-i-comments" class="method-detail ">
@@ -351,7 +261,7 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">comments</span><span
             class="method-args">()</span>
-          <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -359,6 +269,7 @@ href="../Flickr.html">Flickr</a>.</p>
           
           <p>Returns a <a href="Photosets/Comments.html">Comments</a> object.</p>
           
+          
 
           
         </div>
@@ -366,15 +277,17 @@ href="../Flickr.html">Flickr</a>.</p>
         
 
         
-      </div><!-- comments-method -->
+      </div>
 
     
       <div id="method-i-create" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">create</span><span
-            class="method-args">(:title => 'title',:description => 'description',:primary_photo_id => 'primary_photo_id')</span>
+            class="method-args">(:title => 'title',:description => 'description',:primary_photo_id => 'primary_photo_id',:full_result => 'full_result')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -397,6 +310,10 @@ request.</p>
 <dd>
 <p>The id of the photo to represent this set. The photo must belong to the
 calling user.</p>
+</dd><dt>full_result 
+<dd>
+<p>If this is set, we get the same result as a getList API would give, along
+with extras: url_sq,url_t,url_s,url_m</p>
 </dd></dl>
 
 <p><strong>Error codes</strong></p>
@@ -410,7 +327,7 @@ calling user.</p>
 <p>The primary photo id passed was not a valid photo id or does not belong to
 the calling user.</p>
 </li><li>
-<p>3: <em>Can't create any more sets</em></p>
+<p>3: <em>Can&#39;t create any more sets</em></p>
 
 <p>The user has reached their maximum number of photosets limit.</p>
 </li><li>
@@ -439,11 +356,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -463,23 +384,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
           
+          
 
           
           <div class="method-source-code" id="create-source">
             <pre>
 # Generated automatically from flickr api
   def create(*args)
-    @flickr.call 'flickr.photosets.create', *args
+    @flickr.call &#39;flickr.photosets.create&#39;, *args
   end
 </pre>
-          </div><!-- create-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- create-method -->
+      </div>
 
     
       <div id="method-i-delete" class="method-detail ">
@@ -487,7 +409,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">delete</span><span
             class="method-args">(:photoset_id => 'photoset_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -537,11 +461,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -559,23 +487,24 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
           
+          
 
           
           <div class="method-source-code" id="delete-source">
             <pre>
 # Generated automatically from flickr api
   def delete(*args)
-    @flickr.call 'flickr.photosets.delete', *args
+    @flickr.call &#39;flickr.photosets.delete&#39;, *args
   end
 </pre>
-          </div><!-- delete-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- delete-method -->
+      </div>
 
     
       <div id="method-i-editMeta" class="method-detail ">
@@ -583,7 +512,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">editMeta</span><span
             class="method-args">(:photoset_id => 'photoset_id',:title => 'title',:description => 'description')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -643,11 +574,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -665,23 +600,24 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
           
+          
 
           
           <div class="method-source-code" id="editMeta-source">
             <pre>
 # Generated automatically from flickr api
   def editMeta(*args)
-    @flickr.call 'flickr.photosets.editMeta', *args
+    @flickr.call &#39;flickr.photosets.editMeta&#39;, *args
   end
 </pre>
-          </div><!-- editMeta-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- editMeta-method -->
+      </div>
 
     
       <div id="method-i-editPhotos" class="method-detail ">
@@ -689,7 +625,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">editPhotos</span><span
             class="method-args">(:photoset_id => 'photoset_id',:primary_photo_id => 'primary_photo_id',:photo_ids => 'photo_ids')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -709,8 +647,8 @@ re-order photos.</p>
 user.</p>
 </dd><dt>primary_photo_id <em>(required)</em> 
 <dd>
-<p>The id of the photo to use as the 'primary' photo for the set. This id must
-also be passed along in photo_ids list argument.</p>
+<p>The id of the photo to use as the &#39;primary&#39; photo for the set. This
+id must also be passed along in photo_ids list argument.</p>
 </dd><dt>photo_ids <em>(required)</em> 
 <dd>
 <p>A comma-delimited list of photo ids to include in the set. They will appear
@@ -770,11 +708,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -792,23 +734,24 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
           
+          
 
           
           <div class="method-source-code" id="editPhotos-source">
             <pre>
 # Generated automatically from flickr api
   def editPhotos(*args)
-    @flickr.call 'flickr.photosets.editPhotos', *args
+    @flickr.call &#39;flickr.photosets.editPhotos&#39;, *args
   end
 </pre>
-          </div><!-- editPhotos-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- editPhotos-method -->
+      </div>
 
     
       <div id="method-i-getContext" class="method-detail ">
@@ -816,7 +759,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">getContext</span><span
             class="method-args">(:photo_id => 'photo_id',:photoset_id => 'photoset_id',:num_prev => 'num_prev',:num_next => 'num_next',:extras => 'extras')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -834,10 +779,10 @@ request.</p>
 <p>The id of the photo to fetch the context for.</p>
 </dd><dt>photoset_id <em>(required)</em> 
 <dd>
-<p>The id of the photoset for which to fetch the photo's context.</p>
+<p>The id of the photoset for which to fetch the photo&#39;s context.</p>
 </dd><dt>num_prev 
-<dd></dd><dt>num_next 
-<dd></dd><dt>extras 
+<dt>num_next 
+<dt>extras 
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: description, license, date_upload,
@@ -865,11 +810,15 @@ the calling user does not have permission to view.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -889,23 +838,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
           
+          
 
           
           <div class="method-source-code" id="getContext-source">
             <pre>
 # Generated automatically from flickr api
   def getContext(*args)
-    @flickr.call 'flickr.photosets.getContext', *args
+    @flickr.call &#39;flickr.photosets.getContext&#39;, *args
   end
 </pre>
-          </div><!-- getContext-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getContext-method -->
+      </div>
 
     
       <div id="method-i-getInfo" class="method-detail ">
@@ -913,7 +863,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">getInfo</span><span
             class="method-args">(:photoset_id => 'photoset_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -945,11 +897,15 @@ request.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -971,31 +927,34 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <pre>Mah KittehsSixty and Niner. Born on the 3rd of May, 2010, or thereabouts. Came to my place on Thursday, July 29, 2010.</pre>
           
+          
 
           
           <div class="method-source-code" id="getInfo-source">
             <pre>
 # Generated automatically from flickr api
   def getInfo(*args)
-    @flickr.call 'flickr.photosets.getInfo', *args
+    @flickr.call &#39;flickr.photosets.getInfo&#39;, *args
   end
 </pre>
-          </div><!-- getInfo-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getInfo-method -->
+      </div>
 
     
       <div id="method-i-getList" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">getList</span><span
-            class="method-args">(:user_id => 'user_id',:page => 'page',:per_page => 'per_page')</span>
+            class="method-args">(:user_id => 'user_id',:page => 'page',:per_page => 'per_page',:primary_photo_extras => 'primary_photo_extras')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1020,6 +979,13 @@ are returned, but this behaviour may change in future.</p>
 <dd>
 <p>The number of sets to get per page. If paging is enabled, the maximum
 number of sets per page is 500.</p>
+</dd><dt>primary_photo_extras 
+<dd>
+<p>A comma-delimited list of extra information to fetch for the primary photo.
+Currently supported fields are: license, date_upload, date_taken,
+owner_name, icon_server, original_format, last_update, geo, tags,
+machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s,
+url_m, url_o</p>
 </dd></dl>
 
 <p><strong>Error codes</strong></p>
@@ -1037,11 +1003,15 @@ logged in.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1061,7 +1031,8 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
 
-<pre>Avis BlancheMy Grandma's Recipe File.Mah KittehsSixty and Niner. Born on the 3rd of May, 2010, or thereabouts. Came to my place on Thursday, July 29, 2010.</pre>
+<pre>Avis BlancheMy Grandma&#39;s Recipe File.Mah KittehsSixty and Niner. Born on the 3rd of May, 2010, or thereabouts. Came to my place on Thursday, July 29, 2010.</pre>
+          
           
 
           
@@ -1069,17 +1040,17 @@ href="../Flickr.html">Flickr</a>.</p>
             <pre>
 # Generated automatically from flickr api
   def getList(*args)
-    @flickr.call 'flickr.photosets.getList', *args
+    @flickr.call &#39;flickr.photosets.getList&#39;, *args
   end
 </pre>
-          </div><!-- getList-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getList-method -->
+      </div>
 
     
       <div id="method-i-getPhotos" class="method-detail ">
@@ -1087,7 +1058,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">getPhotos</span><span
             class="method-args">(:photoset_id => 'photoset_id',:extras => 'extras',:privacy_filter => 'privacy_filter',:per_page => 'per_page',:page => 'page',:media => 'media')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1147,11 +1120,15 @@ videos</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1171,23 +1148,24 @@ href="../Flickr.html">Flickr</a>.</p>
 
 <p><strong>Returns</strong></p>
           
+          
 
           
           <div class="method-source-code" id="getPhotos-source">
             <pre>
 # Generated automatically from flickr api
   def getPhotos(*args)
-    @flickr.call 'flickr.photosets.getPhotos', *args
+    @flickr.call &#39;flickr.photosets.getPhotos&#39;, *args
   end
 </pre>
-          </div><!-- getPhotos-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- getPhotos-method -->
+      </div>
 
     
       <div id="method-i-orderSets" class="method-detail ">
@@ -1195,7 +1173,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">orderSets</span><span
             class="method-args">(:photoset_ids => 'photoset_ids')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1247,11 +1227,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1269,23 +1253,24 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
           
+          
 
           
           <div class="method-source-code" id="orderSets-source">
             <pre>
 # Generated automatically from flickr api
   def orderSets(*args)
-    @flickr.call 'flickr.photosets.orderSets', *args
+    @flickr.call &#39;flickr.photosets.orderSets&#39;, *args
   end
 </pre>
-          </div><!-- orderSets-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- orderSets-method -->
+      </div>
 
     
       <div id="method-i-removePhoto" class="method-detail ">
@@ -1293,7 +1278,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">removePhoto</span><span
             class="method-args">(:photoset_id => 'photoset_id',:photo_id => 'photo_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1355,11 +1342,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1377,23 +1368,24 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
           
+          
 
           
           <div class="method-source-code" id="removePhoto-source">
             <pre>
 # Generated automatically from flickr api
   def removePhoto(*args)
-    @flickr.call 'flickr.photosets.removePhoto', *args
+    @flickr.call &#39;flickr.photosets.removePhoto&#39;, *args
   end
 </pre>
-          </div><!-- removePhoto-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- removePhoto-method -->
+      </div>
 
     
       <div id="method-i-removePhotos" class="method-detail ">
@@ -1401,7 +1393,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">removePhotos</span><span
             class="method-args">(:photoset_id => 'photoset_id',:photo_ids => 'photo_ids')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1459,11 +1453,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1481,23 +1479,24 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
           
+          
 
           
           <div class="method-source-code" id="removePhotos-source">
             <pre>
 # Generated automatically from flickr api
   def removePhotos(*args)
-    @flickr.call 'flickr.photosets.removePhotos', *args
+    @flickr.call &#39;flickr.photosets.removePhotos&#39;, *args
   end
 </pre>
-          </div><!-- removePhotos-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- removePhotos-method -->
+      </div>
 
     
       <div id="method-i-reorderPhotos" class="method-detail ">
@@ -1505,7 +1504,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">reorderPhotos</span><span
             class="method-args">(:photoset_id => 'photoset_id',:photo_ids => 'photo_ids')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1564,11 +1565,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1586,23 +1591,24 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
           
+          
 
           
           <div class="method-source-code" id="reorderPhotos-source">
             <pre>
 # Generated automatically from flickr api
   def reorderPhotos(*args)
-    @flickr.call 'flickr.photosets.reorderPhotos', *args
+    @flickr.call &#39;flickr.photosets.reorderPhotos&#39;, *args
   end
 </pre>
-          </div><!-- reorderPhotos-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- reorderPhotos-method -->
+      </div>
 
     
       <div id="method-i-setPrimaryPhoto" class="method-detail ">
@@ -1610,7 +1616,9 @@ href="../Flickr.html">Flickr</a>.</p>
         <div class="method-heading">
           <span class="method-name">setPrimaryPhoto</span><span
             class="method-args">(:photoset_id => 'photoset_id',:photo_id => 'photo_id')</span>
+          
           <span class="method-click-advice">click to toggle source</span>
+          
         </div>
         
 
@@ -1668,11 +1676,15 @@ the authenticated method call did not have the required permissions.</p>
 
 <p>The requested service is temporarily unavailable.</p>
 </li><li>
-<p>111: <em>Format "xxx" not found</em></p>
+<p>106: <em>Write operation failed</em></p>
+
+<p>The requested operation failed due to a temporary issue.</p>
+</li><li>
+<p>111: <em>Format “xxx” not found</em></p>
 
 <p>The requested response format was not found.</p>
 </li><li>
-<p>112: <em>Method "xxx" not found</em></p>
+<p>112: <em>Method “xxx” not found</em></p>
 
 <p>The requested method was not found.</p>
 </li><li>
@@ -1690,35 +1702,35 @@ the authenticated method call did not have the required permissions.</p>
 href="../Flickr.html">Flickr</a>.</p>
 </li></ul>
           
+          
 
           
           <div class="method-source-code" id="setPrimaryPhoto-source">
             <pre>
 # Generated automatically from flickr api
   def setPrimaryPhoto(*args)
-    @flickr.call 'flickr.photosets.setPrimaryPhoto', *args
+    @flickr.call &#39;flickr.photosets.setPrimaryPhoto&#39;, *args
   end
 </pre>
-          </div><!-- setPrimaryPhoto-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- setPrimaryPhoto-method -->
+      </div>
 
     
-    </section><!-- public-instance-method-details -->
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
