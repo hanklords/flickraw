@@ -121,7 +121,7 @@
         
         <div class="method-heading">
           <span class="method-name">add</span><span
-            class="method-args">(:photo_id => 'photo_id',:user_id => 'user_id',:person_x => 'person_x',:person_y => 'person_y',:person_w => 'person_w',:person_h => 'person_h')</span>
+            class="method-args">(:photo_id => 'photo_id',:user_id => 'user_id',:person_x => 'person_x',:person_y => 'person_y',:person_w => 'person_w',:person_h => 'person_h',:persons => 'persons')</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -157,7 +157,28 @@ photo pages.</p>
 </dd><dt>person_h 
 <dd>
 <p>The height (in pixels) of the box around the person.</p>
+</dd><dt>persons 
+<dd>
+<p>A JSON array of &#39;person&#39; instances. Each person contains the
+following properties:</p>
 </dd></dl>
+
+<p>face_id: An id obtained by a previous call to flickr.photos.getInfo x: X
+coordinate of the top left of the bounding box, normalized by the width of
+the photo (between 0 and 1) y: X coordinate of the top left of the bounding
+box, normalized by the height of the photo (between 0 and 1) w: Width of
+the bounding box, normalized by the width of the photo (between 0 and 1) h:
+Height of the bounding box, normalized by the height of the photo (between
+0 and 1) user_id: <a href="../../Flickr.html">Flickr</a> user_id of the
+person being tagged person_id: A person_id, in case the person being tagged
+does not have a <a href="../../Flickr.html">Flickr</a> identity but was
+previously tagged in other photos fullname: The full name of the person
+being tagged, in case the person being tagged does not have a <a
+href="../../Flickr.html">Flickr</a> identity and was not previously tagged
+in other photos</p>
+
+<p>One of face_id or x,y,w,h are required. One of user_id, fullname, person_id
+are required.</p>
 
 <p><strong>Error codes</strong></p>
 <ul><li>

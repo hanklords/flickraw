@@ -113,7 +113,7 @@
         
         <div class="method-heading">
           <span class="method-name">getList</span><span
-            class="method-args">(:date => 'date',:use_panda => 'use_panda',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
+            class="method-args">(:date => 'date',:use_panda => 'use_panda',:offset_days => 'offset_days',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -137,7 +137,17 @@ user-specified date.</p>
 <dd>
 <p>Always ask the pandas for interesting photos. This is a temporary argument
 to allow developers to update their code.</p>
-</dd><dt>extras 
+</dd><dt>offset_days 
+<dd>
+<p>Specifies the number of days in the past since the last day that the
+interestingness content is available for.</p>
+</dd></dl>
+
+<p>For example, to get the latest interestingness content  set offset_days = 0
+(which is also the default). To get the interestingness content for 1 day
+prior to the latest day that the content is available for, set offset_days
+= 1</p>
+<dl class="rdoc-list label-list"><dt>extras 
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned
 record. Currently supported fields are: description, license, date_upload,

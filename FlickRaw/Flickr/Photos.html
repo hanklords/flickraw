@@ -756,7 +756,7 @@ href="../Flickr.html">Flickr</a>.</p>
         
         <div class="method-heading">
           <span class="method-name">getContext</span><span
-            class="method-args">(:photo_id => 'photo_id',:num_prev => 'num_prev',:num_next => 'num_next',:extras => 'extras',:order_by => 'order_by')</span>
+            class="method-args">(:photo_id => 'photo_id',:num_prev => 'num_prev',:num_next => 'num_next',:extras => 'extras',:order_by => 'order_by',:view_as => 'view_as')</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -787,6 +787,10 @@ url_m, url_z, url_l, url_o</p>
 </dd><dt>order_by 
 <dd>
 <p>Accepts datetaken or dateposted and returns results in the proper order.</p>
+</dd><dt>view_as 
+<dd>
+<p>Can take values public to indicate that the profile has to be viewed as
+public and returns context only in public setting</p>
 </dd></dl>
 
 <p><strong>Error codes</strong></p>
@@ -2445,7 +2449,7 @@ href="../Flickr.html">Flickr</a>.</p>
         
         <div class="method-heading">
           <span class="method-name">search</span><span
-            class="method-args">(:user_id => 'user_id',:tags => 'tags',:tag_mode => 'tag_mode',:text => 'text',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date',:license => 'license',:sort => 'sort',:privacy_filter => 'privacy_filter',:bbox => 'bbox',:accuracy => 'accuracy',:safe_search => 'safe_search',:content_type => 'content_type',:machine_tags => 'machine_tags',:machine_tag_mode => 'machine_tag_mode',:group_id => 'group_id',:faves => 'faves',:camera => 'camera',:jump_to => 'jump_to',:contacts => 'contacts',:woe_id => 'woe_id',:place_id => 'place_id',:media => 'media',:has_geo => 'has_geo',:geo_context => 'geo_context',:lat => 'lat',:lon => 'lon',:radius => 'radius',:radius_units => 'radius_units',:is_commons => 'is_commons',:in_gallery => 'in_gallery',:person_id => 'person_id',:is_getty => 'is_getty',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
+            class="method-args">(:user_id => 'user_id',:tags => 'tags',:tag_mode => 'tag_mode',:text => 'text',:min_upload_date => 'min_upload_date',:max_upload_date => 'max_upload_date',:min_taken_date => 'min_taken_date',:max_taken_date => 'max_taken_date',:license => 'license',:sort => 'sort',:privacy_filter => 'privacy_filter',:bbox => 'bbox',:accuracy => 'accuracy',:safe_search => 'safe_search',:content_type => 'content_type',:machine_tags => 'machine_tags',:machine_tag_mode => 'machine_tag_mode',:group_id => 'group_id',:faves => 'faves',:camera => 'camera',:jump_to => 'jump_to',:contacts => 'contacts',:woe_id => 'woe_id',:place_id => 'place_id',:media => 'media',:has_geo => 'has_geo',:geo_context => 'geo_context',:lat => 'lat',:lon => 'lon',:radius => 'radius',:radius_units => 'radius_units',:is_commons => 'is_commons',:in_gallery => 'in_gallery',:person_id => 'person_id',:is_getty => 'is_getty',:username => 'username',:exif_min_exposure => 'exif_min_exposure',:exif_max_exposure => 'exif_max_exposure',:exif_min_aperture => 'exif_min_aperture',:exif_max_aperture => 'exif_max_aperture',:exif_min_focallen => 'exif_min_focallen',:exif_max_focallen => 'exif_max_focallen',:exclude_user_id => 'exclude_user_id',:extras => 'extras',:per_page => 'per_page',:page => 'page')</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -2744,6 +2748,18 @@ tagged.  A call signed as the person_id in question will return
 <dd>
 <p>Limit the scope of the search to only photos that are for sale on Getty.
 Default is false.</p>
+</dd><dt>username 
+<dd>
+<p>username/character name of the person whose photos you want to search.</p>
+</dd><dt>exif_min_exposure 
+<dt>exif_max_exposure 
+<dt>exif_min_aperture 
+<dt>exif_max_aperture 
+<dt>exif_min_focallen 
+<dt>exif_max_focallen 
+<dt>exclude_user_id 
+<dd>
+<p>NSId of the user to be excluded.</p>
 </dd><dt>extras 
 <dd>
 <p>A comma-delimited list of extra information to fetch for each returned

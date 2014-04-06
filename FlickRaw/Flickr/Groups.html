@@ -797,7 +797,7 @@ href="../Flickr.html">Flickr</a>.</p>
         
         <div class="method-heading">
           <span class="method-name">search</span><span
-            class="method-args">(:text => 'text',:per_page => 'per_page',:page => 'page')</span>
+            class="method-args">(:text => 'text',:per_page => 'per_page',:page => 'page',:user_id => 'user_id',:safe_search => 'safe_search')</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -825,7 +825,18 @@ defaults to 100. The maximum allowed value is 500.</p>
 <dd>
 <p>The page of results to return. If this argument is ommited, it defaults to
 1.</p>
+</dd><dt>user_id 
+<dd>
+<p>NSID of the user, if you want to restrict your search by the groups this
+user is a member of. NOTE : This is experimental, and only search within
+the currently signed in user&#39;s groups is supported.</p>
+</dd><dt>safe_search 
+<dd>
+<p>safe_search =1 means only safe groups</p>
 </dd></dl>
+
+<p>safe_search =2 means all groups safe_search =3 means only 18+ groups
+Default is 1.</p>
 
 <p><strong>Error codes</strong></p>
 <ul><li>
