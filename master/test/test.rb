@@ -346,7 +346,7 @@ class Basic < Test::Unit::TestCase
     if FlickRaw.secure
       source = "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
     else
-      source = "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
+      source = "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
     end
     
     assert_equal source, info.find {|f| f.label == "Large"}.source
