@@ -42,6 +42,7 @@ module FlickRaw
       end
       @oauth_consumer = OAuthClient.new(FlickRaw.api_key, FlickRaw.shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
+      @oauth_consumer.check_certificate = FlickRaw.check_certificate
       @oauth_consumer.user_agent = USER_AGENT
       @access_token = @access_secret = nil
       
@@ -164,6 +165,9 @@ module FlickRaw
     
     # Use ssl connection
     attr_accessor :secure
+
+    # Check the server certificate (ssl connection only)
+    attr_accessor :check_certificate
     
     BASE58_ALPHABET="123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ".freeze
     def base58(id)

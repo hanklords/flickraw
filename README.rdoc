@@ -116,6 +116,13 @@ https endpoints are used by default. If you want to use unencrypted endpoints :
   require 'flickraw'
   FlickRaw.secure = false
 
+=== Server Certificate Verification
+
+Server certificate verification is enabled by default. If you don't want to check the server certificate :
+
+  require 'flickraw'
+  FlickRaw.check_certificate = false
+
 == Flickr URL Helpers
 
 There are some helpers to build flickr urls :
