@@ -64,6 +64,7 @@ module FlickRaw
     attr_accessor :user_agent
     attr_reader :proxy
     attr_accessor :check_certificate
+    attr_accessor :ca_file
     def proxy=(url); @proxy = URI.parse(url || '') end
     
     def initialize(consumer_key, consumer_secret)
@@ -146,6 +147,7 @@ module FlickRaw
       http = Net::HTTP.new(url.host, url.port, @proxy.host, @proxy.port, @proxy.user, @proxy.password)
       http.use_ssl = (url.scheme == 'https')
       http.verify_mode = (@check_certificate ? OpenSSL::SSL::VERIFY_PEER : OpenSSL::SSL::VERIFY_NONE)
+      http.ca_file = @ca_file
       r = http.start {|agent|
         request = Net::HTTP::Post.new(url.path)
         request['User-Agent'] = @user_agent if @user_agent

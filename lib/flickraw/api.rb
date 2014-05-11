@@ -43,6 +43,7 @@ module FlickRaw
       @oauth_consumer = OAuthClient.new(FlickRaw.api_key, FlickRaw.shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
       @oauth_consumer.check_certificate = FlickRaw.check_certificate
+      @oauth_consumer.ca_file = FlickRaw.ca_file
       @oauth_consumer.user_agent = USER_AGENT
       @access_token = @access_secret = nil
       
@@ -169,6 +170,9 @@ module FlickRaw
     # Check the server certificate (ssl connection only)
     attr_accessor :check_certificate
     
+    # Set path of a CA certificate file in PEM format (ssl connection only)
+    attr_accessor :ca_file
+
     BASE58_ALPHABET="123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ".freeze
     def base58(id)
       id = id.to_i

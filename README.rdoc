@@ -123,6 +123,13 @@ Server certificate verification is enabled by default. If you don't want to chec
   require 'flickraw'
   FlickRaw.check_certificate = false
 
+=== CA Certificate File Path
+
+OpenSSL::X509::DEFAULT_CERT_FILE is used as a CA certificate file. If you want to change the path :
+
+  require 'flickraw'
+  FlickRaw.ca_file = '/path/to/cacert.pem'
+
 == Flickr URL Helpers
 
 There are some helpers to build flickr urls :
