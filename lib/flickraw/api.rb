@@ -44,6 +44,7 @@ module FlickRaw
       @oauth_consumer.proxy = FlickRaw.proxy
       @oauth_consumer.check_certificate = FlickRaw.check_certificate
       @oauth_consumer.ca_file = FlickRaw.ca_file
+      @oauth_consumer.ca_path = FlickRaw.ca_path
       @oauth_consumer.user_agent = USER_AGENT
       @access_token = @access_secret = nil
       
@@ -172,6 +173,9 @@ module FlickRaw
     
     # Set path of a CA certificate file in PEM format (ssl connection only)
     attr_accessor :ca_file
+
+    # Set path to a directory of CA certificate files in PEM format (ssl connection only)
+    attr_accessor :ca_path
 
     BASE58_ALPHABET="123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ".freeze
     def base58(id)

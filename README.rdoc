@@ -130,6 +130,10 @@ OpenSSL::X509::DEFAULT_CERT_FILE is used as a CA certificate file. If you want t
   require 'flickraw'
   FlickRaw.ca_file = '/path/to/cacert.pem'
 
+You can also specify a path to a directory with a number of certifications:
+
+  FlickRaw.ca_path = '/path/to/certificates'
+
 == Flickr URL Helpers
 
 There are some helpers to build flickr urls :
