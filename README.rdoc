@@ -101,7 +101,7 @@ If you need to have several users authenticated at the same time in your applica
 
   PHOTO_PATH='photo.jpg'
 
-  # You need to be authentified to do that, see the previous examples.
+  # You need to be authenticated to do that, see the previous examples.
   flickr.upload_photo PHOTO_PATH, :title => "Title", :description => "This is the description"
 
 == Proxy
