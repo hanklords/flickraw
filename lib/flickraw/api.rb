@@ -36,11 +36,15 @@ module FlickRaw
     
     def self.build(methods); methods.each { |m| build_request m } end
 
-    def initialize # :nodoc:
-      if FlickRaw.api_key.nil?
+    def initialize(api_key: FlickRaw.api_key,
+                   shared_secret: FlickRaw.shared_secret)
+      if api_key.nil?
         raise FlickrAppNotConfigured.new("No API key defined!")
       end
-      @oauth_consumer = OAuthClient.new(FlickRaw.api_key, FlickRaw.shared_secret)
+      if shared_secret.nil?
+        raise FlickrAppNotConfigured.new("No shared secret defined!")
+      end
+      @oauth_consumer = OAuthClient.new(api_key, shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
       @oauth_consumer.check_certificate = FlickRaw.check_certificate
       @oauth_consumer.ca_file = FlickRaw.ca_file
