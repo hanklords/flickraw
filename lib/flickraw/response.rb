@@ -15,17 +15,28 @@ class Response
   attr_reader :flickr_type
   def initialize(h, type) # :nodoc:
     @flickr_type, @h = type, {}
-    methods = "class << self;"
     h.each {|k,v|
       @h[k] = case v
         when Hash  then Response.build(v, k)
         when Array then v.collect {|e| Response.build(e, k)}
         else v
       end
-      methods << "def #{k}; @h['#{k}'] end;"
     }
-    eval methods << "end"
   end
+
+  def method_missing(name, *)
+    name_s = String(name)
+    if @h.key? name_s
+      @h[name_s]
+    else
+      super
+    end
+  end
+
+  def respond_to?(name, *)
+    @h.key?(String(name)) || super
+  end
+
   def [](k); @h[k] end
   def to_s; @h["_content"] || super end
   def inspect; @h.inspect end
