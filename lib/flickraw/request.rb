@@ -32,7 +32,7 @@ class Request
         def #{req}(*args, &block)
           @flickr.call("#{request_name}.#{req}", *args, &block)
         end
-      }
+      } if Util.safe_for_eval?(req)
       flickr_methods << req
     end
   end

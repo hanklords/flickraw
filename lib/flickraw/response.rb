@@ -22,7 +22,7 @@ class Response
         when Array then v.collect {|e| Response.build(e, k)}
         else v
       end
-      methods << "def #{k}; @h['#{k}'] end;"
+      methods << "def #{k}; @h['#{k}'] end;" if Util.safe_for_eval?(k)
     }
     eval methods << "end"
   end
