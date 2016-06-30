@@ -7,7 +7,7 @@ require 'flickraw/response'
 require 'flickraw/api'
 
 module FlickRaw
-  VERSION='0.9.8'
+  VERSION='0.9.9'
   USER_AGENT = "FlickRaw/#{VERSION}"
   
   self.secure = true
