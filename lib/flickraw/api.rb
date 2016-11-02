@@ -202,6 +202,8 @@ module FlickRaw
     def url_q(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_q", "jpg"] end
     def url_n(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_n", "jpg"] end
     def url_c(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_c", "jpg"] end
+    def url_h(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_h", "jpg"] end
+    def url_k(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_k", "jpg"] end
     def url_o(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.originalsecret, "_o", r.originalformat] end
     def url_profile(r); URL_PROFILE + (r.owner.respond_to?(:nsid) ? r.owner.nsid : r.owner) + "/" end
     def url_photopage(r); url_photostream(r) + r.id end
