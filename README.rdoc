@@ -32,11 +32,14 @@ This will recreate the documentation by fetching the methods descriptions from f
 
 == Simple
 
+#Place near the top of your controller i.e. underneath FlickrController < ApplicationController
  require 'flickraw'
 
+#Create an initializer file i.e. Flickr.rb and place it in config -> initializers folder
  FlickRaw.api_key="... Your API key ..."
  FlickRaw.shared_secret="... Your shared secret ..."
 
+#Examples of how the methods work
  list   = flickr.photos.getRecent
 
  id     = list[0].id
