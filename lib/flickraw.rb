@@ -10,7 +10,7 @@ module FlickRaw
   VERSION='0.9.9'
   USER_AGENT = "FlickRaw/#{VERSION}"
   
-  self.secure = true
+  self.secure = true # TODO: remove this as in future everythign will be secure(leaving for backward compatibility)
   self.check_certificate = true
 end
 
