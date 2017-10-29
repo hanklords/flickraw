@@ -2,11 +2,11 @@ module FlickRaw
   END_POINT='http://api.flickr.com/services'.freeze
   END_POINT2='http://www.flickr.com/services'.freeze
   END_POINT_SECURE='https://api.flickr.com/services'.freeze
-  
+
   FLICKR_OAUTH_REQUEST_TOKEN=(END_POINT2 + '/oauth/request_token').freeze
   FLICKR_OAUTH_AUTHORIZE=(END_POINT2 + '/oauth/authorize').freeze
   FLICKR_OAUTH_ACCESS_TOKEN=(END_POINT2 + '/oauth/access_token').freeze
-  
+
   FLICKR_OAUTH_REQUEST_TOKEN_SECURE=(END_POINT_SECURE + '/oauth/request_token').freeze
   FLICKR_OAUTH_AUTHORIZE_SECURE=(END_POINT_SECURE + '/oauth/authorize').freeze
   FLICKR_OAUTH_ACCESS_TOKEN_SECURE=(END_POINT_SECURE + '/oauth/access_token').freeze
@@ -14,7 +14,7 @@ module FlickRaw
   REST_PATH=(END_POINT + '/rest/').freeze
   UPLOAD_PATH=(END_POINT + '/upload/').freeze
   REPLACE_PATH=(END_POINT + '/replace/').freeze
-  
+
   REST_PATH_SECURE=(END_POINT_SECURE + '/rest/').freeze
   UPLOAD_PATH_SECURE=(END_POINT_SECURE + '/upload/').freeze
   REPLACE_PATH_SECURE=(END_POINT_SECURE + '/replace/').freeze
@@ -30,10 +30,10 @@ module FlickRaw
   class Flickr < Request
     # Authenticated access token
     attr_accessor :access_token
-    
+
     # Authenticated access token secret
     attr_accessor :access_secret
-    
+
     def self.build(methods); methods.each { |m| build_request m } end
 
     def initialize(api_key: FlickRaw.api_key,
@@ -51,17 +51,17 @@ module FlickRaw
       @oauth_consumer.ca_path = FlickRaw.ca_path
       @oauth_consumer.user_agent = USER_AGENT
       @access_token = @access_secret = nil
-      
+
       Flickr.build(call('flickr.reflection.getMethods')) if Flickr.flickr_objects.empty?
       super self
     end
-    
+
     # This is the central method. It does the actual request to the flickr server.
     #
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={}, &block)
       oauth_args = args.delete(:oauth) || {}
-      rest_path = FlickRaw.secure ? REST_PATH_SECURE :  REST_PATH
+      rest_path = FlickRaw.secure ? REST_PATH_SECURE : REST_PATH
       http_response = @oauth_consumer.post_form(rest_path, @access_secret, {:oauth_token => @access_token}.merge(oauth_args), build_args(args, req))
       process_response(req, http_response.body)
     end
@@ -73,7 +73,7 @@ module FlickRaw
       flickr_oauth_request_token = FlickRaw.secure ? FLICKR_OAUTH_REQUEST_TOKEN_SECURE : FLICKR_OAUTH_REQUEST_TOKEN
       @oauth_consumer.request_token(flickr_oauth_request_token, args)
     end
-    
+
     # Get the oauth authorize url.
     #
     #  auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
@@ -125,19 +125,19 @@ module FlickRaw
           code = response[/code="([^"]+)"/, 1]
           raise FailedResponse.new(msg, code, req)
         end
-        
+
         type = response[/<(\w+)/, 1]
         h = {
-          "secret" => response[/secret="([^"]+)"/, 1],
-          "originalsecret" => response[/originalsecret="([^"]+)"/, 1],
-          "_content" => response[/>([^<]+)<\//, 1]
+          'secret' => response[/secret="([^"]+)"/, 1],
+          'originalsecret' => response[/originalsecret="([^"]+)"/, 1],
+          '_content' => response[/>([^<]+)<\//, 1]
         }.delete_if {|k,v| v.nil? }
-        
+
         Response.build h, type
       else
-        json = JSON.load(response.empty? ? "{}" : response)
+        json = JSON.load(response.empty? ? '{}' : response)
         raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
-        type, json = json.to_a.first if json.size == 1 and json.all? {|k,v| v.is_a? Hash}
+        type, json = json.to_a.first if json.size == 1 and json.all? { |k,v| v.is_a? Hash }
 
         Response.build json, type
       end
@@ -152,7 +152,7 @@ module FlickRaw
         args['photo'] = open(file, 'rb')
         close_after = true
       end
-      
+
       http_response = @oauth_consumer.post_multipart(method, @access_secret, {:oauth_token => @access_token}.merge(oauth_args), args)
       args['photo'].close if close_after
       process_response(method, http_response.body)
@@ -162,26 +162,26 @@ module FlickRaw
   class << self
     # Your flickr API key, see http://www.flickr.com/services/api/keys for more information
     attr_accessor :api_key
-    
+
     # The shared secret of _api_key_, see http://www.flickr.com/services/api/keys for more information
     attr_accessor :shared_secret
-    
+
     # Use a proxy
     attr_accessor :proxy
-    
+
     # Use ssl connection
     attr_accessor :secure
 
     # Check the server certificate (ssl connection only)
     attr_accessor :check_certificate
-    
+
     # Set path of a CA certificate file in PEM format (ssl connection only)
     attr_accessor :ca_file
 
     # Set path to a directory of CA certificate files in PEM format (ssl connection only)
     attr_accessor :ca_path
 
-    BASE58_ALPHABET="123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ".freeze
+    BASE58_ALPHABET='123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ'.freeze
     def base58(id)
       id = id.to_i
       alphabet = BASE58_ALPHABET.split(//)
@@ -193,37 +193,37 @@ module FlickRaw
       r
     end
 
-    def url(r);   PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "",   "jpg"]   end
-    def url_m(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_m", "jpg"] end
-    def url_s(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_s", "jpg"] end
-    def url_t(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_t", "jpg"] end
-    def url_b(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_b", "jpg"] end
-    def url_z(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_z", "jpg"] end
-    def url_q(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_q", "jpg"] end
-    def url_n(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_n", "jpg"] end
-    def url_c(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_c", "jpg"] end
-    def url_h(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_h", "jpg"] end
-    def url_k(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, "_k", "jpg"] end
-    def url_o(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.originalsecret, "_o", r.originalformat] end
-    def url_profile(r); URL_PROFILE + (r.owner.respond_to?(:nsid) ? r.owner.nsid : r.owner) + "/" end
+    def url(r);   PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '',   'jpg'] end
+    def url_m(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_m', 'jpg'] end
+    def url_s(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_s', 'jpg'] end
+    def url_t(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_t', 'jpg'] end
+    def url_b(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_b', 'jpg'] end
+    def url_z(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_z', 'jpg'] end
+    def url_q(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_q', 'jpg'] end
+    def url_n(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_n', 'jpg'] end
+    def url_c(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_c', 'jpg'] end
+    def url_h(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_h', 'jpg'] end
+    def url_k(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.secret, '_k', 'jpg'] end
+    def url_o(r); PHOTO_SOURCE_URL % [r.farm, r.server, r.id, r.originalsecret, '_o', r.originalformat] end
+    def url_profile(r); URL_PROFILE + (r.owner.respond_to?(:nsid) ? r.owner.nsid : r.owner) + '/' end
     def url_photopage(r); url_photostream(r) + r.id end
-    def url_photosets(r); url_photostream(r) + "sets/" end
+    def url_photosets(r); url_photostream(r) + 'sets/' end
     def url_photoset(r); url_photosets(r) + r.id end
     def url_short(r); URL_SHORT + base58(r.id) end
-    def url_short_m(r); URL_SHORT + "img/" + base58(r.id) + "_m.jpg" end
-    def url_short_s(r); URL_SHORT + "img/" + base58(r.id) + ".jpg" end
-    def url_short_t(r); URL_SHORT + "img/" + base58(r.id) + "_t.jpg" end
-    def url_short_q(r); URL_SHORT + "img/" + base58(r.id) + "_q.jpg" end
-    def url_short_n(r); URL_SHORT + "img/" + base58(r.id) + "_n.jpg" end
+    def url_short_m(r); URL_SHORT + 'img/' + base58(r.id) + '_m.jpg' end
+    def url_short_s(r); URL_SHORT + 'img/' + base58(r.id) + '.jpg' end
+    def url_short_t(r); URL_SHORT + 'img/' + base58(r.id) + '_t.jpg' end
+    def url_short_q(r); URL_SHORT + 'img/' + base58(r.id) + '_q.jpg' end
+    def url_short_n(r); URL_SHORT + 'img/' + base58(r.id) + '_n.jpg' end
     def url_photostream(r)
       URL_PHOTOSTREAM +
-        if r.respond_to?(:pathalias) and r.pathalias
+        if r.respond_to?(:pathalias) && r.pathalias
           r.pathalias
         elsif r.owner.respond_to?(:nsid)
           r.owner.nsid
         else
           r.owner
-        end + "/"
+        end + '/'
     end
   end
 end
