@@ -9,6 +9,5 @@ module FlickRaw
     def safe_for_eval?(string)
       string == sanitize(string)
     end
-
   end
 end
