@@ -2,9 +2,9 @@ require "rdoc"
 require "rdoc/parser/ruby"
 require "nokogiri"
 
-FLICKR_API_URL='http://www.flickr.com/services/api'
+FLICKR_API_URL='https://www.flickr.com/services/api'
 
-FakedToken = Struct.new :text
+FakedToken = Struct.new :text, :kind
 
 module RDoc
   class FlickrawParser < Parser::Ruby
@@ -24,7 +24,7 @@ module RDoc
 
     private
     def add_flickr_methods(obj, doc)
-      flickr # Force loading of methods if lazyloaded
+      flickr = FlickRaw::Flickr.new
       obj.constants.each { |const_name|
         const = obj.const_get const_name
         if const.is_a?(Class) && const < FlickRaw::Request
@@ -44,7 +44,7 @@ module RDoc
         end
       }
 
-      obj.flickr_methods.each {|name|
+      obj.flickr_methods.each { |name|
         flickr_method = obj.request_name + '.' + name
         info = flickr.reflection.getMethodInfo :method_name => flickr_method
 

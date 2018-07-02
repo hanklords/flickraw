@@ -2,12 +2,13 @@ require 'flickraw'
 
 # This is how to authenticate on flickr website.
 # You need an API key for that, see http://www.flickr.com/services/api/keys/
-API_KEY=''
-SHARED_SECRET=''
+API_KEY = ''
+SHARED_SECRET = ''
 
-FlickRaw.api_key=API_KEY
-FlickRaw.shared_secret=SHARED_SECRET
+FlickRaw.api_key = API_KEY
+FlickRaw.shared_secret = SHARED_SECRET
 
+flickr = FlickRaw::Flickr.new
 token = flickr.get_request_token
 auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
 

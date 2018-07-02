@@ -6,11 +6,11 @@ require 'flickraw'
 # Added by Darren Greaves (https://github.com/boncey/)
 #
 # You need an API key first, see http://www.flickr.com/services/api/keys/
-API_KEY=''
-SHARED_SECRET=''
+API_KEY = ''
+SHARED_SECRET = ''
 
 # This is the URL Flickr will redirect your users to once they agree to access
-@callback_url='http://localhost:3000/auth_controller/callback'
+@callback_url = 'http://localhost:3000/auth_controller/callback'
 
 FlickRaw.api_key=API_KEY
 FlickRaw.shared_secret=SHARED_SECRET

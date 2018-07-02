@@ -11,6 +11,8 @@ PHOTO_PATH='photo.jpg'
 
 FlickRaw.api_key = API_KEY
 FlickRaw.shared_secret = SHARED_SECRET
+
+flickr = FlickRaw::Flickr.new
 flickr.access_token = ACCESS_TOKEN
 flickr.access_secret = ACCESS_SECRET
 

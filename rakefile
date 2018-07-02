@@ -19,3 +19,7 @@ end
 Rake::TestTask.new do |t|
   t.warning = true
 end
+
+task :console do
+	exec 'pry -I ./lib -r flickraw'
+end

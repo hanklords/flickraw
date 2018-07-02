@@ -34,8 +34,10 @@ This will recreate the documentation by fetching the methods descriptions from f
 
  require 'flickraw'
 
- FlickRaw.api_key="... Your API key ..."
- FlickRaw.shared_secret="... Your shared secret ..."
+ FlickRaw.api_key = "... Your API key ..."
+ FlickRaw.shared_secret = "... Your shared secret ..."
+
+ flickr = FlickRaw::Flickr.new
 
  list   = flickr.photos.getRecent
 
@@ -56,8 +58,10 @@ This will recreate the documentation by fetching the methods descriptions from f
 
   require 'flickraw'
 
-  FlickRaw.api_key="... Your API key ..."
-  FlickRaw.shared_secret="... Your shared secret ..."
+  FlickRaw.api_key = "... Your API key ..."
+  FlickRaw.shared_secret = "... Your shared secret ..."
+
+  flickr = FlickRaw::Flickr.new
 
   token = flickr.get_request_token
   auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
@@ -78,8 +82,10 @@ If the user has already been authenticated, you can reuse the access token and a
 
   require 'flickraw'
 
-  FlickRaw.api_key="... Your API key ..."
-  FlickRaw.shared_secret="... Your shared secret ..."
+  FlickRaw.api_key = "... Your API key ..."
+  FlickRaw.shared_secret = "... Your shared secret ..."
+
+  flickr = FlickRaw::Flickr.new
 
   flickr.access_token = "... Your access token ..."
   flickr.access_secret = "... Your access secret ..."
@@ -96,8 +102,10 @@ If you need to have several users authenticated at the same time in your applica
 
   require 'flickraw'
 
-  FlickRaw.api_key="... Your API key ..."
-  FlickRaw.shared_secret="... Your shared secret ..."
+  FlickRaw.api_key = "... Your API key ..."
+  FlickRaw.shared_secret = "... Your shared secret ..."
+
+  flickr = FlickRaw::Flickr.new
 
   PHOTO_PATH='photo.jpg'
 
@@ -139,7 +147,7 @@ You can also specify a path to a directory with a number of certifications:
 There are some helpers to build flickr urls :
 
 === url, url_m, url_s, url_t, url_b, url_z, url_q, url_n, url_c, url_o
- 
+
   # url_s : Square
   # url_q : Large Square
   # url_t : Thumbnail
@@ -190,7 +198,7 @@ You can use
 
 instead of
 
-   require 'flickraw'
+  require 'flickraw'
 
 This way it it doesn't fetch available flickr methods each time it is loaded.
 The flickraw-cached gem is on rubygems.org and should be up-to-date with regard to flickr api most of the time.
