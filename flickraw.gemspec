@@ -1,9 +1,5 @@
-# -*- encoding: utf-8 -*-
-
-lib = File.expand_path('../lib/', __FILE__)
-$:.unshift lib unless $:.include?(lib)
-
-require 'flickraw'
+$:.push File.expand_path("../lib", __FILE__)
+require 'flickraw/version'
 
 Gem::Specification.new do |s|
   s.summary = "Flickr library with a syntax close to the syntax described on http://www.flickr.com/services/api"
@@ -14,4 +10,10 @@ Gem::Specification.new do |s|
   s.license = "MIT"
   s.version = FlickRaw::VERSION
   s.files = Dir["examples/*.rb"] + Dir["test/*.rb"] + Dir["lib/**/*.rb"] + %w{flickraw_rdoc.rb LICENSE README.rdoc rakefile}
+
+  s.add_development_dependency "rake", "~> 10.0"
+  s.add_development_dependency "pry"
+
+  s.add_runtime_dependency 'nokogiri'
+
 end
