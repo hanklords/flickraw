@@ -12,12 +12,9 @@ SHARED_SECRET = ''
 # This is the URL Flickr will redirect your users to once they agree to access
 @callback_url = 'http://localhost:3000/auth_controller/callback'
 
-FlickRaw.api_key=API_KEY
-FlickRaw.shared_secret=SHARED_SECRET
-
 # Users should hit this method to get the link which sends them to flickr
 def auth
-  flickr = FlickRaw::Flickr.new
+  flickr = FlickRaw::Flickr.new API_KEY, SHARED_SECRET
   token = flickr.get_request_token(:oauth_callback => URI.escape(@callback_url))
   # You'll need to store the token somewhere for when the user is returned to the callback method
   # I stick mine in memcache with their session key as the cache key

@@ -9,10 +9,7 @@ ACCESS_TOKEN=''
 ACCESS_SECRET=''
 PHOTO_PATH='photo.jpg'
 
-FlickRaw.api_key = API_KEY
-FlickRaw.shared_secret = SHARED_SECRET
-
-flickr = FlickRaw::Flickr.new
+flickr = FlickRaw::Flickr.new API_KEY, SHARED_SECRET
 flickr.access_token = ACCESS_TOKEN
 flickr.access_secret = ACCESS_SECRET
 

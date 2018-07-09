@@ -5,10 +5,7 @@ require 'flickraw'
 API_KEY = ''
 SHARED_SECRET = ''
 
-FlickRaw.api_key = API_KEY
-FlickRaw.shared_secret = SHARED_SECRET
-
-flickr = FlickRaw::Flickr.new
+flickr = FlickRaw::Flickr.new API_KEY, SHARED_SECRET
 token = flickr.get_request_token
 auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
 

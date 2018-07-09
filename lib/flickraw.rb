@@ -2,10 +2,10 @@ require 'json'
 require 'flickraw/version'
 require 'flickraw/util'
 require 'flickraw/error'
-require 'flickraw/oauth'
+require 'flickraw/oauth_client'
 require 'flickraw/request'
 require 'flickraw/response'
-require 'flickraw/api'
+require 'flickraw/flickr'
 
 module FlickRaw
   USER_AGENT = "FlickRaw/#{VERSION}"

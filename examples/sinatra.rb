@@ -1,12 +1,12 @@
 require 'flickraw'
 require 'sinatra'
 
-FlickRaw.api_key = API_KEY
-FlickRaw.shared_secret = SHARED_SECRET
+API_KEY = ''
+SHARED_SECRET = ''
 use Rack::Session::Pool
 
 get '/authenticate' do
-  flickr = FlickRaw::Flickr.new
+  flickr = FlickRaw::Flickr.new API_KEY, SHARED_SECRET
   token = flickr.get_request_token(:oauth_callback => to('check'))
   session[:token] = token
   redirect flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
