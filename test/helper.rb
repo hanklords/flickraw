@@ -5,7 +5,6 @@ require 'flickraw'
 
 FlickRaw.api_key = ENV['FLICKRAW_API_KEY']
 FlickRaw.shared_secret = ENV['FLICKRAW_SHARED_SECRET']
-#FlickRaw.secure = false
 
 flickr = FlickRaw::Flickr.new
 flickr.access_token = ENV['FLICKRAW_ACCESS_TOKEN']

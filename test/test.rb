@@ -343,11 +343,7 @@ class Basic < Test::Unit::TestCase
   def test_photos_getSizes
     info = flickr.photos.getSizes :photo_id => "3839885270"
     assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find {|f| f.label == "Large"}.url
-    if FlickRaw.secure
-      source = "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
-    else
-      source = "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
-    end
+    source = "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
 
     assert_equal source, info.find {|f| f.label == "Large"}.source
   end

@@ -10,6 +10,5 @@ require 'flickraw/api'
 module FlickRaw
   USER_AGENT = "FlickRaw/#{VERSION}"
 
-  self.secure = true
   self.check_certificate = true
 end
