@@ -32,7 +32,7 @@ This will recreate the documentation by fetching the methods descriptions from f
 
 == Getting started
 
-To use FlickRaw, you must first obtain an API key and shared secret from Flickr. You can do this by logging in to Flickr and creating an application here[https://www.flickr.com/services/apps/create/apply. API keys are usually granted automatically and instantly.
+To use FlickRaw, you must first obtain an API key and shared secret from Flickr. You can do this by logging in to Flickr and creating an application here[https://www.flickr.com/services/apps/create/apply]. API keys are usually granted automatically and instantly.
 
   require 'flickraw'
 
