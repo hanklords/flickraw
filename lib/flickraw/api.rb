@@ -10,14 +10,11 @@ module FlickRaw
 
     def self.build(methods); methods.each { |m| build_request m } end
 
-    def initialize(api_key: FlickRaw.api_key,
-                   shared_secret: FlickRaw.shared_secret)
-      if api_key.nil?
-        raise FlickrAppNotConfigured.new("No API key defined!")
-      end
-      if shared_secret.nil?
-        raise FlickrAppNotConfigured.new("No shared secret defined!")
-      end
+    def initialize(api_key = ENV['FLICKRAW_API_KEY'], shared_secret = ENV['FLICKRAW_SHARED_SECRET'])
+
+      raise FlickrAppNotConfigured.new("No API key defined!") if api_key.nil?
+      raise FlickrAppNotConfigured.new("No shared secret defined!") if shared_secret.nil?
+
       @oauth_consumer = OAuthClient.new(api_key, shared_secret)
       @oauth_consumer.proxy = FlickRaw.proxy
       @oauth_consumer.check_certificate = FlickRaw.check_certificate

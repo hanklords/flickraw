@@ -8,9 +8,6 @@ $:.unshift lib unless $:.include?(lib)
 require 'flickraw'
 require './flickraw_rdoc' if RUBY_VERSION >= "1.9"
 
-FlickRaw.api_key = ENV['FLICKRAW_API_KEY']
-FlickRaw.shared_secret = ENV['FLICKRAW_SHARED_SECRET']
-
 Rake::RDocTask.new do |rd|
   rd.main = "README.rdoc"
   rd.rdoc_files.include "README.rdoc", "lib/flickraw.rb"
