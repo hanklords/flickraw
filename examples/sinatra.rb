@@ -29,4 +29,3 @@ You are now authenticated as <em>#{login.username}</em>
 with token <strong>#{@auth_flickr.access_token}</strong> and secret <strong>#{@auth_flickr.access_secret}</strong>.
   }
 end
-
