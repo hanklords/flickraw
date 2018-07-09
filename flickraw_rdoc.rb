@@ -73,7 +73,7 @@ module RDoc
 
         arguments = "<b>Arguments</b>\n"
         if args.size > 0
-          args.each {|arg|
+          args.each { |arg|
             arguments << "[#{arg.name} "
             arguments << "<em>(required)</em> " if arg.optional == '0'
             arguments << "] "
@@ -84,7 +84,7 @@ module RDoc
 
       if info.respond_to? :errors
         errors = "<b>Error codes</b>\n"
-        info.errors.each {|e|
+        info.errors.each { |e|
           errors << "* #{e.code}: <em>#{e.message}</em>\n\n"
           errors << "  #{Nokogiri::HTML(e.to_s).text}\n"
         }
@@ -112,7 +112,7 @@ module RDoc
 
         if args.size > 0
           str << '('
-          args.each {|arg|
+          args.each { |arg|
             str << ":#{arg.name} => '#{arg.name}'"
             str << ','
           }

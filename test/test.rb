@@ -14,7 +14,7 @@ class Basic < Test::Unit::TestCase
        test urls
     }
     assert_equal FlickRaw::Flickr.flickr_objects, flickr_objects
-    flickr_objects.each {|o|
+    flickr_objects.each { |o|
       assert_respond_to flickr, o
       assert_kind_of FlickRaw::Request, eval("flickr." + o)
     }
@@ -272,7 +272,7 @@ class Basic < Test::Unit::TestCase
 
   def test_groups_search
     list = flickr.groups.search :text => "Flickr API"
-    assert list.any? {|g| g.nsid == "51035612836@N01"}
+    assert list.any? { |g| g.nsid == "51035612836@N01"}
   end
 
   # people
@@ -318,7 +318,7 @@ class Basic < Test::Unit::TestCase
       info = flickr.photos.getInfo(:photo_id => id)
     }
 
-     %w{id secret server farm license owner title description dates comments tags media}.each {|m|
+     %w{id secret server farm license owner title description dates comments tags media}.each { |m|
       assert_respond_to info, m
       assert_not_nil info[m]
     }
@@ -328,28 +328,28 @@ class Basic < Test::Unit::TestCase
     assert_equal "This is my cat", info.description
     assert_equal "ruby_flickraw", info.owner["username"]
     assert_equal "Flickraw", info.owner["realname"]
-    assert_equal %w{cat pet}, info.tags.map {|t| t.to_s}.sort
+    assert_equal %w{cat pet}, info.tags.map { |t| t.to_s}.sort
   end
 
   def test_photos_getExif
     info = flickr.photos.getExif :photo_id => "3839885270"
-    assert_equal "Canon DIGITAL IXUS 55", info.exif.find {|f| f.tag == "Model"}.raw
-    assert_equal "1/60", info.exif.find {|f| f.tag == "ExposureTime"}.raw
-    assert_equal "4.9", info.exif.find {|f| f.tag == "FNumber"}.raw
-    assert_equal "1600", info.exif.find {|f| f.tag == "RelatedImageWidth"}.raw
-    assert_equal "1200", info.exif.find {|f| f.tag == "RelatedImageHeight"}.raw
+    assert_equal "Canon DIGITAL IXUS 55", info.exif.find { |f| f.tag == "Model"}.raw
+    assert_equal "1/60", info.exif.find { |f| f.tag == "ExposureTime"}.raw
+    assert_equal "4.9", info.exif.find { |f| f.tag == "FNumber"}.raw
+    assert_equal "1600", info.exif.find { |f| f.tag == "RelatedImageWidth"}.raw
+    assert_equal "1200", info.exif.find { |f| f.tag == "RelatedImageHeight"}.raw
   end
 
   def test_photos_getSizes
     info = flickr.photos.getSizes :photo_id => "3839885270"
-    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find {|f| f.label == "Large"}.url
+    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find { |f| f.label == "Large"}.url
     if FlickRaw.secure
       source = "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
     else
       source = "http://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
     end
 
-    assert_equal source, info.find {|f| f.label == "Large"}.source
+    assert_equal source, info.find { |f| f.label == "Large"}.source
   end
 
   def test_photos_search
@@ -374,7 +374,7 @@ class Basic < Test::Unit::TestCase
     tags = flickr.tags.getListPhoto :photo_id => "3839885270"
     assert_equal 2, tags.tags.size
     assert_equal "3839885270", tags.id
-    assert_equal %w{cat pet}, tags.tags.map {|t| t.to_s}.sort
+    assert_equal %w{cat pet}, tags.tags.map { |t| t.to_s}.sort
   end
 
   def test_tags_getListUser

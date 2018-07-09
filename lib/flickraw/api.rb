@@ -102,7 +102,7 @@ module FlickRaw
           'secret' => response[/secret="([^"]+)"/, 1],
           'originalsecret' => response[/originalsecret="([^"]+)"/, 1],
           '_content' => response[/>([^<]+)<\//, 1]
-        }.delete_if {|k,v| v.nil? }
+        }.delete_if { |k,v| v.nil? }
 
         Response.build h, type
       else
