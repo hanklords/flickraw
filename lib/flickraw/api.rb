@@ -1,18 +1,18 @@
 module FlickRaw
-  END_POINT_SECURE                  = 'https://api.flickr.com/services'.freeze
+  END_POINT                  = 'https://api.flickr.com/services'.freeze
 
-  FLICKR_OAUTH_REQUEST_TOKEN_SECURE = (END_POINT_SECURE + '/oauth/request_token').freeze
-  FLICKR_OAUTH_AUTHORIZE_SECURE     = (END_POINT_SECURE + '/oauth/authorize').freeze
-  FLICKR_OAUTH_ACCESS_TOKEN_SECURE  = (END_POINT_SECURE + '/oauth/access_token').freeze
+  FLICKR_OAUTH_REQUEST_TOKEN = (END_POINT + '/oauth/request_token').freeze
+  FLICKR_OAUTH_AUTHORIZE     = (END_POINT + '/oauth/authorize').freeze
+  FLICKR_OAUTH_ACCESS_TOKEN  = (END_POINT + '/oauth/access_token').freeze
 
-  REST_PATH_SECURE                  = (END_POINT_SECURE + '/rest/').freeze
-  UPLOAD_PATH_SECURE                = (END_POINT_SECURE + '/upload/').freeze
-  REPLACE_PATH_SECURE               = (END_POINT_SECURE + '/replace/').freeze
+  REST_PATH                  = (END_POINT + '/rest/').freeze
+  UPLOAD_PATH                = (END_POINT + '/upload/').freeze
+  REPLACE_PATH               = (END_POINT + '/replace/').freeze
 
-  PHOTO_SOURCE_URL                  = 'https://farm%s.staticflickr.com/%s/%s_%s%s.%s'.freeze
-  URL_PROFILE                       = 'https://www.flickr.com/people/'.freeze
-  URL_PHOTOSTREAM                   = 'https://www.flickr.com/photos/'.freeze
-  URL_SHORT                         = 'https://flic.kr/p/'.freeze
+  PHOTO_SOURCE_URL           = 'https://farm%s.staticflickr.com/%s/%s_%s%s.%s'.freeze
+  URL_PROFILE                = 'https://www.flickr.com/people/'.freeze
+  URL_PHOTOSTREAM            = 'https://www.flickr.com/photos/'.freeze
+  URL_SHORT                  = 'https://flic.kr/p/'.freeze
 
   class FlickrAppNotConfigured < Error; end
 
@@ -51,7 +51,7 @@ module FlickRaw
     # Raises FailedResponse if the response status is _failed_.
     def call(req, args={}, &block)
       oauth_args = args.delete(:oauth) || {}
-      http_response = @oauth_consumer.post_form(REST_PATH_SECURE, @access_secret, {:oauth_token => @access_token}.merge(oauth_args), build_args(args, req))
+      http_response = @oauth_consumer.post_form(REST_PATH, @access_secret, {:oauth_token => @access_token}.merge(oauth_args), build_args(args, req))
       process_response(req, http_response.body)
     end
 
@@ -59,21 +59,21 @@ module FlickRaw
     #
     #    token = flickr.get_request_token(:oauth_callback => "http://example.com")
     def get_request_token(args = {})
-      @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN_SECURE, args)
+      @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN, args)
     end
 
     # Get the oauth authorize url.
     #
     #  auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
     def get_authorize_url(token, args = {})
-      @oauth_consumer.authorize_url(FLICKR_OAUTH_AUTHORIZE_SECURE, args.merge(:oauth_token => token))
+      @oauth_consumer.authorize_url(FLICKR_OAUTH_AUTHORIZE, args.merge(:oauth_token => token))
     end
 
     # Get an oauth access token.
     #
     #  flickr.get_access_token(token['oauth_token'], token['oauth_token_secret'], oauth_verifier)
     def get_access_token(token, secret, verify)
-      access_token = @oauth_consumer.access_token(FLICKR_OAUTH_ACCESS_TOKEN_SECURE, secret, :oauth_token => token, :oauth_verifier => verify)
+      access_token = @oauth_consumer.access_token(FLICKR_OAUTH_ACCESS_TOKEN, secret, :oauth_token => token, :oauth_verifier => verify)
       @access_token, @access_secret = access_token['oauth_token'], access_token['oauth_token_secret']
       access_token
     end
@@ -84,7 +84,7 @@ module FlickRaw
     #
     # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
     def upload_photo(file, args={})
-      upload_flickr(UPLOAD_PATH_SECURE, file, args)
+      upload_flickr(UPLOAD_PATH, file, args)
     end
 
     # Use this to replace the photo with :photo_id with the photo in _file_.
@@ -93,7 +93,7 @@ module FlickRaw
     #
     # See http://www.flickr.com/services/api/replace.api.html for more information on the arguments.
     def replace_photo(file, args={})
-      upload_flickr(REPLACE_PATH_SECURE, file, args)
+      upload_flickr(REPLACE_PATH, file, args)
     end
 
     private
