@@ -3,7 +3,7 @@ module FlickRaw
     def initialize(flickr = nil) # :nodoc:
       @flickr = flickr
 
-      self.class.flickr_objects.each {|name|
+      self.class.flickr_objects.each { |name|
         klass = self.class.const_get name.capitalize
         instance_variable_set "@#{name}", klass.new(@flickr)
       }

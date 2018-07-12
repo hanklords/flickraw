@@ -91,12 +91,12 @@ module FlickRaw
     end
 
     def post_form(url, token_secret, oauth_params = {}, params = {})
-      encoded_params = Hash[*params.map {|k,v| [OAuthClient.encode_value(k), OAuthClient.encode_value(v)]}.flatten]
+      encoded_params = Hash[*params.map { |k,v| [OAuthClient.encode_value(k), OAuthClient.encode_value(v)]}.flatten]
       post(url, token_secret, oauth_params, params) { |request| request.form_data = encoded_params }
     end
 
     def post_multipart(url, token_secret, oauth_params = {}, params = {})
-      post(url, token_secret, oauth_params, params) {|request|
+      post(url, token_secret, oauth_params, params) { |request|
         boundary = "FlickRaw#{OAuthClient.gen_nonce}"
         request['Content-type'] = "multipart/form-data, boundary=#{boundary}"
 

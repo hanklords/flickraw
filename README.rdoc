@@ -30,38 +30,44 @@ This will recreate the documentation by fetching the methods descriptions from f
 
 = Usage
 
-== Simple
+== Getting started
 
- require 'flickraw'
-
- FlickRaw.api_key = "... Your API key ..."
- FlickRaw.shared_secret = "... Your shared secret ..."
-
- flickr = FlickRaw::Flickr.new
-
- list   = flickr.photos.getRecent
-
- id     = list[0].id
- secret = list[0].secret
- info = flickr.photos.getInfo :photo_id => id, :secret => secret
-
- puts info.title           # => "PICT986"
- puts info.dates.taken     # => "2006-07-06 15:16:18"
-
-
- sizes = flickr.photos.getSizes :photo_id => id
-
- original = sizes.find {|s| s.label == 'Original' }
- puts original.width       # => "800" -- may fail if they have no original marked image
-
-== Authentication
+To use FlickRaw, you must first obtain an API key and shared secret from Flickr. You can do this by logging in to Flickr and creating an application here[https://www.flickr.com/services/apps/create/apply]. API keys are usually granted automatically and instantly.
 
   require 'flickraw'
 
-  FlickRaw.api_key = "... Your API key ..."
-  FlickRaw.shared_secret = "... Your shared secret ..."
+  # The credentials can be provided as parameters:
+
+  flickr = FlickRaw::Flickr.new "YOUR API KEY", "YOUR SHARED SECRET"
+
+  # Alternatively, if the API key and Shared Secret are not provided, FlickRaw will attempt to read them
+  # from environment variables:
+  # ENV['FLICKRAW_API_KEY']
+  # ENV['FLICKRAW_SHARED_SECRET']
 
   flickr = FlickRaw::Flickr.new
+
+  # FlickRaw will raise an error if either parameter is not explicitly provided, or avilable via environment variables.
+
+
+== Simple
+
+  list   = flickr.photos.getRecent
+
+  id     = list[0].id
+  secret = list[0].secret
+  info = flickr.photos.getInfo :photo_id => id, :secret => secret
+
+  puts info.title           # => "PICT986"
+  puts info.dates.taken     # => "2006-07-06 15:16:18"
+
+
+  sizes = flickr.photos.getSizes :photo_id => id
+
+  original = sizes.find { |s| s.label == 'Original' }
+  puts original.width       # => "800" -- may fail if they have no original marked image
+
+== Authentication
 
   token = flickr.get_request_token
   auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
@@ -80,13 +86,6 @@ This will recreate the documentation by fetching the methods descriptions from f
 
 If the user has already been authenticated, you can reuse the access token and access secret:
 
-  require 'flickraw'
-
-  FlickRaw.api_key = "... Your API key ..."
-  FlickRaw.shared_secret = "... Your shared secret ..."
-
-  flickr = FlickRaw::Flickr.new
-
   flickr.access_token = "... Your access token ..."
   flickr.access_secret = "... Your access secret ..."
 
@@ -99,13 +98,6 @@ If you need to have several users authenticated at the same time in your applica
   flickr = FlickRaw::Flickr.new
 
 == Upload
-
-  require 'flickraw'
-
-  FlickRaw.api_key = "... Your API key ..."
-  FlickRaw.shared_secret = "... Your shared secret ..."
-
-  flickr = FlickRaw::Flickr.new
 
   PHOTO_PATH='photo.jpg'
 

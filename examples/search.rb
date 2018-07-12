@@ -2,9 +2,6 @@ require 'flickraw'
 
 # search for pictures taken within 60 miles of new brunswick, between 1890-1920
 
-# FlickRaw.api_key="..."
-# FlickRaw.shared_secret="..."
-
 flickr = FlickRaw::Flickr.new
 new_b = flickr.places.find :query => "new brunswick"
 latitude = new_b[0]['latitude'].to_f
