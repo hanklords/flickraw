@@ -10,33 +10,22 @@ require 'flickraw/flickr'
 module FlickRaw
   USER_AGENT = "FlickRaw/#{VERSION}"
 
-  END_POINT='http://api.flickr.com/services'.freeze
-  END_POINT2='http://www.flickr.com/services'.freeze
-  END_POINT_SECURE='https://api.flickr.com/services'.freeze
+  END_POINT                  = 'https://api.flickr.com/services'.freeze
 
-  FLICKR_OAUTH_REQUEST_TOKEN=(END_POINT2 + '/oauth/request_token').freeze
-  FLICKR_OAUTH_AUTHORIZE=(END_POINT2 + '/oauth/authorize').freeze
-  FLICKR_OAUTH_ACCESS_TOKEN=(END_POINT2 + '/oauth/access_token').freeze
+  FLICKR_OAUTH_REQUEST_TOKEN = (END_POINT + '/oauth/request_token').freeze
+  FLICKR_OAUTH_AUTHORIZE     = (END_POINT + '/oauth/authorize').freeze
+  FLICKR_OAUTH_ACCESS_TOKEN  = (END_POINT + '/oauth/access_token').freeze
 
-  FLICKR_OAUTH_REQUEST_TOKEN_SECURE=(END_POINT_SECURE + '/oauth/request_token').freeze
-  FLICKR_OAUTH_AUTHORIZE_SECURE=(END_POINT_SECURE + '/oauth/authorize').freeze
-  FLICKR_OAUTH_ACCESS_TOKEN_SECURE=(END_POINT_SECURE + '/oauth/access_token').freeze
+  REST_PATH                  = (END_POINT + '/rest/').freeze
+  UPLOAD_PATH                = (END_POINT + '/upload/').freeze
+  REPLACE_PATH               = (END_POINT + '/replace/').freeze
 
-  REST_PATH=(END_POINT + '/rest/').freeze
-  UPLOAD_PATH=(END_POINT + '/upload/').freeze
-  REPLACE_PATH=(END_POINT + '/replace/').freeze
-
-  REST_PATH_SECURE=(END_POINT_SECURE + '/rest/').freeze
-  UPLOAD_PATH_SECURE=(END_POINT_SECURE + '/upload/').freeze
-  REPLACE_PATH_SECURE=(END_POINT_SECURE + '/replace/').freeze
-
-  PHOTO_SOURCE_URL='https://farm%s.staticflickr.com/%s/%s_%s%s.%s'.freeze
-  URL_PROFILE='https://www.flickr.com/people/'.freeze
-  URL_PHOTOSTREAM='https://www.flickr.com/photos/'.freeze
-  URL_SHORT='https://flic.kr/p/'.freeze
+  PHOTO_SOURCE_URL           = 'https://farm%s.staticflickr.com/%s/%s_%s%s.%s'.freeze
+  URL_PROFILE                = 'https://www.flickr.com/people/'.freeze
+  URL_PHOTOSTREAM            = 'https://www.flickr.com/photos/'.freeze
+  URL_SHORT                  = 'https://flic.kr/p/'.freeze
 
   class FlickrAppNotConfigured < Error; end
-
 
   class << self
     # Your flickr API key, see http://www.flickr.com/services/api/keys for more information
@@ -106,7 +95,6 @@ module FlickRaw
     end
   end
 
-  self.secure = true
   self.check_certificate = true
 
 end

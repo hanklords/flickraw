@@ -4,7 +4,6 @@ lib = File.dirname(__FILE__)
 $:.unshift lib unless $:.include?(lib)
 
 require 'test/unit'
-require 'helper'
 
 class TestResponse < Test::Unit::TestCase
 

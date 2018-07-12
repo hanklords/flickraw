@@ -45,4 +45,3 @@ def callback
   flickr.access_token = oauth_token
   flickr.access_secret = oauth_token_secret
 end
-

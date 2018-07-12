@@ -109,13 +109,6 @@ If you need to have several users authenticated at the same time in your applica
   require 'flickraw'
   FlickRaw.proxy = "http://user:pass@proxy.example.com:3129/"
 
-== Secure endpoints
-
-https endpoints are used by default. If you want to use unencrypted endpoints :
-
-  require 'flickraw'
-  FlickRaw.secure = false
-
 === Server Certificate Verification
 
 Server certificate verification is enabled by default. If you don't want to check the server certificate :
