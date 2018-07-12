@@ -1,4 +1,4 @@
-module FlickRaw
+module Flickr
 
   # Root class of the flickr api hierarchy.
   class Flickr < Request
@@ -10,16 +10,16 @@ module FlickRaw
 
     def self.build(methods); methods.each { |m| build_request m } end
 
-    def initialize(api_key = ENV['FLICKRAW_API_KEY'], shared_secret = ENV['FLICKRAW_SHARED_SECRET'])
+    def initialize(api_key = ENV['FLICKR_API_KEY'], shared_secret = ENV['FLICKR_SHARED_SECRET'])
 
       raise FlickrAppNotConfigured.new("No API key defined!") if api_key.nil?
       raise FlickrAppNotConfigured.new("No shared secret defined!") if shared_secret.nil?
 
       @oauth_consumer = OAuthClient.new(api_key, shared_secret)
-      @oauth_consumer.proxy = FlickRaw.proxy
-      @oauth_consumer.check_certificate = FlickRaw.check_certificate
-      @oauth_consumer.ca_file = FlickRaw.ca_file
-      @oauth_consumer.ca_path = FlickRaw.ca_path
+      @oauth_consumer.proxy = Flickr.proxy
+      @oauth_consumer.check_certificate = Flickr.check_certificate
+      @oauth_consumer.ca_file = Flickr.ca_file
+      @oauth_consumer.ca_path = Flickr.ca_path
       @oauth_consumer.user_agent = USER_AGENT
       @access_token = @access_secret = nil
 

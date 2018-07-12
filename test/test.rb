@@ -8,10 +8,10 @@ require 'test/unit'
 class Basic < Test::Unit::TestCase
 
   def setup
-    @flickr = FlickRaw::Flickr.new
+    @flickr = Flickr::Flickr.new
 
-    @flickr.access_token = ENV['FLICKRAW_ACCESS_TOKEN']
-    @flickr.access_secret = ENV['FLICKRAW_ACCESS_SECRET']
+    @flickr.access_token = ENV['FLICKR_ACCESS_TOKEN']
+    @flickr.access_secret = ENV['FLICKR_ACCESS_SECRET']
   end
 
   def test_request
@@ -20,10 +20,10 @@ class Basic < Test::Unit::TestCase
        people photos photosets places prefs profile push reflection stats tags
        test testimonials urls
     }
-    assert_equal FlickRaw::Flickr.flickr_objects, flickr_objects
+    assert_equal Flickr::Flickr.flickr_objects, flickr_objects
     flickr_objects.each { |o|
       assert_respond_to flickr, o
-      assert_kind_of FlickRaw::Request, @flickr.send(o.to_sym)
+      assert_kind_of Flickr::Request, @flickr.send(o.to_sym)
     }
   end
 
@@ -253,20 +253,20 @@ class Basic < Test::Unit::TestCase
       flickr.urls.lookupUser
     }
     found_methods = @flickr.reflection.getMethods
-    assert_instance_of FlickRaw::ResponseList, found_methods
+    assert_instance_of Flickr::ResponseList, found_methods
     assert_equal known_methods.sort, found_methods.to_a.sort
   end
 
   def test_list
     list = @flickr.photos.getRecent :per_page => '10'
-    assert_instance_of FlickRaw::ResponseList, list
+    assert_instance_of Flickr::ResponseList, list
     assert_equal(list.size, 10)
   end
 
   def people(user)
     assert_equal "41650587@N02", user.id
     assert_equal "41650587@N02", user.nsid
-    assert_equal "ruby_flickraw", user.username
+    assert_equal "ruby_flickr", user.username
   end
 
   def photo(info)
@@ -300,12 +300,12 @@ class Basic < Test::Unit::TestCase
 
   # people
   def test_people_findByEmail
-    user = @flickr.people.findByEmail :find_email => "flickraw@yahoo.com"
+    user = @flickr.people.findByEmail :find_email => "flickr@yahoo.com"
     people user
   end
 
   def test_people_findByUsername
-    user = @flickr.people.findByUsername :username => "ruby_flickraw"
+    user = @flickr.people.findByUsername :username => "ruby_flickr"
     people user
   end
 
@@ -337,7 +337,7 @@ class Basic < Test::Unit::TestCase
   def test_photos_getInfo
     id = "3839885270"
     info = nil
-    assert_nothing_raised(FlickRaw::FailedResponse) {
+    assert_nothing_raised(Flickr::FailedResponse) {
       info = @flickr.photos.getInfo(:photo_id => id)
     }
 
@@ -349,7 +349,7 @@ class Basic < Test::Unit::TestCase
     assert_equal id, info.id
     assert_equal "cat", info.title
     assert_equal "This is my cat", info.description
-    assert_equal "ruby_flickraw", info.owner["username"]
+    assert_equal "ruby_flickr", info.owner["username"]
     assert_equal "Flickraw", info.owner["realname"]
     assert_equal %w{cat pet}, info.tags.map { |t| t.to_s}.sort
   end
@@ -383,7 +383,7 @@ class Basic < Test::Unit::TestCase
     assert_equal "3839885270", comments.photo_id
     assert_equal "41630239-3839885270-72157621986549875", comments[0].id
     assert_equal "41650587@N02", comments[0].author
-    assert_equal "ruby_flickraw", comments[0].authorname
+    assert_equal "ruby_flickr", comments[0].authorname
     assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/#comment72157621986549875", comments[0].permalink
     assert_equal "This is a cute cat !", comments[0].to_s
   end
@@ -430,28 +430,28 @@ class Basic < Test::Unit::TestCase
   def test_urls_lookupUser
     info = @flickr.urls.lookupUser :url => "https://www.flickr.com/photos/41650587@N02/"
     assert_equal "41650587@N02", info.id
-    assert_equal "ruby_flickraw", info.username
+    assert_equal "ruby_flickr", info.username
   end
 
   def test_urls
     id = "3839885270"
     info = @flickr.photos.getInfo(:photo_id => id)
 
-    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06.jpg", FlickRaw.url(info)
-    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_m.jpg", FlickRaw.url_m(info)
-    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_s.jpg", FlickRaw.url_s(info)
-    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_t.jpg", FlickRaw.url_t(info)
-    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg", FlickRaw.url_b(info)
-    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_z.jpg", FlickRaw.url_z(info)
-    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_q.jpg", FlickRaw.url_q(info)
-    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_n.jpg", FlickRaw.url_n(info)
-    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_c.jpg", FlickRaw.url_c(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06.jpg", Flickr.url(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_m.jpg", Flickr.url_m(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_s.jpg", Flickr.url_s(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_t.jpg", Flickr.url_t(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg", Flickr.url_b(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_z.jpg", Flickr.url_z(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_q.jpg", Flickr.url_q(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_n.jpg", Flickr.url_n(info)
+    assert_equal "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_c.jpg", Flickr.url_c(info)
 
-    assert_equal "https://www.flickr.com/people/41650587@N02/", FlickRaw.url_profile(info)
-    assert_equal "https://www.flickr.com/photos/41650587@N02/", FlickRaw.url_photostream(info)
-    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270", FlickRaw.url_photopage(info)
-    assert_equal "https://www.flickr.com/photos/41650587@N02/sets/", FlickRaw.url_photosets(info)
-    assert_equal "https://flic.kr/p/6Rjq7s", FlickRaw.url_short(info)
+    assert_equal "https://www.flickr.com/people/41650587@N02/", Flickr.url_profile(info)
+    assert_equal "https://www.flickr.com/photos/41650587@N02/", Flickr.url_photostream(info)
+    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270", Flickr.url_photopage(info)
+    assert_equal "https://www.flickr.com/photos/41650587@N02/sets/", Flickr.url_photosets(info)
+    assert_equal "https://flic.kr/p/6Rjq7s", Flickr.url_short(info)
   end
 
   def test_url_escape

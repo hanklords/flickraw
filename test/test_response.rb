@@ -8,7 +8,7 @@ require 'test/unit'
 class TestResponse < Test::Unit::TestCase
 
   def test_response_keys_are_turned_into_methods
-    subject = FlickRaw::Response.new({ 'le_gal' => 'ok', }, nil)
+    subject = Flickr::Response.new({ 'le_gal' => 'ok', }, nil)
 
     assert_equal true, subject.methods.include?(:le_gal)
     assert_equal 'ok', subject.le_gal
@@ -20,10 +20,10 @@ class TestResponse < Test::Unit::TestCase
     }
 
     assert_nothing_raised {
-      FlickRaw::Response.new(response_hash, nil)
+      Flickr::Response.new(response_hash, nil)
     }
 
-    subject = FlickRaw::Response.new(response_hash, nil)
+    subject = Flickr::Response.new(response_hash, nil)
     assert_equal false, subject.methods.include?(:illegal)
   end
 

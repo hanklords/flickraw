@@ -1,4 +1,4 @@
-module FlickRaw
+module Flickr
   class Response
     def self.build(h, type) # :nodoc:
       if h.is_a? Response

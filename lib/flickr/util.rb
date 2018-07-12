@@ -1,4 +1,4 @@
-module FlickRaw
+module Flickr
   module Util
     extend self
 

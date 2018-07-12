@@ -1,14 +1,14 @@
 require 'json'
-require 'flickraw/version'
-require 'flickraw/util'
-require 'flickraw/error'
-require 'flickraw/oauth_client'
-require 'flickraw/request'
-require 'flickraw/response'
-require 'flickraw/flickr'
+require 'flickr/version'
+require 'flickr/util'
+require 'flickr/error'
+require 'flickr/oauth_client'
+require 'flickr/request'
+require 'flickr/response'
+require 'flickr/flickr'
 
-module FlickRaw
-  USER_AGENT = "FlickRaw/#{VERSION}"
+module Flickr
+  USER_AGENT = "Flickr/#{VERSION}"
 
   END_POINT                  = 'https://api.flickr.com/services'.freeze
 

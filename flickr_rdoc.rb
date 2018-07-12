@@ -7,29 +7,29 @@ FLICKR_API_URL='https://www.flickr.com/services/api'
 FakedToken = Struct.new :text, :kind
 
 module RDoc
-  class FlickrawParser < Parser::Ruby
-    parse_files_matching(/flickraw\.rb$/)
+  class FlickrParser < Parser::Ruby
+    parse_files_matching(/flickr\.rb$/)
 
     def scan
       super
 
-      fr = @top_level.find_module_named 'FlickRaw'
-      k = fr.add_class NormalClass, 'Flickr', 'FlickRaw::Request'
+      fr = @top_level.find_module_named 'Flickr'
+      k = fr.add_class NormalClass, 'Flickr', 'Flickr::Request'
       k.record_location @top_level
       @stats.add_class 'Flickr'
 
-      add_flickr_methods(FlickRaw::Flickr, k)
+      add_flickr_methods(Flickr::Flickr, k)
       @top_level
     end
 
     private
     def add_flickr_methods(obj, doc)
-      flickr = FlickRaw::Flickr.new
+      flickr = Flickr::Flickr.new
       obj.constants.each { |const_name|
         const = obj.const_get const_name
-        if const.is_a?(Class) && const < FlickRaw::Request
+        if const.is_a?(Class) && const < Flickr::Request
           name = const.name.sub(/.*::/, '')
-          k = doc.add_class NormalClass, name, 'FlickRaw::Request'
+          k = doc.add_class NormalClass, name, 'Flickr::Request'
           k.record_location @top_level
           @stats.add_class name
 

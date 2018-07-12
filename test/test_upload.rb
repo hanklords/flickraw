@@ -8,10 +8,10 @@ require 'test/unit'
 class Upload < Test::Unit::TestCase
 
   def setup
-    @flickr = FlickRaw::Flickr.new
+    @flickr = Flickr::Flickr.new
 
-    @flickr.access_token = ENV['FLICKRAW_ACCESS_TOKEN']
-    @flickr.access_secret = ENV['FLICKRAW_ACCESS_SECRET']
+    @flickr.access_token = ENV['FLICKR_ACCESS_TOKEN']
+    @flickr.access_secret = ENV['FLICKR_ACCESS_SECRET']
   end
 
   def test_upload

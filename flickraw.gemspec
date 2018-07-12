@@ -1,15 +1,15 @@
 $:.push File.expand_path("../lib", __FILE__)
-require 'flickraw/version'
+require 'flickr/version'
 
 Gem::Specification.new do |s|
   s.summary = "Flickr library with a syntax close to the syntax described on http://www.flickr.com/services/api"
-  s.name = "flickraw"
+  s.name = "flickr"
   s.author = "Mael Clerambault"
   s.email =  "mael@clerambault.fr"
-  s.homepage = "http://hanklords.github.com/flickraw/"
+  s.homepage = "https://hanklords.github.io/flickraw/"
   s.license = "MIT"
-  s.version = FlickRaw::VERSION
-  s.files = Dir["examples/*.rb"] + Dir["test/*.rb"] + Dir["lib/**/*.rb"] + %w{flickraw_rdoc.rb LICENSE README.rdoc rakefile}
+  s.version = Flickr::VERSION
+  s.files = Dir["examples/*.rb"] + Dir["test/*.rb"] + Dir["lib/**/*.rb"] + %w{flickr_rdoc.rb LICENSE README.rdoc rakefile}
 
   s.add_development_dependency "rake", "~> 10.0"
   s.add_development_dependency "pry"

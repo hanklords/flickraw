@@ -1,4 +1,4 @@
-module FlickRaw
+module Flickr
   class Request
     def initialize(flickr = nil) # :nodoc:
       @flickr = flickr

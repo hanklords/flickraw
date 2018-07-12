@@ -1,7 +1,7 @@
 require 'openssl'
 require 'net/https'
 
-module FlickRaw
+module Flickr
   class OAuthClient
     class UnknownSignatureMethod < Error; end
     class FailedResponse < Error
@@ -97,7 +97,7 @@ module FlickRaw
 
     def post_multipart(url, token_secret, oauth_params = {}, params = {})
       post(url, token_secret, oauth_params, params) { |request|
-        boundary = "FlickRaw#{OAuthClient.gen_nonce}"
+        boundary = "Flickr#{OAuthClient.gen_nonce}"
         request['Content-type'] = "multipart/form-data, boundary=#{boundary}"
 
         request.body = ''

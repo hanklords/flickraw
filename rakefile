@@ -5,12 +5,12 @@ require 'rake/testtask'
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
-require 'flickraw'
-require './flickraw_rdoc' if RUBY_VERSION >= "1.9"
+require 'flickr'
+require './flickr_rdoc' if RUBY_VERSION >= "1.9"
 
 Rake::RDocTask.new do |rd|
   rd.main = "README.rdoc"
-  rd.rdoc_files.include "README.rdoc", "lib/flickraw.rb"
+  rd.rdoc_files.include "README.rdoc", "lib/flickr.rb"
 end
 
 Rake::TestTask.new do |t|
@@ -18,5 +18,5 @@ Rake::TestTask.new do |t|
 end
 
 task :console do
-	exec 'pry -I ./lib -r flickraw'
+	exec 'pry -I ./lib -r flickr'
 end
