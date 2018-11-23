@@ -3,26 +3,32 @@
 lib = File.dirname(__FILE__)
 $:.unshift lib unless $:.include?(lib)
 
+require 'flickr'
 require 'test/unit'
 
 class Basic < Test::Unit::TestCase
 
   def setup
-    @flickr = Flickr::Flickr.new
+    @flickr = ::Flickr.new
 
     @flickr.access_token = ENV['FLICKR_ACCESS_TOKEN']
     @flickr.access_secret = ENV['FLICKR_ACCESS_SECRET']
   end
 
   def test_request
-    flickr_objects = %w{activity auth blogs cameras collections commons contacts
-       favorites galleries groups interestingness machinetags panda
-       people photos photosets places prefs profile push reflection stats tags
-       test testimonials urls
+    flickr_objects = %w{
+      activity auth blogs cameras collections commons contacts
+      favorites galleries groups interestingness machinetags panda
+      people photos photosets places prefs profile push reflection
+      stats tags test testimonials urls
     }
-    assert_equal Flickr::Flickr.flickr_objects, flickr_objects
+
+    assert @flickr.respond_to? :test, "should respond to :test"
+
+    # assert_equal Flickr.flickr_objects, flickr_objects
+
     flickr_objects.each { |o|
-      assert_respond_to flickr, o
+      assert_respond_to @flickr, o.to_sym, "Flickr instance should respond to #{o}"
       assert_kind_of Flickr::Request, @flickr.send(o.to_sym)
     }
   end
@@ -266,7 +272,7 @@ class Basic < Test::Unit::TestCase
   def people(user)
     assert_equal "41650587@N02", user.id
     assert_equal "41650587@N02", user.nsid
-    assert_equal "ruby_flickr", user.username
+    assert_equal "ruby_flickraw", user.username
   end
 
   def photo(info)
@@ -300,12 +306,12 @@ class Basic < Test::Unit::TestCase
 
   # people
   def test_people_findByEmail
-    user = @flickr.people.findByEmail :find_email => "flickr@yahoo.com"
+    user = @flickr.people.findByEmail :find_email => "flickraw@yahoo.com"
     people user
   end
 
   def test_people_findByUsername
-    user = @flickr.people.findByUsername :username => "ruby_flickr"
+    user = @flickr.people.findByUsername :username => "ruby_flickraw"
     people user
   end
 
@@ -341,7 +347,7 @@ class Basic < Test::Unit::TestCase
       info = @flickr.photos.getInfo(:photo_id => id)
     }
 
-     %w{id secret server farm license owner title description dates comments tags media}.each { |m|
+    %w{id secret server farm license owner title description dates comments tags media}.each { |m|
       assert_respond_to info, m
       assert_not_nil info[m]
     }
@@ -349,7 +355,7 @@ class Basic < Test::Unit::TestCase
     assert_equal id, info.id
     assert_equal "cat", info.title
     assert_equal "This is my cat", info.description
-    assert_equal "ruby_flickr", info.owner["username"]
+    assert_equal "ruby_flickraw", info.owner["username"]
     assert_equal "Flickraw", info.owner["realname"]
     assert_equal %w{cat pet}, info.tags.map { |t| t.to_s}.sort
   end
@@ -358,14 +364,14 @@ class Basic < Test::Unit::TestCase
     info = @flickr.photos.getExif :photo_id => "3839885270"
     assert_equal "Canon DIGITAL IXUS 55", info.exif.find { |f| f.tag == "Model"}.raw
     assert_equal "1/60", info.exif.find { |f| f.tag == "ExposureTime"}.raw
-    assert_equal "4.9", info.exif.find { |f| f.tag == "FNumber"}.raw
+    assert_equal  "4.9", info.exif.find { |f| f.tag == "FNumber"}.raw
     assert_equal "1600", info.exif.find { |f| f.tag == "RelatedImageWidth"}.raw
     assert_equal "1200", info.exif.find { |f| f.tag == "RelatedImageHeight"}.raw
   end
 
   def test_photos_getSizes
     info = @flickr.photos.getSizes :photo_id => "3839885270"
-    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find {|f| f.label == "Large"}.url
+    assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/sizes/l/", info.find { |f| f.label == "Large" }.url
     source = "https://farm3.staticflickr.com/2485/3839885270_6fb8b54e06_b.jpg"
 
     assert_equal source, info.find { |f| f.label == "Large"}.source
@@ -383,7 +389,7 @@ class Basic < Test::Unit::TestCase
     assert_equal "3839885270", comments.photo_id
     assert_equal "41630239-3839885270-72157621986549875", comments[0].id
     assert_equal "41650587@N02", comments[0].author
-    assert_equal "ruby_flickr", comments[0].authorname
+    assert_equal "ruby_flickraw", comments[0].authorname
     assert_equal "https://www.flickr.com/photos/41650587@N02/3839885270/#comment72157621986549875", comments[0].permalink
     assert_equal "This is a cute cat !", comments[0].to_s
   end
@@ -430,7 +436,7 @@ class Basic < Test::Unit::TestCase
   def test_urls_lookupUser
     info = @flickr.urls.lookupUser :url => "https://www.flickr.com/photos/41650587@N02/"
     assert_equal "41650587@N02", info.id
-    assert_equal "ruby_flickr", info.username
+    assert_equal "ruby_flickraw", info.username
   end
 
   def test_urls

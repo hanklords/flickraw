@@ -1,4 +1,4 @@
-module Flickr
+class Flickr
   module Util
     extend self
 

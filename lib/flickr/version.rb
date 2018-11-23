@@ -1,3 +1,3 @@
-module Flickr
-	VERSION = '1.0.0-pre1'
+class Flickr
+  VERSION = '1.0.0-1'
 end

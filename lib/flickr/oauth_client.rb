@@ -1,9 +1,11 @@
 require 'openssl'
 require 'net/https'
 
-module Flickr
+class Flickr
   class OAuthClient
+
     class UnknownSignatureMethod < Error; end
+
     class FailedResponse < Error
       def initialize(str)
         @response = OAuthClient.parse_response(str)
@@ -26,7 +28,7 @@ module Flickr
       def parse_response(text); Hash[text.split('&').map { |s| s.split('=') }] end
 
       def signature_base_string(method, url, params)
-        params_norm = params.map { |k,v| "#{escape(k)}=#{escape(v)}" }.sort.join('&')
+        params_norm = params.map { |k, v| "#{escape(k)}=#{escape(v)}" }.sort.join('&')
         "#{method.to_s.upcase}&#{escape(url)}&#{escape(params_norm)}"
       end
 
@@ -49,14 +51,20 @@ module Flickr
       end
 
       def gen_timestamp; Time.now.to_i end
+
       def gen_nonce; [OpenSSL::Random.random_bytes(32)].pack('m0').gsub(/\n$/,'') end
+
       def gen_default_params
-        { :oauth_version => "1.0", :oauth_signature_method => 'HMAC-SHA1',
-          :oauth_nonce => gen_nonce, :oauth_timestamp => gen_timestamp }
+        {
+          :oauth_version => "1.0",
+          :oauth_signature_method => 'HMAC-SHA1',
+          :oauth_nonce => gen_nonce,
+          :oauth_timestamp => gen_timestamp,
+        }
       end
 
       def authorization_header(url, params)
-        params_norm = params.map { |k, v| %(#{escape(k)}="#{escape(v)}")}.sort.join(', ')
+        params_norm = params.map { |k, v| %(#{escape(k)}="#{escape(v)}") }.sort.join(', ')
         %(OAuth realm="#{url.to_s}", #{params_norm})
       end
     end
@@ -79,7 +87,7 @@ module Flickr
     end
 
     def authorize_url(url, oauth_params = {})
-      params_norm = oauth_params.map { |k,v| "#{OAuthClient.escape(k)}=#{OAuthClient.escape(v)}" }.sort.join('&')
+      params_norm = oauth_params.map { |k, v| "#{OAuthClient.escape(k)}=#{OAuthClient.escape(v)}" }.sort.join('&')
       url = URI.parse(url)
       url.query = url.query ? "#{url.query}&#{params_norm}" : params_norm
       url.to_s
@@ -91,12 +99,12 @@ module Flickr
     end
 
     def post_form(url, token_secret, oauth_params = {}, params = {})
-      encoded_params = Hash[*params.map { |k,v| [OAuthClient.encode_value(k), OAuthClient.encode_value(v)]}.flatten]
+      encoded_params = Hash[*params.map { |k, v| [OAuthClient.encode_value(k), OAuthClient.encode_value(v)]}.flatten]
       post(url, token_secret, oauth_params, params) { |request| request.form_data = encoded_params }
     end
 
     def post_multipart(url, token_secret, oauth_params = {}, params = {})
-      post(url, token_secret, oauth_params, params) { |request|
+      post(url, token_secret, oauth_params, params) do |request|
         boundary = "Flickr#{OAuthClient.gen_nonce}"
         request['Content-type'] = "multipart/form-data, boundary=#{boundary}"
 
@@ -119,10 +127,11 @@ module Flickr
         end
 
         request.body << "--#{boundary}--"
-      }
+      end
     end
 
     private
+
     def sign(method, url, params, token_secret = nil)
       case params[:oauth_signature_method]
       when 'HMAC-SHA1'
@@ -142,7 +151,7 @@ module Flickr
       default_oauth_params[:oauth_consumer_key] = @consumer_key
       default_oauth_params[:oauth_signature_method] = 'PLAINTEXT' if url.scheme == 'https'
       oauth_params = default_oauth_params.merge(oauth_params)
-      params_signed = params.reject { |k,v| v.respond_to? :read }.merge(oauth_params)
+      params_signed = params.reject { |_, v| v.respond_to? :read }.merge(oauth_params)
       oauth_params[:oauth_signature] = sign(:post, url, params_signed, token_secret)
 
       http = Net::HTTP.new(url.host, url.port, @proxy.host, @proxy.port, @proxy.user, @proxy.password)

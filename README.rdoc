@@ -47,7 +47,7 @@ To use Flickr, you must first obtain an API key and shared secret from Flickr. Y
 
   flickr = Flickr::Flickr.new
 
-  # Flickr will raise an error if either parameter is not explicitly provided, or avilable via environment variables.
+  # Flickr will raise an error if either parameter is not explicitly provided, or available via environment variables.
 
 
 == Simple

@@ -18,5 +18,5 @@ Rake::TestTask.new do |t|
 end
 
 task :console do
-	exec 'pry -I ./lib -r flickr'
+  exec 'pry -I ./lib -r flickr'
 end

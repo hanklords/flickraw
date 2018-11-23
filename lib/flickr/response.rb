@@ -1,5 +1,8 @@
-module Flickr
+class Flickr
   class Response
+
+    attr_reader :flickr_type
+
     def self.build(h, type) # :nodoc:
       if h.is_a? Response
         h
@@ -12,7 +15,6 @@ module Flickr
       end
     end
 
-    attr_reader :flickr_type
     def initialize(h, type) # :nodoc:
       @flickr_type, @h = type, {}
       methods = 'class << self;'
@@ -32,31 +34,5 @@ module Flickr
     def to_hash; @h end
     def marshal_dump; [@h, @flickr_type] end
     def marshal_load(data); initialize(*data) end
-  end
-
-  class ResponseList < Response
-    include Enumerable
-    def initialize(h, t, a); super(h, t); @a = a end
-    def [](k); k.is_a?(Integer) ? @a[k] : super(k) end
-    def each
-       @a.each { |e| yield e }
-    end
-    def to_a; @a end
-    def inspect; @a.inspect end
-    def size; @a.size end
-    def map!
-      @a = @a.map { |e| yield e }
-    end
-    def marshal_dump; [@h, @flickr_type, @a] end
-    alias length size
-  end
-
-  class FailedResponse < Error
-    attr_reader :code
-    alias :msg :message
-    def initialize(msg, code, req)
-      @code = code
-      super("'#{req}' - #{msg}")
-    end
   end
 end
