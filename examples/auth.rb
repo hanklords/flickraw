@@ -1,7 +1,7 @@
 require 'flickr'
 
 # This is how to authenticate on flickr website.
-# You need an API key for that, see http://www.flickr.com/services/api/keys/
+# You need an API key for that, see https://www.flickr.com/services/api/keys/
 API_KEY = ''
 SHARED_SECRET = ''
 

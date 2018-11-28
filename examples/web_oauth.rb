@@ -5,7 +5,7 @@ require 'flickr'
 # Error handling left out for clarity :-)
 # Added by Darren Greaves (https://github.com/boncey/)
 #
-# You need an API key first, see http://www.flickr.com/services/api/keys/
+# You need an API key first, see https://www.flickr.com/services/api/keys/
 API_KEY = ''
 SHARED_SECRET = ''
 

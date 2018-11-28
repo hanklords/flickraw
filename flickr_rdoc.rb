@@ -2,7 +2,7 @@ require "rdoc"
 require "rdoc/parser/ruby"
 require "nokogiri"
 
-FLICKR_API_URL='https://www.flickr.com/services/api'
+FLICKR_API_URL = 'https://www.flickr.com/services/api'
 
 FakedToken = Struct.new :text, :kind
 
@@ -23,6 +23,7 @@ module RDoc
     end
 
     private
+
     def add_flickr_methods(obj, doc)
       flickr = Flickr::Flickr.new
       obj.constants.each { |const_name|

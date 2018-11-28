@@ -61,7 +61,7 @@ class Flickr
 
   # Get an oauth request token.
   #
-  #    token = flickr.get_request_token(:oauth_callback => "http://example.com")
+  #    token = flickr.get_request_token(:oauth_callback => "https://example.com")
   def get_request_token(args = {})
     @oauth_consumer.request_token(FLICKR_OAUTH_REQUEST_TOKEN, args)
   end
@@ -86,7 +86,7 @@ class Flickr
   #
   #  flickr.upload_photo '/path/to/the/photo', :title => 'Title', :description => 'This is the description'
   #
-  # See http://www.flickr.com/services/api/upload.api.html for more information on the arguments.
+  # See https://www.flickr.com/services/api/upload.api.html for more information on the arguments.
   def upload_photo(file, args={})
     upload_flickr(UPLOAD_PATH, file, args)
   end
@@ -95,7 +95,7 @@ class Flickr
   #
   #  flickr.replace_photo '/path/to/the/photo', :photo_id => id
   #
-  # See http://www.flickr.com/services/api/replace.api.html for more information on the arguments.
+  # See https://www.flickr.com/services/api/replace.api.html for more information on the arguments.
   def replace_photo(file, args={})
     upload_flickr(REPLACE_PATH, file, args)
   end
@@ -190,10 +190,10 @@ class Flickr
   end
 
   class << self
-    # Your flickr API key, see http://www.flickr.com/services/api/keys for more information
+    # Your flickr API key, see https://www.flickr.com/services/api/keys for more information
     attr_accessor :api_key
 
-    # The shared secret of _api_key_, see http://www.flickr.com/services/api/keys for more information
+    # The shared secret of _api_key_, see https://www.flickr.com/services/api/keys for more information
     attr_accessor :shared_secret
 
     # Use a proxy

@@ -1,7 +1,7 @@
 = Flickr
 
-Flickr is a library to access flickr[http://flickr.com] api in a simple way.
-It maps exactly the methods described in {the official api documentation}[http://www.flickr.com/services/api].
+Flickr is a library to access flickr[https://flickr.com] api in a simple way.
+It maps exactly the methods described in {the official api documentation}[https://www.flickr.com/services/api].
 It also tries to present the data returned in a simple and intuitive way.
 The methods are fetched from flickr when loading the library by using introspection capabilities. So it is always up-to-date with regards to new methods added by flickr.
 
@@ -10,7 +10,6 @@ The github repository: https://github.com/hanklords/flickraw
 = Installation
 Type this in a console (you might need to be superuser)
 
- gem install json (This is only necessary on ruby 1.8)
  gem install flickr
 
 This will recreate the documentation by fetching the methods descriptions from flickr and then virtually plugging them in standard rdoc documentation.
@@ -20,8 +19,8 @@ This will recreate the documentation by fetching the methods descriptions from f
 = Features
 
 * Minimal dependencies
-* Complete support of flickr API. This doesn't require an update of the library
-* Ruby syntax similar to the flickr api
+* Complete support of Flickr API. This doesn't require an update of the library
+* Ruby syntax similar to the Flickr API
 * Flickr authentication
 * HTTPS Support
 * Photo upload
@@ -38,14 +37,14 @@ To use Flickr, you must first obtain an API key and shared secret from Flickr. Y
 
   # The credentials can be provided as parameters:
 
-  flickr = Flickr::Flickr.new "YOUR API KEY", "YOUR SHARED SECRET"
+  flickr = Flickr.new "YOUR API KEY", "YOUR SHARED SECRET"
 
   # Alternatively, if the API key and Shared Secret are not provided, Flickr will attempt to read them
   # from environment variables:
   # ENV['FLICKR_API_KEY']
   # ENV['FLICKR_SHARED_SECRET']
 
-  flickr = Flickr::Flickr.new
+  flickr = Flickr.new
 
   # Flickr will raise an error if either parameter is not explicitly provided, or available via environment variables.
 
@@ -56,7 +55,7 @@ To use Flickr, you must first obtain an API key and shared secret from Flickr. Y
 
   id     = list[0].id
   secret = list[0].secret
-  info = flickr.photos.getInfo :photo_id => id, :secret => secret
+  info   = flickr.photos.getInfo :photo_id => id, :secret => secret
 
   puts info.title           # => "PICT986"
   puts info.dates.taken     # => "2006-07-06 15:16:18"
@@ -72,7 +71,7 @@ To use Flickr, you must first obtain an API key and shared secret from Flickr. Y
   token = flickr.get_request_token
   auth_url = flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
 
-  puts "Open this url in your browser to complete the authentication process : #{auth_url}"
+  puts "Open this url in your browser to complete the authentication process: #{auth_url}"
   puts "Copy here the number given when you complete the process."
   verify = gets.strip
 
@@ -95,7 +94,7 @@ If the user has already been authenticated, you can reuse the access token and a
 
 If you need to have several users authenticated at the same time in your application (ex: a public web application) you need to create separate Flickr objects since it keeps the authentication data internally.
 
-  flickr = Flickr::Flickr.new
+  flickr = Flickr.new
 
 == Upload
 
@@ -107,18 +106,18 @@ If you need to have several users authenticated at the same time in your applica
 == Proxy
 
   require 'flickr'
-  Flickr.proxy = "http://user:pass@proxy.example.com:3129/"
+  Flickr.proxy = "https://user:pass@proxy.example.com:3129/"
 
 === Server Certificate Verification
 
-Server certificate verification is enabled by default. If you don't want to check the server certificate :
+Server certificate verification is enabled by default. If you don't want to check the server certificate:
 
   require 'flickr'
   Flickr.check_certificate = false
 
 === CA Certificate File Path
 
-OpenSSL::X509::DEFAULT_CERT_FILE is used as a CA certificate file. If you want to change the path :
+OpenSSL::X509::DEFAULT_CERT_FILE is used as a CA certificate file. If you want to change the path:
 
   require 'flickr'
   Flickr.ca_file = '/path/to/cacert.pem'
@@ -129,7 +128,7 @@ You can also specify a path to a directory with a number of certifications:
 
 == Flickr URL Helpers
 
-There are some helpers to build flickr urls :
+There are some helpers to build flickr urls:
 
 === url, url_m, url_s, url_t, url_b, url_z, url_q, url_n, url_c, url_o
 
@@ -179,11 +178,11 @@ See the _examples_ directory to find more examples.
 
 You can use
 
-  require 'flickr-cached'
+  require 'flickraw-cached'
 
 instead of
 
   require 'flickr'
 
-This way it it doesn't fetch available flickr methods each time it is loaded.
-The flickraw-cached gem is on rubygems.org and should be up-to-date with regard to flickr api most of the time.
+This way it it doesn't fetch available Flickr methods each time it is loaded.
+The flickraw-cached gem is on rubygems.org and should be up-to-date with regard to the Flickr API most of the time.
