@@ -6,7 +6,7 @@ SHARED_SECRET = ''
 use Rack::Session::Pool
 
 get '/authenticate' do
-  flickr = Flickr::Flickr.new API_KEY, SHARED_SECRET
+  flickr = Flickr.new API_KEY, SHARED_SECRET
   token = flickr.get_request_token(:oauth_callback => to('check'))
   session[:token] = token
   redirect flickr.get_authorize_url(token['oauth_token'], :perms => 'delete')
@@ -14,7 +14,7 @@ end
 
 get '/check' do
   token = session.delete :token
-  session[:auth_flickr] = @auth_flickr = Flickr::Flickr.new
+  session[:auth_flickr] = @auth_flickr = Flickr.new
   @auth_flickr.get_access_token(token['oauth_token'], token['oauth_token_secret'], params['oauth_verifier'])
 
   redirect to('/authenticated')

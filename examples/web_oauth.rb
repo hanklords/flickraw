@@ -14,7 +14,7 @@ SHARED_SECRET = ''
 
 # Users should hit this method to get the link which sends them to flickr
 def auth
-  flickr = Flickr::Flickr.new API_KEY, SHARED_SECRET
+  flickr = Flickr.new API_KEY, SHARED_SECRET
   token = flickr.get_request_token(:oauth_callback => URI.escape(@callback_url))
   # You'll need to store the token somewhere for when the user is returned to the callback method
   # I stick mine in memcache with their session key as the cache key
@@ -25,7 +25,7 @@ end
 
 # Your users browser will be redirected here from Flickr (see @callback_url above)
 def callback
-  flickr = Flickr::Flickr.new
+  flickr = Flickr.new
 
   request_token = # Retrieve from cache or session etc - see above
   oauth_token = params[:oauth_token]

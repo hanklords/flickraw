@@ -18,14 +18,14 @@ module RDoc
       k.record_location @top_level
       @stats.add_class 'Flickr'
 
-      add_flickr_methods(Flickr::Flickr, k)
+      add_flickr_methods(Flickr, k)
       @top_level
     end
 
     private
 
     def add_flickr_methods(obj, doc)
-      flickr = Flickr::Flickr.new
+      flickr = Flickr.new
       obj.constants.each { |const_name|
         const = obj.const_get const_name
         if const.is_a?(Class) && const < Flickr::Request

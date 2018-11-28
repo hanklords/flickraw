@@ -2,7 +2,7 @@ require 'flickr'
 
 # search for pictures taken within 60 miles of new brunswick, between 1890-1920
 
-flickr = Flickr::Flickr.new
+flickr = Flickr.new
 new_b = flickr.places.find :query => "new brunswick"
 latitude = new_b[0]['latitude'].to_f
 longitude = new_b[0]['longitude'].to_f

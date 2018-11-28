@@ -9,7 +9,7 @@ ACCESS_TOKEN  = ''
 ACCESS_SECRET = ''
 PHOTO_PATH    = 'photo.jpg'
 
-flickr = Flickr::Flickr.new API_KEY, SHARED_SECRET
+flickr = Flickr.new API_KEY, SHARED_SECRET
 flickr.access_token = ACCESS_TOKEN
 flickr.access_secret = ACCESS_SECRET
 
