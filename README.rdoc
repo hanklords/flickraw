@@ -1,9 +1,9 @@
 = Flickr
 
-Flickr is a library to access flickr[https://flickr.com] api in a simple way.
-It maps exactly the methods described in {the official api documentation}[https://www.flickr.com/services/api].
+Flickr is a library to access the Flickr[https://flickr.com] API in a simple way.
+It maps exactly the methods described in {the official API documentation}[https://www.flickr.com/services/api/].
 It also tries to present the data returned in a simple and intuitive way.
-The methods are fetched from flickr when loading the library by using introspection capabilities. So it is always up-to-date with regards to new methods added by flickr.
+The methods are fetched from Flickr when loading the library by using introspection capabilities. So it is always up-to-date with regards to new methods added by Flickr.
 
 The github repository: https://github.com/hanklords/flickraw
 
@@ -12,7 +12,7 @@ Type this in a console (you might need to be superuser)
 
  gem install flickr
 
-This will recreate the documentation by fetching the methods descriptions from flickr and then virtually plugging them in standard rdoc documentation.
+This will recreate the documentation by fetching the method descriptions from Flickr and then virtually plugging them in standard rdoc documentation.
  $ cd flickr
  $ rake rdoc
 
@@ -31,7 +31,7 @@ This will recreate the documentation by fetching the methods descriptions from f
 
 == Getting started
 
-To use Flickr, you must first obtain an API key and shared secret from Flickr. You can do this by logging in to Flickr and creating an application here[https://www.flickr.com/services/apps/create/apply]. API keys are usually granted automatically and instantly.
+To use the Flickr API, you must first obtain an API key and shared secret from Flickr. You can do this by logging in to Flickr and creating an application here[https://www.flickr.com/services/apps/create/apply]. API keys are usually granted automatically and instantly.
 
   require 'flickr'
 
@@ -128,7 +128,7 @@ You can also specify a path to a directory with a number of certifications:
 
 == Flickr URL Helpers
 
-There are some helpers to build flickr urls:
+There are some helpers to build Flickr urls:
 
 === url, url_m, url_s, url_t, url_b, url_z, url_q, url_n, url_c, url_o
 
