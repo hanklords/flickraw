@@ -10,9 +10,6 @@ class Basic < Test::Unit::TestCase
 
   def setup
     @flickr = ::Flickr.new
-
-    @flickr.access_token = ENV['FLICKR_ACCESS_TOKEN']
-    @flickr.access_secret = ENV['FLICKR_ACCESS_SECRET']
   end
 
   def test_request
@@ -22,10 +19,6 @@ class Basic < Test::Unit::TestCase
       people photos photosets places prefs profile push reflection
       stats tags test testimonials urls
     }
-
-    assert @flickr.respond_to? :test, "should respond to :test"
-
-    # assert_equal Flickr.flickr_objects, flickr_objects
 
     flickr_objects.each { |o|
       assert_respond_to @flickr, o.to_sym, "Flickr instance should respond to #{o}"
