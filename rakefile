@@ -6,7 +6,7 @@ lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
 require 'flickr'
-require './flickr_rdoc' if RUBY_VERSION >= "1.9"
+require './flickr_rdoc'
 
 Rake::RDocTask.new do |rd|
   rd.main = "README.rdoc"

@@ -11,11 +11,10 @@ Gem::Specification.new do |s|
   s.version  = Flickr::VERSION
   s.files    = Dir["examples/*.rb"] + Dir["test/*.rb"] + Dir["lib/**/*.rb"] + %w{flickr_rdoc.rb LICENSE README.rdoc rakefile}
 
-  s.add_development_dependency "rake", "~> 10.0"
-  s.add_development_dependency "pry"
+  s.add_development_dependency "rake", "~> 12.0"
+  s.add_development_dependency "pry", "~> 0.11"
+  s.add_development_dependency "nokogiri", "~> 1.0"
 
-  s.add_runtime_dependency 'nokogiri'
-
-  s.required_ruby_version = '~> 1.9'
+  s.required_ruby_version = '>= 2.3'
 
 end

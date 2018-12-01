@@ -9,7 +9,7 @@ require 'flickr/response_list'
 
 class Flickr
 
-  USER_AGENT                 = "Flickr/#{VERSION}".freeze
+  USER_AGENT                 = "Flickr/#{VERSION} (+https://github.com/hanklords/flickraw)".freeze
   END_POINT                  = 'https://api.flickr.com/services'.freeze
   FLICKR_OAUTH_REQUEST_TOKEN = (END_POINT + '/oauth/request_token').freeze
   FLICKR_OAUTH_AUTHORIZE     = (END_POINT + '/oauth/authorize').freeze
@@ -127,14 +127,14 @@ class Flickr
         else
           new_class = Class.new { include ::Flickr::Request }
           memo.const_set cklass, new_class
-          memo.define_method klass do
+          memo.send(:define_method, klass) do
             new_class.new @client
           end
           new_class
         end
       end
 
-      base_class.define_method tail do |*args, &block|
+      base_class.send(:define_method, tail) do |*args, &block|
         @client.call(endpoint, *args, &block)
       end
 
@@ -168,7 +168,7 @@ class Flickr
     else
       json = JSON.load(response.empty? ? '{}' : response)
       raise FailedResponse.new(json['message'], json['code'], req) if json.delete('stat') == 'fail'
-      type, json = json.to_a.first if json.size == 1 and json.values.all?(Hash)
+      type, json = json.to_a.first if json.size == 1 and json.values.all? { |x| Hash === x }
 
       Response.build json, type
     end
