@@ -118,7 +118,9 @@ class Flickr
 
       *breadcrumbs, tail = endpoint.split '.'
 
-      base_class = breadcrumbs.reduce(Object) do |memo, klass|
+      raise "Invalid namespace" unless 'flickr' == breadcrumbs.shift
+
+      base_class = breadcrumbs.reduce(::Flickr) do |memo, klass|
 
         cklass = klass.capitalize
 

@@ -2,8 +2,8 @@ $:.push File.expand_path("../lib", __FILE__)
 require 'flickr/version'
 
 Gem::Specification.new do |s|
-  s.summary  = "Flickr library with a syntax close to the syntax described on https://www.flickr.com/services/api"
   s.name     = "flickr"
+  s.summary  = "Flickr library with a syntax close to the syntax described on https://www.flickr.com/services/api"
   s.author   = "Mael Clerambault"
   s.email    = "mael@clerambault.fr"
   s.homepage = "https://hanklords.github.io/flickraw/"

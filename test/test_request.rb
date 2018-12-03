@@ -12,19 +12,17 @@ class TestRequest < Test::Unit::TestCase
   end
 
   def test_flickr_api_is_accessible_via_methods
-    # Reset Flickr (was initialized in test/helper.rb) so the request methods
-    # are properly built
-    # old_flickr = $flickr
-    # $flickr = nil
-    Flickr::Request.instance_variable_set(:@flickr_objects, nil)
-
     Flickr.new.send :build_classes, ['flickr.fully.legal']
 
     assert_equal true, @flickr.methods.include?(:fully)
     assert_equal true, @flickr.fully.methods.include?(:legal)
+  end
 
-    # Fix for failing subsequent tests
-    # $flickr = old_flickr
+  def test_invalid_endpoint_definition
+    e = assert_raises(RuntimeError) do
+      Flickr.new.send :build_classes, ['not_flickr.something.method']
+    end
+    assert_equal "Invalid namespace", e.message
   end
 
   def test_invalid_keys_are_skipped
