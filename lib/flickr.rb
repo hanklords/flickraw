@@ -1,4 +1,5 @@
 require 'json'
+require 'yaml'
 require 'flickr/version'
 require 'flickr/util'
 require 'flickr/errors'
@@ -43,14 +44,14 @@ class Flickr
 
     @@mutex.synchronize do
       unless @@initialized
-        build_classes call('flickr.reflection.getMethods')
+        build_classes retrieve_endpoints
         @@initialized = true
       end
     end
     @client = self # used for propagating the client to sub-classes
   end
 
-  # This is the central method. It does the actual request to the flickr server.
+  # This is the central method. It does the actual request to the Flickr server.
   #
   # Raises FailedResponse if the response status is _failed_.
   def call(req, args={}, &block)
@@ -102,6 +103,18 @@ class Flickr
 
   private
 
+  def retrieve_endpoints
+    if Flickr.cache and File.exist?(Flickr.cache)
+      YAML.load_file Flickr.cache
+    else
+      endpoints = call('flickr.reflection.getMethods').to_a
+      File.open(Flickr.cache, 'w') do |file|
+        file.write(YAML.dump endpoints)
+      end if Flickr.cache
+      endpoints
+    end
+  end
+
   def oauth_consumer(api_key, shared_secret)
     client = OAuthClient.new api_key, shared_secret
     client.proxy = Flickr.proxy
@@ -138,7 +151,7 @@ class Flickr
 
       base_class.send(:define_method, tail) do |*args, &block|
         @client.call(endpoint, *args, &block)
-      end
+      end unless base_class.method_defined? tail
 
     end
 
@@ -213,7 +226,11 @@ class Flickr
     # Set path to a directory of CA certificate files in PEM format (ssl connection only)
     attr_accessor :ca_path
 
-    BASE58_ALPHABET='123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ'.freeze
+    # Set path to a file that can be used to store endpoints
+    attr_accessor :cache
+
+    BASE58_ALPHABET = '123456789abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ'.freeze
+
     def base58(id)
       id = id.to_i
       alphabet = BASE58_ALPHABET.split(//)

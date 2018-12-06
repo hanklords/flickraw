@@ -5,7 +5,7 @@ $:.unshift lib unless $:.include?(lib)
 
 require 'test/unit'
 
-class Upload < Test::Unit::TestCase
+class TestUpload < Test::Unit::TestCase
 
   def setup
     @flickr = ::Flickr.new

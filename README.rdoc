@@ -98,10 +98,19 @@ If you need to have several users authenticated at the same time in your applica
 
 == Upload
 
-  PHOTO_PATH='photo.jpg'
+  PHOTO_PATH = 'photo.jpg'
 
   # You need to be authenticated to do that, see the previous examples.
   flickr.upload_photo PHOTO_PATH, :title => "Title", :description => "This is the description"
+
+== Caching
+
+The first time the Flickr object is instantiated, it will download the current Flickr API definition and dynamically create all the required classes and objects. This is how the gem remains up-to-date without requiring updates.
+
+Unfortunately this adds a significant delay to startup, but the Flickr gem can be configured to cache the API definition to a local file. Just set a file location before the Flickr class is instantiated:
+
+  Flickr.cache = '/tmp/flickr-api.yml'
+  flickr = Flickr.new
 
 == Proxy
 
@@ -171,18 +180,6 @@ There are some helpers to build Flickr urls:
   info = flickr.photos.getInfo(:photo_id => "3839885270")
   Flickr.url_photostream(info) # => "https://www.flickr.com/photos/41650587@N02/"
 
+== Examples
 
 See the _examples_ directory to find more examples.
-
-== Cached version
-
-You can use
-
-  require 'flickraw-cached'
-
-instead of
-
-  require 'flickr'
-
-This way it it doesn't fetch available Flickr methods each time it is loaded.
-The flickraw-cached gem is on rubygems.org and should be up-to-date with regard to the Flickr API most of the time.
