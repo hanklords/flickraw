@@ -1,7 +1,7 @@
 require 'flickr'
 
 # This is how to upload photos on flickr.
-# You need to be authentified to do that.
+# You need to be authenticated to do that.
 
 API_KEY       = ''
 SHARED_SECRET = ''
