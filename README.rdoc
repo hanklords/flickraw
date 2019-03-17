@@ -1,11 +1,18 @@
 = Flickr
 
-Flickr is a library to access the Flickr[https://flickr.com] API in a simple way.
+Flickr (formerly FlickRaw) is a library to access the Flickr[https://flickr.com] API in a simple way.
 It maps exactly the methods described in {the official API documentation}[https://www.flickr.com/services/api/].
 It also tries to present the data returned in a simple and intuitive way.
 The methods are fetched from Flickr when loading the library by using introspection capabilities. So it is always up-to-date with regards to new methods added by Flickr.
 
 The github repository: https://github.com/hanklords/flickraw
+
+= Upgrading from FlickRaw?
+
+If you're upgrading from FlickRaw 0.9.x there are a few breaking changes to be aware of:
+* Instantiate a new object with `client = Flickr.new` instead of `FlickRaw::Flickr.new`.
+* The global `flickr` variable is no longer created.
+* Local caching of the Flickr API specification is no longer achieved with a separate gem.
 
 = Installation
 Type this in a console (you might need to be superuser)
