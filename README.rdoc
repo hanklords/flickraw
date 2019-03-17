@@ -10,8 +10,8 @@ The github repository: https://github.com/hanklords/flickraw
 = Upgrading from FlickRaw?
 
 If you're upgrading from FlickRaw 0.9.x there are a few breaking changes to be aware of:
-* Instantiate a new object with `client = Flickr.new` instead of `FlickRaw::Flickr.new`.
-* The global `flickr` variable is no longer created.
+* Instantiate a new object with +client = Flickr.new+ instead of +FlickRaw::Flickr.new+.
+* The global +flickr+ variable is no longer created.
 * Local caching of the Flickr API specification is no longer achieved with a separate gem.
 
 = Installation
