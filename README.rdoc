@@ -1,5 +1,11 @@
 = Flickraw
 
+== Flickraw is now Flickr!
+
+The FlickRaw gem is now called Flickr (=> 2.x.x). There will be no more releases of the FlickRaw gem. Please replace FlickRaw with Flickr to make sure you get the latest updates and bug fixes.
+
+= About
+
 Flickraw is a library to access flickr[http://flickr.com] api in a simple way.
 It maps exactly the methods described in {the official api documentation}[http://www.flickr.com/services/api].
 It also tries to present the data returned in a simple and intuitive way.
@@ -139,7 +145,7 @@ You can also specify a path to a directory with a number of certifications:
 There are some helpers to build flickr urls :
 
 === url, url_m, url_s, url_t, url_b, url_z, url_q, url_n, url_c, url_o
- 
+
   # url_s : Square
   # url_q : Large Square
   # url_t : Thumbnail
