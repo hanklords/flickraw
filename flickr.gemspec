@@ -9,12 +9,12 @@ Gem::Specification.new do |s|
   s.license  = "MIT"
   s.version  = Flickr::VERSION
   s.files    = Dir["examples/*.rb"] + Dir["test/*.rb"] + Dir["lib/**/*.rb"] + %w{flickr_rdoc.rb LICENSE CHANGELOG.md README.rdoc rakefile}
+  s.homepage = "https://github.com/hanklords/flickraw"
 
   s.metadata = {
     "bug_tracker_uri"   => "https://github.com/hanklords/flickraw/issues",
     "changelog_uri"     => "https://github.com/hanklords/flickraw/blob/master/CHANGELOG.md",
     "documentation_uri" => "https://github.com/hanklords/flickraw/blob/V2.0.1/README.rdoc",
-    "homepage_uri"      => "https://github.com/hanklords/flickraw",
     "source_code_uri"   => "https://github.com/hanklords/flickraw",
   }
 
