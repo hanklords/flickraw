@@ -11,14 +11,15 @@ module FlickRaw
   USER_AGENT = "FlickRaw/#{VERSION}"
 
   END_POINT                  = 'https://api.flickr.com/services'.freeze
+  UPLOAD_END_POINT           = 'https://up.flickr.com/services'.freeze
 
   FLICKR_OAUTH_REQUEST_TOKEN = (END_POINT + '/oauth/request_token').freeze
   FLICKR_OAUTH_AUTHORIZE     = (END_POINT + '/oauth/authorize').freeze
   FLICKR_OAUTH_ACCESS_TOKEN  = (END_POINT + '/oauth/access_token').freeze
 
   REST_PATH                  = (END_POINT + '/rest/').freeze
-  UPLOAD_PATH                = (END_POINT + '/upload/').freeze
-  REPLACE_PATH               = (END_POINT + '/replace/').freeze
+  UPLOAD_PATH                = (UPLOAD_END_POINT + '/upload/').freeze
+  REPLACE_PATH               = (UPLOAD_END_POINT + '/replace/').freeze
 
   PHOTO_SOURCE_URL           = 'https://farm%s.staticflickr.com/%s/%s_%s%s.%s'.freeze
   URL_PROFILE                = 'https://www.flickr.com/people/'.freeze
