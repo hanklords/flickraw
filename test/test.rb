@@ -4,6 +4,7 @@ lib = File.dirname(__FILE__)
 $:.unshift lib unless $:.include?(lib)
 
 require 'test/unit'
+require 'flickraw'
 
 class Basic < Test::Unit::TestCase
 
