@@ -136,6 +136,7 @@ class Basic < Test::Unit::TestCase
       flickr.photos.getWithGeoData
       flickr.photos.getWithoutGeoData
       flickr.photos.licenses.getInfo
+      flickr.photos.licenses.getLicenseHistory
       flickr.photos.licenses.setLicense
       flickr.photos.notes.add
       flickr.photos.notes.delete
