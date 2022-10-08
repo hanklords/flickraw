@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-lib = File.dirname(__FILE__)
+lib = File.expand_path('../../lib', __FILE__)
 $:.unshift lib unless $:.include?(lib)
 
 require 'test/unit'
