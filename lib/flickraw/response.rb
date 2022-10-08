@@ -1,7 +1,7 @@
 module FlickRaw
   class Response
     def self.build(h, type) # :nodoc:
-      if h.is_a? Response
+      if h.is_a?(Response) || h.is_a?(String)
         h
       elsif type =~ /s$/ and (a = h[$`]).is_a? Array
         ResponseList.new(h, type, a.collect { |e| Response.build(e, $`) })
