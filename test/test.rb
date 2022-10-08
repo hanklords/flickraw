@@ -23,7 +23,7 @@ class Basic < Test::Unit::TestCase
     }
     assert_equal FlickRaw::Flickr.flickr_objects, flickr_objects
     flickr_objects.each { |o|
-      assert_respond_to flickr, o
+      assert_respond_to @flickr, o
       assert_kind_of FlickRaw::Request, @flickr.send(o.to_sym)
     }
   end

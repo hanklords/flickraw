@@ -15,19 +15,12 @@ class TestReqeust < Test::Unit::TestCase
   end
 
   def test_flickr_api_is_accessible_via_methods
-    # Reset FlickRaw (was initialized in test/helper.rb) so the request methods
-    # are properly built
-    old_flickraw = $flickraw
-    $flickraw = nil
     FlickRaw::Request.instance_variable_set(:@flickr_objects, nil)
 
     FlickRaw::Flickr.build(['flickr.fully.legal'])
 
     assert_equal true, @flickr.methods.include?(:fully)
     assert_equal true, @flickr.fully.methods.include?(:legal)
-
-    # Fix for failing subsequent tests
-    $flickraw = old_flickraw
   end
 
   def test_invalid_keys_are_skipped
