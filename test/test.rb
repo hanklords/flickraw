@@ -329,7 +329,7 @@ class Basic < Test::Unit::TestCase
   def test_people_getPublicPhotos
     info = @flickr.people.getPublicPhotos :user_id => "41650587@N02"
     assert_equal 1, info.size
-    assert_equal "1", info.total
+    assert_equal 1, info.total
     assert_equal 1, info.pages
     assert_equal 1, info.page
     photo info[0]
